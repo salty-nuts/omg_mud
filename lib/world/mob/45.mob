@@ -1,0 +1,230 @@
+#4500
+monk priest~
+the monk~
+A ferret wearing monk robes stands here.
+~
+   You see a very calm monk.  He walks around with a serene look on his face.  
+This is a creature completely at peace with him self.  He is dressed in some
+nice red robes, and wearing a pair of worn out sandals.  
+~
+6600 0 0 0 8200 0 0 0 1000 E
+12 10 10 12d12+1008 8d4+10
+213333 320000
+8 8 0
+BareHandAttack: 8
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4501
+monk mouse~
+the monk~
+A mousy looking monk stands here.
+~
+   You see a mouse wearing a monk's robe.  He is walking about intently.  
+~
+6600 0 0 0 8192 0 0 0 1000 E
+14 12 9 14d14+1372 8d4+8
+240000 360000
+8 8 0
+BareHandAttack: 4
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4502
+squirrel monk~
+the monk~
+A squirrel monk darts around.
+~
+   You see a monk.  This one has a rather large, bushy tail, and seems to have a
+weird twitch.  
+~
+6476 0 0 0 8192 0 0 0 1000 E
+14 9 9 14d14+1372 8d4+9
+240000 360000
+8 8 0
+BareHandAttack: 4
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4504
+assisstant~
+the assistant~
+An assistant stands here nervously.
+~
+   You see a rabbit wearing an apron.  He looks exhausted and overworked.  
+Maybe his shift has been a little too long...  
+~
+4234 0 0 0 0 0 0 0 1000 E
+10 11 11 10d10+700 8d4+9
+186666 280000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#4509
+cook badger~
+Buttercup~
+A large badger stands here, barking orders.
+~
+   You see a VERY large badger.  She is ranting and raving at various helpers
+within the kitchen.  She looks upset.  
+~
+37130 0 0 0 0 0 0 0 1000 E
+10 14 11 10d10+700 8d4+9
+186666 280000
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#4516
+Pyrobos phoenix bird fire firebird~
+Pyrobos~
+A phoenix nests here.
+~
+   You see one of the legendary phoenix's here.  It is scarred and is missing
+patches of feathers.  One wing hangs slightly limp.  It's head contains a crest
+with several very long ornamental feathers.  
+~
+178446 0 0 0 8272 0 0 0 1000 E
+14 10 9 14d14+1372 8d4+9
+240000 360000
+8 8 0
+BareHandAttack: 11
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4518
+Yeral abbot monk priest otter~
+Yeral~
+The abbot calmly stands here.
+~
+   You see a large otter wearing saintly robes.  He is standing quietly,
+watching the people sitting within the pews as the choir behind him sings
+quietly.  
+~
+14602 0 0 0 8192 0 0 0 1000 E
+13 13 9 13d13+1183 8d4+10
+226666 340000
+8 8 1
+BareHandAttack: 8
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4525
+gopher furball~
+the gopher~
+A gopher sits here, watching you intently.
+~
+   You see an ordinary gopher.  It seems a little big for it's kind.  
+~
+14 0 0 0 0 0 0 0 1000 E
+10 12 11 10d10+700 8d4+7
+186666 280000
+8 8 0
+BareHandAttack: 4
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#4527
+guard gate man~
+the guard~
+A guard stands here.
+~
+   You see a clealy shaven man in a military uniform.  He is dressed in a green
+suit.  On his back hangs a quiver and a bow.  A sword hangs loosely by his side.
+He stares at you, waiting for a response.  
+~
+6158 0 0 0 0 0 0 0 700 E
+13 11 9 13d13+1183 8d4+7
+226666 340000
+8 8 1
+BareHandAttack: 3
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4543
+sentry guard archer ranger~
+the sentry~
+A sentry stands here.
+~
+   You see a very alert guard, intently gazing into the surrounding territory.
+~
+72 0 0 0 0 0 0 0 0 E
+11 12 10 11d11+847 8d4+6
+200000 300000
+8 8 0
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#4570
+forest Dragon~
+the forest dragon~
+A large green dragon prowls here.
+~
+   A large green wall of muscle stands before you.  As it moves, you can see
+large thick muscles ripple under is skin as it moves silently through the
+forest.  To large red eyes turn and concentrate on you.  You shudder as you feel
+a wave of hate and anger ripple through you from the dragon.  
+~
+256030 0 0 0 8192 0 0 0 0 E
+15 9 9 15d15+1575 8d4+10
+253333 380000
+8 8 1
+BareHandAttack: 8
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4588
+archer guard patrol~
+the Archer~
+An archer patrols the walls.
+~
+   You see a strongly build guard.  He walks around, watching over the wall for
+any sign of movement in the forest, which he takes care of with one quickly shot
+arrow.  
+~
+179276 0 0 0 16 0 0 0 350 E
+14 9 9 14d14+1372 8d4+11
+240000 360000
+8 8 1
+BareHandAttack: 12
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+$

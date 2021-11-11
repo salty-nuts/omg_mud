@@ -1,0 +1,739 @@
+#800
+Midgaard Zoo - Information Page~
+You are in an unfinished room.
+~
+8 0 0 0 0 0
+S
+#801
+Stairway to the Novice Areas~
+   The stairway leads below the temple to a well lit tunnel.  They are steep but
+wide enough not to cause too much concern about slipping.  At the bottom of the
+stairs you spot some sort of training room.
+~
+8 8 0 0 0 0
+D0
+~
+~
+0 0 802
+D2
+~
+~
+0 0 3090
+S
+#802
+The Entrance to the Novice Ways~
+   You have entered into a multipurpose room at the meeting point of the Temple
+of Midgaard and the Novice Ways.  Comfortable looking furniture is placed around
+the outskirts of the area for adventurers to recuperate.  In the center of the
+room is a training area and a tall handsome man, staring at you.
+~
+8 25 0 0 0 0
+D0
+~
+~
+0 0 803
+D2
+~
+~
+0 0 801
+E
+sign~
+===================================
+|         Mutant Sewers           |
+|               |                 |
+|  Chessboard ----- Midgaard Zoo  |
+|               |                 |
+|           Fountain              |
+|               |                 |
+|    Ant Hill ----- Graveyard     |
+|               |                 |
+|               |                 |
+|               ---Guildmaster    |
+===================================
+~
+S
+#803
+A Meeting of Stairways~
+   The area is well lit with silver oil burning torches mounted to the stone
+wall.  Short stairways meet the tunnel to the east and west while the tunnel
+continues north from here.
+~
+8 0 0 0 0 0
+D0
+~
+~
+0 0 806
+D1
+~
+~
+0 0 805
+D2
+~
+~
+0 0 802
+S
+#804
+A Stairway to the Ant Hill~
+   The stairway is covered in dust and dirt with a few old footprints.  The
+smell of fresh air drifts in from the west where an enormous mound of dirt can
+be seen.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 803
+D3
+~
+~
+0 0 4698
+S
+#805
+The Mourning Stairway~
+   The stairs climb away from the tunnel to the outside air.  They are decorated
+much the same as a cemetery, covered with wreathes and flowers.  A somber and
+yet frightful feeling comes over you from the east.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 7433
+D3
+~
+~
+0 0 803
+S
+#806
+A Well Lit Tunnel~
+   The tunnel's width decreases in this area but is still well lit by the same
+silver torches seen throughout.  The damp moss covered walls extend about eight
+feet above the ground before coming to a perfect arch above your head.  The
+tunnel continues north and south from here.
+~
+8 0 0 0 0 0
+D0
+~
+~
+0 0 807
+D2
+~
+~
+0 0 803
+S
+#807
+The Novice Fountain~
+   The area is well lit with silver oil burning torches mounted on the stone
+walls.  The tunnel continues north and south from here while a tall dragon
+statue cycles water into a fountain.
+~
+8 0 0 0 0 0
+D0
+~
+~
+0 0 810
+D2
+~
+~
+0 0 806
+S
+#808
+A Stairway to the Circus~
+   The stairs leads upwards to a large open field full of erected tents and
+displays of all colors.  The sound of laughter fills the area from the east,
+beckoning you to go see what all the commotion is about.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 18700
+D3
+~
+~
+0 0 807
+S
+#809
+Climbing Through Roots~
+   Roots consume almost the entire stairway as they twist around each other and
+grow through a hole near the top.  The stairway has begun to crack and separate
+as some of the roots burrow into them.  It appears there is a enough space you
+could possibly squeeze through and reach the source of the roots.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 807
+D3
+~
+~
+0 0 30600
+S
+#810
+A Well Lit Tunnel~
+   The tunnel's width decreases in this area but is still well lit by the same
+silver torches seen throughout.  The damp moss covered walls extend about eight
+feet above the ground before coming to a perfect arch above your head.  The
+tunnel continues north and south from here.
+~
+8 0 0 0 0 0
+D0
+~
+~
+0 0 811
+D2
+~
+~
+0 0 807
+S
+#811
+The End of the Tunnel~
+   The tunnel comes to an abrupt end.  The area is well lit with silver oil
+burning torches mounted to the stone wall and short stairways meet the tunnel to
+the east and west.  The only thing different about this area is the giant
+MANHOLE on the tunnel floor.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 813
+D2
+~
+~
+0 0 810
+D3
+~
+~
+0 0 812
+D5
+A manhole covers a hole in the tunnel.
+~
+manhole~
+1 0 2301
+S
+#812
+A Black and White Stairway~
+   The stairway is composed of black and white alternating marble slabs.  They
+are polished to a mirrored finish and lead up to a wooden gate on a dirt path
+towards the Chessboard of Midgaard.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 811
+D3
+~
+~
+0 0 3600
+S
+#813
+A Stairway to the Zoo~
+   The stairway leads up to a large arched entry way into the Midgaard Zoo.  
+Smooth golden handrails line both sides of the stairway allowing the citizens of
+all ages to safely view the exhibits.  The people of the city have obviously put
+alot of time and resources into the zoo, go check it out.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 814
+D3
+~
+~
+0 0 811
+S
+#814
+Entrance to the Midgaard Zoo~
+   You stand before an arched doorway that leads into the main hallway of the
+Midgaard Zoo.  Chirping, roars, and monkey play can be heard from inside the
+zoo.  A large sign hangs from the arched doorway.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 815
+D3
+~
+~
+0 0 813
+E
+sign~
+     ********
+           *
+          *     MIDGAARD 
+         *    ****   ****
+        *    *    * *    *
+       *     *    * *    *
+     ******** ****   ****
+~
+S
+#815
+The Main Hallway~
+   You are standing in the main hallway of the Migaard Zoo.  From this hallway
+you can access all the exhibits the zoo has to offer.  Golden hand rails line
+the walls and blue flame torches attached to the wooden walls provide light to
+the area.  North is the Panthera exhibit and south is the Aviary.
+~
+8 4 0 0 0 0
+D0
+~
+~
+0 0 836
+D1
+~
+~
+0 0 816
+D2
+~
+~
+0 0 818
+D3
+~
+~
+0 0 814
+S
+#816
+The Main Hallway~
+   You are standing in the main hallway of the Migaard Zoo.  From this hallway
+you can access all the exhibits the zoo has to offer.  Golden hand rails line
+the walls and blue flame torches attached to the wooden walls provide light to
+the area.
+~
+8 0 0 0 0 0
+D1
+~
+~
+0 0 817
+D3
+~
+~
+0 0 815
+S
+#817
+The Main Hallway~
+   You are standing in the main hallway of the Migaard Zoo.  From this hallway
+you can access all the exhibits the zoo has to offer.  Golden hand rails line
+the walls and blue flame torches attached to the wooden walls provide light to
+the area.  North is the Primates exhibit and south is Reptilia.
+~
+8 4 0 0 0 0
+D0
+~
+~
+0 0 829
+D1
+~
+~
+0 0 841
+D2
+~
+~
+0 0 823
+D3
+~
+~
+0 0 816
+S
+#818
+The Entrance to the Aviary~
+   The Aviary is home to a wide variety of species of birds.  Loud chirping and
+screeching can be heard throughout the exhibit.  The air here is very hot and
+humid as it simulates mostly tropical climates.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 815
+D2
+~
+~
+0 0 819
+S
+#819
+Tropical Rainforest~
+   The forest is made up of primarily ceiba and giant red cedar trees that have
+grown above the rest of the vegetation to soak up the sunlight in the area.  
+Strangler figs have grown and wrapped around the trees and bottom branches
+creating a nice perch for the birds in the area.  Magnificent orchids grow on
+the forest floor and epiphytes have grown upon some of the fallen limbs in the
+area.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 818
+D1
+~
+~
+0 0 825
+D2
+~
+~
+0 0 820
+D3
+~
+~
+0 0 822
+S
+#820
+The Parrot's Perch~
+   A tall kapok tree has rooted itself in the ground here.  It extends high
+above all the trees in the area.  The trunk of the tree is quite tall and
+doesn't begin to branch out until it's above the other trees.  The branches that
+grow off are narrow and crooked and sprout small, bushy, green leaves.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 819
+S
+#821
+The Macaw's Territory~
+   A lone crecopia tree has been planted here, home to the most magnificent bird
+on exhibit in the zoo.  The tree is not the biggest in the area but it is one of
+the most beautiful.  It's narrow trunk grows almost straight up and small
+straight branches extend straight out from it.  On the branches are green leaves
+in clusters of twelve.  They are feather shaped and get wider the farther they
+grow out from the branch.
+~
+8 0 0 0 0 3
+D1
+~
+~
+0 0 822
+S
+#822
+Tropical Rainforest~
+   The forest is made up of primarily ceiba and giant red cedar trees that have
+grown above the rest of the vegetation to soak up the sunlight in the area.  
+Strangler figs have grown and wrapped around the trees and bottom branches
+creating a nice perch for the birds in the area.  Magnificent orchids grow on
+the forest floor and epiphytes have grown upon some of the fallen limbs in the
+area.
+~
+8 0 0 0 0 3
+D1
+~
+~
+0 0 819
+D3
+~
+~
+0 0 821
+S
+#823
+The Entrance to Reptilia~
+   This exhibit is home to a wide variety of ecosystems, specifically suited to
+each reptile housed here.  They range from forest floors that provide cover to
+fallen trees providing a place for snakes to soak up the sun to hazardous pools
+of water home to alligators.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 817
+D2
+~
+~
+0 0 824
+S
+#824
+Simulated Forest Floor~
+   The forest floor is covered in thick leaves.  The bottom layers are
+decomposed and black creating cover for the reptiles here.  It also provides a
+habitat for the insects they consume to survive.  Scattered about are dead
+trees, hollowed out, that allow reptiles to hide inside or soak up the sun on
+top.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 823
+D1
+~
+~
+0 0 827
+D2
+~
+~
+0 0 826
+D3
+~
+~
+0 0 825
+S
+#825
+A Passageway Between Exhibits~
+   This short passageway connects the two exhibits and provides a shortcut to
+your next adventure.  To the east is Reptilia and west is the Aviary.
+~
+8 4 0 0 0 0
+D1
+~
+~
+0 0 824
+D3
+~
+~
+0 0 819
+S
+#826
+The Cobra's Pit~
+   This section of the exhibit is composed of a swampy marsh area and in the
+middle is a small island.  The island is covered in a thick bamboo thicket
+providing cover for a massive snake.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 824
+S
+#827
+Simulated Forest Floor~
+   The forest floor is covered in thick leaves.  The bottom layers are
+decomposed and black creating cover for the reptiles here.  It also provides a
+habitat for the insects they consume to survive.  Scattered about are dead
+trees, hollowed out, that allow reptiles to hide inside or soak up the sun on
+top.
+~
+8 0 0 0 0 3
+D1
+~
+~
+0 0 828
+D3
+~
+~
+0 0 824
+S
+#828
+Alligator Infested Waters~
+   You have entered into a pool of water, covered in a thick slime.  Beady eyes
+poke out of the water, staring at you.  The water stands still as the eyes creep
+closer towards you.  You are face to face with an unknown creature...
+~
+8 0 0 0 0 3
+D3
+~
+~
+0 0 827
+S
+#829
+The Entrance to the Primates Exhibit~
+   This part of the zoo houses a vast array of primates.  The caretakers of the
+zoo put a lot of thought into the building of this area, creating a unique
+playground to fit each primates needs.  This could be an interesting endeavor...
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 830
+D2
+~
+~
+0 0 817
+S
+#830
+The Monkey-Chimp Playground~
+   Boulders and large rocks of varying sizes are cascaded across the landscape
+here.  Large patches of nutmeg plants and banana trees sprout upwards between
+the rocks and boulders, providing nutrition.  Several tall trees are seen
+throughout the area, connected by thick heavy vines, providing the primates
+access from tree to tree and adequate exercise to keep them healthy.  Watch out
+for flying dung rockets and chimpanzee shenanigans.
+~
+8 0 0 0 0 3
+D0
+~
+~
+0 0 832
+D1
+~
+~
+0 0 833
+D2
+~
+~
+0 0 829
+D3
+~
+~
+0 0 831
+S
+#831
+A Passageway Between Exhibits~
+   This short passageway connects the two exhibits and provides a shortcut to
+your next adventure.  To the east is the Primate exhibit and west is Panthera.
+~
+8 4 0 0 0 0
+D1
+~
+~
+0 0 830
+D3
+~
+~
+0 0 837
+S
+#832
+The Silverback's Den~
+   A fully fruited banana tree and pygmy date palm are growing strong, claimed
+by the largest of the primates.  The ground is littered with banana peels and
+gnawed pieces of rotten wood and roots.  A canopy of tropical trees provides
+protection from the sun and shade on a hot day.  Nestled deep in the plants and
+trees is a small, cozy looking, nest of matted down tropical leaves.
+~
+8 0 0 0 0 3
+D2
+~
+~
+0 0 830
+S
+#833
+Playground of Trees~
+   A cluster of tropical trees are scattered around the area.  Thick, heavy
+vines are strewn amongst the trees, some swinging in the wind.  Baboons swing
+from vine to vine, mocking you and point their bare asses in your direction.
+~
+8 0 0 0 0 3
+D3
+~
+~
+0 0 830
+D4
+~
+~
+0 0 835
+S
+#835
+The Baboon King's Throne~
+   Nested high in the tree is the Baboon King's throne, constructed of thick
+branches wrapped in deep green vines.  Long, slender leaves pad the seat of the
+throne.  Racks of bananas, fruits, and various nuts are stored throughout the
+throne room.  Several servants walk around the area, tending to the demands of
+the king.
+~
+8 4 0 0 0 3
+D5
+~
+~
+0 0 833
+S
+#836
+The Entrance to Panthera~
+   Many large cat species have found their home in the Panthera Exhibit.  Toryn
+is extremely proud of the rare species they have been able to provide to the
+citizens.  Tigers, leopards, and saber-tooths are among the most popular.  
+Several cats are heard purring...  But you can't see them...
+~
+8 0 0 0 0 2
+D0
+~
+~
+0 0 837
+D2
+~
+~
+0 0 815
+S
+#837
+Feline Frenzy~
+   This room simulates a wide variety of landscapes that blend seamlessly
+together.  A large flat area, consisting of thick grasslands, perfect for large
+cats to hide in, extends towards large boulder piles.  Small trees grow up from
+the boulders while others have fallen over, giving the cats in the area a perch
+to scan from.  The boulders blend into a steep mountain side that has winding
+paths up and down it.
+~
+8 0 0 0 0 2
+D0
+~
+~
+0 0 838
+D1
+~
+~
+0 0 831
+D2
+~
+~
+0 0 836
+D3
+~
+~
+0 0 839
+S
+#838
+High Up the Mountainside~
+   The journey up the winding path of loose rocks was treacherous and strenuous.
+It has lead to a flat area high up the mountainside.  The area is protected by
+giant rocks which have apparently fallen from the mountain.  The temperature has
+dropped significantly due to the elevation and a chilling wind blows right
+through you.  Gnawed bones of dead creatures litter the area and clang together
+as you walk around.
+~
+8 0 0 0 0 5
+D2
+~
+~
+0 0 837
+S
+#839
+Feline Frenzy~
+   This room simulates a wide variety of landscapes that blend seamlessly
+together.  A large flat area, consisting of thick grasslands, perfect for large
+cats to hide in, extends towards large boulder piles.  Small trees grow up from
+the boulders while others have fallen over, giving the cats in the area a perch
+to scan from.  The boulders blend into a steep mountain side that has winding
+paths up and down it.
+~
+8 0 0 0 0 0
+D0
+~
+~
+0 0 840
+D1
+~
+~
+0 0 837
+S
+#840
+The Saber-Tooth's Cave~
+   You have a reached a dark cave located just over halfway up the mountainside.
+The cave entrance is about a four by four opening and the edges are jagged,
+tearing at your gear as you enter.  Grass from the lowlands is spread around the
+ground, creating a soft bed for whatever has claimed this area.  What little
+light shines through the opening reveals a pair of eyes staring at your face and
+a pair a huge...  Fangs!?!
+~
+8 0 0 0 0 5
+D2
+~
+~
+0 0 839
+S
+#841
+The Zookeeper's Office~
+   A large desk is centered towards the back wall.  Upon closer inspection it is
+cluttered with feeding plans, medical records, and maintenance schedules to keep
+the zoo running properly and the animals in the best health.
+~
+8 0 0 0 0 0
+D3
+~
+~
+0 0 817
+S
+$~

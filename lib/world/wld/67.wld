@@ -1,0 +1,1551 @@
+#6700
+In the Cabin by the Stream~
+   The cabin isn't very tall and is rather cramped for a person not of gnomish
+descent.  The normal accomdations are seen in the cabin, a bed, a table and some
+furniture.  On a bloody table is a wash basin full of reddish water.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6701
+S
+#6701
+An Overgrown Path Along the Stream~
+   The grass has grown up quite a bit in this area and doesn't appear well used.
+Someone however has recently trampled through this tall grass.  The path runs
+along the stream where a cabin can be seen a short ways to the west.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6702
+D3
+~
+~
+0 0 6700
+S
+#6702
+The Southern End of a Grassy Path~
+   The grassy path has ended.  From the south you can hear the water wheel
+slowly churning water inside the watermill.  The gnome fields are to the east
+and an overgrown path extends west along the stream.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6703
+D1
+~
+~
+0 0 6751
+D2
+~
+~
+0 0 6750
+D3
+~
+~
+0 0 6701
+S
+#6703
+A Grassy Path~
+   This path is covered with short green grass that is kept well manicured.  It
+continues south towards the watermill and the gnome fields.  A small gnome
+workshop can be seen to the west.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6705
+D2
+~
+~
+0 0 6702
+D3
+~
+~
+0 0 6704
+S
+#6704
+A Gnomish Workshop~
+   You have entered a gnome's workshop.  Blueprints and papers full of scribbles
+and mathematical formulas are scattered around a table.  Vials and beakers of
+liquid compounds are labeled on shelves around the workshop.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6703
+D5
+~
+~
+0 0 -1
+S
+#6705
+A Grassy Path~
+   This path is covered with short green grass that is kept well manicured.  It
+continues south towards the watermill and the gnome fields.  A small gnome
+workshop can be seen to the east.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6707
+D1
+~
+~
+0 0 6706
+D2
+~
+~
+0 0 6703
+S
+#6706
+A Gnomish Workshop~
+   You have entered a gnome's workshop.  Blueprints and papers full of scribbles
+and mathematical formulas are scattered around a table.  Gemstones of all
+textures, colors and sizes are scattered around the workshop.
+~
+67 32768 0 0 0 0
+D3
+~
+~
+0 0 6705
+S
+#6707
+A Grassy Path~
+   This path is covered with short green grass that is kept well manicured.  It
+continues south towards the watermill and the gnome fields.  A small gnome
+workshop can be seen to the west.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6709
+D2
+~
+~
+0 0 6705
+D3
+~
+~
+0 0 6708
+S
+#6708
+A Gnomish Workshop~
+   You have entered a gnome's workshop.  Blueprints and papers full of scribbles
+and mathematical formulas are scattered around a table.  Hammers, andvils and
+several types of metals are strewn about the workshop.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6707
+S
+#6709
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.  A grassy path can be accessed north and south from here.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6713
+D1
+~
+~
+0 0 6718
+D2
+~
+~
+0 0 6707
+D3
+~
+~
+0 0 6710
+S
+#6710
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6709
+D3
+~
+~
+0 0 6711
+S
+#6711
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6710
+D3
+~
+~
+0 0 6712
+S
+#6712
+An Entrance to the Gnome village~
+   The grass covered path things and gives way to a dusty path which leads into
+a village.  Two wooden poles are set on either side of the path, marking the
+gnomish territory.  A sign is mounted on one of the poles.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6711
+E
+sign~
+"Ye who is curious may seek. Ye who seeks may uncover the unimaginable."
+~
+S
+#6713
+Closed Up Shops~
+   This path is covered with short green grass that is kept well manicured.  It
+continues north to the barracks and the gnome temple.  To the east and west are
+shops.  The windows are dust covered and appear to have not been used in a
+while.  There are posters on the doors of each shop as well.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6716
+D1
+The shop is padlocked and appears unused.
+~
+door~
+2 6703 6715
+D2
+~
+~
+0 0 6709
+D3
+The shop is padlocked and appears unused.
+~
+door~
+2 6701 6714
+E
+poster~
+***MISSING***
+
+Fezzy Fizzelbaum
+Height: 3'6''
+Weight: 45 lbs.
+Eyes: Blue / Hair: Brown
+Last seen wearing a red shirt and brown pants.
+
+***MISSING***
+
+Quibby Quazzelbaum
+Height: 3'3"
+Weight: 40 lbs.
+Eyes: Brown / Hair: Brown
+Last seen wearing a blue shirt and black pants.
+~
+S
+#6714
+Fezzy Fizzelbaum's Shop~
+   You count four aisles in all in this shop.  All of them are full of some
+interesting gadgets and gizmos.  Dust has settled on most everything in the
+shop.  On a small workbench covered in tools, near the back of the shop, a
+contraption you have never seen before catches your eye.
+~
+67 32768 0 0 0 0
+D1
+~
+door~
+2 6701 6713
+S
+#6715
+Quibby Quazzelbaum's Shop~
+   Gemstones of every color and inventions harnessing the power of gems line the
+shelves in this shop.  Near the back of the shop you spot a workbench, cluttered
+with tools.  A thick metal rod is connects to a flat metal slab above the bench
+and extends up and out of the shop, into the sky.  Around the rod are glowing
+gemstones.
+~
+67 32768 0 0 0 0
+D3
+~
+door~
+2 6703 6713
+S
+#6716
+A Grassy Path~
+   This path is covered with short green grass that is kept well manicured.  It
+continues north to the barracks and the gnome temple.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6717
+D2
+~
+~
+0 0 6713
+D5
+~
+~
+0 0 -1
+S
+#6717
+The Northern End of a Grassy Path~
+   The grassy path ends here and all you see to the north is waist high grass
+blowing in the breeze.  The gnome temple is to the west while the barracks are
+to the east.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6728
+D2
+~
+~
+0 0 6716
+D3
+~
+~
+0 0 6748
+S
+#6718
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6719
+D3
+~
+~
+0 0 6709
+S
+#6719
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.  The smell of food cooking and children playing can be heard
+from the houses to the north and south.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6720
+D1
+~
+~
+0 0 6722
+D2
+~
+~
+0 0 6721
+D3
+~
+~
+0 0 6718
+S
+#6720
+Inside a Gnome House~
+   This is a small, quaint house.  It's just clean enough to be sanitary but
+messy enough to look lived in.  All around the house are gnomish inventions
+which make life here easier.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6719
+S
+#6721
+Inside a Gnome House~
+   This is a small, quaint house.  It's just clean enough to be sanitary but
+messy enough to look lived in.  All around the house are gnomish inventions
+which make life here easier.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6719
+S
+#6722
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6724
+D3
+~
+~
+0 0 6719
+S
+#6723
+Inside a Gnome House~
+   This is a small, quaint house.  It's just clean enough to be sanitary but
+messy enough to look lived in.  All around the house are gnomish inventions
+which make life here easier.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6724
+S
+#6724
+A Dusty Path~
+   This well used path spans east and west through the entire village.  An
+occasional gust of wind disturbs the dust, creating dusty swirls which fill your
+mouth and eyes.  The smell of food cooking and children playing can be heard
+from the houses to the north and south.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6723
+D1
+~
+~
+0 0 6749
+D2
+~
+~
+0 0 6725
+D3
+~
+~
+0 0 6722
+S
+#6725
+Inside a Gnome House~
+   This is a small, quaint house.  It's just clean enough to be sanitary but
+messy enough to look lived in.  All around the house are gnomish inventions
+which make life here easier.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6724
+S
+#6726
+The Barracks~
+   These are the living quarters of the gnome guards.  Wooden bunks are stacked
+three high and are accessed by ladders at the foot.  They are neatly made and
+covered by brown fur throws.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6728
+S
+#6727
+The Barracks~
+   These are the living quarters of the gnome guards.  Wooden bunks are stacked
+three high and are accessed by ladders at the foot.  They are neatly made and
+covered by brown fur throws.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6729
+S
+#6728
+The Hall of the Chieftain~
+   The hall runs down the middle of the barraacks to the Chieftain's quarters.
+The hall is rather plain and composed of bricks laid upon the dirt below which
+can be seen between the cracks.  The barracks are north and south from here.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6731
+D1
+~
+~
+0 0 6729
+D2
+~
+~
+0 0 6726
+D3
+~
+~
+0 0 6717
+S
+#6729
+The Hall of the Chieftain~
+   The hall runs down the middle of the barraacks to the Chieftain's quarters.
+The hall is rather plain and composed of bricks laid upon the dirt below which
+can be seen between the cracks.  The barracks are north and south from here.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6732
+D1
+~
+~
+0 0 6730
+D2
+~
+~
+0 0 6727
+D3
+~
+~
+0 0 6728
+S
+#6730
+The Gnomish Throne Room~
+   A tall electrum throne dominates the eastern side of the room.  Stone
+columns, adorned with gemstones line the room twoards the throne, creating a
+walkway to request an audience with the chieftain.  Perched atop the throne is a
+pair of black muscular wings, rhythmically moving up and down.  A black mist
+pours from the wings and swirls around the chieftain.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6735
+D3
+~
+~
+0 0 6729
+S
+#6731
+The Barracks~
+   These are the living quarters of the gnome guards.  Wooden bunks are stacked
+three high and are accessed by ladders at the foot.  They are neatly made and
+covered by brown fur throws.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6728
+S
+#6732
+The Barracks~
+   These are the living quarters of the gnome guards.  Wooden bunks are stacked
+three high and are accessed by ladders at the foot.  They are neatly made and
+covered by brown fur throws.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6729
+S
+#6733
+Entrance to the Crypt~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 4 0 0 0 0
+D2
+~
+~
+0 0 6736
+S
+T 6733
+#6734
+Standing on a Stone Landing~
+   You stand upon a stone landing just above the crypt.  The air is thick with
+moisture and a musty smell that makes you a little naseous.  A trail of dried
+red liquid leads towards a ladder at the edge of the landing.
+~
+67 32768 0 0 0 0
+D4
+~
+grate~
+1 -1 6735
+S
+T 6734
+#6735
+The Chieftain's Quarters~
+   The living quarters of the Chieftain is elegant, yet modest.  It appears
+everything has a place and is in it's place.  There is a bookcase along the
+eastern wall, packed with the knowledge of gnomes past.  Next to the bookcase is
+a steel grate and you can feel a slight draft blowing up from it.
+~
+67 32768 0 0 0 0
+D3
+~
+~
+0 0 6730
+D5
+A draft blows up from the steel grate which leads to a flat slab below the village.
+~
+grate~
+1 -1 6734
+S
+#6736
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6733
+D1
+~
+~
+0 0 6742
+D3
+~
+~
+0 0 6737
+S
+#6737
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D1
+~
+~
+0 0 6736
+D2
+~
+~
+0 0 6738
+S
+#6738
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6737
+D2
+~
+~
+0 0 6739
+S
+#6739
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6738
+D1
+~
+~
+0 0 6740
+S
+#6740
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D1
+~
+~
+0 0 6741
+D3
+~
+~
+0 0 6739
+S
+#6741
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6746
+D1
+~
+~
+0 0 6745
+D3
+~
+~
+0 0 6740
+S
+#6742
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D1
+~
+~
+0 0 6743
+D3
+~
+~
+0 0 6736
+S
+#6743
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D2
+~
+~
+0 0 6744
+D3
+~
+~
+0 0 6742
+S
+#6744
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6743
+D2
+~
+~
+0 0 6745
+S
+#6745
+The Crypt of Seriphus~
+   Sickly moans echo off the stone walls of this dark crypt, The air is cool and
+humid, creating water drops which form and run down the walls.  Mold has began
+growing on the walls creating a musty stench that assaults your nostrils and
+burns your lungs.  Red drag marks stain the floor...  OMG is that BLOOD!
+~
+67 0 0 0 0 0
+D0
+~
+~
+0 0 6744
+D3
+~
+~
+0 0 6741
+S
+#6746
+The Altar of Seriphus~
+   The air is even colder here.  The hairs on your arm stand up as goosebumps
+form, starting with your arms and spreading.  Each breath creates a white mist,
+blown about by swirling drafts.  The blood trail has lead into this room and the
+stench of death is overwhelming.  An altar, lined with evidence of recent
+sacrifices dominates the western wall.  A dark, misty smoke exudes from it.
+~
+67 4 0 0 0 0
+D2
+~
+~
+0 0 6741
+S
+T 6747
+#6747
+Behind the Atlar~
+   This cramped cutout is littered with gnome corpses.  The being you just
+defeated has to be the culprit of these tragic deaths.  The bodies are piled up
+and do not leave alot of room to maneuver around.  A couple corpses catch your
+attention.  Could they be the missing shopkeepers?
+~
+67 524800 0 0 0 0
+D1
+~
+~
+0 0 6746
+S
+#6748
+The Former Temple of Gahim~
+   The temple appears to have been recently redecorated.  It is free of any
+religious artifacts, except for a statue on top of an altar which has been
+covered by a white cloth.  Tips of apparent bat wings poke out from underneath
+the cloth.  The rows of pews are empty and it doesn't appear the temple gets the
+same amount of worshippers it is used to receiving.
+~
+67 32797 0 0 0 0
+D1
+~
+~
+0 0 6717
+S
+#6749
+An Entrance to the Gnome Village~
+   You stand inside the eastern entrance to the gnome village.  Two poles are
+set on either side of the dusty path, marking the gnomish territory.  Far to the
+north is a mountain range, past the grasslands, while far off to the south you
+spot the City of Midgaard.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6757
+D3
+~
+~
+0 0 6724
+S
+#6750
+Inside the Watermill~
+   You are in an unfinished room.  The mill is built over a small stream that
+flows south of the village.  A large wooden wheel spins using the force of the
+flowing water.  A contraption is attached to the wheel creating a vacuum which
+feeds water to a wooden tube that runs towards the fields.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6702
+S
+#6751
+In the Gnome Fields~
+   A vast variety of crops are grown in the fields.  In the wind the wheat bends
+and the corn cobs rustle against the stalks.  Wooden tubing spans overhead
+across the fields from the watermill.  Intermittent bursts of water spray out
+over the fields from tiny holes.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6752
+D2
+~
+~
+0 0 6753
+D3
+~
+~
+0 0 6702
+S
+#6752
+In the Gnome Fields~
+   A vast variety of crops are grown in the fields.  In the wind the wheat bends
+and the corn cobs rustle against the stalks.  Wooden tubing spans overhead
+across the fields from the watermill.  Intermittent bursts of water spray out
+over the fields from tiny holes.
+~
+67 32768 0 0 0 2
+D2
+~
+~
+0 0 6754
+D3
+~
+~
+0 0 6751
+S
+#6753
+The Gnome Fields Along the Stream~
+   A vast variety of crops are grown in the fields.  In the wind the wheat bends
+and the corn cobs rustle against the stalks.  Wooden tubing spans overhead
+across the fields from the watermill.  Intermittent bursts of water spray out
+over the fields from tiny holes.  The stream flows south along the edge of the
+field.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6751
+D1
+~
+~
+0 0 6754
+S
+#6754
+The Gnome Fields Along the Stream~
+   A vast variety of crops are grown in the fields.  In the wind the wheat bends
+and the corn cobs rustle against the stalks.  Wooden tubing spans overhead
+across the fields from the watermill.  Intermittent bursts of water spray out
+over the fields from tiny holes.  The stream flows south along the edge of the
+field.
+~
+67 32768 0 0 0 2
+D0
+~
+~
+0 0 6752
+D3
+~
+~
+0 0 6753
+S
+#6757
+Outside the Gate of the Gnome Village~
+   You stand outside the eastern gate of the Gnome Village.  The grasslands that
+dominate the area begin to thicken again.  An rarely travelled path goes east
+from here towards the mountains.
+~
+67 32772 0 0 0 2
+D1
+~
+~
+0 0 6758
+D3
+~
+~
+0 0 6749
+S
+#6758
+An Unused Path~
+   You are now on a fairly unused path that leads east out of the village.  You
+wonder what could be out this way.  Far off to the north you can see Mount
+Alerock, home to the dwarven race.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6759
+D3
+~
+~
+0 0 6757
+S
+#6759
+An Unused Path~
+   You are now on a fairly unused path that leads east out of the village.  You
+wonder what could be out this way.  Far off to the north you can see Mount
+Alerock, home to the dwarven race.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6760
+D3
+~
+~
+0 0 6758
+S
+#6760
+The Overgrown Path~
+   As the path continues on, the grass grows higher.  You can't imagine what
+could possibly be out this way.  To the east the grass gives way to a clearing
+before a small mountain.
+~
+67 32768 0 0 0 2
+D1
+~
+~
+0 0 6761
+D3
+~
+~
+0 0 6759
+S
+#6761
+The Clearing~
+   Your progress is suddenly stopped by mountains on all sides.  The path leads
+back to the west, and there appears to be an old mine shaft to the north.
+~
+67 32772 0 0 0 2
+D0
+~
+~
+0 0 6762
+D3
+~
+~
+0 0 6760
+S
+#6762
+Entrance to the Mine Shaft~
+   Grin As you enter the mine shaft, you get a sudden fear of the walls closing
+in on you.  You are surprised to notice that you don't need a light.  The
+grunting of hobgoblins echo off the shaft walls.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6763
+D2
+~
+~
+0 0 6761
+S
+#6763
+Mine Shaft~
+   This mine shaft looks stable, at least in this area.  The wooden supports are
+thick and strong.  Torches line the walls, providing light and enough heat to
+keep things comfortable.  Exits lead in all directions.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6782
+D1
+~
+~
+0 0 6764
+D2
+~
+~
+0 0 6774
+D3
+~
+~
+0 0 6762
+S
+#6764
+Mine Shaft~
+   This mine shaft looks stable, at least in this area.  The wooden supports are
+thick and strong.  Torches line the walls, providing light and enough heat to
+keep things comfortable.  Exits lead in all directions.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6783
+D1
+~
+~
+0 0 6765
+D2
+~
+~
+0 0 6773
+D3
+~
+~
+0 0 6763
+S
+#6765
+Mine Shaft~
+   This mine shaft looks stable, at least in this area.  The wooden supports are
+thick and strong.  Torches line the walls, providing light and enough heat to
+keep things comfortable.  To the south is a series of well guarded rooms and
+east is a magnificent looking walkway.
+~
+67 32768 0 0 0 0
+D1
+~
+~
+0 0 6766
+D2
+~
+~
+0 0 6772
+D3
+~
+~
+0 0 6764
+S
+#6766
+Walkway in the Mountain~
+   You are on a well built path in the middle of a mountain.  It is decorated in
+royal banners giving you sense there is something great up ahead, considering
+the hard work that must have gone into creating this passage.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6767
+D3
+~
+~
+0 0 6765
+S
+#6767
+Walkway in the Mountain~
+   You are on a well built path in the middle of a mountain.  It is decorated in
+royal banners giving you sense there is something great up ahead, considering
+the hard work that must have gone into creating this passage.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6766
+D2
+~
+~
+0 0 6768
+S
+#6768
+The Grand Hall~
+   You have stepped into the Grand Hall of the hobgoblin kingdom; your luck must
+be running low by now.  Golden pillars span the hallway, and you notice a red
+carpet beneath your feet.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6767
+D2
+~
+~
+0 0 6769
+S
+#6769
+The Hobgoblin Throne Room~
+   This is large bright room filled with Hobgoblins which guard their king from
+danger.  To the south there is a large golden throne against the wall.  It
+glitters in the torch light creating a dazzling sight.  A large set of double
+doors can be seen to the side of the throne.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6768
+D1
+A large set of golden double doors lead east off the throne room.
+~
+doors~
+1 0 6792
+S
+#6770
+The King's Treasury~
+   You are inside the hobgoblin's treasury.  As you enter the crowded room
+stacks of coins fall over causing a loud rattle, alerting everyone of your
+presence.  Your eyes are almost blinded by the gold, silver and copper coins.  
+~
+67 32768 0 0 0 0
+D0
+A tall door reinforced with golden bars blocks the way north.
+~
+door~
+1 6798 6771
+S
+#6771
+A Heavily Guarded Room~
+   You are inside a well guarded room off of the main portion of the mine shaft.
+The place is slightly better built than the mine shafts, and is lit by lanterns.
+Something important...  Or valuable...  Must be hidden around here somewhere.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6772
+D2
+A tall door reinforced with golden bars blocks the way south.
+~
+door~
+1 6798 6770
+S
+#6772
+A Heavily Guarded Room~
+   You are inside a well guarded room off of the main portion of the mine shaft.
+The place is slightly better built than the mine shafts, and is lit by lanterns.
+Something important...  Or valuable...  Must be hidden around here somewhere.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6765
+D2
+~
+~
+0 0 6771
+S
+#6773
+The Hobgoblin Armory~
+   The guards store their spare weapons and armor here.  There are rusty swords
+on rotting shelves, and armor hanging from hooks or laying on the floor.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6764
+S
+#6774
+Mine Shaft~
+   Grin You enter a part of the mine shaft where the torches have grown dim and
+are almost ready to go out.  From what you can see, there are plenty of cobwebs
+on the walls and rats at your feet.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6763
+D2
+~
+~
+0 0 6775
+S
+#6775
+Entrance to the Dungeon~
+   The floor dips slightly as you walk into this dark and nasty place.  Your
+skin crawls as you look at the filth on the walls and see it move.  Most of the
+exits lead into jail cells.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6774
+D1
+~
+cell~
+1 0 6777
+D2
+~
+~
+0 0 6776
+D3
+~
+cell~
+1 0 6781
+S
+#6776
+The Dungeon~
+   You are in the deepest and darkest part of the mine shafts.  The light from
+the torches barely reaches to where you are.  Most directions from here lead to
+jail cells.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6775
+D1
+~
+cell~
+1 0 6778
+D2
+~
+cell~
+1 0 6779
+D3
+~
+cell~
+1 0 6780
+S
+#6777
+A Jail Cell~
+   You are in a musty, dark jail cell.  The stench of rotting flesh and unwashed
+underarms saturates the air.  Wet and dirty straw covers the floor.  The walls
+glisten with slime.  Something let's out a groan as it stirs around in the
+straw.
+~
+67 32768 0 0 0 0
+D3
+~
+cell~
+1 0 6775
+S
+#6778
+A Jail Cell~
+   You are in a musty, dark jail cell.  The stench of rotting flesh and unwashed
+underarms saturates the air.  Wet and dirty straw covers the floor.  The walls
+glisten with slime.  Something let's out a groan as it stirs around in the
+straw.
+~
+67 32768 0 0 0 0
+D3
+~
+cell~
+1 0 6776
+S
+#6779
+A Jail Cell~
+   You are in a musty, dark jail cell.  The stench of rotting flesh and unwashed
+underarms saturates the air.  Wet and dirty straw covers the floor.  The walls
+glisten with slime.  Something let's out a groan as it stirs around in the
+straw.
+~
+67 32768 0 0 0 0
+D0
+~
+cell~
+1 0 6776
+S
+#6780
+A Jail Cell~
+   You are in a musty, dark jail cell.  The stench of rotting flesh and unwashed
+underarms saturates the air.  Wet and dirty straw covers the floor.  The walls
+glisten with slime.  Something let's out a groan as it stirs around in the
+straw.
+~
+67 32768 0 0 0 0
+D1
+~
+cell~
+1 0 6776
+S
+#6781
+A Jail Cell~
+   You are in a musty, dark jail cell.  The stench of rotting flesh and unwashed
+underarms saturates the air.  Wet and dirty straw covers the floor.  The walls
+glisten with slime.  Something let's out a groan as it stirs around in the
+straw.
+~
+67 32768 0 0 0 0
+D1
+~
+cell~
+1 0 6775
+S
+#6782
+Small Mine Shaft~
+   You are in a small extension of the mine shaft.  The dust on the floor is
+undisturbed by footprints.
+~
+67 32772 0 0 0 0
+D0
+~
+~
+0 0 6788
+D2
+~
+~
+0 0 6763
+S
+#6783
+The Hobgoblin Barracks~
+   You are suddenly surrounded by a small army of hobgoblin guards.  The room
+itself is a mess with clothes and armor everywhere.  The beds are unmade and
+stained.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6784
+D1
+~
+~
+0 0 6785
+D2
+~
+~
+0 0 6764
+S
+#6784
+The Hobgoblin Barracks~
+   You are suddenly surrounded by a small army of hobgoblin guards.  The room
+itself is a mess with clothes and armor everywhere.  The beds are unmade and
+stained.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6783
+S
+#6785
+The Mess Hall~
+   You stand in the hobgoblin eating area.  There are a few rotting tables and
+many broken dishes scattered around the room.  You almost slip on a rotten piece
+of meat, but catch yourself just in time.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6786
+D1
+~
+~
+0 0 6787
+D3
+~
+~
+0 0 6783
+S
+#6786
+The Store Room~
+   You stand in a small room filled with flour, grain, fruit, and bat droppings.
+The flour, droppings, and rotten fruit that have fallen on the floor creates a
+sticky nasty goo that sticks to your shoe.
+~
+67 32768 0 0 0 0
+D2
+~
+~
+0 0 6785
+S
+#6787
+The Kitchen~
+   His kitchen hasn't been cleaned since the creation of humans.  The trash and
+spoiled food laying on the floor reach up to your knees.  Off to the side a pot
+is boiling over.  A human hand floats in it!
+~
+67 32768 0 0 0 0
+D3
+~
+~
+0 0 6785
+S
+#6788
+Small Mine Shaft~
+   You come to a place in the mine shaft where a tunnel leads down to a wooden
+door with a glowing pentagram engraved in it.  The small passage continues north
+and south.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6789
+D2
+~
+~
+0 0 6782
+D5
+A wooden door blocks the way down. An engraved pentagram glows brightly upon it!
+~
+door~
+2 6797 6790
+S
+#6789
+The Hermit's Lair~
+   You are in a small section where the mine wall has collapsed to reveal a tiny
+one-room cave.  The area is barely lit, but you can make out something moving
+towards you.
+~
+67 32772 0 0 0 0
+D2
+~
+~
+0 0 6788
+S
+#6790
+An Underground Shaft of Rituals~
+   The room is dark except for a candles lit at each corner of the pentagram.  
+Shadows and figures circle around the center of the room, letting out growls and
+moans.  A dark robed figure is chanting and dancing around the room,
+communicating with the spirits he has called forth.
+~
+67 32768 0 0 0 0
+D4
+A wooden door blocks the way up. An engraved pentagram glows brightly upon it!
+~
+door~
+2 6797 6788
+S
+#6791
+The Princess' Chamber~
+   This chamber is moderately sized and each wall is covered in dark wooden
+wardrobes and mirrors except for one wall, which is dominated by a four poster
+bed.  The bed is made of the same dark wood and is covered by a dark purple
+throw accented with gold frills.  Pillows are stacked neatly at the head of the
+bed several feet high.
+~
+67 32785 0 0 0 0
+D2
+~
+~
+0 0 6792
+S
+#6792
+The Royal Foyer~
+   The foyer serves as the entryway to both the Princess' and royal chambers.  
+A tall wooden pole provides support to this area of the mine.  The stone floor is
+polished to almost a mirrored finish and not a speck of dust is seen on any
+surface.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6791
+D2
+~
+~
+0 0 6793
+D3
+~
+doors~
+1 0 6769
+S
+#6793
+The Royal Chambers~
+   The chamber is expansive and breathtakingly decorated.  It appears the royal
+family do not live in filth like the rest of the hobgoblins.  A wardrobe of
+golden oak is located along the western wall.  A wooden canopy bed, adorned with
+gold and silver accents, is located off the eastern wall.
+~
+67 32768 0 0 0 0
+D0
+~
+~
+0 0 6792
+S
+$~

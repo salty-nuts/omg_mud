@@ -1,0 +1,234 @@
+#5100
+goblin slave~
+the goblin slave~
+A goblin slave lies here asleep.
+~
+   The defenseless goblin begs for mercy.  
+~
+138 0 0 0 0 0 0 0 350 E
+1 19 14 1d1+6 6d3+3
+40000 60000
+4 4 1
+E
+#5101
+drow commoner~
+the Drow commoner~
+A drow commoner is here, walking around on guard duty.
+~
+   I doubt he is the type to give directions.  
+~
+6248 0 0 0 16 0 0 0 -1000 E
+10 14 11 10d10+700 8d4+9
+186666 280000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5102
+drow noble warrior~
+the drow warrior~
+A drow warrior stands here guarding his home.
+~
+   He looks kind of annoyed!  
+~
+6186 0 0 0 16 0 0 0 -1000 E
+12 12 10 12d12+1008 8d4+8
+213333 320000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#5103
+drow noble mage~
+the drow mage~
+A drow mage is here protecting his home.
+~
+   The mage prepares to cast a spell...  At you!!  
+~
+6186 0 0 0 16 0 0 0 -1000 E
+15 10 9 15d15+1575 8d4+8
+253333 380000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+T 5101
+#5104
+drow priestess~
+the drow priestess~
+A drow priestess is here shouting orders.
+~
+   I wouldn't want go get on her bad side!  
+~
+6186 0 0 0 16 0 0 0 -1000 E
+17 8 8 17d17+2023 8d4+12
+280000 420000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+T 5101
+#5105
+drow master~
+the drow master~
+A drow master stares at you angrily.
+~
+   The drow master is ALWAYS ready for a fight.  
+~
+6186 0 0 0 16 0 0 0 -1000 E
+21 8 4 21d21+3528 10d5+15
+360000 540000
+8 8 1
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#5106
+drow weaponsmaster~
+the weaponsmaster~
+A drow weaponsmaster is here shadow boxing.
+~
+   He definitely know his way around in combat.  
+~
+6186 0 0 0 65552 0 0 0 -1000 E
+23 5 3 23d23+4232 10d5+15
+386666 580000
+8 8 1
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Luck: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#5107
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the house is standing here.
+~
+   She looks really and truly annoyed that you have found your way here.  
+~
+2090 0 0 0 65552 0 0 0 -1000 E
+24 3 3 24d24+4608 10d5+17
+400000 600000
+8 8 2
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 5101
+#5108
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the first house is waiting for you.
+~
+   She looks like she is about to rip your head of and eat it.  
+~
+2090 0 0 0 65552 0 0 0 -1000 E
+25 5 2 25d25+5000 10d5+13
+413333 620000
+8 8 2
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 5101
+#5109
+drider~
+the drider~
+The drider looks at you viciously while it draws its sword.
+~
+   This half-spider, half-drow creature is a formidable opponent.  
+~
+24680 0 0 0 65552 0 0 0 -1000 E
+8 15 12 8d8+384 6d3+7
+133333 200000
+8 8 0
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5110
+drider~
+the drider~
+The drider looks at you viciously while it draws its sword.
+~
+   This half-spider, half-drow creature is a formidable opponent.  
+~
+24682 0 0 0 65552 0 0 0 -1000 E
+11 12 10 11d11+847 8d4+7
+200000 300000
+8 8 0
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5111
+yochlol~
+the yochlol~
+A yochlol forms out of a swirling mist...
+~
+   The yochlol is not in a good mood.  
+~
+223290 0 0 0 65616 0 0 0 -1000 E
+23 5 3 23d23+4232 10d5+16
+386666 580000
+8 8 2
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Luck: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+$

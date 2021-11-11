@@ -1,0 +1,92 @@
+#1000
+The Beginning~
+You are at the beginning.  Look elsewhere for the answers
+to your questions, Mortal.  There are places other than here
+to be, and times other than now for when to be there.  It is
+but for you to choose.  Go, away from the beginning.
+~
+10 24 0 0 0 0
+D0
+~
+~
+0 0 1001
+D2
+~
+~
+0 0 1002
+S
+T 1002
+#1001
+Something For Everyone~
+You have found something for everyone!  Here you have many
+different places to be, and many interesting times for which to
+be.  Whatever may be.  So be it.  But only if you choose.
+~
+10 16 0 0 0 0
+D1
+~
+~
+0 0 1004
+D2
+~
+~
+0 0 1000
+D3
+~
+~
+0 0 1003
+S
+T 1300
+#1002
+Somewhere to Rest~
+This is somewhere to rest.  Somewhere to recover after being
+somewhere other than here.  Those places are tough.  Not here.
+~
+10 4194320 0 0 0 0
+D0
+~
+~
+0 0 1000
+S
+#1003
+Low Level Zone Hallway~
+You are in an unfinished room.
+~
+10 0 0 0 0 0
+D1
+~
+~
+0 0 1001
+S
+#1004
+An unfinished room~
+You are in an unfinished room.
+~
+10 0 0 0 0 0
+D3
+~
+~
+0 0 1001
+S
+#1098
+Training Room~
+This room is for learning stuff.
+~
+10 8 0 0 0 0
+D4
+~
+~
+0 0 1099
+S
+#1099
+Visual Studio Code~
+You are inside of Visual Studio Code, the integrated development enviroment of choice
+for Salty.  That is, when he's not deep in the shell.
+~
+10 4195328 0 0 0 0
+D5
+~
+~
+0 0 1098
+S
+$~

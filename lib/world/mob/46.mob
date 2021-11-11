@@ -1,0 +1,204 @@
+#4600
+green ant worker~
+a green worker ant~
+A green worker ant toils away mindlessly for its queen.
+~
+   The green worker ant is the powerhouse behind this anthill.  It slaves away
+almost constantly, digging new tunnels, gathering food, and even protecting the
+hill from other bugs.  
+~
+72 0 0 0 0 0 0 0 0 E
+15 5 -2 375d4+5625 3d2+15
+11250 22500
+8 8 1
+BareHandAttack: 4
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4601
+red soldier ant~
+a red soldier ant~
+A red soldier ant is invading the anthill.
+~
+   Sent by the red queen to seek and destroy for progression and expansion of
+the red ant colony.  This red soldier ant has been sent here to eliminate the
+existing residents.  
+~
+65612 0 0 0 16777216 0 0 0 0 E
+25 -5 -10 625d7+15625 5d3+25
+54687 109375
+8 8 1
+BareHandAttack: 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#4602
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 25d1+25 1d2+1
+12 25
+8 8 0
+E
+#4603
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 25d1+25 1d2+1
+12 25
+8 8 0
+E
+#4606
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 25d1+25 1d2+1
+12 25
+8 8 0
+E
+#4609
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 25d1+25 1d2+1
+12 25
+8 8 0
+E
+#4616
+green soldier ant~
+a green soldier ant~
+A green soldier ant is protecting the anthill.
+~
+   The green soldier ant was born and raised to protect the queen and the entire
+anthill.  They do no work, but will sacrifice themselves for the queen.  
+~
+10 0 0 0 0 0 0 0 3 E
+20 0 -6 500d6+10000 4d2+20
+30000 60000
+8 8 1
+BareHandAttack: 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4632
+huge green soldier ant~
+a huge green soldier ant~
+A huge green soldier ant stands here ready to die protecting the Queen.
+~
+   This special soldier ant has been given the sole responsibility of protecting
+the queen from attack.  It is by far one of the largest ants in the entire
+anthill.  
+~
+4106 0 0 0 16777472 0 0 0 0 E
+25 -5 -10 625d7+15625 5d3+25
+54687 109375
+8 8 1
+BareHandAttack: 4
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 4603
+T 4605
+T 4607
+#4633
+green queen ant~
+the green queen ant~
+The green queen ant is ensuring the survival of the species.
+~
+   She has no purpose other than to lead the anthill, and breed.  She is huge
+and it doesn't look like she could ever fit through any of the tunnels.  She
+guards over her newborn larvae.  
+~
+26214410 0 0 0 41943296 0 0 0 0 E
+40 -20 -22 1000d11+40000 8d5+40
+220000 440000
+8 8 2
+BareHandAttack: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 10
+SavingRod: 10
+SavingPetri: 10
+SavingBreath: 10
+SavingSpell: 10
+E
+T 4602
+T 4604
+T 4606
+#4699
+dominant male ant green~
+a green dominant male ant~
+A large green dominant male ant scutters about, making sure the workers tend their jobs.
+~
+   This large dominant male green ant is second only to the queen.  Its purpose
+is to ensure everything gets done and the queen keeps pumping out cute little
+larvae.  
+~
+72 0 0 0 92274688 1 0 0 0 E
+25 -5 -10 625d7+15625 5d3+25
+54687 109375
+8 8 1
+BareHandAttack: 4
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+$

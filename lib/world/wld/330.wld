@@ -1,0 +1,141 @@
+#33000
+The Inquisition - Information Room~
+You are in an unfinished room.
+~
+330 524288 0 0 0 0
+S
+#33001
+The Origins of the River of Lava~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D1
+~
+~
+0 0 33002
+D3
+~
+~
+0 0 33018
+S
+#33002
+Floating Down the River of Lava~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D1
+~
+~
+0 0 33003
+D3
+~
+~
+0 0 33001
+S
+#33003
+Floating Down the River of Lava~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D1
+~
+~
+0 0 33004
+D3
+~
+~
+0 0 33002
+S
+#33004
+A Widened Section in the River of Lava~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D0
+~
+~
+0 0 33006
+D1
+~
+~
+0 0 33005
+D3
+~
+~
+0 0 33003
+S
+#33005
+A Widened Section in the River of Lava~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D0
+~
+~
+0 0 33007
+D1
+~
+~
+0 0 33008
+D3
+~
+~
+0 0 33004
+S
+#33006
+Lava Swirls in the River~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D1
+~
+~
+0 0 33007
+D2
+~
+~
+0 0 33004
+S
+#33007
+Lava Swirls in the River~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D2
+~
+~
+0 0 33005
+D3
+~
+~
+0 0 33006
+S
+#33008
+At the Base of a Rock~
+You are in an unfinished room.
+~
+330 1835016 0 0 0 0
+D3
+~
+~
+0 0 33005
+S
+T 33001
+#33018
+A Cave Entrance~
+You are in an unfinished room.
+~
+330 1572876 0 0 0 0
+D1
+~
+~
+0 0 33001
+S
+#33019
+On Top Of The Rock~
+You are in an unfinished room.
+~
+330 25 0 0 0 0
+S
+T 33002
+$~

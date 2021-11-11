@@ -1,0 +1,363 @@
+#1000
+orb light ball~
+an Orb of Light~
+A shining ball of light is here.~
+~
+1 abgir 0 0 0 ap 0 0 0 defg 0 0 0
+0 0 -1 0
+1 200 0 0 0 100
+E
+orb light ball~
+This ball of light illuminates the way before you.
+~
+A
+18 2
+A
+19 2
+#1001
+ring rose queen~
+the Ring of the Rose Queen~
+A signet ring in the shape of a rose lies here.~
+~
+9 abgir 0 0 0 abo 0 0 0 0 0 0 0
+5 0 0 0
+1 200 0 0 0 100
+E
+ring rose queen~
+This gold signet ring is in the shape of a beautiful rose.
+~
+A
+18 3
+A
+19 3
+#1002
+talisman quetzalcoatl jade gold~
+a Jade Talisman of Quetzalcoatl~
+A talisman made of jade, gold and eagle feathers lies here.~
+~
+9 abgir 0 0 0 ac 0 0 0 0 0 0 0
+10 0 0 0
+1 200 0 0 0 100
+E
+talisman quetzalcoatl jade gold~
+This ornate necklace is carved of jade, banded with gold and adorned with feathers.
+~
+A
+18 2
+A
+19 2
+#1003
+thor battle armor~
+Thor's Battle Armor~
+Behold!  Thor's Battle Armor lies here.~
+~
+9 abgir 0 0 0 ad 0 0 0 0 0 0 0
+35 0 0 0
+1 200 0 0 0 100
+E
+thor battle armor~
+This golden armor has burns from Jormungandr and scorches from Surtr.
+~
+A
+18 10
+A
+19 10
+#1004
+golden halo~
+a Golden Halo~
+A golden halo floats here.~
+~
+9 abgir 0 0 0 ae 0 0 0 0 0 0 0
+10 0 0 0
+1 200 0 0 0 100
+E
+golden halo~
+A golden sun disk, a halo, just like Jesus in those paintings.
+~
+A
+18 3
+A
+19 3
+#1005
+boots outer planes~
+a pair of Boots of the Outer Planes~
+A pair of Boots of the Outer Planes are lying here.~
+~
+9 abgir 0 0 0 ag 0 0 0 0 0 0 0
+15 0 0 0
+1 200 0 0 0 100
+E
+boots outer planes~
+These black boots are made of some alien leather.
+~
+A
+18 3
+A
+19 3
+#1006
+greaves freedom~
+the Two Greaves of Freedom~
+The Two Greaves of Freedom stand here.~
+~
+9 abgir 0 0 0 af 0 0 0 0 0 0 0
+10 0 0 0
+1 200 0 0 0 100
+E
+greaves freedom~
+The Two Greaves of Freedom are patriotic and completely nationalistic.
+~
+A
+18 2
+A
+19 2
+#1007
+bronze gauntlets~
+a pair of bronze gauntlets~
+A pair of bronze gauntlets lies here.~
+~
+9 abgir 0 0 0 ah 0 0 0 0 0 0 0
+5 0 0 0
+1 200 0 0 0 100
+E
+bronze gauntlets~
+These legendary gauntlets are made from hand hammered bronze.
+~
+A
+18 2
+A
+19 2
+#1008
+green sleeves~
+a pair of green sleeves~
+A pair of green sleeves, my love.~
+~
+9 abgir 0 0 0 ai 0 0 0 0 0 0 0
+5 0 0 0
+1 200 0 0 0 100
+E
+green sleeves~
+The sleeves are made of a fine green linen.
+~
+A
+18 2
+A
+19 2
+#1009
+cloak shadow~
+a Cloak of Shadow~
+A Cloak of Shadow floats here.~
+~
+9 abgir 0 0 0 ak 0 0 0 0 0 0 0
+10 0 0 0
+1 200 0 0 0 100
+E
+cloak shadow~
+The cloak is exceptionally dark, and stands on its own like Dr. Strange's.
+~
+A
+18 2
+A
+19 2
+#1010
+girdle giant strength~
+a Girdle of Giant Strength~
+A Girdle of Giant Strength lies here.~
+~
+9 abgir 0 0 0 al 0 0 0 0 0 0 0
+15 0 0 0
+1 200 0 0 0 100
+E
+girdle giant strength~
+This massive leather belt with gold fittings evokes power and opulance.
+~
+A
+18 5
+A
+19 5
+A
+1 10
+#1011
+freezing steel bracelet~
+a freezing steel bracelet~
+A freezing steel bracelet~
+~
+9 abgir 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+1 200 0 0 0 100
+E
+freezing steel bracelet~
+A steel wristguard, a bit larger than a handcuff, is covered in frost.
+~
+A
+18 2
+A
+19 2
+A
+3 2
+A
+4 2
+#1012
+cruciform dagger~
+a Cruciform Dagger~
+A cruciform dagger lies here.~
+Cruciform Dagger flashes in the shadows.
+~
+5 abgi 0 0 0 ano 0 0 0 0 0 0 0
+0 8 4 14
+0 1000 0 0 0 100
+E
+cruciform dagger~
+The pattern woven steel is balanced in the hand and tapers to a fine point, perfect for stabbing.
+~
+A
+18 8
+A
+19 8
+#1013
+bark world tree yggdrasil~
+Bark of the World Tree, Yggdrasil~
+A chunk of bark from Yggdrasil, the World Tree stands here.~
+~
+9 abgir 0 0 0 aj 0 0 0 0 0 0 0
+35 0 0 0
+1 200 0 0 0 100
+E
+bark world tree yggdrasil~
+A chunk of bark from Yggdrasil, the World Tree stands here.
+~
+A
+18 2
+A
+19 2
+A
+2 2
+A
+5 2
+A
+6 2
+#1014
+pair aviator sunglasses~
+a Pair of Aviators~
+A pair of reflective aviator sunglasses lies here.~
+~
+9 abgi 0 0 0 ar 0 0 0 0 0 0 0
+0 0 0 0
+2 1000 1000 0 0 100
+E
+pair aviator sunglasses~
+These aviators are silver frames and pristine, unscratched, reflective glass.  Perfect.
+~
+A
+18 10
+A
+19 10
+#1015
+heron marked blade~
+a heron marked blade~
+A heron marked blade lies here.~
+~
+5 abgi 0 0 0 ano 0 0 0 0 0 0 0
+0 12 4 12
+1 1 0 0 0 100
+E
+heron marked blade~
+The heron marked blade is a beautiful ancient katana.
+~
+A
+18 10
+A
+19 10
+#1016
+wooden lyre~
+a wooden lyre~
+A simple wooden lyre sits here.~
+~
+14 abgi 0 0 0 ap 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0 100
+E
+wooden lyre~
+Made of simple hardwood, the lyre is practical and sturdy.
+~
+A
+28 50
+A
+29 50
+A
+30 50
+A
+25 50
+A
+26 50
+A
+27 50
+A
+18 2
+A
+19 2
+#1017
+floating recall~
+a floating recall ability~
+A floating recall ability is here.~
+~
+9 abgir 0 0 0 aq 0 0 0 defgr 0 0 0
+25 0 0 0
+1 2000 0 0 0 100
+T 1005
+E
+floating recall~
+The ability to recall floats here.  Try releasing it.
+~
+A
+32 50
+A
+33 50
+A
+34 50
+A
+35 50
+A
+36 50
+#1018
+dane axe jotunsbane~
+Jutunsbane, the Dane Axe~
+A giagantic axe is standing here, ready to slay giants.~
+dane axe howls out for jotun blood!
+~
+5 u 0 0 0 an 0 0 0 0 0 0 0
+0 15 12 3
+10 10 0 0 0 0
+A
+18 6
+A
+19 6
+#1098
+greatsword sword conan~
+the Greatsword of Conan~
+A greatsword has been left here.~
+~
+5 u 0 0 0 a 0 0 0 0 0 0 0
+0 30 15 3
+0 0 0 0 0 0
+A
+18 10
+A
+19 10
+#1099
+obelisk teleport~
+an Obelisk of Teleportation~
+An Obelisk of Teleportation has been erected here.~
+Nothing.
+~
+8 ag 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+99999 999999 0 0 0 100
+T 1004
+E
+obelisk teleport~
+An ancient, iron obelisk towers five meters above you.  The iron is finely forged
+and does not have a hint of rust, despite being pure iron and exposed to the elements
+for eons.  There are etchings on the four sides of the obelisk in some ancient language
+that defies your knowledge.
+~
+$~

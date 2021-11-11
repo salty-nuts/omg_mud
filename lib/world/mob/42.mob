@@ -1,0 +1,225 @@
+#4200
+red dragon~
+a red dragon~
+A red dragon is curled up here.
+~
+   As you get close enough to see the small details, the dragon whips its snout
+toward you, breathing a small cloud of smoke.  
+~
+188474 0 0 0 0 0 0 0 -1000 E
+22 8 4 22d22+3872 10d5+12
+373333 560000
+8 8 1
+BareHandAttack: 8
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4201
+king dragons~
+the King of the Dragons~
+The King of the Dragons reclines on his tail here.
+~
+   He looks extremely large, and as you lean a little forward to look closer, he
+narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
+cough and take a step backwards.  
+~
+42 0 0 0 48 0 0 0 -1000 E
+30 3 -3 30d30+8100 12d6+21
+506666 760000
+8 8 1
+BareHandAttack: 8
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 4200
+#4202
+hatchling hatch dragon drag~
+a Dragon Hatchling~
+A dragon hatchling is lying here curled up into a ball
+~
+   It looks up at you and breathes a small tougue of flame.  
+~
+253982 0 0 0 56 0 0 0 -10 E
+22 8 4 22d22+3872 10d5+13
+373333 560000
+8 8 1
+BareHandAttack: 4
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4203
+troll~
+a troll~
+A large, hulking troll is standing here.
+~
+   It looks big, and very hungry...  
+~
+253978 0 0 0 56 0 0 0 -1000 E
+22 8 4 22d22+3872 10d5+12
+373333 560000
+8 8 1
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4204
+dragon guard~
+a Guard Dragon~
+A dragon is here, blocking your way
+~
+   He lookes at you, and you see a dangerous glint in his eye...  
+~
+253978 0 0 0 120 0 0 0 -1000 E
+26 4 2 26d26+5408 10d5+16
+426666 640000
+8 8 1
+BareHandAttack: 8
+Str: 17
+Dex: 17
+Int: 17
+Wis: 17
+Con: 17
+Luck: 17
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#4205
+elf slave enslaved servant~
+an elven slave~
+An elf is here, mopping the floor.
+~
+   She looks up at you sadly, and you can tell by her eyes that she was broken
+by the dragons long ago.  
+~
+256010 0 0 0 0 0 0 0 1000 E
+22 5 4 22d22+3872 10d5+14
+373333 560000
+8 8 2
+BareHandAttack: 7
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4206
+dragon green~
+a green dragon~
+A green dragon is standing here!
+~
+   The green dragon is big, strong, and dangerous, Unfortunately for you, it has
+already seen you, so there is no good in running.  
+~
+254076 0 0 0 0 0 0 0 0 E
+22 8 4 22d22+3872 10d5+14
+373333 560000
+8 8 1
+BareHandAttack: 8
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#4207
+dragon king ~
+the king of dragons~
+The King of the Dragons reclines on his tail here.
+~
+   He looks extremely large, and as you lean a little forward to look closer, he
+narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
+cough and take a step backwards.  
+~
+83982 0 0 0 16 0 0 0 -800 E
+26 3 2 26d26+5408 10d5+18
+426666 640000
+8 8 0
+Str: 17
+Dex: 17
+Int: 17
+Wis: 17
+Con: 17
+Luck: 17
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 4200
+#4298
+income~
+Guldane's Income~
+Guldane's Income mob.
+~
+   I have not idea what this is for.  
+~
+72 0 0 0 0 0 0 0 0 E
+3 17 14 3d3+54 6d3+2
+66666 100000
+8 8 0
+BareHandAttack: 3
+E
+#4299
+shopkeeper~
+Guldane's Shopkeeper~
+Guldane's Shopkeeper stands here
+~
+   He has only 2 items....  
+~
+10 0 0 0 0 0 0 0 0 E
+3 16 14 3d3+54 6d3+4
+66666 100000
+6 6 1
+E
+$

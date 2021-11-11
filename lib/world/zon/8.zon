@@ -1,0 +1,37 @@
+#8
+Ether~
+Midgaard Zoo~
+800 899 15 2 d 0 0 0 1 15
+O 0 806 1 807 	(the fountain of the Green Dragon)
+M 0 821 1 821 	(a giant Hyacinth Macaw)
+E 1 805 50 12 	(the giant wings of the Macaw)
+M 0 820 1 820 	(an eclectus parrot)
+M 0 819 1 822 	(a Midgaardian parakeet)
+M 0 818 1 819 	(a cockatoo)
+M 0 817 1 819 	(a pair of love birds)
+M 0 816 1 828 	(a vicious alligator)
+E 1 804 50 20 	(some alligator teeth)
+M 0 815 1 826 	(the King Cobra)
+M 0 814 1 824 	(a diamondback rattlesnake)
+M 0 813 1 824 	(a cottonmouth snake)
+M 0 812 1 827 	(a veiled chameleon)
+M 0 811 1 835 	(the King of the Baboons)
+E 1 803 50 6 	(crown of the Baboon King)
+M 0 805 1 840 	(the Saber-Tooth Tiger Queen)
+E 1 802 50 20 	(Saber-Tooth Tiger Fangs)
+M 0 810 1 832 	(the silverback gorilla)
+M 0 809 1 830 	(a wild chimpanzee)
+M 0 808 1 830 	(a blue monkey)
+M 0 807 1 833 	(a hamadryas baboon)
+M 0 806 1 838 	(the snow leopard)
+M 0 804 1 839 	(a mountain lion)
+M 0 803 1 839 	(a black panther)
+M 0 802 1 837 	(a bengal tiger)
+M 0 801 1 841 	(the Zookeeper)
+E 1 801 100 9 	(Zookeeper's leather gloves)
+M 0 800 1 802 	(Corelli, the Novice Master)
+R 0 802 800 -1 	(a glowing sign)
+O 1 800 1 802 	(a glowing sign)
+D 0 811 5 1 	(The End of the Tunnel)
+S
+$

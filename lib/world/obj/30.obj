@@ -1,0 +1,788 @@
+#3000
+barrel beer~
+a barrel~
+A beer barrel has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+50 50 1 0
+50 300 100 0 0 100
+#3001
+bottle beer~
+a bottle~
+A beer bottle has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 1 0
+10 20 8 0 0 100
+#3002
+bottle dark ale~
+a bottle~
+A dark bottle of ale has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 3 0
+10 10 3 0 0 100
+#3003
+bottle firebreather~
+a bottle~
+A bottle of firebreather has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 7 0
+10 50 17 0 0 100
+#3004
+bottle local~
+a bottle~
+A dark bottle has been left here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+8 8 8 0
+10 20 7 0 0 100
+#3005
+key dull metal~
+a key of dull metal~
+A key made of a dull metal is lying on the ground here.~
+~
+18 cdq 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0 100
+#3006
+teleporter~
+the teleporter~
+A strange device labeled "teleporter" was left here.~
+~
+12 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0 100
+T 3014
+T 3015
+E
+teleporter~
+This teleporter is used to transfer players between zones.  Accessible zones
+are listed under HELP ZONES by being CAPITALIZED.  For example to teleport to:
+  74 Newbie GRAVEyard                   -- Jojen                       3- 5
+type: teleport grave
+   The teleporter may also be used to recall back to Midgaard at any time.
+
+Uncapitalized zones are linked through a capitalized zone.
+~
+#3007
+temple altar~
+the temple altar~
+The temple altar is adorned with lit candles, wreathes of flowers and religious artifacts.~
+~
+12 g 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+#3009
+waybread bread~
+a waybread~
+Some waybread has been put here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+24 0 0 0
+1 50 50 0 0 100
+E
+waybread bread~
+   The waybread is the traditional feed of elves when travelling, they call it
+lembas.  It is said to refresh the weary traveler greatly.  
+~
+#3010
+bread loaf~
+a bread~
+A loaf of bread has been left here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+12 0 0 0
+1 10 10 0 0 100
+#3011
+danish pastry~
+a danish pastry~
+A nice looking delicious danish pastry has been placed here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+5 0 0 0
+1 5 5 0 0 100
+#3012
+taco mexican~
+a Mexican taco~
+A tasty looking Mexican taco has been dropped here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+15 0 0 0
+1 15 15 0 0 100
+#3013
+burrito hot~
+a spicy hot burrito~
+A spicy looking burrito has been set here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+10 0 0 0
+1 10 10 0 0 100
+#3014
+nachos nacho~
+some nachos with cheese~
+Some nachos have been left here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+5 0 0 0
+1 5 5 0 0 100
+E
+nachos nacho~
+   They have cheese on them.  Looks like one of Uncle Juan's specials.  
+~
+#3015
+meat chunk~
+a piece of meat~
+A rather dubious looking piece of meat is on the ground here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+14 0 0 0
+5 24 10 0 0 100
+E
+meat chunk~
+   It isn't so much that the meat looks poisoned or anything, but that you just
+are not sure of its origins.  You doubt that a hunter would drop a side of
+venison or rabbit meat...  What in the world could this meat have come from, you
+wonder...  
+~
+#3020
+dagger~
+a dagger~
+A dagger with a long thin blade is here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 4 11
+1 10 10 0 0 100
+#3021
+sword small~
+a small novice sword~
+A small sword lies here.~
+~
+5 e 0 0 0 ano 0 0 0 0 0 0 0
+0 15 3 11
+3 60 0 0 0 100
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
+~
+E
+sword small~
+   The small sword seems to have an inscription of some sort.
+~
+A
+19 1
+#3022
+sword long~
+a long sword~
+A long sword has been left here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 8 3
+8 600 10 0 0 100
+#3023
+club wooden~
+a wooden club~
+A simple looking wooden club is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 1 3 7
+3 12 10 0 0 100
+#3024
+warhammer hammer~
+a warhammer~
+A medium sized warhammer is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 1 5 7
+6 50 10 0 0 100
+#3025
+flail large~
+a flail~
+A large flail is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 2 4 7
+6 625 10 0 0 100
+#3030
+torch~
+a torch~
+A large torch.~
+~
+1 0 0 0 0 adefijklmn 0 0 0 0 0 0 0
+0 0 24 0
+1 10 10 0 0 100
+#3031
+lantern brass~
+a lantern~
+A brass lantern is here.~
+~
+1 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 96 0
+1 50 10 0 0 100
+#3032
+bag~
+a bag~
+A small bag is here.~
+~
+15 0 0 0 0 ao 0 0 0 0 0 0 0
+50 0 0 0
+2 20 10 0 0 100
+#3033
+box~
+a box~
+A small box is here.~
+~
+15 0 0 0 0 ao 0 0 0 0 0 0 0
+10 0 0 0
+5 50 10 0 0 100
+#3034
+toadstool mushroom~
+a magical toadstool mushroom~
+A magical toadstool mushroom is ready to assist you with all your gold needs.~
+~
+12 cdeg 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+E
+mushroom toadstool~
+   There is a small note on the mushroom which says:
+
+To use, type 'BALANCE', 'WITHDRAW <amount>', or 'DEPOSIT <amount>'.
+Please report any strange occurrences to the bank manager.
+
+~
+#3035
+fountain water~
+the large fountain~
+A large fountain carved from blue-streaked marble is here, bubbling merrily.~
+~
+23 cdeg 0 0 0 0 0 0 0 0 0 0 0
+500 500 15 0
+505 0 0 0 0 100
+E
+marble blue streaked fountain~
+   It is a well crafted fountain, carved from a single piece of very beautiful
+white marble shot through with electric blue streaks that look almost like
+lightning dancing along the sides of the fountain.  It seems to be enchanted in
+some manner, as the water level seems to never lower.  
+~
+#3036
+cashcard card atm banks~
+a cashcard~
+A handy dandy cashcard is sitting on the ground here.~
+~
+12 cdeg 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1000 10 0 0 100
+E
+cashcard card atm~
+   There is some writing on the back of the card which reads:
+
+To use, type 'BALANCE', 'WITHDRAW <amount>', or 'DEPOSIT <amount>'.
+Please report any strange occurrences to the bank manager.
+
+~
+#3037
+novice lantern~
+a novice lantern~
+A brand new lantern is here, unlit.~
+~
+1 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 -1 0
+1 5 0 0 0 100
+E
+candle~
+   A home-made candle, how quaint!  
+~
+A
+18 10
+A
+19 10
+#3038
+nail~
+a nail~
+A penny nail lies in the dust.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 1 1 11
+1 5 1 0 0 100
+E
+nail~
+   Its a common iron nail, used for carpentry work.  
+~
+#3039
+pot~
+a pot~
+A cast-iron pot sits on the ground.~
+~
+15 0 0 0 0 a 0 0 0 0 0 0 0
+10 0 0 0
+10 100 20 0 0 100
+E
+pot~
+   It is a nice pot.  You could use it, if you ever settled down.  
+~
+#3040
+plate breast~
+a novice breastplate~
+A brand new breastplate is shining here.~
+~
+9 0 0 0 0 ad 0 0 0 defgi 0 0 0
+20 0 0 0
+5 180 0 0 0 100
+#3041
+shirt chain mail~
+a chain mail shirt~
+A chain mail shirt is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+5 0 0 0
+50 250 5 0 0 100
+#3042
+novice shield~
+a novice shield~
+A small wooden shield is lying on the ground.~
+~
+9 0 0 0 0 aj 0 0 0 0 0 0 0
+25 0 0 0
+5 100 0 0 0 100
+A
+32 5
+A
+33 5
+A
+34 5
+A
+35 5
+A
+36 5
+#3043
+jacket soft leather~
+a leather jacket~
+A soft leather jacket is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+2 0 0 0
+10 200 10 0 0 100
+#3044
+jacket studded leather~
+a studded leather jacket~
+A studded leather jacket is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+3 0 0 0
+20 500 10 0 0 100
+#3045
+jacket scale mail~
+a scale mail jacket~
+A scale mail jacket is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+4 0 0 0
+40 1000 10 0 0 100
+#3046
+plate bronze breast~
+a bronze breast plate~
+A bronze breast plate is lying on the ground.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+6 0 0 0
+50 700 10 0 0 100
+#3050
+scroll identify~
+a scroll of identify~
+A scroll has carelessly been left here.~
+~
+2 g 0 0 0 ao 0 0 0 0 0 0 0
+1 52 -1 -1
+1 5000 10 0 0 100
+E
+scroll identify~
+   The scroll has a magic formula drawn upon it:
+
+     ???
+    ?   ?
+       ?
+      ?
+      ?
+      *
+
+~
+#3051
+potion yellow~
+a yellow potion of see invisible~
+A small yellow potion has carelessly been left here.~
+~
+10 g 0 0 0 ao 0 0 0 0 0 0 0
+12 19 -1 -1
+1 400 10 0 0 100
+E
+potion yellow~
+   The potion has a small label 'Detect The Invisible'.  
+~
+#3052
+scroll recall~
+a scroll of recall~
+A scroll has carelessly been left here.~
+~
+2 g 0 0 0 ao 0 0 0 0 0 0 0
+12 42 -1 -1
+4 200 10 0 0 100
+E
+scroll recall~
+   The scroll has written a formulae of 'Word of Recall' upon it.  
+~
+#3053
+wand grey~
+a grey wand of invisibility~
+A grey wand has carelessly been left here.~
+~
+3 g 0 0 0 ao 0 0 0 0 0 0 0
+12 2 2 29
+2 400 10 0 0 100
+E
+wand grey~
+   The wand is an old dark grey stick.  You notice a small symbol etched
+at the base of the wand.  It looks like this:
+     \ /
+    - O -
+     / \
+~
+#3054
+staff gnarled~
+a gnarled staff~
+A gnarled staff has carelessly been left here.~
+~
+4 g 0 0 0 ao 0 0 0 0 0 0 0
+12 1 1 38
+17 700 50 0 0 100
+E
+staff gnarled~
+   The staff is made of old oak, and is around five feet long. It fits
+perfectly into your hand. You notice a small symbol etched at the
+base of the staff, it looks like:
+
+  ZZZZZ
+     Z
+    Z
+   Z
+  ZZZZZ  z   z
+
+~
+#3055
+staff metal~
+a metal staff~
+A metal staff has carelessly been left here.~
+~
+4 g 0 0 0 ao 0 0 0 0 0 0 0
+10 8 8 28
+7 850 0 0 0 100
+E
+staff metal~
+   The staff is made of metals unknown to you.  
+~
+A
+4 1
+#3060
+raft~
+a raft~
+A raft has been left here.~
+~
+22 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+50 400 10 0 0 100
+E
+raft~
+   The raft looks very primitive.  
+~
+#3061
+canoe~
+a canoe~
+A canoe has been left here.~
+~
+22 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+32 1000 100 0 0 100
+E
+canoe~
+   The canoe is fairly light.  
+~
+#3062
+cruciform dagger~
+a Cruciform Dagger~
+A cruciform dagger lies here.~
+~
+5 abgi 0 0 0 ano 0 0 0 0 0 0 0
+0 8 4 14
+0 1000 0 0 0 100
+A
+18 8
+A
+19 8
+#3070
+gauntlets bronze~
+a pair of bronze gauntlets~
+A pair of bronze gauntlets is lying on the ground.~
+~
+9 0 0 0 0 ah 0 0 0 0 0 0 0
+6 0 0 0
+8 175 10 0 0 100
+#3071
+gloves novice~
+a pair of novice gloves~
+A pair of novice gloves are lying here.~
+~
+9 0 0 0 0 ah 0 0 0 0 0 0 0
+1 0 0 0
+3 75 0 0 0 100
+A
+18 2
+A
+19 2
+#3075
+helmet bronze~
+a bronze helmet~
+A bronze helmet is lying on the ground.~
+~
+9 0 0 0 0 ae 0 0 0 0 0 0 0
+6 0 0 0
+8 350 10 0 0 100
+#3076
+a novice cap~
+novice cap~
+A novice cap is lying on the ground.~
+~
+9 0 0 0 0 ae 0 0 0 0 0 0 0
+25 0 0 0
+3 150 0 0 0 100
+A
+18 2
+A
+19 2
+#3080
+leggings bronze~
+a pair of bronze leggings~
+A pair of bronze leggings is lying on the ground.~
+~
+9 0 0 0 0 af 0 0 0 ABCD 0 0 0
+10 0 0 0
+8 350 0 0 0 100
+#3081
+pants leather~
+a pair of leather pants~
+A pair of leather pants is lying on the ground.~
+~
+9 0 0 0 0 af 0 0 0 0 0 0 0
+3 0 0 0
+8 150 10 0 0 100
+#3082
+novice neckguard~
+a novice neckguard~
+A brand new neckguard is shining on the ground.~
+~
+9 0 0 0 0 ac 0 0 0 0 0 0 0
+15 0 0 0
+1 10 0 0 0 100
+E
+leather gorget neck guard~
+This leather neckguard is meant to protect the throat and face in battle.
+~
+A
+18 5
+A
+19 5
+#3083
+novice ring~
+a novice ring~
+A brand new ring is shining on the ground.~
+~
+9 0 0 0 0 ab 0 0 0 0 0 0 0
+10 0 0 0
+1 10 0 0 0 100
+A
+1 2
+A
+2 2
+A
+3 2
+A
+4 2
+A
+5 2
+A
+6 2
+#3084
+novice boots~
+a pair of novice boots~
+A pair of novice boots is lying here.~
+~
+9 0 0 0 0 ag 0 0 0 0 0 0 0
+10 0 0 0
+2 11 0 0 0 100
+E
+leather boots~
+   The boots are worn with age but well oiled and polished to still remain
+useable.
+~
+A
+18 1
+A
+19 1
+#3085
+sleeves bronze~
+a pair of bronze sleeves~
+A pair of bronze sleeves is lying on the ground.~
+~
+9 0 0 0 0 ai 0 0 0 0 0 0 0
+6 0 0 0
+8 175 10 0 0 100
+#3086
+novice sleeves~
+a pair of novice sleeves~
+A pair of novice sleeves are shining on the ground here.~
+~
+9 0 0 0 0 ai 0 0 0 0 0 0 0
+1 0 0 0
+4 75 0 0 0 100
+A
+1 2
+A
+2 2
+A
+3 2
+A
+4 2
+A
+5 2
+A
+6 2
+A
+18 2
+A
+19 2
+#3087
+novice cape~
+a novice cape~
+A novice cape was abandoned on the floor.~
+~
+9 0 0 0 0 ak 0 0 0 0 0 0 0
+25 0 0 0
+4 100 0 0 0 100
+A
+28 5
+A
+29 5
+A
+30 5
+#3088
+belt midgaard~
+a belt bearing the seal of Midgaard~
+A tough leather belt has been left on the ground here.~
+~
+9 e 0 0 0 al 0 0 0 0 0 0 0
+25 0 0 0
+1 30 0 0 0 100
+E
+belt~
+This belt is very tough. It bears the seal of the city of Midgaard. Be proud to wear it.
+~
+A
+19 5
+A
+18 5
+A
+25 25
+A
+26 25
+A
+27 25
+#3089
+novice wristguard~
+a novice wristguard~
+A brand new wristguard lies in the dirt.~
+~
+9 0 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+3 30 0 0 0 100
+E
+leather wristguard~
+   The wristguard has been heavily oiled and is extremely flexible and
+supportive.  It is laced with some leather string to loosen and tighten to
+almost any size.    
+~
+A
+28 5
+A
+29 5
+A
+30 5
+A
+18 2
+A
+19 2
+#3096
+boards social bulletin gen_boards~
+a social bulletin board~
+A large, sociable bulletin board is mounted on a wall here.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+E
+social bulletin~
+   Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
+~
+#3097
+boards frozen bulletin gen_boards~
+a frozen bulletin board~
+A large bulletin board is here, carved from a block of ice.~
+~
+13 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+E
+freeze bulletin~
+   Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
+~
+#3098
+boards holy bulletin gen_boards~
+a holy bulletin board~
+A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
+~
+13 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+E
+holy bulletin~
+   Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
+~
+#3099
+boards bulletin gen_boards~
+a bulletin board~
+A large bulletin board is mounted on a wall here.~
+~
+13 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+E
+bulletin~
+   Use 'look board' to read the board.  
+~
+E
+board~
+   If you can read this, the board is not working.  
+~
+$~

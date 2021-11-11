@@ -1,0 +1,450 @@
+#800
+corelli master~
+Corelli, the Novice Master~
+Corelli, the Novice Master is here providing training and guidance to the novice.
+~
+   He is a tall and handsome feller.  He looks your direction and gives a wink
+and a nod.  He stands in the center of the training area, ready to assist you
+anyway he can.
+~
+262154 0 0 0 256 0 0 0 0 E
+105 -33 -121 105d105+176400 26d13+64
+1693333 2540000
+8 8 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+SavingPara: 26
+SavingRod: 26
+SavingPetri: 26
+SavingBreath: 26
+SavingSpell: 26
+E
+T 800
+T 801
+#801
+zoo zookeeper~
+the Zookeeper~
+The Zookeeper is looking over documents and creating a plan of action.
+~
+   She is dressed in a tan cotton suit and her long blonde hair hangs shoulder
+length beneath the dark brown hat upon her head.  She looks busy at she rustles
+through the paperwork scattered on her desk.
+~
+10 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+350 10000
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#802
+bengal tiger~
+a bengal tiger~
+An orange and black striped cat is on the prowl.
+~
+   The bengal tiger prowls around looking for his next meal.  It's body is
+covered in an orange fur with vertical black stripes.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#803
+black panther~
+a black panther~
+A panther of pure black roams the exhibit.
+~
+The panther is covered in thick black fur and hisses periodically, showing her long white fangs.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 2
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#804
+mountain lion~
+a mountain lion~
+A mountain lion easily navigates the rugged terrain.
+~
+The mountain lion is covered in a tannish gray fur and you are in awe as it so
+easily navigates this rough and rugged terrain.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#805
+queen tiger saber tooth~
+the Saber-Tooth Tiger Queen~
+The queen of the tigers guards her cave with ferocity.
+~
+   Her fur is reddish orange with a white body.  The fur around her mouth is
+white bud fades into reddish orange as it approaches her ears.  Her giant white
+fangs protrude from her mouth more than five inches!
+~
+10 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+0 8000
+8 8 2
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#806
+leopard snow~
+the snow leopard~
+The snow leopard stands atop a large boulder, scanning her surroundings.
+~
+She is covered in a very thick and fluffy light grayish to white coat with black
+spots.  She is not the largest of species but she could be one of the most
+ferocious.
+~
+10 0 0 0 0 0 0 0 0 E
+9 17 4 1d1+90 1d2+1
+0 5000
+8 8 2
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#807
+hamadryas baboon~
+a hamadryas baboon~
+A large baboon swings in the trees.
+~
+The baboon has long gray hair and a long reddish brown face.  The long gray hair
+on his head grows straight out and is poofy.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 7
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#808
+monkey~
+a blue monkey~
+A monkey laughs at you while he slings poop your direction!
+~
+   His face is outlined by long tan and gray hairs which fades into the dark
+blue hairs that cover his body.  He has a long strong tail which he uses to hang
+from the trees.  He has a handfull of feces and is ready to unload it on you!
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 7
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#809
+chimp chimpanzee~
+a wild chimpanzee~
+A wild chimpanzee hops from rock to rock.
+~
+   The chimp is the smaller of the ape species.  He is covered in coarse black
+and brown hair.  He walks with the aid of his long and muscular arms.  He's
+definitely one ape you don't wanna upset.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 7
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#810
+silverback gorilla~
+the silverback gorilla~
+A huge silverbacked gorilla relaxes in her cozy nest.
+~
+   She has a long face and a dome shaped head covered in orangish-red hairs.  
+Hence the name, there is a silver stripe of fur which runs down the middle of
+her back towards her rear end.  She has black hairs that grow longer as they
+reach the ends of her long arms and legs.
+~
+10 0 0 0 0 0 0 0 0 E
+9 17 4 1d1+90 1d2+1
+0 5000
+8 8 2
+BareHandAttack: 7
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#811
+king baboon~
+the King of the Baboons~
+The King of the Baboons sits on his throne, pampered by servants.
+~
+   The King of the Baboons sits proudly on his throne high above the other
+primates.  He's ready to defend his authority against any other primate who
+wishes to dethrone him.  Several servants tend to the King's needs.  One servant
+periodically places a piece of fruit in his mouth and another is constantly
+fanning his highness.
+~
+10 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+0 8000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#812
+chameleon~
+a veiled chameleon~
+A veiled chameleon sunbathes on a log.
+~
+   The veiled chameleons body changes into different shades of green with yellow
+to gold vertical that line it's body.  She has a tall horn which crowns her
+head.  She blends in rather well as she soaks up the rays of the sun.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 2
+BareHandAttack: 8
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#813
+cottonmouth snake~
+a cottonmouth snake~
+A cottonmouth snake coils up into an offensive position as you approach!
+~
+   It's body is is predominantly grayish black and has golden striples down it's
+body.  It coils up into an offensive position and raises his head, ready to
+strike if you get too close.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 4
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#814
+rattlesnake snake~
+a diamondback rattlesnake~
+You hear the distinct rattling of a rattlesnake in the area!
+~
+   The snake is dark brown with black diamonds all along it's back.  It's coiled
+up with his head raised and his tail straight up, rattling to warn you to get
+the heck out of here!
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 4
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#815
+king cobra~
+the King Cobra~
+A huge cobra raises his winged head high above the ground.
+~
+   The cobra is dark black in color with random white vertical strikes along
+it's body.  His body widens the closer to his head you get and the area below
+his head turns to a golden yellow color.  The cobra is very agile and is able to
+raise his head several feet above the ground for maximum lunging distance.
+~
+10 0 0 0 0 0 0 0 0 E
+9 17 4 1d1+90 1d2+1
+0 5000
+8 8 1
+BareHandAttack: 4
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#816
+alligator~
+a vicious alligator~
+The raised eyes of an alligator poke out of the top of the water, staring at you!
+~
+   This alligator is fifteen feet long and is covered in dark green scales.  
+His tail is spiked and rough and allows the alligator to swim extremely well.  
+His elongated mouth stores a set of chompers that will put a hurting on anything
+that dares to come near it.
+~
+10 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+0 8000
+8 8 2
+BareHandAttack: 4
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#817
+lovebirds love bird~
+a pair of love birds~
+A pair of love birds are sitting on a branch adoring each other.
+~
+   The two birds with bright green bodies and orange and red heads clean each
+other and show affection.  They are perched on a branch and are oblivious to
+anything but each other.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 0
+BareHandAttack: 14
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#818
+cockatoo~
+a cockatoo~
+A cockatoo soars through the air between the trees.
+~
+   The cockatoo is pure white except for the yellow feathers that stick straight
+up from his head.  He beautifully soars through the air, wings spread, as it sings.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 14
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#819
+a parakeet~
+a Midgaardian parakeet~
+A green bodied parakeet is perched on a branch, singing it's heart out.
+~
+   The Carolina parakeet or Carolina conure was said to be extinct, but
+obviously that can't be.  It's a species of small green neotropical parrot with
+a bright yellow head, reddish orange face and pale beak native to the eastern
+territories around Midgaard.
+~
+8 0 0 0 0 0 0 0 0 E
+8 18 5 1d1+80 1d2+1
+0 3000
+8 8 1
+BareHandAttack: 14
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#820
+eclectus parrot~
+an eclectus parrot~
+An eclectus parrot is here, copying everything you say.
+~
+   The eclectus parrot is a parrot native to islands of the Thundering Sea.  It
+is unusual in the parrot family for its extreme sexual dimorphism of the colours
+of the plumage; the male having a mostly bright emerald green plumage and the
+female a mostly bright red and purple/blue plumage.  This parrot is of course a
+female based on it's colors.  Large populations of this parrot remain, and they
+are sometimes considered pests for eating fruit off trees.
+~
+10 0 0 0 0 0 0 0 0 E
+9 17 4 1d1+90 1d2+1
+0 5000
+8 8 2
+BareHandAttack: 14
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#821
+hyacinth macaw~
+a giant Hyacinth Macaw~
+A beautiful huge macaw is perched in the tree, upset at your presence.
+~
+   The hyacinth macaw, or hyacinthine macaw, is a parrot native to the southern
+woodlands of these lands.  With a length of about 100 cm it is longer than any
+other species of parrot.  It is the largest macaw and the largest flying parrot
+species.  This one appears to be very territorial and is not impressed by your
+presence.
+~
+10 0 0 0 0 0 0 0 0 E
+10 17 4 2d2+100 1d2+1
+0 8000
+8 8 1
+BareHandAttack: 14
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+$

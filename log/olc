@@ -1,0 +1,62 @@
+Jun 25 16:20:46 2021 :: OLC: Salty edits toggles for Salty
+Jun 25 16:20:46 2021 :: OLC: Salty stops editing zone 0 allowed zone 0
+Jun 25 16:21:19 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:21:54 2021 :: OLC: Salty edits obj 3037
+Jun 25 16:21:54 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:22:24 2021 :: OLC: Salty edits toggles for Salty
+Jun 25 16:22:24 2021 :: OLC: Salty stops editing zone 0 allowed zone 0
+Jun 25 16:23:02 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:25:23 2021 :: OLC: Salty edits obj 3083
+Jun 25 16:25:23 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:26:14 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:28:50 2021 :: OLC: Salty edits obj 3088
+Jun 25 16:28:50 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:29:57 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:31:12 2021 :: OLC: Salty edits obj 3087
+Jun 25 16:31:12 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:31:31 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:32:28 2021 :: OLC: Salty edits obj 3082
+Jun 25 16:32:28 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:33:05 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:34:13 2021 :: OLC: Salty edits obj 3042
+Jun 25 16:34:13 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:34:38 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:36:41 2021 :: OLC: Salty edits obj 3086
+Jun 25 16:36:41 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:37:00 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:37:30 2021 :: OLC: Salty edits obj 3082
+Jun 25 16:37:30 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:37:39 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:38:12 2021 :: OLC: Salty edits obj 3071
+Jun 25 16:38:12 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:38:33 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:38:44 2021 :: OLC: Salty edits obj 3084
+Jun 25 16:38:44 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:39:01 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:39:50 2021 :: OLC: Salty edits obj 3089
+Jun 25 16:39:50 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:40:09 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:41:09 2021 :: OLC: Salty edits obj 3076
+Jun 25 16:41:09 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:41:26 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:42:35 2021 :: OLC: Salty edits obj 3040
+Jun 25 16:42:35 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:43:03 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:43:49 2021 :: OLC: Salty edits obj 3080
+Jun 25 16:43:49 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:44:14 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 16:44:37 2021 :: OLC: Salty edits obj 3021
+Jun 25 16:44:37 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 16:48:19 2021 :: OLC: Mage edits toggles for Mage
+Jun 25 16:48:19 2021 :: OLC: Mage stops editing zone 0 allowed zone 0
+Jun 25 19:31:56 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 19:32:02 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 25 19:32:23 2021 :: OLC: Salty starts editing zone 30 allowed zone 0
+Jun 25 19:32:35 2021 :: GenOLC: add_room: Updated existing room #3090.
+Jun 25 19:32:35 2021 :: OLC: Salty edits room 3090.
+Jun 25 19:32:35 2021 :: GenOLC: save_rooms: Saving rooms in zone #30 (3000-3099).
+Jun 25 19:32:35 2021 :: OLC: Salty stops editing zone 30 allowed zone 0
+Jun 27 19:55:59 2021 :: OLC: Salty starts editing zone 0 allowed zone 0
+Jun 27 19:56:13 2021 :: OLC: Salty edits obj 65
+Jun 27 19:56:13 2021 :: OLC: Salty stops editing zone 0 allowed zone 0
+Binary file syslog matches

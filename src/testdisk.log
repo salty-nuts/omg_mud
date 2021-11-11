@@ -1,0 +1,153 @@
+
+
+Sat Feb  1 19:24:26 2020
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.15.0-72-generic (#81-Ubuntu SMP Tue Nov 26 12:20:02 UTC 2019) x86_64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       488397168 sectors
+/dev/sda: user_max   488397168 sectors
+/dev/sda: native_max 488397168 sectors
+/dev/sda: dco        488397168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 250 GB / 232 GiB - CHS 30401 255 63, sector size=512 - ST3250312AS, S/N:Z2ADJXVG, FW:JC47
+
+Partition table type (auto): EFI GPT
+Disk /dev/sda - 250 GB / 232 GiB - ST3250312AS
+Partition table type: EFI GPT
+
+Analyse Disk /dev/sda - 250 GB / 232 GiB - CHS 30401 255 63
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=488397167 (expected 488397167)
+hdr_lba_start=34
+hdr_lba_end=488397134
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+Current partition structure:
+ 1 P Unknown                     2048       4095       2048
+ 2 P Unknown                     4096  488394751  488390656
+
+search_part()
+Disk /dev/sda - 250 GB / 232 GiB - CHS 30401 255 63
+NTFS at 0/37/38
+filesystem size           204800
+sectors_per_cluster       8
+mft_lcn                   8533
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+NTFS part_offset=1212416, part_size=104857600, sector_size=512
+NTFS partition cannot be added (part_offset<part_size).
+NTFS at 0/37/38
+filesystem size           204800
+sectors_per_cluster       8
+mft_lcn                   8533
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     MS Data                     2368     207167     204800
+     NTFS, blocksize=4096, 104 MB / 100 MiB
+
+block_group_nr 1
+
+recover_EXT2: "e2fsck -b 32768 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=1/1863, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 61048832
+recover_EXT2: part_size 488390656
+     MS Data                     4094  488394749  488390656
+     ext4 blocksize=4096 Large_file Sparse_SB Backup_SB, 250 GB / 232 GiB
+
+Results
+     MS Data                     2368     207167     204800
+     NTFS, blocksize=4096, 104 MB / 100 MiB
+     MS Data                     4094  488394749  488390656
+     ext4 blocksize=4096 Large_file Sparse_SB Backup_SB, 250 GB / 232 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 204800 linear /dev/sda 2368" | dmsetup create test0
+echo "0 488390656 linear /dev/sda 4094" | dmsetup create test1
+
+interface_write()
+ 
+No partition found or selected for recovery
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+NTFS signature is missing.
+simulate write!
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=488397167 (expected 488397167)
+hdr_lba_start=34
+hdr_lba_end=488397134
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+ 1 P Unknown                     2048       4095       2048
+ 2 P Unknown                     4096  488394751  488390656
+gpt_change_part_type
+Change partition type:
+ 1 P MS Data                     2048       4095       2048
+Change partition type:
+ 1 P NTFS                        2048       4095       2048
+Incomplete image created.
+Incomplete image created.
+gpt_change_part_type
+Change partition type:
+ 2 P MS Data                     4096  488394751  488390656
+Change partition type:
+ 2 P NTFS                        4096  488394751  488390656
+
+ 2 P MS Data                     4096  488394751  488390656
+Can't open filesystem. Filesystem seems damaged.
+
+ 1 P MS Data                     2048       4095       2048
+Can't open filesystem. Filesystem seems damaged.
+
+ 1 P MS Data                     2048       4095       2048
+Can't open filesystem. Filesystem seems damaged.
+
+ 2 P MS Data                     4096  488394751  488390656
+Can't open filesystem. Filesystem seems damaged.
+Partition table type (auto): EFI GPT
+Disk /dev/sda - 250 GB / 232 GiB - ST3250312AS
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=488397167 (expected 488397167)
+hdr_lba_start=34
+hdr_lba_end=488397134
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+ 1 P Unknown                     2048       4095       2048
+ 2 P Unknown                     4096  488394751  488390656
+gpt_change_part_type
+Change partition type:
+ 2 P EFI System                  4096  488394751  488390656
+Change partition type:
+ 2 P FAT32                       4096  488394751  488390656
+Incomplete image created.
+
+FAT: Can't list files, bad cluster size.
+Directory /
+Partition table type (auto): EFI GPT
+
+TestDisk exited normally.

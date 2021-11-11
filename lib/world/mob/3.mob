@@ -1,0 +1,55 @@
+#300
+chemist camille~
+Camille the chemist~
+Camille the chemist stands over a cauldron mixing ingredients.
+~
+   Camille wears a thick brown robe that covers most of her features. Only her
+hands and head stick out of her robe. Stains and burns cover her body and
+clothing. She works dilligently over her cauldron. Camille has been known to
+concoct many different potions and is most famous for her liquid fire.
+~
+253962 0 0 0 0 0 0 0 0 E
+30 4 -3 30d30+8100 12d6+17
+506666 760000
+8 8 2
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 300
+T 335
+#301
+naked magi~
+the naked magi~
+A magi sits against a wall wearing nothing but a towel.
+~
+   Sweat gleams on her supple skin.  Her black hair is wet and frames a round
+face with slanted blue eyes.  She is striking in her beauty and grace.
+~
+10 0 0 0 2112 0 0 0 0 E
+1 17 14 1d1+6 6d3+2
+40000 60000
+8 8 2
+E
+T 305
+#302
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 14 1d1+6 6d3+3
+40000 60000
+8 8 0
+E
+$

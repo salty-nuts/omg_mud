@@ -1,0 +1,410 @@
+#5300
+asp snake~
+the horrible asp~
+A small, poisonous asp slithers over your feet.
+~
+   The asp is a small, smooth-scaled snake the color of worn pottery.  The
+poison bite of this snake has felled many a mighty pharoah.  
+~
+72 0 0 0 0 0 0 0 0 E
+5 16 13 5d5+150 6d3+4
+93333 140000
+8 8 0
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+T 5301
+#5301
+cobra snake~
+the hooded cobra snake~
+A cobra snake rears up and opens its fearsome hood.
+~
+   The cobra snake waves back and forth before you, its hood displaying
+brilliant colors designed to serve notice to its prey that it is about to
+strike.  
+~
+72 0 0 0 0 0 0 0 0 E
+7 16 12 7d7+294 6d3+5
+120000 180000
+8 8 0
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+T 5301
+#5302
+mongoose~
+the wily little mongoose~
+A small mongoose slinks along the ground, hunting snakes.
+~
+   The mongoose is a wily rodent, a quick hunter of nasty poisonous snakes.  
+She sniffs you and appears to be looking for food in your hand.  
+~
+104 0 0 0 0 0 0 0 10 E
+11 12 10 11d11+847 8d4+6
+200000 300000
+8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5303
+pyramid watcher~
+the pyramid watcher~
+The pyramid watcher protects the tombs from intruders.
+~
+   The pyramid watcher has made a pledge to destroy any would-be looters of the
+tombs of the pharoahs.  He is clad from head to foot in utilitarian sand-colored
+clothing.  
+~
+4122 0 0 0 65536 0 0 0 250 E
+8 14 12 8d8+384 6d3+5
+133333 200000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5304
+thief tomb~
+the tomb thief~
+A sneaky tomb thief moves about in search of treasure.
+~
+   The thief brushes against you briefly, then slinks back into the shadows.  
+~
+200 0 0 0 1638400 0 0 0 -250 E
+10 12 11 10d10+700 8d4+9
+186666 280000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+T 5303
+#5305
+ali baba thief~
+Ali Baba~
+Ali Baba is here, hunting for the pharoah's tomb.
+~
+   You see a tall, full-bearded man with a mischevious glint in his eye.  Ali
+Baba has made his life from stealing things from others, including many items
+stolen recently from under the nose of the hapless guardians of this pyramid.  
+Someday he might get caught, but not today...  
+~
+2140 0 0 0 589824 0 0 0 -300 E
+18 8 7 18d18+2268 8d4+11
+293333 440000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+T 5303
+#5306
+magic carpet~
+the magic carpet~
+A small woven carpet lies under your feet.
+~
+   The carpet is simply beautiful, made from intricately woven silken material.
+It seems to rise up at the touch of your feet.  Wait, it is rising, a few feet
+above the ground!  In fact, it seems to be ALIVE!  
+~
+256026 0 0 0 65552 0 0 0 500 E
+9 14 12 9d9+486 6d3+7
+146666 220000
+8 8 0
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#5307
+mummy~
+the mummy~
+A mummy reaches for you, disturbed by your presence.
+~
+   You only see the disfigured, rotting features of decaying human flesh,
+animated by the distempered spirit of a long-deceased person.  
+~
+188520 0 0 0 65616 0 0 0 -600 E
+12 10 10 12d12+1008 8d4+9
+213333 320000
+8 8 0
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#5308
+sand man sandman~
+the sandman~
+A sandman rises up from the desert floor.
+~
+   The sandman is exactly that -- some sort of strange being formed from the
+sands of the desert floor.  It seems quite large and strong and at home in the
+heat and sandy winds.  
+~
+190584 0 0 0 65552 0 0 0 0 E
+14 12 9 14d14+1372 8d4+11
+240000 360000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#5309
+efreeti efreet~
+the efreeti~
+The efreeti stands here, sheathed in a column of fire.
+~
+   The efreeti is a mighty being formed from living fire.  He gazes down at you
+with disdain and scorn, arms folded across his mighty chest.  
+~
+256026 0 0 0 65552 0 0 0 -600 E
+20 9 5 20d20+3200 10d5+14
+346666 520000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 5304
+#5310
+caryatid column~
+the caryatid~
+A sandstone column stands here, carved into a feminine figure.
+~
+   The column has been carved into a set of four shapely women, each facing
+outward into the room.  The sandstone of the caryatid is smooth with age, but
+you can still make out a deadly stone sword in the hands of each figure.  
+~
+260122 0 0 0 65536 0 0 0 0 E
+24 4 3 24d24+4608 10d5+13
+400000 600000
+8 8 2
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#5311
+djinn genie~
+the djinn~
+The djinn issues forth from the confines of a small lamp.
+~
+   The djinn is a mighty being formed from the air itself and frequently
+imprisoned in a small lamp, used to do the bidding of those who find him.  He
+smiles down at you congenially, arms folded across his blue-tinged skin, and
+strokes his goatee.  
+~
+256026 0 0 0 65552 0 0 0 600 E
+28 4 1 28d28+6272 10d5+17
+453333 680000
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Luck: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 5302
+#5312
+hieracosphinx sphinx~
+the hieracosphinx~
+A hieracosphinx looks at you cunningly.
+~
+   The hieracosphinx are cunning, small, but nasty creatures, having the heads
+of birds, mighty wingspans, and a full set of four paws to rend their victims to
+pieces.  They tend to be quite jealous of the sharper wits of their older
+cousins.  
+~
+92280 0 0 0 65536 0 0 0 -200 E
+15 9 9 15d15+1575 8d4+10
+253333 380000
+8 8 0
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#5313
+gynosphinx sphinx~
+the gynosphinx~
+A gynosphinx sits here, befuddled by a riddle.
+~
+   The gynosphinx is a crafty but gentle creature, having the body of a
+beautiful dark-skinned woman from the waist up, a feathery set of wings and the
+hind legs of a mighty cat.  Right now she is confused, having just heard a
+puzzling riddle from a cousin criosphinx.  
+~
+92186 0 0 0 65552 0 0 0 100 E
+19 8 7 19d19+2527 8d4+11
+306666 460000
+8 8 2
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+T 5305
+#5314
+criosphinx sphinx~
+the criosphinx~
+A criosphinx calmly watches you.
+~
+   The criosphinx is a calm and friendly creature, having the head of a ram atop
+the body of a well-furred feline with eagle-like wings.  He delights in riddles,
+and in poking occasional fun at his easily confused lesser cousins.  
+~
+92186 0 0 0 65552 0 0 0 300 E
+23 5 3 23d23+4232 10d5+13
+386666 580000
+8 8 1
+Str: 15
+Dex: 15
+Int: 15
+Wis: 15
+Con: 15
+Luck: 15
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 5305
+#5315
+androsphinx sphinx~
+the androsphinx~
+A mighty androsphinx tosses its lion-like mane.
+~
+   The mighty androsphinx is a huge creature, with the body of a lion whose face
+is quite man-like, perhaps even handsome, and a massive pair of feathered wings.
+Tales are told of pharoahs that were rendered permanently deaf by the mighty
+roar of this sphinx.  
+~
+92186 0 0 0 65552 0 0 0 400 E
+27 2 1 27d27+5832 10d5+17
+440000 660000
+8 8 0
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Luck: 18
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 5305
+#5316
+great sphinx~
+the great sphinx~
+A mighty sphinx rests here in the sand, dormant now for centuries.
+~
+   The great sphinx towers tens of feet above you, resting here in a state of
+dormancy.  It has become almost indistinguishable from the sand that surrounds
+it, although you can still make out the features of the handsome face that once
+advised many rulers.  
+~
+256026 0 0 0 65552 0 0 0 500 E
+30 4 -3 30d30+8100 12d6+20
+506666 760000
+8 8 0
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 5305
+#5317
+ramses mummy~
+Ramses the Damned~
+You have awakened the mighty servant to the pharoahs, Ramses.
+~
+   As your light spills over his face and body, you can see his features begin
+to fill out, swell, and harden, until an apparently healthy man stands before
+you, clad only in the raiments he was left in when he last slept.  His hair is a
+soft black, his skin a deep chocolate, and his tall frame is totally still, his
+chest not even moving to breathe.  
+~
+190554 0 0 0 65552 0 0 0 150 E
+30 0 -3 30d30+8100 12d6+16
+506666 760000
+8 8 1
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 5302
+$

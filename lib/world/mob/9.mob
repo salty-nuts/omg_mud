@@ -1,0 +1,222 @@
+#900
+homba~
+the homba~
+The homba flits about.
+~
+   Part kestrel, part bear, part wolf.  Parts is parts, and makes an ugly whole.
+
+~
+6186 0 0 0 65684 0 0 0 -100 E
+4 16 13 4d4+96 6d3+5
+80000 120000
+8 8 0
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#901
+swordsman~
+the swordsman~
+The greatest swordsman in the land is standing here with a sneer on his face.
+~
+   This is the ultimate swordsman.  
+~
+6186 0 0 0 65552 0 0 0 -400 E
+7 15 12 7d7+294 6d3+6
+120000 180000
+8 8 1
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#902
+mummy rabscuttle~
+the Mummy of Rabscuttle~
+The Mummy of Rabscuttle wanders here, hands aloft, walking towards you.
+~
+   All bandages, no personality.  
+~
+6186 0 0 0 65552 0 0 0 -780 E
+11 12 10 11d11+847 8d4+9
+200000 300000
+8 8 0
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#903
+lizard giant~
+the giant lizard~
+A giant lizard is here.
+~
+   This scaly creature looks like it is well adapted to its underground habitat.
+He looks very powerful.  
+~
+6186 0 0 0 65552 0 0 0 100 E
+16 9 8 16d16+1792 8d4+9
+266666 400000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#904
+woundwort general demon~
+General Woundwort~
+General Woundwort, the dark demon of Minos, awaits to maul you to shreds.
+~
+   He looks vaguely like a rabbit, but sure doesn't act like one.  
+~
+6186 0 0 0 65552 0 0 0 -1000 E
+25 4 2 25d25+5000 10d5+14
+413333 620000
+8 8 1
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Luck: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#905
+franz henchman~
+Franz the Henchman~
+Franz, Minos' henchman, is here ready to pump you up.
+~
+   Franz is no girlie man.  He is very muscular and looks as if he could squeeze
+your head like a grapefruit.  
+~
+6186 0 0 0 65552 0 0 0 -300 E
+12 10 10 12d12+1008 8d4+8
+213333 320000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#906
+hanz henchman~
+Hanz the Henchman~
+Hanz is here flexing his muscles and squeezing grapefruits.
+~
+   Hanz is no girlie man.  He is very muscular and looks as if he could lift a
+large dragon.  
+~
+6186 0 0 0 65552 0 0 0 -300 E
+12 10 10 12d12+1008 8d4+9
+213333 320000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#907
+minos king minotaur~
+King Minos the Minotaur~
+King Minos the Minotaur is ready and waiting to gore you to death.
+~
+   He smells something awful.  
+~
+96298 0 0 0 65616 0 0 0 -1000 E
+26 3 2 26d26+5408 10d5+16
+426666 640000
+8 8 1
+Str: 17
+Dex: 17
+Int: 17
+Wis: 17
+Con: 17
+Luck: 17
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+#908
+turtle dragon~
+the dragon turtle~
+A large dragon turtle breaks the surface churning the water into huge waves.
+~
+   The turtle's shell is the size of a small house and looks as hard as rock.  
+~
+65640 0 0 0 65552 0 0 0 -200 E
+22 4 4 22d22+3872 10d5+12
+373333 560000
+8 8 1
+Str: 14
+Dex: 14
+Int: 14
+Wis: 14
+Con: 14
+Luck: 14
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#909
+hag sea~
+the sea hag~
+You notice the face of an ugly hag in the sea weeds.
+~
+   The sea hag is terribly fightful and has razor sharp teeth.  
+~
+104 0 0 0 65552 0 0 0 -700 E
+4 17 13 4d4+96 6d3+5
+80000 120000
+8 8 2
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#910
+merman~
+the merman~
+There is a merman swimming here brandishing his trident at you!
+~
+   The merman has a powerful tail fin instead of legs.  
+~
+96298 0 0 0 1638416 0 0 0 350 E
+5 17 13 5d5+150 6d3+3
+93333 140000
+8 8 1
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#911
+crab crusty~
+the crusty crab~
+A crusty looking crab is crawling around here searching for food.
+~
+   It looks like a crab...  What more can be said?  
+~
+65768 0 0 0 65552 0 0 0 0 E
+2 17 14 2d2+24 6d3+2
+53333 80000
+8 8 0
+E
+$

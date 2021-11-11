@@ -1,0 +1,10 @@
+(lib/text/news)
+
+NEW COMMANDS AND NEW MUD BEHAVIOR:
+---------------------------------
+**  New preference editor for players: prefedit. Use it to enable two new
+    toggles autodoor and autokey.
+
+**  You can now use "all" and "all.x" very generally with the get, put, drop, 
+    junk, donate, give, wear and remove commands.  Type HELP GET for more info.
+

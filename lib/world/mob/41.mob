@@ -1,0 +1,143 @@
+#4100
+mage~
+the mage~
+A small intelligent looking mage is standing here.
+~
+   His IQ makes almost any normal person look stupid...  It looks like he knows
+his way with magic.  
+~
+14 0 0 0 16 0 0 0 -100 E
+13 13 9 13d13+1183 8d4+7
+226666 340000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+T 4100
+#4101
+troll~
+the troll~
+A large mean-looking troll is here.
+~
+   Well, it looks dangerous!  
+~
+46 0 0 0 0 0 0 0 -800 E
+12 12 10 12d12+1008 8d4+7
+213333 320000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#4102
+snake~
+the snake~
+A large green snake is here, looks like a guardian for an evil force.
+~
+   You see a evil creature.  The snake measures at least 5 feet in length and is
+coiled into a tight circle hissing at you.  
+~
+14 0 0 0 0 0 0 0 -700 E
+10 13 11 10d10+700 8d4+7
+186666 280000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+T 4000
+#4103
+thief~
+the thief~
+A thief is here, all dressed in black.
+~
+   He seems to be counting a handful of coins.  Maybe you ought to count YOUR
+gold too...  
+~
+76 0 0 0 1572880 0 0 0 -400 E
+8 14 12 8d8+384 6d3+5
+133333 200000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+T 4101
+#4104
+orc ugly~
+the orc~
+A ugly orc is standing here.
+~
+   It is quite disgusting to look at.  
+~
+236 0 0 0 65552 0 0 0 -200 E
+7 15 12 7d7+294 6d3+4
+120000 180000
+8 8 1
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#4105
+centipede~
+the centipede~
+A small harmless centipede is here.
+~
+   Well it doesn't seem to pay any attention to you.  
+~
+10 0 0 0 0 0 0 0 300 E
+6 16 13 6d6+216 6d3+6
+106666 160000
+8 8 0
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+#4106
+warrior~
+the warrior~
+A human warrior is here.  He has a evil grin in his face.
+~
+   He doesn't look friendly at all...  
+~
+108 0 0 0 0 0 0 0 -300 E
+9 15 12 9d9+486 6d3+7
+146666 220000
+8 8 1
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
+E
+#4107
+kobold~
+the kobold~
+A green kobold is here.
+~
+   It looks slimy..  
+~
+108 0 0 0 0 0 0 0 -100 E
+7 16 12 7d7+294 6d3+6
+120000 180000
+8 8 1
+SavingPara: 1
+SavingRod: 1
+SavingPetri: 1
+SavingBreath: 1
+SavingSpell: 1
+E
+$

@@ -1,0 +1,43 @@
+#1300
+The Beginning~
+You are at the beginning.  Look elsewhere for the answers
+to your questions, Mortal.  There are places other than here
+to be, and times other than now for when to be there.  It is
+but for you to choose.  Go, away from the beginning.
+~
+13 24 0 0 0 0
+D0
+~
+~
+0 0 1001
+D2
+~
+~
+0 0 1002
+S
+T 1300
+#1301
+Something For Everyone~
+You have found something for everyone!  Here you have many
+different places to be, and many interesting times for which to
+be.  Whatever may be.  So be it.  But only if you choose.
+~
+13 16 0 0 0 0
+D2
+~
+~
+0 0 1300
+S
+T 1300
+#1302
+Somewhere to Rest~
+This is somewhere to rest.  Somewhere to recover after being
+somewhere other than here.  Those places are tough.  Not here.
+~
+13 4194320 0 0 0 0
+D0
+~
+~
+0 0 1300
+S
+$~

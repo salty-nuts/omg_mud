@@ -1,0 +1,882 @@
+#6700
+gnome child~
+a gnome child~
+A mischevious gnome child is running around.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 2
+E
+#6701
+gnome priest quoben~
+Quoben, the Priest of Gahim~
+A short gnome priest secretly prays to his true god, Gahim.
+~
+   The priest is cloaked in a long white robe with the mark of Gahim embroidered
+upon it.  He prays to Gahim and recites the scriptures he has memorized as he as
+been stripped of all his religious artifacts.
+~
+262154 0 0 0 80 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 5638
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6748
+T 6749
+T 6750
+#6702
+lanhim corporal gnome~
+Lanhim, the bloody Gnome Corporal~
+A bloody gnome is here washing the blood off of himself.
+~
+   Lanhim is loyal to the Chieftain to a fault.  He is covered in blood from
+head to toe and slowly washes his sins and blood away.  His face twists with
+sadness and his will looks broken.
+~
+10 0 0 0 80 0 0 0 0 E
+19 14 -1 3d3+190 3d3+3
+190 35000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+T 6702
+#6703
+garavaki gnome chieftain~
+Garavaki, the Gnome Chieftain~
+The Gnome Chieftain sits on his throne, worshipping his false god.
+~
+   He looks entranced as the black mist swirls around him.  He is of quite a
+large stature for a gnome, standing almost four feet tall.  In a sheathe
+attached to his side by a brown leather belt is a sword made of electrum.  He
+caresses a black ring on his left hand as he whispers to it.
+~
+22538 0 0 0 0 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 45000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6704
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6705
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6706
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6707
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6708
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6709
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6710
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6711
+gnome guard~
+a gnome guard~
+A gnome guard patrols the streets of the village.
+~
+   He slowly and deliberately patrols the streets of the village.  With a keen
+eye he scans his surroundings, watch yourself.
+~
+6216 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6712
+gnome man villager~
+a gnome villager~
+A gnome man goes about his day oblivious to everything around him.
+~
+The gnome man is too busy with his daily responsibilities to worry about anything else.
+~
+72 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6713
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6714
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6715
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6716
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6717
+gnome child~
+a gnome child~
+A mischievious gnome child runs around screaming and playing.
+~
+They run around playing and having a great time without a care in the world.  
+So innocent and unaware of the dangers of the world.
+~
+72 0 0 0 0 0 0 0 0 E
+15 15 1 3d3+150 2d2+2
+750 16000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#6718
+gnome child~
+a gnome child~
+A mischievious gnome child runs around screaming and playing.
+~
+They run around playing and having a great time without a care in the world.  
+So innocent and unaware of the dangers of the world.
+~
+72 0 0 0 0 0 0 0 0 E
+15 15 1 3d3+150 2d2+2
+750 16000
+8 8 2
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#6719
+gnome operator~
+the mill operator~
+A gnome is working hard operating the watermill.
+~
+   The mill operator is working extremely hard to keep the watermill operating
+smoothly.  Beads of sweat run down his tired face and drop onto the ground.  
+Theres so many levers to manipulate and it looks a little overwhelming.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6720
+zombie gnome~
+a zombie gnome~
+A zombified gnome staggers around the crypt.
+~
+It's skin is falling off in chunks as it staggers around aimlessly, groaning and moaning.
+~
+40 0 0 0 1104 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+0 22000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6746
+seriphus demon vampire~
+Seriphus, the Vampire Demon~
+A pitch black demon with vampire wings hovers over the altar!
+~
+   The being before you is a pitch black silhouette of a man.  No facial or body
+features can be seen upon this evil being.  Huge, black skinned, bat wings
+slowly flap up and down allowing the silhouette to hover off the ground.
+~
+26410 0 0 0 147536 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+5000 50000
+8 8 0
+BareHandAttack: 8
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6746
+#6750
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard attacks first, thinks later.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6751
+hobgoblin soldier~
+a hobgoblin soldier~
+A hobgoblin soldier stands here.
+~
+   This is just a low life hobgoblin, who couldn't make it to the ranks of the
+elite guards.  He looks pissed.
+~
+4104 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 19500
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6752
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard protects the treasury.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6753
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard protects the treasury.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6754
+hobgoblin bodyguard~
+the hobgoblin bodyguard~
+The hobgoblin bodyguard guards the king with his life.
+~
+   This is one of the elite hobgoblin guards.  He stands tall for his short
+stature.  He grins a toothy grin as he prepares to attack.
+~
+20522 0 0 0 80 0 0 0 0 E
+19 14 -1 3d3+100000 3d3+3
+1500 23000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6755
+krorem hobgoblin king~
+Krorem the King of Hobgoblins~
+There is a great king here, sitting in his throne.
+~
+   The king is a silly looking hobgoblin whose muscles bulge out of his robes,
+destroying the sophisticated effect he was trying to create.  His presence is
+one that commands respect of all hobgoblin kind.  Your intrusion into his royal
+throne room causes him great hostility!
+~
+4214826 0 0 0 0 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+2500 28000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6756
+hobgoblin miner~
+a hobgoblin miner~
+A hobgoblin miner is standing here mining for gold.
+~
+The miner is completely covered in dust and barely has any gold to show for it.
+~
+8 0 0 0 0 0 0 0 -1000 E
+17 15 0 3d3+170 2d2+2
+500 19000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6757
+hobgoblin treasurer~
+the treasurer~
+The treasurer is here counting out money.
+~
+   The hobgoblin treasurer is an old goblin with thick gold framed glasses.  It
+appears that he can only see a couple feet in front of him.
+~
+16394 0 0 0 0 0 0 0 -1000 E
+18 14 0 3d3+180 3d3+3
+3000 21000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6758
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6759
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6760
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6761
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6762
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6763
+jailer hobgoblin~
+the hobgoblin jailer~
+The hobgoblin jailer torments the gnome prisoners with satisfaction.
+~
+   The jailer is quite a well built hobgoblin.  He can be heard belittling the
+gnome prisoners and throwing objects at them while laughing.  He's become quite
+good at physical and mental abuse.  He seems to get alot of satisfaction from
+it.
+~
+42 0 0 0 0 0 0 0 -1000 E
+19 14 -1 3d3+190 3d3+3
+1000 23000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6764
+hermit crab~
+a hermit crab~
+A hermit crab crawls towards you.
+~
+   The hermit crab is about 5 feet high and looks mad that you had the nerve to
+wake it up.  It's giant pinchers open and close, picking up frequency as it gets
+closer to you!
+~
+42 0 0 0 0 0 0 0 -1000 E
+17 15 0 3d3+170 2d2+2
+0 19500
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6765
+hobgoblin cook~
+the hobgoblin cook~
+The hobgoblin cook is cooking something wretched smelling.
+~
+   The cook is a dirty and fat hobgoblin.  He burps as he stirs up something in
+a pot.
+~
+10 0 0 0 0 0 0 0 -1000 E
+18 14 0 3d3+180 3d3+3
+750 21000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6766
+ritualist hobgoblin~
+the hobgoblin ritualist~
+A hobgoblin dressed in dark clothing is speaking to the other side!
+~
+   The hobgoblin dances and chants around a large pentagram in the center of the
+floor.  He is dressed in long dark robes and a necklace full of bones that
+rattle as he moves around.
+~
+1065002 0 0 0 16720 0 0 0 -1000 E
+20 14 -2 4d4+200 3d3+3
+2000 30000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6767
+cayri hobgoblin princess~
+Princess Cayri~
+Princess Cayri appears distraught over her recent discoveries.
+~
+   Princess Cayri is the eventual heir to the throne.  She wishes to end the
+hostility the hobgoblins and gnomes have shared for centuries but it seems not
+many others feel the same way.  She appears distraught but over what no one
+knows.
+~
+262154 0 0 0 536871248 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 5638
+8 8 2
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6767
+T 6768
+T 6769
+T 6770
+#6768
+queen emse~
+Queen Emse~
+Queen Emse stands here looking over requests from the hobgoblins.
+~
+   She is wearing the finest of gemstone jewelry, freshly mined and crafted.  A
+golden crown with topaz gemstones sits atop her beautiful (for a hobgoblin)
+head.  She intently looks over requests from the hobgoblins as part of her royal
+duties.
+~
+1064970 0 0 0 336 0 0 0 -750 E
+0 20 10 1d1+0 1d1+0
+1500 25000
+8 8 2
+E
+$

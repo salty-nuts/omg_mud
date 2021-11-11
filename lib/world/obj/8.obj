@@ -1,0 +1,69 @@
+#800
+sign~
+a glowing sign~
+A glowing sign screams for your attention.~
+===================================
+|         Mutant Sewers           |
+|               |                 |
+|  Chessboard ----- Midgaard Zoo  |
+|               |                 |
+|           Fountain              |
+|               |                 |
+|    Ant Hill ----- Graveyard     |
+|               |                 |
+|               |                 |
+|               ---Guildmaster    |
+===================================
+~
+13 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+#801
+zookeeper leather gloves~
+Zookeeper's leather gloves~
+A pair of thick leather gloves covered in animal hair are here.~
+~
+9 0 0 0 0 ah 0 0 0 0 0 0 0
+0 0 0 0
+2 0 0 0 0 100
+#802
+fangs saber tiger~
+Saber-Tooth Tiger Fangs~
+A pair of long white fangs have been left here.~
+~
+9 0 0 0 0 ar 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0 0 100
+#803
+crown king baboon~
+crown of the Baboon King~
+A crown made of intertwined leaves has been foolishly discarded.~
+~
+9 0 0 0 0 ae 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0 0 100
+#804
+alligator teeth~
+some alligator teeth~
+Alligator teeth made into a necklace have been left here.~
+~
+11 0 0 0 0 ac 0 0 0 0 0 0 0
+0 0 0 0
+1 0 0 0 0 100
+#805
+wings macaw~
+the giant wings of the Macaw~
+A pair of bright blue wings are sitting here.~
+~
+11 0 0 0 0 ak 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 100
+#806
+fountain~
+the fountain of the Green Dragon~
+Crystal clear water pours out of the mouth of the Green Dragon and fills the fountain.~
+~
+23 0 0 0 0 0 0 0 0 0 0 0 0
+-1 10 15 0
+0 0 0 0 0 100
+$~
