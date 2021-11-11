@@ -23,6 +23,10 @@ different places to be, and many interesting times for which to
 be.  Whatever may be.  So be it.  But only if you choose.
 ~
 10 16 0 0 0 0
+D0
+~
+~
+0 0 1005
 D1
 ~
 ~
@@ -49,24 +53,58 @@ D0
 0 0 1000
 S
 #1003
-Low Level Zone Hallway~
-You are in an unfinished room.
+The Pathway of Novices~
+Novices, follow this path and you will find the knowledge you seek.
 ~
 10 0 0 0 0 0
 D1
 ~
 ~
 0 0 1001
+D2
+~
+~
+0 0 3600
 S
 #1004
-An unfinished room~
-You are in an unfinished room.
+The Avenue of Adventurers~
+Adventurers, along this avenue you may find what feeds the burning
+desire in your soul.  You may also meet your maker.
 ~
 10 0 0 0 0 0
+D0
+~
+~
+0 0 2200
 D3
 ~
 ~
 0 0 1001
+D5
+~
+~
+0 0 4600
+S
+#1005
+The Parkway of Power~
+Is it power you seek, adventurer?  Absolute power corrupts, absolutely.
+You shall find your corruption on this parkway, if you manage to survive.
+Just know, adventurer, that you have been warned to META and TRAIN prior to
+seeking out the Parkway of Power.
+~
+10 0 0 0 0 0
+D1
+~
+~
+0 0 6500
+D2
+~
+~
+0 0 1001
+D3
+~
+~
+0 0 1800
 S
 #1098
 Training Room~

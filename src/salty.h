@@ -48,6 +48,7 @@ void clothesline_combat(struct char_data *ch, struct char_data *victim);
 void piledriver_combat(struct char_data *ch, struct char_data *victim);
 void palm_strike_combat(struct char_data *ch, struct char_data *victim);
 void check_rend(struct char_data *ch, struct char_data *victim);
+void check_feeble(struct char_data *ch, struct char_data *victim);
 
 int backstab_mult(int level);
 int circle_mult(int level);

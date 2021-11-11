@@ -92,8 +92,8 @@ void list_meta(struct char_data *ch)
 
   hitp_gold = hitp_exp / 50;
   mana_gold = mana_exp / 50;
-  train_gold = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
-  train_exp = train_gold;
+  train_exp = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
+  train_gold = train_exp / 10;
 
   send_to_char(ch, "\n\r");
   send_to_char(ch, "You have %s experience points.\n\r", add_commas(GET_EXP(ch)));
@@ -205,11 +205,12 @@ ACMD(do_listrank)
 
 ACMD(do_metagame)
 {
-  long hitp_exp, hitp_gold, mana_exp, mana_gold;
+  long hitp_exp, hitp_gold, mana_exp, mana_gold, train_exp, train_gold;
   int hroll = con_app[GET_CON(ch)].meta_hp;
   int mroll = int_app[GET_INT(ch)].meta_mana;
   int vroll = 100;
   int arg = 0;
+
   mana_gold = hitp_gold = 0;
   skip_spaces(&argument);
 
@@ -269,6 +270,8 @@ ACMD(do_metagame)
 
   mana_gold = mana_exp / 50;
   hitp_gold = hitp_exp / 50;
+  train_exp = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
+  train_gold = train_exp / 10;
 
   switch (arg)
   {
@@ -335,18 +338,22 @@ ACMD(do_metagame)
   case 4:
   {
     int trns = dice(1,4);
-    long trn_exp = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
-    if (GET_EXP(ch) < TRAIN_EXP)
+    if (GET_EXP(ch) < train_exp)
     {
-      send_to_char(ch, "You need %s more experience points to metagame your trains.\n\r", add_commas(TRAIN_EXP - GET_EXP(ch)));
+      send_to_char(ch, "You need %s more experience points to metagame your trains.\n\r", add_commas(train_exp - GET_EXP(ch)));
       return;
     }
+    else if (GET_GOLD(ch) < train_gold)
+    {
+      send_to_char(ch, "You need %s more gold coins to metagame your trains.\n\r", add_commas(train_gold - GET_GOLD(ch)));
+      return;
+    }    
     else
     {
       send_to_char(ch, "You manage to metagame and increase your trains by %d!\n\r", trns);
       GET_TRAINS(ch) += trns;
       GET_TRAIN_META(ch) += trns;
-      rank_exp(ch, trn_exp);
+      rank_exp(ch, train_exp);
       return;
     }
   } 
@@ -2070,7 +2077,36 @@ void check_rend(struct char_data *ch, struct char_data *victim)
       act("$N stops bleeding from the rends in $S flesh.", false, ch, 0, victim, TO_CHAR);
       act("$N stops bleeding from the rends in $S flesh.", false, ch, 0, victim, TO_NOTVICT);
       act("The rends in your flesh stop bleeding!", false, ch, 0, victim, TO_VICT);
-      affect_from_char(victim,  TYPE_SLASH);
+      affect_from_char(victim,  SPELL_REND);
+    }
+  }
+}
+
+void check_feeble(struct char_data *ch, struct char_data *victim)
+{
+  int level = GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_PALM_STRIKE);
+
+  if (!IS_AFFECTED(victim, AFF_FEEBLE))
+  {
+    if (!mag_savingthrow(victim, SAVING_SPELL, 0))
+    {
+      call_magic(ch, victim, NULL, SPELL_FEEBLE, level, CAST_SPELL);
+    }
+  }
+  else
+  {
+    if (!mag_savingthrow(victim, SAVING_SPELL, 0))
+    {
+      act("$n STUNS $N ! $E feels feeble!", false, ch, 0, victim, TO_NOTVICT);
+      act("You STUN $N ! $E feels feeble!", false, ch, 0, victim, TO_CHAR);
+    }
+    else
+    {
+      REMOVE_BIT_AR(AFF_FLAGS(victim), AFF_FEEBLE);
+      act("$N is no longer feeble.", false, ch, 0, victim, TO_CHAR);
+      act("$N stops feeling feeble.", false, ch, 0, victim, TO_NOTVICT);
+      act("You stop feeling feeble.", false, ch, 0, victim, TO_VICT);
+      affect_from_char(victim,  SPELL_FEEBLE);
     }
   }
 }
