@@ -719,7 +719,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   strcat(buf, val);
   send_to_char(victim, CCMAG(victim, C_CMP));
   act(buf, FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);
-  send_to_char(victim, CCNRM(victim, C_CMP ));
+  send_to_char(victim, CCNRM(victim, C_CMP));
 }
 
 /*  message for doing damage with a spell or skill. Also used for weapon
@@ -1056,8 +1056,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   GET_HIT(victim) -= MIN(dam, GET_MAX_HIT(victim) + 1);
 
-/*  Gain exp for the hit */ 
-/*   if (ch != victim)
+  /*  Gain exp for the hit */
+  /*   if (ch != victim)
   {
 //    long amt = (long)dam * (long)1000000000;
     long amt = (long)dam * (long)dice(10,10);
@@ -1493,8 +1493,8 @@ Salty 04 JAN 2019
         dam += dice(ch->mob_specials.damnodice, ch->mob_specials.damsizedice);
       else
       {
-        if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1,101))
-          dam += dice(GET_SKILL(ch, SKILL_UNARMED_COMBAT)/5, GET_SKILL(ch, SKILL_UNARMED_COMBAT)/10 );
+        if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 101))
+          dam += dice(GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 5, GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 10);
         else
           dam += dice(1, 2); /* Max 2 bare hand damage for players */
       }
@@ -1688,26 +1688,26 @@ void perform_violence(void)
     if (!IS_NPC(ch))
     {
       num_attack = 1;
-     
+
       if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 200))
         off_stance_bonus = GET_SKILL(ch, SKILL_OFFENSIVE_STANCE);
-      
-      if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 100))
+
+      if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
       {
         num_attack = 2;
         check_improve(ch, SKILL_SECOND_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 200))
+      if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
       {
         num_attack = 3;
         check_improve(ch, SKILL_THIRD_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 300))
+      if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
       {
         num_attack = 4;
         check_improve(ch, SKILL_FOURTH_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
+      if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
       {
         num_attack = 5;
         check_improve(ch, SKILL_FIFTH_ATTACK, TRUE);
@@ -1730,13 +1730,13 @@ void perform_violence(void)
           dw_num_att = 1;
           check_improve(ch, SKILL_DUAL_WIELD, TRUE);
 
-          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 100))
+          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
             dw_num_att = 2;
-          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 200))
+          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
             dw_num_att = 3;
-          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 300))
+          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
             dw_num_att = 4;
-          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
+          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
             dw_num_att = 5;
         }
         else
@@ -1787,6 +1787,7 @@ void perform_violence(void)
           sh_num_att -= 1;
       }
 
+      /* Unarmed Combat */
       if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
       {
         if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 300))
@@ -1799,13 +1800,13 @@ void perform_violence(void)
         {
           unarmed_num_att = 1;
 
-          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 100))
+          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 200))
             unarmed_num_att = 2;
-          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 200))
+          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 300))
             unarmed_num_att = 3;
-          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 300))
+          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
             unarmed_num_att = 4;
-          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
+          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 500))
             unarmed_num_att = 5;
         }
       }
@@ -1818,25 +1819,26 @@ void perform_violence(void)
 
       do
       {
-      
+
+
         if (num_attack > 0)
         {
           hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
           if (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_OFFHAND))
           {
-            if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 101))
+            if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
               check_dirty_tricks(ch, vict);
           }
           else if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
           {
-            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 101))
+            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 102))
               check_unarmed_combat(ch, vict);
           }
         }
         if (dw_num_att > 0)
         {
           hit(ch, FIGHTING(ch), SKILL_DUAL_WIELD);
-          if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 101))
+          if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
             check_dirty_tricks(ch, vict);
         }
         if (sh_num_att > 0)
@@ -1848,7 +1850,7 @@ void perform_violence(void)
           hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
           if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
           {
-            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 101))
+            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 102))
               check_unarmed_combat(ch, vict);
           }
         }
@@ -1857,7 +1859,6 @@ void perform_violence(void)
         sh_num_att--;
         unarmed_num_att--;
       } while (num_attack > 0 || dw_num_att > 0 || sh_num_att > 0 || unarmed_num_att > 0);
- 
 
       if (GROUP(ch))
       {
