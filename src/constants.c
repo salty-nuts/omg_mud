@@ -89,6 +89,7 @@ const char *room_bits[] = {
   "NO_SUMMON",	//20
   "CONFUSING",
   "REGEN",
+  "CONSECRATE",
   "\n"
 };
 

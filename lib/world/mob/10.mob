@@ -27,6 +27,18 @@ SavingSpell: 26
 E
 T 1000
 T 1001
+#1006
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+10 0 0 0 0 0 0 0 0 E
+0 20 10 1d1+0 1d1+0
+0 0
+8 8 0
+E
 #1098
 training dummy~
 a training dummy~

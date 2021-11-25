@@ -71,6 +71,7 @@ ACMD(do_kick);
 ACMD(do_bash);
 ACMD(do_chant);
 ACMD(do_testcmd);
+ACMD(do_shriek);
 
 #define NAME_RANK_1(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Sir":"Dame") : "Dame")
 #define NAME_RANK_2(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Lord":"Lady") :"Lady")

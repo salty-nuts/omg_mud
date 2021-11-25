@@ -23,6 +23,7 @@
 #include "fight.h"
 #include "house.h"
 #include "screen.h"
+#include "mud_event.h"
 
 /* this function takes a real number for a room and returns:
    FALSE - mortals shouldn't be able to teleport to this destination
@@ -744,3 +745,45 @@ ASPELL(spell_gateway)
   do_look(ch,"",0,0);
 }
 
+
+EVENTFUNC(event_chain_lightning)
+{
+  struct char_data *ch;
+  struct mud_event_data *pMudEvent;
+
+  if (event_obj == NULL)
+    return 0;
+
+  pMudEvent = (struct mud_event_data *)event_obj;
+  ch = (struct char_data *)pMudEvent->pStruct;
+
+  if (ch == NULL)
+    return 0;
+
+  call_magic(ch, NULL, NULL, SPELL_CHAIN_LIGHTNING, GET_REAL_LEVEL(ch) + GET_SPELLS_DAMAGE(ch), CAST_SPELL);
+  return 0;
+}
+ASPELL(spell_energize)
+{
+  struct mud_event_data *pMudEvent = NULL;
+
+  if (ch == NULL)
+    return;
+
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL))
+  {
+    send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
+    return;
+  }
+
+  if ((pMudEvent = char_has_mud_event(ch, eCHAIN_LIGHTNING)))
+  {
+    send_to_char(ch, "You are already bristling with energy!\r\n");
+    return;
+  }
+
+  send_to_char(ch, "You summon a storm of electricity!\r\n");
+  act("$n summons a storm of electricity!", FALSE, ch, 0, 0, TO_ROOM);
+
+  NEW_EVENT(eCHAIN_LIGHTNING, ch, NULL, 50);
+}

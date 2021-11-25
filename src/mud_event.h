@@ -27,6 +27,9 @@ typedef enum {
     ePROTOCOLS, /* The Protocol Detection Event */
     eWHIRLWIND, /* The Whirlwind Attack */
     eSPL_DARKNESS, /* Darkness Spell */
+    eSPL_CONSECRATE, /* Consecration Spell*/
+    eCHAIN_LIGHTNING, /* Chain Lightning */
+    eSHRIEK,
 } event_id;
 
 struct mud_event_list {
@@ -58,4 +61,7 @@ EVENTFUNC(event_countdown);
 EVENTFUNC(get_protocols);
 EVENTFUNC(event_whirlwind);
 EVENTFUNC(event_circle);
+/* Mud Events */
+EVENTFUNC(event_chain_lightning);
+EVENTFUNC(event_shriek);
 #endif /* _MUD_EVENT_H_ */

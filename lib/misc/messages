@@ -1025,3 +1025,18 @@ Your magic missile makes $N roar with laughter.
 You can't help laughing as $n sends a magic missile at you.
 $N starts to roar with laughter as $n sends a magic missile at $M.
 
+* chain lightning 73
+M
+104
+$N is electrocuted by your host ofbolts!
+You have been electrocuted by a host of bolts from $n!
+$N has been electrocuted by a host of bolts from $n!
+Your host of bolts misses $N!
+$n's host of bolts misses you!
+$n's host of bolts misses $N!
+Your host of bolts zaps $N, and throws $M backward!
+A host of bolts	n from $n zaps you, and throws you backward!
+A host of bolts from $n zaps $N, and throws $M backward!
+Your host of bolts misses $N!
+$n's host of bolts misses you!
+$n's host of bolts misses $N!

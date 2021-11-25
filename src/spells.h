@@ -143,11 +143,14 @@
 #define SPELL_V_DEBUFF               100
 #define SPELL_REND                   101
 #define SPELL_FEEBLE                 102
-#define SPELL_FLAMING                103
-#define SPELL_FREEZING               104
+#define SPELL_FRENZY                 103
+#define SPELL_CHAIN_LIGHTNING        104
+#define SPELL_CONSECRATION           105
+#define SPELL_ENERGIZE               106
+
 
 /** Total Number of defined spells */
-#define NUM_SPELLS                   104
+#define NUM_SPELLS                   106
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    300
 
@@ -168,8 +171,9 @@
 #define SPELL_BARD_AGILITY    313
 #define SPELL_BARD_KNOWLEDGE  314
 #define SPELL_BARD_VITALITY   315
+#define SPELL_BARD_SHOCKWAVE  316
 /*  Total Number of defined songs  */
-#define NUM_SONGS              15
+#define NUM_SONGS              16
 /*  Insert new songs here, up to 400*/
 
 /* PLAYER SKILLS - Numbered from MAX_SPELLS+1 to MAX_SKILLS */
@@ -232,7 +236,12 @@
 #define SKILL_CLOTHESLINE           456
 #define SKILL_PILEDRVIER            457
 #define SKILL_PALM_STRIKE           458
-#define NUM_SKILLS 		               58
+#define SKILL_SKALD_SHRIEK          459
+#define SKILL_SKALD_RITUAL          460
+#define SKILL_SKALD_SCORN           461
+#define SKILL_BLOODBATH             462
+#define SKILL_FRENZY                463
+#define NUM_SKILLS 		               63
 
 /* New skills may be added here up to MAX_SKILLS (600) */
 
@@ -357,6 +366,7 @@ ASPELL(spell_gateway);
 ASPELL(spell_satiate);
 ASPELL(spell_blood_mana);
 ASPELL(spell_locate_char);
+ASPELL(spell_energize);
 /* basic magic calling functions */
 
 
@@ -433,3 +443,4 @@ extern char cast_arg2[];
 extern const char *unused_spellname;
 
 #endif /* _SPELLS_H_ */
+

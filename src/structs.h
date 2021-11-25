@@ -92,9 +92,10 @@
 #define ROOM_NOSUMMON      20
 #define ROOM_CONFUSING     21
 #define ROOM_REGEN         22  // Regen Room, Salty 08 JAN 2019  
+#define ROOM_CONSECRATE    23
 
 /** The total number of Room Flags */
-#define NUM_ROOM_FLAGS    23
+#define NUM_ROOM_FLAGS    24
 
 /* Zone info: Used in zone_data.zone_flags */
 #define ZONE_CLOSED       0  /**< Zone is closed - players cannot enter */

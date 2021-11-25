@@ -219,6 +219,7 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
   case SPELL_FIREBLAST:
   case SPELL_SYMBOL_OF_PAIN:
   case SPELL_MISSILE_SPRAY:
+  case SPELL_CHAIN_LIGHTNING:
     dam *= dice(1, 4) + 1;
     break;
 
@@ -324,27 +325,14 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     to_room = "$n screams as rends of flesh tear off $s body!";
     break;
   case SPELL_FEEBLE:
-    af[0].duration = 1;
+    af[0].location = APPLY_SAVING_SPELL;
+    af[0].modifier = 25;
+    af[0].duration = 0;
     SET_BIT_AR(af[0].bitvector, AFF_FEEBLE);
     accum_duration = TRUE;
-    to_vict = "You suddeny feel very feeble!";
-    to_room = "$n seems to be feeble!";
+    to_vict = "Your feeble mind cannot concentrate with all that shrieking!";
+    to_room = "$n covers $s ears from the shrieking, $e is feeble!";
     break;
-  case SPELL_FLAMING:
-    af[0].duration = 1;
-    SET_BIT_AR(af[0].bitvector, AFF_FLAMING);
-    accum_duration = TRUE;
-    to_vict = "You are on FIRE!! It burns!";
-    to_room = "$n erupts into a ball of fire !";
-    break;
-  case SPELL_FREEZING:
-    af[0].duration = 1;
-    SET_BIT_AR(af[0].bitvector, AFF_FREEZING);
-    accum_duration = TRUE;
-    to_vict = "You are FREEZING!!  It is cold!";
-    to_room = "$n begins to move slower as the cold sets in!";
-    break;    
-
   case SPELL_BARD_REGEN:
     af[0].duration = level;
     af[0].location = APPLY_HITP_REGEN;
@@ -1272,6 +1260,10 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
       to_room = "$n holds out the a magical holy symbol!";
     }
     break;
+  case SPELL_CHAIN_LIGHTNING:
+    to_char = "Arcing bolts of lightning flare from your fingertips!";
+    to_room = "Arcing bolts of lightning fly from the fingers of $n!";
+    break;    
   }
 
   if (to_char != NULL)
@@ -1719,6 +1711,19 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
     msg = "You cast a shroud of darkness upon the area.";
     room = "$n casts a shroud of darkness upon this area.";
     break;
+
+  case SPELL_CONSECRATION:
+    IdNum = eSPL_CONSECRATE;
+    if (ROOM_FLAGGED(rnum, ROOM_CONSECRATE))
+      failure = TRUE;
+
+    duration = 60 + level;
+    SET_BIT_AR(ROOM_FLAGS(rnum), ROOM_CONSECRATE);
+
+    msg = "You consecrate your area with holy water and a benediction.";
+    room = "$n consecrates the the area with some prayers and chanting.";
+    break;
+
   }
 
   if (failure || IdNum == eNULL)
@@ -1730,5 +1735,5 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
   send_to_char(ch, "%s\r\n", msg);
   act(room, FALSE, ch, 0, 0, TO_ROOM);
 
-  NEW_EVENT(eSPL_DARKNESS, &world[rnum], NULL, duration * PASSES_PER_SEC);
+  NEW_EVENT(IdNum, &world[rnum], NULL, duration * PASSES_PER_SEC);
 }

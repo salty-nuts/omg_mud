@@ -14,6 +14,7 @@
 #include "constants.h"
 #include "comm.h"  /* For access to the game pulse */
 #include "mud_event.h"
+#include "salty.h"  /* Salty Mud Events */
 /* Global List */
 struct list_data * world_events = NULL;
 
@@ -24,6 +25,9 @@ struct mud_event_list mud_event_index[] = {
   { "Protocol"     , get_protocols  , EVENT_DESC  },  /* ePROTOCOLS */
   { "Whirlwind"    , event_whirlwind, EVENT_CHAR  },  /* eWHIRLWIND */
   { "Spell:Darkness",event_countdown, EVENT_ROOM  },  /* eSPL_DARKNESS */
+  { "Spell:Consecrate", event_countdown, EVENT_ROOM }, /* eSPL CONSECRATE*/
+  { "Spell:ChaiLightning", event_chain_lightning, EVENT_CHAR}, /*eCHAIN_LIGHTNING*/
+  { "Shriek"       ,  event_shriek, EVENT_CHAR},
 };
 
 /* init_events() is the ideal function for starting global events. This
@@ -76,8 +80,14 @@ EVENTFUNC(event_countdown)
       break;
     case ePROTOCOLS:
       break;
+    case eSHRIEK:
+    case eCHAIN_LIGHTNING:
     case eWHIRLWIND:
       break;
+    case eSPL_CONSECRATE:
+      REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_CONSECRATE);
+      send_to_room(rnum, "The aura of consecration fades away.\r\n");
+      break;      
     case eNULL:
       break;
   }

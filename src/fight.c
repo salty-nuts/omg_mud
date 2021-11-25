@@ -1665,6 +1665,12 @@ void perform_violence(void)
     }
     if (IS_NPC(ch))
     {
+      if (IS_AFFECTED(ch, AFF_FEEBLE))
+      {
+          REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FEEBLE);
+          affect_from_char(ch, SPELL_FEEBLE);
+          continue;
+      }
       if (GET_MOB_WAIT(ch) > 0)
       {
         GET_MOB_WAIT(ch) -= PULSE_VIOLENCE;
@@ -1732,11 +1738,11 @@ void perform_violence(void)
 
           if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
             dw_num_att = 2;
-          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
+          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
             dw_num_att = 3;
-          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
+          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
             dw_num_att = 4;
-          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
+          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
             dw_num_att = 5;
         }
         else
@@ -1774,11 +1780,11 @@ void perform_violence(void)
           }
           if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
             sh_num_att = 2;
-          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
+          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
             sh_num_att = 3;
-          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
+          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
             sh_num_att = 4;
-          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
+          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
             sh_num_att = 5;
         }
         if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 200))
@@ -1802,16 +1808,16 @@ void perform_violence(void)
 
           if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 200))
             unarmed_num_att = 2;
-          if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 300))
+          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 300))
             unarmed_num_att = 3;
-          if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
+          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
             unarmed_num_att = 4;
-          if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 500))
+          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 500))
             unarmed_num_att = 5;
         }
       }
 
-      //		send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
+      //send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
 
       /* Hit with wield, shield or offhand weapon */
       if (GET_SKILL(ch, SKILL_ACROBATICS) >= rand_number(1, 101))
@@ -1819,7 +1825,6 @@ void perform_violence(void)
 
       do
       {
-
 
         if (num_attack > 0)
         {

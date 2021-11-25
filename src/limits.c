@@ -80,7 +80,7 @@ int mana_gain(struct char_data *ch)
     }
 
 	  // Houses and clubs give double regen
-  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE))
+  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_CONSECRATE))
 		gain *= 2;
 
     /* Position calculations    */
@@ -158,7 +158,7 @@ int hit_gain(struct char_data *ch)
 		}
 
 	  // Houses and clubs give double regen
-  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE))
+  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_CONSECRATE))
     	gain *= 2;
 
     /* Position calculations    */
@@ -208,7 +208,7 @@ int move_gain(struct char_data *ch)
     /* Skill/Spell calculations */
 
 	  // Houses and clubs give double regen
-  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE))
+  	if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_REGEN) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_HOUSE) || ROOM_FLAGGED(IN_ROOM(ch), ROOM_CONSECRATE))
     	gain *= 2;
 
     /* Position calculations    */

@@ -5,7 +5,7 @@ to your questions, Mortal.  There are places other than here
 to be, and times other than now for when to be there.  It is
 but for you to choose.  Go, away from the beginning.
 ~
-10 24 0 0 0 0
+10 20 0 0 0 0
 D0
 ~
 ~
@@ -115,6 +115,10 @@ D4
 ~
 ~
 0 0 1099
+D5
+~
+~
+0 0 1000
 S
 #1099
 Visual Studio Code~

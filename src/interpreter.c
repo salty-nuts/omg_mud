@@ -291,8 +291,8 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "sacrifice", "sac"     , POS_RESTING , do_sac      , 0, 0 },
   { "say"      , "s"       , POS_RESTING , do_say      , 0, 0 },
-  { "scopy"    , "scopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_SEDIT },
   { "score"    , "sc"      , POS_DEAD    , do_score    , 0, 0 },
+  { "scopy"    , "scopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_SEDIT },
   { "scan"     , "sca"     , POS_RESTING , do_scan     , 0, 0 },
   { "sing"     , "sing"    , POS_SITTING , do_sing     , 1, 0 },
   { "sit"      , "si"      , POS_RESTING , do_sit      , 0, 0 },
@@ -307,6 +307,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "show"     , "show"    , POS_DEAD    , do_show     , LVL_IMMORT, 0 },
   { "shutdow"  , "shutdow" , POS_DEAD    , do_shutdown , LVL_IMPL, 0 },
   { "shutdown" , "shutdown", POS_DEAD    , do_shutdown , LVL_IMPL, SCMD_SHUTDOWN },
+  { "shriek"   , "shriek"  , POS_FIGHTING, do_shriek   , 0, 0 },
   { "sip"      , "sip"     , POS_RESTING , do_drink    , 0, SCMD_SIP },
   { "skills"   , "skil"    , POS_SLEEPING, do_practice , 0, 0 },
   { "skillset" , "skillset", POS_SLEEPING, do_skillset , LVL_IMPL, 0 },

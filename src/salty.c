@@ -6,6 +6,8 @@ Updated: 25 JUN 2021
 Updated: 21 JUL 2021
 Updated: 22 JUL 2021
 
+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
+
 **************************************************************************/
 
 #include "conf.h"
@@ -202,7 +204,6 @@ ACMD(do_listrank)
   }
 }
 
-
 ACMD(do_metagame)
 {
   long hitp_exp, hitp_gold, mana_exp, mana_gold, train_exp, train_gold;
@@ -337,7 +338,7 @@ ACMD(do_metagame)
   }
   case 4:
   {
-    int trns = dice(1,4);
+    int trns = dice(1, 4);
     if (GET_EXP(ch) < train_exp)
     {
       send_to_char(ch, "You need %s more experience points to metagame your trains.\n\r", add_commas(train_exp - GET_EXP(ch)));
@@ -347,7 +348,7 @@ ACMD(do_metagame)
     {
       send_to_char(ch, "You need %s more gold coins to metagame your trains.\n\r", add_commas(train_gold - GET_GOLD(ch)));
       return;
-    }    
+    }
     else
     {
       send_to_char(ch, "You manage to metagame and increase your trains by %d!\n\r", trns);
@@ -356,7 +357,7 @@ ACMD(do_metagame)
       rank_exp(ch, train_exp);
       return;
     }
-  } 
+  }
   default:
   {
     send_to_char(ch, "There is nothing like that to metagame!\n\r");
@@ -1854,9 +1855,8 @@ void sucker_punch_combat(struct char_data *ch, struct char_data *victim)
     hit(ch, victim, SKILL_SUCKER_PUNCH);
 
     if (percent > 80)
-      call_magic(ch, victim, NULL, SPELL_V_DEBUFF, GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_SUCKER_PUNCH), CAST_SPELL);    
+      call_magic(ch, victim, NULL, SPELL_V_DEBUFF, GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_SUCKER_PUNCH), CAST_SPELL);
     return;
-
   }
 }
 void uppercut_combat(struct char_data *ch, struct char_data *victim)
@@ -1935,7 +1935,6 @@ void clothesline_combat(struct char_data *ch, struct char_data *victim)
       call_magic(ch, victim, NULL, SPELL_UNARMED_DEBUFF2, GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_CLOTHESLINE), CAST_SPELL);
 
     return;
-
   }
 }
 void piledriver_combat(struct char_data *ch, struct char_data *victim)
@@ -2013,9 +2012,9 @@ int unarmed_combat_dam(struct char_data *ch, int skill)
   /* skill_lev has a min of 1, max of 6*/
   int skill_lev;
   /* Max of dice(10,5) */
-  int str_roll = dice(  (2 * GET_STR(ch))/5, (2 * GET_STR(ch))/10 );
+  int str_roll = dice((2 * GET_STR(ch)) / 5, (2 * GET_STR(ch)) / 10);
   /* Max of dice(5,5) */
-  int luck_roll = dice(  (2 * GET_LUCK(ch))/10, (2 * GET_LUCK(ch))/10 );
+  int luck_roll = dice((2 * GET_LUCK(ch)) / 10, (2 * GET_LUCK(ch)) / 10);
 
   switch (skill)
   {
@@ -2023,17 +2022,17 @@ int unarmed_combat_dam(struct char_data *ch, int skill)
   case SKILL_HEADBUTT:
   case SKILL_R_HOOK:
   case SKILL_L_HOOK:
-    skill_lev =  1 + (GET_REAL_LEVEL(ch) / 20);
+    skill_lev = 1 + (GET_REAL_LEVEL(ch) / 20);
     break;
   case SKILL_SUCKER_PUNCH:
   case SKILL_UPPERCUT:
   case SKILL_HAYMAKER:
   case SKILL_CLOTHESLINE:
-    skill_lev =  1 + (GET_REAL_LEVEL(ch) / 15);
+    skill_lev = 1 + (GET_REAL_LEVEL(ch) / 15);
     break;
   case SKILL_PILEDRVIER:
   case SKILL_PALM_STRIKE:
-    skill_lev =  1 + (GET_REAL_LEVEL(ch) / 12);
+    skill_lev = 1 + (GET_REAL_LEVEL(ch) / 12);
     break;
   default:
     skill_lev = 1;
@@ -2042,7 +2041,6 @@ int unarmed_combat_dam(struct char_data *ch, int skill)
 
   return (str_roll * luck_roll * skill_lev);
 }
-
 
 ACMD(do_testcmd)
 {
@@ -2077,14 +2075,14 @@ void check_rend(struct char_data *ch, struct char_data *victim)
       act("$N stops bleeding from the rends in $S flesh.", false, ch, 0, victim, TO_CHAR);
       act("$N stops bleeding from the rends in $S flesh.", false, ch, 0, victim, TO_NOTVICT);
       act("The rends in your flesh stop bleeding!", false, ch, 0, victim, TO_VICT);
-      affect_from_char(victim,  SPELL_REND);
+      affect_from_char(victim, SPELL_REND);
     }
   }
 }
 
 void check_feeble(struct char_data *ch, struct char_data *victim)
 {
-  int level = GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_PALM_STRIKE);
+  int level = GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_SKALD_SHRIEK);
 
   if (!IS_AFFECTED(victim, AFF_FEEBLE))
   {
@@ -2097,16 +2095,154 @@ void check_feeble(struct char_data *ch, struct char_data *victim)
   {
     if (!mag_savingthrow(victim, SAVING_SPELL, 0))
     {
-      act("$n STUNS $N ! $E feels feeble!", false, ch, 0, victim, TO_NOTVICT);
-      act("You STUN $N ! $E feels feeble!", false, ch, 0, victim, TO_CHAR);
+      act("$n shrieks causes $N to covers $S feeble ears!", false, ch, 0, victim, TO_NOTVICT);
+      act("How pathetic, $N feels feeble from your shriek!", false, ch, 0, victim, TO_CHAR);
     }
     else
     {
       REMOVE_BIT_AR(AFF_FLAGS(victim), AFF_FEEBLE);
-      act("$N is no longer feeble.", false, ch, 0, victim, TO_CHAR);
+      affect_from_char(victim, SPELL_FEEBLE);
+      act("============$N stops covering $S ears and takes up the fight!", false, ch, 0, victim, TO_CHAR);
       act("$N stops feeling feeble.", false, ch, 0, victim, TO_NOTVICT);
       act("You stop feeling feeble.", false, ch, 0, victim, TO_VICT);
-      affect_from_char(victim,  SPELL_FEEBLE);
     }
+  }
+}
+
+ACMD(do_shriek)
+{
+  char arg[MAX_INPUT_LENGTH];
+  struct char_data *victim;
+  int cost = 100;
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_SKALD_SHRIEK);
+
+  one_argument(argument, arg);
+
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_SKALD_SHRIEK))
+  {
+    send_to_char(ch, "You have no idea how.\r\n");
+    return;
+  }
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL))
+  {
+    send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
+    return;
+  }
+
+  if (!(victim = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
+  {
+    if (FIGHTING(ch) && IN_ROOM(ch) == IN_ROOM(FIGHTING(ch)))
+    {
+      victim = FIGHTING(ch);
+    }
+    else
+    {
+      send_to_char(ch, "Shriek at whom?\r\n");
+      return;
+    }
+  }
+  if (victim == ch)
+  {
+    send_to_char(ch, "Aren't we funny today...\r\n");
+    return;
+  }
+  if (!CONFIG_PK_ALLOWED && !IS_NPC(victim) && !IS_NPC(ch))
+    return;
+
+  if (MOB_FLAGGED(victim, MOB_NOKILL))
+  {
+    send_to_char(ch, "This mob is protected.\r\n");
+    return;
+  }
+  if (GET_MANA(ch) < cost)
+  {
+    send_to_char(ch, "You don't have enough energy to shriek.\r\n");
+    return;
+  }
+  if (percent > prob)
+  {
+    send_to_char(ch, "Your shriek gets caught in your throat.\r\n");
+    WAIT_STATE(ch, PULSE_VIOLENCE);
+    return;
+  }
+
+  if (char_has_mud_event(ch, eSHRIEK))
+  {
+    send_to_char(ch, "You are already shrieking as loud as you can!\r\n");
+    return;
+  }
+  act("You emit a piercing shriek!", false, ch, 0, NULL, TO_CHAR);
+  act("$n begins to shriek loudly!", FALSE, ch, 0, 0, TO_ROOM);
+
+  /* We need to pay for it */
+  GET_MANA(ch) -= cost;
+
+  /* NEW_EVENT() will add a new mud event to the event list of the character.
+   * This function below adds a new event of "eSHRIEK", to "ch", and passes "NULL" as
+   * additional data. The event will be called in "3 * PASSES_PER_SEC" or 3 seconds */
+  NEW_EVENT(eSHRIEK, ch, NULL, 3 * PASSES_PER_SEC);
+
+  WAIT_STATE(ch, PULSE_VIOLENCE * 2);
+}
+
+/*
+	Recoded to fix bad list management
+	Salty
+	06 JAN 2016
+*/
+EVENTFUNC(event_shriek)
+{
+  struct char_data *ch, *tch;
+  struct mud_event_data *pMudEvent;
+  int cost = 100;
+  int percent = rand_number(1, 101);
+  int prob = 0;
+
+  if (event_obj == NULL)
+    return 0;
+
+  pMudEvent = (struct mud_event_data *)event_obj;
+  ch = (struct char_data *)pMudEvent->pStruct;
+  prob = GET_SKILL(ch, SKILL_SKALD_SHRIEK);
+
+  act("You emit a piercing shriek!", false, ch, 0, NULL, TO_CHAR);
+  GET_MANA(ch) -= cost;
+
+  for (tch = world[IN_ROOM(ch)].people; tch != NULL; tch = tch->next_in_room)
+  {
+    if (ch != tch && IS_NPC(tch))
+    {
+      call_magic(ch, tch, NULL, SPELL_FEEBLE, GET_REAL_LEVEL(ch) + GET_SPELLS_AFFECTS(ch), CAST_SPELL);
+    }
+  }
+
+  if (GET_POS(ch) != POS_FIGHTING)
+  {
+    send_to_char(ch, "You must be fighting in order to shriek!\n\r");
+    act("$n stops shrieking as the din of combat fades.", false, ch, 0, NULL, TO_ROOM);
+    return 0;
+  }
+
+  if (GET_MANA(ch) < cost)
+  {
+    send_to_char(ch, "You are exhausted from combat and shrieking and .. you need a break.\n\r");
+    act("$n suddenly stops shrieking and looks exhausted.", false, ch, 0, NULL, TO_ROOM);
+    return 0;
+  }
+  /* The "return" of the event function is the time until the event is called
+   * again. If we return 0, then the event is freed and removed from the list, but
+   * any other numerical response will be the delay until the next call */
+  if (percent > prob)
+  {
+    send_to_char(ch, "Your shriek gets caught in your throat.\r\n");
+    act("$n tries to shriek but has a frong in $s throat.", false, ch, 0, NULL, TO_ROOM);
+    check_improve(ch, SKILL_SKALD_SHRIEK, FALSE);
+    return 0;
+  }
+  else
+  {
+    check_improve(ch, SKILL_SKALD_SHRIEK, TRUE);
+    return 7 * PASSES_PER_SEC;
   }
 }

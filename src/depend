@@ -159,7 +159,7 @@ msgedit.o: msgedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
  comm.h screen.h spells.h db.h msgedit.h oasis.h genolc.h interpreter.h \
  modify.h
 mud_event.o: mud_event.c conf.h sysdep.h structs.h protocol.h lists.h \
- utils.h db.h dg_event.h constants.h comm.h mud_event.h
+ utils.h db.h dg_event.h constants.h comm.h mud_event.h salty.h
 oasis.o: oasis.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
  interpreter.h comm.h db.h shop.h genolc.h genmob.h genshp.h genzon.h \
  genwld.h genobj.h oasis.h screen.h dg_olc.h dg_scripts.h act.h handler.h \
@@ -218,7 +218,7 @@ spell_parser.o: spell_parser.c conf.h sysdep.h structs.h protocol.h \
  dg_scripts.h fight.h salty.h
 spells.o: spells.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
  comm.h spells.h handler.h db.h constants.h interpreter.h dg_scripts.h \
- act.h fight.h house.h screen.h
+ act.h fight.h house.h screen.h mud_event.h dg_event.h
 tedit.o: tedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
  interpreter.h comm.h db.h genolc.h oasis.h improved-edit.h modify.h
 utils.o: utils.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
