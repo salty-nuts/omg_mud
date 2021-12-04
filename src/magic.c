@@ -317,6 +317,15 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
   switch (spellnum)
   {
 
+  case SPELL_FRENZY:
+    af[0].duration = 0;
+    af[0].location = APPLY_AC;
+    af[0].modifier = 50;
+    SET_BIT_AR(af[0].bitvector, AFF_FRENZY);
+    accum_duration = TRUE;
+    to_vict = "The battle ritual drives you into a frenzy!";
+    to_room = "$n is driven to frenzy by the battle ritual!";
+    break;
   case SPELL_REND:
     af[0].duration = 1;
     SET_BIT_AR(af[0].bitvector, AFF_REND);
@@ -1334,7 +1343,7 @@ static const char *mag_summon_fail_msgs[] = {
 #define MOB_CLONE 10  /**< vnum for the clone mob. */
 #define OBJ_CLONE 161 /**< vnum for clone material. */
 #define MOB_ZOMBIE 11 /**< vnum for the zombie mob. */
-
+#define MOB_JUJU_ZOMBIE 1299
 void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
                  int spellnum, int savetype)
 {
@@ -1376,7 +1385,7 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
     handle_corpse = TRUE;
     msg = 11;
     fmsg = rand_number(2, 6); /* Random fail message. */
-    mob_num = MOB_ZOMBIE;
+    mob_num = MOB_JUJU_ZOMBIE;
     pfail = 10; /* 10% failure, should vary in the future. */
     break;
 
@@ -1451,54 +1460,13 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 void mag_points(int level, struct char_data *ch, struct char_data *victim,
                 int spellnum, int savetype)
 {
-  int healing = 0, move = 0;
-
-  healing = level + GET_SKILL(ch, spellnum);
-
+  int healing = 0, move = 0,  skill = 0;
+  int modifier = 0;
+  skill = GET_SKILL(ch, spellnum);
+  
+ 
   if (victim == NULL)
     return;
-
-  switch (spellnum)
-  {
-  case SPELL_CURE_LIGHT:
-    healing += dice(2, 4);
-    send_to_char(victim, "You feel better.\r\n");
-    break;
-  case SPELL_CURE_CRITIC:
-    healing += dice(4, 4);
-    send_to_char(victim, "You feel a lot better!\r\n");
-    break;
-  case SPELL_HEAL:
-    healing += dice(6, 4);
-    healing *= 2;
-    move = healing;
-    send_to_char(victim, "A warm feeling floods your body.\r\n");
-    break;
-  case SPELL_POWERHEAL:
-    healing += dice(8, 4);
-    healing *= 3;
-    move = healing;
-    send_to_char(victim, "A powerful feeling floods your body.\r\n");
-    break;
-  case SPELL_MIRACLE:
-    healing += dice(10, 4);
-    healing *= 5;
-    move = healing;
-    send_to_char(victim, "Your life has been restored!\n\r");
-    break;
-  case SPELL_BARD_HEAL:
-    healing += dice(6, 4);
-    healing *= 2;
-    move = healing;
-    send_to_char(victim, "A warm feeling floods your body.\r\n");
-    break;
-  case SPELL_BARD_POWERHEAL:
-    healing += dice(8, 4);
-    healing *= 3;
-    move = healing;
-    send_to_char(victim, "A powerful feeling floods your body.\r\n");
-    break;
-  }
 
   if (AFF_FLAGGED(ch, AFF_HARMONY))
   {
@@ -1508,13 +1476,53 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
     }
     else
     {
-      send_to_char(ch, "Your harmonic chant improves your healing!\n\r");
+      send_to_char(ch, "Your harmonic chant warms %s's heart!\n\r", GET_NAME(victim));
       check_improve(ch, SKILL_CHANT, TRUE);
-      healing *= 2;
+      modifier += 1;
     }
   }
-  if (IS_PRIEST(ch))
-    healing *= 2;
+  if (GET_SKILL(ch, SKILL_BEDSIDE_MANNER))
+  {
+    if (rand_number(1, 101) > GET_SKILL(ch, SKILL_BEDSIDE_MANNER))
+    {
+      check_improve(ch, SKILL_BEDSIDE_MANNER, FALSE);
+    }
+    else
+    {
+      send_to_char(ch, "Your bedside manner cheers %s up!\n\r", GET_NAME(victim));
+      check_improve(ch, SKILL_BEDSIDE_MANNER, TRUE);
+      modifier += 2;
+    }
+  }
+  switch (spellnum)
+  {
+  case SPELL_HEAL:
+    modifier = 2;
+    send_to_char(victim, "You are healed!\n\r");
+    break;
+  case SPELL_POWERHEAL:
+    modifier = 3;
+    send_to_char(victim, "You are powerfully healed!\n\r");
+    break;
+  case SPELL_MIRACLE:
+    modifier = 5;
+    send_to_char(victim, "You are miraculously healed!\n\r");
+    break;
+  case SPELL_BARD_HEAL:
+    modifier = 2;
+    send_to_char(victim, "You wounds are healed!\n\r");
+    break;
+  case SPELL_BARD_POWERHEAL:
+    modifier = 3;
+    send_to_char(victim, "You wounds are powerhealed!\n\r");
+    break;
+  default:
+    modifier = 1;
+    send_to_char(victim, "Default healing spell used on you!!\n\r");
+    break;
+  }
+
+  healing = (level + skill) * modifier;
 
   //   send_to_char(victim, "Spell level: %d\n\r", level + GET_SKILL(ch, spellnum));
   //   send_to_char(victim, "Healing was %d!\n\r", healing);

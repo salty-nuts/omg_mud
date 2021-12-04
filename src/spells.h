@@ -236,12 +236,28 @@
 #define SKILL_CLOTHESLINE           456
 #define SKILL_PILEDRVIER            457
 #define SKILL_PALM_STRIKE           458
-#define SKILL_SKALD_SHRIEK          459
-#define SKILL_SKALD_RITUAL          460
-#define SKILL_SKALD_SCORN           461
+#define SKILL_BARD_SHRIEK           459
+#define SKILL_BARD_RITUAL           460
+#define SKILL_BARD_SCORN            461
 #define SKILL_BLOODBATH             462
 #define SKILL_FRENZY                463
-#define NUM_SKILLS 		               63
+#define SKILL_BEDSIDE_MANNER        464
+#define SKILL_DIRT_KICK             465  // rogue blind kick?
+#define SKILL_ADRENALINE_RUSH       466  // 
+#define SKILL_ANATOMY_LESSONS       467  // critical strike cloone?  critical heal?  
+#define SKILL_GARROTTE              468  // silence, debuff, possibly kill? afkmud
+#define SKILL_INSPIRE               469  // bard buff afkmud
+#define SKILL_LUNGE                 470  // knight attack afkmud
+#define SKILL_KNEE                  471  // fighter attack afkmud
+#define SKILL_CHOP                  472  // fighter afkmud
+#define SKILL_TRIP                  473  // knight afkmud
+#define SKILL_ROUNDHOUSE            474  // fighter
+#define SKILL_ELBOW                 475  // fighter multihit
+
+#define SKILL_TRANCE                476  // bard
+#define SKILL_WARDANCE              477  // bard
+
+#define NUM_SKILLS 		               75
 
 /* New skills may be added here up to MAX_SKILLS (600) */
 

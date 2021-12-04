@@ -329,8 +329,8 @@ const char *affected_bits[] =
   "VITALITY",
   "REND",
   "FEEBLE",
-  "FLAMING",
-  "FREEZING",
+  "FRENZY",
+  "GARROTTE",
   "\n"
 };
 

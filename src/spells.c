@@ -248,13 +248,13 @@ ASPELL(spell_teleport)
   greet_memory_mtrigger(victim);
 }
 
-#define SUMMON_FAIL "You failed.\r\n"
+#define SUMMON_FAIL "You failed the summon.\r\n"
 ASPELL(spell_summon)
 {
   if (ch == NULL || victim == NULL)
     return;
 
-  if (GET_REAL_LEVEL(victim) > MIN(LVL_IMMORT - 1, level + 3)) {
+  if (GET_REAL_LEVEL(victim) > GET_REAL_LEVEL(ch)) {
     send_to_char(ch, "%s", SUMMON_FAIL);
     return;
   }

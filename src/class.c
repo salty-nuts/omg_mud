@@ -740,6 +740,7 @@ void init_priest(void)
   spell_level(SPELL_GROUP_PASS_DOOR, CLASS_PRIEST, 20);
   spell_level(SPELL_GROUP_MIRACLE, CLASS_PRIEST, 30);
   spell_level(SPELL_GROUP_REGEN, CLASS_PRIEST, 30);
+  spell_level(SKILL_BEDSIDE_MANNER, CLASS_PRIEST, 10);
 }
 void init_rogue(void)
 {
@@ -840,7 +841,8 @@ void init_bard(void)
   spell_level(SPELL_BARD_AGILITY, CLASS_BARD, 5);
   spell_level(SPELL_BARD_KNOWLEDGE, CLASS_BARD, 5);
   spell_level(SPELL_BARD_VITALITY, CLASS_BARD, 5);
-  spell_level(SKILL_SKALD_SHRIEK, CLASS_BARD, 30);
+  spell_level(SKILL_BARD_SHRIEK, CLASS_BARD, 30);
+  spell_level(SKILL_BARD_RITUAL, CLASS_BARD, 30);
 }
 void init_spell_levels(void)
 {

@@ -30,6 +30,7 @@ typedef enum {
     eSPL_CONSECRATE, /* Consecration Spell*/
     eCHAIN_LIGHTNING, /* Chain Lightning */
     eSHRIEK,
+    eRITUAL,
 } event_id;
 
 struct mud_event_list {
@@ -64,4 +65,5 @@ EVENTFUNC(event_circle);
 /* Mud Events */
 EVENTFUNC(event_chain_lightning);
 EVENTFUNC(event_shriek);
+EVENTFUNC(event_ritual);
 #endif /* _MUD_EVENT_H_ */

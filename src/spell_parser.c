@@ -1108,7 +1108,7 @@ void mag_assign_spells(void)
   for (i = 0; i <= TOP_SPELL_DEFINE; i++)
     unused_spell(i);
   /* Do not change the loop above. */
-  spello(SPELL_FRENZY, "frenzy", 100, 50, 10, POS_FIGHTING, TAR_IGNORE, FALSE, MAG_MANUAL, NULL);
+  spello(SPELL_FRENZY, "frenzy", 100, 50, 10, POS_FIGHTING, TAR_IGNORE, FALSE, MAG_AFFECTS, NULL);
 
   spello(SPELL_ENERGIZE, "energize", 250 , 100, 20, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_MANUAL,
@@ -1606,9 +1606,12 @@ void mag_assign_spells(void)
   skillo(SKILL_CLOTHESLINE, "clothesline");
   skillo(SKILL_PILEDRVIER, "piledriver");
   skillo(SKILL_PALM_STRIKE, "palm strike");
-  skillo(SKILL_SKALD_SHRIEK, "shriek");
-  skillo(SKILL_SKALD_RITUAL, "ritual");
-  skillo(SKILL_SKALD_SCORN, "scorn");
+  skillo(SKILL_BARD_SHRIEK, "shriek");
+  skillo(SKILL_BARD_RITUAL, "ritual");
+  skillo(SKILL_BARD_SCORN, "scorn");
   skillo(SKILL_BLOODBATH, "bloodbath");
   skillo(SKILL_FRENZY, "frenzy");
+  skillo(SKILL_BEDSIDE_MANNER, "bedside manner");
+  skillo(SKILL_GARROTTE, "garrotte");
+  skillo(SKILL_DIRT_KICK, "dirt kick");
 }

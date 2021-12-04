@@ -146,7 +146,7 @@ void mobile_activity(void)
     /* Charmed Mob Rebellion: In order to rebel, there need to be more charmed 
      * monsters than the person can feasibly control at a time.  Then the
      * mobiles have a chance based on the charisma of their leader.
-     * 1-4 = 0, 5-7 = 1, 8-10 = 2, 11-13 = 3, 14-16 = 4, 17-19 = 5, etc. */
+     * 1-4 = 0, 5-7 = 1, 8-10 = 2, 11-13 = 3, 14-16 = 4, 17-19 = 5, etc. 
     if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && num_followers_charmed(ch->master) > (GET_INT(ch->master) - 2) / 3)
 		{
       if (!aggressive_mob_on_a_leash(ch, ch->master, ch->master))
@@ -156,7 +156,7 @@ void mobile_activity(void)
         stop_follower(ch);
       }
     }
-
+*/
     /* Helper Mobs */
     if (MOB_FLAGGED(ch, MOB_HELPER) && (!AFF_FLAGGED(ch, AFF_BLIND) || !AFF_FLAGGED(ch, AFF_CHARM))) 
     {

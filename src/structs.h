@@ -345,13 +345,14 @@
 #define AFF_VITALITY        43
 #define AFF_REND            44
 #define AFF_FEEBLE          45
-#define AFF_FLAMING         46
-#define AFF_FREEZING        47
+#define AFF_FRENZY          46
+#define AFF_GARROTTE        47
+#define AFF_MEDITATE        48
 
 /** Total number of affect flags including the don't use flag.
  *  Zero indexed.
  */
-#define NUM_AFF_FLAGS   48
+#define NUM_AFF_FLAGS   49
 
 /* Modes of connectedness: used by descriptor_data.state 		*/
 #define CON_PLAYING       0 /**< Playing - Nominal state 		*/

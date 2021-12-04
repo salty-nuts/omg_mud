@@ -14,11 +14,6 @@ Commands:
 
 See Examples: @RTSTAT 7505, 154@n
 #101
-helgidomssongur
-
-Song of sanctuary
-
-#0
 %AT% WAT MAT OAT %MAT% %WAT% %OAT%
 
 %at% <target> <command>
@@ -251,6 +246,12 @@ load trigger will be executed.
 
 Example: @RTSTAT 21, 1370@n
 #101
+2nd-ATTACK 3rd-ATTACK 4th-ATTACK 5th-ATTACK
+
+Each tier of attack gives you one extra chance to attack with your main hand,
+every round.
+
+#0
 <TOPIC> <COMMAND> COMMAND> TOPICS
 
    You took me too literally. I want you to type help <topic>, as in topic 
@@ -388,6 +389,12 @@ Example:
 
 See also: SET, PROMOTION, ADMIN
 #101
+advanced-track
+
+Passive skill that automates the track command.  A well skilled rogue can
+track down almost anything in a zone.
+
+#0
 AEDIT-MENU ACTION-EDITOR ACREATE SOCIAL-EDITOR
 
 Syntax: aedit <action>
@@ -559,6 +566,10 @@ many layers in between, and these are often more interesting.
 
 See also: ALIGN
 #101
+andvevarljod
+
+Song of healing
+#0
 ANIMATE-DEAD
 
 Usage: cast 'animate dead' corpse
@@ -686,6 +697,12 @@ http://www.degraeve.com/img2txt.php
 
 See also: COLOR, AUTOMAP, TBAMAP, CARTOGRAPHY
 #101
+ASSAULT
+
+Player command to attack an NPC by suprise, for increased damage.  Similar to
+backstab but nowhere near as cool.
+
+#0
 ASSIST
 
 Usage: assist <player>
@@ -895,88 +912,6 @@ BACKDOOR HACKING
 and we will be contacting your service provider. Just Kidding. 
 
 #0
-PARRY ENHANCED-PARRY
-
-Parry allows you to avoid melee damage directed at you.
-
-Enhanced Parry allows you to avoid special melee damage that may be directed at
-those fighting the NPC, those in your group, or those in the room.
-
-#0
-SWITCH-TARGET
-
-A passive ability that, once trained, allows you to 'kill' a second NPC and
-switch from the previous to new NPC target.
-
-#0
-DUAL-WIELD TWO-HANDED WIELD GRAB
-
-Usage: wield <weapon>, wear <shield> , grab <object>
-
-Grab / Hold:  For getting a good grip on something; a torch, for example.
-  > hold torch
-  > grab stone
-
-Wield : For equipping weapons.
-
-  > wield sword
-  > wield 3.sword    (Wields the third sword in your inventory)
-
-NOTE:  A player can only use two objects in their hands at any given time.
-Players must choose to use a shield, dual wield, use an instrument or staff, or 
-perhaps seek out a two-handed weapon.
-
-See also: EQUIPMENT, REMOVE, WEAR, WIELD
-
-#0
-DODGE
-
-Dodge allows to avoid melee damage directed at you.
-
-#0
-2nd-ATTACK 3rd-ATTACK 4th-ATTACK 5th-ATTACK
-
-Each tier of attack gives you one extra chance to attack with your main hand,
-every round.
-
-#0
-circle-skill
-
-This command allows the rogue to cicle behind and backstab the back of their
-victim during combat.  Skill in backstab and double backstab has also been
-shown to be helpful.
-
-#0
-CRITICAL-HIT
-
-This passive skill allows the player to score a critical hit in melee combat,
-resulting in a damage increase.  Skill based attacks like circle, tumble, headbutt
-and the like can also critical hit.
-
-#0
-headbutt
-
-This commband allows the fighter to take control of the fight by putting thier
-head into the game.  Literally.  This ability can do massive damage if skilled.
-
-#0
-defensive-stance offensive-stance stance
-
-Usage: stance <type>
-Types: offense / defense / none
-
-Offensive stance increases the number of attacks per round and damage per attack.
-While in offensive stance you cannot dodge or parry.
-
-Defensive stance increases total damage reduction, lowers maximum armor (better),
-adds to your ability to dodge and parry.  Defensive stance also allows you to
-utilize enhanced parry, which parries certain attacks targeted at your peers.
- 
-#0
-ENHANCED-DAMAGE
-
-Passive skill that increases melee damage.
-#0
 BACKSTAB  DOUBLE-BACKSTAB EXECUTE
 
 Backstab is a way to sneak up on a person and attempt to place your dagger
@@ -1062,6 +997,11 @@ Moves all of your money in/out of the bank.
 
 See also: GOLD, SCORE
 #0
+BARD SKALD
+
+Bard is a custom class to OMG Mud.  All similarities are just that.
+
+#0
 BASH
 
 Fighters only.
@@ -1077,6 +1017,11 @@ A bash makes you unable to type commands for 2 rounds of violence.
 Note that hitting a person who is resting/sitting will inflict 1.5 * damage.
 
 See also: KICK, RESCUE, WHIRLWIND
+#0
+battle rythm battle-rythm
+
+This passive skill increases the damage dealt by songs.
+
 #0
 BITVECTORS NOBITS BITS
 
@@ -1143,6 +1088,14 @@ BOATS SHIPS FERRY TRANSPORTSS
 @RTSTAT 13691@n
 
 #101
+bolvunarsongur
+
+Song of stat reduction.
+
+Victim damroll and hitroll lowered. (Worse)
+Vicrtim armor and save vs spell raised (Worse)
+
+#0
 BOOBS NOASSHOLE TITS IMMORAL
 
 YES, people have tried to get help on these things... 
@@ -1690,6 +1643,16 @@ unlimited containers
 
 See Also: NEWS, CHANGELOG
 #0
+chant
+
+A skilled bard can use various chants in different battle scenarios.
+
+syntax:  chant harmony / dissonance / none
+
+chanting for Harmony will increase your healing songs.  whereas chanting
+for Dissonance will aid your damage songs.
+
+#0
 CHAR-VARS TRIGEDIT-VARIABLES-CHARACTERS %TITLE% %ACTOR.TITLE% CHAR-VARIABLES TRIGEDIT-CHAR-VAR %ACTOR.ID% ACTOR.ID ACTOR.VNUM %ACTOR.VNUM% %ACTOR.NAME% %ACTOR% %VICTIM% SELF %SELF% MOBVARS MOB-VARS TRIGEDIT-LEVEL %SELF.ID% SELF.ID NEXT_IN_ROOM ACTOR-VAR 
 
 The following fields can be used with %actor%. i.e. %actor.<field>%
@@ -1827,6 +1790,13 @@ CHMOD
 0 stands for "no permission."
 So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).
 #101
+circle-skill
+
+This command allows the rogue to cicle behind and backstab the back of their
+victim during combat.  Skill in backstab and double backstab has also been
+shown to be helpful.
+
+#0
 CIRCLEMUD CREDITS
 
 tbaMUD (formerly known as CircleMUD) was developed from DikuMUD (Gamma 0.0) by 
@@ -1983,6 +1953,12 @@ ASSIST RESCUE                    - Assist a friend in battle
 CONSIDER                         - Take a quick look at your opponent.
 KICK BASH BACKSTAB               - Battle skills.
 CAST                             - Used for spellcasting.
+#0
+combat-arms
+
+A passive abilit that, once trained, allows the fighter to kick and headbutt
+whenever the time is right, automatically.
+
 #0
 COMMANDS MUDCOMMANDS MUD-COMMANDS
 
@@ -2175,6 +2151,13 @@ Double amount of water will be created if it is raining (or worse).
 
 See also: CREATE-FOOD
 #0
+CRITICAL-HIT
+
+This passive skill allows the player to score a critical hit in melee combat,
+resulting in a damage increase.  Skill based attacks like circle, tumble, headbutt
+and the like can also critical hit.
+
+#0
 CURE-BLIND
 
 Usage       : cast 'cure blind' <victim>
@@ -2259,6 +2242,11 @@ load the mace, this would not make any sense.
     
 See also: TEXT-EDITOR
 #101
+damage-reduction
+
+A passive skill that reduces incoming damage from all sources.
+
+#0
 DAMROLL ROLL DAMAGEROLL DAMAGE-ROLL 
 
    A bonus added to your armor and weapons that allows your character to hit 
@@ -2297,6 +2285,19 @@ or connections sitting in the "Get name" state.
 
 See also: USERS
 #101
+defensive-stance offensive-stance stance
+
+Usage: stance <type>
+Types: offense / defense / none
+
+Offensive stance increases the number of attacks per round and damage per attack.
+While in offensive stance you cannot dodge or parry.
+
+Defensive stance increases total damage reduction, lowers maximum armor (better),
+adds to your ability to dodge and parry.  Defensive stance also allows you to
+utilize enhanced parry, which parries certain attacks targeted at your peers.
+ 
+#0
 DELETE SUICIDE
 
    If you choose to give up then quit the game back to the login screen and 
@@ -2570,6 +2571,12 @@ For a full history of MUDs, check out: http://en.wikipedia.org/wiki/Muds
 
 Smaug Building Institute: http://zeno.biyg.org/
 #0
+dirty-tricks
+
+A passive ability that, once trained, allows the rogue to circle, tumble and
+kick whenever the time is right, automatically.
+
+#0
 DISCLAIMER
 
    All areas submitted or created on The Builder Academy remain the property
@@ -2644,6 +2651,11 @@ Modify your prompt to show your hit points, mana, and/or movement points.
                     prompt if the values drop below 30% of max.
 See also: TOGGLE
 #0
+DODGE
+
+Dodge allows to avoid melee damage directed at you.
+
+#0
 DONATE
 
 Usage: donate <object>
@@ -2707,6 +2719,26 @@ Example: @RTSTAT 3008, 12000, 6100, 6300, 41004@n
  
 See also: TRIGEDIT-MOB-DEATH, ROOMFLAGS, GROUP, SCORE
 #101
+DUAL-WIELD TWO-HANDED WIELD GRAB
+
+Usage: wield <weapon>, wear <shield> , grab <object>
+
+Grab / Hold:  For getting a good grip on something; a torch, for example.
+  > hold torch
+  > grab stone
+
+Wield : For equipping weapons.
+
+  > wield sword
+  > wield 3.sword    (Wields the third sword in your inventory)
+
+NOTE:  A player can only use two objects in their hands at any given time.
+Players must choose to use a shield, dual wield, use an instrument or staff, or 
+perhaps seek out a two-handed weapon.
+
+See also: EQUIPMENT, REMOVE, WEAR, WIELD
+
+#0
 EARTHQUAKE
 
 Usage       : cast 'earthquake'
@@ -2837,6 +2869,10 @@ saving throws will loose up to 40,000 XP points.  You will gain
 a quarter of this XP.
 
 Beware that this spell is evil.
+#0
+ENHANCED-DAMAGE
+
+Passive skill that increases melee damage.
 #0
 ENTER
 
@@ -3482,6 +3518,11 @@ me more examples.
 
 Examples: @RTSTAT 13899, 13420@n
 #101
+gateway
+
+Song of generic player relocation
+
+#0
 GCC
 
 Several people have problems with configuring tbaMUD in cygwin the first
@@ -3613,33 +3654,10 @@ Examples:
 
 See also: POOFIN, POOFOUT, WIZAT, %TELEPORT%
 #101
+gravbakkjen
 
-GRAMMAR GRAMMER TIPS 
-
-   Love thy dictionary. Be sure to check the spelling of your work. Medieval 
-words can be particularly tricky and elude electronic spell checkers. A good 
-dictionary, however, will help you spell archaic words. Whenever I am building 
-I use our Merriam Webster dictionary link on TBA to check any tough words for
-proper spelling. Test it out @RTELL M-W DEFINITION@n. We hope to add a thesaurus
-soon! Goto @Chttp://m-w.com/@n until then.
-  I have found that a good principle to make is to avoid the use of all 
-contractions. For example, if you mean to say "it is", do not use "it's", spell
-it out. This will help differentiate between "its" (which means 'belonging to 
-it') and "it is". Another set of problem words to take note of is the 
-"they're", "there", and "their". The first can be avoided because it is a 
-contraction, the second is not here, but there, and the final one means that 
-it belongs to them. One final instance to take note of are "to", "too", and 
-"two". The first is used when you want to say something like 'the passage 
-leads to there', the second should be used in situations where there is an
-excess of something, such as 'too much red paint was used to cover the walls 
-there'. The final one is the number 2 (two).
-   As far as obscenity in descriptions is concerned, we have no problem with 
-using it in humor or description. If your description involves the use of 
-some slang or 'bad' words, no biggie. Just don't abuse the use of any words.
-We don't want the MUD filthy, just fun!
-
-See also: APOSTROPHE, YOU
-#101
+Song of powerful healing
+#0
 GREP
 
 grep is a shell command. Only imps/gods with shell access can use it from the 
@@ -3829,6 +3847,12 @@ with their last 'rent' payment date.
 
 See also: HOUSE, HOUSES
 #101
+headbutt
+
+This commband allows the fighter to take control of the fight by putting thier
+head into the game.  Literally.  This ability can do massive damage if skilled.
+
+#0
 HEAL
 
 Usage       : cast 'heal' <victim>
@@ -3852,6 +3876,11 @@ Room Examples: @RTSTAT 163@n
 See also: %DAMAGE%
 
 #101
+health hp hitpoints
+
+The life force.  If it all leaks out as blood and goes to zero, you die.
+
+#0
 HEDIT HELP-EDITOR
 
 Usage: hedit <keyword>
@@ -3868,6 +3897,16 @@ HEIACH XTBAX
 Heiach has been a big help with training new builders and has become very adept
 with trigedit. His example zone 359 is very impressive. He is always willing to
 help, especially with trigedit.
+
+#0
+helgeven
+
+Song of powerful room damage
+
+#0
+helgidomssongur
+
+Song of sanctuary
 
 #0
 HELPCHECK
@@ -4323,6 +4362,16 @@ KILLERS PLAYERKILLING PLAYERKILLERS PKILLERS PKILLING
 such a horrible and pointless thing you will need to be pardoned by the staff.
 
 See also: FLAGS, PARDON
+#0
+kvitravn
+
+Song of battle
+
+#0
+laekningasongur
+
+Song of regeneration
+
 #0
 LAG
 
@@ -4830,6 +4879,11 @@ LOVE MARRIAGE WEDDINGS SEX
    Seek professional counseling if you need help on these topics.
 
 #0
+lyfjaberg
+
+Song of feasting
+
+#0
 MAGIC-MISSILE
 
 Usage       : cast 'magic missile' <victim>
@@ -4840,6 +4894,13 @@ Save        : Versus spell for half damage.
 
 Causes a bolt of magical energy to be thrown from the casters hands at the
 victim.
+#0
+magic-recovery health-recovery recovery
+
+Magic recovery is a passive ability that increases magic gained every tick.
+
+Health recovery is a passive ability th at increases health gained every tick.
+
 #0
 MAGIC-USER WIZARD MAGE
 
@@ -6483,6 +6544,14 @@ Usage: pardon [target]
 Removes killer and thief flags from a player.
 
 #101
+PARRY ENHANCED-PARRY
+
+Parry allows you to avoid melee damage directed at you.
+
+Enhanced Parry allows you to avoid special melee damage that may be directed at
+those fighting the NPC, those in your group, or those in the room.
+
+#0
 PASSWORDS PW
 
 Ideally, your password should be something that nobody could guess.  In 
@@ -7546,6 +7615,13 @@ RADIAX
   He appreciates it, really. But, he can take care of himself.
 
 #0
+rage
+
+A passive ability that, once trained, allows the player to enter a rage.
+Players that are raging will make better use of combat arms training as
+well as doing more damage with every hit.
+
+#0
 RANDOM-THOUGHTS BIGGEST EGO
 
 Random Thoughts came to us a while back wanting to learn scripts and with
@@ -7922,6 +7998,12 @@ Valid files are:
   xhelp      (/mud_dir/lib/text/help/*)
 
 #101
+relocate
+
+A spell that allows one player to transport themselves to another.
+
+
+#0
 RELSQUI
 
    How do you pronounce your MUD name?  It doesn't come up very much, being a
@@ -8111,6 +8193,19 @@ Example:
   > rescue Yankee
 
 #0
+resist unarmed exotic blunt slash pierce
+
+Melee damage is divided into one of five categories.  Each damage type
+has a corresponding resistance that can be increased via training or with
+temporary spells.
+
+Resist Unarmed:  Hit, Thrash, Punch.
+Resist Exotic:  Crush, Shield Slam, Blast.
+Resist Blunt:  Bludgeon, Pound, Maul.
+Resist Slash:  Whip, Slash, Claw.
+Resist Pierce:  Sting, Bite, Pierce, Stab.
+
+#0
 RESTORE REVIVE
 
 Usage: restore <player | mobile | all>
@@ -8187,6 +8282,11 @@ alias away title is gone, send a tell to leave a message.
  
 See Also: ALIASES, RUMBLE
 #101
+runaljod
+
+Song of blessing
+
+#0
 SANCTUARY
 
 Usage       : cast 'sanctuary' [self]
@@ -8701,6 +8801,12 @@ page me if you really need something, if I don't respond I'm probably sleeping
 or in class or just don't want to be bothered :-)
 
 #0
+shield-master
+
+A passive ability that, once trained, allows the player to attack with an
+equipped shield as if were an off-hand weapon.
+
+#0
 SHOCKING-GRASP
 
 Usage       : cast 'shocking grasp' <victim>
@@ -8973,6 +9079,11 @@ Examples:
   > kiss rumble foot
 
 See also: EMOTE, GEMOTE
+#0
+solringen
+
+Song of powerful damage
+
 #0
 SOURCES RESOURCES CODEBASE FTP DOWNLOADS DOCUMENTATION WTFAQ FORUMS GROUPS 
 
@@ -9809,6 +9920,12 @@ returned to your own body.
 
 See also: RETURN, TRIG-SWITCH
 #101
+SWITCH-TARGET
+
+A passive ability that, once trained, allows you to 'kill' a second NPC and
+switch from the previous to new NPC target.
+
+#0
 SWORDS
 
    This help file is designed to remove a few misconceptions concerning swords 
@@ -9851,6 +9968,11 @@ Shamra or visit the international sword forum at http://forums.swordforum.com.
 
 See also: WEAPONS DAMAGE
 #101
+synkverv
+
+Song of cancellation
+
+#0
 SYSLOG SYSLOG-OFF LOGS SYSLOG-BRIEF SYSLOG-NORMAL NORMAL SYSLOG-COMPLETE AUTOLOG 
 
 Usage: toggle syslog [ Off | Brief | Normal | On ]
@@ -9884,6 +10006,12 @@ be an object a mobile or a player. Usually used in conjunction with another
 command.
 
 #101
+TAUNT
+
+Player command to insult every NPC in the room, forcing them each to attack
+you, if you are skilled enough. And Brave enough.
+
+#0
 TBA TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW VISION TBA-VISION
 
 TBA stands for The Builder Academy. 
@@ -12189,6 +12317,13 @@ See also: TLIST, TRIGEDIT, OLC
 
 Other Examples: TRIG-EXAMPLES 
 #101
+tumble
+
+Players my attempt to 'tumble' into their victim, which can cause some
+serious damage!  It has been known to cause paralysis, but only for a
+short while.  Failing a tumble might send you stumbling.
+
+#0
 UNAFFECT
 
 Usage: unaffect [target]
@@ -12371,6 +12506,11 @@ male PC 'Rumble'  IDNum: [ @R1@n], In room [    0]
 
 See also: REMOTE, RDELETE, UID, ZEDIT-REMOVE
 #101
+vindavlarljod
+
+Song of recall
+
+#0
 VIRTUAL-NUMBERS RNUM  
 
     Each room, mob, object, shop, and trigger within a zone is given a unique
@@ -13572,171 +13712,4 @@ zlock - Locks one or all zones. Type zlock for usage.
 zunlock - Locks one or all zones. Type zunlock for usage. 
 
 #101
-BARD SKALD
-
-Bard is a custom class to OMG Mud.  All similarities are just that.
-
-#0
-vindavlarljod
-
-Song of recall
-
-#0
-synkverv
-
-Song of cancellation
-
-#0
-lyfjaberg
-
-Song of feasting
-
-#0
-kvitravn
-
-Song of battle
-
-#0
-andvevarljod
-
-Song of healing
-#0
-gravbakkjen
-
-Song of powerful healing
-#0
-solringen
-
-Song of powerful damage
-
-#0
-helgeven
-
-Song of powerful room damage
-
-#0
-runaljod
-
-Song of blessing
-
-#0
-chant
-
-A skilled bard can use various chants in different battle scenarios.
-
-syntax:  chant harmony / dissonance / none
-
-chanting for Harmony will increase your healing songs.  whereas chanting
-for Dissonance will aid your damage songs.
-
-#0
-gateway
-
-Song of generic player relocation
-
-#0
-health hp hitpoints
-
-The life force.  If it all leaks out as blood and goes to zero, you die.
-
-#0
-dirty-tricks
-
-A passive ability that, once trained, allows the rogue to circle, tumble and
-kick whenever the time is right, automatically.
-
-#0
-combat-arms
-
-A passive abilit that, once trained, allows the fighter to kick and headbutt
-whenever the time is right, automatically.
-
-#0
-ASSAULT
-
-Player command to attack an NPC by suprise, for increased damage.  Similar to
-backstab but nowhere near as cool.
-
-#0
-TAUNT
-
-Player command to insult every NPC in the room, forcing them each to attack
-you, if you are skilled enough. And Brave enough.
-
-#0
-battle rythm battle-rythm
-
-This passive skill increases the damage dealt by songs.
-
-#0
-magic-recovery health-recovery recovery
-
-Magic recovery is a passive ability that increases magic gained every tick.
-
-Health recovery is a passive ability th at increases health gained every tick.
-
-#0
-damage-reduction
-
-A passive skill that reduces incoming damage from all sources.
-
-#0
-advanced-track
-
-Passive skill that automates the track command.  A well skilled rogue can
-track down almost anything in a zone.
-
-#0
-tumble
-
-Players my attempt to 'tumble' into their victim, which can cause some
-serious damage!  It has been known to cause paralysis, but only for a
-short while.  Failing a tumble might send you stumbling.
-
-#0 
-resist unarmed exotic blunt slash pierce
-
-Melee damage is divided into one of five categories.  Each damage type
-has a corresponding resistance that can be increased via training or with
-temporary spells.
-
-Resist Unarmed:  Hit, Thrash, Punch.
-Resist Exotic:  Crush, Shield Slam, Blast.
-Resist Blunt:  Bludgeon, Pound, Maul.
-Resist Slash:  Whip, Slash, Claw.
-Resist Pierce:  Sting, Bite, Pierce, Stab.
-
-#0
-shield-master
-
-A passive ability that, once trained, allows the player to attack with an
-equipped shield as if were an off-hand weapon.
-
-#0
-rage
-
-A passive ability that, once trained, allows the player to enter a rage.
-Players that are raging will make better use of combat arms training as
-well as doing more damage with every hit.
-
-#0
-relocate
-
-A spell that allows one player to transport themselves to another.
-
-
-#0
-laekningasongur
-
-Song of regeneration
-
-#0
-bolvunarsongur
-
-Song of stat reduction.
-
-Victim damroll and hitroll lowered. (Worse)
-Vicrtim armor and save vs spell raised (Worse)
-
-#0
 $~

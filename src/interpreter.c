@@ -140,6 +140,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "detach"   , "detach"  , POS_DEAD    , do_detach   , LVL_BUILDER, 0 },
   { "diagnose" , "diag"    , POS_RESTING , do_diagnose , 0, 0 },
   { "dig"      , "dig"     , POS_DEAD    , do_dig      , LVL_BUILDER, 0 },
+  { "dirtkick" , "dirt"    , POS_FIGHTING, do_dirt_kick, 0, 0 },
   { "display"  , "disp"    , POS_DEAD    , do_display  , 0, 0 },
   { "donate"   , "don"     , POS_RESTING , do_drop     , 0, SCMD_DONATE },
   { "drink"    , "dri"     , POS_RESTING , do_drink    , 0, SCMD_DRINK },
@@ -162,6 +163,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "follow"   , "fol"     , POS_RESTING , do_follow   , 0, 0 },
   { "freeze"   , "freeze"  , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_FREEZE },
 
+  { "garrotte" , "gar"     , POS_FIGHTING, do_garrotte , 0, 0 },
   { "get"      , "g"       , POS_RESTING , do_get      , 0, 0 },
   { "gecho"    , "gecho"   , POS_DEAD    , do_gecho    , LVL_GOD, 0 },
   { "gemote"   , "gem"     , POS_SLEEPING, do_gen_comm , 0, SCMD_GEMOTE },
@@ -285,6 +287,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "restore"  , "resto"   , POS_DEAD    , do_restore  , LVL_GOD, 0 },
   { "return"   , "retu"    , POS_DEAD    , do_return   , 0, 0 },
   { "redit"    , "redit"   , POS_DEAD    , do_oasis_redit, LVL_BUILDER, 0 },
+  { "ritual"   , "ritual"  , POS_FIGHTING, do_ritual   , 0, 0 },
   { "rlist"    , "rlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_RLIST },
   { "rcopy"    , "rcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_REDIT },
   { "roomflags", "roomflags", POS_DEAD   , do_gen_tog  , LVL_IMMORT, SCMD_SHOWVNUMS },

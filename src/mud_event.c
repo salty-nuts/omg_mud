@@ -27,7 +27,8 @@ struct mud_event_list mud_event_index[] = {
   { "Spell:Darkness",event_countdown, EVENT_ROOM  },  /* eSPL_DARKNESS */
   { "Spell:Consecrate", event_countdown, EVENT_ROOM }, /* eSPL CONSECRATE*/
   { "Spell:ChaiLightning", event_chain_lightning, EVENT_CHAR}, /*eCHAIN_LIGHTNING*/
-  { "Shriek"       ,  event_shriek, EVENT_CHAR},
+  { "Shriek"       ,  event_shriek, EVENT_CHAR}, /* Skald Shriek */
+  { "Ritual"       ,  event_ritual, EVENT_CHAR}, /* Skald Ritual */
 };
 
 /* init_events() is the ideal function for starting global events. This
@@ -81,6 +82,7 @@ EVENTFUNC(event_countdown)
     case ePROTOCOLS:
       break;
     case eSHRIEK:
+    case eRITUAL:
     case eCHAIN_LIGHTNING:
     case eWHIRLWIND:
       break;

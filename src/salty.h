@@ -47,6 +47,14 @@ void haymaker_combat(struct char_data *ch, struct char_data *victim);
 void clothesline_combat(struct char_data *ch, struct char_data *victim);
 void piledriver_combat(struct char_data *ch, struct char_data *victim);
 void palm_strike_combat(struct char_data *ch, struct char_data *victim);
+void chop_combat(struct char_data *ch, struct char_data *victim);
+void roundhouse_combat(struct char_data *ch, struct char_data *victim);
+void trip_combat(struct char_data *ch, struct char_data *victim);
+void knee_combat(struct char_data *ch, struct char_data *victim);
+void elbow_combat(struct char_data *ch, struct char_data *victim);
+
+
+
 void check_rend(struct char_data *ch, struct char_data *victim);
 void check_feeble(struct char_data *ch, struct char_data *victim);
 
@@ -72,6 +80,9 @@ ACMD(do_bash);
 ACMD(do_chant);
 ACMD(do_testcmd);
 ACMD(do_shriek);
+ACMD(do_ritual);
+ACMD(do_dirt_kick);
+ACMD(do_garrotte);
 
 #define NAME_RANK_1(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Sir":"Dame") : "Dame")
 #define NAME_RANK_2(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Lord":"Lady") :"Lady")

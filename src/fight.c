@@ -1051,6 +1051,13 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       dam = 0;
   }
 
+  if (IS_AFFECTED(ch, AFF_FRENZY) && (ch != victim))
+  {
+    long amt = (long)dam * (long)dice(10,10);
+    gain_exp(ch, amt);
+    increase_gold(ch, amt);
+    send_to_char(ch, "You learn a lot from the battle ritual!\n\r");
+  }
   /* Set the maximum damage per round and subtract the hit points */
   dam = MAX(MIN(dam, 100000000), 0);
 
@@ -1172,7 +1179,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
         increase_gold(victim, happy_gold);
       }
       die(victim, ch);
-      if (ch != victim && !IS_NPC(ch))
+      if (ch != victim && IS_NPC(victim))
       {
         if (GROUP(ch))
           group_gain(ch, victim);
@@ -1616,6 +1623,12 @@ Salty 05 NOV 2019
     case SKILL_THRUST:
       damage(ch, victim, dam * circle_mult(GET_REAL_LEVEL(ch)), w_type);
       break;
+    case SKILL_ROUNDHOUSE:
+    case SKILL_ELBOW:
+    case SKILL_KNEE:
+    case SKILL_CHOP:
+    case SKILL_TRIP:
+    case SKILL_KICK:
     case SKILL_R_HOOK:
     case SKILL_L_HOOK:
     case SKILL_SUCKER_PUNCH:
@@ -1825,45 +1838,32 @@ void perform_violence(void)
 
       do
       {
-
         if (num_attack > 0)
-        {
           hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
-          if (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_OFFHAND))
-          {
-            if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
-              check_dirty_tricks(ch, vict);
-          }
-          else if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
-          {
-            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 102))
-              check_unarmed_combat(ch, vict);
-          }
-        }
         if (dw_num_att > 0)
-        {
           hit(ch, FIGHTING(ch), SKILL_DUAL_WIELD);
-          if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
-            check_dirty_tricks(ch, vict);
-        }
         if (sh_num_att > 0)
-        {
           hit(ch, FIGHTING(ch), SKILL_SHIELD_MASTER);
-        }
         if (unarmed_num_att > 0)
-        {
           hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
-          if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
-          {
-            if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 102))
-              check_unarmed_combat(ch, vict);
-          }
-        }
+
         num_attack--;
         dw_num_att--;
         sh_num_att--;
         unarmed_num_att--;
       } while (num_attack > 0 || dw_num_att > 0 || sh_num_att > 0 || unarmed_num_att > 0);
+
+      if (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_OFFHAND))
+      {
+        if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
+          check_dirty_tricks(ch, vict);
+      }
+
+      if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
+      {
+        if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 102))
+          check_unarmed_combat(ch, vict);
+      }
 
       if (GROUP(ch))
       {
@@ -1895,6 +1895,11 @@ void perform_violence(void)
             continue;
           }
         }
+      }
+      if (IS_AFFECTED(ch, AFF_FRENZY))
+      {
+        REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FRENZY);
+        affect_from_char(ch, SPELL_FRENZY);
       }
     }
     // End of !IS_NPC(ch)

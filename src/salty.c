@@ -488,6 +488,7 @@ ACMD(do_stance)
   }
 }
 
+
 ACMD(do_chant)
 {
   if (IS_NPC(ch))
@@ -1373,6 +1374,8 @@ ACMD(do_rage)
     }
   }
 }
+
+
 void check_acrobatics(struct char_data *ch, struct char_data *victim)
 {
   int num = rand_number(1, 201);
@@ -1487,6 +1490,7 @@ void check_unarmed_combat(struct char_data *ch, struct char_data *victim)
       piledriver_combat(ch, victim);
       break;
     case 10:
+      chop_combat(ch, victim);
       palm_strike_combat(ch, victim);
       break;
     default:
@@ -1989,7 +1993,117 @@ void palm_strike_combat(struct char_data *ch, struct char_data *victim)
     return;
   }
 }
+void chop_combat(struct char_data *ch, struct char_data *victim)
+{
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_CHOP);
+  if (percent > prob)
+  {
+    act("You try to chop $N, but your hand whizzes past $S face.", false, ch, 0, victim, TO_CHAR);
+    act("$n's hand narrowly misses your face.", false, ch, 0, victim, TO_VICT);
+    act("$n tries to chop at $N, but $E narrowly misses.", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_CHOP, FALSE);
+    return;
+  }
+  else
+  {
+    act("You tense your hands and whack $N really hard.", false, ch, 0, victim, TO_CHAR);
+    act("$n hits you really hard in the ribs with $s chop.", false, ch, 0, victim, TO_VICT);
+    act("$n smacks $N in the ribs with $s chop.  Ouch!", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_CHOP, TRUE);
+    hit(ch, victim, SKILL_CHOP);
+    return;
+  }  
+}
+void roundhouse_combat(struct char_data *ch, struct char_data *victim)
+{
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_ROUNDHOUSE);
+  if (percent > prob)
+  {
+    act("You flail wildly at $N and miss!", false, ch, 0, victim, TO_CHAR);
+    act("$n flails wildly at you and misses!", false, ch, 0, victim, TO_VICT);
+    act("$n flails wildly at $N and misses!", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_ROUNDHOUSE, FALSE);
+    return;
+  }
+  else
+  {
+    act("Your roundhouse blow is so powerful that it sends blood spilling out of $N's mouth!", false, ch, 0, victim, TO_CHAR);
+    act("Blood spills out from your mouth as you are struck by $n's roundhouse blow!", false, ch, 0, victim, TO_VICT);
+    act("Blood spills out from $N's mouth as $E is struck by $n's roundhouse blow!", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_ROUNDHOUSE, TRUE);
+    hit(ch, victim, SKILL_ROUNDHOUSE);
+    return;
+  }    
+}
+void trip_combat(struct char_data *ch, struct char_data *victim)
+{
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_TRIP);
+  if (percent > prob)
+  {
+    act("$N manages to avoid your attempt to trip $M.", false, ch, 0, victim, TO_CHAR);
+    act("You manage to avoid $n's attempt to trip you.", false, ch, 0, victim, TO_VICT);
+    act("$N manages to avoid $n's attempt to trip $M.", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_TRIP, FALSE);
+    return;
+  }
+  else
+  {
+    act("$N is tripped by you and falls badly to the ground.", false, ch, 0, victim, TO_CHAR);
+    act("You are tripped by $n and fall badly to the ground.", false, ch, 0, victim, TO_VICT);
+    act("$N is tripped by $n and falls badly to the ground.", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_TRIP, TRUE);
+    hit(ch, victim, SKILL_TRIP);
+    return;
+  }    
+}
 
+void knee_combat(struct char_data *ch, struct char_data *victim)
+{
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_KICK);
+  if (percent > prob)
+  {
+    act("You strike too slowly with your knee and miss $N altogether.", false, ch, 0, victim, TO_CHAR);
+    act("$n barely misses hitting you in the stomach with $s knee.", false, ch, 0, victim, TO_VICT);
+    act("$N jumps out of the way from $n's knee strike.", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_KNEE, FALSE);
+    return;
+  }
+  else
+  {
+    act("You knee $N painfully in the solar-plexus.", false, ch, 0, victim, TO_CHAR);
+    act("$n knees you painfully in the solar-plexus.", false, ch, 0, victim, TO_VICT);
+    act("$n knees $N in the solar-plexus.", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_KNEE, TRUE);
+    hit(ch, victim, SKILL_KNEE);
+    return;
+  }    
+}
+void elbow_combat(struct char_data *ch, struct char_data *victim)
+{
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_ELBOW);
+  if (percent > prob)
+  {
+    act("Your elbow hits thin air!", false, ch, 0, victim, TO_CHAR);
+    act("You easily deflect $n's incoming elbow!", false, ch, 0, victim, TO_VICT);
+    act("$N easily deflects $n's incoming elbow!", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_ELBOW, FALSE);
+    return;
+  }
+  else
+  {
+    act("Your elbow smashes into $N's ribs, cracking them with a dull sound!", false, ch, 0, victim, TO_CHAR);
+    act("Your ribs are smashed apart by the powerful force of $n's elbow!", false, ch, 0, victim, TO_VICT);
+    act("$N's ribs are smashed into bits by the powerful force of $n's elbow!", false, ch, 0, victim, TO_NOTVICT);
+    check_improve(ch, SKILL_ELBOW, TRUE);
+    hit(ch, victim, SKILL_ELBOW);
+    return;
+  }    
+}
 /* This simply calculates the backstab multiplier based on a character's level.
  * This used to be an array, but was changed to be a function so that it would
  * be easier to add more levels to your MUD.  This doesn't really create a big
@@ -2018,6 +2132,11 @@ int unarmed_combat_dam(struct char_data *ch, int skill)
 
   switch (skill)
   {
+  case SKILL_ROUNDHOUSE:
+  case SKILL_ELBOW:
+  case SKILL_KNEE:
+  case SKILL_CHOP:
+  case SKILL_TRIP:
   case SKILL_KICK:
   case SKILL_HEADBUTT:
   case SKILL_R_HOOK:
@@ -2044,9 +2163,46 @@ int unarmed_combat_dam(struct char_data *ch, int skill)
 
 ACMD(do_testcmd)
 {
+  char arg[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
+  struct char_data *vict;
+
+  half_chop(argument, arg, buf);
+
+  if (!*arg) {
+    send_to_char(ch, "test what on whom?\r\n");
+    return;
+  }
+  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
+    send_to_char(ch, "%s", CONFIG_NOPERSON);
+    return;
+  }
   send_to_char(ch, "This is the test command.\n\r");
   act("You scream \tYcharge\tn!", FALSE, ch, NULL, NULL, TO_CHAR);
   act("You say \tOOLE\tn!", FALSE, ch, NULL, NULL, TO_CHAR);
+
+  call_magic(ch, vict, NULL, SPELL_SANCTUARY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BLESS, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_HASTE, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_STONE_SKIN, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_STEEL_SKIN, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_ARMOR, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_STRENGTH, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_REGENERATION, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_VITALITY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_AGILITY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_KNOWLEDGE, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_REGEN, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_BLESS, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_BARD_BUFF, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_QUICKCAST, 1000, CAST_SPELL);
+/*   call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL); */
+  
 }
 
 void check_rend(struct char_data *ch, struct char_data *victim)
@@ -2082,7 +2238,7 @@ void check_rend(struct char_data *ch, struct char_data *victim)
 
 void check_feeble(struct char_data *ch, struct char_data *victim)
 {
-  int level = GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_SKALD_SHRIEK);
+  int level = GET_REAL_LEVEL(ch) + GET_SKILL(ch, SKILL_BARD_SHRIEK);
 
   if (!IS_AFFECTED(victim, AFF_FEEBLE))
   {
@@ -2102,7 +2258,7 @@ void check_feeble(struct char_data *ch, struct char_data *victim)
     {
       REMOVE_BIT_AR(AFF_FLAGS(victim), AFF_FEEBLE);
       affect_from_char(victim, SPELL_FEEBLE);
-      act("============$N stops covering $S ears and takes up the fight!", false, ch, 0, victim, TO_CHAR);
+      act("$N stops covering $S ears and takes up the fight!", false, ch, 0, victim, TO_CHAR);
       act("$N stops feeling feeble.", false, ch, 0, victim, TO_NOTVICT);
       act("You stop feeling feeble.", false, ch, 0, victim, TO_VICT);
     }
@@ -2115,11 +2271,11 @@ ACMD(do_shriek)
   struct char_data *victim;
   int cost = 100;
   int percent = rand_number(1, 101);
-  int prob = GET_SKILL(ch, SKILL_SKALD_SHRIEK);
+  int prob = GET_SKILL(ch, SKILL_BARD_SHRIEK);
 
   one_argument(argument, arg);
 
-  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_SKALD_SHRIEK))
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_BARD_SHRIEK))
   {
     send_to_char(ch, "You have no idea how.\r\n");
     return;
@@ -2172,6 +2328,12 @@ ACMD(do_shriek)
     send_to_char(ch, "You are already shrieking as loud as you can!\r\n");
     return;
   }
+
+  if (char_has_mud_event(ch, eRITUAL))
+  {
+    send_to_char(ch, "You are already performing the battle ritual!\r\n");
+    return;
+  }  
   act("You emit a piercing shriek!", false, ch, 0, NULL, TO_CHAR);
   act("$n begins to shriek loudly!", FALSE, ch, 0, 0, TO_ROOM);
 
@@ -2186,11 +2348,6 @@ ACMD(do_shriek)
   WAIT_STATE(ch, PULSE_VIOLENCE * 2);
 }
 
-/*
-	Recoded to fix bad list management
-	Salty
-	06 JAN 2016
-*/
 EVENTFUNC(event_shriek)
 {
   struct char_data *ch, *tch;
@@ -2204,13 +2361,15 @@ EVENTFUNC(event_shriek)
 
   pMudEvent = (struct mud_event_data *)event_obj;
   ch = (struct char_data *)pMudEvent->pStruct;
-  prob = GET_SKILL(ch, SKILL_SKALD_SHRIEK);
+  prob = GET_SKILL(ch, SKILL_BARD_SHRIEK);
 
-  act("You emit a piercing shriek!", false, ch, 0, NULL, TO_CHAR);
+  act("You continue shrieking like a banshee!", false, ch, 0, NULL, TO_CHAR);
   GET_MANA(ch) -= cost;
 
   for (tch = world[IN_ROOM(ch)].people; tch != NULL; tch = tch->next_in_room)
   {
+    if (GROUP(tch) == GROUP(ch))
+      continue;
     if (ch != tch && IS_NPC(tch))
     {
       call_magic(ch, tch, NULL, SPELL_FEEBLE, GET_REAL_LEVEL(ch) + GET_SPELLS_AFFECTS(ch), CAST_SPELL);
@@ -2226,7 +2385,7 @@ EVENTFUNC(event_shriek)
 
   if (GET_MANA(ch) < cost)
   {
-    send_to_char(ch, "You are exhausted from combat and shrieking and .. you need a break.\n\r");
+    send_to_char(ch, "You are exhausted from combat and all that shrieking.\n\r");
     act("$n suddenly stops shrieking and looks exhausted.", false, ch, 0, NULL, TO_ROOM);
     return 0;
   }
@@ -2237,12 +2396,292 @@ EVENTFUNC(event_shriek)
   {
     send_to_char(ch, "Your shriek gets caught in your throat.\r\n");
     act("$n tries to shriek but has a frong in $s throat.", false, ch, 0, NULL, TO_ROOM);
-    check_improve(ch, SKILL_SKALD_SHRIEK, FALSE);
+    check_improve(ch, SKILL_BARD_SHRIEK, FALSE);
     return 0;
   }
   else
   {
-    check_improve(ch, SKILL_SKALD_SHRIEK, TRUE);
+    check_improve(ch, SKILL_BARD_SHRIEK, TRUE);
     return 7 * PASSES_PER_SEC;
   }
+}
+
+ACMD(do_ritual)
+{
+  char arg[MAX_INPUT_LENGTH];
+  int cost = 100;
+  int percent = rand_number(1, 101);
+  int prob = GET_SKILL(ch, SKILL_BARD_RITUAL);
+
+  one_argument(argument, arg);
+
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_BARD_RITUAL))
+  {
+    send_to_char(ch, "You have no idea how.\r\n");
+    return;
+  }
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL))
+  {
+    send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
+    return;
+  }
+
+  if (GET_MANA(ch) < cost)
+  {
+    send_to_char(ch, "You don't have enough energy to perform a battle ritual.\r\n");
+    return;
+  }
+  if (percent > prob)
+  {
+    send_to_char(ch, "You fumble about and fail the battle ritual.\r\n");
+    WAIT_STATE(ch, PULSE_VIOLENCE);
+    return;
+  }
+
+  if (char_has_mud_event(ch, eRITUAL))
+  {
+    send_to_char(ch, "You are already performing the battle ritual!\r\n");
+    return;
+  }
+  if (char_has_mud_event(ch, eSHRIEK))
+  {
+    send_to_char(ch, "You are already shrieking as loud as you can!\r\n");
+    return;
+  }
+  act("You begin the battle ritual!", false, ch, 0, NULL, TO_CHAR);
+  act("$n begins an ancient skaldic ritual!", FALSE, ch, 0, 0, TO_ROOM);
+
+  /* We need to pay for it */
+  GET_MANA(ch) -= cost;
+
+  /* NEW_EVENT() will add a new mud event to the event list of the character.
+   * This function below adds a new event of "eSHRIEK", to "ch", and passes "NULL" as
+   * additional data. The event will be called in "3 * PASSES_PER_SEC" or 3 seconds */
+  NEW_EVENT(eRITUAL, ch, NULL, 3 * PASSES_PER_SEC);
+
+  WAIT_STATE(ch, PULSE_VIOLENCE * 2);
+}
+
+EVENTFUNC(event_ritual)
+{
+  struct char_data *ch, *tch;
+  struct mud_event_data *pMudEvent;
+  int cost = 100;
+  int percent = rand_number(1, 101);
+  int prob = 0;
+
+  if (event_obj == NULL)
+    return 0;
+
+  pMudEvent = (struct mud_event_data *)event_obj;
+  ch = (struct char_data *)pMudEvent->pStruct;
+  prob = GET_SKILL(ch, SKILL_BARD_SHRIEK);
+  GET_MANA(ch) -= cost;
+
+/*   if (GET_POS(ch) != POS_FIGHTING)
+  {
+    send_to_char(ch, "The battle is over, no need for the ritual!\n\r");
+    act("$n stops $s ritual as combat ends.", false, ch, 0, NULL, TO_ROOM);
+    return 0;
+  }
+ */
+  if (GET_MANA(ch) < cost)
+  {
+    send_to_char(ch, "You are exhausted from combat and all that shrieking.\n\r");
+    act("$n suddenly stops shrieking and looks exhausted.", false, ch, 0, NULL, TO_ROOM);
+    return 0;
+  }  
+  
+  act("You continue performing the ancient skaldic battle ritual!", false, ch, 0, NULL, TO_CHAR);
+
+  for (tch = world[IN_ROOM(ch)].people; tch != NULL; tch = tch->next_in_room)
+  {
+    if (ch != tch && !IS_NPC(tch))
+    {
+      call_magic(ch, tch, NULL, SPELL_FRENZY, GET_REAL_LEVEL(ch) + GET_SPELLS_AFFECTS(ch), CAST_SPELL);
+    }
+  }
+
+
+  /* The "return" of the event function is the time until the event is called
+   * again. If we return 0, then the event is freed and removed from the list, but
+   * any other numerical response will be the delay until the next call */
+  if (percent > prob)
+  {
+    send_to_char(ch, "You lost your place, you must restart the ritual.\r\n");
+    act("$n seems to have lost $s place in the ritual.", false, ch, 0, NULL, TO_ROOM);
+    check_improve(ch, SKILL_BARD_RITUAL, FALSE);
+    return 0;
+  }
+  else
+  {
+    check_improve(ch, SKILL_BARD_RITUAL, TRUE);
+    return 7 * PASSES_PER_SEC;
+  }
+}
+
+ACMD(do_garrotte)
+{
+  char arg[MAX_INPUT_LENGTH];
+  struct char_data *vict;
+  struct affected_type af;
+  int percent, prob;
+
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_GARROTTE))
+  {
+    send_to_char(ch, "You have no idea how.\r\n");
+    return;
+  }
+
+  one_argument(argument, arg);
+
+  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
+  {
+    if (FIGHTING(ch) && IN_ROOM(ch) == IN_ROOM(FIGHTING(ch)))
+      vict = FIGHTING(ch);
+    else
+    {
+      send_to_char(ch, "Garrotte who?\r\n");
+      return;
+    }
+  }
+  if (vict == ch)
+  {
+    send_to_char(ch, "Aren't we funny today...\r\n");
+    return;
+  }
+  percent = rand_number(1, 101);
+  prob = GET_SKILL(ch, SKILL_DIRT_KICK);
+
+  if (percent > prob)
+  {
+    act("$N moves abruptly and you miss your chance to strangle $M!", FALSE, ch, 0, vict, TO_CHAR);
+    act("$n fails to strangle $N with $s garrotte.", TRUE, ch, 0, vict, TO_NOTVICT);
+    damage(ch, vict, 0, TYPE_UNDEFINED);
+  }
+  else
+  {
+    if (!AFF_FLAGGED(ch, AFF_GARROTTE))
+    {
+      new_affect(&af);
+      af.spell = SKILL_GARROTTE;
+      af.location = APPLY_HITROLL;
+      af.modifier = -10;
+      af.duration = 1;
+      SET_BIT_AR(af.bitvector, AFF_GARROTTE);
+      affect_to_char(vict, &af);
+
+      new_affect(&af);
+      af.spell = SKILL_GARROTTE;
+      af.location = APPLY_AC;
+      af.modifier = 40;
+      af.duration = 1;
+      SET_BIT_AR(af.bitvector, AFF_GARROTTE);
+      affect_to_char(vict, &af);
+
+      damage(ch, vict, rand_number(1, GET_REAL_LEVEL(ch)), TYPE_UNDEFINED);
+      act("Your steel wire bites deeply into $N's throat!", FALSE, ch, 0, vict, TO_CHAR);
+      act("A shadow detaches itself from the darkness and wraps a wire around $N's throat!", TRUE, ch, 0, vict, TO_NOTVICT);
+      act("Your garrotte cuts off $N's ability to speak!", FALSE, ch, 0, vict, TO_CHAR);
+    }
+    else
+    {
+      damage(ch, vict, rand_number(1, GET_REAL_LEVEL(ch)), TYPE_UNDEFINED);
+      act("$N moves abruptly and you miss your chance to strangle $M!", FALSE, ch, 0, vict, TO_CHAR);
+      act("$n tries to garrotte you but you dodge out of the way in time!", TRUE, ch, 0, vict, TO_NOTVICT);
+    }
+  }
+  WAIT_STATE(ch, PULSE_VIOLENCE * 2);
+}
+
+ACMD(do_dirt_kick)
+{
+  char arg[MAX_INPUT_LENGTH];
+  struct char_data *vict;
+  struct affected_type af;
+  int percent, prob;
+
+  // dirt skill not learned automatic failure
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_DIRT_KICK))
+  {
+    send_to_char(ch, "You have no idea how.\r\n");
+    return;
+  }
+
+  one_argument(argument, arg);
+
+  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
+  {
+    if (FIGHTING(ch) && IN_ROOM(ch) == IN_ROOM(FIGHTING(ch)))
+      vict = FIGHTING(ch);
+    else
+    {
+      send_to_char(ch, "Dirt Kick who?\r\n");
+      return;
+    }
+  }
+
+  // do nothing if trying to dirt kick self
+  if (vict == ch)
+  {
+    send_to_char(ch, "Aren't we funny today...\r\n");
+    return;
+  }
+
+  // vars to check if we land a kick or not
+  percent = rand_number(1, 101);
+  prob = GET_SKILL(ch, SKILL_DIRT_KICK);
+
+  // ch misses victim, using TYPE_UNDEFINED instead of SKILL_DIRT_KICK messages in <message> file.
+  if (percent > prob)
+  {
+    act("You try to kick dirt in $N's eyes, but slip and fall!", FALSE, ch, 0, vict, TO_CHAR);
+    act("$n tries to kick dirt in $N's eyes, but slips and falls to the ground!", TRUE, ch, 0, vict, TO_NOTVICT);
+    damage(ch, vict, 0, TYPE_UNDEFINED);
+  }
+  else
+  {
+    // we have a chance to hit!
+    // check to see if mob can be blinded or not
+    if (MOB_FLAGGED(vict, MOB_NOBLIND))
+    {
+      act("You kick dirt in $N's face, but nothing happens.", FALSE, ch, 0, vict, TO_CHAR);
+    }
+    else
+    {
+      // if vict is not affected by blind then apply the debuffs
+      if (!AFF_FLAGGED(vict, AFF_BLIND))
+      {
+        new_affect(&af);
+        af.spell = SKILL_DIRT_KICK;
+        af.location = APPLY_HITROLL;
+        af.modifier = -10;
+        af.duration = 1;
+        SET_BIT_AR(af.bitvector, AFF_BLIND);
+        affect_to_char(vict, &af);
+
+        new_affect(&af);
+        af.spell = SKILL_DIRT_KICK;
+        af.location = APPLY_AC;
+        af.modifier = 40;
+        af.duration = 1;
+        SET_BIT_AR(af.bitvector, AFF_BLIND);
+        affect_to_char(vict, &af);
+
+        damage(ch, vict, rand_number(1, GET_REAL_LEVEL(ch)), TYPE_UNDEFINED);
+        act("You temporarily blind $N.", FALSE, ch, 0, vict, TO_CHAR);
+        act("$N is temporarily blinded.", TRUE, ch, 0, vict, TO_NOTVICT);
+        act("You kick dirt in $N's face!", FALSE, ch, 0, vict, TO_CHAR);
+      }
+      else
+      {
+        damage(ch, vict, rand_number(1, GET_REAL_LEVEL(ch)), TYPE_UNDEFINED);
+        act("You kick dirt in $N's eyes!", FALSE, ch, 0, vict, TO_CHAR);
+        act("$n kicks dirt in $N's eyes!", TRUE, ch, 0, vict, TO_NOTVICT);
+      }
+    }
+  }
+
+  // wait period
+  WAIT_STATE(ch, PULSE_VIOLENCE * 2);
 }
