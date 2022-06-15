@@ -171,9 +171,8 @@
 #define SPELL_BARD_AGILITY    313
 #define SPELL_BARD_KNOWLEDGE  314
 #define SPELL_BARD_VITALITY   315
-#define SPELL_BARD_SHOCKWAVE  316
 /*  Total Number of defined songs  */
-#define NUM_SONGS              16
+#define NUM_SONGS              15
 /*  Insert new songs here, up to 400*/
 
 /* PLAYER SKILLS - Numbered from MAX_SPELLS+1 to MAX_SKILLS */
@@ -223,7 +222,7 @@
 #define SKILL_CHANT                 443
 #define SKILL_BATTLE_RYTHM          444
 #define SKILL_IMPALE                445
-#define SKILL_REND                  446
+#define SKILL_REND                  446 
 #define SKILL_MINCE                 447
 #define SKILL_THRUST                448
 #define SKILL_ACROBATICS            449
@@ -242,22 +241,22 @@
 #define SKILL_BLOODBATH             462
 #define SKILL_FRENZY                463
 #define SKILL_BEDSIDE_MANNER        464
-#define SKILL_DIRT_KICK             465  // rogue blind kick?
-#define SKILL_ADRENALINE_RUSH       466  // 
-#define SKILL_ANATOMY_LESSONS       467  // critical strike cloone?  critical heal?  
-#define SKILL_GARROTTE              468  // silence, debuff, possibly kill? afkmud
-#define SKILL_INSPIRE               469  // bard buff afkmud
-#define SKILL_LUNGE                 470  // knight attack afkmud
-#define SKILL_KNEE                  471  // fighter attack afkmud
-#define SKILL_CHOP                  472  // fighter afkmud
-#define SKILL_TRIP                  473  // knight afkmud
-#define SKILL_ROUNDHOUSE            474  // fighter
-#define SKILL_ELBOW                 475  // fighter multihit
-
+#define SKILL_DIRT_KICK             465
+#define SKILL_ADRENALINE_RUSH       466
+#define SKILL_KNEE                  467
+#define SKILL_CHOP                  468
+#define SKILL_TRIP                  469 
+#define SKILL_ROUNDHOUSE            470
+#define SKILL_ELBOW                 471
+#define SKILL_GARROTTE              472
+#define SKILL_ARMOR_MASTER          473
+/*
 #define SKILL_TRANCE                476  // bard
 #define SKILL_WARDANCE              477  // bard
+#define SKILL_ANATOMY_LESSONS       467  // critical strike cloone?  critical heal?  
 
-#define NUM_SKILLS 		               75
+*/
+#define NUM_SKILLS 		               73
 
 /* New skills may be added here up to MAX_SKILLS (600) */
 

@@ -8,6 +8,8 @@ Updated: 22 JUL 2021
 
 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
 
+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
+
 **************************************************************************/
 
 #include "conf.h"
@@ -63,32 +65,32 @@ void list_meta(struct char_data *ch)
   switch (GET_CLASS(ch))
   {
   case CLASS_WIZARD:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 15000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 5000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 500;
     break;
   case CLASS_PRIEST:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 12500;
-    mana_exp = (long)GET_MAX_MANA(ch) * 6250;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 625;
     break;
   case CLASS_ROGUE:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
     break;
   case CLASS_FIGHTER:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 8750;
-    mana_exp = (long)GET_MAX_MANA(ch) * 100000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 875;
+    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
     break;
   case CLASS_KNIGHT:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 5000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 15000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 500;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1500;
     break;
   case CLASS_BARD:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 7500;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 750;
     break;
   default:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
     break;
   }
 
@@ -228,44 +230,44 @@ ACMD(do_metagame)
   case CLASS_WIZARD:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 15000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 5000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 500;
     break;
   case CLASS_PRIEST:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 12500;
-    mana_exp = (long)GET_MAX_MANA(ch) * 6250;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 625;
     break;
   case CLASS_ROGUE:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
     break;
   case CLASS_FIGHTER:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 8750;
-    mana_exp = (long)GET_MAX_MANA(ch) * 100000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 875;
+    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
     break;
   case CLASS_KNIGHT:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 5000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 15000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 500;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1500;
     break;
   case CLASS_BARD:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 7500;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 750;
     break;
   default:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
-    hitp_exp = (long)GET_MAX_HIT(ch) * 10000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 10000;
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
     break;
   }
 
@@ -1089,14 +1091,17 @@ void headbutt_combat(struct char_data *ch, struct char_data *victim)
       act("$n smashes $s head against $N.", false, ch, 0, victim, TO_NOTVICT);
       hit(ch, victim, SKILL_HEADBUTT);
 
-      act("You noticed the dazed look on $N's face and grin.", false, ch, 0, victim, TO_CHAR);
-      act("$n looks you square in the face and smiles...", false, ch, 0, victim, TO_VICT);
-      act("$N looks dazed for a moment as $n studies $S face.", false, ch, 0, victim, TO_NOTVICT);
+      if (roll > 17)
+      {
+        act("You noticed the dazed look on $N's face and grin.", false, ch, 0, victim, TO_CHAR);
+        act("$n looks you square in the face and smiles...", false, ch, 0, victim, TO_VICT);
+        act("$N looks dazed for a moment as $n studies $S face.", false, ch, 0, victim, TO_NOTVICT);
 
-      act("You look at the spot between $N's eyes and headbutt it again!", false, ch, 0, victim, TO_CHAR);
-      act("BAMM!!!! What was the license plate of that truck?!", false, ch, 0, victim, TO_VICT);
-      act("$n takes $N and crushes $M with $s head,...Blood Everywhere!!", false, ch, 0, victim, TO_NOTVICT);
-      hit(ch, victim, SKILL_HEADBUTT);
+        act("You look at the spot between $N's eyes and headbutt it again!", false, ch, 0, victim, TO_CHAR);
+        act("BAMM!!!! What was the license plate of that truck?!", false, ch, 0, victim, TO_VICT);
+        act("$n takes $N and crushes $M with $s head,...Blood Everywhere!!", false, ch, 0, victim, TO_NOTVICT);
+        hit(ch, victim, SKILL_HEADBUTT);
+      }
     }
     check_improve(ch, SKILL_HEADBUTT, TRUE);
   }
@@ -1552,6 +1557,7 @@ void kick_combat(struct char_data *ch, struct char_data *victim)
     }
   }
 }
+
 ACMD(do_kick)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -2104,6 +2110,7 @@ void elbow_combat(struct char_data *ch, struct char_data *victim)
     return;
   }    
 }
+
 /* This simply calculates the backstab multiplier based on a character's level.
  * This used to be an array, but was changed to be a function so that it would
  * be easier to add more levels to your MUD.  This doesn't really create a big
@@ -2487,8 +2494,8 @@ EVENTFUNC(event_ritual)
  */
   if (GET_MANA(ch) < cost)
   {
-    send_to_char(ch, "You are exhausted from combat and all that shrieking.\n\r");
-    act("$n suddenly stops shrieking and looks exhausted.", false, ch, 0, NULL, TO_ROOM);
+    send_to_char(ch, "You are exhausted from performing the ritual.\n\r");
+    act("$n suddenly stops the ritual due to exhaustion.", false, ch, 0, NULL, TO_ROOM);
     return 0;
   }  
   
@@ -2551,7 +2558,7 @@ ACMD(do_garrotte)
     return;
   }
   percent = rand_number(1, 101);
-  prob = GET_SKILL(ch, SKILL_DIRT_KICK);
+  prob = GET_SKILL(ch, SKILL_GARROTTE);
 
   if (percent > prob)
   {

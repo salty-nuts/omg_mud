@@ -1614,4 +1614,11 @@ void mag_assign_spells(void)
   skillo(SKILL_BEDSIDE_MANNER, "bedside manner");
   skillo(SKILL_GARROTTE, "garrotte");
   skillo(SKILL_DIRT_KICK, "dirt kick");
-}
+  skillo(SKILL_ELBOW, "elbow");
+  skillo(SKILL_CHOP, "chop");
+  skillo(SKILL_TRIP, "trip");
+  skillo(SKILL_KNEE, "knee");
+  skillo(SKILL_ROUNDHOUSE, "roundhouse");
+  skillo(SKILL_ADRENALINE_RUSH, "adrenaline rush");
+  skillo(SKILL_ARMOR_MASTER, "armor master");
+  }

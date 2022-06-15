@@ -16,8 +16,8 @@ Salty
 #define MAX_CON 25
 #define MAX_CHA 25
 
-#define MAX_RESIST 500
-#define MAX_TRAIN 500
+#define MAX_RESIST 100
+#define MAX_TRAIN 100
 // Function Prototypes for salty.c
 void list_meta(struct char_data *ch);
 int rank_level(long total);
@@ -38,7 +38,6 @@ void rend_combat(struct char_data *ch, struct char_data *victim);
 void mince_combat(struct char_data *ch, struct char_data *victim);
 void thrust_combat(struct char_data *ch, struct char_data *victim);
 void check_acrobatics(struct char_data *ch, struct char_data *victim);
-
 void right_hook_combat(struct char_data *ch, struct char_data *victim);
 void left_hook_combat(struct char_data *ch, struct char_data *victim);
 void sucker_punch_combat(struct char_data *ch, struct char_data *victim);

@@ -81,27 +81,27 @@ void list_train(struct char_data *ch)
   strcat(buf,"\n\r\n\r");
 
   strcat(buf, "Regeneration speed of:\n\r");
-  if (GET_HITP_REGEN(ch) < 500 ) strcat(buf, "hp");
-  if (GET_MANA_REGEN(ch) < 500 ) strcat(buf, " mana");
-  if (GET_MOVE_REGEN(ch) < 500 ) strcat(buf, " move");
+  if (GET_HITP_REGEN(ch) < 100 ) strcat(buf, "hp");
+  if (GET_MANA_REGEN(ch) < 100 ) strcat(buf, " mana");
+  if (GET_MOVE_REGEN(ch) < 100 ) strcat(buf, " move");
 
   strcat(buf,"\n\r\n\r");
 
   strcat(buf, "Melee damage resistances:\n\r");
 
-  if (GET_MELEE_RESIST(ch, RESIST_UNARMED) < 500) strcat(buf, "unarmed");
-  if (GET_MELEE_RESIST(ch, RESIST_EXOTIC) < 500) strcat(buf, " exotic");
-  if (GET_MELEE_RESIST(ch, RESIST_BLUNT) < 500) strcat(buf, " blunt");
-  if (GET_MELEE_RESIST(ch, RESIST_SLASH) < 500) strcat(buf, " slash");
-  if (GET_MELEE_RESIST(ch, RESIST_PIERCE) < 500) strcat(buf, " pierce");
+  if (GET_MELEE_RESIST(ch, RESIST_UNARMED) < 100) strcat(buf, "unarmed");
+  if (GET_MELEE_RESIST(ch, RESIST_EXOTIC) < 100) strcat(buf, " exotic");
+  if (GET_MELEE_RESIST(ch, RESIST_BLUNT) < 100) strcat(buf, " blunt");
+  if (GET_MELEE_RESIST(ch, RESIST_SLASH) < 100) strcat(buf, " slash");
+  if (GET_MELEE_RESIST(ch, RESIST_PIERCE) < 100) strcat(buf, " pierce");
 
   strcat(buf,"\n\r\n\r");
 
   strcat(buf,"Magical power increases:\n\r");
 
-  if (GET_SPELLS_HEALING(ch) < 500 ) strcat(buf, "healing");
-  if (GET_SPELLS_DAMAGE(ch) < 500 ) strcat(buf, " damage");
-  if (GET_SPELLS_AFFECTS(ch) < 500 ) strcat(buf, " affects");
+  if (GET_SPELLS_HEALING(ch) < 100 ) strcat(buf, "healing");
+  if (GET_SPELLS_DAMAGE(ch) < 100 ) strcat(buf, " damage");
+  if (GET_SPELLS_AFFECTS(ch) < 100 ) strcat(buf, " affects");
 
 
 

@@ -527,8 +527,20 @@ void do_start(struct char_data *ch)
     GET_LEVEL(ch, CLASS_BARD) = 1;
     break;
   }
+  GET_REAL_ADD(ch) = 100;
+  GET_REAL_STR(ch) = 25;
+  GET_REAL_INT(ch) = 25;
+  GET_REAL_WIS(ch) = 25;
+  GET_REAL_DEX(ch) = 25;
+  GET_REAL_CON(ch) = 25;
+  GET_REAL_LUCK(ch) = 25;
 
-  advance_level(ch);
+  for (int i = 0;i < 29;i++)
+  {
+    GET_LEVEL(ch, GET_CLASS(ch)) += 1;
+    advance_level(ch);
+  }
+
   GET_HIT(ch) = GET_MAX_HIT(ch);
   GET_MANA(ch) = GET_MAX_MANA(ch);
   GET_MOVE(ch) = GET_MAX_MOVE(ch);
@@ -771,6 +783,7 @@ void init_rogue(void)
   spell_level(SKILL_MINCE, CLASS_ROGUE, 30);
   spell_level(SKILL_THRUST, CLASS_ROGUE, 30);
   spell_level(SKILL_ACROBATICS, CLASS_ROGUE, 30);  
+  spell_level(SKILL_GARROTTE, CLASS_ROGUE, 30);  
 }
 void init_fighter(void)
 {
@@ -786,16 +799,20 @@ void init_fighter(void)
   spell_level(SKILL_OFFENSIVE_STANCE, CLASS_FIGHTER, 5);
   spell_level(SKILL_FOURTH_ATTACK, CLASS_FIGHTER, 10);
   spell_level(SKILL_FIFTH_ATTACK, CLASS_FIGHTER, 15);
-  spell_level(SKILL_RAGE, CLASS_FIGHTER, 30);
-  spell_level(SKILL_UNARMED_COMBAT, CLASS_FIGHTER, 30);
-  spell_level(SKILL_L_HOOK, CLASS_FIGHTER, 20);
-  spell_level(SKILL_R_HOOK, CLASS_FIGHTER, 20);
-  spell_level(SKILL_SUCKER_PUNCH, CLASS_FIGHTER, 20);
+  spell_level(SKILL_RAGE, CLASS_FIGHTER, 15);
+  spell_level(SKILL_UNARMED_COMBAT, CLASS_FIGHTER, 10);
+  spell_level(SKILL_L_HOOK, CLASS_FIGHTER, 10);
+  spell_level(SKILL_R_HOOK, CLASS_FIGHTER, 10);
+  spell_level(SKILL_SUCKER_PUNCH, CLASS_FIGHTER, 15);
   spell_level(SKILL_UPPERCUT, CLASS_FIGHTER, 25);
   spell_level(SKILL_HAYMAKER, CLASS_FIGHTER, 25);
-  spell_level(SKILL_CLOTHESLINE, CLASS_FIGHTER, 25);
+  spell_level(SKILL_CLOTHESLINE, CLASS_FIGHTER, 15);
   spell_level(SKILL_PILEDRVIER, CLASS_FIGHTER, 30);
-  spell_level(SKILL_PALM_STRIKE, CLASS_FIGHTER, 30);  
+  spell_level(SKILL_PALM_STRIKE, CLASS_FIGHTER, 30);
+  spell_level(SKILL_KNEE, CLASS_FIGHTER, 10);
+  spell_level(SKILL_CHOP, CLASS_FIGHTER, 10);  
+  spell_level(SKILL_TRIP, CLASS_FIGHTER, 10);
+  spell_level(SKILL_ELBOW, CLASS_FIGHTER, 20);  
 }
 void init_knight(void)
 {
@@ -810,10 +827,10 @@ void init_knight(void)
   spell_level(SKILL_DAMAGE_REDUCTION, CLASS_KNIGHT, 5);
   spell_level(SKILL_SHIELD_MASTER, CLASS_KNIGHT, 20);
   spell_level(SKILL_THIRD_ATTACK, CLASS_KNIGHT, 20);
-  spell_level(SKILL_TAUNT, CLASS_KNIGHT, 30);
-  spell_level(SKILL_MAGIC_RECOVERY, CLASS_KNIGHT, 21);
+  spell_level(SKILL_TAUNT, CLASS_KNIGHT, 10);
   spell_level(SKILL_ENHANCED_PARRY, CLASS_KNIGHT, 25);
   spell_level(SKILL_DEFENSIVE_STANCE, CLASS_KNIGHT, 5);
+  spell_level(SKILL_ARMOR_MASTER, CLASS_KNIGHT, 5);
 }
 void init_bard(void)
 {

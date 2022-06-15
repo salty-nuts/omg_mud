@@ -331,6 +331,7 @@ const char *affected_bits[] =
   "FEEBLE",
   "FRENZY",
   "GARROTTE",
+  "ARMOR_MASTER",
   "\n"
 };
 

@@ -31,7 +31,6 @@ static void check_idling(struct char_data *ch);
 int mana_gain(struct char_data *ch)
 {
   int gain = 0;
-  int mult = 1;
 
   if (IS_NPC(ch))
   {

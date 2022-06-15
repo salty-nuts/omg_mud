@@ -84,15 +84,21 @@ void appear(struct char_data *ch)
 
 int compute_armor_class(struct char_data *ch)
 {
-  int armorclass = GET_AC(ch);
+  int armorclass = GET_AC(ch);;
 
   if (AWAKE(ch))
     armorclass += dex_app[GET_DEX(ch)].defensive * 10;
+    
+  if (!IS_NPC(ch))
+  {
+    if (GET_SKILL(ch, SKILL_ARMOR_MASTER))
+      armorclass -= GET_SKILL(ch, SKILL_ARMOR_MASTER);
 
-  if (IS_AFFECTED(ch, AFF_DEFENSE))
-    return (MAX(-350, armorclass)); /* -350 is lowest for tanks */
-  else
-    return (MAX(-200, armorclass)); /* -200 is lowest */
+    if (IS_AFFECTED(ch, AFF_DEFENSE))
+      armorclass -= GET_SKILL(ch, SKILL_DEFENSIVE_STANCE);
+  }
+
+  return (MAX(-500, armorclass)); 
 }
 
 void update_pos(struct char_data *victim)
@@ -941,13 +947,13 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       {
         if (GET_MELEE_RESIST(victim, r) > 0)
         {
-          //	  send_to_char(ch,"Positive resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam,  dam * MIN(GET_MELEE_RESIST(victim, r),100) / 100);
-          dam -= dam * MIN(GET_MELEE_RESIST(victim, r), 1000) / 1000;
+//          	  send_to_char(victim,"Positive resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam,  dam * MIN(GET_MELEE_RESIST(victim, r),200) / 200);
+          dam -= dam * MIN(GET_MELEE_RESIST(victim, r), 200) / 200;
         }
         if (GET_MELEE_RESIST(victim, r) < 0)
         {
-          //	  send_to_char(ch,"Negative resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam, dam + dam * MIN(abs(GET_MELEE_RESIST(victim, r)),100) / 100);
-          dam += dam * MIN(abs(GET_MELEE_RESIST(victim, r)), 1000) / 1000;
+//          	  send_to_char(victim,"Negative resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam, dam + dam * MIN(abs(GET_MELEE_RESIST(victim, r)),200) / 200);
+          dam += dam * MIN(abs(GET_MELEE_RESIST(victim, r)), 200) / 200;
         }
       }
     }
@@ -1573,7 +1579,7 @@ Salty 04 JAN 2019
             check_improve(ch, SKILL_CRITICAL_HIT, TRUE);
             sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "You perform a brilliant maneuver and strike $N in a vital area!", CCNRM(ch, C_NRM));
             act(buf, FALSE, ch, 0, victim, TO_CHAR);
-            act("$n performs a brilliant maneuver and strikes $N in a vital area!", FALSE, ch, 0, victim, TO_NOTVICT);
+//            act("$n performs a brilliant maneuver and strikes $N in a vital area!", FALSE, ch, 0, victim, TO_NOTVICT);
             act("$n brilliantly maneuvers past your defenses and strikes you in a vital area!", FALSE, ch, 0, victim, TO_VICT);
           }
         }
