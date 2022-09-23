@@ -89,11 +89,19 @@ void list_train(struct char_data *ch)
 
   strcat(buf, "Melee damage resistances:\n\r");
 
-  if (GET_MELEE_RESIST(ch, RESIST_UNARMED) < 100) strcat(buf, "unarmed");
-  if (GET_MELEE_RESIST(ch, RESIST_EXOTIC) < 100) strcat(buf, " exotic");
-  if (GET_MELEE_RESIST(ch, RESIST_BLUNT) < 100) strcat(buf, " blunt");
-  if (GET_MELEE_RESIST(ch, RESIST_SLASH) < 100) strcat(buf, " slash");
-  if (GET_MELEE_RESIST(ch, RESIST_PIERCE) < 100) strcat(buf, " pierce");
+  if (GET_RESISTS(ch, RESIST_UNARMED) < 100) strcat(buf, "unarmed");
+  if (GET_RESISTS(ch, RESIST_EXOTIC) < 100) strcat(buf, " exotic");
+  if (GET_RESISTS(ch, RESIST_BLUNT) < 100) strcat(buf, " blunt");
+  if (GET_RESISTS(ch, RESIST_SLASH) < 100) strcat(buf, " slash");
+  if (GET_RESISTS(ch, RESIST_PIERCE) < 100) strcat(buf, " pierce");
+
+  strcat(buf, "Magical damage resistances:\n\r");
+
+  if (GET_RESISTS(ch, RESIST_RED) < 100) strcat(buf, "red");
+  if (GET_RESISTS(ch, RESIST_BLUE) < 100) strcat(buf, " blue");
+  if (GET_RESISTS(ch, RESIST_GREEN) < 100) strcat(buf, " green");
+  if (GET_RESISTS(ch, RESIST_BLACK) < 100) strcat(buf, " black");
+  if (GET_RESISTS(ch, RESIST_WHITE) < 100) strcat(buf, " white");
 
   strcat(buf,"\n\r\n\r");
 
@@ -272,48 +280,93 @@ SPECIAL(guild)
     else if (!str_cmp(argument, "unarmed"))
     {
       pOut = "unarmed resistance";
-      if (GET_MELEE_RESIST(ch, RESIST_UNARMED) < MAX_RESIST)
+      if (GET_RESISTS(ch, RESIST_UNARMED) < MAX_RESIST)
       {
         gain = TRUE;
-        GET_MELEE_RESIST(ch, RESIST_UNARMED) += 1;
+        GET_RESISTS(ch, RESIST_UNARMED) += 1;
       }
     }
     else if (!str_cmp(argument, "exotic"))
     {
       pOut = "exotic resistance";
-      if (GET_MELEE_RESIST(ch, RESIST_EXOTIC) < MAX_RESIST)
+      if (GET_RESISTS(ch, RESIST_EXOTIC) < MAX_RESIST)
       {
         gain = TRUE;
-        GET_MELEE_RESIST(ch, RESIST_EXOTIC) += 1;
+        GET_RESISTS(ch, RESIST_EXOTIC) += 1;
       }
     }
     else if (!str_cmp(argument, "blunt"))
     {
       pOut = "blunt resistance";
-      if (GET_MELEE_RESIST(ch, RESIST_BLUNT) < MAX_RESIST)
+      if (GET_RESISTS(ch, RESIST_BLUNT) < MAX_RESIST)
       {
         gain = TRUE;
-        GET_MELEE_RESIST(ch, RESIST_BLUNT) += 1;
+        GET_RESISTS(ch, RESIST_BLUNT) += 1;
       }
     }
     else if (!str_cmp(argument, "slash"))
     {
       pOut = "slash resistance";
-      if (GET_MELEE_RESIST(ch, RESIST_SLASH) < MAX_RESIST)
+      if (GET_RESISTS(ch, RESIST_SLASH) < MAX_RESIST)
       {
         gain = TRUE;
-        GET_MELEE_RESIST(ch, RESIST_SLASH) += 1;
+        GET_RESISTS(ch, RESIST_SLASH) += 1;
       }
     }
     else if (!str_cmp(argument, "pierce"))
     {
       pOut = "pierce resistance";
-      if (GET_MELEE_RESIST(ch, RESIST_PIERCE) < MAX_RESIST)
+      if (GET_RESISTS(ch, RESIST_PIERCE) < MAX_RESIST)
       {
         gain = TRUE;
-        GET_MELEE_RESIST(ch, RESIST_PIERCE) += 1;
+        GET_RESISTS(ch, RESIST_PIERCE) += 1;
       }
     }
+    else if (!str_cmp(argument, "red"))
+    {
+      pOut = "red magic resist";
+      if (GET_RESISTS(ch, RESIST_RED) < MAX_RESIST)
+      {
+        gain = TRUE;
+        GET_RESISTS(ch, RESIST_RED) += 1;
+      }
+    }    
+    else if (!str_cmp(argument, "blue"))
+    {
+      pOut = "blue magic resist";
+      if (GET_RESISTS(ch, RESIST_BLUE) < MAX_RESIST)
+      {
+        gain = TRUE;
+        GET_RESISTS(ch, RESIST_BLUE) += 1;
+      }
+    }    
+    else if (!str_cmp(argument, "green"))
+    {
+      pOut = "green magic resist";
+      if (GET_RESISTS(ch, RESIST_GREEN) < MAX_RESIST)
+      {
+        gain = TRUE;
+        GET_RESISTS(ch, RESIST_GREEN) += 1;
+      }
+    }    
+    else if (!str_cmp(argument, "black"))
+    {
+      pOut = "black magic resist";
+      if (GET_RESISTS(ch, RESIST_BLACK) < MAX_RESIST)
+      {
+        gain = TRUE;
+        GET_RESISTS(ch, RESIST_BLACK) += 1;
+      }
+    }    
+    else if (!str_cmp(argument, "white"))
+    {
+      pOut = "white magic resist";
+      if (GET_RESISTS(ch, RESIST_WHITE) < MAX_RESIST)
+      {
+        gain = TRUE;
+        GET_RESISTS(ch, RESIST_WHITE) += 1;
+      }
+    }    
     else if (!str_cmp(argument, "healing"))
     {
       pOut = "healing spells";

@@ -514,33 +514,52 @@ static void medit_disp_stats_menu(struct descriptor_data *d)
   if (CONFIG_MEDIT_ADVANCED) {
     /* Bottom section - non-standard stats, togglable in cedit */
     write_to_output(d,
-    "(%sF%s) Str: %s[%s%2d/%3d%s]%s   Saving Throws              %s(%sR%s) Resistances		\r\n"
-    "(%sG%s) Int: %s[%s%3d%s]%s      (%sL%s) Paralysis     %s[%s%3d%s]%s      Unarmed %s[%s%3d%s]%s\r\n"
-    "(%sH%s) Wis: %s[%s%3d%s]%s      (%sM%s) Rods/Staves   %s[%s%3d%s]%s      Exotic  %s[%s%3d%s]%s\r\n"
-    "(%sI%s) Dex: %s[%s%3d%s]%s      (%sN%s) Petrification %s[%s%3d%s]%s      Blunt   %s[%s%3d%s]%s\r\n"
-    "(%sJ%s) Con: %s[%s%3d%s]%s      (%sO%s) Breath        %s[%s%3d%s]%s      Pierce  %s[%s%3d%s]%s\r\n"
-    "(%sK%s) Lck: %s[%s%3d%s]%s      (%sP%s) Spells        %s[%s%3d%s]%s      Slash   %s[%s%3d%s]%s\r\n\r\n",
+    "(%sF%s) Str: %s[%s%2d/%3d%s]%s   Saving Throws   \r\n"
+    "(%sG%s) Int: %s[%s%3d%s]%s      (%sL%s) Paralysis     %s[%s%3d%s]%s\r\n"
+    "(%sH%s) Wis: %s[%s%3d%s]%s      (%sM%s) Rods/Staves   %s[%s%3d%s]%s\r\n"
+    "(%sI%s) Dex: %s[%s%3d%s]%s      (%sN%s) Petrification %s[%s%3d%s]%s\r\n"
+    "(%sJ%s) Con: %s[%s%3d%s]%s      (%sO%s) Breath        %s[%s%3d%s]%s\r\n"
+    "(%sK%s) Lck: %s[%s%3d%s]%s      (%sP%s) Spells        %s[%s%3d%s]%s\r\n\r\n",
         cyn, nrm, cyn, yel, GET_STR(mob), GET_ADD(mob), cyn, nrm,
 
-nrm, cyn, nrm,
         cyn, nrm, cyn, yel, GET_INT(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_PARA), cyn, nrm,  
 
-cyn, yel, GET_MELEE_RESIST(mob, RESIST_UNARMED), cyn, nrm,
 
         cyn, nrm, cyn, yel, GET_WIS(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_ROD), cyn, nrm,
 
-cyn, yel, GET_MELEE_RESIST(mob, RESIST_EXOTIC), cyn, nrm,
 
         cyn, nrm, cyn, yel, GET_DEX(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_PETRI), cyn, nrm,
-cyn, yel, GET_MELEE_RESIST(mob, RESIST_BLUNT), cyn, nrm,
 
         cyn, nrm, cyn, yel, GET_CON(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_BREATH), cyn, nrm,
-cyn, yel, GET_MELEE_RESIST(mob, RESIST_PIERCE), cyn, nrm,
 
-        cyn, nrm, cyn, yel, GET_LUCK(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_SPELL), cyn, nrm,
-cyn, yel, GET_MELEE_RESIST(mob, RESIST_SLASH), cyn, nrm
+        cyn, nrm, cyn, yel, GET_LUCK(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_SAVE(mob, SAVING_SPELL), cyn, nrm
         );
-  }
+
+    write_to_output(d, 
+    "%s(%sR%s) Resistances		\r\n"
+    "Unarmed %s[%s%3d%s]%s\r\n"
+    "Exotic  %s[%s%3d%s]%s\r\n"
+    "Blunt   %s[%s%3d%s]%s\r\n"
+    "Pierce  %s[%s%3d%s]%s\r\n"
+    "Slash   %s[%s%3d%s]%s\r\n"
+    "Red     %s[%s%3d%s]%s\r\n"
+    "Blue    %s[%s%3d%s]%s\r\n"
+    "Green   %s[%s%3d%s]%s\r\n"
+    "Black   %s[%s%3d%s]%s\r\n"
+    "White   %s[%s%3d%s]%s\r\n\n\r",
+    nrm, cyn, nrm, 
+    cyn, yel, GET_RESISTS(mob, RESIST_UNARMED), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_EXOTIC), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_BLUNT), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_PIERCE), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_SLASH), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_RED), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_BLUE), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_GREEN), cyn, nrm,  
+    cyn, yel, GET_RESISTS(mob, RESIST_BLACK), cyn, nrm,
+    cyn, yel, GET_RESISTS(mob, RESIST_WHITE), cyn, nrm
+    );
+    }
 
   /* Quit to previous menu option */
   write_to_output(d, "(%sQ%s) Quit to main menu\r\nEnter choice : ", cyn, nrm);
@@ -857,7 +876,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d, "Invalid Choice!\r\nEnter Choice : ");
         return;
     }
-			OLC_MODE(d) = MEDIT_MR_0;
+			OLC_MODE(d) = MEDIT_RESIST_0;
 			i='r';
 			break;
 
@@ -1093,36 +1112,62 @@ void medit_parse(struct descriptor_data *d, char *arg)
 		GET_ATTACK_NUM(OLC_MOB(d)) = LIMIT(i, 1, 25);
 		break;
 
-	case MEDIT_MR_0:
-		GET_MELEE_RESIST(OLC_MOB(d), RESIST_UNARMED) = LIMIT(i, -1000, 1000);
-		write_to_output(d, "Enter the melee resist exotic (-1000 to 1000):  ");
-		OLC_MODE(d) = MEDIT_MR_1;
-		return;
+  case MEDIT_RESIST_0:
+    GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the melee resist exotic (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_1;
+    return;
 
-	case MEDIT_MR_1:
-    GET_MELEE_RESIST(OLC_MOB(d), RESIST_EXOTIC) = LIMIT(i,-1000, 1000);
-		write_to_output(d, "Enter the melee resist blunt (-1000 to 1000):  ");
-		OLC_MODE(d) = MEDIT_MR_2;
-		return;
+  case MEDIT_RESIST_1:
+    GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the melee resist blunt (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_2;
+    return;
 
-	case MEDIT_MR_2:
-    GET_MELEE_RESIST(OLC_MOB(d), RESIST_BLUNT) = LIMIT(i,-1000, 1000);
-		write_to_output(d, "Enter the melee resist pierce (-1000 to 1000):  ");
-		OLC_MODE(d) = MEDIT_MR_3;
-		return;
+  case MEDIT_RESIST_2:
+    GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the melee resist pierce (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_3;
+    return;
+  case MEDIT_RESIST_3:
+    GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the melee resist slash (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_4;
+    return;
 
-	case MEDIT_MR_3:
-    GET_MELEE_RESIST(OLC_MOB(d), RESIST_PIERCE) = LIMIT(i,-1000, 1000);
-		write_to_output(d, "Enter the melee resist slash (-1000 to 1000):  ");
-		OLC_MODE(d) = MEDIT_MR_4;
-		return;
+  case MEDIT_RESIST_4:
+    GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the red magic resist (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_5;
+    return;
 
-	case MEDIT_MR_4:
-    GET_MELEE_RESIST(OLC_MOB(d), RESIST_SLASH) = LIMIT(i,-1000, 1000);
-		OLC_VAL(d) = TRUE;
-		medit_disp_stats_menu(d);
-		return;
+  case MEDIT_RESIST_5:
+    GET_RESISTS(OLC_MOB(d), RESIST_RED) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the blue magic resist (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_6;
+    return;
+  case MEDIT_RESIST_6:
+    GET_RESISTS(OLC_MOB(d), RESIST_BLUE) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the green magic resist (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_7;
+    return;
+  case MEDIT_RESIST_7:
+    GET_RESISTS(OLC_MOB(d), RESIST_GREEN) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the black magic resist (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_8;
+    return;
 
+  case MEDIT_RESIST_8:
+    GET_RESISTS(OLC_MOB(d), RESIST_BLACK) = LIMIT(i, -1000, 1000);
+    write_to_output(d, "Enter the white magic resist (-1000 to 1000):  ");
+    OLC_MODE(d) = MEDIT_RESIST_9;
+    return;
+
+  case MEDIT_RESIST_9:
+    GET_RESISTS(OLC_MOB(d), RESIST_WHITE) = LIMIT(i, -1000, 1000);
+    OLC_VAL(d) = TRUE;
+    medit_disp_stats_menu(d);
+    break;
 
   case MEDIT_LEVEL:
     GET_LEVEL(OLC_MOB(d), CLASS_FIGHTER) = LIMIT(i, 1, LVL_IMPL);

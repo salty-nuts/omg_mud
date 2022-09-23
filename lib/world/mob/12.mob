@@ -281,10 +281,20 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 15
+SavingPara: 50
 SavingRod: 15
 SavingPetri: 15
 SavingBreath: 15
 SavingSpell: 15
+RES_0: 99
+RES_1: 91
+RES_2: 92
+RES_3: 93
+RES_4: 42
+RES_5: 44
+RES_6: 45
+RES_7: 66
+RES_8: 99
+RES_9: 1
 E
 $

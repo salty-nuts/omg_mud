@@ -1608,8 +1608,8 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
   for (j = 0; j < NUM_OF_SAVING_THROWS; j++)
     GET_SAVE(mob_proto + i, j) = 0;
 
-	for (j = 0; j < NUM_MELEE_RESISTS;j++)
-		GET_MELEE_RESIST(mob_proto + i, j) = 0;
+	for (j = 0; j < NUM_RESISTS;j++)
+		GET_RESISTS(mob_proto + i, j) = 0;
 }
 
 /* interpret_espec is the function that takes espec keywords and values and
@@ -1699,26 +1699,49 @@ static void interpret_espec(const char *keyword, const char *value, int i, int n
     mob_proto[i].char_specials.saved.apply_saving_throw[SAVING_SPELL] = num_arg;
   }
 
-	CASE("MR_0") {
+	CASE("RES_0") {
 		RANGE(-1000,1000);
-		mob_proto[i].points.melee_resist[RESIST_UNARMED] = num_arg;
+		mob_proto[i].points.resists[RESIST_UNARMED] = num_arg;
 	}
-	CASE("MR_1") {
+	CASE("RES_1") {
 		RANGE(-1000,1000);
-		mob_proto[i].points.melee_resist[RESIST_EXOTIC] = num_arg;
+		mob_proto[i].points.resists[RESIST_EXOTIC] = num_arg;
 	}
-	CASE("MR_2") {
+	CASE("RES_2") {
 		RANGE(-1000,1000);
-		mob_proto[i].points.melee_resist[RESIST_BLUNT] = num_arg;
+		mob_proto[i].points.resists[RESIST_BLUNT] = num_arg;
 	}
-	CASE("MR_3") {
+	CASE("RES_3") {
 		RANGE(-1000,1000);
-		mob_proto[i].points.melee_resist[RESIST_PIERCE] = num_arg;
+		mob_proto[i].points.resists[RESIST_PIERCE] = num_arg;
 	}
-	CASE("MR_4") {
+	CASE("RES_4") {
 		RANGE(-1000,1000);
-		mob_proto[i].points.melee_resist[RESIST_SLASH] = num_arg;
+		mob_proto[i].points.resists[RESIST_SLASH] = num_arg;
 	}
+
+	CASE("RES_5") {
+		RANGE(-1000,1000);
+		mob_proto[i].points.resists[RESIST_RED] = num_arg;
+	}
+	CASE("RES_6") {
+		RANGE(-1000,1000);
+		mob_proto[i].points.resists[RESIST_BLUE] = num_arg;
+	}
+	CASE("RES_7") {
+		RANGE(-1000,1000);
+		mob_proto[i].points.resists[RESIST_GREEN] = num_arg;
+	}
+	CASE("RES_8") {
+		RANGE(-1000,1000);
+		mob_proto[i].points.resists[RESIST_BLACK] = num_arg;
+	}
+	CASE("RES_9") {
+		RANGE(-1000,1000);
+		mob_proto[i].points.resists[RESIST_WHITE] = num_arg;
+	}
+
+
 
   if (!matched) {
     log("SYSERR: Warning: unrecognized espec keyword %s in mob #%d",
@@ -3637,8 +3660,8 @@ void init_char(struct char_data *ch)
   for (i = 0; i < 5; i++)
     GET_SAVE(ch, i) = 0;
 
-	for (i = 0; i < NUM_MELEE_RESISTS; i++)
-		GET_MELEE_RESIST(ch, i) = 0;
+	for (i = 0; i < NUM_RESISTS; i++)
+		GET_RESISTS(ch, i) = 0;
 
   for (i = 0; i < 3; i++)
     GET_COND(ch, i) = (GET_REAL_LEVEL(ch) == LVL_IMPL ? -1 : 24);

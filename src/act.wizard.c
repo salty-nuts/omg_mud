@@ -856,11 +856,18 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   send_to_char(ch, "Effective Saving Throws: [%d/%d/%d/%d/%d]\n\r",t0,t1,t2,t3,t4);
 
 	send_to_char(ch, "Melee Resistances: [%3d/%3d/%3d/%3d/%3d]\n\r",
-		GET_MELEE_RESIST(k, RESIST_UNARMED),
-		GET_MELEE_RESIST(k, RESIST_EXOTIC),
-		GET_MELEE_RESIST(k, RESIST_BLUNT),
-		GET_MELEE_RESIST(k, RESIST_PIERCE),
-		GET_MELEE_RESIST(k, RESIST_SLASH));
+		GET_RESISTS(k, RESIST_UNARMED),
+		GET_RESISTS(k, RESIST_EXOTIC),
+		GET_RESISTS(k, RESIST_BLUNT),
+		GET_RESISTS(k, RESIST_PIERCE),
+		GET_RESISTS(k, RESIST_SLASH));
+
+  send_to_char(ch, "Magic Resistances: [%3d/%3d/%3d/%3d/%3d]\n\r",
+  	GET_RESISTS(k, RESIST_RED),
+		GET_RESISTS(k, RESIST_BLUE),
+		GET_RESISTS(k, RESIST_GREEN),
+		GET_RESISTS(k, RESIST_BLACK),
+		GET_RESISTS(k, RESIST_WHITE));
 
   sprinttype(GET_POS(k), position_types, buf, sizeof(buf));
   send_to_char(ch, "Pos: %s, Fighting: %s", buf, FIGHTING(k) ? GET_NAME(FIGHTING(k)) : "Nobody");
@@ -2944,6 +2951,11 @@ static struct set_struct {
    { "spells_healing", LVL_IMPL, PC, NUMBER},
    { "spells_damage", LVL_IMPL, PC, NUMBER},
    { "spells_affects", LVL_IMPL, PC, NUMBER},
+   { "resist_red", LVL_IMPL,    PC,    NUMBER},
+   { "resist_blue", LVL_IMPL,    PC,    NUMBER},
+   { "resist_green", LVL_IMPL,    PC,    NUMBER},
+   { "resist_black", LVL_IMPL,    PC,    NUMBER},
+   { "resist_white", LVL_IMPL,    PC,    NUMBER},
    { "\n", 0, BOTH, MISC }
   };
 
@@ -3376,27 +3388,27 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       break;
 		case 60:
       RANGE(-1000, 1000);
-			GET_MELEE_RESIST(vict, RESIST_UNARMED) = value;
+			GET_RESISTS(vict, RESIST_UNARMED) = value;
       affect_total(vict);
  			break;
 		case 61:
       RANGE(-1000, 1000);
-			GET_MELEE_RESIST(vict, RESIST_EXOTIC) = value;
+			GET_RESISTS(vict, RESIST_EXOTIC) = value;
       affect_total(vict);
  			break;
 		case 62:
       RANGE(-1000, 1000);
-			GET_MELEE_RESIST(vict, RESIST_BLUNT) = value;
+			GET_RESISTS(vict, RESIST_BLUNT) = value;
       affect_total(vict);
  			break;
 		case 63:
       RANGE(-1000, 1000);
-			GET_MELEE_RESIST(vict, RESIST_PIERCE) = value;
+			GET_RESISTS(vict, RESIST_PIERCE) = value;
       affect_total(vict);
  			break;
 		case 64:
       RANGE(-1000, 1000);
-			GET_MELEE_RESIST(vict, RESIST_SLASH) = value;
+			GET_RESISTS(vict, RESIST_SLASH) = value;
       affect_total(vict);
  			break;
 		case 65:
@@ -3434,6 +3446,33 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
 			GET_SPELLS_AFFECTS(vict) = value;
 			affect_total(vict);
 			break;
+
+		case 72:
+      RANGE(-1000, 1000);
+			GET_RESISTS(vict, RESIST_RED) = value;
+      affect_total(vict);
+ 			break;
+		case 73:
+      RANGE(-1000, 1000);
+			GET_RESISTS(vict, RESIST_BLUE) = value;
+      affect_total(vict);
+ 			break;
+		case 74:
+      RANGE(-1000, 1000);
+			GET_RESISTS(vict, RESIST_GREEN) = value;
+      affect_total(vict);
+ 			break;
+		case 75:
+      RANGE(-1000, 1000);
+			GET_RESISTS(vict, RESIST_BLACK) = value;
+      affect_total(vict);
+ 			break;
+		case 76:
+      RANGE(-1000, 1000);
+			GET_RESISTS(vict, RESIST_WHITE) = value;
+      affect_total(vict);
+ 			break;
+
 
     default:
       send_to_char(ch, "Can't set that!\r\n");

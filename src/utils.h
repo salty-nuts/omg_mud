@@ -558,7 +558,7 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 #define MAX_RANK 5000
 #define MIN_RANK 1
 
-#define GET_MELEE_RESIST(ch, i) ((ch)->points.melee_resist[i])
+#define GET_RESISTS(ch, i) ((ch)->points.resists[i])
 
 /** Experience points of ch. */
 #define GET_EXP(ch)	  ((ch)->points.exp)

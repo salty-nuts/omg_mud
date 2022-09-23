@@ -1275,11 +1275,18 @@ ACMD(do_score)
 	send_to_char(ch, "Your mana regen per tick is: %4d, APPLY_MANA_REGEN is %3d.\r\n", mana_gain(ch), GET_MANA_REGEN(ch));
 	send_to_char(ch, "Your move regen per tick is: %4d, APPLY_MOVE_REGEN is %3d.\r\n", move_gain(ch), GET_MOVE_REGEN(ch));
 
-	send_to_char(ch, "Your resist unarmed is: %3d, APPLY_SPELLS_HEALING is %3d.\n\r",GET_MELEE_RESIST(ch,0), GET_SPELLS_HEALING(ch));
-	send_to_char(ch, "Your resist exotic  is: %3d, APPLY_SPELLS_DAMAGE  is %3d.\n\r",GET_MELEE_RESIST(ch,1), GET_SPELLS_DAMAGE(ch));
-	send_to_char(ch, "Your resist blunt   is: %3d, APPLY_SPELLS_AFFECTS is %3d.\n\r",GET_MELEE_RESIST(ch,2), GET_SPELLS_AFFECTS(ch));
-	send_to_char(ch, "Your resist pierce  is: %3d\n\r",GET_MELEE_RESIST(ch,3));
-	send_to_char(ch, "Your resist slash   is: %3d\n\r",GET_MELEE_RESIST(ch,4));
+	send_to_char(ch, "Your resist unarmed is: %3d, APPLY_SPELLS_HEALING is %3d.\n\r",GET_RESISTS(ch,0), GET_SPELLS_HEALING(ch));
+	send_to_char(ch, "Your resist exotic  is: %3d, APPLY_SPELLS_DAMAGE  is %3d.\n\r",GET_RESISTS(ch,1), GET_SPELLS_DAMAGE(ch));
+	send_to_char(ch, "Your resist blunt   is: %3d, APPLY_SPELLS_AFFECTS is %3d.\n\r",GET_RESISTS(ch,2), GET_SPELLS_AFFECTS(ch));
+	send_to_char(ch, "Your resist pierce  is: %3d\n\r",GET_RESISTS(ch,3));
+	send_to_char(ch, "Your resist slash   is: %3d\n\r",GET_RESISTS(ch,4));
+	send_to_char(ch, "Your resist red     is: %3d\n\r",GET_RESISTS(ch,5));
+ 	send_to_char(ch, "Your resist blue    is: %3d\n\r",GET_RESISTS(ch,6));
+	send_to_char(ch, "Your resist green   is: %3d\n\r",GET_RESISTS(ch,7));
+	send_to_char(ch, "Your resist black   is: %3d\n\r",GET_RESISTS(ch,8));
+	send_to_char(ch, "Your resist white   is: %3d\n\r",GET_RESISTS(ch,9));
+
+
 
   if (GET_REAL_LEVEL(ch) >= LVL_IMMORT) {
     if (POOFIN(ch))

@@ -537,8 +537,13 @@
 #define APPLY_RESIST_BLUNT		 34
 #define APPLY_RESIST_PIERCE		 35
 #define APPLY_RESIST_SLASH		 36
+#define APPLY_RESIST_RED        37
+#define APPLY_RESIST_BLUE       38
+#define APPLY_RESIST_GREEN      39
+#define APPLY_RESIST_BLACK      40
+#define APPLY_RESIST_WHITE      41
 /** Total number of applies  (ZERO INDEXED) */
-#define NUM_APPLIES   37
+#define NUM_APPLIES   42
 
 /* Equals the total number of SAVING_* defines in spells.h */
 #define NUM_OF_SAVING_THROWS  5
@@ -710,7 +715,12 @@
 #define RESIST_BLUNT 2
 #define RESIST_PIERCE 3
 #define RESIST_SLASH 4
-#define NUM_MELEE_RESISTS 5
+#define RESIST_RED 5
+#define RESIST_BLUE 6
+#define RESIST_GREEN 7
+#define RESIST_BLACK 8
+#define RESIST_WHITE 9
+#define NUM_RESISTS 10
 
 
 
@@ -1009,7 +1019,7 @@ struct char_point_data
 
   int hitroll;   /**< Any bonus or penalty to the hit roll */
   int damroll;   /**< Any bonus or penalty to the damage roll */
-	int melee_resist[NUM_MELEE_RESISTS];
+	int resists[NUM_RESISTS];
 
 };
 

@@ -355,16 +355,26 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
     fprintf(fd, "SavingBreath: %d\n", GET_SAVE(mob, SAVING_BREATH));
   if (GET_SAVE(mob, SAVING_SPELL) != 0)
     fprintf(fd, "SavingSpell: %d\n", GET_SAVE(mob, SAVING_SPELL));
-	if (GET_MELEE_RESIST(mob, 0) != 0)
-		fprintf(fd, "MR_0: %d\n", GET_MELEE_RESIST(mob,RESIST_UNARMED));
-	if (GET_MELEE_RESIST(mob, 1) != 0)
-		fprintf(fd, "MR_1: %d\n", GET_MELEE_RESIST(mob,RESIST_EXOTIC));
-	if (GET_MELEE_RESIST(mob, 2) != 0)
-		fprintf(fd, "MR_2: %d\n", GET_MELEE_RESIST(mob,RESIST_BLUNT));
-	if (GET_MELEE_RESIST(mob, 3) != 0)
-		fprintf(fd, "MR_3: %d\n", GET_MELEE_RESIST(mob,RESIST_PIERCE));
-	if (GET_MELEE_RESIST(mob, 4) != 0)
-		fprintf(fd, "MR_4: %d\n", GET_MELEE_RESIST(mob,RESIST_SLASH));
+	if (GET_RESISTS(mob, 0) != 0)
+		fprintf(fd, "RES_0: %d\n", GET_RESISTS(mob,RESIST_UNARMED));
+	if (GET_RESISTS(mob, 1) != 0)
+		fprintf(fd, "RES_1: %d\n", GET_RESISTS(mob,RESIST_EXOTIC));
+	if (GET_RESISTS(mob, 2) != 0)
+		fprintf(fd, "RES_2: %d\n", GET_RESISTS(mob,RESIST_BLUNT));
+	if (GET_RESISTS(mob, 3) != 0)
+		fprintf(fd, "RES_3: %d\n", GET_RESISTS(mob,RESIST_PIERCE));
+	if (GET_RESISTS(mob, 4) != 0)
+		fprintf(fd, "RES_4: %d\n", GET_RESISTS(mob,RESIST_SLASH));
+	if (GET_RESISTS(mob, 5) != 0)
+		fprintf(fd, "RES_5: %d\n", GET_RESISTS(mob,RESIST_RED));
+	if (GET_RESISTS(mob, 6) != 0)
+		fprintf(fd, "RES_6: %d\n", GET_RESISTS(mob,RESIST_BLUE));
+	if (GET_RESISTS(mob, 7) != 0)
+		fprintf(fd, "RES_7: %d\n", GET_RESISTS(mob,RESIST_GREEN));
+	if (GET_RESISTS(mob, 8) != 0)
+		fprintf(fd, "RES_8: %d\n", GET_RESISTS(mob,RESIST_BLACK));
+	if (GET_RESISTS(mob, 9) != 0)
+		fprintf(fd, "RES_9: %d\n", GET_RESISTS(mob,RESIST_WHITE));    
   fputs("E\n", fd);
   return TRUE;
 }

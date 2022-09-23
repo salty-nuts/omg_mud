@@ -941,19 +941,19 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   if (resist > -1 && dam >= 2)
   {
-    for (int r = 0; r < NUM_MELEE_RESISTS; r++)
+    for (int r = 0; r < NUM_RESISTS; r++)
     {
       if (resist == r)
       {
-        if (GET_MELEE_RESIST(victim, r) > 0)
+        if (GET_RESISTS(victim, r) > 0)
         {
-//          	  send_to_char(victim,"Positive resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam,  dam * MIN(GET_MELEE_RESIST(victim, r),200) / 200);
-          dam -= dam * MIN(GET_MELEE_RESIST(victim, r), 200) / 200;
+          	  send_to_char(victim,"Positive resist: %d %%, %d, %d\n\r",GET_RESISTS(victim, r), dam,  dam * MIN(GET_RESISTS(victim, r),200) / 200);
+          dam -= dam * MIN(GET_RESISTS(victim, r), 200) / 200;
         }
-        if (GET_MELEE_RESIST(victim, r) < 0)
+        if (GET_RESISTS(victim, r) < 0)
         {
-//          	  send_to_char(victim,"Negative resist: %d %%, %d, %d\n\r",GET_MELEE_RESIST(victim, r), dam, dam + dam * MIN(abs(GET_MELEE_RESIST(victim, r)),200) / 200);
-          dam += dam * MIN(abs(GET_MELEE_RESIST(victim, r)), 200) / 200;
+          	  send_to_char(victim,"Negative resist: %d %%, %d, %d\n\r",GET_RESISTS(victim, r), dam, dam + dam * MIN(abs(GET_RESISTS(victim, r)),200) / 200);
+          dam += dam * MIN(abs(GET_RESISTS(victim, r)), 200) / 200;
         }
       }
     }

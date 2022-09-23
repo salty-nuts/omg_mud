@@ -234,24 +234,46 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sh_int mod, char *m
     break;
 
   case APPLY_RESIST_UNARMED:
-    GET_MELEE_RESIST(ch, RESIST_UNARMED) += mod;
+    GET_RESISTS(ch, RESIST_UNARMED) += mod;
     break;
 
   case APPLY_RESIST_EXOTIC:
-    GET_MELEE_RESIST(ch, RESIST_EXOTIC) += mod;
+    GET_RESISTS(ch, RESIST_EXOTIC) += mod;
     break;
 
   case APPLY_RESIST_BLUNT:
-    GET_MELEE_RESIST(ch, RESIST_BLUNT) += mod;
+    GET_RESISTS(ch, RESIST_BLUNT) += mod;
     break;
 
   case APPLY_RESIST_PIERCE:
-    GET_MELEE_RESIST(ch, RESIST_PIERCE) += mod;
+    GET_RESISTS(ch, RESIST_PIERCE) += mod;
     break;
 
   case APPLY_RESIST_SLASH:
-    GET_MELEE_RESIST(ch, RESIST_SLASH) += mod;
+    GET_RESISTS(ch, RESIST_SLASH) += mod;
     break;
+    
+  case APPLY_RESIST_RED:
+    GET_RESISTS(ch, RESIST_RED) += mod;
+    break;
+
+  case APPLY_RESIST_BLUE:
+    GET_RESISTS(ch, RESIST_BLUE) += mod;
+    break;
+
+  case APPLY_RESIST_GREEN:
+    GET_RESISTS(ch, RESIST_GREEN) += mod;
+    break;
+
+  case APPLY_RESIST_BLACK:
+    GET_RESISTS(ch, RESIST_BLACK) += mod;
+    break;
+
+  case APPLY_RESIST_WHITE:
+    GET_RESISTS(ch, RESIST_WHITE) += mod;
+    break;
+
+
 
   default:
     log("SYSERR: Unknown apply adjust %d attempt (%s, affect_modify).", loc, __FILE__);
@@ -328,8 +350,8 @@ void affect_total(struct char_data *ch)
   //GET_STR(ch) = MAX(0, GET_STR(ch));  //salty
   GET_STR(ch) = MAX(0, MIN(GET_STR(ch), i));
 
-	for (int j = 0;j < NUM_MELEE_RESISTS;j++)
-		GET_MELEE_RESIST(ch, j)  = MAX(-1000,MIN(GET_MELEE_RESIST(ch, j), 1000));
+	for (int j = 0;j < NUM_RESISTS;j++)
+		GET_RESISTS(ch, j)  = MAX(-1000,MIN(GET_RESISTS(ch, j), 1000));
 
 }
 

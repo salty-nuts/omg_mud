@@ -271,8 +271,8 @@ int load_char(const char *name, struct char_data *ch)
     for (i = 0; i < NUM_OF_SAVING_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
 
-		for (i = 0; i < NUM_MELEE_RESISTS; i++)
-			GET_MELEE_RESIST(ch, i) = PFDEF_MELEE_RESISTS;
+		for (i = 0; i < NUM_RESISTS; i++)
+			GET_RESISTS(ch, i) = PFDEF_RESISTS;
 
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
     GET_INVIS_LEV(ch) = PFDEF_INVISLEV;
@@ -426,15 +426,13 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       case 'M':
-	     if (!strcmp(tag, "Mana"))	load_HMVS(ch, line, LOAD_MANA);
-			 else if (!strcmp(tag, "MR_1"))  GET_MELEE_RESIST(ch, 0)   = atoi(line);
-       else if (!strcmp(tag, "MR_2"))  GET_MELEE_RESIST(ch, 1)   = atoi(line);
-       else if (!strcmp(tag, "MR_3"))  GET_MELEE_RESIST(ch, 2)   = atoi(line);
-       else if (!strcmp(tag, "MR_4"))  GET_MELEE_RESIST(ch, 3)   = atoi(line);
-       else if (!strcmp(tag, "MR_5"))  GET_MELEE_RESIST(ch, 4)   = atoi(line);
-			 else if (!strcmp(tag, "Move"))	load_HMVS(ch, line, LOAD_MOVE);
-       else if (!strcmp(tag, "Mult"))  GET_MULTI_CLASS(ch) = atoi(line);
-	break;
+        if (!strcmp(tag, "Mana"))
+          load_HMVS(ch, line, LOAD_MANA);
+        else if (!strcmp(tag, "Move"))
+          load_HMVS(ch, line, LOAD_MOVE);
+        else if (!strcmp(tag, "Mult"))
+          GET_MULTI_CLASS(ch) = atoi(line);
+        break;
 
       case 'N':
 	     if (!strcmp(tag, "Name"))	GET_PC_NAME(ch)	= strdup(line);
@@ -475,6 +473,26 @@ int load_char(const char *name, struct char_data *ch)
        else if (!strcmp(tag, "R_Mv"))  GET_MOVE_REGEN(ch) = atoi(line);
 	     else if (!strcmp(tag, "Rank"))  GET_RANK(ch)		= atoi(line);
 	     else if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoi(line);
+        else if (!strcmp(tag, "RES_0"))
+          GET_RESISTS(ch, 0) = atoi(line);
+        else if (!strcmp(tag, "RES_1"))
+          GET_RESISTS(ch, 1) = atoi(line);
+        else if (!strcmp(tag, "RES_2"))
+          GET_RESISTS(ch, 2) = atoi(line);
+        else if (!strcmp(tag, "RES_3"))
+          GET_RESISTS(ch, 3) = atoi(line);
+        else if (!strcmp(tag, "RES_4"))
+          GET_RESISTS(ch, 4) = atoi(line);
+        else if (!strcmp(tag, "RES_5"))
+          GET_RESISTS(ch, 5) = atoi(line);
+        else if (!strcmp(tag, "RES_6"))
+          GET_RESISTS(ch, 6) = atoi(line);
+        else if (!strcmp(tag, "RES_7"))
+          GET_RESISTS(ch, 7) = atoi(line);
+        else if (!strcmp(tag, "RES_8"))
+          GET_RESISTS(ch, 8) = atoi(line);
+        else if (!strcmp(tag, "RES_9"))
+          GET_RESISTS(ch, 9) = atoi(line);
 	break;
 
       case 'S':
@@ -675,11 +693,17 @@ void save_char(struct char_data * ch)
   if (GET_SAVE(ch, 3)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));
   if (GET_SAVE(ch, 4)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr5: %d\n", GET_SAVE(ch, 4));
 
-	if (GET_MELEE_RESIST(ch, 0) != PFDEF_MELEE_RESISTS) fprintf(fl, "MR_1: %d\n", GET_MELEE_RESIST(ch, 0));
-	if (GET_MELEE_RESIST(ch, 1) != PFDEF_MELEE_RESISTS) fprintf(fl, "MR_2: %d\n", GET_MELEE_RESIST(ch, 1));
-	if (GET_MELEE_RESIST(ch, 2) != PFDEF_MELEE_RESISTS) fprintf(fl, "MR_3: %d\n", GET_MELEE_RESIST(ch, 2));
-	if (GET_MELEE_RESIST(ch, 3) != PFDEF_MELEE_RESISTS) fprintf(fl, "MR_4: %d\n", GET_MELEE_RESIST(ch, 3));
-	if (GET_MELEE_RESIST(ch, 4) != PFDEF_MELEE_RESISTS) fprintf(fl, "MR_5: %d\n", GET_MELEE_RESIST(ch, 4));
+	if (GET_RESISTS(ch, 0) != PFDEF_RESISTS) fprintf(fl, "RES_0: %d\n", GET_RESISTS(ch, 0));
+	if (GET_RESISTS(ch, 1) != PFDEF_RESISTS) fprintf(fl, "RES_1: %d\n", GET_RESISTS(ch, 1));
+	if (GET_RESISTS(ch, 2) != PFDEF_RESISTS) fprintf(fl, "RES_2: %d\n", GET_RESISTS(ch, 2));
+	if (GET_RESISTS(ch, 3) != PFDEF_RESISTS) fprintf(fl, "RES_3: %d\n", GET_RESISTS(ch, 3));
+	if (GET_RESISTS(ch, 4) != PFDEF_RESISTS) fprintf(fl, "RES_4: %d\n", GET_RESISTS(ch, 4));
+  if (GET_RESISTS(ch, 5) != PFDEF_RESISTS) fprintf(fl, "RES_5: %d\n", GET_RESISTS(ch, 5));
+  if (GET_RESISTS(ch, 6) != PFDEF_RESISTS) fprintf(fl, "RES_6: %d\n", GET_RESISTS(ch, 6));
+  if (GET_RESISTS(ch, 7) != PFDEF_RESISTS) fprintf(fl, "RES_7: %d\n", GET_RESISTS(ch, 7));
+  if (GET_RESISTS(ch, 8) != PFDEF_RESISTS) fprintf(fl, "RES_8: %d\n", GET_RESISTS(ch, 8));
+  if (GET_RESISTS(ch, 9) != PFDEF_RESISTS) fprintf(fl, "RES_9: %d\n", GET_RESISTS(ch, 9));
+
 
 
   if (GET_WIMP_LEV(ch)	   != PFDEF_WIMPLEV)	fprintf(fl, "Wimp: %d\n", GET_WIMP_LEV(ch));
