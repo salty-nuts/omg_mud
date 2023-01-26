@@ -160,7 +160,7 @@ void rank_exp(struct char_data *ch, long exp)
  * Salty
  * 21 NOV 2019
  *
-*/
+ */
 int rank_level(long total)
 {
   int rank = 0;
@@ -489,7 +489,6 @@ ACMD(do_stance)
     save_char(ch);
   }
 }
-
 
 ACMD(do_chant)
 {
@@ -934,9 +933,9 @@ void check_improve(struct char_data *ch, int sn, bool success)
     return;
 
   /* Salty's Multiclass Addition
-	 * 04 FEB 2020
-	 * Skill is not known by class or multiclass.
-	 */
+   * 04 FEB 2020
+   * Skill is not known by class or multiclass.
+   */
   for (int i = 0; i < NUM_CLASSES; i++)
   {
     if (GET_LEVEL(ch, i) < spell_info[sn].min_level[i])
@@ -1379,7 +1378,6 @@ ACMD(do_rage)
     }
   }
 }
-
 
 void check_acrobatics(struct char_data *ch, struct char_data *victim)
 {
@@ -2019,7 +2017,7 @@ void chop_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_CHOP, TRUE);
     hit(ch, victim, SKILL_CHOP);
     return;
-  }  
+  }
 }
 void roundhouse_combat(struct char_data *ch, struct char_data *victim)
 {
@@ -2041,7 +2039,7 @@ void roundhouse_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_ROUNDHOUSE, TRUE);
     hit(ch, victim, SKILL_ROUNDHOUSE);
     return;
-  }    
+  }
 }
 void trip_combat(struct char_data *ch, struct char_data *victim)
 {
@@ -2063,7 +2061,7 @@ void trip_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_TRIP, TRUE);
     hit(ch, victim, SKILL_TRIP);
     return;
-  }    
+  }
 }
 
 void knee_combat(struct char_data *ch, struct char_data *victim)
@@ -2086,7 +2084,7 @@ void knee_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_KNEE, TRUE);
     hit(ch, victim, SKILL_KNEE);
     return;
-  }    
+  }
 }
 void elbow_combat(struct char_data *ch, struct char_data *victim)
 {
@@ -2108,7 +2106,7 @@ void elbow_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_ELBOW, TRUE);
     hit(ch, victim, SKILL_ELBOW);
     return;
-  }    
+  }
 }
 
 /* This simply calculates the backstab multiplier based on a character's level.
@@ -2175,11 +2173,13 @@ ACMD(do_testcmd)
 
   half_chop(argument, arg, buf);
 
-  if (!*arg) {
+  if (!*arg)
+  {
     send_to_char(ch, "test what on whom?\r\n");
     return;
   }
-  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
+  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)))
+  {
     send_to_char(ch, "%s", CONFIG_NOPERSON);
     return;
   }
@@ -2203,13 +2203,12 @@ ACMD(do_testcmd)
   call_magic(ch, vict, NULL, SPELL_BARD_BLESS, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_BARD_BUFF, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_QUICKCAST, 1000, CAST_SPELL);
-/*   call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL); */
-  
+  /*   call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+    call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+    call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+    call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+    call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL);
+    call_magic(ch, vict, NULL, SPELL_FURY, 1000, CAST_SPELL); */
 }
 
 void check_rend(struct char_data *ch, struct char_data *victim)
@@ -2340,7 +2339,7 @@ ACMD(do_shriek)
   {
     send_to_char(ch, "You are already performing the battle ritual!\r\n");
     return;
-  }  
+  }
   act("You emit a piercing shriek!", false, ch, 0, NULL, TO_CHAR);
   act("$n begins to shriek loudly!", FALSE, ch, 0, 0, TO_ROOM);
 
@@ -2485,20 +2484,20 @@ EVENTFUNC(event_ritual)
   prob = GET_SKILL(ch, SKILL_BARD_SHRIEK);
   GET_MANA(ch) -= cost;
 
-/*   if (GET_POS(ch) != POS_FIGHTING)
-  {
-    send_to_char(ch, "The battle is over, no need for the ritual!\n\r");
-    act("$n stops $s ritual as combat ends.", false, ch, 0, NULL, TO_ROOM);
-    return 0;
-  }
- */
+  /*   if (GET_POS(ch) != POS_FIGHTING)
+    {
+      send_to_char(ch, "The battle is over, no need for the ritual!\n\r");
+      act("$n stops $s ritual as combat ends.", false, ch, 0, NULL, TO_ROOM);
+      return 0;
+    }
+   */
   if (GET_MANA(ch) < cost)
   {
     send_to_char(ch, "You are exhausted from performing the ritual.\n\r");
     act("$n suddenly stops the ritual due to exhaustion.", false, ch, 0, NULL, TO_ROOM);
     return 0;
-  }  
-  
+  }
+
   act("You continue performing the ancient skaldic battle ritual!", false, ch, 0, NULL, TO_CHAR);
 
   for (tch = world[IN_ROOM(ch)].people; tch != NULL; tch = tch->next_in_room)
@@ -2508,7 +2507,6 @@ EVENTFUNC(event_ritual)
       call_magic(ch, tch, NULL, SPELL_FRENZY, GET_REAL_LEVEL(ch) + GET_SPELLS_AFFECTS(ch), CAST_SPELL);
     }
   }
-
 
   /* The "return" of the event function is the time until the event is called
    * again. If we return 0, then the event is freed and removed from the list, but

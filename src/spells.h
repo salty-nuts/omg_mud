@@ -138,9 +138,9 @@
 #define SPELL_UNARMED_BONUS          95
 #define SPELL_UNARMED_DEBUFF1        96
 #define SPELL_UNARMED_DEBUFF2        97
-#define SPELL_A_DEBUFF               98
-#define SPELL_K_DEBUFF               99
-#define SPELL_V_DEBUFF               100
+#define SPELL_A_DEBUFF               98 // Agility Debuff
+#define SPELL_K_DEBUFF               99 // Knowledge Debuff
+#define SPELL_V_DEBUFF               100 // Vitality Debuff
 #define SPELL_REND                   101
 #define SPELL_FEEBLE                 102
 #define SPELL_FRENZY                 103
@@ -152,7 +152,48 @@
 /** Total Number of defined spells */
 #define NUM_SPELLS                   106
 /* Insert new spells here, up to MAX_SPELLS */
-#define MAX_SPELLS		    300
+#define MAX_SPELLS		    120
+
+
+/**
+ * Chromatic Spells 
+ * Salty
+ * 24 SEP  2022
+ * 
+ * red = fire /  / burn
+ * blue = ice / freeze / electric
+ * green = earth / nature / poison
+ * black = acid / necrotic / unholy
+ * white = holy / force / 
+ */
+#define ZERO_SPELLS_CHROMA    200
+#define SPELL_RED_1           201
+#define SPELL_RED_2           202
+#define SPELL_RED_3           203
+#define SPELL_RED_4           204
+#define SPELL_RED_5           205
+#define SPELL_BLUE_1           206
+#define SPELL_BLUE_2           207
+#define SPELL_BLUE_3           208
+#define SPELL_BLUE_4           208
+#define SPELL_BLUE_5           209
+#define SPELL_GREEN_1           210
+#define SPELL_GREEN_2           211
+#define SPELL_GREEN_3           212
+#define SPELL_GREEN_4           213
+#define SPELL_GREEN_5           214
+#define SPELL_BLACK_1           215
+#define SPELL_BLACK_2           216
+#define SPELL_BLACK_3           217
+#define SPELL_BLACK_4           218
+#define SPELL_BLACK_5           219
+#define SPELL_WHITE_1           220  
+#define SPELL_WHITE_2           221  
+#define SPELL_WHITE_3           222  
+#define SPELL_WHITE_4           223
+#define SPELL_WHITE_5           224
+
+#define NUM_SPELLS_CHROMA       25
 
 /* PLAYER SONGS -- Numbered from MAX_SPELLS+1 to MAX_SKILLS*/
 #define ZERO_SONGS            300
@@ -451,6 +492,9 @@ ACMD(do_cast);
 ACMD(do_sing);
 void unused_spell(int spl);
 void mag_assign_spells(void);
+
+
+
 
 /* Global variables */
 extern struct spell_info_type spell_info[];

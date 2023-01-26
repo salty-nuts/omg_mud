@@ -1,12 +1,12 @@
 /**************************************************************************
-*  File: fight.c                                           Part of tbaMUD *
-*  Usage: Combat system.                                                  *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-**************************************************************************/
+ *  File: fight.c                                           Part of tbaMUD *
+ *  Usage: Combat system.                                                  *
+ *                                                                         *
+ *  All rights reserved.  See license for complete information.            *
+ *                                                                         *
+ *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
+ *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
+ **************************************************************************/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -84,11 +84,12 @@ void appear(struct char_data *ch)
 
 int compute_armor_class(struct char_data *ch)
 {
-  int armorclass = GET_AC(ch);;
+  int armorclass = GET_AC(ch);
+  ;
 
   if (AWAKE(ch))
     armorclass += dex_app[GET_DEX(ch)].defensive * 10;
-    
+
   if (!IS_NPC(ch))
   {
     if (GET_SKILL(ch, SKILL_ARMOR_MASTER))
@@ -98,7 +99,7 @@ int compute_armor_class(struct char_data *ch)
       armorclass -= GET_SKILL(ch, SKILL_DEFENSIVE_STANCE);
   }
 
-  return (MAX(-500, armorclass)); 
+  return (MAX(-500, armorclass));
 }
 
 void update_pos(struct char_data *victim)
@@ -241,10 +242,10 @@ Salty
     if (GET_GOLD(ch) > 0)
     {
       /* following 'if' clause added to fix gold duplication loophole. The above
-* line apparently refers to the old "partially log in, kill the game
-* character, then finish login sequence" duping bug. The duplication has
-* been fixed (knock on wood) but the test below shall live on, for a
-* while. -gg 3/3/2002 */
+       * line apparently refers to the old "partially log in, kill the game
+       * character, then finish login sequence" duping bug. The duplication has
+       * been fixed (knock on wood) but the test below shall live on, for a
+       * while. -gg 3/3/2002 */
       //    if (IS_NPC(ch) || ch->desc)
       if (IS_NPC(ch) || !IS_NPC(ch))
       {
@@ -264,7 +265,7 @@ Salty
 static void change_alignment(struct char_data *ch, struct char_data *victim)
 {
   /* new alignment change algorithm: if you kill a monster with alignment A,
-* you move 1/16th of the way to having alignment -A.  Simple and fast. */
+   * you move 1/16th of the way to having alignment -A.  Simple and fast. */
   GET_ALIGNMENT(ch) += (-GET_ALIGNMENT(victim) - GET_ALIGNMENT(ch)) / 16;
 }
 
@@ -371,8 +372,8 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
     if (IN_ROOM(ch) == IN_ROOM(k))
       tot_members++;
   /*
-* Salty 15 JAN 2019
-*/
+   * Salty 15 JAN 2019
+   */
   tot_gain = LMIN(CONFIG_MAX_EXP_GAIN, GET_EXP(victim));
 
   /* prevent illegal xp creation when killing players */
@@ -404,9 +405,9 @@ static void solo_gain(struct char_data *ch, struct char_data *victim)
   int mult = 1;
 
   /*
-* Mob buffs multiply exp gained
-* Salty, 15 JAN 2019
-*/
+   * Mob buffs multiply exp gained
+   * Salty, 15 JAN 2019
+   */
 
   exp = LMIN(CONFIG_MAX_EXP_GAIN, GET_EXP(victim));
   if (IS_AFFECTED(victim, AFF_SANCTUARY))
@@ -484,7 +485,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
     const char *to_victim;
   } dam_weapons[] = {
 
-      //0
+      // 0
       {"$n misses $N with $s #W.", /* 0 */
        "You miss $N with your #W.",
        "$n misses you with $s #W."},
@@ -525,7 +526,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
        "You #W $N extremely hard.",
        "$n #w you extremely hard."},
 
-      //10
+      // 10
       {"$n #w $N incredibly hard.", /* 25..30 */
        "You #W $N incredibly hard.",
        "$n #w you incredibly hard."},
@@ -566,7 +567,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
        "Your last #W left $N seeing little birdies!",
        "Tweet.. Tweet..  Look at all the birdies!  Don't look at $n!"},
 
-      //20
+      // 20
       {"$n's deadly #W forces $N into dark oblivion.", /* 121..130 */
        "Your #W sends $N into a dark moment of oblivion.",
        "You feel a dark lapse of consciousness from $n's #W."},
@@ -607,7 +608,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
        "You tear through $N like tissue paper with your #W!",
        "$n shreds your flesh with $s #W!"},
 
-      //30
+      // 30
       {"$n causes $N's life to flash before $S eyes!", /* 601..1000 */
        "You help $N remember $S life before the end.",
        "$n's #W makes your life flash before your eyes!"},
@@ -624,7 +625,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
        "You blast a shock wave through $N with your #W.",
        "$n BLASTS a shock wave that reverberates through you."},
 
-      //34
+      // 34
       {"$n destroys $N.", /* 2501+ :) */
        "You destroy $N with your #W.",
        "$n destroys you with $s #W."},
@@ -729,7 +730,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
 }
 
 /*  message for doing damage with a spell or skill. Also used for weapon
-*  damage on miss and death blows.*/
+ *  damage on miss and death blows.*/
 int skill_message(int dam, struct char_data *ch, struct char_data *vict,
                   int attacktype)
 {
@@ -833,9 +834,9 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
 }
 
 /* This function returns the following codes:
-*	< 0	Victim died.
-*	= 0	No damage.
-*	> 0	How much damage done. */
+ *	< 0	Victim died.
+ *	= 0	No damage.
+ *	> 0	How much damage done. */
 int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
   long local_gold = 0, happy_gold = 0;
@@ -947,12 +948,12 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       {
         if (GET_RESISTS(victim, r) > 0)
         {
-          	  send_to_char(victim,"Positive resist: %d %%, %d, %d\n\r",GET_RESISTS(victim, r), dam,  dam * MIN(GET_RESISTS(victim, r),200) / 200);
+          send_to_char(victim, "Positive resist: %d %%, %d, %d\n\r", GET_RESISTS(victim, r), dam, dam * MIN(GET_RESISTS(victim, r), 200) / 200);
           dam -= dam * MIN(GET_RESISTS(victim, r), 200) / 200;
         }
         if (GET_RESISTS(victim, r) < 0)
         {
-          	  send_to_char(victim,"Negative resist: %d %%, %d, %d\n\r",GET_RESISTS(victim, r), dam, dam + dam * MIN(abs(GET_RESISTS(victim, r)),200) / 200);
+          send_to_char(victim, "Negative resist: %d %%, %d, %d\n\r", GET_RESISTS(victim, r), dam, dam + dam * MIN(abs(GET_RESISTS(victim, r)), 200) / 200);
           dam += dam * MIN(abs(GET_RESISTS(victim, r)), 200) / 200;
         }
       }
@@ -1059,7 +1060,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   if (IS_AFFECTED(ch, AFF_FRENZY) && (ch != victim))
   {
-    long amt = (long)dam * (long)dice(10,10);
+    long amt = (long)dam * (long)dice(10, 10);
     gain_exp(ch, amt);
     increase_gold(ch, amt);
     send_to_char(ch, "You learn a lot from the battle ritual!\n\r");
@@ -1080,14 +1081,14 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   update_pos(victim);
 
   /* skill_message sends a message from the messages file in lib/misc.
-* dam_message just sends a generic "You hit $n extremely hard.".
-* skill_message is preferable to dam_message because it is more
-* descriptive.
-*
-* If we are _not_ attacking with a weapon (i.e. a spell), always use
-* skill_message. If we are attacking with a weapon: If this is a miss or a
-* death blow, send a skill_message if one exists; if not, default to a
-* dam_message. Otherwise, always send a dam_message. */
+   * dam_message just sends a generic "You hit $n extremely hard.".
+   * skill_message is preferable to dam_message because it is more
+   * descriptive.
+   *
+   * If we are _not_ attacking with a weapon (i.e. a spell), always use
+   * skill_message. If we are attacking with a weapon: If this is a miss or a
+   * death blow, send a skill_message if one exists; if not, default to a
+   * dam_message. Otherwise, always send a dam_message. */
   if (!IS_WEAPON(attacktype))
     skill_message(dam, ch, victim, attacktype);
   else
@@ -1226,8 +1227,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 }
 
 /* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you
-* could use it for special cases like weapons that hit evil creatures easier
-* or a weapon that always misses attacking an animal. */
+ * could use it for special cases like weapons that hit evil creatures easier
+ * or a weapon that always misses attacking an animal. */
 static int compute_thaco(struct char_data *ch, struct char_data *victim)
 {
   int calc_thaco;
@@ -1307,10 +1308,10 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
                  calc_thaco, victim_ac, diceroll);
 
   /* Decide whether this is a hit or a miss.
-*  Victim asleep = hit, otherwise:
-*     1   = Automatic miss.
-*   2..19 = Checked vs. AC.
-*    20   = Automatic hit. */
+   *  Victim asleep = hit, otherwise:
+   *     1   = Automatic miss.
+   *   2..19 = Checked vs. AC.
+   *    20   = Automatic hit. */
   if (diceroll == 20 || !AWAKE(victim))
     dam = TRUE;
   else if (diceroll == 1)
@@ -1424,9 +1425,9 @@ Salty 04 JAN 2019
     if (IS_NPC(victim))
     {
       /*
-* NPC cannot dodge backstab and circle
-*
-*/
+       * NPC cannot dodge backstab and circle
+       *
+       */
       if (type != SKILL_BACKSTAB && type != SKILL_CIRCLE &&
           type != SKILL_ASSAULT && type != SKILL_BASH &&
           type != SKILL_TUMBLE && type != SKILL_HEADBUTT &&
@@ -1488,7 +1489,7 @@ Salty 04 JAN 2019
   else
   {
     /* okay, we know the guy has been hit.  now calculate damage.
-* Start with the damage bonuses: the damroll and strength apply */
+     * Start with the damage bonuses: the damroll and strength apply */
     dam = str_app[STRENGTH_APPLY_INDEX(ch)].todam;
     dam += GET_DAMROLL(ch);
 
@@ -1513,14 +1514,14 @@ Salty 04 JAN 2019
       }
     }
     /* Include a damage multiplier if victim isn't ready to fight:
-* Position sitting  1.33 x normal
-* Position resting  1.66 x normal
-* Position sleeping 2.00 x normal
-* Position stunned  2.33 x normal
-* Position incap    2.66 x normal
-* Position mortally 3.00 x normal
-* Note, this is a hack because it depends on the particular
-* values of the POSITION_XXX constants. */
+     * Position sitting  1.33 x normal
+     * Position resting  1.66 x normal
+     * Position sleeping 2.00 x normal
+     * Position stunned  2.33 x normal
+     * Position incap    2.66 x normal
+     * Position mortally 3.00 x normal
+     * Note, this is a hack because it depends on the particular
+     * values of the POSITION_XXX constants. */
     if (GET_POS(victim) < POS_FIGHTING)
       mult = 1 + (POS_FIGHTING - GET_POS(victim)) / 3;
     else
@@ -1579,7 +1580,7 @@ Salty 04 JAN 2019
             check_improve(ch, SKILL_CRITICAL_HIT, TRUE);
             sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "You perform a brilliant maneuver and strike $N in a vital area!", CCNRM(ch, C_NRM));
             act(buf, FALSE, ch, 0, victim, TO_CHAR);
-//            act("$n performs a brilliant maneuver and strikes $N in a vital area!", FALSE, ch, 0, victim, TO_NOTVICT);
+            //            act("$n performs a brilliant maneuver and strikes $N in a vital area!", FALSE, ch, 0, victim, TO_NOTVICT);
             act("$n brilliantly maneuvers past your defenses and strikes you in a vital area!", FALSE, ch, 0, victim, TO_VICT);
           }
         }
@@ -1686,9 +1687,9 @@ void perform_violence(void)
     {
       if (IS_AFFECTED(ch, AFF_FEEBLE))
       {
-          REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FEEBLE);
-          affect_from_char(ch, SPELL_FEEBLE);
-          continue;
+        REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FEEBLE);
+        affect_from_char(ch, SPELL_FEEBLE);
+        continue;
       }
       if (GET_MOB_WAIT(ch) > 0)
       {
@@ -1836,7 +1837,7 @@ void perform_violence(void)
         }
       }
 
-      //send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
+      // send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
 
       /* Hit with wield, shield or offhand weapon */
       if (GET_SKILL(ch, SKILL_ACROBATICS) >= rand_number(1, 101))

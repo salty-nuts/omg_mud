@@ -196,6 +196,7 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
                int spellnum, int savetype)
 {
   int dam = level;
+  int resist = -1;
   if (victim == NULL || ch == NULL)
     return (0);
 
@@ -205,34 +206,35 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
   switch (spellnum)
   {
 
-  case SPELL_HARM:
-  case SPELL_FIREBALL:
-  case SPELL_CONCUSSIVE_WAVE:
-    dam *= dice(2, 4) + 1;
-    break;
-  case SPELL_MAGIC_MISSILE:
-  case SPELL_NIGHTMARE:
-
-    dam *= dice(2, 4) + 1;
-    break;
-
-  case SPELL_FIREBLAST:
-  case SPELL_SYMBOL_OF_PAIN:
-  case SPELL_MISSILE_SPRAY:
-  case SPELL_CHAIN_LIGHTNING:
-    dam *= dice(1, 4) + 1;
-    break;
-
-  case SPELL_CHILL_TOUCH: /* chill touch also has an affect */
+  // RED MAGIC SPELLS
   case SPELL_BURNING_HANDS:
   case SPELL_SHOCKING_GRASP:
   case SPELL_LIGHTNING_BOLT:
-  case SPELL_COLOR_SPRAY:
-  case SPELL_CALL_LIGHTNING:
-  case SPELL_EARTHQUAKE:
-    dam *= dice(1, 4) + 1;
+  case SPELL_FIREBLAST:
+  case SPELL_FIREBALL:
+    dam *= dice(2, 4) + 1;
+    resist = 5;
     break;
 
+  // BLUE MAGIC SPELLS
+  case SPELL_MAGIC_MISSILE:
+  case SPELL_CHILL_TOUCH: /* chill touch also has an affect */
+  case SPELL_COLOR_SPRAY:
+  case SPELL_CALL_LIGHTNING:
+    dam *= dice(2, 4) + 1;
+    resist = 6;
+    break;
+
+  // GREEN MAGIC SPELLS
+  case SPELL_MISSILE_SPRAY:
+  case SPELL_CHAIN_LIGHTNING:
+  case SPELL_EARTHQUAKE:
+    dam *= dice(1, 4) + 1;
+    resist = 7;
+    break;
+
+  // BLACK MAGIC SPELLS
+  case SPELL_NIGHTMARE:
   case SPELL_ENERGY_DRAIN:
     dam *= dice(2, 4);
     if (GET_HIT(ch) < GET_MAX_HIT(ch) && !mag_savingthrow(victim, SAVING_PETRI, 0))
@@ -241,6 +243,18 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
       if (GET_HIT(ch) > GET_MAX_HIT(ch))
         GET_HIT(ch) = GET_MAX_HIT(ch);
     }
+    break;
+    dam *= dice(1, 4) + 1;
+    resist = 8;
+    break;
+
+  // WHITE MAGIC SPELLS
+  case SPELL_HARM:
+  case SPELL_CONCUSSIVE_WAVE:
+  case SPELL_SYMBOL_OF_PAIN:
+
+    dam *= dice(1, 4) + 1;
+    resist = 9;
     break;
   }
 
