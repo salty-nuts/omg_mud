@@ -1722,9 +1722,9 @@ ACMD(do_sac)
       gain_exp(ch,gain);
     break;
     case 3:
-			gain = 1+GET_OBJ_LEVEL(j);
+	gain = 1+GET_OBJ_LEVEL(j);
       send_to_char(ch, "You sacrifice %s to the Gods.\r\nYou receive %d experience points.\r\n", GET_OBJ_SHORT(j), gain);
-			gain_exp(ch,gain);
+	gain_exp(ch,gain);
     break;
     case 4:
       send_to_char(ch, "Your sacrifice to the Gods is rewarded with %d gold coins.\r\n", 1+GET_OBJ_LEVEL(j));

@@ -156,15 +156,16 @@
 
 
 /**
- * Chromatic Spells 
+ * Chromatic Spells
  * Salty
  * 24 SEP  2022
- * 
+ *
  * red = fire /  / burn
  * blue = ice / freeze / electric
  * green = earth / nature / poison
  * black = acid / necrotic / unholy
- * white = holy / force / 
+ * white = holy / force / light
+ *
  */
 #define ZERO_SPELLS_CHROMA    200
 #define SPELL_RED_1           201
@@ -187,9 +188,9 @@
 #define SPELL_BLACK_3           217
 #define SPELL_BLACK_4           218
 #define SPELL_BLACK_5           219
-#define SPELL_WHITE_1           220  
-#define SPELL_WHITE_2           221  
-#define SPELL_WHITE_3           222  
+#define SPELL_WHITE_1           220
+#define SPELL_WHITE_2           221
+#define SPELL_WHITE_3           222
 #define SPELL_WHITE_4           223
 #define SPELL_WHITE_5           224
 

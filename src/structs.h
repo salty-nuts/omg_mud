@@ -160,16 +160,17 @@
 #define CLASS_ROGUE       2    /**< PC Class Thief */
 #define CLASS_FIGHTER     3    /**< PC Class Warrior */
 #define CLASS_KNIGHT     	4
-#define CLASS_BARD	  5
-#define NUM_CLASSES	  		6
+#define CLASS_BARD	      5
+#define CLASS_DRAGON      6
+#define NUM_CLASSES	  		7
 
 /* NPC classes (currently unused - feel free to implement!) */
-#define CLASS_OTHER       0    /**< NPC Class Other (or undefined) */
-#define CLASS_UNDEAD      1    /**< NPC Class Undead */
-#define CLASS_HUMANOID    2    /**< NPC Class Humanoid */
-#define CLASS_ANIMAL      3    /**< NPC Class Animal */
-#define CLASS_DRAGON      4    /**< NPC Class Dragon */
-#define CLASS_GIANT       5    /**< NPC Class Giant */
+#define NPC_CLASS_OTHER       0    /**< NPC Class Other (or undefined) */
+#define NPC_CLASS_UNDEAD      1    /**< NPC Class Undead */
+#define NPC_CLASS_HUMANOID    2    /**< NPC Class Humanoid */
+#define NPC_CLASS_ANIMAL      3    /**< NPC Class Animal */
+#define NPC_CLASS_DRAGON      4    /**< NPC Class Dragon */
+#define NPC_CLASS_GIANT       5    /**< NPC Class Giant */
 
 /* Sex */
 #define SEX_NEUTRAL   0   /**< Neutral Sex (Hermaphrodite) */
