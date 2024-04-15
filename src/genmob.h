@@ -39,5 +39,5 @@ int write_mobile_mobprog(mob_vnum mvnum, struct char_data *mob, FILE *fd);
 #define GET_LDESC(mob)	((mob)->player.long_descr)
 #define GET_DDESC(mob)	((mob)->player.description)
 #define GET_ATTACK(mob)	((mob)->mob_specials.attack_type)
-
+#define GET_MOB_MULT(mob) ((mob)->mob_specials.mob_mult)
 #endif /* _GENMOB_H_ */

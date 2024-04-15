@@ -115,7 +115,7 @@
 #define SPELL_CANCELLATION	     		 72 // Salty
 #define SPELL_MISSILE_SPRAY	     		 73 // Salty
 #define SPELL_MAGE_ARMOR						 74 // Salty
-#define SPELL_GATEWAY								 75 // Salty
+#define SPELL_ASTRAL_WALK 					 75 // Salty
 #define SPELL_MIRROR_IMAGE					 76 // Salty
 #define SPELL_SATIATE								 77 // Salty
 #define SPELL_GROUP_SATIATE					 78 // Salty
@@ -138,19 +138,24 @@
 #define SPELL_UNARMED_BONUS          95
 #define SPELL_UNARMED_DEBUFF1        96
 #define SPELL_UNARMED_DEBUFF2        97
-#define SPELL_A_DEBUFF               98 // Agility Debuff
-#define SPELL_K_DEBUFF               99 // Knowledge Debuff
-#define SPELL_V_DEBUFF               100 // Vitality Debuff
+#define SPELL_SLOW                   98
+#define SPELL_FIRESHIELD             99 
+#define SPELL_DIVINE_INTERVENTION    100  
 #define SPELL_REND                   101
 #define SPELL_FEEBLE                 102
-#define SPELL_FRENZY                 103
+#define SPELL_RITUAL                 103
 #define SPELL_CHAIN_LIGHTNING        104
 #define SPELL_CONSECRATION           105
 #define SPELL_ENERGIZE               106
-
+#define SPELL_MANA_TRANSFER          107
+#define SPELL_REAPPEAR               108
+#define SPELL_WITHER                 109
+#define SPELL_ELDRITCH_BLAST         110
+#define SPELL_CALM                   111
+#define SPELL_NOVA                   112
 
 /** Total Number of defined spells */
-#define NUM_SPELLS                   106
+#define NUM_SPELLS                   112
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    120
 
@@ -199,22 +204,27 @@
 /* PLAYER SONGS -- Numbered from MAX_SPELLS+1 to MAX_SKILLS*/
 #define ZERO_SONGS            300
 #define SPELL_BARD_BLESS      301
-#define SPELL_BARD_BUFF       302
+#define SPELL_BARD_RESISTS    302
 #define SPELL_BARD_HEAL       303
 #define SPELL_BARD_POWERHEAL  304
 #define SPELL_BARD_FEAST      305
-#define SPELL_BARD_GATEWAY    306
+#define SPELL_BARD_UNUSED     306
 #define SPELL_BARD_RECALL     307
-#define SPELL_BARD_DEBUFF     308
+#define SPELL_BARD_CANTICLE   308
 #define SPELL_BARD_REGEN      309
 #define SPELL_BARD_SANC       310
 #define SPELL_BARD_FURY       311
-#define SPELL_BARD_SONIC      312
+#define SPELL_BARD_FLY        312
 #define SPELL_BARD_AGILITY    313
 #define SPELL_BARD_KNOWLEDGE  314
 #define SPELL_BARD_VITALITY   315
+#define SPELL_BARD_STORM      316
+#define SPELL_BARD_HARMONY    317
+#define SPELL_BARD_DISSONANCE 318
+#define SPELL_BARD_WAR_DANCE  319
+#define SPELL_BARD_SLOW_DANCE 320
 /*  Total Number of defined songs  */
-#define NUM_SONGS              15
+#define NUM_SONGS              20
 /*  Insert new songs here, up to 400*/
 
 /* PLAYER SKILLS - Numbered from MAX_SPELLS+1 to MAX_SKILLS */
@@ -281,7 +291,7 @@
 #define SKILL_BARD_RITUAL           460
 #define SKILL_BARD_SCORN            461
 #define SKILL_BLOODBATH             462
-#define SKILL_FRENZY                463
+#define SKILL_BLOOD_FRENZY          463
 #define SKILL_BEDSIDE_MANNER        464
 #define SKILL_DIRT_KICK             465
 #define SKILL_ADRENALINE_RUSH       466
@@ -291,14 +301,23 @@
 #define SKILL_ROUNDHOUSE            470
 #define SKILL_ELBOW                 471
 #define SKILL_GARROTTE              472
-#define SKILL_ARMOR_MASTER          473
+#define SKILL_SPELL_TWINNING        473
+#define SKILL_SPELL_TRIPLING        474
+#define SKILL_SPELL_CRITICAL        475
+#define SKILL_ANATOMY_LESSONS       476
+#define SKILL_WEAPON_PUNCH          477
+#define SKILL_SHIELD_SLAM           478
+#define SKILL_TWIST_OF_FATE         479
+#define SKILL_WAR_DANCE             480
+#define SKILL_SLOW_DANCE            481
+#define SKILL_GATEWAY               482
+#define SKILL_SHIELD_BLOCK          483
+#define SKILL_SPIN_KICK             484
+#define SKILL_STORM_OF_STEEL        485
 /*
 #define SKILL_TRANCE                476  // bard
-#define SKILL_WARDANCE              477  // bard
-#define SKILL_ANATOMY_LESSONS       467  // critical strike cloone?  critical heal?  
-
 */
-#define NUM_SKILLS 		               73
+#define NUM_SKILLS 		               85
 
 /* New skills may be added here up to MAX_SKILLS (600) */
 
@@ -419,11 +438,13 @@ ASPELL(spell_enchant_weapon);
 ASPELL(spell_detect_poison);
 ASPELL(spell_relocate);
 ASPELL(spell_cancellation);
-ASPELL(spell_gateway);
+ASPELL(spell_astral_walk);
 ASPELL(spell_satiate);
 ASPELL(spell_blood_mana);
 ASPELL(spell_locate_char);
+ASPELL(spell_mana_transfer);
 ASPELL(spell_energize);
+ASPELL(spell_astral_walk);
 /* basic magic calling functions */
 
 
@@ -485,7 +506,7 @@ void init_bard(void);
 const char *skill_name(int num);
 
 /* From magic.c */
-int mag_savingthrow(struct char_data *ch, int type, int modifier);
+int mag_savingthrow(struct char_data *victim, struct char_data *caster, int type, int spellnum, int modifier);
 void affect_update(void);
 
 /* from spell_parser.c */

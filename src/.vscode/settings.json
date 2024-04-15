@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "handler.h": "c",
-        "constants.h": "c"
+        "constants.h": "c",
+        "sysdep.h": "c",
+        "comm.h": "c",
+        "type_traits": "c",
+        "dg_scripts.h": "c"
     }
 }

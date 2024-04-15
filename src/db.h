@@ -75,7 +75,7 @@
 
 /* names of various files and directories */
 #define INDEX_FILE	"index"		/* index of world files		*/
-#define MINDEX_FILE	"index.mini"	/* ... and for mini-mud-mode	*/
+#define MINDEX_FILE	"index2"	/* ... and for mini-mud-mode	*/
 #define WLD_PREFIX  LIB_WORLD"wld"SLASH	/* room definitions	*/
 #define MOB_PREFIX  LIB_WORLD"mob"SLASH	/* monster prototypes	*/
 #define OBJ_PREFIX  LIB_WORLD"obj"SLASH	/* object prototypes	*/

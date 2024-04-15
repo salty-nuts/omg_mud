@@ -111,6 +111,8 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 	fprintf(fp,"Ownr: %s\n", obj->owner ? obj->owner : "Undefined");
   if (TEST_OBJN(type_flag))
     fprintf(fp, "Type: %d\n", GET_OBJ_TYPE(obj));
+  if (TEST_OBJN(timer))
+    fprintf(fp, "Timr: %d\n", GET_OBJ_TIMER(obj));
   if (TEST_OBJN(rarity))
 		fprintf(fp, "Rare: %d\n", GET_OBJ_REPOP(obj));
   if (TEST_OBJN(weight))
@@ -1167,6 +1169,8 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     case 'T':
       if (!strcmp(tag, "Type"))
         GET_OBJ_TYPE(temp) = num;
+      else if (!strcmp(tag, "Timr"))
+        GET_OBJ_TIMER(temp) = num;
       break;
     case 'W':
       if (!strcmp(tag, "Wear")) {
@@ -1289,7 +1293,7 @@ static int Crash_load_objs(struct char_data *ch) {
 
   /* Little hoarding check. -gg 3/1/98 */
  mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s (level %d) has %d object%s (max %d).",
-         GET_NAME(ch), GET_REAL_LEVEL(ch), num_objs, num_objs != 1 ? "s" : "", CONFIG_MAX_OBJ_SAVE);
+         GET_NAME(ch), GET_LEVEL(ch), num_objs, num_objs != 1 ? "s" : "", CONFIG_MAX_OBJ_SAVE);
 
   fclose(fl);
 

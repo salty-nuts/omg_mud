@@ -42,12 +42,6 @@ static void load_HMVS(struct char_data *ch, const char *line, int mode);
 static void write_aliases_ascii(FILE *file, struct char_data *ch);
 static void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
 
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- */
-static void load_multiclass(struct char_data *ch, const char *line);
 
 /* New version to build player index for ASCII Player Files. Generate index
  * table for the player file. */
@@ -258,21 +252,15 @@ int load_char(const char *name, struct char_data *ch)
       GET_SKILL(ch, i) = 0;
     GET_SEX(ch) = PFDEF_SEX;
     GET_CLASS(ch) = PFDEF_CLASS;
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- */
-    for (i = 0; i < NUM_CLASSES; i++)
-      GET_LEVEL(ch, i) = 0;
+    GET_LEVEL(ch) = 0;
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
     for (i = 0; i < NUM_OF_SAVING_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
 
-		for (i = 0; i < NUM_RESISTS; i++)
-			GET_RESISTS(ch, i) = PFDEF_RESISTS;
+/* 		for (i = 0; i < NUM_RESISTS; i++)
+			GET_RESISTS(ch, i) = PFDEF_RESISTS; */
 
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
     GET_INVIS_LEV(ch) = PFDEF_INVISLEV;
@@ -289,6 +277,7 @@ int load_char(const char *name, struct char_data *ch)
     GET_EXP(ch) = PFDEF_EXP;
     GET_HITROLL(ch) = PFDEF_HITROLL;
     GET_DAMROLL(ch) = PFDEF_DAMROLL;
+    GET_COMBAT_POWER(ch) = PFDEF_COMBAT_POWER;
     GET_AC(ch) = PFDEF_AC;
     ch->real_abils.str = PFDEF_STR;
     ch->real_abils.str_add = PFDEF_STRADD;
@@ -370,6 +359,7 @@ int load_char(const char *name, struct char_data *ch)
       case 'C':
 			 if (!strcmp(tag, "Clas"))	GET_CLASS(ch)		= atoi(line);
 	else if (!strcmp(tag, "Con "))	ch->real_abils.con	= atoi(line);
+  else if (!strcmp(tag, "Cpow"))  GET_COMBAT_POWER(ch) = atoi(line);
 	break;
 
       case 'D':
@@ -413,12 +403,8 @@ int load_char(const char *name, struct char_data *ch)
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
   	else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
 
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- */
-	else if (!strcmp(tag, "Levl"))	load_multiclass(ch, line);
+
+	else if (!strcmp(tag, "Levl"))	GET_LEVEL(ch) = atoi(line);
         else if (!strcmp(tag, "Lmot"))   GET_LAST_MOTD(ch)   = atoi(line);
         else if (!strcmp(tag, "Lnew"))   GET_LAST_NEWS(ch)   = atoi(line);
 	      else if (!strcmp(tag, "Luck"))	ch->real_abils.luck	= atoi(line);
@@ -430,8 +416,7 @@ int load_char(const char *name, struct char_data *ch)
           load_HMVS(ch, line, LOAD_MANA);
         else if (!strcmp(tag, "Move"))
           load_HMVS(ch, line, LOAD_MOVE);
-        else if (!strcmp(tag, "Mult"))
-          GET_MULTI_CLASS(ch) = atoi(line);
+
         break;
 
       case 'N':
@@ -472,38 +457,23 @@ int load_char(const char *name, struct char_data *ch)
 			 else if (!strcmp(tag, "R_Ma"))  GET_MANA_REGEN(ch) = atoi(line);
        else if (!strcmp(tag, "R_Mv"))  GET_MOVE_REGEN(ch) = atoi(line);
 	     else if (!strcmp(tag, "Rank"))  GET_RANK(ch)		= atoi(line);
-	     else if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoi(line);
-        else if (!strcmp(tag, "RES_0"))
-          GET_RESISTS(ch, 0) = atoi(line);
-        else if (!strcmp(tag, "RES_1"))
-          GET_RESISTS(ch, 1) = atoi(line);
-        else if (!strcmp(tag, "RES_2"))
-          GET_RESISTS(ch, 2) = atoi(line);
-        else if (!strcmp(tag, "RES_3"))
-          GET_RESISTS(ch, 3) = atoi(line);
-        else if (!strcmp(tag, "RES_4"))
-          GET_RESISTS(ch, 4) = atoi(line);
-        else if (!strcmp(tag, "RES_5"))
-          GET_RESISTS(ch, 5) = atoi(line);
-        else if (!strcmp(tag, "RES_6"))
-          GET_RESISTS(ch, 6) = atoi(line);
-        else if (!strcmp(tag, "RES_7"))
-          GET_RESISTS(ch, 7) = atoi(line);
-        else if (!strcmp(tag, "RES_8"))
-          GET_RESISTS(ch, 8) = atoi(line);
-        else if (!strcmp(tag, "RES_9"))
-          GET_RESISTS(ch, 9) = atoi(line);
-	break;
+	     else if (!strcmp(tag, "Room"))	 GET_LOADROOM(ch)	= atoi(line);
+       else if (!strcmp(tag, "RES0")) GET_RESISTS(ch, RESIST_UNARMED) = atoi(line);
+       else if (!strcmp(tag, "RES1")) GET_RESISTS(ch, RESIST_EXOTIC) = atoi(line);
+       else if (!strcmp(tag, "RES2")) GET_RESISTS(ch, RESIST_BLUNT) = atoi(line);
+       else if (!strcmp(tag, "RES3")) GET_RESISTS(ch, RESIST_PIERCE) = atoi(line);
+       else if (!strcmp(tag, "RES4")) GET_RESISTS(ch, RESIST_SLASH) = atoi(line);
+        break;
 
       case 'S':
 	     if (!strcmp(tag, "Sex "))	GET_SEX(ch)		= atoi(line);
-  else if (!strcmp(tag, "ScrW"))  GET_SCREEN_WIDTH(ch) = atoi(line);
-	else if (!strcmp(tag, "Skil"))	load_skills(fl, ch);
-	else if (!strcmp(tag, "Str "))	load_HMVS(ch, line, LOAD_STRENGTH);
-	else if (!strcmp(tag, "SHea"))	GET_SPELLS_HEALING(ch) = atoi(line);
-	else if (!strcmp(tag, "SDam"))	GET_SPELLS_DAMAGE(ch) = atoi(line);
-	else if (!strcmp(tag, "SAff"))	GET_SPELLS_AFFECTS(ch) = atoi(line);
-	break;
+        else if (!strcmp(tag, "ScrW"))  GET_SCREEN_WIDTH(ch) = atoi(line);
+        else if (!strcmp(tag, "Skil"))	load_skills(fl, ch);
+        else if (!strcmp(tag, "Str "))	load_HMVS(ch, line, LOAD_STRENGTH);
+        else if (!strcmp(tag, "SHea"))	GET_SPELLS_HEALING(ch) = atoi(line);
+        else if (!strcmp(tag, "SDam"))	GET_SPELLS_DAMAGE(ch) = atoi(line);
+        else if (!strcmp(tag, "SAff"))	GET_SPELLS_AFFECTS(ch) = atoi(line);
+        break;
 
       case 'T':
 	     if (!strcmp(tag, "Thir"))	GET_COND(ch, THIRST)	= atoi(line);
@@ -545,9 +515,9 @@ int load_char(const char *name, struct char_data *ch)
   affect_total(ch);
 
   /* initialization for imms */
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT)
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
   {
-		if (GET_REAL_LEVEL(ch) >= LVL_GRGOD)
+		if (GET_LEVEL(ch) >= LVL_GRGOD)
 	    for (i = 1; i <= MAX_SKILLS; i++)
   	    GET_SKILL(ch, i) = 100;
     GET_COND(ch, HUNGER) = -1;
@@ -646,15 +616,8 @@ void save_char(struct char_data * ch)
   if (POOFOUT(ch))				fprintf(fl, "PfOt: %s\n", POOFOUT(ch));
   if (GET_SEX(ch)	     != PFDEF_SEX)	fprintf(fl, "Sex : %d\n", GET_SEX(ch));
   if (GET_CLASS(ch)	   != PFDEF_CLASS)	fprintf(fl, "Clas: %d\n", GET_CLASS(ch));
-  if (GET_MULTI_CLASS(ch)  != PFDEF_CLASS)	fprintf(fl, "Mult: %d\n", GET_MULTI_CLASS(ch));
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- */
-  fprintf(fl, "Levl: %d %d %d %d %d %d\n", GET_LEVEL(ch, CLASS_WIZARD), GET_LEVEL(ch, CLASS_PRIEST),
-          GET_LEVEL(ch, CLASS_ROGUE), GET_LEVEL(ch, CLASS_FIGHTER), GET_LEVEL(ch, CLASS_KNIGHT), GET_LEVEL(ch, CLASS_BARD));
 
+  fprintf(fl, "Levl: %d\n", GET_LEVEL(ch));
   fprintf(fl, "Id  : %ld\n", GET_IDNUM(ch));
   fprintf(fl, "Brth: %ld\n", (long)ch->player.time.birth);
   fprintf(fl, "Plyd: %d\n",  ch->player.time.played);
@@ -693,17 +656,12 @@ void save_char(struct char_data * ch)
   if (GET_SAVE(ch, 3)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));
   if (GET_SAVE(ch, 4)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr5: %d\n", GET_SAVE(ch, 4));
 
-	if (GET_RESISTS(ch, 0) != PFDEF_RESISTS) fprintf(fl, "RES_0: %d\n", GET_RESISTS(ch, 0));
-	if (GET_RESISTS(ch, 1) != PFDEF_RESISTS) fprintf(fl, "RES_1: %d\n", GET_RESISTS(ch, 1));
-	if (GET_RESISTS(ch, 2) != PFDEF_RESISTS) fprintf(fl, "RES_2: %d\n", GET_RESISTS(ch, 2));
-	if (GET_RESISTS(ch, 3) != PFDEF_RESISTS) fprintf(fl, "RES_3: %d\n", GET_RESISTS(ch, 3));
-	if (GET_RESISTS(ch, 4) != PFDEF_RESISTS) fprintf(fl, "RES_4: %d\n", GET_RESISTS(ch, 4));
-  if (GET_RESISTS(ch, 5) != PFDEF_RESISTS) fprintf(fl, "RES_5: %d\n", GET_RESISTS(ch, 5));
-  if (GET_RESISTS(ch, 6) != PFDEF_RESISTS) fprintf(fl, "RES_6: %d\n", GET_RESISTS(ch, 6));
-  if (GET_RESISTS(ch, 7) != PFDEF_RESISTS) fprintf(fl, "RES_7: %d\n", GET_RESISTS(ch, 7));
-  if (GET_RESISTS(ch, 8) != PFDEF_RESISTS) fprintf(fl, "RES_8: %d\n", GET_RESISTS(ch, 8));
-  if (GET_RESISTS(ch, 9) != PFDEF_RESISTS) fprintf(fl, "RES_9: %d\n", GET_RESISTS(ch, 9));
-
+  fprintf(fl, "RES0: %d\n", GET_RESISTS(ch, 0));
+  fprintf(fl, "RES1: %d\n", GET_RESISTS(ch, 1));
+  fprintf(fl, "RES2: %d\n", GET_RESISTS(ch, 2));
+  fprintf(fl, "RES3: %d\n", GET_RESISTS(ch, 3));
+  fprintf(fl, "RES4: %d\n", GET_RESISTS(ch, 4));
+ 
 
 
   if (GET_WIMP_LEV(ch)	   != PFDEF_WIMPLEV)	fprintf(fl, "Wimp: %d\n", GET_WIMP_LEV(ch));
@@ -715,9 +673,9 @@ void save_char(struct char_data * ch)
   if (GET_PRACTICES(ch)	   != PFDEF_PRACTICES)	fprintf(fl, "Lern: %d\n", GET_PRACTICES(ch));
   if (GET_TRAINS(ch)	   != PFDEF_TRAINS)	fprintf(fl, "Trns: %d\n", GET_TRAINS(ch));
   if (GET_TRAIN_META(ch)	   != PFDEF_TRAINS)	fprintf(fl, "Trnd: %d\n", GET_TRAIN_META(ch));
-  if (GET_COND(ch, HUNGER)   != PFDEF_HUNGER && GET_REAL_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Hung: %d\n", GET_COND(ch, HUNGER));
-  if (GET_COND(ch, THIRST) != PFDEF_THIRST && GET_REAL_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Thir: %d\n", GET_COND(ch, THIRST));
-  if (GET_COND(ch, DRUNK)  != PFDEF_DRUNK  && GET_REAL_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Drnk: %d\n", GET_COND(ch, DRUNK));
+  if (GET_COND(ch, HUNGER)   != PFDEF_HUNGER && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Hung: %d\n", GET_COND(ch, HUNGER));
+  if (GET_COND(ch, THIRST) != PFDEF_THIRST && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Thir: %d\n", GET_COND(ch, THIRST));
+  if (GET_COND(ch, DRUNK)  != PFDEF_DRUNK  && GET_LEVEL(ch) < LVL_IMMORT) fprintf(fl, "Drnk: %d\n", GET_COND(ch, DRUNK));
 
   if (GET_HIT(ch)	   != PFDEF_HIT  || GET_MAX_HIT(ch)  != PFDEF_MAXHIT)  fprintf(fl, "Hit : %d/%d\n", GET_HIT(ch),  GET_MAX_HIT(ch));
   if (GET_MANA(ch)	   != PFDEF_MANA || GET_MAX_MANA(ch) != PFDEF_MAXMANA) fprintf(fl, "Mana: %d/%d\n", GET_MANA(ch), GET_MAX_MANA(ch));
@@ -738,6 +696,7 @@ void save_char(struct char_data * ch)
   if (GET_EXP(ch)	   != PFDEF_EXP)	fprintf(fl, "Exp : %ld\n", GET_EXP(ch));
   if (GET_HITROLL(ch)	   != PFDEF_HITROLL)	fprintf(fl, "Hrol: %d\n", GET_HITROLL(ch));
   if (GET_DAMROLL(ch)	   != PFDEF_DAMROLL)	fprintf(fl, "Drol: %d\n", GET_DAMROLL(ch));
+  if (GET_COMBAT_POWER(ch) != PFDEF_COMBAT_POWER) fprintf(fl, "Cpow : %d\n",GET_COMBAT_POWER(ch));
   if (GET_OLC_ZONE(ch)     != PFDEF_OLC)        fprintf(fl, "Olc : %d\n", GET_OLC_ZONE(ch));
   if (GET_PAGE_LENGTH(ch)  != PFDEF_PAGELENGTH) fprintf(fl, "Page: %d\n", GET_PAGE_LENGTH(ch));
   if (GET_SCREEN_WIDTH(ch) != PFDEF_SCREENWIDTH) fprintf(fl, "ScrW: %d\n", GET_SCREEN_WIDTH(ch));
@@ -765,7 +724,7 @@ void save_char(struct char_data * ch)
 }
 
   /* Save skills */
-  if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+  if (GET_LEVEL(ch) < LVL_IMMORT) {
     fprintf(fl, "Skil:\n");
     for (i = 1; i <= MAX_SKILLS; i++)
 		{
@@ -816,9 +775,9 @@ void save_char(struct char_data * ch)
     return;
 
   /* update the player in the player index */
-  if (player_table[id].level != GET_REAL_LEVEL(ch)) {
+  if (player_table[id].level != GET_LEVEL(ch)) {
     save_index = TRUE;
-    player_table[id].level = GET_REAL_LEVEL(ch);
+    player_table[id].level = GET_LEVEL(ch);
   }
   if (player_table[id].last != ch->player.time.logon) {
     save_index = TRUE;
@@ -1075,35 +1034,4 @@ static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
 }
 
 
-static void load_multiclass(struct char_data *ch, const char *line)
-{
-   int i, t[NUM_CLASSES +1];
 
-   //Set t[] values to 0 in case of format error
-
-   for (i = 0; i < NUM_CLASSES; i++)
-       t[i] = 0;
-
-   // Read line of pfile and store values to t[]
-   // Order is Magic user, cleric, thief, warrior
-
-   if (sscanf(line, "%d %d %d %d %d %d", t, t+1, t+2, t+3, t+4, t+5) != NUM_CLASSES)
-   {
-   log("SYSERR: Format error in pfile for %s\n"
-	"...expecting multiclass levels in format '# # # #'", GET_NAME(ch));
-   }
-
-   // Set the levels
-   GET_LEVEL(ch, CLASS_WIZARD) = t[CLASS_WIZARD];
-   GET_LEVEL(ch, CLASS_PRIEST) = t[CLASS_PRIEST];
-   GET_LEVEL(ch, CLASS_ROGUE) = t[CLASS_ROGUE];
-   GET_LEVEL(ch, CLASS_FIGHTER) = t[CLASS_FIGHTER];
-   GET_LEVEL(ch, CLASS_KNIGHT) = t[CLASS_KNIGHT];
-   GET_LEVEL(ch, CLASS_BARD) = t[CLASS_BARD];
-   // Check for level 0 characters (indicates bug with saving pfile)
-   // Give them a level in um... magic user.. why not :)
-
-   if (GET_REAL_LEVEL(ch) < 1)
-       GET_LEVEL(ch, CLASS_WIZARD) = 1;
-
-}

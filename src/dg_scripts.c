@@ -1336,7 +1336,7 @@ void script_vlog(const char *format, va_list args)
   for (i = descriptor_list; i; i = i->next) { 
     if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */ 
       continue; 
-    if (GET_REAL_LEVEL(i->character) < LVL_BUILDER) 
+    if (GET_LEVEL(i->character) < LVL_BUILDER) 
       continue; 
     if (PLR_FLAGGED(i->character, PLR_WRITING)) 
       continue; 

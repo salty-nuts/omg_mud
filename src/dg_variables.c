@@ -643,7 +643,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "con")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               c->real_abils.con += addition;
               if (c->real_abils.con > max) c->real_abils.con = max;
               if (c->real_abils.con < 3) c->real_abils.con = 3;
@@ -662,7 +662,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             } else if (!str_cmp(field, "dex")) {
               if (subfield && *subfield) {
                 int addition = atoi(subfield);
-                int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+                int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
                 c->real_abils.dex += addition;
                 if (c->real_abils.dex > max) c->real_abils.dex = max;
                 if (c->real_abils.dex < 3) c->real_abils.dex = 3;
@@ -787,7 +787,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "int")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               c->real_abils.intel += addition;
               if (c->real_abils.intel > max) c->real_abils.intel = max;
               if (c->real_abils.intel < 3) c->real_abils.intel = 3;
@@ -841,21 +841,15 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         case 'l':
           if (!str_cmp(field, "level")) {
             if (subfield && *subfield) {
-/*
-Multiclassing
-Salty
-03 FEB 2020
-Needs to be recoded
               int lev = atoi(subfield);
-              GET_REAL_LEVEL(c) = MIN(MAX(lev, 0), LVL_IMMORT-1);
-*/
+              GET_LEVEL(c) = MIN(MAX(lev, 0), LVL_IMMORT-1);
             } else
-              snprintf(str, slen, "%d", GET_REAL_LEVEL(c));
+              snprintf(str, slen, "%d", GET_LEVEL(c));
           }
           else if (!str_cmp(field, "luck")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               c->real_abils.luck += addition;
               if (c->real_abils.luck > max) c->real_abils.luck = max;
               if (c->real_abils.luck < 3) c->real_abils.luck = 3;
@@ -1064,7 +1058,7 @@ Needs to be recoded
           else if (!str_cmp(field, "str")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               c->real_abils.str += addition;
               if (c->real_abils.str > max) c->real_abils.str = max;
               if (c->real_abils.str < 3) c->real_abils.str = 3;
@@ -1138,7 +1132,7 @@ Needs to be recoded
           else if (!str_cmp(field, "wis")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-              int max = (IS_NPC(c) || GET_REAL_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
+              int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
               c->real_abils.wis += addition;
               if (c->real_abils.wis > max) c->real_abils.wis = max;
               if (c->real_abils.wis < 3) c->real_abils.wis = 3;

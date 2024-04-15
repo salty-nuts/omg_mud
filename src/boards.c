@@ -91,7 +91,7 @@ static int find_board(struct char_data *ch)
       if (BOARD_RNUM(i) == GET_OBJ_RNUM(obj))
 	return (i);
 
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT)
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
     for (obj = ch->carrying; obj; obj = obj->next_content)
       for (i = 0; i < NUM_OF_BOARDS; i++)
         if (BOARD_RNUM(i) == GET_OBJ_RNUM(obj))
@@ -174,7 +174,7 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
   time_t ct;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_NAME_LENGTH + 3], tmstr[MAX_STRING_LENGTH];
 
-  if (GET_REAL_LEVEL(ch) < WRITE_LVL(board_type)) {
+  if (GET_LEVEL(ch) < WRITE_LVL(board_type)) {
     send_to_char(ch, "You are not holy enough to write on this board.\r\n");
     return (1);
   }
@@ -204,7 +204,7 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
   snprintf(buf2, sizeof(buf2), "(%s)", GET_NAME(ch));
   snprintf(buf, sizeof(buf), "%s %-12s :: %s", tmstr, buf2, arg);
   NEW_MSG_INDEX(board_type).heading = strdup(buf);
-  NEW_MSG_INDEX(board_type).level = GET_REAL_LEVEL(ch);
+  NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
 
   send_to_char(ch, "Write your message.\r\n");
   send_editor_help(ch->desc);
@@ -230,7 +230,7 @@ int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj
   if (!*tmp || !isname(tmp, board->name))
     return (0);
 
-  if (GET_REAL_LEVEL(ch) < READ_LVL(board_type)) {
+  if (GET_LEVEL(ch) < READ_LVL(board_type)) {
     send_to_char(ch, "You try but fail to understand the holy words.\r\n");
     return (1);
   }
@@ -293,7 +293,7 @@ int board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   if (!(msg = atoi(number)))
     return (0);
 
-  if (GET_REAL_LEVEL(ch) < READ_LVL(board_type)) {
+  if (GET_LEVEL(ch) < READ_LVL(board_type)) {
     send_to_char(ch, "You try but fail to understand the holy words.\r\n");
     return (1);
   }
@@ -364,12 +364,12 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
     return (1);
   }
   snprintf(buf, sizeof(buf), "(%s)", GET_NAME(ch));
-  if (GET_REAL_LEVEL(ch) < REMOVE_LVL(board_type) &&
+  if (GET_LEVEL(ch) < REMOVE_LVL(board_type) &&
       !(strstr(MSG_HEADING(board_type, ind), buf))) {
     send_to_char(ch, "You are not holy enough to remove other people's messages.\r\n");
     return (1);
   }
-  if (GET_REAL_LEVEL(ch) < MSG_LEVEL(board_type, ind)) {
+  if (GET_LEVEL(ch) < MSG_LEVEL(board_type, ind)) {
     send_to_char(ch, "You can't remove a message holier than yourself.\r\n");
     return (1);
   }

@@ -262,6 +262,53 @@ The color test mob.
 66666 100000
 8 8 0
 E
+#1297
+training dummy~
+a Training Dummy~
+A training dummy stand here, waiting for you.
+~
+It looks unfinished.
+~
+10 0 0 0 0 0 0 0 0 E
+105 -110 -55 7875d5250+3239250 0d0+0
+153890625 356475000
+8 8 0
+MobMult: 25
+BareHandAttack: 1
+NumAttacks: 25
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+E
+#1298
+booboo zombie~
+a BooBoo zombie~
+A big ole BooBoo zombie
+~
+This zombie is animated by some foul magics, indeed.
+~
+32778 0 0 0 0 0 0 0 1000 E
+105 -110 -55 7875d5250+3239250 35d35+130
+810140625 1516003125
+8 8 1
+MobMult: 25
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 46
+RES_1: 46
+RES_2: 46
+RES_3: 46
+RES_4: 46
+E
+T 2103
 #1299
 juju zombie~
 a JuJu Zombie~
@@ -269,32 +316,17 @@ a hulking JuJu Zombie
 ~
 This zombie is animated by some foul magics, indeed.
 ~
-25264154 0 0 0 226493184 1 0 0 1000 E
-60 -40 -38 1500d16+90000 12d8+60
-720000 1440000
+32778 0 0 0 33579264 0 0 0 1000 E
+100 -90 -50 3000d2000+4321000 20d20+110
+9876000 32132000
 8 8 1
-BareHandAttack: 8
-NumAttacks: 8
+MobMult: 10
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 50
-SavingRod: 15
-SavingPetri: 15
-SavingBreath: 15
-SavingSpell: 15
-RES_0: 99
-RES_1: 91
-RES_2: 92
-RES_3: 93
-RES_4: 42
-RES_5: 44
-RES_6: 45
-RES_7: 66
-RES_8: 99
-RES_9: 1
 E
 $

@@ -10,11 +10,29 @@ His glance scans the room and focuses on you intently.  He crooks one huge talon
 as you look at him as if to ask what you want from him, better not waist his
 time.  
 ~
-26714 0 0 0 120 0 0 0 -400 E
-18 14 0 3d3+180 3d3+3
-180 32400
+22112346 0 0 0 16777592 0 0 0 -1000 E
+105 -102 -54 5355d3570+2202690 27d27+122
+71159025 164834040
 8 8 1
+MobMult: 17
 BareHandAttack: 8
+NumAttacks: 8
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -22
+SavingRod: -22
+SavingPetri: -22
+SavingBreath: -22
+SavingSpell: -22
+RES_0: 38
+RES_1: 38
+RES_2: 38
+RES_3: 38
+RES_4: 38
 E
 #14001
 Dust Devil wyv~
@@ -25,11 +43,28 @@ A small tornado of dust spins here.
 up sand and dust as it goes.  There looks to be a human face within the tiny
 storm.  
 ~
-65612 0 0 0 0 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+65612 0 0 0 0 0 0 0 -1000 E
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 0
-BareHandAttack: 12
+MobMult: 1
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #14002
 Sand Crab Wyv~
@@ -41,10 +76,27 @@ hide under.  Looks like you wouldn't want it to get a good hold of you with
 those pincers.  
 ~
 2136 0 0 0 64 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+60 -42 -26 360d240+148080 8d8+62
+562800 1303680
 8 8 1
-BareHandAttack: 9
+MobMult: 2
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 38
+SavingRod: 38
+SavingPetri: 38
+SavingBreath: 38
+SavingSpell: 38
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #14003
 Heat Monster wyv~
@@ -56,11 +108,28 @@ Waves of heated air flow from it and you wonder what kind of energy it took to
 create this thing.  The fiendish face of the monster grins demonically at you.
 
 ~
-10312 0 0 0 0 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+10312 0 0 0 0 0 0 0 -1000 E
+70 -55 -32 1050d700+431900 12d12+75
+4103750 9506000
 8 8 1
-BareHandAttack: 10
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 25
+SavingRod: 25
+SavingPetri: 25
+SavingBreath: 25
+SavingSpell: 25
+RES_0: 19
+RES_1: 19
+RES_2: 19
+RES_3: 19
+RES_4: 19
 E
 #14004
 guardian red dragon wyv~
@@ -74,11 +143,23 @@ imbedded in its belli.  Its eyes are closed and although it is over 100 feet
 long if it is sleeping..  You might be able to get passed it.  What a guardian!
 
 ~
-18526 0 0 0 120 0 0 0 -1000 E
-26 12 -5 5d5+260 4d4+4
-260 67600
+18508 0 0 0 120 0 0 0 -1000 E
+105 -105 -55 6300d4200+2591400 30d30+125
+98490000 228144000
 8 8 2
-BareHandAttack: 4
+MobMult: 20
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 41
+RES_1: 41
+RES_2: 41
+RES_3: 41
+RES_4: 41
 E
 #14005
 wyvern citizen wyv~
@@ -88,11 +169,28 @@ A working class wyvern walks these streets without fear.
    This is an adult wyvern on his way to run some errands.  His gaze passes over
 you and dismisses you as soon as it does.  How pathetic you are.  
 ~
-2124 0 0 0 0 0 0 0 -200 E
-3 19 8 0d0+30 1d2+0
-30 900
+2124 0 0 0 0 0 0 0 -1000 E
+70 -53 -32 630d420+259140 10d10+73
+1477350 3422160
 8 8 2
-BareHandAttack: 8
+MobMult: 3
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 27
+SavingRod: 27
+SavingPetri: 27
+SavingBreath: 27
+SavingSpell: 27
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #14006
 Hatchling Wyvern wyv~
@@ -103,11 +201,28 @@ A newly hatched wyvern is here.
 so young that its scales are still shiny from birth.  The baby wyvern looks back
 at you with curiosity, who is this strange being?  
 ~
-2252 0 0 0 0 0 0 0 -100 E
-3 19 8 0d0+30 1d2+0
-30 900
+2252 0 0 0 0 0 0 0 -1000 E
+50 -33 -20 450d300+185100 8d8+53
+1055250 2444400
 8 8 1
-BareHandAttack: 8
+MobMult: 3
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 47
+SavingRod: 47
+SavingPetri: 47
+SavingBreath: 47
+SavingSpell: 47
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #14007
 Wyvern guard wyv~
@@ -119,11 +234,28 @@ watches the crowds intently looking for signs of trouble within his city.  His
 dull red scales glint faintly in the light and his footsteps echo heavily over
 the voices of those of his lighter brethren.  A deadly opponent.  
 ~
-59480 0 0 0 8256 0 0 0 -250 E
-7 18 5 1d1+70 1d2+1
-70 4900
+59464 0 0 0 8256 0 0 0 -1000 E
+90 -77 -44 1890d1260+777420 16d16+97
+10341450 23955120
 8 8 1
-BareHandAttack: 4
+MobMult: 7
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+RES_0: 25
+RES_1: 25
+RES_2: 25
+RES_3: 25
+RES_4: 25
 E
 #14008
 wyvern sentry wyv~
@@ -137,10 +269,22 @@ possible danger to her.  A forked tung flickers in and out of her mouth tasting
 the air.  
 ~
 22618 0 0 0 72 0 0 0 -350 E
-10 17 4 2d2+100 1d2+1
-100 10000
+100 -85 -50 1500d1000+617000 15d15+105
+5862500 13580000
 8 8 2
-BareHandAttack: 8
+MobMult: 5
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 25
+RES_1: 25
+RES_2: 25
+RES_3: 25
+RES_4: 25
 E
 #14009
 wyvern royal attendant wyv~
@@ -152,11 +296,24 @@ Deep red scales match a set of glowing red eyes which look at you distastefully.
 Though he says nothing the 15 foot long reptile conveys a feeling of great
 arrogance and disdain.  He must be very important.  
 ~
-26700 0 0 0 8248 0 0 0 -400 E
-14 16 1 2d2+140 2d2+2
-140 19600
+26700 0 0 0 8248 0 0 0 -1000 E
+100 -95 -51 4500d3000+1851000 25d25+115
+52762500 122220000
 8 8 1
-BareHandAttack: 4
+MobMult: 15
+BareHandAttack: 10
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 35
+RES_1: 35
+RES_2: 35
+RES_3: 35
+RES_4: 35
 E
 #14010
 Lord wyverns wyvern wyv~
@@ -169,11 +326,24 @@ crimson.  There is an other difference as well, he has a set of huge wings
 folded across his back.  His eyes pass serenely over you and the rest of the
 room.  You represent no threat to such a creature.  
 ~
-256090 0 0 0 8312 0 0 0 -500 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+15984762 0 0 0 -2063589256 0 0 0 -1000 E
+105 -105 -55 6300d4200+2591400 30d30+125
+98490000 228144000
 8 8 1
+MobMult: 20
 BareHandAttack: 8
+NumAttacks: 10
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 41
+RES_1: 41
+RES_2: 41
+RES_3: 41
+RES_4: 41
 E
 #14011
 Wyvern wyv wizard~
@@ -184,11 +354,23 @@ A wyvern wizard is here researching new items to sell.
 at you carefully to make sure you don't try to walk off with anything from his
 shop.  
 ~
-188638 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+188638 0 0 0 8440 0 0 0 -1000 E
+90 -80 -45 2700d1800+1110600 19d19+100
+21105000 48888000
 8 8 1
-BareHandAttack: 12
+MobMult: 10
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 28
+RES_1: 28
+RES_2: 28
+RES_3: 28
+RES_4: 28
 E
 #14012
 wyvern water worker wyv~
@@ -200,10 +382,27 @@ other.  He watches you with interest.  Wonder if he's hungry or looking for
 business?  
 ~
 188638 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+80 -65 -38 1200d800+493600 13d13+85
+4690000 10864000
 8 8 2
-BareHandAttack: 8
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 21
+RES_1: 21
+RES_2: 21
+RES_3: 21
+RES_4: 21
 E
 #14013
 Wyvern wyv trader~
@@ -213,11 +412,28 @@ A wyvern is here checking over his goods.
    This wyvern holds a jeweler's monocle in one hand and a tablet in the other.
 There is a shrewd look in his eye.  Looks like he drives a hard bargain.  
 ~
-190686 0 0 0 8440 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+190686 0 0 0 8440 0 0 0 -1000 E
+80 -65 -38 1200d800+493600 13d13+85
+4690000 10864000
 8 8 1
-BareHandAttack: 8
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 21
+RES_1: 21
+RES_2: 21
+RES_3: 21
+RES_4: 21
 E
 #14014
 wyvern weapon master wyv~
@@ -227,11 +443,23 @@ A huge wyvern is here sharpening his claws.
    He looks very well capable of crushing you with one claw tied behind his
 back.  It's a good thing he's selling weapons and not using them...  On you.  
 ~
-256094 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+256094 0 0 0 8440 0 0 0 -1000 E
+100 -90 -51 3000d2000+1234000 20d20+110
+23450000 54320000
 8 8 1
-BareHandAttack: 3
+MobMult: 10
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 30
+RES_1: 30
+RES_2: 30
+RES_3: 30
+RES_4: 30
 E
 #14015
 wyvern armor expert wyv~
@@ -241,11 +469,23 @@ A wyvern is here tanning some hides.
    This wyvern holds a knife in one hand and a piece of hide in the other.  
 Wonder if she wants your hide too?  
 ~
-256078 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+256078 0 0 0 8440 0 0 0 -1000 E
+100 -90 -51 3000d2000+1234000 20d20+110
+23450000 54320000
 8 8 2
-BareHandAttack: 4
+MobMult: 10
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 30
+RES_1: 30
+RES_2: 30
+RES_3: 30
+RES_4: 30
 E
 #14016
 wyvern cook wyv~
@@ -255,11 +495,28 @@ A big wyvern is here selling his home cooked meals.
    This wyvern looks like he's had a few too many of his own creations.  On the
 other hand maybe he's had a few too many of his customers.  
 ~
-190686 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+190686 0 0 0 8440 0 0 0 -1000 E
+80 -63 -38 720d480+296160 11d11+83
+1688400 3911040
 8 8 1
-BareHandAttack: 8
+MobMult: 3
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 17
+SavingRod: 17
+SavingPetri: 17
+SavingBreath: 17
+SavingSpell: 17
+RES_0: 19
+RES_1: 19
+RES_2: 19
+RES_3: 19
+RES_4: 19
 E
 #14017
 wyvern healer wyv~
@@ -270,10 +527,27 @@ A wyvern in the garb of a healer stands here.
 that a smile on his face?  Or is he just thinking of how much he can charge you?
 
 ~
-190670 0 0 0 8440 0 0 0 0 E
-22 13 -3 4d4+220 3d3+3
-220 48400
+190668 0 0 0 8440 0 0 0 -1000 E
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 1
-BareHandAttack: 4
+MobMult: 1
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 20
+SavingRod: 20
+SavingPetri: 20
+SavingBreath: 20
+SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 $

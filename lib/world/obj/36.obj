@@ -155,7 +155,7 @@ key black treasury~
 the Key to the Black Treasury~
 There is a sinister black key lying here.~
 ~
-18 cdfq 0 0 0 ao 0 0 0 0 0 0 0
+18 cdfq 0 0 0 a 0 0 0 0 0 0 0
 3614 0 0 0
 1 1000 300 0 0 100
 #3615
@@ -163,7 +163,7 @@ key white treasury~
 the Key to the White Treasury~
 There is a bright white key lying here.~
 ~
-18 cdfq 0 0 0 ao 0 0 0 0 0 0 0
+18 cdfq 0 0 0 a 0 0 0 0 0 0 0
 3615 0 0 0
 1 1000 300 0 0 100
 #3616

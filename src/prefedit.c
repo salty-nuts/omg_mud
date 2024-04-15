@@ -150,7 +150,7 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM) );
 
   /* Imm Prefs */
-  if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) >= LVL_IMMORT)
+  if (GET_LEVEL(PREFEDIT_GET_CHAR) >= LVL_IMMORT)
   {
     sprintf(syslog_string, "%s", multi_types[((PREFEDIT_FLAGGED(PRF_LOG1) ? 1 : 0)+ (PREFEDIT_FLAGGED(PRF_LOG2) ? 2 : 0))] );
 
@@ -173,7 +173,7 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
              ONOFF(PREFEDIT_FLAGGED(PRF_NOHASSLE)), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
              CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(PREFEDIT_FLAGGED(PRF_HOLYLIGHT)), CCCYN(d->character, C_NRM)
              );
-    if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) == LVL_IMPL)
+    if (GET_LEVEL(PREFEDIT_GET_CHAR) == LVL_IMPL)
       send_to_char(d->character, "%s7%s) Zone Resets  %s[%s%3s%s]\r\n",
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_ZONERESETS)), CCCYN(d->character, C_NRM));
@@ -469,7 +469,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
     /* Below this point are Imm-only toggles */
     case '1':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -482,7 +482,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '2':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -494,7 +494,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '3':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -506,7 +506,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '4':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -518,7 +518,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '5':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -530,7 +530,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '6':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -542,7 +542,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       break;
 
     case '7':
-      if (GET_REAL_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMPL)
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMPL)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
         prefedit_disp_main_menu(d);
@@ -884,7 +884,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOEXIT);
 
   /* PRF_NOHASSLE   - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_NOHASSLE) && GET_REAL_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
+  if (!PREFEDIT_FLAGGED(PRF_NOHASSLE) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
@@ -902,7 +902,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOREPEAT);
 
   /* PRF_HOLYLIGHT  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_HOLYLIGHT) && GET_REAL_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
+  if (!PREFEDIT_FLAGGED(PRF_HOLYLIGHT) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
@@ -938,7 +938,7 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOGRATZ);
 
   /* PRF_SHOWVNUMS  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_SHOWVNUMS) && GET_REAL_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
+  if (!PREFEDIT_FLAGGED(PRF_SHOWVNUMS) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
   else
      REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
@@ -1013,7 +1013,7 @@ ACMD(do_oasis_prefedit)
   if (!*buf1) {
     vict = ch;
   }
-  else if (GET_REAL_LEVEL(ch) >= LVL_IMPL)
+  else if (GET_LEVEL(ch) >= LVL_IMPL)
   {
     if ((vict = get_player_vis(ch, buf1, NULL, FIND_CHAR_WORLD)) == NULL)
     {

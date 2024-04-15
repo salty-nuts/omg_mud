@@ -568,7 +568,7 @@ int House_can_enter(struct char_data *ch, room_vnum house)
 {
   int i, j;
 
-  if (GET_REAL_LEVEL(ch) >= LVL_GRGOD || (i = find_house(house)) == NOWHERE)
+  if (GET_LEVEL(ch) >= LVL_GRGOD || (i = find_house(house)) == NOWHERE)
     return (1);
 
   switch (house_control[i].mode) {
@@ -626,7 +626,7 @@ static void hcontrol_convert_houses(struct char_data *ch)
 {
   int i;
 
-	if (GET_REAL_LEVEL(ch) < LVL_IMPL)
+	if (GET_LEVEL(ch) < LVL_IMPL)
 		{
 			send_to_char(ch, "Sorry, but you are not powerful enough to do that.\r\n");
 			return;

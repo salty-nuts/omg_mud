@@ -79,14 +79,13 @@ void list_train(struct char_data *ch)
   if (GET_REAL_LUCK(ch) < 24 ) strcat(buf, " luck");
 
   strcat(buf,"\n\r\n\r");
-
   strcat(buf, "Regeneration speed of:\n\r");
+
   if (GET_HITP_REGEN(ch) < 100 ) strcat(buf, "hp");
   if (GET_MANA_REGEN(ch) < 100 ) strcat(buf, " mana");
   if (GET_MOVE_REGEN(ch) < 100 ) strcat(buf, " move");
 
   strcat(buf,"\n\r\n\r");
-
   strcat(buf, "Melee damage resistances:\n\r");
 
   if (GET_RESISTS(ch, RESIST_UNARMED) < 100) strcat(buf, "unarmed");
@@ -95,22 +94,17 @@ void list_train(struct char_data *ch)
   if (GET_RESISTS(ch, RESIST_SLASH) < 100) strcat(buf, " slash");
   if (GET_RESISTS(ch, RESIST_PIERCE) < 100) strcat(buf, " pierce");
 
-  strcat(buf, "Magical damage resistances:\n\r");
-
-  if (GET_RESISTS(ch, RESIST_RED) < 100) strcat(buf, "red");
-  if (GET_RESISTS(ch, RESIST_BLUE) < 100) strcat(buf, " blue");
-  if (GET_RESISTS(ch, RESIST_GREEN) < 100) strcat(buf, " green");
-  if (GET_RESISTS(ch, RESIST_BLACK) < 100) strcat(buf, " black");
-  if (GET_RESISTS(ch, RESIST_WHITE) < 100) strcat(buf, " white");
-
   strcat(buf,"\n\r\n\r");
-
   strcat(buf,"Magical power increases:\n\r");
 
   if (GET_SPELLS_HEALING(ch) < 100 ) strcat(buf, "healing");
   if (GET_SPELLS_DAMAGE(ch) < 100 ) strcat(buf, " damage");
   if (GET_SPELLS_AFFECTS(ch) < 100 ) strcat(buf, " affects");
 
+  strcat(buf,"\n\r\n\r");
+  strcat(buf,"Combat Power:\n\r");
+
+  if (GET_COMBAT_POWER(ch) < 200) strcat(buf, "power");
 
 
   if (buf[strlen(buf) - 1] != ':')
@@ -126,7 +120,6 @@ void list_train(struct char_data *ch)
 Redone to be percentage based.
 Salty
 03 JAN 2019
-Revisions for Multiclass:  03 FEB 2020
 */
 void list_skills(struct char_data *ch)
 {
@@ -139,8 +132,7 @@ void list_skills(struct char_data *ch)
 	/* Begin counting Spells */
 	for (i = 1; i <= NUM_SPELLS; i++)
 	{
-    if ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
-         (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[i].min_level[(int)GET_MULTI_CLASS(ch)]) || GET_REAL_LEVEL(ch) > LVL_IMMORT)
+    if ( (GET_LEVEL(ch) >= spell_info[i].min_level[GET_CLASS(ch)]) || GET_LEVEL(ch) > LVL_IMMORT)
    	{
      	send_to_char(ch, "%-17s %3d %%   ", spell_info[i].name, GET_SKILL(ch, i));
      	num += 1;
@@ -153,8 +145,8 @@ void list_skills(struct char_data *ch)
 	send_to_char(ch, "---------------------------------------------------------------------------\n\r");
 	for (i = ZERO_SONGS+1; i <= ZERO_SONGS + NUM_SONGS; i++)
 	{
-    if ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
-         (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[i].min_level[(int)GET_MULTI_CLASS(ch)]) || GET_REAL_LEVEL(ch) > LVL_IMMORT)
+    if ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
+          GET_LEVEL(ch) > LVL_IMMORT)
    	{
      	send_to_char(ch, "%-17s %3d %%   ", spell_info[i].name, GET_SKILL(ch, i));
      	num += 1;
@@ -170,8 +162,7 @@ void list_skills(struct char_data *ch)
 	/*  Begin counting Skills */
 	for (i = ZERO_SKILLS+1; i <= ZERO_SKILLS + NUM_SKILLS; i++)
 	{
-    if ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
-         (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[i].min_level[(int)GET_MULTI_CLASS(ch)]) || GET_REAL_LEVEL(ch) > LVL_IMMORT)
+    if ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) || GET_LEVEL(ch) > LVL_IMMORT)
 		{
 			send_to_char(ch, "%-17s %3d %%   ", spell_info[i].name, GET_SKILL(ch, i));
 			num += 1;
@@ -211,8 +202,7 @@ SPECIAL(guild)
       send_to_char(ch, "%s is not a valid option.\r\n",SPLSKL(ch));
       return (TRUE);
     }
-    if ( (GET_LEVEL(ch, GET_CLASS(ch)) < spell_info[skill_num].min_level[(int)GET_CLASS(ch)]) &&
-         (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) < spell_info[skill_num].min_level[(int)GET_MULTI_CLASS(ch)]) )
+    if ( (GET_LEVEL(ch) < spell_info[skill_num].min_level[(int)GET_CLASS(ch)]))
     {
       send_to_char(ch, "You do not know of that %s.\r\n", SPLSKL(ch));
       return (TRUE);
@@ -322,51 +312,6 @@ SPECIAL(guild)
         GET_RESISTS(ch, RESIST_PIERCE) += 1;
       }
     }
-    else if (!str_cmp(argument, "red"))
-    {
-      pOut = "red magic resist";
-      if (GET_RESISTS(ch, RESIST_RED) < MAX_RESIST)
-      {
-        gain = TRUE;
-        GET_RESISTS(ch, RESIST_RED) += 1;
-      }
-    }    
-    else if (!str_cmp(argument, "blue"))
-    {
-      pOut = "blue magic resist";
-      if (GET_RESISTS(ch, RESIST_BLUE) < MAX_RESIST)
-      {
-        gain = TRUE;
-        GET_RESISTS(ch, RESIST_BLUE) += 1;
-      }
-    }    
-    else if (!str_cmp(argument, "green"))
-    {
-      pOut = "green magic resist";
-      if (GET_RESISTS(ch, RESIST_GREEN) < MAX_RESIST)
-      {
-        gain = TRUE;
-        GET_RESISTS(ch, RESIST_GREEN) += 1;
-      }
-    }    
-    else if (!str_cmp(argument, "black"))
-    {
-      pOut = "black magic resist";
-      if (GET_RESISTS(ch, RESIST_BLACK) < MAX_RESIST)
-      {
-        gain = TRUE;
-        GET_RESISTS(ch, RESIST_BLACK) += 1;
-      }
-    }    
-    else if (!str_cmp(argument, "white"))
-    {
-      pOut = "white magic resist";
-      if (GET_RESISTS(ch, RESIST_WHITE) < MAX_RESIST)
-      {
-        gain = TRUE;
-        GET_RESISTS(ch, RESIST_WHITE) += 1;
-      }
-    }    
     else if (!str_cmp(argument, "healing"))
     {
       pOut = "healing spells";
@@ -466,7 +411,15 @@ SPECIAL(guild)
         GET_REAL_LUCK(ch) += 1;
       }
     }
-
+    else if (!str_cmp(argument, "power"))
+    {
+      pOut = "power";
+      if (GET_COMBAT_POWER(ch) < MAX_COMBAT_POWER)
+      {
+        gain = TRUE;
+        GET_COMBAT_POWER(ch) += 1;
+      }
+    }
     if (gain)
     {
       send_to_char(ch,"You feel more adept as your %s increases!\r\n",pOut);
@@ -509,7 +462,7 @@ SPECIAL(dump)
     send_to_char(ch, "You are awarded for outstanding performance.\r\n");
     act("$n has been awarded for being a good citizen.", TRUE, ch, 0, 0, TO_ROOM);
 
-    if (GET_REAL_LEVEL(ch) < 3)
+    if (GET_LEVEL(ch) < 3)
       gain_exp(ch, value);
     else
       increase_gold(ch, value);
@@ -618,12 +571,12 @@ static void npc_steal(struct char_data *ch, struct char_data *victim)
 
   if (IS_NPC(victim))
     return;
-  if (GET_REAL_LEVEL(victim) >= LVL_IMMORT)
+  if (GET_LEVEL(victim) >= LVL_IMMORT)
     return;
   if (!CAN_SEE(ch, victim))
     return;
 
-  if (AWAKE(victim) && (rand_number(0, GET_REAL_LEVEL(ch)) == 0)) {
+  if (AWAKE(victim) && (rand_number(0, GET_LEVEL(ch)) == 0)) {
     act("You discover that $n has $s hands in your wallet.", FALSE, ch, 0, victim, TO_VICT);
     act("$n tries to steal gold from $N.", TRUE, ch, 0, victim, TO_NOTVICT);
   } else {
@@ -642,12 +595,12 @@ SPECIAL(snake)
   if (cmd || GET_POS(ch) != POS_FIGHTING || !FIGHTING(ch))
     return (FALSE);
 
-  if (IN_ROOM(FIGHTING(ch)) != IN_ROOM(ch) || rand_number(0, GET_REAL_LEVEL(ch)) != 0)
+  if (IN_ROOM(FIGHTING(ch)) != IN_ROOM(ch) || rand_number(0, GET_LEVEL(ch)) != 0)
     return (FALSE);
 
   act("$n bites $N!", 1, ch, 0, FIGHTING(ch), TO_NOTVICT);
   act("$n bites you!", 1, ch, 0, FIGHTING(ch), TO_VICT);
-  call_magic(ch, FIGHTING(ch), 0, SPELL_POISON, GET_REAL_LEVEL(ch), CAST_SPELL);
+  call_magic(ch, FIGHTING(ch), 0, SPELL_POISON, GET_LEVEL(ch), CAST_SPELL);
   return (TRUE);
 }
 
@@ -659,7 +612,7 @@ SPECIAL(thief)
     return (FALSE);
 
   for (cons = world[IN_ROOM(ch)].people; cons; cons = cons->next_in_room)
-    if (!IS_NPC(cons) && GET_REAL_LEVEL(cons) < LVL_IMMORT && !rand_number(0, 4)) {
+    if (!IS_NPC(cons) && GET_LEVEL(cons) < LVL_IMMORT && !rand_number(0, 4)) {
       npc_steal(ch, cons);
       return (TRUE);
     }
@@ -687,20 +640,20 @@ SPECIAL(magic_user)
   if (vict == NULL)
     return (TRUE);
 
-  if (GET_REAL_LEVEL(ch) > 13 && rand_number(0, 10) == 0)
+  if (GET_LEVEL(ch) > 13 && rand_number(0, 10) == 0)
     cast_spell(ch, vict, NULL, SPELL_POISON);
 
-  if (GET_REAL_LEVEL(ch) > 7 && rand_number(0, 8) == 0)
+  if (GET_LEVEL(ch) > 7 && rand_number(0, 8) == 0)
     cast_spell(ch, vict, NULL, SPELL_BLINDNESS);
 
-  if (GET_REAL_LEVEL(ch) > 12 && rand_number(0, 12) == 0) {
+  if (GET_LEVEL(ch) > 12 && rand_number(0, 12) == 0) {
       cast_spell(ch, vict, NULL, SPELL_ENERGY_DRAIN);
   }
 
   if (rand_number(0, 4))
     return (TRUE);
 
-  switch (GET_REAL_LEVEL(ch)) {
+  switch (GET_LEVEL(ch)) {
     case 4:
     case 5:
       cast_spell(ch, vict, NULL, SPELL_MAGIC_MISSILE);
@@ -745,7 +698,7 @@ SPECIAL(guild_guard)
   if (!IS_MOVE(cmd) || AFF_FLAGGED(guard, AFF_BLIND)) 
     return (FALSE); 
      
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT) 
+  if (GET_LEVEL(ch) >= LVL_IMMORT) 
     return (FALSE); 
    
   /* find out what direction they are trying to go */ 
@@ -906,7 +859,7 @@ SPECIAL(cityguard)
   return (FALSE);
 }
 
-#define PET_PRICE(pet) (GET_REAL_LEVEL(pet) * 300)
+#define PET_PRICE(pet) (GET_LEVEL(pet) * 300)
 SPECIAL(pet_shops)
 {
   char buf[MAX_STRING_LENGTH], pet_name[256];

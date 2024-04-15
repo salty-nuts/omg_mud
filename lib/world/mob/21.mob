@@ -1,0 +1,418 @@
+#2100
+jaguar warrior aztec~
+a Jaguar Warrior~
+A jaguar warrior stands before you.
+~
+A jaguar warrior stands before you, his face painted with war paint and adorned
+with a fearsome jaguar pelt.  His obsidian spear is polished to a deadly sheen,
+and his eyes hold the ferocity of a jungle predator.
+~
+8392776 0 0 0 17367040 0 0 0 0 E
+100 -82 -50 600d400+246800 12d12+102
+938000 2172800
+8 8 1
+MobMult: 2
+BareHandAttack: 11
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -2
+SavingRod: -2
+SavingPetri: -2
+SavingBreath: -2
+SavingSpell: -2
+RES_0: 22
+RES_1: 22
+RES_2: 22
+RES_3: 22
+RES_4: 22
+E
+#2101
+howling shaman~
+a Howling Shaman~
+A shamans chants a guttural prayer, his eyes glowing with otherworldly power!
+~
+A wizened shaman clad in feathered robes raises a staff carved from a jaguar
+femur.  His chanting fills the air with an unsettling energy, and his eyes glow
+with a strange light.  You sense a dark power at his command.
+~
+1048648 0 0 0 24832 0 0 0 0 E
+100 -82 -50 600d400+246800 12d12+102
+938000 2172800
+8 8 1
+MobMult: 2
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -2
+SavingRod: -2
+SavingPetri: -2
+SavingBreath: -2
+SavingSpell: -2
+RES_0: 22
+RES_1: 22
+RES_2: 22
+RES_3: 22
+RES_4: 22
+E
+#2102
+feathered serpent cultist~
+a Feathered Serpent Cultist~
+A fanatic cultist, adorned with feathers and wielding a serpent-headed dagger, hisses and lunges!
+~
+A crazed cultist, his body adorned with vibrant feathers and his face painted
+with serpentine designs, lunges at you with a serpent-headed dagger dripping
+with venom.  His eyes are filled with fanatic zeal, and his lips move in a
+silent prayer to the feathered serpent god.
+~
+13631560 0 0 0 25165824 0 0 0 0 E
+105 -88 -53 945d630+388710 13d13+108
+1477350 3422160
+8 8 1
+MobMult: 3
+BareHandAttack: 11
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -8
+SavingRod: -8
+SavingPetri: -8
+SavingBreath: -8
+SavingSpell: -8
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
+E
+#2103
+Quetzalcoatl Minion~
+a Quetzalcoatl Minion~
+A massive feathered serpent slithers towards you, its scales shimmering with an otherworldly light!
+~
+A colossal serpent, its feathers shimmering with emerald and turquoise hues,
+slithers menacingly towards you.  Razor-sharp fangs drip with a potent venom,
+and its eyes, like molten gold, fixate on you with predatory hunger.  This
+minion of Quetzalcoatl, the wind serpent god, seems ready to strike.
+~
+9437256 0 0 0 33579264 0 0 0 0 E
+105 -85 -53 315d210+129570 10d10+105
+246225 570360
+8 8 1
+MobMult: 1
+BareHandAttack: 4
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -5
+SavingRod: -5
+SavingPetri: -5
+SavingBreath: -5
+SavingSpell: -5
+RES_0: 22
+RES_1: 22
+RES_2: 22
+RES_3: 22
+RES_4: 22
+E
+#2104
+Molten Jaguar Warrior~
+a Molten Jaguar Warrior~
+A jaguar warrior wreathed in flames charges at you, obsidian spear glowing with infernal heat!
+~
+A fearsome jaguar warrior, his body seemingly infused with molten lava, charges
+at you.  His obsidian spear glows with an infernal heat, radiating waves of
+searing energy.  This elite warrior, seemingly blessed (or cursed) by the fire
+god, appears unstoppable.
+~
+13631560 0 0 0 -2055208960 0 0 0 0 E
+105 -90 -53 1575d1050+647850 15d15+110
+2462250 5703600
+8 8 1
+MobMult: 5
+BareHandAttack: 11
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -10
+SavingRod: -10
+SavingPetri: -10
+SavingBreath: -10
+SavingSpell: -10
+RES_0: 26
+RES_1: 26
+RES_2: 26
+RES_3: 26
+RES_4: 26
+E
+#2105
+Cinders Sacrifice~
+the Cinders of Sacrifice~
+A swirling mass of embers and ash condenses into a fiery elemental, its heat scorching the air!
+~
+A swirling vortex of embers and ash coalesces before you, taking the form of a
+fiery elemental.  Its body flickers with an infernal glow, radiating intense
+heat that distorts the air.  This Cinder of Sacrifice, born from the sacrifices
+offered to the fire god, seems poised to consume you in its fiery wrath.
+~
+1048648 0 0 0 256 0 0 0 0 E
+105 -90 -53 1575d1050+647850 15d15+110
+2462250 5703600
+8 8 0
+MobMult: 5
+BareHandAttack: 12
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -10
+SavingRod: -10
+SavingPetri: -10
+SavingBreath: -10
+SavingSpell: -10
+RES_0: 26
+RES_1: 26
+RES_2: 26
+RES_3: 26
+RES_4: 26
+E
+#2106
+Xochitl~
+Xochitl the Spectral Jaguar~
+A spectral jaguar with razor-sharp claws and glowing eyes leaps at you with a ferocious snarl!
+~
+A magnificent spirit jaguar, its fur a swirling mix of obsidian black and
+moonlight silver, materializes before you.  Razor-sharp claws extend from its
+powerful paws, and its eyes blaze with an otherworldly green fire.  Xochitl, the
+guardian of the first level, lets out a bone-chilling snarl, challenging you to
+prove your worth.
+~
+13631562 0 0 0 -2139095040 0 0 0 0 E
+105 -92 -53 2205d1470+906990 17d17+112
+3447150 7985040
+8 8 1
+MobMult: 7
+BareHandAttack: 8
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -12
+SavingRod: -12
+SavingPetri: -12
+SavingBreath: -12
+SavingSpell: -12
+RES_0: 28
+RES_1: 28
+RES_2: 28
+RES_3: 28
+RES_4: 28
+E
+#2107
+Ehecatl wind serpent~
+Ehecatl the Wind Serpent~
+A monstrous wind serpent with shimmering scales and piercing eyes whips the air into a frenzy!
+~
+A colossal wind serpent, its scales shimmering with a multitude of colors,
+descends upon you with a deafening roar.  Its eyes, swirling vortexes of pure
+air, pierce through you.  Ehecatl, the lieutenant of the final boss, controls
+the very wind around him, creating whirling cyclones that threaten to tear you
+apart.
+~
+9437194 0 0 0 100663552 0 0 0 0 E
+105 -95 -54 3150d2100+1295700 20d20+115
+4924500 11407200
+8 8 0
+MobMult: 10
+BareHandAttack: 12
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -15
+SavingRod: -15
+SavingPetri: -15
+SavingBreath: -15
+SavingSpell: -15
+RES_0: 31
+RES_1: 31
+RES_2: 31
+RES_3: 31
+RES_4: 31
+E
+#2108
+Huitzilopochtli god~
+Huitzilopochtli, God of War~
+A hulking god wreathed in flames descends from the heavens, his obsidian spear radiating power!
+~
+A colossal figure wreathed in inferno descends from the ceiling of the chamber,
+the very air crackling with his arrival.  Huitzilopochtli, the Aztec god of war
+and sacrifice, stands before you, his obsidian spear radiating an otherworldly
+power.  His eyes, burning embers of rage, fixate on you, and you feel the
+overwhelming power of a god coursing through his veins.  Prepare yourself for an
+epic battle!
+~
+26214410 0 0 0 -2130681600 0 0 0 0 E
+105 -100 -54 4725d3150+1943550 25d25+120
+7386750 17110800
+8 8 1
+MobMult: 15
+BareHandAttack: 11
+NumAttacks: 6
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -20
+SavingRod: -20
+SavingPetri: -20
+SavingBreath: -20
+SavingSpell: -20
+RES_0: 36
+RES_1: 36
+RES_2: 36
+RES_3: 36
+RES_4: 36
+E
+#2109
+Mictlantecuhtli god death~
+Mictlantecuhtli, God of the Dead~
+A skeletal figure wreathed in shadow rises from the depths, a bone scepter crackling with dark energy!
+~
+A chilling wind precedes the arrival of a skeletal figure, its bony form
+wreathed in swirling shadows.  Mictlantecuhtli, the Aztec god of death and the
+underworld, rises from the depths of the pyramid, his bone scepter crackling
+with dark energy.  Jagged obsidian shards pierce his skeletal frame, a gruesome
+reminder of the sacrifices he claims.  His hollow eyes, burning with an eerie
+green light, seem to pierce your very soul.
+~
+30412810 0 0 0 16777472 0 0 0 -1000 E
+105 -110 -55 7875d5250+3239250 35d35+130
+12311250 28518000
+8 8 1
+MobMult: 25
+BareHandAttack: 7
+NumAttacks: 15
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -30
+SavingRod: -30
+SavingPetri: -30
+SavingBreath: -30
+SavingSpell: -30
+RES_0: 46
+RES_1: 46
+RES_2: 46
+RES_3: 46
+RES_4: 46
+E
+#2110
+Xolotl dog headed god~
+Xolotl, the Dog-Headed God~
+A hulking figure with the head of a dog and a skeletal body.
+~
+Xolotl's canine head, often depicted with a lolling tongue and floppy ears,
+hints at his playful and sometimes even foolish nature.  Yet, his skeletal body
+is a constant reminder of his connection to the underworld and the realm of the
+dead.  He stands at a crossroads, a bridge between the living and the departed.
+Xolotl's presence evokes a sense of both fear and hope.  He is a reminder of
+mortality, the inevitable journey to the underworld.
+~
+32505866 0 0 0 -2130706176 0 0 0 -1000 E
+105 -110 -55 7875d5250+3239250 35d35+130
+12311250 28518000
+8 8 1
+MobMult: 25
+BareHandAttack: 7
+NumAttacks: 15
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -30
+SavingRod: -30
+SavingPetri: -30
+SavingBreath: -30
+SavingSpell: -30
+RES_0: 46
+RES_1: 46
+RES_2: 46
+RES_3: 46
+RES_4: 46
+E
+T 2101
+#2111
+Mictecacihuatl lady dead death~
+Mictecacihuatl, Lady of the Dead~
+A skeletal form is adorned with glittering bone jewelry and a fearsome vulture headdress.
+~
+Crowning her skull is a magnificent headdress crafted from vulture feathers.  
+These scavengers of the battlefield are her companions and symbols of her
+domain.  The black feathers, tipped with white, fan out dramatically, creating a
+striking halo around her skeletal face.  Within the hollow eye sockets of her
+skull, embers seem to flicker, casting an eerie glow on the surrounding
+darkness.  Her gaze, devoid of pupils, seems to pierce through all illusions,
+seeing the truth that lies beneath the surface.
+~
+25169930 0 0 0 33554688 0 0 0 -1000 E
+105 -110 -55 7875d5250+3239250 35d35+130
+12311250 28518000
+8 8 2
+MobMult: 25
+BareHandAttack: 7
+NumAttacks: 15
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -30
+SavingRod: -30
+SavingPetri: -30
+SavingBreath: -30
+SavingSpell: -30
+RES_0: 46
+RES_1: 46
+RES_2: 46
+RES_3: 46
+RES_4: 46
+E
+$

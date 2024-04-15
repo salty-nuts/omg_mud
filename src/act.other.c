@@ -41,7 +41,7 @@ ACMD(do_quit)
   if (IS_NPC(ch) || !ch->desc)
     return;
 
-  if (subcmd != SCMD_QUIT && GET_REAL_LEVEL(ch) < LVL_IMMORT)
+  if (subcmd != SCMD_QUIT && GET_LEVEL(ch) < LVL_IMMORT)
     send_to_char(ch, "You have to type quit--no less, to quit!\r\n");
   else if (GET_POS(ch) == POS_FIGHTING)
     send_to_char(ch, "No way!  You're fighting for your life!\r\n");
@@ -120,7 +120,7 @@ ACMD(do_sneak)
 
   new_affect(&af);
   af.spell = SKILL_SNEAK;
-  af.duration = GET_REAL_LEVEL(ch);
+  af.duration = GET_LEVEL(ch);
   SET_BIT_AR(af.bitvector, AFF_SNEAK);
   affect_to_char(ch, &af);
 }
@@ -186,7 +186,7 @@ ACMD(do_steal)
     percent -= 50;
 
   /* No stealing if not allowed. If it is no stealing from Imm's or Shopkeepers. */
-  if (GET_REAL_LEVEL(vict) >= LVL_IMMORT || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
+  if (GET_LEVEL(vict) >= LVL_IMMORT || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
     percent = 101;		/* Failure */
 
   if (str_cmp(obj_name, "coins") && str_cmp(obj_name, "gold")) {
@@ -307,7 +307,7 @@ ACMD(do_train)
 
 ACMD(do_visible)
 {
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT) {
+  if (GET_LEVEL(ch) >= LVL_IMMORT) {
     perform_immort_vis(ch);
     return;
   }
@@ -852,7 +852,7 @@ ACMD(do_gen_tog)
     result = PRF_TOG_CHK(ch, PRF_CLS);
     break;
   case SCMD_BUILDWALK:
-    if (GET_REAL_LEVEL(ch) < LVL_BUILDER) {
+    if (GET_LEVEL(ch) < LVL_BUILDER) {
       send_to_char(ch, "Builders only, sorry.\r\n");
       return;
     }
@@ -867,10 +867,10 @@ ACMD(do_gen_tog)
       GET_BUILDWALK_SECTOR(ch) = i;
       send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
   
-      mudlog(CMP, GET_REAL_LEVEL(ch), TRUE,
+      mudlog(CMP, GET_LEVEL(ch), TRUE,
              "OLC: %s turned buildwalk on. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     } else
-      mudlog(CMP, GET_REAL_LEVEL(ch), TRUE,
+      mudlog(CMP, GET_LEVEL(ch), TRUE,
              "OLC: %s turned buildwalk off. Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     break;
   case SCMD_AFK:
@@ -931,7 +931,7 @@ static void show_happyhour(struct char_data *ch)
   char happyexp[80], happygold[80], happyqp[80];
   int secs_left;
 
-  if ((IS_HAPPYHOUR) || (GET_REAL_LEVEL(ch) >= LVL_GRGOD))
+  if ((IS_HAPPYHOUR) || (GET_LEVEL(ch) >= LVL_GRGOD))
   {
       if (HAPPY_TIME)
         secs_left = ((HAPPY_TIME - 1) * SECS_PER_MUD_HOUR) + next_tick;
@@ -945,9 +945,9 @@ static void show_happyhour(struct char_data *ch)
       send_to_char(ch, "tbaMUD Happy Hour!\r\n"
                        "------------------\r\n"
                        "%s%s%sTime Remaining: %s%d%s hours %s%d%s mins %s%d%s secs\r\n",
-                       (IS_HAPPYEXP || (GET_REAL_LEVEL(ch) >= LVL_GOD)) ? happyexp : "",
-                       (IS_HAPPYGOLD || (GET_REAL_LEVEL(ch) >= LVL_GOD)) ? happygold : "",
-                       (IS_HAPPYQP || (GET_REAL_LEVEL(ch) >= LVL_GOD)) ? happyqp : "",
+                       (IS_HAPPYEXP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyexp : "",
+                       (IS_HAPPYGOLD || (GET_LEVEL(ch) >= LVL_GOD)) ? happygold : "",
+                       (IS_HAPPYQP || (GET_LEVEL(ch) >= LVL_GOD)) ? happyqp : "",
                        CCYEL(ch, C_NRM), (secs_left / 3600), CCNRM(ch, C_NRM),
                        CCYEL(ch, C_NRM), (secs_left % 3600) / 60, CCNRM(ch, C_NRM),
                        CCYEL(ch, C_NRM), (secs_left % 60), CCNRM(ch, C_NRM) );
@@ -963,7 +963,7 @@ ACMD(do_happyhour)
   char arg[MAX_INPUT_LENGTH], val[MAX_INPUT_LENGTH];
   int num;
 
-  if (GET_REAL_LEVEL(ch) < LVL_GOD)
+  if (GET_LEVEL(ch) < LVL_GOD)
   {
     show_happyhour(ch);
     return;
@@ -974,19 +974,19 @@ ACMD(do_happyhour)
 
   if (is_abbrev(arg, "experience"))
   {
-    num = MIN(MAX((atoi(val)), 0), 2500);
+    num = MIN(MAX((atoi(val)), 0), 10000);
     HAPPY_EXP = num;
     send_to_char(ch, "Happy Hour Exp rate set to +%d%%\r\n", HAPPY_EXP);
   }
   else if ((is_abbrev(arg, "gold")) || (is_abbrev(arg, "coins")))
   {
-    num = MIN(MAX((atoi(val)), 0), 2500);
+    num = MIN(MAX((atoi(val)), 0), 10000);
     HAPPY_GOLD = num;
     send_to_char(ch, "Happy Hour Gold rate set to +%d%%\r\n", HAPPY_GOLD);
   }
   else if ((is_abbrev(arg, "time")) || (is_abbrev(arg, "ticks")))
   {
-    num = MIN(MAX((atoi(val)), 0), 2500);
+    num = MIN(MAX((atoi(val)), 0), 10000);
     if (HAPPY_TIME && !num)
       game_info("Happyhour has been stopped!");
     else if (!HAPPY_TIME && num)
@@ -1001,7 +1001,7 @@ ACMD(do_happyhour)
   }
   else if ((is_abbrev(arg, "qp")) || (is_abbrev(arg, "questpoints")))
   {
-    num = MIN(MAX((atoi(val)), 0), 2500);
+    num = MIN(MAX((atoi(val)), 0), 10000);
     HAPPY_QP = num;
     send_to_char(ch, "Happy Hour Questpoints rate set to +%d%%\r\n", HAPPY_QP);
   }
@@ -1011,10 +1011,10 @@ ACMD(do_happyhour)
   }
   else if (is_abbrev(arg, "default"))
   {
-    HAPPY_EXP = 2500;
-    HAPPY_GOLD = 2500;
-    HAPPY_QP  = 2500;
-    HAPPY_TIME = 2500;
+    HAPPY_EXP = 10000;
+    HAPPY_GOLD = 10000;
+    HAPPY_QP  = 10000;
+    HAPPY_TIME = 10000;
     game_info("A Happyhour has started!");
   }
   else

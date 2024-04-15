@@ -98,7 +98,7 @@ ACMD(do_tedit)
   if (!*field) {
     send_to_char(ch, "Files available to be edited:\r\n");
     for (l = 0; *fields[l].cmd != '\n'; l++) {
-      if (GET_REAL_LEVEL(ch) >= fields[l].level) {
+      if (GET_LEVEL(ch) >= fields[l].level) {
 	send_to_char(ch, "%-11.11s ", fields[l].cmd);
 	if (!(++i % 7))
 	  send_to_char(ch, "\r\n");
@@ -119,7 +119,7 @@ ACMD(do_tedit)
     return;
   }
 
-  if (GET_REAL_LEVEL(ch) < fields[l].level) {
+  if (GET_LEVEL(ch) < fields[l].level) {
     send_to_char(ch, "You are not godly enough for that!\r\n");
     return;
   }

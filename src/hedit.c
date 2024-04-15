@@ -413,12 +413,12 @@ ACMD(do_hindex)
   len2 = sprintf(buf2, "\t1Help index entries containing '%s':\t2\r\n", argument);
   for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
-        && (GET_REAL_LEVEL(ch) >= help_table[i].min_level))
+        && (GET_LEVEL(ch) >= help_table[i].min_level))
       len +=
           snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
                    (++count % 3 ? "" : "\r\n"));
     else if (strstr(help_table[i].keywords, argument)
-        && (GET_REAL_LEVEL(ch) >= help_table[i].min_level))
+        && (GET_LEVEL(ch) >= help_table[i].min_level))
       len2 +=
           snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
                    (++count2 % 3 ? "" : "\r\n"));

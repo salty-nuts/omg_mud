@@ -70,6 +70,8 @@ void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
 char * convert_from_tabs(char * string);
 int count_non_protocol_chars(char * str);
+char *right_trim_whitespace(const char *string);
+void remove_from_string(char *string, const char *to_remove);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);
@@ -482,13 +484,7 @@ do                                                              \
 #define GET_TITLE(ch)   ((ch)->player.title)
 /** Level of PC or NPC. */
 
-//#define GET_LEVEL(ch)   ((ch)->player.level)
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- */
-#define GET_LEVEL(ch, i)   ((ch)->player.level[i])
+#define GET_LEVEL(ch)   ((ch)->player.level)
 
 /** Password of PC. */
 #define GET_PASSWD(ch)	((ch)->player.passwd)
@@ -497,19 +493,12 @@ do                                                              \
 
 /** Gets the level of a player even if the player is switched.
  * @todo Make this the definition of GET_LEVEL. */
-/*
- * Salty
- * Multiclass
- * 03 FEB 2020
- *
-*/
 
-#define GET_REAL_LEVEL(ch) (IS_NPC(ch) ? GET_LEVEL(ch, CLASS_FIGHTER) : \
-GET_LEVEL(ch, CLASS_WIZARD) + GET_LEVEL(ch, CLASS_PRIEST) + \
-GET_LEVEL(ch, CLASS_ROGUE) + GET_LEVEL(ch, CLASS_FIGHTER) + \
-GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 
-#define GET_MULTI_CLASS(ch) ((ch)->player.multiclass)
+#define GET_REAL_LEVEL(ch) \
+   (ch->desc && ch->desc->original ? GET_LEVEL(ch->desc->original) : \
+    GET_LEVEL(ch))
+
 
 /** Class of ch. */
 #define GET_CLASS(ch)   ((ch)->player.chclass)
@@ -584,6 +573,8 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 #define GET_HITROLL(ch)	  ((ch)->points.hitroll)
 /** Current damage roll modifier for ch. */
 #define GET_DAMROLL(ch)   ((ch)->points.damroll)
+/* Current combat power modifier for ch. */
+#define GET_COMBAT_POWER(ch) ((ch)->points.combat_power)
 
 /** Current position (standing, sitting) of ch. */
 #define GET_POS(ch)	  ((ch)->char_specials.position)
@@ -685,7 +676,7 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 */
 #define GET_TOTAL_EXP(ch) 	((ch)->player_specials->saved.total_exp)
 #define GET_RANK(ch)		((ch)->player_specials->saved.rank)
-#define GET_TOTAL(ch)		(GET_REAL_LEVEL(ch) + GET_RANK(ch))
+#define GET_TOTAL(ch)		(GET_LEVEL(ch) + GET_RANK(ch))
 
 /** The current skill level of ch for skill i. */
 #define GET_SKILL(ch, i)	CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.skills[i]))
@@ -840,13 +831,13 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 /** Defines if there is enough light for sub to see in. */
 #define LIGHT_OK(sub)	(!AFF_FLAGGED(sub, AFF_BLIND) && \
    (IS_LIGHT(IN_ROOM(sub)) || AFF_FLAGGED((sub), AFF_INFRAVISION) || \
-   GET_REAL_LEVEL(sub) >= LVL_IMMORT))
+   GET_LEVEL(sub) >= LVL_IMMORT))
 
 /** Defines if sub character can see the invisible obj character. */
 #define INVIS_OK(sub, obj) \
  ((!AFF_FLAGGED((obj),AFF_INVISIBLE) || AFF_FLAGGED(sub,AFF_DETECT_INVIS)) && \
   (!AFF_FLAGGED((obj), AFF_HIDE) || AFF_FLAGGED(sub, AFF_SENSE_LIFE)) && \
-	(!AFF_FLAGGED((obj), AFF_IMPROVED_INVIS) || GET_REAL_LEVEL(sub) >= LVL_IMMORT))
+	(!AFF_FLAGGED((obj), AFF_IMPROVED_INVIS) || GET_LEVEL(sub) >= LVL_IMMORT))
 
 /** Defines if sub character can see obj character, assuming mortal only
  * settings. */
@@ -862,7 +853,7 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
 
 /** Can sub character see obj character? */
 #define CAN_SEE(sub, obj) (SELF(sub, obj) || \
-   ((GET_REAL_LEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
+   ((GET_LEVEL(sub) >= (IS_NPC(obj) ? 0 : GET_INVIS_LEV(obj))) && \
    IMM_CAN_SEE(sub, obj)))
 /* End of CAN_SEE */
 
@@ -894,7 +885,7 @@ GET_LEVEL(ch, CLASS_KNIGHT) + GET_LEVEL(ch, CLASS_BARD))
     CAN_SEE_OBJ((ch),(obj)))
 
 /** If vict can see ch, return ch name, else return "someone". */
-#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_REAL_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone"))
+#define PERS(ch, vict)   (CAN_SEE(vict, ch) ? GET_NAME(ch) : (GET_LEVEL(ch) > LVL_IMMORT ? "an immortal" : "someone"))
 
 /** If vict can see obj, return obj short description, else return
  * "something". */

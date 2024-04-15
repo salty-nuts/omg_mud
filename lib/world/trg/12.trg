@@ -1086,11 +1086,7 @@ salty restore~
 1 b 100
 ~
 eval actor %self.worn_by%
-if %actor.name% == Jack
-  %damage% %actor% -2000
-elseif %actor.name% == Mack
-  %damage% %actor% -2000
-end
+%damage% %actor% -%actor.maxhitp%
 ~
 #1233
 Rumble's Test Trigger~
@@ -1119,6 +1115,13 @@ while %var% < 10
   wait 1 s
   eval var %var% + 1
 done
+~
+#1266
+decay timer~
+1 f 100
+~
+%echo% %self.shortdesc% decays into dust.
+%purge% %self%
 ~
 #1267
 secret drawer magic~

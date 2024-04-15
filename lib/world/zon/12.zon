@@ -2,6 +2,10 @@
 CircleMUD~
 God Complex Merged with 343~
 1200 1299 5 2
+M 0 1297 1 1213 	(a Training Dummy)
+E 1 1266 1 0 	(the black staff of immortality)
+M 0 1299 1 1212 	(a JuJu Zombie)
+M 0 1298 1 1212 	(a BooBoo zombie)
 R 0 1206 1228 -1 	(an advertising bulletin board)
 O 0 1228 99 1206 	(an advertising bulletin board)
 M 0 1212 1 1200 	(the scoreboard mob)
@@ -11,7 +15,6 @@ R 0 1203 3099 -1 	(a bulletin board)
 O 0 3099 99 1203 	(a bulletin board)
 R 0 1202 3097 -1 	(a frozen bulletin board)
 O 0 3097 99 1202 	(a frozen bulletin board)
-M 0 34300 1 1202 	(Barney the Dinosaur)
 R 0 1204 3098 -1 	(a holy bulletin board)
 O 0 3098 99 1204 	(a holy bulletin board)
 R 0 1293 1227 -1 	(a staff bulletin board)

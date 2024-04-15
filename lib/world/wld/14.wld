@@ -1,7 +1,2125 @@
 #1400
-Test's Trial Vnum~
+A grassy plane~
 You are in an unfinished room.
 ~
 14 0 0 0 0 0
+D1
+~
+~
+0 0 1406
+S
+#1402
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1411
+D2
+~
+~
+0 0 1403
+S
+#1403
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1402
+D1
+~
+~
+0 0 1412
+D2
+~
+~
+0 0 1404
+S
+#1404
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1403
+D1
+~
+~
+0 0 1413
+D2
+~
+~
+0 0 1405
+S
+#1405
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1404
+D1
+~
+~
+0 0 1414
+D2
+~
+~
+0 0 1406
+S
+#1406
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1405
+D1
+~
+~
+0 0 1415
+D2
+~
+~
+0 0 1407
+D3
+~
+~
+0 0 1400
+S
+#1407
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1406
+D1
+~
+~
+0 0 1416
+D2
+~
+~
+0 0 1408
+S
+#1408
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1407
+D1
+~
+~
+0 0 1417
+D2
+~
+~
+0 0 1409
+S
+#1409
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1408
+D1
+~
+~
+0 0 1418
+D2
+~
+~
+0 0 1410
+S
+#1410
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1409
+D1
+~
+~
+0 0 1419
+S
+#1411
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1420
+D2
+~
+~
+0 0 1412
+D3
+~
+~
+0 0 1402
+S
+#1412
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1411
+D1
+~
+~
+0 0 1421
+D2
+~
+~
+0 0 1413
+D3
+~
+~
+0 0 1403
+S
+#1413
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1412
+D1
+~
+~
+0 0 1422
+D2
+~
+~
+0 0 1414
+D3
+~
+~
+0 0 1404
+S
+#1414
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1413
+D1
+~
+~
+0 0 1423
+D2
+~
+~
+0 0 1415
+D3
+~
+~
+0 0 1405
+S
+#1415
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1414
+D1
+~
+~
+0 0 1424
+D2
+~
+~
+0 0 1416
+D3
+~
+~
+0 0 1406
+S
+#1416
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1415
+D1
+~
+~
+0 0 1425
+D2
+~
+~
+0 0 1417
+D3
+~
+~
+0 0 1407
+S
+#1417
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1416
+D1
+~
+~
+0 0 1426
+D2
+~
+~
+0 0 1418
+D3
+~
+~
+0 0 1408
+S
+#1418
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1417
+D1
+~
+~
+0 0 1427
+D2
+~
+~
+0 0 1419
+D3
+~
+~
+0 0 1409
+S
+#1419
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1418
+D1
+~
+~
+0 0 1428
+D3
+~
+~
+0 0 1410
+S
+#1420
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1429
+D2
+~
+~
+0 0 1421
+D3
+~
+~
+0 0 1411
+S
+#1421
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1420
+D1
+~
+~
+0 0 1430
+D2
+~
+~
+0 0 1422
+D3
+~
+~
+0 0 1412
+S
+#1422
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1421
+D1
+~
+~
+0 0 1431
+D2
+~
+~
+0 0 1423
+D3
+~
+~
+0 0 1413
+S
+#1423
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1422
+D1
+~
+~
+0 0 1432
+D2
+~
+~
+0 0 1424
+D3
+~
+~
+0 0 1414
+S
+#1424
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1423
+D1
+~
+~
+0 0 1433
+D2
+~
+~
+0 0 1425
+D3
+~
+~
+0 0 1415
+S
+#1425
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1424
+D1
+~
+~
+0 0 1434
+D2
+~
+~
+0 0 1426
+D3
+~
+~
+0 0 1416
+S
+#1426
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1425
+D1
+~
+~
+0 0 1435
+D2
+~
+~
+0 0 1427
+D3
+~
+~
+0 0 1417
+S
+#1427
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1426
+D1
+~
+~
+0 0 1436
+D2
+~
+~
+0 0 1428
+D3
+~
+~
+0 0 1418
+S
+#1428
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1427
+D1
+~
+~
+0 0 1437
+D3
+~
+~
+0 0 1419
+S
+#1429
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1440
+D2
+~
+~
+0 0 1430
+D3
+~
+~
+0 0 1420
+S
+#1430
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1429
+D1
+~
+~
+0 0 1441
+D2
+~
+~
+0 0 1431
+D3
+~
+~
+0 0 1421
+S
+#1431
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1430
+D1
+~
+~
+0 0 1442
+D2
+~
+~
+0 0 1432
+D3
+~
+~
+0 0 1422
+S
+#1432
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1431
+D1
+~
+~
+0 0 1443
+D2
+~
+~
+0 0 1433
+D3
+~
+~
+0 0 1423
+S
+#1433
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1432
+D1
+~
+~
+0 0 1444
+D2
+~
+~
+0 0 1434
+D3
+~
+~
+0 0 1424
+S
+#1434
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1433
+D1
+~
+~
+0 0 1445
+D2
+~
+~
+0 0 1435
+D3
+~
+~
+0 0 1425
+S
+#1435
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1434
+D1
+~
+~
+0 0 1446
+D2
+~
+~
+0 0 1436
+D3
+~
+~
+0 0 1426
+S
+#1436
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1435
+D1
+~
+~
+0 0 1447
+D2
+~
+~
+0 0 1437
+D3
+~
+~
+0 0 1427
+S
+#1437
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1436
+D1
+~
+~
+0 0 1448
+D3
+~
+~
+0 0 1428
+S
+#1438
+The War-Raven's Perch~
+The structure itself is a sturdy canvas pavilion, its color a weathered brown
+that blends seamlessly with the surrounding earth tones.  A single raven,
+crafted from polished black steel, adorns the peak, a symbol of vigilance and
+battlefield acumen associated with the King.  Inside, the focus is on utility.
+Thick woolen tapestries depicting battle formations and past Anglo-Saxon
+victories hang on the walls.  The floor is covered with thick animal skins,
+offering warmth and a place to strategize.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1451
+D2
+~
+~
+0 0 1439
+S
+#1439
+Before King Harold's Tent~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1438
+D1
+~
+~
+0 0 1452
+D2
+~
+~
+0 0 1440
+S
+#1440
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1439
+D1
+~
+~
+0 0 1453
+D2
+~
+~
+0 0 1441
+D3
+~
+~
+0 0 1429
+S
+#1441
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1440
+D1
+~
+~
+0 0 1454
+D2
+~
+~
+0 0 1442
+D3
+~
+~
+0 0 1430
+S
+#1442
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1441
+D1
+~
+~
+0 0 1455
+D2
+~
+~
+0 0 1443
+D3
+~
+~
+0 0 1431
+S
+#1443
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1442
+D1
+~
+~
+0 0 1456
+D2
+~
+~
+0 0 1444
+D3
+~
+~
+0 0 1432
+S
+#1444
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1443
+D1
+~
+~
+0 0 1457
+D2
+~
+~
+0 0 1445
+D3
+~
+~
+0 0 1433
+S
+#1445
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1444
+D1
+~
+~
+0 0 1458
+D2
+~
+~
+0 0 1446
+D3
+~
+~
+0 0 1434
+S
+#1446
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1445
+D1
+~
+~
+0 0 1459
+D2
+~
+~
+0 0 1447
+D3
+~
+~
+0 0 1435
+S
+#1447
+The Calvary Command~
+Mounted commanders, their figures imposing in full plate armor and billowing
+surcoats, raise their voices above the din, barking orders and rallying their
+men.  Veteran knights, their faces grim beneath visors, meticulously polish
+their weapons, their every movement infused with quiet confidence.  Younger
+knights, their eyes bright with nervous energy, grip their lances tightly, their
+bodies taut with anticipation for their first taste of battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1446
+D1
+~
+~
+0 0 1460
+D2
+~
+~
+0 0 1448
+D3
+~
+~
+0 0 1436
+S
+#1448
+The Archery Command~
+Commanders in leather jerkins and boiled leather helmets move purposefully
+through the ranks, barking orders and inspecting the readiness of their men.  
+Here and there, veterans with missing fingers or scars etched across their
+forearms test the weight and balance of completed arrows, their keen eyes
+ensuring precision.  The metallic tang of whetstones sharpening broadheads
+mingles with the earthy scent of leather and the sharp tang of fear-sweat.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1447
+D1
+~
+~
+0 0 1461
+D2
+~
+~
+0 0 1449
+D3
+~
+~
+0 0 1437
+S
+#1449
+Before Duke William's Tent~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1448
+D1
+~
+~
+0 0 1462
+D2
+~
+~
+0 0 1450
+S
+#1450
+The Ducal Pavilion~
+Upon entering, thick woolen tapestries line the walls, depicting hunting scenes
+and religious figures.  Fine carpets from the East cover the earthen floor,
+providing warmth and comfort.  In the center, a large table crafted from
+polished oak dominates the space.  Maps and parchments are often laid out here,
+surrounded by ornately carved chairs reserved for Duke William and his most
+trusted advisors.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1449
+D1
+~
+~
+0 0 1463
+S
+#1451
+The War-Raven's Perch~
+The structure itself is a sturdy canvas pavilion, its color a weathered brown
+that blends seamlessly with the surrounding earth tones.  A single raven,
+crafted from polished black steel, adorns the peak, a symbol of vigilance and
+battlefield acumen associated with the King.  Inside, the focus is on utility.
+Thick woolen tapestries depicting battle formations and past Anglo-Saxon
+victories hang on the walls.  The floor is covered with thick animal skins,
+offering warmth and a place to strategize.
+~
+14 0 0 0 0 0
+D2
+~
+~
+0 0 1452
+D3
+~
+~
+0 0 1438
+S
+#1452
+Before King Harold's Tent~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1451
+D2
+~
+~
+0 0 1453
+D3
+~
+~
+0 0 1439
+S
+#1453
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1452
+D1
+~
+~
+0 0 1464
+D2
+~
+~
+0 0 1454
+D3
+~
+~
+0 0 1440
+S
+#1454
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1453
+D1
+~
+~
+0 0 1465
+D2
+~
+~
+0 0 1455
+D3
+~
+~
+0 0 1441
+S
+#1455
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1454
+D1
+~
+~
+0 0 1466
+D2
+~
+~
+0 0 1456
+D3
+~
+~
+0 0 1442
+S
+#1456
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1455
+D1
+~
+~
+0 0 1467
+D2
+~
+~
+0 0 1457
+D3
+~
+~
+0 0 1443
+S
+#1457
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1456
+D1
+~
+~
+0 0 1468
+D2
+~
+~
+0 0 1458
+D3
+~
+~
+0 0 1444
+S
+#1458
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1457
+D1
+~
+~
+0 0 1469
+D2
+~
+~
+0 0 1459
+D3
+~
+~
+0 0 1445
+S
+#1459
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1458
+D1
+~
+~
+0 0 1470
+D2
+~
+~
+0 0 1460
+D3
+~
+~
+0 0 1446
+S
+#1460
+The Calvary Command~
+Mounted commanders, their figures imposing in full plate armor and billowing
+surcoats, raise their voices above the din, barking orders and rallying their
+men.  Veteran knights, their faces grim beneath visors, meticulously polish
+their weapons, their every movement infused with quiet confidence.  Younger
+knights, their eyes bright with nervous energy, grip their lances tightly, their
+bodies taut with anticipation for their first taste of battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1459
+D1
+~
+~
+0 0 1471
+D2
+~
+~
+0 0 1461
+D3
+~
+~
+0 0 1447
+S
+#1461
+The Archery Command~
+Commanders in leather jerkins and boiled leather helmets move purposefully
+through the ranks, barking orders and inspecting the readiness of their men.  
+Here and there, veterans with missing fingers or scars etched across their
+forearms test the weight and balance of completed arrows, their keen eyes
+ensuring precision.  The metallic tang of whetstones sharpening broadheads
+mingles with the earthy scent of leather and the sharp tang of fear-sweat.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1460
+D1
+~
+~
+0 0 1472
+D2
+~
+~
+0 0 1462
+D3
+~
+~
+0 0 1448
+S
+#1462
+Before Duke William's Tent~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1461
+D2
+~
+~
+0 0 1463
+D3
+~
+~
+0 0 1449
+S
+#1463
+The Ducal Pavilion~
+You are in an unfinished room.  Upon entering, thick woolen tapestries line the
+walls, depicting hunting scenes and religious figures.  Fine carpets from the
+East cover the earthen floor, providing warmth and comfort.  In the center, a
+large table crafted from polished oak dominates the space.  Maps and parchments
+are often laid out here, surrounded by ornately carved chairs reserved for Duke
+William and his most trusted advisors.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1462
+D3
+~
+~
+0 0 1450
+S
+#1464
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1473
+D2
+~
+~
+0 0 1465
+D3
+~
+~
+0 0 1453
+S
+#1465
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1464
+D1
+~
+~
+0 0 1474
+D2
+~
+~
+0 0 1466
+D3
+~
+~
+0 0 1454
+S
+#1466
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1465
+D1
+~
+~
+0 0 1475
+D2
+~
+~
+0 0 1467
+D3
+~
+~
+0 0 1455
+S
+#1467
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1466
+D1
+~
+~
+0 0 1476
+D2
+~
+~
+0 0 1468
+D3
+~
+~
+0 0 1456
+S
+#1468
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1467
+D1
+~
+~
+0 0 1477
+D2
+~
+~
+0 0 1469
+D3
+~
+~
+0 0 1457
+S
+#1469
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1468
+D1
+~
+~
+0 0 1478
+D2
+~
+~
+0 0 1470
+D3
+~
+~
+0 0 1458
+S
+#1470
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1469
+D1
+~
+~
+0 0 1479
+D2
+~
+~
+0 0 1471
+D3
+~
+~
+0 0 1459
+S
+#1471
+The Thunderhead~
+You are in an unfinished room.  The smell of leather, sweat, and horseflesh
+hangs heavy in the air, a potent mix that speaks of power and purpose.  This is
+the storm before the calm, a swirling vortex of pent-up energy waiting to be
+unleashed.  In the Thunderhead, the very ground seems to vibrate with the
+collective weight of armored men and their powerful steeds.  It's a place where
+chivalry and brutality stand side-by-side, where the thunderous charge of the
+Norman cavalry will decide the outcome of the battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1470
+D1
+~
+~
+0 0 1480
+D2
+~
+~
+0 0 1472
+D3
+~
+~
+0 0 1460
+S
+#1472
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1471
+D1
+~
+~
+0 0 1481
+D3
+~
+~
+0 0 1461
+S
+#1473
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1482
+D2
+~
+~
+0 0 1474
+D3
+~
+~
+0 0 1464
+S
+#1474
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1473
+D1
+~
+~
+0 0 1483
+D2
+~
+~
+0 0 1475
+D3
+~
+~
+0 0 1465
+S
+#1475
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1474
+D1
+~
+~
+0 0 1484
+D2
+~
+~
+0 0 1476
+D3
+~
+~
+0 0 1466
+S
+#1476
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1475
+D1
+~
+~
+0 0 1485
+D2
+~
+~
+0 0 1477
+D3
+~
+~
+0 0 1467
+S
+#1477
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1476
+D1
+~
+~
+0 0 1486
+D2
+~
+~
+0 0 1478
+D3
+~
+~
+0 0 1468
+S
+#1478
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1477
+D1
+~
+~
+0 0 1487
+D2
+~
+~
+0 0 1479
+D3
+~
+~
+0 0 1469
+S
+#1479
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1478
+D1
+~
+~
+0 0 1488
+D2
+~
+~
+0 0 1480
+D3
+~
+~
+0 0 1470
+S
+#1480
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1479
+D1
+~
+~
+0 0 1489
+D2
+~
+~
+0 0 1481
+D3
+~
+~
+0 0 1471
+S
+#1481
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1480
+D1
+~
+~
+0 0 1490
+D3
+~
+~
+0 0 1472
+S
+#1482
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D1
+~
+~
+0 0 1491
+D2
+~
+~
+0 0 1483
+D3
+~
+~
+0 0 1473
+S
+#1483
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1482
+D1
+~
+~
+0 0 1492
+D2
+~
+~
+0 0 1484
+D3
+~
+~
+0 0 1474
+S
+#1484
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1483
+D1
+~
+~
+0 0 1493
+D2
+~
+~
+0 0 1485
+D3
+~
+~
+0 0 1475
+S
+#1485
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1484
+D1
+~
+~
+0 0 1494
+D2
+~
+~
+0 0 1486
+D3
+~
+~
+0 0 1476
+S
+#1486
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1485
+D1
+~
+~
+0 0 1495
+D2
+~
+~
+0 0 1487
+D3
+~
+~
+0 0 1477
+S
+#1487
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1486
+D1
+~
+~
+0 0 1496
+D2
+~
+~
+0 0 1488
+D3
+~
+~
+0 0 1478
+S
+#1488
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1487
+D1
+~
+~
+0 0 1497
+D2
+~
+~
+0 0 1489
+D3
+~
+~
+0 0 1479
+S
+#1489
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1488
+D1
+~
+~
+0 0 1498
+D2
+~
+~
+0 0 1490
+D3
+~
+~
+0 0 1480
+S
+#1490
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1489
+D1
+~
+~
+0 0 1499
+D3
+~
+~
+0 0 1481
+S
+#1491
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D2
+~
+~
+0 0 1492
+D3
+~
+~
+0 0 1482
+S
+#1492
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1491
+D2
+~
+~
+0 0 1493
+D3
+~
+~
+0 0 1483
+S
+#1493
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1492
+D2
+~
+~
+0 0 1494
+D3
+~
+~
+0 0 1484
+S
+#1494
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1493
+D2
+~
+~
+0 0 1495
+D3
+~
+~
+0 0 1485
+S
+#1495
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1494
+D2
+~
+~
+0 0 1496
+D3
+~
+~
+0 0 1486
+S
+#1496
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1495
+D2
+~
+~
+0 0 1497
+D3
+~
+~
+0 0 1487
+S
+#1497
+An unfinished room~
+You are in an unfinished room.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1496
+D2
+~
+~
+0 0 1498
+D3
+~
+~
+0 0 1488
+S
+#1498
+The Thunderhead~
+The smell of leather, sweat, and horseflesh hangs heavy in the air, a potent mix
+that speaks of power and purpose.  This is the storm before the calm, a swirling
+vortex of pent-up energy waiting to be unleashed.  In the Thunderhead, the very
+ground seems to vibrate with the collective weight of armored men and their
+powerful steeds.  It's a place where chivalry and brutality stand side-by-side,
+where the thunderous charge of the Norman cavalry will decide the outcome of the
+battle.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1497
+D2
+~
+~
+0 0 1499
+D3
+~
+~
+0 0 1489
+S
+#1499
+The Arrowstorm~
+The air thrums with focused energy.  A low murmur of conversation and the
+rhythmic sharpening of blades create a steady undercurrent.  Experienced
+archers, their faces weathered and marked with the lines of past campaigns,
+meticulously fletch arrows with practiced ease.  Younger recruits watch with a
+mix of apprehension and anticipation, their fingers already itching to grasp the
+polished wood.  Piles of feathered shafts and coils of hemp lie scattered across
+the ground, testament to the ongoing work.
+~
+14 0 0 0 0 0
+D0
+~
+~
+0 0 1498
+D3
+~
+~
+0 0 1490
 S
 $~

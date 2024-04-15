@@ -21,7 +21,7 @@ int level_exp(int chclass, int level);
 int parse_class(char arg);
 int parse_reroll(char arg);
 void roll_real_abils(struct char_data *ch);
-byte saving_throws(int class_num, int type, int level);
+int saving_throws(struct char_data *ch,  int type, int level);
 int thaco(int class_num, int level);
 const char *title_female(int chclass, int level);
 const char *title_male(int chclass, int level);

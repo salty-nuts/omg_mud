@@ -29,7 +29,6 @@ typedef enum {
     eSPL_DARKNESS, /* Darkness Spell */
     eSPL_CONSECRATE, /* Consecration Spell*/
     eCHAIN_LIGHTNING, /* Chain Lightning */
-    eSHRIEK,
     eRITUAL,
 } event_id;
 

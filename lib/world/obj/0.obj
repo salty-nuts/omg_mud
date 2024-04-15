@@ -1,3 +1,11 @@
+#0
+unfinished object~
+an unfinished object~
+An unfinished object is lying here.~
+~
+0 gi 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0
 #1
 wings~
 a pair of wings~
@@ -32,10 +40,6 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30 0 100
 E
-emails listing~
-   HELP CONTACT
-~
-E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -51,6 +55,10 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
 ~
 #5
 foraged berries~

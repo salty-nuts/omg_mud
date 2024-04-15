@@ -98,10 +98,7 @@ static struct syllable syls[] = {
 
 static int mag_manacost(struct char_data *ch, int spellnum)
 {
-  if (SINFO.min_level[(int)GET_CLASS(ch)] == LVL_IMMORT)
-    return MAX(SINFO.mana_max - (SINFO.mana_change * (GET_REAL_LEVEL(ch) - SINFO.min_level[(int)GET_MULTI_CLASS(ch)])), SINFO.mana_min);
-  else
-    return MAX(SINFO.mana_max - (SINFO.mana_change * (GET_REAL_LEVEL(ch) - SINFO.min_level[(int)GET_CLASS(ch)])), SINFO.mana_min);
+    return MAX(SINFO.mana_max - (SINFO.mana_change * (GET_LEVEL(ch) - SINFO.min_level[(int)GET_CLASS(ch)])), SINFO.mana_min);
 }
 
 static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
@@ -154,6 +151,8 @@ static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
   for (i = world[IN_ROOM(ch)].people; i; i = i->next_in_room)
   {
     if (i == ch || i == tch || !i->desc || !AWAKE(i))
+      continue;
+    if (PRF_FLAGGED(i, PRF_BRIEF))
       continue;
     if (GET_CLASS(ch) == GET_CLASS(i))
       perform_act(buf1, ch, tobj, tch, i);
@@ -343,8 +342,8 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
     case SPELL_CANCELLATION:
       MANUAL_SPELL(spell_cancellation);
       break;
-    case SPELL_BARD_GATEWAY:
-      MANUAL_SPELL(spell_gateway);
+    case SPELL_ASTRAL_WALK:
+      MANUAL_SPELL(spell_astral_walk);
       break;
     case SPELL_BLOOD_MANA:
       MANUAL_SPELL(spell_blood_mana);
@@ -357,6 +356,9 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
       break;
     case SPELL_ENERGIZE:
       MANUAL_SPELL(spell_energize);
+      break;
+    case SPELL_MANA_TRANSFER:
+      MANUAL_SPELL(spell_mana_transfer);
       break;
     }
 
@@ -542,7 +544,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
 int cast_spell(struct char_data *ch, struct char_data *tch,
                struct obj_data *tobj, int spellnum)
 {
-  int level = GET_REAL_LEVEL(ch);
+  int level = GET_LEVEL(ch);
   if (spellnum < 0 || spellnum > TOP_SPELL_DEFINE)
   {
     log("SYSERR: cast_spell trying to call spellnum %d/%d.", spellnum,
@@ -628,13 +630,15 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
   else if (IS_SET(SINFO.routines, MAG_AREAS))
   {
     level += GET_SPELLS_DAMAGE(ch);
-    //send_to_char(ch, "spell_parser %d, MAG_AREAS\n\r", level);
+//    send_to_char(ch, "spell_parser %d, MAG_AREAS\n\r", level);
   }
 
   //	send_to_char(ch, "spell_parser Level is %d, spells_healing is %d,\n\r",level,GET_SPELLS_HEALING(ch));
   send_to_char(ch, "%s", CONFIG_OK);
   say_spell(ch, spellnum, tch, tobj);
 
+  level +=  + GET_COMBAT_POWER(ch) + GET_RANK(ch);
+//  send_to_char(ch, "spell_parser %d, total level\r\n", level);
   return (call_magic(ch, tch, tobj, spellnum, level, CAST_SPELL));
 }
 
@@ -655,11 +659,11 @@ ACMD(do_cast)
   /* get: blank, spell name, target name */
   s = strtok(argument, "'");
 
-  if (GET_CLASS(ch) != CLASS_PRIEST && GET_MULTI_CLASS(ch) != CLASS_PRIEST && GET_CLASS(ch) != CLASS_WIZARD && GET_MULTI_CLASS(ch) != CLASS_WIZARD)
+/*   if (GET_CLASS(ch) != CLASS_PRIEST && GET_CLASS(ch) != CLASS_WIZARD)
   {
     send_to_char(ch, "You don't know how to use magic!\n\r");
     return;
-  }
+  } */
   if (s == NULL)
   {
     send_to_char(ch, "Cast what where?\r\n");
@@ -777,7 +781,7 @@ ACMD(do_cast)
     return;
   }
   mana = mag_manacost(ch, spellnum);
-  if ((mana > 0) && (GET_MANA(ch) < mana) && (GET_REAL_LEVEL(ch) < LVL_IMMORT))
+  if ((mana > 0) && (GET_MANA(ch) < mana) && (GET_LEVEL(ch) < LVL_IMMORT))
   {
     send_to_char(ch, "You haven't the energy to cast that spell!\r\n");
     return;
@@ -836,7 +840,7 @@ ACMD(do_sing)
   /* get: blank, spell name, target name */
   s = strtok(argument, "'");
 
-  if (GET_CLASS(ch) != CLASS_BARD && GET_MULTI_CLASS(ch) != CLASS_BARD)
+  if (GET_CLASS(ch) != CLASS_BARD)
   {
     send_to_char(ch, "You don't know how to carry a tune.\n\r");
     return;
@@ -971,7 +975,7 @@ ACMD(do_sing)
     return;
   }
   mana = mag_manacost(ch, spellnum);
-  if ((mana > 0) && (GET_MANA(ch) < mana) && (GET_REAL_LEVEL(ch) < LVL_IMMORT))
+  if ((mana > 0) && (GET_MANA(ch) < mana) && (GET_LEVEL(ch) < LVL_IMMORT))
   {
     send_to_char(ch, "You haven't the energy to sing thast song!\r\n");
     return;
@@ -1108,7 +1112,7 @@ void mag_assign_spells(void)
   for (i = 0; i <= TOP_SPELL_DEFINE; i++)
     unused_spell(i);
   /* Do not change the loop above. */
-  spello(SPELL_FRENZY, "frenzy", 100, 50, 10, POS_FIGHTING, TAR_IGNORE, FALSE, MAG_AFFECTS, NULL);
+  spello(SPELL_RITUAL, "battle ritual", 100, 50, 10, POS_FIGHTING, TAR_IGNORE, FALSE, MAG_AFFECTS, NULL);
 
   spello(SPELL_ENERGIZE, "energize", 250 , 100, 20, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_MANUAL,
@@ -1132,14 +1136,16 @@ void mag_assign_spells(void)
          TAR_OBJ_ROOM, FALSE, MAG_SUMMONS,
          NULL);
 
+  spello(SPELL_BARD_FURY, "bardic fury", 1000, 750, 20, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS, 
+         "The bardic fury dissapates.");
+
   spello(SPELL_BARD_SANC, "cromlech chorus", 500, 250, 50, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS, NULL);
 
   spello(SPELL_BARD_REGEN, "rebirth refrain", 200, 100, 20, POS_FIGHTING,
-         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS, NULL);
-
-  spello(SPELL_BARD_DEBUFF, "chaotic canticle", 200, 100, 20, POS_FIGHTING,
-         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS, NULL);
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
+         "The regenerative affects of the refrain leave you.");
 
   spello(SPELL_BARD_RECALL, "recall refrain", 100, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD,
@@ -1153,7 +1159,7 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "You feel less inspired.");
 
-  spello(SPELL_BARD_BUFF, "resist rock", 50, 25, 5, POS_FIGHTING,
+  spello(SPELL_BARD_RESISTS, "resist rock", 50, 25, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "You feel less ready for battle");
 
@@ -1165,9 +1171,9 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_BARD | MAG_POINTS,
          NULL);
 
-  spello(SPELL_BARD_SONIC, "sonic shanty", 500, 250, 20, POS_FIGHTING,
-         TAR_IGNORE, TRUE, MAG_BARD | MAG_AFFECTS,
-         NULL);
+  spello(SPELL_BARD_STORM, "storm of swords", 500, 250, 20, POS_FIGHTING,
+         TAR_IGNORE, TRUE,  MAG_AREAS,
+         NULL);       
 
   spello(SPELL_BARD_KNOWLEDGE, "insight aria", 200, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
@@ -1180,6 +1186,21 @@ void mag_assign_spells(void)
   spello(SPELL_BARD_VITALITY, "vitality verse", 200, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "Your vitality has decreased.");
+
+  spello(SPELL_BARD_HARMONY, "harmony", 1000, 50, 5, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
+         "The harmony feeling leaves you.");
+         
+  spello(SPELL_BARD_DISSONANCE, "dissonance", 1000, 50, 5, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
+         "The dissonance feeling leaves you.");
+
+  spello(SPELL_BARD_WAR_DANCE, "war dance", 100, 50, 5, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
+         "The affect of the war dance is gone.");
+  spello(SPELL_BARD_SLOW_DANCE, "slow dance", 100, 50, 5, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
+         "The affect of the slow dance is gone.");
 
   spello(SPELL_ARMOR, "armor", 30, 15, 3, POS_FIGHTING,
          TAR_CHAR_ROOM, FALSE, MAG_AFFECTS,
@@ -1202,7 +1223,7 @@ void mag_assign_spells(void)
          NULL);
 
   spello(SPELL_CHARM, "charm person", 75, 50, 2, POS_FIGHTING,
-         TAR_CHAR_ROOM | TAR_NOT_SELF, TRUE, MAG_MANUAL,
+         TAR_CHAR_ROOM | TAR_NOT_SELF, FALSE, MAG_MANUAL,
          "You feel more self-confident.");
 
   spello(SPELL_CHILL_TOUCH, "chill touch", 30, 10, 3, POS_FIGHTING,
@@ -1241,12 +1262,20 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM, FALSE, MAG_POINTS,
          NULL);
 
+  spello(SPELL_SLOW, "slow", 80, 50, 5, POS_FIGHTING,
+         TAR_CHAR_ROOM | TAR_NOT_SELF | TAR_FIGHT_VICT, FALSE, MAG_AFFECTS,
+         "You are no longer slowed by magic.");
+
   spello(SPELL_CURSE, "curse", 80, 50, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM | TAR_OBJ_INV, TRUE, MAG_AFFECTS | MAG_ALTER_OBJS,
+         TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_NOT_SELF | TAR_FIGHT_VICT, FALSE, MAG_AFFECTS | MAG_ALTER_OBJS,
          "You feel more optimistic.");
 
+  spello(SPELL_WITHER, "wither", 80, 50, 5, POS_FIGHTING,
+         TAR_CHAR_ROOM | TAR_NOT_SELF | TAR_FIGHT_VICT, FALSE, MAG_AFFECTS,
+         "With a surge of power, you off the withering effects!");
+
   spello(SPELL_PARALYZE, "paralyze", 150, 75, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
+         TAR_CHAR_ROOM | TAR_NOT_SELF | TAR_FIGHT_VICT, FALSE, MAG_AFFECTS,
          "You regain control of your limbs.");
 
   spello(SPELL_DARKNESS, "darkness", 30, 5, 4, POS_STANDING,
@@ -1305,7 +1334,7 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS,
          NULL);
 
-  spello(SPELL_FIREBALL, "fireball", 40, 30, 2, POS_FIGHTING,
+  spello(SPELL_FIREBALL, "fireball", 50, 25, 2, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
          NULL);
 
@@ -1314,15 +1343,14 @@ void mag_assign_spells(void)
          "You drift slowly to the ground.");
 
   spello(SPELL_FURY, "fury", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "You calm down.");
-  spello(SPELL_BARD_FURY, "bardic fury", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "You calm down.");
   spello(SPELL_GAIN_ADVANTAGE, "gain advantage", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "You no longer identify the advantage.");
   spello(SPELL_MAGE_ARMOR, "mage armor", 50, 25, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "Your magic armor fades.");
-  spello(SPELL_HASTE, "haste", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "You slow down.");
+  spello(SPELL_HASTE, "haste", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM, FALSE, MAG_AFFECTS, "You slow down.");
   spello(SPELL_REGENERATION, "regeneration", 50, 25, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "Your regeneration fades.");
   spello(SPELL_STONE_SKIN, "stone skin", 50, 25, 5, POS_FIGHTING, TAR_CHAR_ROOM, FALSE, MAG_AFFECTS, "Your skin no longer feels like stone.");
   spello(SPELL_STEEL_SKIN, "steel skin", 50, 25, 5, POS_FIGHTING, TAR_CHAR_ROOM, FALSE, MAG_AFFECTS, "Your skin no longer feels like steel.");
   spello(SPELL_QUICKCAST, "quickcast", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "Your mental alacrity recedes.");
-  spello(SPELL_MIRROR_IMAGE, "mirror image", 500, 250, 10, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "No mirrors images remain.");
+  spello(SPELL_MIRROR_IMAGE, "mirror image", 500, 250, 10, POS_STANDING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "No mirrors images remain.");
   spello(SPELL_TRUESIGHT, "truesight", 50, 25, 5, POS_FIGHTING, TAR_CHAR_ROOM, FALSE, MAG_AFFECTS, "Your truesight fades.");
 
   spello(SPELL_PASS_DOOR, "pass door", 50, 10, 2, POS_STANDING,
@@ -1348,7 +1376,7 @@ void mag_assign_spells(void)
   spello(SPELL_GROUP_FLY, "group fly", 100, 50, 5, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS, NULL);
 
-  spello(SPELL_GROUP_MIRACLE, "group miracle", 500, 250, 5, POS_STANDING,
+  spello(SPELL_GROUP_MIRACLE, "group miracle", 1000, 1000, 5, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_POINTS,
          NULL);
 
@@ -1387,6 +1415,9 @@ void mag_assign_spells(void)
   spello(SPELL_IMPROVED_INVIS, "improved invis", 500, 250, 10, POS_STANDING,
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
          "Your improved invisibility fades.");
+  spello(SPELL_REAPPEAR, "reappear", 100, 50, 10, POS_STANDING,
+         TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
+         NULL);
 
   spello(SPELL_LIGHTNING_BOLT, "lightning bolt", 30, 15, 1, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
@@ -1397,6 +1428,10 @@ void mag_assign_spells(void)
          NULL);
 
   spello(SPELL_MAGIC_MISSILE, "magic missile", 25, 10, 3, POS_FIGHTING,
+         TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
+         NULL);
+
+  spello(SPELL_ELDRITCH_BLAST, "eldritch blast", 200, 100, 10, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
          NULL);
 
@@ -1426,8 +1461,12 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM, FALSE, MAG_AFFECTS,
          "The white aura around your body fades.");
 
-  spello(SPELL_BETRAYAL, "betrayal", 500, 250, 10, POS_STANDING,
-         TAR_CHAR_ROOM, FALSE, MAG_AFFECTS,
+  spello(SPELL_BETRAYAL, "betrayal", 500, 250, 10, POS_FIGHTING,
+         TAR_CHAR_ROOM | TAR_NOT_SELF| TAR_FIGHT_VICT , FALSE, MAG_AFFECTS,
+         NULL);
+         
+  spello(SPELL_CALM, "calm", 500, 250, 10, POS_STANDING,
+         TAR_CHAR_ROOM | TAR_FIGHT_VICT | TAR_NOT_SELF, FALSE, MAG_AFFECTS,
          NULL);
 
   spello(SPELL_SATIATE, "satiate", 50, 25, 5, POS_STANDING,
@@ -1473,15 +1512,13 @@ void mag_assign_spells(void)
   spello(SPELL_RELOCATION, "relocate", 75, 50, 5, POS_STANDING,
          TAR_CHAR_WORLD | TAR_NOT_SELF, FALSE, MAG_MANUAL, NULL);
 
-  spello(SPELL_BARD_GATEWAY, "gateway", 75, 50, 5, POS_STANDING,
+  spello(SPELL_ASTRAL_WALK, "astral walk", 200, 100, 5, POS_STANDING,
          TAR_CHAR_WORLD | TAR_NOT_SELF, FALSE, MAG_MANUAL, NULL);
 
-  /*
-	Spell Miracle as demo to Rebekah.
-	Salty
-	08 JAN 2019
-*/
-  spello(SPELL_MIRACLE, "miracle", 150, 100, 5, POS_FIGHTING,
+  spello(SPELL_MIRACLE, "miracle", 500, 400, 20, POS_FIGHTING,
+         TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
+         NULL);
+  spello(SPELL_DIVINE_INTERVENTION, "divine intervention", 1000, 1000, 20, POS_FIGHTING,
          TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
          NULL);
 
@@ -1493,12 +1530,17 @@ void mag_assign_spells(void)
          TAR_IGNORE, TRUE, MAG_AREAS,
          NULL);
 
-  spello(SPELL_FIREBLAST, "fireblast", 400, 200, 25, POS_FIGHTING,
+  spello(SPELL_FIREBLAST, "fireblast", 500, 250, 25, POS_FIGHTING,
          TAR_IGNORE, TRUE, MAG_AREAS,
          NULL);
-
+  spello(SPELL_NOVA, "nova", 1000, 750, 25, POS_FIGHTING,
+         TAR_IGNORE, TRUE, MAG_AREAS,
+         NULL);
   spello(SPELL_BLOOD_MANA, "blood mana", 100, 50, 10, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_MANUAL, NULL);
+  
+  spello(SPELL_MANA_TRANSFER, "mana transfer", 1000, 1000, 0, POS_FIGHTING,
+        TAR_CHAR_ROOM, FALSE, MAG_MANUAL, NULL);
 
   /* NON-castable spells should appear below here. */
   spello(SPELL_IDENTIFY, "identify", 0, 0, 0, POS_STANDING,
@@ -1528,17 +1570,6 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
          "You can feel your feet again.");
 
-  spello(SPELL_V_DEBUFF, "vitality debuff", 100, 75, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
-         "You feel more vital.");
-
-  spello(SPELL_A_DEBUFF, "agility debuff", 100, 75, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
-         "You feel more agile.");
-
-  spello(SPELL_K_DEBUFF, "knowledge debuff", 100, 75, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
-         "You feel smarter.");
 
   /* you might want to name this one something more fitting to your theme -Welcor*/
   spello(SPELL_DG_AFFECT, "Script-inflicted", 0, 0, 0, POS_SITTING,
@@ -1610,7 +1641,7 @@ void mag_assign_spells(void)
   skillo(SKILL_BARD_RITUAL, "ritual");
   skillo(SKILL_BARD_SCORN, "scorn");
   skillo(SKILL_BLOODBATH, "bloodbath");
-  skillo(SKILL_FRENZY, "frenzy");
+  skillo(SKILL_BLOOD_FRENZY, "blood frenzy");
   skillo(SKILL_BEDSIDE_MANNER, "bedside manner");
   skillo(SKILL_GARROTTE, "garrotte");
   skillo(SKILL_DIRT_KICK, "dirt kick");
@@ -1620,5 +1651,17 @@ void mag_assign_spells(void)
   skillo(SKILL_KNEE, "knee");
   skillo(SKILL_ROUNDHOUSE, "roundhouse");
   skillo(SKILL_ADRENALINE_RUSH, "adrenaline rush");
-  skillo(SKILL_ARMOR_MASTER, "armor master");
+  skillo(SKILL_SPELL_TWINNING, "spell twinning");
+  skillo(SKILL_SPELL_TRIPLING, "spell tripling");
+  skillo(SKILL_SPELL_CRITICAL, "spell critical");
+  skillo(SKILL_ANATOMY_LESSONS, "anatomy lessons");
+  skillo(SKILL_WEAPON_PUNCH, "weapon punch");
+  skillo(SKILL_SHIELD_SLAM, "shield slam");
+  skillo(SKILL_TWIST_OF_FATE, "twist of fate");
+  skillo(SKILL_WAR_DANCE, "war dance");
+  skillo(SKILL_SLOW_DANCE, "slow dance");
+  skillo(SKILL_GATEWAY, "gateway");
+  skillo(SKILL_SHIELD_BLOCK, "shield block");
+  skillo(SKILL_SPIN_KICK, "spinkick");
+  skillo(SKILL_STORM_OF_STEEL, "storm of steel");
   }

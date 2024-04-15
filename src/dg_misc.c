@@ -140,7 +140,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, cha
     call_magic(caster, tch, tobj, spellnum, DG_SPELL_LEVEL, CAST_SPELL);
     extract_char(caster);
   } else
-    call_magic(caster, tch, tobj, spellnum, GET_REAL_LEVEL(caster), CAST_SPELL);
+    call_magic(caster, tch, tobj, spellnum, GET_LEVEL(caster), CAST_SPELL);
 }
 
 /* Modify an affection on the target. affections can be of the AFF_x variety
@@ -275,10 +275,10 @@ int valid_dg_target(struct char_data *ch, int bitvector)
     return TRUE;  /* all npcs are allowed as targets */
   else if (ch->desc && (STATE(ch->desc) != CON_PLAYING))
     return FALSE; /* Only PC's who are playing can be targetted */
-  else if (GET_REAL_LEVEL(ch) < LVL_IMMORT)
+  else if (GET_LEVEL(ch) < LVL_IMMORT)
     return TRUE;  /* as well as all mortals */
   else if (!IS_SET(bitvector, DG_ALLOW_GODS) &&
-     GET_REAL_LEVEL(ch) >= LVL_GRGOD) /* LVL_GOD has the advance command. Can't allow them to be forced. */
+     GET_LEVEL(ch) >= LVL_GRGOD) /* LVL_GOD has the advance command. Can't allow them to be forced. */
     return FALSE; /* but not always the highest gods */
   else if (!PRF_FLAGGED(ch, PRF_NOHASSLE))
     return TRUE;  /* the ones in between as allowed as long as they have no-hassle off.   */
@@ -288,7 +288,7 @@ int valid_dg_target(struct char_data *ch, int bitvector)
 
 void script_damage(struct char_data *vict, int dam)
 {
-  if (GET_REAL_LEVEL(vict)>=LVL_IMMORT && (dam > 0)) {
+  if (GET_LEVEL(vict)>=LVL_IMMORT && (dam > 0)) {
     send_to_char(vict, "Being the cool immortal you are, you sidestep a trap, "
         "obviously placed to kill you.\r\n");
     return;

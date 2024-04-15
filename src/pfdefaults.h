@@ -35,6 +35,7 @@
 #define PFDEF_EXP	        0
 #define PFDEF_HITROLL		0
 #define PFDEF_DAMROLL		0
+#define PFDEF_COMBAT_POWER 0
 #define PFDEF_AC		0
 #define PFDEF_STR		0
 #define PFDEF_STRADD		0

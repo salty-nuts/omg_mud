@@ -327,6 +327,8 @@ int save_mobiles(zone_rnum rznum)
 
 int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 {
+  if (GET_MOB_MULT(mob) != 0)
+    fprintf(fd, "MobMult: %d\n", GET_MOB_MULT(mob));
   if (GET_ATTACK(mob) != 0)
     fprintf(fd, "BareHandAttack: %d\n", GET_ATTACK(mob));
 	if (GET_ATTACK_NUM(mob) != 0)
@@ -365,16 +367,7 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 		fprintf(fd, "RES_3: %d\n", GET_RESISTS(mob,RESIST_PIERCE));
 	if (GET_RESISTS(mob, 4) != 0)
 		fprintf(fd, "RES_4: %d\n", GET_RESISTS(mob,RESIST_SLASH));
-	if (GET_RESISTS(mob, 5) != 0)
-		fprintf(fd, "RES_5: %d\n", GET_RESISTS(mob,RESIST_RED));
-	if (GET_RESISTS(mob, 6) != 0)
-		fprintf(fd, "RES_6: %d\n", GET_RESISTS(mob,RESIST_BLUE));
-	if (GET_RESISTS(mob, 7) != 0)
-		fprintf(fd, "RES_7: %d\n", GET_RESISTS(mob,RESIST_GREEN));
-	if (GET_RESISTS(mob, 8) != 0)
-		fprintf(fd, "RES_8: %d\n", GET_RESISTS(mob,RESIST_BLACK));
-	if (GET_RESISTS(mob, 9) != 0)
-		fprintf(fd, "RES_9: %d\n", GET_RESISTS(mob,RESIST_WHITE));    
+
   fputs("E\n", fd);
   return TRUE;
 }
@@ -412,7 +405,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
         AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
         AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
         GET_ALIGNMENT(mob),
-        GET_REAL_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
+        GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
         GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
         GET_DAMROLL(mob));
   

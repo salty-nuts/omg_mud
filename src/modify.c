@@ -334,7 +334,7 @@ ACMD(do_skillset)
   }
   skip_spaces(&argument);
   pc = GET_CLASS(vict);
-  pl = GET_REAL_LEVEL(vict);
+  pl = GET_LEVEL(vict);
 
   /* If there is no chars in argument */
   if (!*argument) {
@@ -380,23 +380,14 @@ ACMD(do_skillset)
     send_to_char(ch, "You can't set NPC skills.\r\n");
     return;
   }
-  if (
-(GET_REAL_LEVEL(ch) < LVL_IMPL) && // Implementors can set any skill
-(
-	(spell_info[skill].min_level[(int) GET_CLASS(vict)] > LVL_MULTICLASS) && 
-	(GET_LEVEL(vict, GET_CLASS(vict)) <= LVL_MULTICLASS)
-) &&
-(
-	(spell_info[skill].min_level[(int) GET_MULTI_CLASS(vict)] > 20) &&
-	(GET_LEVEL(vict, GET_MULTI_CLASS(vict)) <= 20)
-)
- 	)
+  
+  if ((spell_info[skill].min_level[GET_CLASS(vict)] > LVL_MAX_MORTAL) && pl < LVL_IMMORT)
   {
     send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
     send_to_char(ch, "%s min-level is %d.\n\r", spell_info[skill].name, spell_info[skill].min_level[(int)GET_CLASS(vict)]);
-    send_to_char(ch, "%s min-level is %d.\n\r", spell_info[skill].name, spell_info[skill].min_level[(int)GET_MULTI_CLASS(vict)]);
     return;
-  } else if (spell_info[skill].min_level[(pc)] > pl) {
+  } 
+  else if (spell_info[skill].min_level[(pc)] > pl) {
     send_to_char(ch, "%s is a level %d %s.\r\n", GET_NAME(vict), pl, pc_class_types[pc]);
     send_to_char(ch, "The minimum level for %s is %d for %ss.\r\n", spell_info[skill].name, spell_info[skill].min_level[(pc)], pc_class_types[pc]);
   }

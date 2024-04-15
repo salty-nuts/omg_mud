@@ -275,6 +275,7 @@ const char *preference_bits[] = {
   "D_VICT",
   "D_NAME",
   "AUTOEXIT_L",
+  "D_SPELLS",
   "\n"
 };
 
@@ -288,50 +289,41 @@ const char *affected_bits[] =
   "INVIS",
   "DET-ALIGN",
   "DET-INVIS",
-  "DET-MAGIC",
+  "DET-MAGIC", //5
   "SENSE-LIFE",
   "WATWALK",
   "SANCT",
-  "GROUP",
-  "CURSE",
+  "DONT USE",
+  "CURSE", //10
   "INFRA",
   "POISON",
   "HOLY-WARD",
   "EVIL-WARD",
-  "SLEEP",
+  "SLEEP", //15
   "NO_TRACK",
   "FLY",
   "PASS-DOOR",
   "SNEAK",
-  "HIDE",
+  "HIDE", //20
   "IMP-PASS-DOOR",
   "CHARM",
   "FURY",
-  "OFFENSE",
-  "DEFENSE",
+  "OFFENSE", 
+  "DEFENSE",//25
   "HASTE",
   "REGEN",
-  "HEAVYCAST",
   "QUICKCAST",
   "PARALYZE",
-  "MIRROR_IMAGES",
+  "MIRROR_IMAGES", //30
   "RAGE",
   "IMPROVED_INVIS",
   "HARMONY",
   "DISSONANCE",
-  "ADVANTAGE",
-  "UNARMED_BONUS",
-  "UNARMED_DEBUFF1",
-  "UNARMED_DEBUFF2",
-  "SONIC",
-  "AGILITY",
-  "KNOWLEDGE",
-  "VITALITY",
-  "REND",
-  "FEEBLE",
-  "FRENZY",
-  "GARROTTE",
-  "ARMOR_MASTER",
+  "SLOW",  //35
+  "RITUAL", // 
+  "WARDANCE",  // war dance skill
+  "SLOWDANCE", // slow dance skill
+  "WITHER", // 39
   "\n"
 };
 
@@ -507,10 +499,12 @@ const char *extra_bits[] = {
   "ANTI_ROGUE",
   "ANTI_FIGHTER",
   "ANTI_KNIGHT",
+  "ANTI_BARD",
   "NO_SELL",
   "QUEST_ITEM",
   "IMPROVED",
 	"TWO_HANDED",
+  "DECAYING",
   "\n"
 };
 
@@ -776,7 +770,9 @@ cpp_extern const struct dex_app_type dex_app[] = {
 };
 
 /** Constitution attribute affects.
- * The field referenced is for hitpoint bonus. */
+ * The first field for hitpoint bonus on level and regen bonus.
+ * The second field is for metagame bonus.
+ * */
 cpp_extern const struct con_app_type con_app[] = {
   {5, 0},		/* con = 0 */
   {5, 0},		/* con = 1 */
@@ -808,7 +804,9 @@ cpp_extern const struct con_app_type con_app[] = {
 
 /** Intelligence attribute affects.
  * The field shows how much practicing affects a skill/spell. 
- * The second field shows how much mana INT casters gain per level */
+ * The second field shows how much mana INT casters gain per level and regen bonus
+ * The third field is the max mana INT casters get per meta AND max trains per level
+ * */
 
 cpp_extern const struct int_app_type int_app[] = {
   {0,	5, 0},		/* int = 0 */
@@ -841,11 +839,13 @@ cpp_extern const struct int_app_type int_app[] = {
 
 /** Wisdom attribute affects.
  * The first field represents how many extra practice points are gained per level. 
- * The second field shows how much mana WIS casters gain per level */
+ * The second field shows how much mana WIS casters gain per level and regen bonus.
+ * The third field is the max mana WIS casters get per meta
+ * */
 cpp_extern const struct wis_app_type wis_app[] = {
   {1,	5, 0},	/* wis = 0 */
-  {1, 	5, 0},  /* wis = 1 */
-  {1, 	5, 0},
+  {1, 5, 0},  /* wis = 1 */
+  {1, 5, 0},
   {1,	5, 0},
   {1,	5, 0},
   {2,	5, 1},  /* wis = 5 */

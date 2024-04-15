@@ -74,7 +74,7 @@ ACMD(do_oasis_zedit)
         send_to_char(ch, "Save which zone?\r\n");
         return;
       }
-    } else if (GET_REAL_LEVEL(ch) >= LVL_IMPL) {
+    } else if (GET_LEVEL(ch) >= LVL_IMPL) {
       if (str_cmp("new", buf1) || !stop || !*stop)
         send_to_char(ch, "Format: zedit new <zone number> <bottom-room> "
            "<upper-room>\r\n");
@@ -793,7 +793,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'b':
     case 'B':
       /* Edit bottom of zone. */
-      if (GET_REAL_LEVEL(d->character) < LVL_IMPL)
+      if (GET_LEVEL(d->character) < LVL_IMPL)
 	zedit_disp_menu(d);
       else {
 	write_to_output(d, "Enter new bottom of zone : ");
@@ -803,7 +803,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 't':
     case 'T':
       /* Edit top of zone. */
-      if (GET_REAL_LEVEL(d->character) < LVL_IMPL)
+      if (GET_LEVEL(d->character) < LVL_IMPL)
 	zedit_disp_menu(d);
       else {
 	write_to_output(d, "Enter new top of zone : ");

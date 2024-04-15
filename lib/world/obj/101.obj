@@ -5,7 +5,7 @@ An irrigation ditch has been dug across the road to water the fields.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0 0
+505 0 0 0 0 100
 E
 irrigation ditch~
    The ditch is full of fresh water from a recent rain.  It crosses under a
@@ -18,7 +18,7 @@ A caravan of wagons lies burned in ruins from a recent raid.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0 0
+0 0 0 0 0 100
 E
 caravan~
    Several different wagons make up the caravan.  They appear to have been
@@ -32,7 +32,7 @@ Several fresh cuts of salmon have been recently filleted.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-10 500 0 0 0
+10 500 0 0 0 100
 E
 salmon~
    These salmon steaks look delicious.  Except for the fact that they are rare.
@@ -45,7 +45,7 @@ A large assortment of crops and fish.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-50 1000 0 0 0
+50 1000 0 0 0 100
 E
 large assortment crops fish~
    Various crops, such as wheat, corn, and rice, are laid out besides crates of
@@ -58,7 +58,7 @@ A shovel covered in cow manure smells here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 7
-7 350 35 0 0
+7 350 35 0 0 100
 E
 shovel manure~
    The shovel reeks of the barn and cows.  It is covered from end to end with
@@ -71,7 +71,7 @@ Some coveralls that have been worn and abused were discarded.~
 ~
 11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-3 25 3 0 0
+3 25 3 0 0 100
 E
 worn coveralls~
    A set of farmers coveralls.  They are made of a light but durable cloth.  
@@ -86,7 +86,7 @@ This bell was made to hang around a cow's neck.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-9 180 18 0 0
+9 180 18 0 0 100
 E
 cow bell~
    The brass bell is affixed to a leather adjustable strap.    
@@ -100,7 +100,7 @@ A small cow's nose ring glistens brightly.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
-1 20 2 0 0
+1 20 2 0 0 100
 E
 small cow's nose ring~
    The ring is made from solid brass, and is meant to prevent a cow from
@@ -115,7 +115,7 @@ A fishing pole looks bare without a line, hook, or sinkers.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 7 2 5 2
-5 25 2 0 0
+5 25 2 0 0 100
 E
 fishing pole~
    The pole is made from a strange wood, reminding you of bamboo.  It is
@@ -128,7 +128,7 @@ A bandit's mask is waiting to be worn.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-1 1 0 0 0
+1 1 0 0 0 100
 E
 bandit's mask~
    The cloth mask has been dyed black with holes cut out for the eyes and
@@ -141,7 +141,7 @@ A set of camouflaged pants, dyed black and brown, blend into their surroundings.
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0 0
+3 15 1 0 0 100
 E
 camouflage pants~
    The pants are made from burlap, and have been dyed a deep black and brown to
@@ -154,7 +154,7 @@ A pair of camouflage moccasins blend into their surroundings.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0 0
+3 15 1 0 0 100
 E
 camouflage moccasins~
    These fur moccasins have been dyed brown and black to blend in with their
@@ -167,7 +167,7 @@ A set of camouflaged gloves blend into their surroundings.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0 0
+3 15 1 0 0 100
 E
 camouflage gloves~
    The gloves are dyed brown, black, and green to help conceal their wearer in
@@ -180,7 +180,7 @@ A once fine coat has had its sleeves torn off and left here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
-3 3 0 0 0
+3 3 0 0 0 100
 E
 torn sleeves coat~
    The coat must have been very fine by the look of these embroidered sleeves,
@@ -193,7 +193,7 @@ A bottle of cheap rum lies here.~
 ~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 8 0
-8 120 12 0 0
+8 120 12 0 0 100
 E
 bottle rum~
    Many find solace and protection within bottles such as these.  At least
@@ -206,7 +206,7 @@ This fancy beltpouch is made from a fine leather.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
-3 30 3 0 0
+3 30 3 0 0 100
 E
 beltpouch pouch~
    The beltpouch is top of the line, a fine pouch with a brass clasp and leather
@@ -219,7 +219,7 @@ A gypsy's bracelet sparkles brightly.~
 ~
 12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 130 15 0 0
+1 130 15 0 0 100
 E
 gypsy's bracelet~
    The bracelet glimmers.  It's fake diamonds and emeralds set into a fake

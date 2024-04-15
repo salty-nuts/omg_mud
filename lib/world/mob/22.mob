@@ -7,10 +7,10 @@ A decomposing guard is still standing watch here.
 He looks Dead!    
 ~
 6154 0 0 0 33554432 0 0 0 -750 E
-75 -55 -50 1875d19+140625 15d10+75
-1335937 2671875
+75 -55 -35 225d150+92550 7d7+75
+175875 407400
 8 8 0
-BareHandAttack: 3
+MobMult: 1
 NumAttacks: 1
 Str: 25
 Dex: 25
@@ -18,11 +18,16 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 18
-SavingRod: 18
-SavingPetri: 18
-SavingBreath: 18
-SavingSpell: 18
+SavingPara: 25
+SavingRod: 25
+SavingPetri: 25
+SavingBreath: 25
+SavingSpell: 25
+RES_0: 16
+RES_1: 16
+RES_2: 16
+RES_3: 16
+RES_4: 16
 E
 #2201
 zombie knight~
@@ -34,22 +39,27 @@ out in the sun and has shriveled up.  His black armor sits loosely over the
 remains of this undead monsters body.    
 ~
 26282060 0 0 0 33554768 0 0 0 -750 E
-75 -55 -50 1875d19+140625 15d10+75
-1335937 2671875
+75 -55 -35 225d150+92550 7d7+75
+175875 407400
 8 8 0
-BareHandAttack: 3
-NumAttacks: 3
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 18
-SavingRod: 18
-SavingPetri: 18
-SavingBreath: 18
-SavingSpell: 18
+SavingPara: 25
+SavingRod: 25
+SavingPetri: 25
+SavingBreath: 25
+SavingSpell: 25
+RES_0: 16
+RES_1: 16
+RES_2: 16
+RES_3: 16
+RES_4: 16
 E
 #2202
 zombie servant~
@@ -59,21 +69,27 @@ A zombie servants rotten head almost falls off as he bows before you.
    This dead servant was brought back to life.  You wonder why!    
 ~
 188488 0 0 0 0 0 0 0 -750 E
-45 -25 -26 1125d12+50625 9d6+45
-303750 607500
+45 -25 -17 135d90+55530 4d4+45
+105525 244440
 8 8 0
-BareHandAttack: 13
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 11
-SavingRod: 11
-SavingPetri: 11
-SavingBreath: 11
-SavingSpell: 11
+SavingPara: 55
+SavingRod: 55
+SavingPetri: 55
+SavingBreath: 55
+SavingSpell: 55
+RES_0: 10
+RES_1: 10
+RES_2: 10
+RES_3: 10
+RES_4: 10
 E
 #2203
 zombie maid~
@@ -84,21 +100,27 @@ A zombie maid picks up after all the zombies.
 soulless husk of a human being.    
 ~
 188488 0 0 0 0 0 0 0 -750 E
-40 -20 -22 1000d11+40000 8d5+40
-220000 440000
+40 -20 -14 120d80+49360 4d4+40
+93800 217280
 8 8 0
-BareHandAttack: 5
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 10
-SavingRod: 10
-SavingPetri: 10
-SavingBreath: 10
-SavingSpell: 10
+SavingPara: 60
+SavingRod: 60
+SavingPetri: 60
+SavingBreath: 60
+SavingSpell: 60
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #2204
 zombie lord~
@@ -110,11 +132,12 @@ glimpses of gold trimming on the old rotten clothing, hints of this mans
 greatness at one time.  The downfall of his empire seems to weep in his sunken
 eyes.    
 ~
-7340104 0 0 0 92274944 1 0 0 -750 E
-80 -60 -54 2000d21+160000 16d11+80
-1680000 3360000
+1048648 0 0 0 67109120 0 0 0 -750 E
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 0
-BareHandAttack: 5
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
@@ -126,6 +149,11 @@ SavingRod: 20
 SavingPetri: 20
 SavingBreath: 20
 SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #2205
 zombie lady~
@@ -136,21 +164,27 @@ A smelly zombie brushes up against you seductively.
 oozing green puss don't do much to help this lady now.    
 ~
 26214472 0 0 0 256 0 0 0 -750 E
-70 -50 -46 1750d18+122500 14d10+70
-1102500 2205000
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 0
-BareHandAttack: 8
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 17
-SavingRod: 17
-SavingPetri: 17
-SavingBreath: 17
-SavingSpell: 17
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #2206
 skeleton bones~
@@ -161,21 +195,27 @@ A pile of human bones is lying here.
 actually alive and looks ready to attack.    
 ~
 10 0 0 0 0 0 0 0 -750 E
-55 -35 -34 1375d14+75625 11d7+55
-529375 1058750
+55 -35 -23 165d110+67870 5d5+55
+128975 298760
 8 8 0
-BareHandAttack: 5
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
+RES_0: 12
+RES_1: 12
+RES_2: 12
+RES_3: 12
+RES_4: 12
 E
 #2207
 undead~
@@ -185,21 +225,27 @@ An undead corpse walks past you.
    This corpse just stood up and walked past you.  How unnerving.    
 ~
 72 0 0 0 0 0 0 0 -750 E
-40 -20 -22 1000d11+40000 8d5+40
-220000 440000
+40 -20 -14 120d80+49360 4d4+40
+93800 217280
 8 8 0
-BareHandAttack: 13
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 10
-SavingRod: 10
-SavingPetri: 10
-SavingBreath: 10
-SavingSpell: 10
+SavingPara: 60
+SavingRod: 60
+SavingPetri: 60
+SavingBreath: 60
+SavingSpell: 60
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #2208
 zombie head maid~
@@ -210,21 +256,27 @@ A zombie head maid is supervising the cleaning of the tower.
 with an air of authority that is expected to be respected and followed.    
 ~
 26214410 0 0 0 25166080 0 0 0 -750 E
-70 -50 -46 1750d18+122500 14d10+70
-1102500 2205000
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 2
-BareHandAttack: 8
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 17
-SavingRod: 17
-SavingPetri: 17
-SavingBreath: 17
-SavingSpell: 17
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #2209
 blistered zombie~
@@ -235,21 +287,27 @@ A blistered zombie is smoldering from the heat.
 clothing remains, what does is slowly smoldering into ash.    
 ~
 25165834 0 0 0 8388608 0 0 0 -750 E
-60 -40 -38 1500d16+90000 12d8+60
-720000 1440000
+60 -40 -26 180d120+74040 6d6+60
+140700 325920
 8 8 0
-BareHandAttack: 13
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 15
-SavingRod: 15
-SavingPetri: 15
-SavingBreath: 15
-SavingSpell: 15
+SavingPara: 40
+SavingRod: 40
+SavingPetri: 40
+SavingBreath: 40
+SavingSpell: 40
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #2210
 zombie~
@@ -260,21 +318,27 @@ A zombie stands here negligent to the heat.
 is none too appealing and makes your eyes burn.    
 ~
 26214410 0 0 0 256 0 0 0 -750 E
-60 -40 -38 1500d16+90000 12d8+60
-720000 1440000
+60 -40 -26 180d120+74040 6d6+60
+140700 325920
 8 8 0
-BareHandAttack: 7
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 15
-SavingRod: 15
-SavingPetri: 15
-SavingBreath: 15
-SavingSpell: 15
+SavingPara: 40
+SavingRod: 40
+SavingPetri: 40
+SavingBreath: 40
+SavingSpell: 40
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #2211
 zombie~
@@ -285,21 +349,27 @@ A zombie has caught on fire here.
 hair and flesh to make you gag.  It seems oblivious to the world.    
 ~
 26214410 0 0 0 0 0 0 0 -750 E
-60 -40 -38 1500d16+90000 12d8+60
-720000 1440000
+60 -40 -26 180d120+74040 6d6+60
+140700 325920
 8 8 0
-BareHandAttack: 10
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 15
-SavingRod: 15
-SavingPetri: 15
-SavingBreath: 15
-SavingSpell: 15
+SavingPara: 40
+SavingRod: 40
+SavingPetri: 40
+SavingBreath: 40
+SavingSpell: 40
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #2212
 algae monster~
@@ -311,21 +381,27 @@ impossible to tell for sure.  It looks very hostile.  Claws and teeth protrude
 from the fungus covered beast.  
 ~
 2110 0 0 0 1048660 0 0 0 0 E
-60 -40 -38 1500d16+90000 12d8+60
-720000 1440000
+60 -40 -26 180d120+74040 6d6+60
+140700 325920
 8 8 0
-BareHandAttack: 10
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 15
-SavingRod: 15
-SavingPetri: 15
-SavingBreath: 15
-SavingSpell: 15
+SavingPara: 40
+SavingRod: 40
+SavingPetri: 40
+SavingBreath: 40
+SavingSpell: 40
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #2213
 vampire~
@@ -337,21 +413,27 @@ disturbing him.  He wears a black cape that fails to conceal his broad
 shoulders.  He looks to be much more than just your average vampire.    
 ~
 30646334 0 0 0 93323600 1 0 0 -750 E
-73 -53 -48 1825d19+133225 14d10+73
-1265637 2531275
+73 -53 -33 219d146+90082 7d7+73
+171185 396536
 8 8 1
-BareHandAttack: 4
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 18
-SavingRod: 18
-SavingPetri: 18
-SavingBreath: 18
-SavingSpell: 18
+SavingPara: 27
+SavingRod: 27
+SavingPetri: 27
+SavingBreath: 27
+SavingSpell: 27
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #2214
 damsel~
@@ -362,21 +444,27 @@ A damsel in distress sings so beautifully.
 sirens you've heard of.    
 ~
 10 0 0 0 0 0 0 0 0 E
-50 -30 -30 1250d13+62500 10d7+50
-406250 812500
+50 -30 -20 150d100+61700 5d5+50
+117250 271600
 8 8 2
-BareHandAttack: 8
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 12
-SavingRod: 12
-SavingPetri: 12
-SavingBreath: 12
-SavingSpell: 12
+SavingPara: 50
+SavingRod: 50
+SavingPetri: 50
+SavingBreath: 50
+SavingSpell: 50
+RES_0: 11
+RES_1: 11
+RES_2: 11
+RES_3: 11
+RES_4: 11
 E
 #2215
 prisoner~
@@ -387,21 +475,27 @@ A prisoner is standing here, looking hopeless.
 become of him.    
 ~
 72 0 0 0 0 0 0 0 0 E
-40 -20 -22 1000d11+40000 8d5+40
-220000 440000
+40 -20 -14 120d80+49360 4d4+40
+93800 217280
 8 8 0
-BareHandAttack: 13
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 10
-SavingRod: 10
-SavingPetri: 10
-SavingBreath: 10
-SavingSpell: 10
+SavingPara: 60
+SavingRod: 60
+SavingPetri: 60
+SavingBreath: 60
+SavingSpell: 60
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #2216
 Inquisitor~
@@ -412,21 +506,27 @@ An inquisitor is here, applying her trade to the prisoners.
 black leather and various tools of her trade hang about her.    
 ~
 26221066 0 0 0 8388864 0 0 0 -750 E
-66 -46 -42 1650d17+108900 13d9+66
-925650 1851300
+66 -46 -29 198d132+81444 6d6+66
+154770 358512
 8 8 2
-BareHandAttack: 5
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 16
-SavingRod: 16
-SavingPetri: 16
-SavingBreath: 16
-SavingSpell: 16
+SavingPara: 34
+SavingRod: 34
+SavingPetri: 34
+SavingBreath: 34
+SavingSpell: 34
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #2217
 head inquisitor~
@@ -437,21 +537,27 @@ The head inquisitor is supervising the interrogations.
 you and smiles seductively.  Yet another prisoner in her eyes.    
 ~
 32510010 0 0 0 25166080 1 0 0 -750 E
-77 -57 -51 1925d20+148225 15d11+77
-1482250 2964500
+77 -57 -36 231d154+95018 7d7+77
+180565 418264
 8 8 1
-BareHandAttack: 7
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 19
-SavingRod: 19
-SavingPetri: 19
-SavingBreath: 19
-SavingSpell: 19
+SavingPara: 23
+SavingRod: 23
+SavingPetri: 23
+SavingBreath: 23
+SavingSpell: 23
+RES_0: 16
+RES_1: 16
+RES_2: 16
+RES_3: 16
+RES_4: 16
 E
 #2218
 animator dead~
@@ -463,21 +569,27 @@ intricate gestures while mumbling incomprehensible words.  He suddenly notices
 you, and loses his concentration.    
 ~
 172074 0 0 0 0 0 0 0 -750 E
-55 -35 -34 1375d14+75625 11d7+55
-529375 1058750
+55 -35 -23 165d110+67870 5d5+55
+128975 298760
 8 8 0
-BareHandAttack: 12
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
+RES_0: 12
+RES_1: 12
+RES_2: 12
+RES_3: 12
+RES_4: 12
 E
 #2219
 zombie~
@@ -488,20 +600,27 @@ A zombie stumbles past you.
 with maggots.    
 ~
 25165896 0 0 0 0 0 0 0 -750 E
-55 -35 -34 1375d14+75625 11d7+55
-529375 1058750
+55 -35 -23 165d110+67870 5d5+55
+128975 298760
 8 8 0
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
+RES_0: 12
+RES_1: 12
+RES_2: 12
+RES_3: 12
+RES_4: 12
 E
 #2220
 zombie~
@@ -511,21 +630,27 @@ A zombie covered in mold is lying on the floor.
    This zombie has been lying on the ground too long and has gotten moldy.    
 ~
 72 0 0 0 0 0 0 0 -750 E
-50 -30 -30 1250d13+62500 10d7+50
-406250 812500
+50 -30 -20 150d100+61700 5d5+50
+117250 271600
 8 8 0
-BareHandAttack: 10
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 12
-SavingRod: 12
-SavingPetri: 12
-SavingBreath: 12
-SavingSpell: 12
+SavingPara: 50
+SavingRod: 50
+SavingPetri: 50
+SavingBreath: 50
+SavingSpell: 50
+RES_0: 11
+RES_1: 11
+RES_2: 11
+RES_3: 11
+RES_4: 11
 E
 #2221
 wraith~
@@ -536,22 +661,28 @@ A wraith floats past you.
 fade in and out of existence, you can't tell if it's real or just your
 imagination.    
 ~
-32508488 0 0 0 25165824 1 0 0 -750 E
-70 -50 -46 1750d18+122500 14d10+70
-1102500 2205000
+27265608 0 0 0 25165824 1 0 0 -750 E
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 0
-BareHandAttack: 10
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 17
-SavingRod: 17
-SavingPetri: 17
-SavingBreath: 17
-SavingSpell: 17
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #2222
 shade~
@@ -561,21 +692,27 @@ A shade is slowly fading in and out of existence.
    It looks unreal, and definitely undead.    
 ~
 4138 0 0 0 512 0 0 0 -750 E
-55 -35 -34 1375d14+75625 11d7+55
-529375 1058750
+55 -35 -23 165d110+67870 5d5+55
+128975 298760
 8 8 2
-BareHandAttack: 9
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
+RES_0: 12
+RES_1: 12
+RES_2: 12
+RES_3: 12
+RES_4: 12
 E
 #2223
 zombie~
@@ -586,21 +723,27 @@ A zombie with icicles hanging on it shuffles by.
 moves even slower than normal.    
 ~
 72 0 0 0 0 0 0 0 -750 E
-55 -35 -34 1375d14+75625 11d7+55
-529375 1058750
+55 -35 -23 165d110+67870 5d5+55
+128975 298760
 8 8 0
-BareHandAttack: 6
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
+RES_0: 12
+RES_1: 12
+RES_2: 12
+RES_3: 12
+RES_4: 12
 E
 #2224
 zombie king~
@@ -611,22 +754,28 @@ A zombie king orders you to leave at once.
 rulership has left him with a smug arrogance in which he expects everything and
 everyone to obey his every command.    
 ~
-26220602 0 0 0 92275024 1 0 0 -750 E
-85 -65 -58 2125d22+180625 17d12+85
-1986875 3973750
+26220602 0 0 0 83886416 0 0 0 -750 E
+85 -65 -41 255d170+104890 8d8+85
+199325 461720
 8 8 1
-BareHandAttack: 11
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 21
-SavingRod: 21
-SavingPetri: 21
-SavingBreath: 21
-SavingSpell: 21
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 18
+RES_1: 18
+RES_2: 18
+RES_3: 18
+RES_4: 18
 E
 #2225
 zombie queen~
@@ -636,10 +785,11 @@ A zombie queen sniffs in disdain at you.
    Once beautiful, she is now just another one of the rotting undead.    
 ~
 25331754 0 0 0 33554688 0 0 0 30 E
-80 -60 -54 2000d21+160000 16d11+80
-1680000 3360000
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 2
-BareHandAttack: 8
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
@@ -651,6 +801,11 @@ SavingRod: 20
 SavingPetri: 20
 SavingBreath: 20
 SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #2226
 dungeon guard~
@@ -661,21 +816,27 @@ A dungeon guard stands his watch vigilantly.
 over his armor with two crossed thunderbolts emblazoned on it.    
 ~
 2124 0 0 0 80 0 0 0 750 E
-70 -50 -46 1750d18+122500 14d10+70
-1102500 2205000
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 2
-BareHandAttack: 6
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 17
-SavingRod: 17
-SavingPetri: 17
-SavingBreath: 17
-SavingSpell: 17
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #2227
 dungeon sentry~
@@ -687,21 +848,27 @@ degree angle, back straight, closed hands against the seam of her trousers.
 She doesn't move an inch.    
 ~
 6154 0 0 0 80 0 0 0 750 E
-66 -46 -42 1650d17+108900 13d9+66
-925650 1851300
+66 -46 -29 198d132+81444 6d6+66
+154770 358512
 8 8 2
-BareHandAttack: 10
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 16
-SavingRod: 16
-SavingPetri: 16
-SavingBreath: 16
-SavingSpell: 16
+SavingPara: 34
+SavingRod: 34
+SavingPetri: 34
+SavingBreath: 34
+SavingSpell: 34
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #2228
 master~
@@ -712,10 +879,11 @@ The dungeon master is here protecting the cell to the south.
 crossed lightning bolts engraved on the handle.    
 ~
 239626 0 0 0 33554768 0 0 0 750 E
-80 -60 -54 2000d21+160000 16d11+80
-1680000 3360000
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 2
-BareHandAttack: 14
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
@@ -727,6 +895,11 @@ SavingRod: 20
 SavingPetri: 20
 SavingBreath: 20
 SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #2229
 princess~
@@ -737,21 +910,27 @@ The princess is sitting in a corner, cowering in fear.
 on life, will you save her?    
 ~
 202 0 0 0 0 0 0 0 750 E
-85 -65 -58 2125d22+180625 17d12+85
-1986875 3973750
+85 -65 -41 255d170+104890 8d8+85
+199325 461720
 8 8 2
-BareHandAttack: 8
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 21
-SavingRod: 21
-SavingPetri: 21
-SavingBreath: 21
-SavingSpell: 21
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 18
+RES_1: 18
+RES_2: 18
+RES_3: 18
+RES_4: 18
 E
 T 2204
 #2230
@@ -762,21 +941,46 @@ The Lord of the Undead ignores your pitiful existence.
    The master of the tower, his only equal is the gods, that is if he ever
 escapes confinement from his warded cell.    
 ~
-30412830 0 0 0 109052240 1 0 0 -1000 E
-45 -25 -26 1125d12+50625 9d6+45
-303750 607500
+30412830 0 0 0 100663632 0 0 0 -1000 E
+100 -80 -50 300d200+123400 10d10+100
+234500 543200
 8 8 1
-BareHandAttack: 5
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 11
-SavingRod: 11
-SavingPetri: 11
-SavingBreath: 11
-SavingSpell: 11
+RES_0: 21
+RES_1: 21
+RES_2: 21
+RES_3: 21
+RES_4: 21
+E
+#2231
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 3d2+1234 1d2+1
+12345 23101
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 2
+RES_1: 4
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 $

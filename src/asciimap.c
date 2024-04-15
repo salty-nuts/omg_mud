@@ -217,7 +217,7 @@ bool can_see_map(struct char_data *ch) {
   /* Is the map funcionality disabled? */
   if (CONFIG_MAP == MAP_OFF)
     return FALSE;
-  if ((CONFIG_MAP == MAP_IMM_ONLY) && (GET_REAL_LEVEL(ch) < LVL_IMMORT))
+  if ((CONFIG_MAP == MAP_IMM_ONLY) && (GET_LEVEL(ch) < LVL_IMMORT))
     return FALSE;
 
   return TRUE;
@@ -609,7 +609,7 @@ ACMD(do_map) {
   if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
     send_to_char(ch, "It is too dark to see the map.\r\n");
     return;
-  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char(ch, "You can't see the map while blind!\r\n");
     return;
   }

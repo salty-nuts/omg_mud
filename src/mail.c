@@ -275,7 +275,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
   long recipient;
   char buf[MAX_INPUT_LENGTH], **mailwrite;
 
-  if (GET_REAL_LEVEL(ch) < MIN_MAIL_LEVEL) {
+  if (GET_LEVEL(ch) < MIN_MAIL_LEVEL) {
     snprintf(buf, sizeof(buf), "$n tells you, 'Sorry, you have to be level %d to send mail!'", MIN_MAIL_LEVEL);
     act(buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
@@ -287,7 +287,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
 	FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
-  if (GET_GOLD(ch) < STAMP_PRICE && GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+  if (GET_GOLD(ch) < STAMP_PRICE && GET_LEVEL(ch) < LVL_IMMORT) {
     snprintf(buf, sizeof(buf), "$n tells you, 'A stamp costs %d coin%s.'\r\n"
 	    "$n tells you, '...which I see you can't afford.'", STAMP_PRICE,
             STAMP_PRICE == 1 ? "" : "s");
@@ -301,7 +301,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
   }
   act("$n starts to write some mail.", TRUE, ch, 0, 0, TO_ROOM);
 
-  if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+  if (GET_LEVEL(ch) < LVL_IMMORT) {
     snprintf(buf, sizeof(buf), "$n tells you, 'I'll take %d coins for the stamp.'", STAMP_PRICE);
     act(buf, FALSE, mailman, 0, ch, TO_VICT);
     decrease_gold(ch, STAMP_PRICE);

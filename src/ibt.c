@@ -466,7 +466,7 @@ ACMD(do_ibt)
   first_ibt = get_first_ibt(subcmd);
 
   if ((!*arg)){
-    if (GET_REAL_LEVEL(ch) >= LVL_GRGOD){
+    if (GET_LEVEL(ch) >= LVL_GRGOD){
       send_to_char(ch, "Usage: %s%s submit <header>%s\r\n"
                        "       %s%s list%s\r\n"
                        "       %s%s show <num>%s\r\n"
@@ -480,7 +480,7 @@ ACMD(do_ibt)
                                QYEL, CMD_NAME, QNRM,
                                QYEL, CMD_NAME, QNRM);
       return;
-    } else if (GET_REAL_LEVEL(ch) >= LVL_IMMORT) {
+    } else if (GET_LEVEL(ch) >= LVL_IMMORT) {
       send_to_char(ch, "Usage: %s%s submit <header>%s\r\n"
                        "       %s%s list%s\r\n"
                        "       %s%s show <num>%s\r\n",
@@ -511,7 +511,7 @@ ACMD(do_ibt)
       send_to_char(ch, "That %s doesn't exist.\r\n", CMD_NAME);
       return;
     } else {
-      if ((GET_REAL_LEVEL(ch) < LVL_IMMORT) && (!is_ibt_logger(ibtData, ch))) {
+      if ((GET_LEVEL(ch) < LVL_IMMORT) && (!is_ibt_logger(ibtData, ch))) {
         send_to_char(ch, "Sorry but you may only view %ss you have posted yourself.\n\r", ibt_types[subcmd]);
       } else {
         send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
@@ -521,7 +521,7 @@ ACMD(do_ibt)
           strcpy(timestr, "Unknown");
         }
         send_to_char(ch, "%sSubmitted: %s%s\r\n", QCYN, QYEL, timestr);
-        if (GET_REAL_LEVEL(ch) >= LVL_IMMORT) {
+        if (GET_LEVEL(ch) >= LVL_IMMORT) {
           send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
         }
@@ -543,7 +543,7 @@ ACMD(do_ibt)
   {
     if (first_ibt)
     {
-      if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+      if (GET_LEVEL(ch) < LVL_IMMORT) {
         len = snprintf(buf, sizeof(buf),
                "%s No %s|%s Description\r\n"
                "%s ---|-------------------------------------------------%s\r\n",
@@ -559,7 +559,7 @@ ACMD(do_ibt)
         i++;
 
         /* For mortals, skip IBT's that they didn't log */
-        if ((GET_REAL_LEVEL(ch) < LVL_IMMORT) && !is_ibt_logger(ibtData,ch))
+        if ((GET_LEVEL(ch) < LVL_IMMORT) && !is_ibt_logger(ibtData,ch))
           continue;
 
         /* Set up the 'important' flag */
@@ -569,7 +569,7 @@ ACMD(do_ibt)
           sprintf(imp, "%c", ' ');
 
         if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
-          if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
             len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d|%s%s\r\n",
                                   imp, QGRN, i, ibtData->text, QNRM);
           } else {
@@ -582,7 +582,7 @@ ACMD(do_ibt)
           }
           num_res++;
         } else if (IBT_FLAGGED(ibtData, IBT_INPROGRESS)) {
-          if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
             len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->text, QNRM);
@@ -596,7 +596,7 @@ ACMD(do_ibt)
           }
           num_unres++;
         } else {
-          if (GET_REAL_LEVEL(ch) < LVL_IMMORT) {
+          if (GET_LEVEL(ch) < LVL_IMMORT) {
             len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->text, QNRM);
@@ -626,7 +626,7 @@ ACMD(do_ibt)
       } else {
         len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
       }
-      if (GET_REAL_LEVEL(ch) >= LVL_GRGOD) {
+      if (GET_LEVEL(ch) >= LVL_GRGOD) {
         len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
       snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
@@ -665,7 +665,7 @@ ACMD(do_ibt)
     string_write(ch->desc, &(ibtData->body),MAX_IBT_LENGTH, 0, NULL);
 
     ibtData->room   = GET_ROOM_VNUM(IN_ROOM(ch));
-    ibtData->level  = GET_REAL_LEVEL(ch);
+    ibtData->level  = GET_LEVEL(ch);
     ibtData->text   = STRALLOC(arg_text);
     ibtData->name   = STRALLOC(GET_NAME(ch));
     ibtData->id_num = GET_IDNUM(ch);
@@ -685,7 +685,7 @@ ACMD(do_ibt)
   }
   else if (is_abbrev(arg,"resolve"))
   {
-    if (GET_REAL_LEVEL(ch) < LVL_GRGOD){
+    if (GET_LEVEL(ch) < LVL_GRGOD){
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
@@ -712,7 +712,7 @@ ACMD(do_ibt)
     }
     return;
   } else if (is_abbrev(arg,"remove")) {
-    if (GET_REAL_LEVEL(ch) < LVL_GRGOD){
+    if (GET_LEVEL(ch) < LVL_GRGOD){
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
@@ -738,21 +738,21 @@ ACMD(do_ibt)
     }
     return;
   } else if (is_abbrev(arg,"save")) {
-    if (GET_REAL_LEVEL(ch) < LVL_GRGOD){
+    if (GET_LEVEL(ch) < LVL_GRGOD){
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     save_ibt_file(subcmd);
     send_to_char(ch,"%s list saved.\r\n", ibt_types[subcmd]);
   } else if (is_abbrev(arg,"edit")) {
-    if (GET_REAL_LEVEL(ch) < LVL_GRGOD){
+    if (GET_LEVEL(ch) < LVL_GRGOD){
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       return;
     }
     /* Pass control to the OLC without the 'edit' arg */
     do_oasis_ibtedit(ch, arg_text, cmd, subcmd);
   } else {
-    if (GET_REAL_LEVEL(ch) < LVL_GRGOD){
+    if (GET_LEVEL(ch) < LVL_GRGOD){
       send_to_char(ch, "%s what?\r\n", ibt_types[subcmd]);
       send_to_char(ch, "Usage: %s submit <text>\r\n", ibt_types[subcmd]);
       return;

@@ -44,7 +44,7 @@ static void mob_log(char_data *mob, const char *format, ...)
 
 /* Macro to determine if a mob is permitted to use these commands. */
 #define MOB_OR_IMPL(ch) \
- ((IS_NPC(ch) && (!(ch)->desc || GET_REAL_LEVEL((ch)->desc->original) >= LVL_IMPL)) || (SCRIPT(ch) && TRIGGERS(SCRIPT(ch))))
+ ((IS_NPC(ch) && (!(ch)->desc || GET_LEVEL((ch)->desc->original) >= LVL_IMPL)) || (SCRIPT(ch) && TRIGGERS(SCRIPT(ch))))
 
 /* mob commands */
 /* prints the argument to all the rooms aroud the mobile */
@@ -350,7 +350,7 @@ ACMD(do_mload)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if( ch->desc && GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL)
+    if( ch->desc && GET_LEVEL(ch->desc->original) < LVL_IMPL)
         return;
 
     target = two_arguments(argument, arg1, arg2);
@@ -451,7 +451,7 @@ ACMD(do_mpurge)
   if (AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
-  if (ch->desc && (GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL))
+  if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
     return;
 
   one_argument(argument, arg);
@@ -688,7 +688,7 @@ ACMD(do_mforce)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
         return;
 
     argument = one_argument(argument, arg);
@@ -706,7 +706,7 @@ ACMD(do_mforce)
             if ((i->character != ch) && !i->connected &&
                 (IN_ROOM(i->character) == IN_ROOM(ch))) {
                 vch = i->character;
-                if (GET_REAL_LEVEL(vch) < GET_REAL_LEVEL(ch) && CAN_SEE(ch, vch) &&
+                if (GET_LEVEL(vch) < GET_LEVEL(ch) && CAN_SEE(ch, vch) &&
                     valid_dg_target(vch, 0)) {
                     command_interpreter(vch, argument);
                 }
@@ -749,7 +749,7 @@ ACMD(do_mhunt)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
         return;
 
     one_argument(argument, arg);
@@ -791,7 +791,7 @@ ACMD(do_mremember)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
         return;
 
     argument = one_argument(argument, arg);
@@ -842,7 +842,7 @@ ACMD(do_mforget)
     if (AFF_FLAGGED(ch, AFF_CHARM))
         return;
 
-    if (ch->desc && (GET_REAL_LEVEL(ch->desc->original) < LVL_IMPL))
+    if (ch->desc && (GET_LEVEL(ch->desc->original) < LVL_IMPL))
         return;
 
     one_argument(argument, arg);

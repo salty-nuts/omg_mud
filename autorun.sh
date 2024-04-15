@@ -37,7 +37,7 @@ PORT=9091
 
 # Default flags to pass to the MUD server (see admin.txt for a description
 # of all flags).
-#FLAGS="-m"
+#FLAGS="-q"
 
 #############################################################################
 
@@ -91,7 +91,7 @@ while ( : ) do
     sleep 10
   done
 
-#  if [ -s lib/core ]; then
-#    gdb bin/circle lib/core -command gdb.tmp >lib/backtrace.$(date +%d.%m.%Y.%T)
-#  fi
+  if [ -s lib/core ]; then
+    gdb bin/circle lib/core -command gdb.tmp >lib/backtrace.$(date +%d.%m.%Y.%T)
+  fi
 done

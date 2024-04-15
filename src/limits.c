@@ -35,14 +35,14 @@ int mana_gain(struct char_data *ch)
   if (IS_NPC(ch))
   {
     /* Neat and fast */
-    gain = GET_REAL_LEVEL(ch);
+    gain = GET_LEVEL(ch);
   }
   else
   {
-    if (GET_MANA(ch) >= GET_MAX_MANA(ch))
-      return (0);
+/*     if (GET_MANA(ch) >= GET_MAX_MANA(ch))
+      return (0); */
 
-    gain = GET_REAL_LEVEL(ch);
+    gain = GET_LEVEL(ch);
     gain += GET_MANA_REGEN(ch);
 
     /* Class calculations */
@@ -85,9 +85,9 @@ int mana_gain(struct char_data *ch)
     /* Position calculations    */
     switch (GET_POS(ch))
     {
-    case POS_FIGHTING: /* No regen while fighting */
+/*     case POS_FIGHTING:
       gain = 0;
-      break;
+      break; */
     case POS_SLEEPING:
       gain += (gain / 2); /* Divide by 2 */
       break;
@@ -116,15 +116,15 @@ int hit_gain(struct char_data *ch)
   if (IS_NPC(ch))
   {
     /* Neat and fast */
-    gain = GET_REAL_LEVEL(ch);
+    gain = GET_LEVEL(ch);
   }
   else
   {
-    if (GET_HIT(ch) >= GET_MAX_HIT(ch))
-      return (0);
+/*     if (GET_HIT(ch) >= GET_MAX_HIT(ch))
+      return (0); */
 
     /* Class/Level calculations */
-    gain = GET_REAL_LEVEL(ch);
+    gain = GET_LEVEL(ch);
     gain += con_app[GET_CON(ch)].hitp;
     gain += GET_HITP_REGEN(ch);
 
@@ -164,9 +164,9 @@ int hit_gain(struct char_data *ch)
     /* Position calculations    */
     switch (GET_POS(ch))
     {
-    case POS_FIGHTING: /* No regen while fighting */
+/*     case POS_FIGHTING: 
       gain = 0;
-      break;
+      break; */
     case POS_SLEEPING:
       gain += (gain / 2); /* Divide by 2 */
       break;
@@ -195,14 +195,14 @@ int move_gain(struct char_data *ch)
   if (IS_NPC(ch))
   {
     /* Neat and fast */
-    gain = GET_REAL_LEVEL(ch);
+    gain = GET_LEVEL(ch);
   }
   else
   {
-    if (GET_MOVE(ch) >= GET_MAX_MOVE(ch))
-      return (0);
+/*     if (GET_MOVE(ch) >= GET_MAX_MOVE(ch))
+      return (0); */
 
-    gain = GET_REAL_LEVEL(ch) + dice(1, 6);
+    gain = GET_LEVEL(ch) + dice(1, 6);
     gain += GET_MOVE_REGEN(ch);
 
     /* Class/Level calculations */
@@ -215,9 +215,9 @@ int move_gain(struct char_data *ch)
     /* Position calculations    */
     switch (GET_POS(ch))
     {
-    case POS_FIGHTING: /* No regen while fighting */
+/*     case POS_FIGHTING: 
       gain = 0;
-      break;
+      break; */
     case POS_SLEEPING:
       gain += (gain / 2); /* Divide by 2 */
       break;
@@ -245,7 +245,7 @@ void set_title(struct char_data *ch, char *title)
 
   if (title == NULL)
   {
-    GET_TITLE(ch) = strdup(GET_SEX(ch) == SEX_FEMALE ? title_female(GET_CLASS(ch), GET_REAL_LEVEL(ch)) : title_male(GET_CLASS(ch), GET_REAL_LEVEL(ch)));
+    GET_TITLE(ch) = strdup(GET_SEX(ch) == SEX_FEMALE ? title_female(GET_CLASS(ch), GET_LEVEL(ch)) : title_male(GET_CLASS(ch), GET_LEVEL(ch)));
   }
   else
   {
@@ -292,7 +292,7 @@ void gain_exp(struct char_data *ch, long gain)
   int is_altered = FALSE;
   int num_levels = 0;
 
-  if (!IS_NPC(ch) && ((GET_REAL_LEVEL(ch) < 1 || GET_REAL_LEVEL(ch) >= LVL_IMMORT)))
+  if (!IS_NPC(ch) && ((GET_LEVEL(ch) < 1 || GET_LEVEL(ch) >= LVL_IMMORT)))
     return;
 
   if (IS_NPC(ch))
@@ -309,38 +309,27 @@ void gain_exp(struct char_data *ch, long gain)
     GET_EXP(ch) += gain;
     //    send_to_char(ch,"The actual gain is %ld!\n\r",gain);
 
-    if (!PLR_FLAGGED(ch, PLR_MULTICLASS))
-      while (GET_REAL_LEVEL(ch) < LVL_MULTICLASS && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch) + 1))
-      {
-        GET_LEVEL(ch, GET_CLASS(ch)) += 1;
-        num_levels++;
-        advance_level(ch);
-        GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch));
-        is_altered = TRUE;
-      }
 
-    if (PLR_FLAGGED(ch, PLR_MULTICLASS))
-      while (GET_REAL_LEVEL(ch) < LVL_MAX_MORTAL && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch) + 1))
-      {
-        GET_LEVEL(ch, GET_MULTI_CLASS(ch)) += 1;
-        num_levels++;
-        advance_level(ch);
-        GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch));
-        is_altered = TRUE;
-      }
-
+    while (GET_LEVEL(ch) < LVL_MAX_MORTAL && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1))
+    {
+      GET_LEVEL(ch) += 1;
+      num_levels++;
+      advance_level(ch);
+      GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_LEVEL(ch));
+      is_altered = TRUE;
+    }
     if (is_altered)
     {
       mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
-             GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_REAL_LEVEL(ch));
+             GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_LEVEL(ch));
       game_info("%s gained %d level%s, %s is now level %d!",
-                GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", HSSH(ch), GET_REAL_LEVEL(ch));
+                GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", HSSH(ch), GET_LEVEL(ch));
       if (num_levels == 1)
         send_to_char(ch, "You rise a level!\r\n");
       else
         send_to_char(ch, "You rise %d levels!\r\n", num_levels);
       set_title(ch, NULL);
-      if (GET_REAL_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
+      if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
         run_autowiz();
     }
   }
@@ -351,7 +340,7 @@ void gain_exp(struct char_data *ch, long gain)
     if (GET_EXP(ch) < 0)
       GET_EXP(ch) = 0;
   }
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
+  if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
     run_autowiz();
 }
 
@@ -369,32 +358,21 @@ void gain_exp_regardless(struct char_data *ch, long gain)
 
   if (!IS_NPC(ch))
   {
-    if (!PLR_FLAGGED(ch, PLR_MULTICLASS))
-      while (GET_REAL_LEVEL(ch) < LVL_MULTICLASS && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch) + 1))
-      {
-        GET_LEVEL(ch, GET_CLASS(ch)) += 1;
-        num_levels++;
-        advance_level(ch);
-        GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch));
-        is_altered = TRUE;
-      }
 
-    if (PLR_FLAGGED(ch, PLR_MULTICLASS))
-      while (GET_REAL_LEVEL(ch) < LVL_MAX_MORTAL && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch) + 1))
-      {
-        GET_LEVEL(ch, GET_MULTI_CLASS(ch)) += 1;
-        num_levels++;
-        advance_level(ch);
-        GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_REAL_LEVEL(ch));
-        is_altered = TRUE;
-      }
-
+    while (GET_LEVEL(ch) < LVL_MAX_MORTAL && GET_EXP(ch) >= level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1))
+    {
+      GET_LEVEL(ch) += 1;
+      num_levels++;
+      advance_level(ch);
+      GET_EXP(ch) -= level_exp(GET_CLASS(ch), GET_LEVEL(ch));
+      is_altered = TRUE;
+    }
     if (is_altered)
     {
       mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s advanced %d level%s to level %d.",
-             GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_REAL_LEVEL(ch));
+             GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", GET_LEVEL(ch));
       game_info("%s gained %d level%s, %s is now level %d!",
-                GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", HSSH(ch), GET_REAL_LEVEL(ch));
+                GET_NAME(ch), num_levels, num_levels == 1 ? "" : "s", HSSH(ch), GET_LEVEL(ch));
       if (num_levels == 1)
         send_to_char(ch, "You rise a level!\r\n");
       else
@@ -403,7 +381,7 @@ void gain_exp_regardless(struct char_data *ch, long gain)
     }
   }
 
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
+  if (GET_LEVEL(ch) >= LVL_IMMORT && !PLR_FLAGGED(ch, PLR_NOWIZLIST))
     run_autowiz();
 }
 
@@ -490,7 +468,7 @@ static void check_idling(struct char_data *ch)
 void point_update(void)
 {
   struct char_data *i, *next_char;
-  struct obj_data *j, *next_thing, *jj, *next_thing2;
+  struct obj_data *j, *next_thing, *jj, *next_thing2, *decay, *decay_next;
   int skill;
 
   /* characters */
@@ -498,18 +476,15 @@ void point_update(void)
   {
     next_char = i->next;
 
-    /*     gain_condition(i, HUNGER, -1);
-    gain_condition(i, DRUNK, -1);
-    gain_condition(i, THIRST, -1); */
-
-    if (!IS_NPC(i))
-    {
       /*
        * Salty Prompt
        * 01 FEB 2020
        */
+    if (!IS_NPC(i))
+    {
+
       if (hit_gain(i) || mana_gain(i) || move_gain(i))
-        send_to_char(i, "\r");
+        send_to_char(i, "TICK!\n\r");
     }
     if (GET_POS(i) >= POS_STUNNED)
     {
@@ -556,7 +531,7 @@ void point_update(void)
     {
       update_char_objects(i);
       (i->char_specials.timer)++;
-      if (GET_REAL_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
+      if (GET_LEVEL(i) < CONFIG_IDLE_MAX_LEVEL)
         check_idling(i);
     }
   }
@@ -569,10 +544,8 @@ void point_update(void)
     /* If this is a corpse */
     if (IS_CORPSE(j))
     {
-      /* timer count down */
-      if (GET_OBJ_TIMER(j) > 0)
-        GET_OBJ_TIMER(j)
-      --;
+      if (GET_OBJ_TIMER(j) > 0) // timer count down 
+        GET_OBJ_TIMER(j)--;
 
       if (!GET_OBJ_TIMER(j))
       {
@@ -605,15 +578,31 @@ void point_update(void)
     }
     /* If the timer is set, count it down and at 0, try the trigger
      * note to .rej hand-patchers: make this last in your point-update() */
-    else if (GET_OBJ_TIMER(j) > 0)
+    else 
     {
-      GET_OBJ_TIMER(j)
-      --;
-      if (!GET_OBJ_TIMER(j))
+      if (!GET_OBJ_TIMER(j) && SCRIPT_CHECK(j, OTRIG_TIMER))
         timer_otrigger(j);
+      else if (!GET_OBJ_TIMER(j) && !SCRIPT_CHECK(j, OTRIG_TIMER))
+      {
+        for (decay = object_list; decay; decay = decay_next)
+        {
+          decay_next = decay->next;
+          if (OBJ_FLAGGED(decay, ITEM_DECAYING) && !GET_OBJ_TIMER(decay) && decay->carried_by)
+          {
+            act("$p decays into dust in your inventory.", FALSE, decay->carried_by, decay, 0, TO_CHAR);
+            extract_obj(decay);
+            continue;
+          }
+          if (OBJ_FLAGGED(decay, ITEM_DECAYING) && !GET_OBJ_TIMER(decay) && decay->worn_by)
+          {
+            act("$p decays into dust while equipped.", FALSE, decay->worn_by, decay, 0, TO_CHAR);
+            extract_obj(decay);
+            continue;
+          }
+        }
+      }
     }
-  }
-
+}
   /* Take 1 from the happy-hour tick counter, and end happy-hour if zero */
   if (HAPPY_TIME > 1)
     HAPPY_TIME--;

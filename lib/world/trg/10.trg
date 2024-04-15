@@ -201,4 +201,35 @@ Mob Restore~
 eval dam %self.maxhitp%
 %damage% %self% -%dam%
 ~
+#1007
+Equipment Load~
+0 g 100
+~
+if %actor.is_pc% && %actor.level% <= 100
+  wait 2 sec
+  say get some clothes on! Here, I will help.
+  %load% obj 1000 %actor% light
+  %load% obj 1001 %actor% rfinger
+  %load% obj 1001 %actor% lfinger
+  %load% obj 1002 %actor% neck1
+  %load% obj 1002 %actor% neck2
+  %load% obj 1003 %actor% body
+  %load% obj 1004 %actor% head
+  %load% obj 1005 %actor% feet
+  %load% obj 1006 %actor% legs
+  %load% obj 1007 %actor% hands
+  %load% obj 1008 %actor% arms
+  %load% obj 1013 %actor% shield
+  %load% obj 1009 %actor% about
+  %load% obj 1010 %actor% waist
+  %load% obj 1011 %actor% rwrist
+  %load% obj 1011 %actor% lwrist
+  %load% obj 1014 %actor% face
+  %load% obj 1017 %actor% floating
+  %load% obj 1016 %actor% inv
+  %load% obj 1012 %actor% inv
+  %load% obj 1015 %actor% inv
+  %load% obj 1015 %actor% inv
+  halt
+~
 $~

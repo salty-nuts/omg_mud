@@ -316,7 +316,7 @@ ACMD(do_export_zone)
    * was run from, thus we act like we are in the bin folder, because we are*/ 
   char *path = "../lib/world/export/"; 
 
-  if (IS_NPC(ch) || GET_REAL_LEVEL(ch) < LVL_IMPL) 
+  if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
     return; 
 
   skip_spaces(&argument); 
@@ -593,7 +593,7 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
       AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
       AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
       GET_ALIGNMENT(mob),
-      GET_REAL_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
+      GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
       GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
       GET_DAMROLL(mob));
 

@@ -184,7 +184,7 @@ ACMD(do_flee);
 //ACMD(do_kick);  Moved by Salty
 ACMD(do_kill);
 ACMD(do_order);
-ACMD(do_rescue);
+//ACMD(do_rescue);  Moved by Salty
 ACMD(do_whirlwind);
 ACMD(do_bandage);
 ACMD(do_berserk);
@@ -224,14 +224,13 @@ ACMD(do_gen_tog);
 #define SCMD_AUTODOOR    27
 #define SCMD_ZONERESETS  28
 #define SCMD_AUTOEXIT_L  29
-
 #define SCMD_COLOR       30
 #define SCMD_SYSLOG      31
 #define SCMD_WIMPY       32
 #define SCMD_PAGELENGTH  33
 #define SCMD_SCREENWIDTH 34
-//#define SCMD_ZONERESETS  33
-//#define SCMD_AUTOEXIT_L  34
+#define SCMD_DISP_SPELLS 35
+
 /* do_quit */
 ACMD(do_quit);
 #define SCMD_QUI  0

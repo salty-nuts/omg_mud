@@ -1,4 +1,104 @@
 * TBAMUD 3.64 Combat Message File
+
+* tumble 437
+M
+437
+You tumble into $N and $E falls over dead.
+The last thing you see is $n tumbling into you.
+$n tumbles into $N and $E falls over dead.1 
+You try to tumble into $N, but miss horribly.
+$n tries to tumble into you, but you step aside quickly.
+$n tries to tumble into $N, but misses horribly.
+You tumble into $N, knocking $M across the room!
+$n tumbles into you, knocking you across the room!
+$n tumbles into $N, knocking $M across the room!
+#
+#
+#
+
+* headbutt 435
+M
+435
+You headbutt $N and blood sprays everywhere as you collapse their skull.
+The last thing you see is $n's head coming towards you.
+$N gets their brains bashed out by $n's vicious headbutt.
+You try to headbutt $N but miss.  How embarassing!
+You evade a grab and $n misses $s headbutt.
+$n tries to grab $N for a headbutt, but misses and hits the ground
+You headbutt $N, slamming your head against $M.
+$n grabs you and.....AHHH!!!! BLOOD EVERYWHERE!
+$n smashes $s head against $N.
+Are you brain damaged from all those headbutts?
+$n is attempting to headbutt you.
+$n attemptes to headbutt $N.  Useless.
+
+* eldritch blast 110
+M
+110
+The final surge of eldritch energy rips through $N, leaving behind a smoldering husk. 
+Light blinds, pain explodes, darkness swallows you.
+$N is bathed in a bright white light.  You shield your eyes.  Only ashes remain.
+$N is unaffected by your eldritch blast.
+$n's eldritch blast fizzles harmlessly against your shimmering magical defenses.
+$N shrugs off $n's eldritch blast, the energy dissipating around them.
+Your crackling blast of eldritch energy slams into $N!
+You scream in agony as a bolt of crackling energy slams into you!
+$N convulses as $n's eldritch blast tears through their defenses!
+$n tried to blast you with eldritch energy. Pathetic.
+$n launches a feeble eldritch blast at you.
+Unaware of the risks, $n tries to blast $N with eldritch magic.
+
+* nova 112
+M
+112
+The shockwave from your explodes $N into pieces!
+You explode into pieces as the shockwave from a nova strikes you!
+The shockwave from $n's nova causes $N to explode into pieces!
+$N is unaffected by the shockwave from your nova.
+Somehow, the shockwave from $n's nova misses you.
+$N is unaffected by $n's explosive nova.
+Your nova strikes $N with a massive shockwave of magical energy!
+You cry out in pain as the shockwave from a magical nova strikes you!
+Particles of $N are scattered to the atmosphere as $n's nova strikes $m.
+Your nova bypasses $N.
+You are impervious to magic.  $n's nova bypasses you.
+$N is impervious to mortals.  $n's nova bypasses them.
+
+* magic missile 32
+M
+32
+The magic missile tears away the remaining life of $N!
+You only have time to notice $n uttering strange sounds before everything is dark!
+The magic missile sent by $n causes $N to stagger and collaps in a lifeless heap!
+The magic missile penetrates the air miles above $N.
+You don't even have to duck as $n sends a magic missile way over your head.
+$n tries in vain to correct the course of the magic missile meant to hit $N.
+You watch with selfpride as your magic missile hits $N!
+You stagger as a magic missile from $n hits you!
+$n throws a magic missile at $N who staggers under the blow!
+Your magic missile makes $N roar with laughter.
+You can't help laughing as $n sends a magic missile at you.
+$N starts to roar with laughter as $n sends a magic missile at $M.
+
+* storm of swords 316
+M
+316
+Your magical swords slashed $N into pieces!
+You were slashed into pieces by $n!
+$n was slashed to pieces by $N!
+
+Your magical swords miss $N!
+$n avoids magical swords directed at $s.
+Your magical swords miss $N.
+
+$N is slashed by your storm of magical swords!
+You scream in pain as $n slashes you with magical swords!
+$N screams in pain as magical swords slash $S body!
+
+$N is unaffected by your storm of magical swords. 
+$n tried to slash you with a storm of swords.  Fool.
+Unaware of the risks, $n tries to slash $N with magical swords. 
+
 * burning hands 5
 M
 5
@@ -159,21 +259,7 @@ Your lightning bolt is extinguished as mighty $N moves $S ears!
 You move your ears to extinguish $n's lightning bolt.
 $N moves $S ears and $n's lightning bolt is extinguished!
 
-* magic missile 32
-M
-32
-The magic missile tears away the remaining life of $N!
-You only have time to notice $n uttering strange sounds before everything is dark!
-The magic missile sent by $n causes $N to stagger and collaps in a lifeless heap!
-The magic missile penetrates the air miles above $N.
-You don't even have to duck as $n sends a magic missile way over your head.
-$n tries in vain to correct the course of the magic missile meant to hit $N.
-You watch with selfpride as your magic missile hits $N!
-You stagger as a magic missile from $n hits you!
-$n throws a magic missile at $N who staggers under the blow!
-Your magic missile makes $N roar with laughter.
-You can't help laughing as $n sends a magic missile at you.
-$N starts to roar with laughter as $n sends a magic missile at $M.
+
 
 * shocking grasp 37
 M
@@ -320,27 +406,44 @@ Your effort to bash $N sends YOU sprawling on the ground.
 $n fruitlessly tries to bash you and is sent sprawling.
 $n dares a bash at $N and is sent sprawling without touching $M.
 
-* kick 404
+* spinkick 484
 M
-404
-Your kick at $N's kidneys made $M die.
-$n kills you by kicking your kidneys in!
-$N dies from $n's last kick in $S kidneys!
+484
+Your kick at $N's face splits $S head open -- yummy!
+$n aims a kick at your face which splits your head in two!
+$n neatly kicks $N's head into pieces -- YUMMY!
 Your beautiful full-circle kick misses $N by a mile.
 $n makes a nice balletstep which plants $s foot a mile above your head.
 $n makes a nice balletstep which plants $s foot a mile above $N's head.
 Your boots need polishing again -- blood all over them...
 $n wipes $s boots in your face!
 $n wipes $s boots in the face of $N!
-$N makes you kick at a huge stone appearing from nowhere -- OUCH!
 You make $n kick a huge stone appearing from nowhere -- *giggle*
+$N makes you kick at a huge stone appearing from nowhere -- OUCH!
 $n starts kicking a huge stone which suddenly appears.
 
+* storm_of_swords 485
+M
+485
+Your furious storm of steel engulfs $N, leaving only a crimson mist!
+A whirlwind of steel tears through you, leaving a bloody ruin!
+$n unleashes a Storm of Steel, reducing $N to a shower of gore!
+Your storm of steel whirls and whirls, but leaves $N unscathed.
+$n whirls and whirls with sword and shield but $s leaves you unharmed.
+$n whirls and whirls with sword and shield but leaves $s unharmed.
+Your storm of steel rages, shredding $N to pieces.
+$n unleashes a storm of steel, shredding you to pieces.
+$n unleashes a storm of steel, shredding $N to pieces.
+Your storm of steel crashes against $N, leaving only sparks! 
+A storm of steel strikes $N, who stands defiant and unharmed.
+$N deflects the storm of steel with an effortless gesture.
+
+* kick 404
 M
 404
-Your kick at $N's face splits $S head open -- yummy!
-$n aims a kick at your face which splits your head in two!
-$n neatly kicks $N's head into pieces -- YUMMY!
+Your kick at $N's kidneys made $M die.
+$n kills you by kicking your kidneys in!
+$N dies from $n's last kick in $S kidneys!
 You miss your kick at $N's groin, much to $S relief...
 $n misses a kick at your groin, you breathe lighter now...
 $n misses a kick at $N's groin, much to $N's relief...

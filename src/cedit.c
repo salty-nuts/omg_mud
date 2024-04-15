@@ -42,7 +42,7 @@ ACMD(do_oasis_cedit)
   /* Parse any arguments. */
   one_argument(argument, buf1);
 
-  if (GET_REAL_LEVEL(ch) < LVL_IMPL) {
+  if (GET_LEVEL(ch) < LVL_IMPL) {
     send_to_char(ch, "You can't modify the game configuration.\r\n");
     return;
   }

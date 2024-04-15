@@ -5,7 +5,7 @@ and to either side, blowing the dust into a blinding cloud.  The howling of the
 gusts and your own foot steps are all you can hear.  To your left a steep
 outcropping of rock blocks your way.    
 ~
-140 0 0 0 0 2
+140 4 0 0 0 2
 D0
 ~
 ~
@@ -17,7 +17,7 @@ D1
 D3
 ~
 ~
-0 0 9031
+0 0 1004
 E
 info credits~
    Builders  : Balm
@@ -1677,10 +1677,6 @@ D0
 ~
 ~
 0 0 14077
-D1
-~
-~
-0 0 14099
 D2
 ~
 ~

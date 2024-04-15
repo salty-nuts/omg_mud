@@ -40,7 +40,6 @@ D3
 ~
 0 0 1003
 S
-T 1300
 #1002
 Somewhere to Rest~
 This is somewhere to rest.  Somewhere to recover after being
@@ -76,6 +75,10 @@ D0
 ~
 ~
 0 0 2200
+D1
+~
+~
+0 0 14000
 D3
 ~
 ~
@@ -96,7 +99,7 @@ seeking out the Parkway of Power.
 D1
 ~
 ~
-0 0 6500
+0 0 2100
 D2
 ~
 ~

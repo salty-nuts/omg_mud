@@ -75,7 +75,7 @@ void appear(struct char_data *ch)
   REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_INVISIBLE);
   REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_HIDE);
 
-  if (GET_REAL_LEVEL(ch) < LVL_IMMORT)
+  if (GET_LEVEL(ch) < LVL_IMMORT)
     act("$n slowly fades into existence.", FALSE, ch, 0, 0, TO_ROOM);
   else
     act("You feel a strange presence as $n appears, seemingly from nowhere.",
@@ -92,11 +92,8 @@ int compute_armor_class(struct char_data *ch)
 
   if (!IS_NPC(ch))
   {
-    if (GET_SKILL(ch, SKILL_ARMOR_MASTER))
-      armorclass -= GET_SKILL(ch, SKILL_ARMOR_MASTER);
-
     if (IS_AFFECTED(ch, AFF_DEFENSE))
-      armorclass -= GET_SKILL(ch, SKILL_DEFENSIVE_STANCE);
+      armorclass -= (GET_SKILL(ch, SKILL_DEFENSIVE_STANCE) + GET_LEVEL(ch));
   }
 
   return (MAX(-500, armorclass));
@@ -135,17 +132,10 @@ void check_killer(struct char_data *ch, struct char_data *vict)
 /* start one char fighting another (yes, it is horrible, I know... )  */
 void set_fighting(struct char_data *ch, struct char_data *vict)
 {
-  // PVE priority, Salty 05 JAN 2019
-  // causes crash
-  //  if (!CONFIG_PK_ALLOWED)
-  //    if (!IS_NPC(vict) && !IS_NPC(ch))
-  //      return;
-
   if (ch == vict)
     return;
 
-  if (FIGHTING(ch))
-  {
+  if (FIGHTING(ch)) {
     core_dump();
     return;
   }
@@ -166,11 +156,12 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 /* remove a char from the list of fighting chars */
 void stop_fighting(struct char_data *ch)
 {
+
   struct char_data *temp;
 
   if (ch == next_combat_list)
     next_combat_list = ch->next_fighting;
-  clear_char_mud_event(ch, eWHIRLWIND);
+
   REMOVE_FROM_LIST(ch, combat_list, next_fighting);
   ch->next_fighting = NULL;
   FIGHTING(ch) = NULL;
@@ -215,12 +206,8 @@ static void make_corpse(struct char_data *ch)
     GET_OBJ_TIMER(corpse) = CONFIG_MAX_NPC_CORPSE_TIME;
   else
     GET_OBJ_TIMER(corpse) = CONFIG_MAX_PC_CORPSE_TIME;
-  /*
-Give corpses levels for better sacrifice
-Salty
-09 JAN 2019
-*/
-  GET_OBJ_LEVEL(corpse) = (int)(2 * GET_REAL_LEVEL(ch) / 3) + dice(1, 10);
+
+  GET_OBJ_LEVEL(corpse) = (GET_LEVEL(ch)) + dice(1, 10);
 
   if (IS_NPC(ch))
   {
@@ -282,15 +269,26 @@ void death_cry(struct char_data *ch)
 
 void raw_kill(struct char_data *ch, struct char_data *killer)
 {
-  struct char_data *i;
+  struct char_data *i, *k, *temp;
 
   if (FIGHTING(ch))
     stop_fighting(ch);
+  if (FIGHTING(killer))
+    stop_fighting(killer);
+  /* luminari */
+  for (k = combat_list; k; k = temp)
+  {
+    temp = k->next_fighting;
+    if (FIGHTING(k) == ch)
+      stop_fighting(k);
+  }
   while (ch->affected)
     affect_remove(ch, ch->affected);
 
   /* To make ordinary commands work in scripts.  welcor*/
-  GET_POS(ch) = POS_STANDING;
+  //  GET_POS(ch) = POS_STANDING;
+  /* Hopefully prevents double kills */
+  GET_POS(ch) = POS_DEAD;
 
   if (killer)
   {
@@ -305,8 +303,10 @@ void raw_kill(struct char_data *ch, struct char_data *killer)
     if (killer->group)
     {
       while ((i = (struct char_data *)simple_list(killer->group->members)) != NULL)
+      {
         if (IN_ROOM(i) == IN_ROOM(ch) || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
           autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);
+      }
     }
     else
       autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
@@ -314,12 +314,14 @@ void raw_kill(struct char_data *ch, struct char_data *killer)
 
   /* Alert Group if Applicable */
   if (GROUP(ch))
+  {
     send_to_group(ch, GROUP(ch), "%s has died.\r\n", GET_NAME(ch));
-
+  }
   update_pos(ch);
   make_corpse(ch);
   Crash_rentsave(ch, 0);
   extract_char(ch);
+
 
   if (killer)
   {
@@ -330,6 +332,7 @@ void raw_kill(struct char_data *ch, struct char_data *killer)
 
 void die(struct char_data *ch, struct char_data *killer)
 {
+  update_pos(ch);
   gain_exp(ch, -(GET_EXP(ch) / 2));
   if (!IS_NPC(ch))
   {
@@ -365,7 +368,7 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
 {
   int tot_members = 0;
   long tot_gain = 0, base = 0;
-  struct char_data *k;
+  struct char_data *k, *i;
   int mult;
 
   while ((k = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
@@ -397,6 +400,19 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
   while ((k = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
     if (IN_ROOM(k) == IN_ROOM(ch))
       perform_group_gain(k, base, victim);
+
+
+  while ((i = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+  {
+    if (IN_ROOM(i) == IN_ROOM(ch) || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
+      autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);
+    if (i->group->leader && PRF_FLAGGED(i, PRF_AUTOLOOT))
+      do_get(i, "all corpse", 0, 0);
+    else if (PRF_FLAGGED(i, PRF_AUTOLOOT))
+      do_get(i, "all corpse", 0, 0);
+  }
+
+
 }
 
 static void solo_gain(struct char_data *ch, struct char_data *victim)
@@ -610,7 +626,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
 
       // 30
       {"$n causes $N's life to flash before $S eyes!", /* 601..1000 */
-       "You help $N remember $S life before the end.",
+       "Your #W helps $N remember $S life before the end.",
        "$n's #W makes your life flash before your eyes!"},
 
       {"$n wallops the living daylights out of $N with $s #W!", /* 1001..1500 */
@@ -641,67 +657,67 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
     msgnum = 2;
   else if (dam <= 3)
     msgnum = 3;
-  else if (dam <= 4)
+  else if (dam <= 4) // was 4
     msgnum = 4;
-  else if (dam <= 6)
+  else if (dam <= 6) // was 6
     msgnum = 5;
-  else if (dam <= 9)
+  else if (dam <= 9) // was 9
     msgnum = 6;
-  else if (dam <= 13)
+  else if (dam <= 13) // was 13
     msgnum = 7;
-  else if (dam <= 18)
+  else if (dam <= 18) // was 18
     msgnum = 8;
-  else if (dam <= 24)
+  else if (dam <= 24) // was 24
     msgnum = 9;
-  else if (dam <= 30)
+  else if (dam <= 30) // was 30
     msgnum = 10;
-  else if (dam <= 36)
+  else if (dam <= 40) // was 36
     msgnum = 11;
-  else if (dam <= 44)
+  else if (dam <= 50) // was 44
     msgnum = 12;
-  else if (dam <= 53)
+  else if (dam <= 60) // was 53
     msgnum = 13;
-  else if (dam <= 64)
+  else if (dam <= 70) // was 64
     msgnum = 14;
-  else if (dam <= 75)
+  else if (dam <= 80) // was 75
     msgnum = 15;
-  else if (dam <= 88)
+  else if (dam <= 100) // was 88
     msgnum = 16;
-  else if (dam <= 99)
+  else if (dam <= 125) // was 99
     msgnum = 17;
-  else if (dam <= 110)
+  else if (dam <= 150) // was 110
     msgnum = 18;
-  else if (dam <= 120)
+  else if (dam <= 200) // was 120
     msgnum = 19;
-  else if (dam <= 130)
+  else if (dam <= 300) // was 130
     msgnum = 20;
-  else if (dam <= 145)
+  else if (dam <= 400) // was 145
     msgnum = 21;
-  else if (dam <= 150)
+  else if (dam <= 500) // was 150
     msgnum = 22;
-  else if (dam <= 160)
+  else if (dam <= 600) // was 160
     msgnum = 23;
-  else if (dam <= 180)
+  else if (dam <= 750) // was 180
     msgnum = 24;
-  else if (dam <= 200)
+  else if (dam <= 1000) // was 200
     msgnum = 25;
-  else if (dam <= 225)
+  else if (dam <= 2000) // was 225
     msgnum = 26;
-  else if (dam <= 250)
+  else if (dam <= 3000) // was 250
     msgnum = 27;
-  else if (dam <= 300)
+  else if (dam <= 4000) // was 300
     msgnum = 28;
-  else if (dam <= 400)
+  else if (dam <= 5000) // was 400
     msgnum = 29;
-  else if (dam <= 600)
+  else if (dam <= 6000) // was 600
     msgnum = 30;
-  else if (dam <= 1000)
+  else if (dam <= 8000) // was 1000
     msgnum = 31;
-  else if (dam <= 1500)
+  else if (dam <= 10000) // was 1500
     msgnum = 32;
-  else if (dam <= 2000)
+  else if (dam <= 12000) // was 2000
     msgnum = 33;
-  else if (dam <= 2500)
+  else if (dam <= 15000) // was 2500
     msgnum = 34;
   else
     msgnum = 34;
@@ -750,7 +766,7 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
       for (j = 1, msg = fight_messages[i].msg; (j < nr) && msg; j++)
         msg = msg->next;
 
-      if (!IS_NPC(vict) && (GET_REAL_LEVEL(vict) >= LVL_IMPL))
+      if (!IS_NPC(vict) && (GET_LEVEL(vict) >= LVL_IMPL))
       {
         act(msg->god_msg.attacker_msg, FALSE, ch, weap, vict, TO_CHAR);
         act(msg->god_msg.victim_msg, FALSE, ch, weap, vict, TO_VICT);
@@ -871,19 +887,19 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   }
 
   /* You can't damage an immortal! */
-  if (!IS_NPC(victim) && ((GET_REAL_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
+  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
   if (victim != ch)
   {
     /* Start the attacker fighting the victim */
-    if (GET_POS(ch) > POS_STUNNED && (FIGHTING(ch) == NULL))
+    if (GET_POS(ch) > POS_STUNNED && (FIGHTING(ch) == NULL) )
     {
       set_fighting(ch, victim);
     }
 
     /* Start the victim fighting the attacker */
-    if (GET_POS(victim) > POS_STUNNED && (FIGHTING(victim) == NULL))
+    if (GET_POS(victim) > POS_STUNNED && (FIGHTING(victim) == NULL) )
     {
       set_fighting(victim, ch);
       if (MOB_FLAGGED(victim, MOB_MEMORY) && !IS_NPC(ch))
@@ -947,15 +963,10 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       if (resist == r)
       {
         if (GET_RESISTS(victim, r) > 0)
-        {
-          send_to_char(victim, "Positive resist: %d %%, %d, %d\n\r", GET_RESISTS(victim, r), dam, dam * MIN(GET_RESISTS(victim, r), 200) / 200);
-          dam -= dam * MIN(GET_RESISTS(victim, r), 200) / 200;
-        }
+          dam -= dam * MIN(GET_RESISTS(victim, r), 500) / 500;
+
         if (GET_RESISTS(victim, r) < 0)
-        {
-          send_to_char(victim, "Negative resist: %d %%, %d, %d\n\r", GET_RESISTS(victim, r), dam, dam + dam * MIN(abs(GET_RESISTS(victim, r)), 200) / 200);
-          dam += dam * MIN(abs(GET_RESISTS(victim, r)), 200) / 200;
-        }
+          dam += dam * MIN(abs(GET_RESISTS(victim, r)), 500) / 500;
       }
     }
   }
@@ -966,33 +977,26 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (IS_NPC(victim) && AFF_FLAGGED(victim, AFF_SANCTUARY) && dam >= 2)
     dam_mod += 1;
 
-  if (IS_NPC(victim) && AFF_FLAGGED(victim, AFF_DEFENSE) && dam >= 2)
+  if (IS_NPC(victim) && AFF_FLAGGED(victim, AFF_DEFENSE) && !IS_AFFECTED(victim, AFF_WITHER) && dam >= 2)
     dam_mod += 1;
 
-  if (!IS_NPC(victim) && GET_REAL_LEVEL(ch) < LVL_IMPL)
+  if (!IS_NPC(victim) && GET_LEVEL(ch) < LVL_IMPL)
   {
     if (AFF_FLAGGED(victim, AFF_SANCTUARY) && dam >= 2)
-    {
       dam_mod += 1;
-      //      send_to_char(victim, "Sanctuary: dam_mod = %d\n\r", dam_mod);
-    }
 
     /* Prot from Evil spell*/
     if (AFF_FLAGGED(victim, AFF_HOLY_WARDING) && dam >= 2)
     {
-      if (GET_ALIGNMENT(ch) < -500)
-      {
+      if (GET_ALIGNMENT(ch) < -250)
         dam_mod += 1;
-        //	send_to_char(victim, "Holy Warding: dam_mod = %d\n\r", dam_mod);
-      }
     }
     /* stance defense*/
-    if (AFF_FLAGGED(victim, AFF_DEFENSE))
+    if (AFF_FLAGGED(victim, AFF_DEFENSE) && !IS_AFFECTED(victim, AFF_WITHER))
     {
       if (GET_SKILL(victim, SKILL_DEFENSIVE_STANCE) >= rand_number(1, 101) && dam >= 2)
       {
         dam_mod += 1;
-        //	send_to_char(victim, "Skill Defence: dam_mod = %d\n\r", dam_mod);
         check_improve(victim, SKILL_DEFENSIVE_STANCE, TRUE);
       }
       else
@@ -1005,62 +1009,41 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     {
       switch (GET_CON(ch))
       {
-      case 15:
-        dam_mod += 1;
-        break;
-      case 16:
-        dam_mod += 1;
-        break;
-      case 17:
-        dam_mod += 1;
-        break;
-      case 18:
-        dam_mod += 1;
-        break;
       case 19:
-        dam_mod += 1;
-        break;
       case 20:
-        dam_mod += 2;
-        break;
       case 21:
-        dam_mod += 2;
-        break;
       case 22:
-        dam_mod += 2;
-        break;
       case 23:
-        dam_mod += 2;
-        break;
       case 24:
-        dam_mod += 2;
+        dam_mod += 1;
         break;
       case 25:
-        dam_mod += 3;
+        dam_mod += 2;
         break;
       default:
         dam_mod += 0;
         break;
-        //	send_to_char(victim, "Skill Damage Reduction: dam_mod = %d\n\r", dam_mod);
       }
       check_improve(victim, SKILL_DAMAGE_REDUCTION, TRUE);
     }
     else
       check_improve(victim, SKILL_DAMAGE_REDUCTION, FALSE);
-    //   send_to_char(victim,"Damage: %d, dam_mod %d.\n\r",dam,dam_mod);
-    dam /= dam_mod;
   }
+  if (dam_mod == 0)
+    dam_mod = 1;
+  dam /= dam_mod;
+
   /* Check for PK if this is not a PK MUD */
-  if (!CONFIG_PK_ALLOWED)
+  if (!CONFIG_PK_ALLOWED && !IS_NPC(victim))
   {
     check_killer(ch, victim);
     if (PLR_FLAGGED(ch, PLR_KILLER) && (ch != victim))
       dam = 0;
   }
 
-  if (IS_AFFECTED(ch, AFF_FRENZY) && (ch != victim))
+  if (IS_AFFECTED(ch, AFF_RITUAL) && (ch != victim))
   {
-    long amt = (long)dam * (long)dice(10, 10);
+    long amt = (long)dam * (long)(10);
     gain_exp(ch, amt);
     increase_gold(ch, amt);
     send_to_char(ch, "You learn a lot from the battle ritual!\n\r");
@@ -1070,14 +1053,6 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
   GET_HIT(victim) -= MIN(dam, GET_MAX_HIT(victim) + 1);
 
-  /*  Gain exp for the hit */
-  /*   if (ch != victim)
-  {
-//    long amt = (long)dam * (long)1000000000;
-    long amt = (long)dam * (long)dice(10,10);
-    gain_exp(ch, amt);
-    increase_gold(ch, amt);
-  } */
   update_pos(victim);
 
   /* skill_message sends a message from the messages file in lib/misc.
@@ -1164,7 +1139,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD)
   {
-    if (attacktype == SKILL_BACKSTAB || attacktype == SKILL_ASSAULT)
+    //    stop_fighting_group(ch);
+    if (attacktype == SKILL_BACKSTAB || attacktype == SKILL_ASSAULT || attacktype == SKILL_CIRCLE)
       GET_WAIT_STATE(ch) -= 1;
 
     if (!IS_NPC(victim))
@@ -1179,6 +1155,9 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     /* Cant determine GET_GOLD on corpse, so do now and store */
     if (IS_NPC(victim))
     {
+
+      stop_fighting(ch);
+      stop_fighting(victim);
       if ((IS_HAPPYHOUR) && (IS_HAPPYGOLD))
       {
         happy_gold = (long)((long)GET_GOLD(victim) * (((float)(HAPPY_GOLD)) / (float)100));
@@ -1197,19 +1176,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       sprintf(local_buf, "%ld", local_gold);
     }
 
-    // if (GROUP(ch) /*&& (local_gold > 0)*/ && PRF_FLAGGED(ch, PRF_AUTOSPLIT))
-    // {
-    //   generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
-    //   if (corpse_obj)
-    //   {
-    //     send_to_char(ch, "%ld is the local_gold, %s is the local_buf\n\r",local_gold,local_buf);
-    //     do_get(ch, "all.coin corpse", 0, 0);
-    //     do_split(ch, local_buf, 0, 0);
-    //   }
-    //   /* need to remove the gold from the corpse */
-    // }
-
-    if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD))
+/*     if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD))
     {
       do_get(ch, "all.coin corpse", 0, 0);
     }
@@ -1220,7 +1187,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     if (IS_NPC(victim) && !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOSAC))
     {
       do_sac(ch, "corpse", 0, 0);
-    }
+    } */
     return (-1);
   }
   return (dam);
@@ -1233,14 +1200,19 @@ static int compute_thaco(struct char_data *ch, struct char_data *victim)
 {
   int calc_thaco;
 
-  if (!IS_NPC(ch))
-    calc_thaco = thaco(GET_CLASS(ch), GET_REAL_LEVEL(ch));
-  else /* THAC0 for monsters is set in the HitRoll */
-    calc_thaco = 20;
+  /*
+    if (!IS_NPC(ch))
+      calc_thaco = thaco(GET_CLASS(ch), GET_LEVEL(ch));
+    else
+      calc_thaco = 20;
+  */
+  calc_thaco = 20;
   calc_thaco -= str_app[STRENGTH_APPLY_INDEX(ch)].tohit;
-  calc_thaco -= GET_HITROLL(ch);
-  calc_thaco -= (int)((GET_INT(ch) - 13) / 1.5); /* Intelligence helps! */
-  calc_thaco -= (int)((GET_WIS(ch) - 13) / 1.5); /* So does wisdom */
+  calc_thaco -= (GET_HITROLL(ch) + GET_COMBAT_POWER(ch) + GET_RANK(ch));
+  if (GET_CLASS(ch) == CLASS_WIZARD)
+    calc_thaco -= GET_INT(ch); /* Intelligence helps! */
+  if (GET_CLASS(ch) == CLASS_PRIEST)
+    calc_thaco -= GET_WIS(ch); /* So does wisdom */
 
   return calc_thaco;
 }
@@ -1251,6 +1223,8 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
   struct affected_type *aff;
 
   int w_type, victim_ac, calc_thaco, dam, diceroll;
+  int tof = 0;
+  int tof_check = FALSE;
   float mult;
   char buf[MSL];
   /* Check that the attacker and victim exist */
@@ -1319,13 +1293,14 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
   else
     dam = (calc_thaco - diceroll <= victim_ac);
 
-  /* Parry, Dodge and Evade
+  /* Parry, Dodge, Shield Block and Evade
 Salty 04 JAN 2019
 */
   if ((ch != victim) && (GET_HIT(victim) > 0))
   {
     int skill;
-    int rand, test;
+    int ritual = 0;
+    int test, threshold;
     if (!IS_NPC(victim))
     {
       /* Mirror Image Spell */
@@ -1335,26 +1310,17 @@ Salty 04 JAN 2019
         {
           if (aff->spell == spell_type(victim, SPELL_MIRROR_IMAGE))
           {
-            skill = GET_SKILL(victim, SPELL_MIRROR_IMAGE);
-            rand = rand_number(0, aff->modifier);
-            test = rand_number(50, 1000) - GET_INT(victim) - GET_LUCK(victim) - aff->modifier;
-            if (skill >= test)
+            skill = GET_SKILL(victim, SPELL_MIRROR_IMAGE) + GET_SPELLS_AFFECTS(victim) + GET_INT(victim) + GET_LUCK(victim) + aff->modifier;
+            threshold = rand_number(50, 1000);
+            if (skill >= threshold)
             {
-              if (aff->modifier > 1)
+              if (aff->modifier > 0)
               {
-                if (rand % 3 == 0)
-                {
-                  act("$N is fooled and attacks a mirror image of $n!", false, victim, 0, ch, TO_NOTVICT);
-                  act("You are fooled by another of $n's mirror images!", false, victim, 0, ch, TO_VICT);
-                  act("You smile and watch $N attack a mirror image of you!", false, victim, 0, ch, TO_CHAR);
-                  aff->modifier--;
-                }
-                else
-                {
-                  act("$n evades $N's attack!", false, victim, 0, ch, TO_NOTVICT);
-                  act("$n evades your attack!", false, victim, 0, ch, TO_VICT);
-                  act("You evade $N's attack!", false, victim, 0, ch, TO_CHAR);
-                }
+
+                act("$N is fooled and attacks a mirror image of $n!", false, victim, 0, ch, TO_NOTVICT);
+                act("You are fooled by another of $n's mirror images!", false, victim, 0, ch, TO_VICT);
+                act("You smile and watch $N attack a mirror image of you!", false, victim, 0, ch, TO_CHAR);
+                aff->modifier--;
                 check_improve(victim, SPELL_MIRROR_IMAGE, TRUE);
               }
               else
@@ -1380,25 +1346,60 @@ Salty 04 JAN 2019
           act("$n evades $N's attack!", false, victim, 0, ch, TO_NOTVICT);
           act("$n evades your attack!", false, victim, 0, ch, TO_VICT);
           act("You evade $N's attack!", false, victim, 0, ch, TO_CHAR);
+/*           if (GET_POS(victim) != POS_FIGHTING)
+            set_fighting(victim, ch); */
           check_improve(victim, SKILL_EVADE, TRUE);
           return;
         }
         else
           check_improve(victim, SKILL_EVADE, FALSE);
       }
+      if (GET_SKILL(victim, SKILL_SHIELD_BLOCK) > 0)
+      {
+        skill = GET_SKILL(victim, SKILL_SHIELD_BLOCK);
+        if (AFF_FLAGGED(victim, AFF_DEFENSE))
+          skill += GET_SKILL(victim, SKILL_DEFENSIVE_STANCE) + GET_STR(victim) + GET_LUCK(victim) + GET_CON(victim);
+        test = rand_number(50, 1000);
+        if (skill >= test)
+        {
+          act("$n blocks $N's attack with $s shield!", false, victim, 0, ch, TO_NOTVICT);
+          act("$n blocks your attack with $s shield!", false, victim, 0, ch, TO_VICT);
+          act("You block $N's attack with your shield!", false, victim, 0, ch, TO_CHAR);
+/*           if (GET_POS(victim) != POS_FIGHTING)
+            set_fighting(victim, ch); */
+          check_improve(victim, SKILL_SHIELD_BLOCK, TRUE);
+          if (IS_AFFECTED(victim, AFF_RITUAL) && AFF_FLAGGED(victim, AFF_DEFENSE))
+          {
+            ritual = skill * 275;
+            gain_exp(victim, ritual);
+            increase_gold(victim, ritual);
+          }
+          return;
+        }
+        else
+          check_improve(victim, SKILL_SHIELD_BLOCK, FALSE);
+      }
 
       if ((GET_SKILL(victim, SKILL_PARRY) > 0) && (!AFF_FLAGGED(victim, AFF_OFFENSE)))
       {
         skill = GET_SKILL(victim, SKILL_PARRY);
         if (AFF_FLAGGED(victim, AFF_DEFENSE))
-          skill += GET_SKILL(victim, SKILL_DEFENSIVE_STANCE);
-        test = rand_number(50, 1000) - GET_STR(victim) - GET_LUCK(victim);
+          skill += GET_SKILL(victim, SKILL_DEFENSIVE_STANCE) + GET_STR(victim) + GET_LUCK(victim);
+        test = rand_number(50, 1000);
         if (skill >= test)
         {
           act("$n parries $N's attack!", false, victim, 0, ch, TO_NOTVICT);
           act("$n parries your attack!", false, victim, 0, ch, TO_VICT);
           act("You parry $N's attack!", false, victim, 0, ch, TO_CHAR);
+/*           if (GET_POS(victim) != POS_FIGHTING)
+            set_fighting(victim, ch); */
           check_improve(victim, SKILL_PARRY, TRUE);
+          if (IS_AFFECTED(victim, AFF_RITUAL) && AFF_FLAGGED(victim, AFF_DEFENSE))
+          {
+            ritual = skill * 275;
+            gain_exp(victim, ritual);
+            increase_gold(victim, ritual);
+          }
           return;
         }
         else
@@ -1406,15 +1407,25 @@ Salty 04 JAN 2019
       }
       if ((GET_SKILL(victim, SKILL_DODGE) > 0) && (!AFF_FLAGGED(victim, AFF_OFFENSE)))
       {
+        if (GET_SKILL(victim, SKILL_TWIST_OF_FATE) > rand_number(1, 101))
+        {
+          check_improve(victim, SKILL_TWIST_OF_FATE, TRUE);
+          tof = GET_SKILL(victim, SKILL_TWIST_OF_FATE);
+        }
+        else
+          check_improve(victim, SKILL_TWIST_OF_FATE, FALSE);
         skill = GET_SKILL(victim, SKILL_DODGE);
+        tof = GET_SKILL(victim, SKILL_TWIST_OF_FATE);
         if (AFF_FLAGGED(victim, AFF_DEFENSE))
           skill += GET_SKILL(victim, SKILL_DEFENSIVE_STANCE);
-        test = rand_number(50, 1000) - GET_DEX(victim) - GET_LUCK(victim);
+        test = rand_number(50, 1000) - GET_DEX(victim) - GET_LUCK(victim) - tof;
         if (skill >= test)
         {
           act("$n dodges $N's attack!", false, victim, 0, ch, TO_NOTVICT);
           act("$n dodges your attack!", false, victim, 0, ch, TO_VICT);
           act("You dodge $N's attack!", false, victim, 0, ch, TO_CHAR);
+/*           if (GET_POS(victim) != POS_FIGHTING)
+            set_fighting(victim, ch); */
           check_improve(victim, SKILL_DODGE, TRUE);
           return;
         }
@@ -1431,7 +1442,24 @@ Salty 04 JAN 2019
       if (type != SKILL_BACKSTAB && type != SKILL_CIRCLE &&
           type != SKILL_ASSAULT && type != SKILL_BASH &&
           type != SKILL_TUMBLE && type != SKILL_HEADBUTT &&
-          type != SKILL_EXECUTE)
+          type != SKILL_EXECUTE &&
+          type != SKILL_CHOP &&
+          type != SKILL_R_HOOK &&
+          type != SKILL_L_HOOK &&          
+          type != SKILL_ELBOW &&
+          type != SKILL_KNEE &&
+          type != SKILL_TRIP &&
+          type != SKILL_KICK &&
+          type != SKILL_SUCKER_PUNCH &&
+          type != SKILL_UPPERCUT &&          
+          type != SKILL_HAYMAKER &&
+          type != SKILL_CLOTHESLINE &&
+          type != SKILL_TRIP &&
+          type != SKILL_PILEDRVIER &&
+          type != SKILL_PALM_STRIKE &&
+          type != SKILL_ROUNDHOUSE &&          
+          type != SKILL_SPIN_KICK
+          )
       {
         if (MOB_FLAGGED(victim, MOB_DODGE))
         {
@@ -1449,6 +1477,8 @@ Salty 04 JAN 2019
             act("$n dodges $N's attack!", false, victim, 0, ch, TO_NOTVICT);
             act("$n dodges your attack!", false, victim, 0, ch, TO_VICT);
             act("You dodge $N's attack!", false, victim, 0, ch, TO_CHAR);
+/*             if (GET_POS(victim) != POS_FIGHTING)
+              set_fighting(victim, ch); */
             return;
           }
         }
@@ -1467,6 +1497,8 @@ Salty 04 JAN 2019
             act("$n parries $N's attack!", false, victim, 0, ch, TO_NOTVICT);
             act("$n parries your attack!", false, victim, 0, ch, TO_VICT);
             act("You parry $N's attack!", false, victim, 0, ch, TO_CHAR);
+/*             if (GET_POS(victim) != POS_FIGHTING)
+              set_fighting(victim, ch); */
             return;
           }
         }
@@ -1491,7 +1523,7 @@ Salty 04 JAN 2019
     /* okay, we know the guy has been hit.  now calculate damage.
      * Start with the damage bonuses: the damroll and strength apply */
     dam = str_app[STRENGTH_APPLY_INDEX(ch)].todam;
-    dam += GET_DAMROLL(ch);
+    dam += GET_DAMROLL(ch) + GET_COMBAT_POWER(ch) + GET_RANK(ch);
 
     /* Maybe holding arrow? */
     if (wielded && GET_OBJ_TYPE(wielded) == ITEM_WEAPON)
@@ -1508,7 +1540,7 @@ Salty 04 JAN 2019
       else
       {
         if (GET_SKILL(ch, SKILL_UNARMED_COMBAT) >= rand_number(1, 101))
-          dam += dice(GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 5, GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 10);
+          dam += dice(GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 5, GET_SKILL(ch, SKILL_UNARMED_COMBAT) / 5) + GET_STR(ch);
         else
           dam += dice(1, 2); /* Max 2 bare hand damage for players */
       }
@@ -1522,8 +1554,25 @@ Salty 04 JAN 2019
      * Position mortally 3.00 x normal
      * Note, this is a hack because it depends on the particular
      * values of the POSITION_XXX constants. */
+
+    //  mult = 1 + (POS_FIGHTING - GET_POS(victim)) / 3;
+
+    mult = 1.0;
     if (GET_POS(victim) < POS_FIGHTING)
-      mult = 1 + (POS_FIGHTING - GET_POS(victim)) / 3;
+    {
+      if (GET_POS(victim) == POS_SITTING)
+        mult = 2.0;
+      else if (GET_POS(victim) == POS_RESTING)
+        mult = 3.0;
+      else if (GET_POS(victim) == POS_SLEEPING)
+        mult = 4.0;
+      else if (GET_POS(victim) == POS_STUNNED)
+        mult = 5.0;
+      else if (GET_POS(victim) == POS_INCAP)
+        mult = 7.0;
+      else if (GET_POS(victim) == POS_MORTALLYW)
+        mult = 10.0;
+    }
     else
       mult = 1.0;
 
@@ -1554,9 +1603,6 @@ Salty 04 JAN 2019
         }
         else
         {
-          //            send_to_char(ch, "You come out of your rage and regain your senses!\n\r");
-          //            act("$n calms down from raging and $s is aware of everything again!", false, ch, 0, 0, TO_NOTVICT);
-          //            REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_RAGE);
           check_improve(ch, SKILL_RAGE, FALSE);
         }
       }
@@ -1569,18 +1615,37 @@ Salty 04 JAN 2019
       else
         check_improve(ch, SKILL_ENHANCED_DAMAGE, FALSE);
 
-      if (GET_SKILL(ch, SKILL_CRITICAL_HIT) >= rand_number(1, 101))
+      if (/* FIGHTING(ch) &&  */ GET_SKILL(ch, SKILL_CRITICAL_HIT) >= rand_number(1, 101))
       {
-        if (diceroll >= (20 - (GET_LUCK(ch) / 5)))
+        if (diceroll >= (20 - (GET_LUCK(ch) / 5) - (GET_SKILL(ch, SKILL_TWIST_OF_FATE) / 10)))
         {
-
-          if (GET_HIT(victim) > 0)
+          if (/* FIGHTING(ch) && */ GET_HIT(victim) > 0)
           {
             mult += 0.5;
             check_improve(ch, SKILL_CRITICAL_HIT, TRUE);
+          }
+          if (/* FIGHTING(ch) && */ GET_SKILL(ch, SKILL_TWIST_OF_FATE) >= rand_number(1, 101))
+            check_improve(ch, SKILL_TWIST_OF_FATE, TRUE);
+          else
+            check_improve(ch, SKILL_TWIST_OF_FATE, FALSE);
+          if (/* FIGHTING(ch) &&  */ GET_SKILL(ch, SKILL_ANATOMY_LESSONS) >= rand_number(1, 101))
+          {
+            mult += 1.0;
+            check_improve(ch, SKILL_ANATOMY_LESSONS, TRUE);
+            tof_check = TRUE;
+          }
+          else
+            check_improve(ch, SKILL_ANATOMY_LESSONS, FALSE);
+          if (/* FIGHTING(ch) && */ tof_check == FALSE)
+          {
             sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "You perform a brilliant maneuver and strike $N in a vital area!", CCNRM(ch, C_NRM));
             act(buf, FALSE, ch, 0, victim, TO_CHAR);
-            //            act("$n performs a brilliant maneuver and strikes $N in a vital area!", FALSE, ch, 0, victim, TO_NOTVICT);
+            act("$n brilliantly maneuvers past your defenses and strikes you in a vital area!", FALSE, ch, 0, victim, TO_VICT);
+          }
+          else if (/* FIGHTING(ch) && */ tof_check == TRUE)
+          {
+            sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "Your anatomy lessons pay off!  You struck a nerve!", CCNRM(ch, C_NRM));
+            act(buf, FALSE, ch, 0, victim, TO_CHAR);
             act("$n brilliantly maneuvers past your defenses and strikes you in a vital area!", FALSE, ch, 0, victim, TO_VICT);
           }
         }
@@ -1588,47 +1653,70 @@ Salty 04 JAN 2019
           check_improve(ch, SKILL_CRITICAL_HIT, FALSE);
       }
     }
+    //    send_to_char(ch,"dam is %d\n\r",dam);
     dam = (int)(dam * mult);
 
     /* at least 1 hp damage min per hit */
     dam = MAX(1, dam);
 
-    //		send_to_char(ch,"mult is %lf\n\r",mult);
+    //    send_to_char(ch,"mult is %lf\n\r",mult);
+    //    send_to_char(ch,"dam is %d\n\r",dam);
 
     /*  Damage message changes
 Salty 05 NOV 2019
 */
     switch (type)
     {
+    /*
+     *  Here we're using skill_mult() to manage multiplied damage
+     */
+    case SKILL_STORM_OF_STEEL:
+    {
+      if (IS_AFFECTED(ch, AFF_DEFENSE))
+        damage(ch, victim, skill_mult(SKILL_STORM_OF_STEEL, dam, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_STORM_OF_STEEL) + GET_SKILL(ch, SKILL_DEFENSIVE_STANCE)), SKILL_STORM_OF_STEEL);
+      else
+        damage(ch, victim, skill_mult(SKILL_STORM_OF_STEEL, dam, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_STORM_OF_STEEL)), SKILL_STORM_OF_STEEL);
+
+      break;
+    }
     case SKILL_BACKSTAB:
-      damage(ch, victim, dam * backstab_mult(GET_REAL_LEVEL(ch)), SKILL_BACKSTAB);
+      damage(ch, victim, skill_mult(SKILL_BACKSTAB, dam, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_BACKSTAB)), SKILL_BACKSTAB);
       break;
     case SKILL_CIRCLE:
-      damage(ch, victim, dam * backstab_mult(GET_REAL_LEVEL(ch)), SKILL_BACKSTAB);
+      damage(ch, victim, skill_mult(SKILL_CIRCLE, dam, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_CIRCLE)), SKILL_CIRCLE);
       break;
-    case SKILL_WHIRLWIND:
-      damage(ch, victim, dam, w_type);
-      break;
-    case SKILL_HEADBUTT:
-      damage(ch, victim, unarmed_combat_dam(ch, type), TYPE_CRUSH);
-      break;
+
     case SKILL_BASH:
-      damage(ch, victim, dam * circle_mult(GET_REAL_LEVEL(ch)), SKILL_BASH);
+      damage(ch, victim, skill_mult(SKILL_BASH, dam, GET_LEVEL(ch)), SKILL_BASH);
       break;
     case SKILL_ASSAULT:
-      damage(ch, victim, dam * backstab_mult(GET_REAL_LEVEL(ch)), SKILL_ASSAULT);
+      damage(ch, victim, skill_mult(SKILL_ASSAULT, dam, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_ASSAULT)), SKILL_ASSAULT);
       break;
-    case SKILL_TUMBLE:
-      damage(ch, victim, dam, SKILL_TUMBLE);
-      break;
-    case SKILL_EXECUTE:
-      damage(ch, victim, GET_MAX_HIT(victim), w_type);
-      break;
+      /*     case SKILL_TUMBLE:
+            damage(ch, victim, skill_mult(SKILL_TUMBLE, dam, GET_LEVEL(ch)), TYPE_CRUSH);
+            break; */
     case SKILL_IMPALE:
+      damage(ch, victim, skill_mult(SKILL_IMPALE, dam, GET_LEVEL(ch)), TYPE_PIERCE);
+      break;
     case SKILL_REND:
+      damage(ch, victim, skill_mult(SKILL_REND, dam, GET_LEVEL(ch)), TYPE_SLASH);
+      break;
     case SKILL_MINCE:
+      damage(ch, victim, skill_mult(SKILL_MINCE, dam, GET_LEVEL(ch)), TYPE_SLASH);
+      break;
     case SKILL_THRUST:
-      damage(ch, victim, dam * circle_mult(GET_REAL_LEVEL(ch)), w_type);
+      damage(ch, victim, skill_mult(SKILL_THRUST, dam, GET_LEVEL(ch)), TYPE_PIERCE);
+      break;
+
+
+    /*
+     *  Here we used unarmed_combat_dam() for fighters
+     */
+    case SKILL_HEADBUTT:
+      damage(ch, victim, unarmed_combat_dam(ch, dam, type), SKILL_HEADBUTT);
+      break;
+    case SKILL_SPIN_KICK:
+      damage(ch, victim, unarmed_combat_dam(ch, dam, SKILL_SPIN_KICK), SKILL_SPIN_KICK);
       break;
     case SKILL_ROUNDHOUSE:
     case SKILL_ELBOW:
@@ -1644,7 +1732,7 @@ Salty 05 NOV 2019
     case SKILL_CLOTHESLINE:
     case SKILL_PILEDRVIER:
     case SKILL_PALM_STRIKE:
-      damage(ch, victim, unarmed_combat_dam(ch, type), w_type);
+      damage(ch, victim, unarmed_combat_dam(ch, dam, type), w_type);
       break;
     default:
       damage(ch, victim, dam, w_type);
@@ -1654,13 +1742,6 @@ Salty 05 NOV 2019
 
   /* check if the victim has a hitprcnt trigger */
   hitprcnt_mtrigger(victim);
-}
-void fight_sanity(struct char_data *ch, struct char_data *victim)
-{
-  if (!FIGHTING(victim))
-    set_fighting(victim, ch);
-  if (!FIGHTING(ch))
-    set_fighting(ch, victim);
 }
 
 /* control the fights going on.  Called every 2 seconds from comm.c. */
@@ -1685,25 +1766,20 @@ void perform_violence(void)
     }
     if (IS_NPC(ch))
     {
-      if (IS_AFFECTED(ch, AFF_FEEBLE))
-      {
-        REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FEEBLE);
-        affect_from_char(ch, SPELL_FEEBLE);
-        continue;
-      }
       if (GET_MOB_WAIT(ch) > 0)
       {
         GET_MOB_WAIT(ch) -= PULSE_VIOLENCE;
         continue;
       }
       GET_MOB_WAIT(ch) = 0;
-      if (GET_POS(ch) < POS_FIGHTING)
-      {
-        GET_POS(ch) = POS_FIGHTING;
-        act("$n scrambles to $s feet!", TRUE, ch, 0, 0, TO_ROOM);
-      }
+      /*       if (GET_POS(ch) < POS_FIGHTING)
+            {
+              GET_POS(ch) = POS_FIGHTING;
+              act("$n scrambles to $s feet!", TRUE, ch, 0, 0, TO_ROOM);
+            } */
       /* check if the character has a fight trigger */
-      fight_mtrigger(ch);
+      if (GET_POS(ch) == POS_FIGHTING)
+        fight_mtrigger(ch);
     }
     if (GET_POS(ch) < POS_FIGHTING)
     {
@@ -1715,27 +1791,27 @@ void perform_violence(void)
     {
       num_attack = 1;
 
-      if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 200))
+      if (IS_AFFECTED(ch, AFF_OFFENSE) && (GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) + GET_STR(ch) + GET_LUCK(ch)) >= rand_number(1, 200))
         off_stance_bonus = GET_SKILL(ch, SKILL_OFFENSIVE_STANCE);
 
-      if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
+      if (GET_SKILL(ch, SKILL_SECOND_ATTACK) && (GET_SKILL(ch, SKILL_SECOND_ATTACK) + GET_STR(ch) + GET_LUCK(ch) >= rand_number(1, 200)))
       {
-        num_attack = 2;
+        num_attack++;
         check_improve(ch, SKILL_SECOND_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
+      if (GET_SKILL(ch, SKILL_THIRD_ATTACK) && (GET_SKILL(ch, SKILL_THIRD_ATTACK) + GET_STR(ch) + GET_LUCK(ch) >= rand_number(1, 200)))
       {
-        num_attack = 3;
+        num_attack++;
         check_improve(ch, SKILL_THIRD_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
+      if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) && (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + GET_STR(ch) + GET_LUCK(ch) >= rand_number(1, 200)))
       {
-        num_attack = 4;
+        num_attack++;
         check_improve(ch, SKILL_FOURTH_ATTACK, TRUE);
       }
-      if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
+      if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) && (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + GET_STR(ch) + GET_LUCK(ch) >= rand_number(1, 200)))
       {
-        num_attack = 5;
+        num_attack++;
         check_improve(ch, SKILL_FIFTH_ATTACK, TRUE);
       }
 
@@ -1756,14 +1832,8 @@ void perform_violence(void)
           dw_num_att = 1;
           check_improve(ch, SKILL_DUAL_WIELD, TRUE);
 
-          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
+          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) && (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200)))
             dw_num_att = 2;
-          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
-            dw_num_att = 3;
-          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
-            dw_num_att = 4;
-          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
-            dw_num_att = 5;
         }
         else
         {
@@ -1785,8 +1855,7 @@ void perform_violence(void)
           sh_num_att = 0;
         else if (!GET_SKILL(ch, SKILL_SHIELD_MASTER) && IS_AFFECTED(ch, AFF_OFFENSE))
           sh_num_att = 1;
-
-        else if (GET_SKILL(ch, SKILL_SHIELD_MASTER) > 0)
+        if (GET_SKILL(ch, SKILL_SHIELD_MASTER))
         {
           if (GET_SKILL(ch, SKILL_SHIELD_MASTER) >= rand_number(1, 101))
           {
@@ -1800,44 +1869,37 @@ void perform_violence(void)
           }
           if (GET_SKILL(ch, SKILL_SECOND_ATTACK) >= rand_number(1, 200))
             sh_num_att = 2;
-          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 300))
+          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) >= rand_number(1, 200))
             sh_num_att = 3;
-          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 400))
+          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) >= rand_number(1, 200))
             sh_num_att = 4;
-          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 500))
+          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) >= rand_number(1, 200))
             sh_num_att = 5;
         }
         if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 200))
           off_stance_bonus = GET_SKILL(ch, SKILL_OFFENSIVE_STANCE);
-        if (IS_AFFECTED(ch, AFF_DEFENSE) && GET_SKILL(ch, SKILL_DEFENSIVE_STANCE) > 0 && sh_num_att > 1)
-          sh_num_att -= 1;
+        /*         if (IS_AFFECTED(ch, AFF_DEFENSE) && GET_SKILL(ch, SKILL_DEFENSIVE_STANCE) > 0 && sh_num_att > 1)
+                  sh_num_att -= 1; */
       }
 
       /* Unarmed Combat */
       if (!GET_EQ(ch, WEAR_WIELD) && !GET_EQ(ch, WEAR_OFFHAND))
       {
-        if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) >= rand_number(1, 300))
+        unarmed_num_att = 1;        
+        
+        if (IS_AFFECTED(ch, AFF_OFFENSE) && GET_SKILL(ch, SKILL_OFFENSIVE_STANCE) + GET_LUCK(ch) + GET_STR(ch) >= rand_number(1, 300))
           off_stance_bonus = GET_SKILL(ch, SKILL_OFFENSIVE_STANCE);
-
-        if (!IS_AFFECTED(ch, AFF_UNARMED_BONUS))
-          unarmed_num_att = 0;
-
-        else if (IS_AFFECTED(ch, AFF_UNARMED_BONUS))
-        {
-          unarmed_num_att = 1;
-
-          if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 200))
-            unarmed_num_att = 2;
-          else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 300))
-            unarmed_num_att = 3;
-          else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
-            unarmed_num_att = 4;
-          else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 500))
-            unarmed_num_att = 5;
-        }
+        if (GET_SKILL(ch, SKILL_SECOND_ATTACK) + off_stance_bonus >= rand_number(1, 200))
+          unarmed_num_att += 1;
+        else if (GET_SKILL(ch, SKILL_THIRD_ATTACK) + off_stance_bonus >= rand_number(1, 300))
+          unarmed_num_att += 1;
+        else if (GET_SKILL(ch, SKILL_FOURTH_ATTACK) + off_stance_bonus >= rand_number(1, 400))
+          unarmed_num_att += 1;
+        else if (GET_SKILL(ch, SKILL_FIFTH_ATTACK) + off_stance_bonus >= rand_number(1, 500))
+          unarmed_num_att += 1;
       }
 
-      // send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
+      //      send_to_char(ch, "num_attack: %d, dw_num_att: %d, sh_num_att: %d\n\r",num_attack,dw_num_att,sh_num_att);
 
       /* Hit with wield, shield or offhand weapon */
       if (GET_SKILL(ch, SKILL_ACROBATICS) >= rand_number(1, 101))
@@ -1860,6 +1922,9 @@ void perform_violence(void)
         unarmed_num_att--;
       } while (num_attack > 0 || dw_num_att > 0 || sh_num_att > 0 || unarmed_num_att > 0);
 
+      if (GET_SKILL(ch, SKILL_SHIELD_SLAM) || GET_SKILL(ch, SKILL_WEAPON_PUNCH))
+        knight_combat_update(ch, vict);
+
       if (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_OFFHAND))
       {
         if (GET_SKILL(ch, SKILL_DIRTY_TRICKS) >= rand_number(1, 102))
@@ -1878,24 +1943,50 @@ void perform_violence(void)
         {
           if (tch == ch)
             continue;
+
+          if (!IS_NPC(tch) && FIGHTING(tch) && IS_AFFECTED(tch, AFF_WAR_DANCE))
+          {
+            if (GET_SKILL(tch, SKILL_WAR_DANCE) > 0)
+            {
+              if (!IS_NPC(ch))
+              {
+                call_magic(tch, ch, NULL, SPELL_BARD_WAR_DANCE, GET_LEVEL(tch) + GET_SPELLS_DAMAGE(tch), CAST_SPELL);
+                check_improve(tch, SKILL_WAR_DANCE, TRUE);
+              }
+            }
+            else
+              check_improve(tch, SKILL_WAR_DANCE, FALSE);
+          }
+
+          if (FIGHTING(tch) && IS_AFFECTED(tch, AFF_SLOW_DANCE))
+          {
+            if (GET_SKILL(tch, SKILL_SLOW_DANCE) > rand_number(1, 100))
+            {
+              if (!IS_NPC(ch))
+              {
+                call_magic(tch, ch, NULL, SPELL_BARD_SLOW_DANCE, GET_LEVEL(tch) + GET_SPELLS_HEALING(tch), CAST_SPELL);
+                check_improve(tch, SKILL_SLOW_DANCE, TRUE);
+              }
+            }
+            else
+              check_improve(tch, SKILL_SLOW_DANCE, FALSE);
+          }
+
           if (!IS_NPC(tch) && !PRF_FLAGGED(tch, PRF_AUTOASSIST))
             continue;
           if (IN_ROOM(ch) != IN_ROOM(tch))
             continue;
           if (!CAN_SEE(tch, ch))
             continue;
+          if (!IS_NPC(tch) && AFF_FLAGGED(tch, AFF_DEFENSE) )
+          {
+            do_silent_rescue(tch, GET_NAME(ch), 0, 0);
+            continue;
+          }
           if (GET_POS(tch) != POS_STANDING)
             continue;
           if (FIGHTING(tch))
             continue;
-
-          if (!IS_NPC(tch) && FIGHTING(ch) && (GET_SKILL(tch, SKILL_RESCUE) > rand_number(1, 100)) &&
-              GET_SKILL(tch, SKILL_DEFENSIVE_STANCE) > rand_number(1, 100) &&
-              AFF_FLAGGED(tch, AFF_DEFENSE))
-          {
-            do_rescue(tch, GET_NAME(ch), 0, 0);
-            continue;
-          }
           else
           {
             do_assist(tch, GET_NAME(ch), 0, 0);
@@ -1903,27 +1994,30 @@ void perform_violence(void)
           }
         }
       }
-      if (IS_AFFECTED(ch, AFF_FRENZY))
-      {
-        REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_FRENZY);
-        affect_from_char(ch, SPELL_FRENZY);
-      }
     }
     // End of !IS_NPC(ch)
 
     if (IS_NPC(ch))
     {
+      int mobatt = 1;
       /* Default mob attack counter moblev/10 + 1*/
       if (!(ch->mob_specials.attack_num))
       {
-        num_attack = (1 + (int)(GET_REAL_LEVEL(ch) / 25));
+        num_attack = (1 + GET_LEVEL(ch) / 25);
         if (IS_AFFECTED(ch, AFF_HASTE))
           num_attack++;
+        if (IS_AFFECTED(ch, AFF_SLOW))
+          num_attack--;  
       }
       else /* ESPEC mob attack number */
         num_attack = ch->mob_specials.attack_num;
 
-      int i, skill, chance;
+      if (IS_AFFECTED(ch, AFF_WITHER))
+        num_attack--;
+
+      mobatt = 1;
+
+      int i, skill, chance, ritual;
 
       for (i = 0; i < num_attack; i++)
         hit(ch, FIGHTING(ch), TYPE_UNDEFINED);
@@ -1933,48 +2027,23 @@ void perform_violence(void)
         next_tch = tch->next_in_room;
         if (IS_NPC(tch))
           continue;
-        if (GET_REAL_LEVEL(tch) > LVL_IMMORT)
+        if (GET_LEVEL(tch) > LVL_IMMORT)
           continue;
         if (tch == ch)
           continue;
         if (MOB_FLAGGED(ch, MOB_HIT_GROUP))
         {
+          mobatt = 1 + (num_attack / 10);
           vict = FIGHTING(ch);
-          if (GROUP(vict) && (GROUP(vict) == GROUP(tch)) && (vict != tch))
+          for (i = 0; i < mobatt; i++)
           {
-            skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY);
-            if (AFF_FLAGGED(vict, AFF_DEFENSE))
-              skill += GET_SKILL(vict, SKILL_DEFENSIVE_STANCE);
-            chance = rand_number(76, 601) - GET_STR(vict) - GET_DEX(vict) - GET_LUCK(vict);
-            //						send_to_char(vict, "Group: Skill is %d, chance is %d\n\r",skill, chance);
-            if (skill >= chance)
+            if (GROUP(vict) && (GROUP(vict) == GROUP(tch)) && (vict != tch))
             {
-              sprintf(buf, "%s lunges across the room to parry %s's attack directed at %s!", GET_NAME(vict), GET_NAME(ch), GET_NAME(tch));
-              act(buf, false, vict, 0, ch, TO_NOTVICT);
-              act("$n group parries your attack!", false, vict, 0, ch, TO_VICT);
-              sprintf(buf, "You lunge across the room and parry %s's attack directed at %s!", GET_NAME(ch), GET_NAME(tch));
-              act(buf, false, vict, 0, ch, TO_CHAR);
-            }
-            else
-            {
-              hit(ch, tch, TYPE_UNDEFINED);
-              check_improve(vict, SKILL_ENHANCED_PARRY, FALSE);
-            }
-            check_improve(vict, SKILL_ENHANCED_PARRY, TRUE);
-          }
-        }
-        if (MOB_FLAGGED(ch, MOB_HIT_ATTACKERS))
-        {
-          if (FIGHTING(tch) == ch)
-          {
-            vict = FIGHTING(ch);
-            if (vict != tch)
-            {
-              skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY);
+              skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY) + GET_STR(vict) + GET_DEX(vict) + GET_LUCK(vict);
               if (AFF_FLAGGED(vict, AFF_DEFENSE))
                 skill += GET_SKILL(vict, SKILL_DEFENSIVE_STANCE);
-              chance = rand_number(76, 601) - GET_STR(vict) - GET_DEX(vict) - GET_LUCK(vict);
-              //						send_to_char(vict, "Attackers: Skill is %d, chance is %d\n\r",skill, chance);
+              chance = rand_number(0, 601);
+              //						send_to_char(vict, "Group: Skill is %d, chance is %d\n\r",skill, chance);
               if (skill >= chance)
               {
                 sprintf(buf, "%s lunges across the room to parry %s's attack directed at %s!", GET_NAME(vict), GET_NAME(ch), GET_NAME(tch));
@@ -1982,6 +2051,12 @@ void perform_violence(void)
                 act("$n group parries your attack!", false, vict, 0, ch, TO_VICT);
                 sprintf(buf, "You lunge across the room and parry %s's attack directed at %s!", GET_NAME(ch), GET_NAME(tch));
                 act(buf, false, vict, 0, ch, TO_CHAR);
+                if (IS_AFFECTED(vict, AFF_RITUAL) && AFF_FLAGGED(vict, AFF_DEFENSE))
+                {
+                  ritual = skill * 275;
+                  gain_exp(vict, ritual);
+                  increase_gold(vict, ritual);
+                }
               }
               else
               {
@@ -1992,32 +2067,86 @@ void perform_violence(void)
             }
           }
         }
-        if (MOB_FLAGGED(ch, MOB_HIT_ROOM))
+        if (MOB_FLAGGED(ch, MOB_HIT_ATTACKERS))
         {
-          vict = FIGHTING(ch);
-          if (vict != tch)
+          if (FIGHTING(tch) == ch)
           {
-            skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY);
-            if (AFF_FLAGGED(vict, AFF_DEFENSE))
-              skill += GET_SKILL(vict, SKILL_DEFENSIVE_STANCE);
-            chance = rand_number(76, 601) - GET_STR(vict) - GET_DEX(vict) - GET_LUCK(vict);
-            //						send_to_char(vict, "Room: Skill is %d, chance is %d\n\r",skill, chance);
-            if (skill >= chance)
+            mobatt = 1 + (num_attack / 5);
+            vict = FIGHTING(ch);
+            for (i = 0; i < mobatt; i++)
             {
-              sprintf(buf, "%s lunges across the room to parry %s's attack directed at %s!", GET_NAME(vict), GET_NAME(ch), GET_NAME(tch));
-              act(buf, false, vict, 0, ch, TO_NOTVICT);
-              act("$n group parries your attack!", false, vict, 0, ch, TO_VICT);
-              sprintf(buf, "You lunge across the room and parry %s's attack directed at %s!", GET_NAME(ch), GET_NAME(tch));
-              act(buf, false, vict, 0, ch, TO_CHAR);
+              if (vict != tch)
+              {
+                skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY) + GET_STR(vict) + GET_DEX(vict) + GET_LUCK(vict);
+                if (AFF_FLAGGED(vict, AFF_DEFENSE))
+                  skill += GET_SKILL(vict, SKILL_DEFENSIVE_STANCE);
+                chance = rand_number(0, 601);
+                //						send_to_char(vict, "Attackers: Skill is %d, chance is %d\n\r",skill, chance);
+                if (skill >= chance)
+                {
+                  sprintf(buf, "%s lunges across the room to parry %s's attack directed at %s!", GET_NAME(vict), GET_NAME(ch), GET_NAME(tch));
+                  act(buf, false, vict, 0, ch, TO_NOTVICT);
+                  act("$n group parries your attack!", false, vict, 0, ch, TO_VICT);
+                  sprintf(buf, "You lunge across the room and parry %s's attack directed at %s!", GET_NAME(ch), GET_NAME(tch));
+                  act(buf, false, vict, 0, ch, TO_CHAR);
+                  if (IS_AFFECTED(vict, AFF_RITUAL) && AFF_FLAGGED(vict, AFF_DEFENSE))
+                  {
+                    ritual = skill * 275;
+                    gain_exp(vict, ritual);
+                    increase_gold(vict, ritual);
+                  }
+                }
+                else
+                {
+                  hit(ch, tch, TYPE_UNDEFINED);
+                  check_improve(vict, SKILL_ENHANCED_PARRY, FALSE);
+                }
+                check_improve(vict, SKILL_ENHANCED_PARRY, TRUE);
+              }
             }
-            else
-            {
-              hit(ch, tch, TYPE_UNDEFINED);
-              check_improve(vict, SKILL_ENHANCED_PARRY, FALSE);
-            }
-            check_improve(vict, SKILL_ENHANCED_PARRY, TRUE);
           }
         }
+        if (MOB_FLAGGED(ch, MOB_HIT_ROOM))
+        {
+          mobatt = 1 + (num_attack / 10);
+          vict = FIGHTING(ch);
+          for (i = 0; i < mobatt; i++)
+          {
+            if (vict != tch)
+            {
+              skill = GET_SKILL(vict, SKILL_ENHANCED_PARRY) + GET_STR(vict) + GET_DEX(vict) + GET_LUCK(vict);
+              if (AFF_FLAGGED(vict, AFF_DEFENSE))
+                skill += GET_SKILL(vict, SKILL_DEFENSIVE_STANCE);
+              chance = rand_number(0, 601);
+              //						send_to_char(vict, "Room: Skill is %d, chance is %d\n\r",skill, chance);
+              if (skill >= chance)
+              {
+                sprintf(buf, "%s lunges across the room to parry %s's attack directed at %s!", GET_NAME(vict), GET_NAME(ch), GET_NAME(tch));
+                act(buf, false, vict, 0, ch, TO_NOTVICT);
+                act("$n group parries your attack!", false, vict, 0, ch, TO_VICT);
+                sprintf(buf, "You lunge across the room and parry %s's attack directed at %s!", GET_NAME(ch), GET_NAME(tch));
+                act(buf, false, vict, 0, ch, TO_CHAR);
+                if (IS_AFFECTED(vict, AFF_RITUAL) && AFF_FLAGGED(vict, AFF_DEFENSE))
+                {
+                  ritual = skill * 275;
+                  gain_exp(vict, ritual);
+                  increase_gold(vict, ritual);
+                }
+              }
+              else
+              {
+                hit(ch, tch, TYPE_UNDEFINED);
+                check_improve(vict, SKILL_ENHANCED_PARRY, FALSE);
+              }
+              check_improve(vict, SKILL_ENHANCED_PARRY, TRUE);
+            }
+          }
+        }
+      }
+      if (GET_POS(ch) < POS_FIGHTING)
+      {
+        GET_POS(ch) = POS_FIGHTING;
+        act("$n scrambles to $s feet!", TRUE, ch, 0, 0, TO_ROOM);
       }
     }
 

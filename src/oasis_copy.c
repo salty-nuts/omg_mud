@@ -315,7 +315,7 @@ int buildwalk(struct char_data *ch, int dir)
   room_rnum rnum;
 
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_BUILDWALK) &&
-      GET_REAL_LEVEL(ch) >= LVL_BUILDER) {
+      GET_LEVEL(ch) >= LVL_BUILDER) {
 
     get_char_colors(ch);
 

@@ -27,11 +27,11 @@
 
 /* Names first */
 const char *class_abbrevs[] = {
-  "Wi", // unused
-  "Pr", // unused
-  "Ro", // unused
-  "Fi", // unused
-  "Kn", // Salty
+  "Wi",
+  "Pr",
+  "Ro",
+  "Fi",
+  "Kn",
   "Ba",
   "\n"
 };
@@ -41,7 +41,7 @@ const char *pc_class_types[] = {
   "Priest",
   "Rogue",
   "Fighter",
-  "Knight", // Salty
+  "Knight",
   "Bard",
   "\n"
 };
@@ -127,7 +127,7 @@ bitvector_t find_class_bitvector(const char *arg)
 
 int prac_params[4][NUM_CLASSES] = {
 /* 	Wi    Pr  Ro  Fi  Kn Ba			*/
-  { 80,		80,	80,	80,	80,	80		},	/* learned level */
+  { 70,		70,	70,	70,	70,	70		},	/* learned level */
   { 15,		15,	10,	10,	10,	10		},	/* max per practice */
   { 1,		1,	1,	1,	1,	1		},	/* min per practice */
   { SPELL,	SPELL,	SKILL,	SKILL,	SKILL, SKILL		},	/* prac name */
@@ -144,7 +144,7 @@ int prac_params[4][NUM_CLASSES] = {
 struct guild_info_type guild_info[] = {
 
 /* Midgaard */
- { CLASS_WIZARD,    3017,    SOUTH   },
+ { CLASS_WIZARD,        3017,    SOUTH   },
  { CLASS_PRIEST,        3004,    NORTH   },
  { CLASS_ROGUE,         3027,    EAST   },
  { CLASS_FIGHTER,       3021,    EAST   },
@@ -158,13 +158,15 @@ struct guild_info_type guild_info[] = {
 
 /* Saving throws for : MCTW : PARA, ROD, PETRI, BREATH, SPELL. Levels 0-40. Do
  * not forget to change extern declaration in magic.c if you add to this. */
-byte saving_throws(int class_num, int type, int level)
+int saving_throws(struct char_data *ch, int type, int level)
 {
   int result = 100;
-  if (class_num >= 0)
+  if (!IS_NPC(ch))
   {
-    switch(type)
+    if (GET_CLASS(ch))
     {
+      switch (type)
+      {
       case SAVING_PARA:
       case SAVING_ROD:
       case SAVING_PETRI:
@@ -172,194 +174,34 @@ byte saving_throws(int class_num, int type, int level)
       case SAVING_SPELL:
         return result - level;
       default:
-	return result - level;
+        return result - level;
+      }
     }
+    else
+      return result;
   }
   else
+  { 
+    result = 110;
     return result - level;
+  }
 }
 
-/* THAC0 for classes and levels.  (To Hit Armor Class 0) */
+/* THAC0 for classes and levels.  (To Hit Armor Class 0)
+
+Depreciated, unused as of 07 FEB 2024
+Salty
+*/
 int thaco(int class_num, int level)
 {
 	int mod;
 	switch (level)
 	{
-    case  0:
-			mod = 100;
-			break;
-    case  1:
-			mod = 20;
-			break;
-    case  2:
-			mod = 20;
-			break;
-    case  3:
-			mod = 20;
-			break;
-    case  4:
-			mod = 19;
-			break;
-    case  5:
-			mod = 19;
-			break;
-    case  6:
-			mod = 19;
-			break;
-    case  7:
-			mod = 18;
-			break;
-    case  8:
-			mod = 18;
-			break;
-    case  9:
-			mod = 18;
-			break;
-    case 10:
-			mod = 17;
-			break;
-    case 11:
-			mod = 17;
-			break;
-    case 12:
-			mod = 17;
-			break;
-    case 13:
-			mod = 16;
-			break;
-    case 14:
-			mod = 16;
-			break;
-    case 15:
-			mod = 16;
-			break;
-    case 16:
-			mod = 15;
-			break;
-    case 17:
-			mod = 15;
-			break;
-    case 18:
-			mod = 15;
-			break;
-    case 19:
-			mod = 14;
-			break;
-    case 20:
-			mod = 14;
-			break;
-    case 21:
-			mod = 14;
-			break;
-    case 22:
-			mod = 13;
-			break;
-    case 23:
-			mod = 13;
-			break;
-    case 24:
-			mod = 13;
-			break;
-    case 25:
-			mod = 12;
-			break;
-    case 26:
-			mod = 12;
-			break;
-    case 27:
-			mod = 12;
-			break;
-    case 28:
-			mod = 11;
-			break;
-    case 29:
-			mod = 11;
-			break;
-    case 30:
-			mod = 11;
-			break;
-    case 31:
-			mod = 10;
-			break;
-    case 32:
-			mod = 10;
-			break;
-    case 33:
-			mod = 10;
-			break;
-    case 34:
-			mod = 9;
-			break;
-    case 35:
-			mod = 9;
-			break;
-    case 36:
-			mod = 9;
-			break;
-    case 37:
-			mod = 8;
-			break;
-    case 38:
-			mod = 8;
-			break;
-    case 39:
-			mod = 8;
-			break;
-    case 40:
-			mod = 7;
-			break;
-    case 41:
-			mod = 7;
-			break;
-    case 42:
-			mod = 7;
-			break;
-    case 43:
-			mod = 7;
-			break;
-    case 44:
-			mod = 6;
-			break;
-    case 45:
-			mod = 6;
-			break;
-    case 46:
-			mod = 6;
-			break;
-    case 47:
-			mod = 5;
-			break;
-    case 48:
-			mod = 5;
-			break;
-    case 49:
-			mod = 5;
-			break;
-    case 50:
-    case 51:
-    case 52:
-    case 53:
-    case 54:
-    case 55:
-    case 56:
-    case 57:
-    case 58:
-    case 59:
-    case 60:
-			mod = 4;
-			break;
-		case 101:
-		case 102:
-		case 103:
-		case 104:
-		case 105:
-			mod = 1;
-			break;
     default:
 			mod = 1;
 			log("SYSERR: Missing level in thac0 chart.");
 			break;
-    }
+  }
 	switch (class_num)
 	{
 		case CLASS_WIZARD:
@@ -384,7 +226,7 @@ int thaco(int class_num, int level)
 
 
 
-// Changed to 3d6+7, 10-25 range
+// Changed to 4d6+7, 10-25 range
 // Salty 04 JAN 2019
 
 /* Roll the 6 stats for a character... each stat is made of the sum of the best
@@ -491,73 +333,42 @@ void roll_real_abils(struct char_data *ch)
 /* Some initializations for characters, including initial skills */
 void do_start(struct char_data *ch)
 {
-//  GET_REAL_LEVEL(ch) = 1;
+  GET_LEVEL(ch) = 1;
   GET_EXP(ch) = 1;
   GET_TRAINS(ch) = 1;
   GET_PRACTICES(ch) = 5;
-  GET_MULTI_CLASS(ch) = GET_CLASS(ch);
-  set_title(ch, NULL);
 
   GET_MAX_HIT(ch)  = 100;
   GET_MAX_MANA(ch) = 100;
-  GET_MAX_MOVE(ch) = 0;
+  GET_MAX_MOVE(ch) = 100;
+  GET_HIT(ch) = GET_MAX_HIT(ch);
+  GET_MANA(ch) = GET_MAX_MANA(ch);
+  GET_MOVE(ch) = GET_MAX_MOVE(ch);
 
-  switch (GET_CLASS(ch)) {
+  GET_COND(ch, THIRST) = -1;
+  GET_COND(ch, HUNGER) = -1;
+  GET_COND(ch, DRUNK) = -1;
 
-  case CLASS_WIZARD:
-    GET_LEVEL(ch, CLASS_WIZARD) = 1;
-    break;
-
-  case CLASS_PRIEST:
-    GET_LEVEL(ch, CLASS_PRIEST) = 1;
-    break;
-
-  case CLASS_ROGUE:
-    GET_LEVEL(ch, CLASS_ROGUE) = 1;
-    break;
-
-  case CLASS_FIGHTER:
-    GET_LEVEL(ch, CLASS_FIGHTER) = 1;
-    break;
-
-  case CLASS_KNIGHT:
-    GET_LEVEL(ch, CLASS_KNIGHT) = 1;
-    break;
-  case CLASS_BARD:
-    GET_LEVEL(ch, CLASS_BARD) = 1;
-    break;
-  }
-  GET_REAL_ADD(ch) = 100;
+/*   GET_REAL_ADD(ch) = 100;
   GET_REAL_STR(ch) = 25;
   GET_REAL_INT(ch) = 25;
   GET_REAL_WIS(ch) = 25;
   GET_REAL_DEX(ch) = 25;
   GET_REAL_CON(ch) = 25;
-  GET_REAL_LUCK(ch) = 25;
-
-  for (int i = 0;i < 29;i++)
-  {
-    GET_LEVEL(ch, GET_CLASS(ch)) += 1;
-    advance_level(ch);
-  }
-
-  GET_HIT(ch) = GET_MAX_HIT(ch);
-  GET_MANA(ch) = GET_MAX_MANA(ch);
-  GET_MOVE(ch) = GET_MAX_MOVE(ch);
-
-/*   GET_COND(ch, THIRST) = -1;
-  GET_COND(ch, HUNGER) = -1;
-  GET_COND(ch, DRUNK) = -1; */
+  GET_REAL_LUCK(ch) = 25; */
 
   if (CONFIG_SITEOK_ALL)
     SET_BIT_AR(PLR_FLAGS(ch), PLR_SITEOK);
+
+  set_title(ch, NULL);
 }
+
 
 /* This function controls the change to maxmove, maxmana, and maxhp for each
  * class every time they gain a level. */
 void advance_level(struct char_data *ch)
 {
-  int skill_gain = 80, add_hp = 0, add_mana = 0, add_move = 100;
+  int skill_gain = 80, add_hp = 0, add_mana = 0, add_move = dice(1,20);
 
   switch (GET_CLASS(ch))
   {
@@ -601,39 +412,31 @@ void advance_level(struct char_data *ch)
   ch->points.max_mana += MAX(1, add_mana);
   ch->points.max_move += MAX(1, add_move);
 
-//  if (GET_REAL_LEVEL(ch) > 1)
-//    ch->points.max_mana += add_mana;
-
+  GET_COMBAT_POWER(ch) += 1;
   GET_PRACTICES(ch) += 3 + wis_app[GET_WIS(ch)].bonus;
-
-
-//  if (GET_REAL_LEVEL(ch) % 5 == 0)
-		GET_TRAINS(ch) += dice(1,4);
+  GET_TRAINS(ch) += dice(1,int_app[GET_INT(ch)].meta_mana);
 
   for (int i = 1;  i <= NUM_SPELLS; i++)
   {
-    if ( ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
-    (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[i].min_level[(int)GET_MULTI_CLASS(ch)]) ) &&
+    if ( ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)])) &&
     (GET_SKILL(ch, i) == 0) )
       SET_SKILL(ch, i, skill_gain);
   }
 
   for (int i = ZERO_SONGS;  i <= ZERO_SONGS + NUM_SONGS; i++)
   {
-    if ( ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ||
-    (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[i].min_level[(int)GET_MULTI_CLASS(ch)]) ) &&
+    if ( ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ) &&
     (GET_SKILL(ch, i) == 0) )
       SET_SKILL(ch, i, skill_gain);
   }
   for (int j = ZERO_SKILLS;  j <= ZERO_SKILLS + NUM_SKILLS +1; j++)
   {
-    if ( ( (GET_LEVEL(ch, GET_CLASS(ch)) >= spell_info[j].min_level[(int)GET_CLASS(ch)]) ||
-    (GET_LEVEL(ch, GET_MULTI_CLASS(ch)) >= spell_info[j].min_level[(int)GET_MULTI_CLASS(ch)]) ) &&
+    if ( ( (GET_LEVEL(ch) >= spell_info[j].min_level[(int)GET_CLASS(ch)]) ) &&
     (GET_SKILL(ch, j) == 0) )
       SET_SKILL(ch, j, skill_gain);
   }
 
-  if (GET_REAL_LEVEL(ch) >= LVL_IMMORT)
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
   {
     for (int i = 0; i < 3; i++)
       GET_COND(ch, i) = (char) -1;
@@ -663,15 +466,18 @@ int invalid_class(struct char_data *ch, struct obj_data *obj)
   if (OBJ_FLAGGED(obj, ITEM_ANTI_KNIGHT) && IS_KNIGHT(ch))
     return TRUE;
 
+  if (OBJ_FLAGGED(obj, ITEM_ANTI_BARD) && IS_BARD(ch))
+    return TRUE;
+
   return FALSE;
 }
 
-/* 
- * SPELLS AND SKILLS. 
- * This area defines which spells are assigned to which classes, 
+/*
+ * SPELLS AND SKILLS.
+ * This area defines which spells are assigned to which classes,
  * and the minimum level the character must be to use the spell or
- * skill. 
- * 
+ * skill.
+ *
  */
 void init_wizard(void)
 {
@@ -683,6 +489,10 @@ void init_wizard(void)
   spell_level(SPELL_RELOCATION, CLASS_WIZARD, 10);
   spell_level(SPELL_ENCHANT_WEAPON, CLASS_WIZARD, 21);
   spell_level(SPELL_BLOOD_MANA, CLASS_WIZARD, 30);
+  spell_level(SPELL_MANA_TRANSFER, CLASS_WIZARD, 30);
+  spell_level(SPELL_ASTRAL_WALK, CLASS_WIZARD, 30);
+  spell_level(SPELL_REAPPEAR, CLASS_WIZARD,5);
+  spell_level(SPELL_CHARM, CLASS_WIZARD, 50);
 
   /* WIZARD BUFFS */
   spell_level(SPELL_INVISIBLE, CLASS_WIZARD, 5);
@@ -698,22 +508,34 @@ void init_wizard(void)
   spell_level(SPELL_IMP_PASS_DOOR, CLASS_WIZARD, 30);
   spell_level(SPELL_QUICKCAST, CLASS_WIZARD, 30);
   spell_level(SPELL_GROUP_HASTE, CLASS_WIZARD, 30);
-  spell_level(SPELL_GROUP_STEEL_SKIN, CLASS_WIZARD, 10);
-  spell_level(SPELL_GROUP_STONE_SKIN, CLASS_WIZARD, 10);
+  spell_level(SPELL_STEEL_SKIN, CLASS_WIZARD, 10);
+  spell_level(SPELL_STONE_SKIN, CLASS_WIZARD, 30);
+  spell_level(SPELL_STEEL_SKIN, CLASS_WIZARD, 40);
+
 
   /* WIZARD DEBUFFS */
   spell_level(SPELL_PARALYZE, CLASS_WIZARD, 25);
   spell_level(SPELL_BETRAYAL, CLASS_WIZARD, 30);
+  spell_level(SPELL_CURSE, CLASS_WIZARD, 10);
+  spell_level(SPELL_WITHER, CLASS_WIZARD, 30);
+  spell_level(SPELL_BLINDNESS, CLASS_WIZARD, 5);
+  spell_level(SPELL_SLOW, CLASS_WIZARD, 30);
 
   /* WIZARD SKILLS */
   spell_level(SKILL_MAGIC_RECOVERY, CLASS_WIZARD, 1);
+  spell_level(SKILL_SPELL_TWINNING, CLASS_WIZARD, 20);
+  spell_level(SKILL_SPELL_TRIPLING, CLASS_WIZARD, 30);
+  spell_level(SKILL_SPELL_CRITICAL, CLASS_WIZARD, 30);
+  spell_level(SKILL_GATEWAY, CLASS_WIZARD, 50);
 
   /* WIZARD DAMAGE */
   spell_level(SPELL_MAGIC_MISSILE, CLASS_WIZARD, 1);
   spell_level(SPELL_ENERGY_DRAIN, CLASS_WIZARD, 12);
   spell_level(SPELL_FIREBALL, CLASS_WIZARD, 15);
   spell_level(SPELL_FIREBLAST, CLASS_WIZARD, 25);
-  spell_level(SPELL_MISSILE_SPRAY, CLASS_WIZARD, 30);  
+  spell_level(SPELL_MISSILE_SPRAY, CLASS_WIZARD, 30);
+  spell_level(SPELL_ELDRITCH_BLAST, CLASS_WIZARD, 50);
+  spell_level(SPELL_NOVA, CLASS_WIZARD, 50);
 }
 void init_priest(void)
 {
@@ -743,20 +565,21 @@ void init_priest(void)
   spell_level(SPELL_HOLY_WARDING, CLASS_PRIEST, 20);
   spell_level(SPELL_EVIL_WARDING, CLASS_PRIEST, 20);
   spell_level(SPELL_GROUP_RECALL, CLASS_PRIEST, 10);
-  spell_level(SPELL_GROUP_HEAL, CLASS_PRIEST, 10);
   spell_level(SPELL_GROUP_BLESS, CLASS_PRIEST, 10);
   spell_level(SPELL_GROUP_ARMOR, CLASS_PRIEST, 10);
   spell_level(SPELL_GROUP_SATIATE, CLASS_PRIEST, 10);
   spell_level(SPELL_GROUP_SUMMON, CLASS_PRIEST, 20);
   spell_level(SPELL_GROUP_SANCTUARY, CLASS_PRIEST, 20);
   spell_level(SPELL_GROUP_PASS_DOOR, CLASS_PRIEST, 20);
-  spell_level(SPELL_GROUP_MIRACLE, CLASS_PRIEST, 30);
-  spell_level(SPELL_GROUP_REGEN, CLASS_PRIEST, 30);
+  spell_level(SPELL_GROUP_MIRACLE, CLASS_PRIEST, 50);
   spell_level(SKILL_BEDSIDE_MANNER, CLASS_PRIEST, 10);
+  spell_level(SPELL_CONSECRATION, CLASS_PRIEST, 30);
+  spell_level(SPELL_FURY, CLASS_PRIEST, 10);
+  spell_level(SPELL_CALM, CLASS_PRIEST, 30);
 }
 void init_rogue(void)
 {
-  // ROGUE UTILITY 
+  // ROGUE UTILITY
   spell_level(SKILL_HEALTH_RECOVERY, CLASS_ROGUE, 1);
   spell_level(SKILL_SNEAK, CLASS_ROGUE, 1);
   spell_level(SKILL_HIDE, CLASS_ROGUE, 1);
@@ -769,21 +592,20 @@ void init_rogue(void)
   spell_level(SKILL_BACKSTAB, CLASS_ROGUE, 1);
   spell_level(SKILL_TUMBLE, CLASS_ROGUE, 20);
   spell_level(SKILL_CIRCLE, CLASS_ROGUE, 21);
+  spell_level(SKILL_DIRT_KICK, CLASS_ROGUE, 1);
+  spell_level(SKILL_DOUBLE_BACKSTAB, CLASS_ROGUE, 50);
   // ROGUE OFFENSE PASSIVE
   spell_level(SKILL_SECOND_ATTACK, CLASS_ROGUE, 5);
   spell_level(SKILL_DUAL_WIELD, CLASS_ROGUE, 5);
-  spell_level(SKILL_ENHANCED_DAMAGE,CLASS_ROGUE, 10);
   spell_level(SKILL_CRITICAL_HIT, CLASS_ROGUE, 15);
-  spell_level(SKILL_THIRD_ATTACK, CLASS_ROGUE, 15);
-  spell_level(SKILL_DOUBLE_BACKSTAB, CLASS_ROGUE, 30);
-  spell_level(SKILL_EXECUTE, CLASS_ROGUE, 30);
+  spell_level(SKILL_ANATOMY_LESSONS, CLASS_ROGUE, 30);
   spell_level(SKILL_DIRTY_TRICKS, CLASS_ROGUE, 30);
   spell_level(SKILL_IMPALE, CLASS_ROGUE, 30);
   spell_level(SKILL_REND, CLASS_ROGUE, 30);
   spell_level(SKILL_MINCE, CLASS_ROGUE, 30);
   spell_level(SKILL_THRUST, CLASS_ROGUE, 30);
-  spell_level(SKILL_ACROBATICS, CLASS_ROGUE, 30);  
-  spell_level(SKILL_GARROTTE, CLASS_ROGUE, 30);  
+  spell_level(SKILL_ACROBATICS, CLASS_ROGUE, 30);
+  spell_level(SKILL_TWIST_OF_FATE, CLASS_ROGUE, 30);
 }
 void init_fighter(void)
 {
@@ -792,7 +614,6 @@ void init_fighter(void)
   spell_level(SKILL_SECOND_ATTACK, CLASS_FIGHTER, 1);
   spell_level(SKILL_HEALTH_RECOVERY, CLASS_FIGHTER, 1);
   spell_level(SKILL_HEADBUTT, CLASS_FIGHTER, 1);
-  spell_level(SKILL_CRITICAL_HIT, CLASS_FIGHTER, 10);
   spell_level(SKILL_SWITCH_TARGET, CLASS_FIGHTER, 15);
   spell_level(SKILL_THIRD_ATTACK, CLASS_FIGHTER, 5);
   spell_level(SKILL_ENHANCED_DAMAGE,CLASS_FIGHTER, 20);
@@ -810,9 +631,13 @@ void init_fighter(void)
   spell_level(SKILL_PILEDRVIER, CLASS_FIGHTER, 30);
   spell_level(SKILL_PALM_STRIKE, CLASS_FIGHTER, 30);
   spell_level(SKILL_KNEE, CLASS_FIGHTER, 10);
-  spell_level(SKILL_CHOP, CLASS_FIGHTER, 10);  
+  spell_level(SKILL_CHOP, CLASS_FIGHTER, 10);
   spell_level(SKILL_TRIP, CLASS_FIGHTER, 10);
-  spell_level(SKILL_ELBOW, CLASS_FIGHTER, 20);  
+  spell_level(SKILL_ELBOW, CLASS_FIGHTER, 20);
+  spell_level(SKILL_ROUNDHOUSE, CLASS_FIGHTER, 30);
+  spell_level(SKILL_KNEE, CLASS_FIGHTER, 10);
+  spell_level(SKILL_SPIN_KICK, CLASS_FIGHTER, 30);
+
 }
 void init_knight(void)
 {
@@ -826,11 +651,13 @@ void init_knight(void)
   spell_level(SKILL_ASSAULT, CLASS_KNIGHT, 5);
   spell_level(SKILL_DAMAGE_REDUCTION, CLASS_KNIGHT, 5);
   spell_level(SKILL_SHIELD_MASTER, CLASS_KNIGHT, 20);
-  spell_level(SKILL_THIRD_ATTACK, CLASS_KNIGHT, 20);
   spell_level(SKILL_TAUNT, CLASS_KNIGHT, 10);
   spell_level(SKILL_ENHANCED_PARRY, CLASS_KNIGHT, 25);
   spell_level(SKILL_DEFENSIVE_STANCE, CLASS_KNIGHT, 5);
-  spell_level(SKILL_ARMOR_MASTER, CLASS_KNIGHT, 5);
+  spell_level(SKILL_WEAPON_PUNCH, CLASS_KNIGHT, 30);
+  spell_level(SKILL_SHIELD_SLAM, CLASS_KNIGHT, 30);
+  spell_level(SKILL_SHIELD_BLOCK, CLASS_KNIGHT, 5);
+  spell_level(SKILL_STORM_OF_STEEL, CLASS_KNIGHT, 50);
 }
 void init_bard(void)
 {
@@ -845,21 +672,19 @@ void init_bard(void)
   spell_level(SKILL_CHANT, CLASS_BARD, 10);
   spell_level(SKILL_BATTLE_RYTHM, CLASS_BARD, 15);
   spell_level(SPELL_BARD_BLESS, CLASS_BARD, 5);
-  spell_level(SPELL_BARD_BUFF, CLASS_BARD, 5);
+  spell_level(SPELL_BARD_RESISTS, CLASS_BARD, 5);
   spell_level(SPELL_BARD_HEAL, CLASS_BARD, 10);
   spell_level(SPELL_BARD_FEAST, CLASS_BARD, 15);
   spell_level(SPELL_BARD_POWERHEAL, CLASS_BARD, 20);
   spell_level(SPELL_BARD_RECALL, CLASS_BARD, 10);
-  spell_level(SPELL_BARD_DEBUFF, CLASS_BARD, 30);
   spell_level(SPELL_BARD_REGEN, CLASS_BARD, 20);
   spell_level(SPELL_BARD_SANC, CLASS_BARD, 30);
-  spell_level(SPELL_BARD_FURY, CLASS_BARD, 20);
-  spell_level(SPELL_BARD_SONIC, CLASS_BARD, 20);
-  spell_level(SPELL_BARD_AGILITY, CLASS_BARD, 5);
-  spell_level(SPELL_BARD_KNOWLEDGE, CLASS_BARD, 5);
-  spell_level(SPELL_BARD_VITALITY, CLASS_BARD, 5);
   spell_level(SKILL_BARD_SHRIEK, CLASS_BARD, 30);
   spell_level(SKILL_BARD_RITUAL, CLASS_BARD, 30);
+  spell_level(SPELL_BARD_STORM, CLASS_BARD, 30);
+  spell_level(SKILL_WAR_DANCE, CLASS_BARD, 30);
+  spell_level(SKILL_SLOW_DANCE, CLASS_BARD, 30);
+  spell_level(SPELL_BARD_FURY, CLASS_BARD, 75);
 }
 void init_spell_levels(void)
 {
@@ -873,7 +698,7 @@ void init_spell_levels(void)
 
 /* This is the exp given to implementors -- it must always be greater than the
  * exp required for immortality, plus at least 20,000 or so. */
-#define EXP_MAX  2000000000000
+#define EXP_MAX  2000000000000000000
 #define BASE_EXP 1000
 /* Function to return the exp required for each class/level */
 int level_exp(int chclass, int level)
@@ -885,7 +710,8 @@ int level_exp(int chclass, int level)
 
   /* Gods have exp close to EXP_MAX.  This statement should never have to
    * changed, regardless of how many mortal or immortal levels exist. */
-   if (level > LVL_IMMORT) {
+   if (level > LVL_IMMORT) 
+   {
      return EXP_MAX - ((LVL_IMPL - level) * 1000);
    }
 
@@ -898,68 +724,116 @@ int level_exp(int chclass, int level)
 			case 0: return 0;
 			case 1: return 1;
 			case 2: return 1000;
-			case 3: return 3750;
-			case 4: return 10000;
-			case 5: return 18750;
-			case 6: return 30000;
-			case 7: return 55000;
-			case 8: return 80000;
-			case 9: return 160000; 
-			case 10: return 200000;
-			case 11: return 315000;
-			case 12: return 400000;
-			case 13: return 550000;
-			case 14: return 650000;
-			case 15: return 825000;
-			case 16: return 1000000;
-			case 17: return 1350000;
-			case 18: return 1650000;
-			case 19: return 2000000;
-			case 20: return 2500000;
-			case 21: return 3750000;
-			case 22: return 5250000;
-			case 23: return 7000000;
-			case 24: return 9000000;
-			case 25: return 11250000;
-			case 26: return 13750000;
-			case 27: return 16500000;
-			case 28: return 20000000;
-			case 29: return 24500000;
-			case 30: return 30000000;
-			case 31: return 34000000;
-			case 32: return 38250000;
-			case 33: return 42750000;
-			case 34: return 47500000;
-			case 35: return 52500000;
-			case 36: return 60500000;
-			case 37: return 69000000;
-			case 38: return 78000000;
-			case 39: return 87500000;
-			case 40: return 97500000;
-			case 41: return 108000000;
-			case 42: return 119000000;
-			case 43: return 130000000;
-			case 44: return 142500000;
-			case 45: return 155000000;
-			case 46: return 168000000;
-			case 47: return 187000000;
-			case 48: return 207000000;
-			case 49: return 228000000;
-			case 50: return 250000000;
-			case 51: return 300000000;
-			case 52: return 350000000;
-			case 53: return 400000000;
-			case 54: return 450000000;
-			case 55: return 500000000;
-			case 56: return 550000000;
-			case 57: return 600000000;
-			case 58: return 700000000;
-			case 59: return 800000000;
-			case 60: return 900000000;
+			case 3: return 1500;
+			case 4: return 2000;
+			case 5: return 3000;
+			case 6: return 5000;
+			case 7: return 7500;
+			case 8: return 10000;
+			case 9: return 13333;
+			case 10: return 16666;
+			case 11: return 20000;
+			case 12: return 23333;
+			case 13: return 26666;
+			case 14: return 30000;
+			case 15: return 36666;
+			case 16: return 43333;
+			case 17: return 50000;
+			case 18: return 56666;
+			case 19: return 63333;
+			case 20: return 70000;
+			case 21: return 80000;
+			case 22: return 90000;
+			case 23: return 100000;
+			case 24: return 120000;
+			case 25: return 140000;
+			case 26: return 160000;
+			case 27: return 180000;
+			case 28: return 200000;
+			case 29: return 240000;
+			case 30: return 280000;
+			case 31: return 320000;
+			case 32: return 360000;
+			case 33: return 400000;
+			case 34: return 450000;
+			case 35: return 500000;
+			case 36: return 550000;
+			case 37: return 600000;
+			case 38: return 650000;
+			case 39: return 700000;
+			case 40: return 775000;
+			case 41: return 850000;
+			case 42: return 925000;
+			case 43: return 1000000;
+			case 44: return 1100000;
+			case 45: return 1200000;
+			case 46: return 1300000;
+			case 47: return 1400000;
+			case 48: return 1500000;
+			case 49: return 1750000;
+			case 50: return 2000000;
+			case 51: return 2250000;
+			case 52: return 2500000;
+			case 53: return 2750000;
+			case 54: return 3000000;
+			case 55: return 3500000;
+			case 56: return 3750000;
+			case 57: return 4000000;
+			case 58: return 4500000;
+			case 59: return 5000000;
+
+			case 60:
+      case 61:
+      case 62:
+      case 63:
+      case 64:
+      case 65:
+      case 66:
+      case 67:
+      case 68:
+      case 69:
+        return 6000000;
+
+      case 70:
+      case 71:
+      case 72:
+      case 73:
+      case 74:
+      case 75:
+      case 76:
+      case 77:
+      case 78:
+      case 79:
+        return 7000000;
+
+      case 80:
+      case 81:
+      case 82:
+      case 83:
+      case 84:
+      case 85:
+      case 86:
+      case 87:
+      case 88:
+      case 89:
+        return 8000000;
+
+      case 90:
+      case 91:
+      case 92:
+      case 93:
+      case 94:
+      case 95:
+      case 96:
+      case 97:
+      case 98:
+      case 99:
+        return 9000000;
+      case 100:
+        return 10000000;
 		}
   }
-	if (level == LVL_IMMORT)
-		return (2000000000);
+
 
   /* This statement should never be reached if the exp tables in this function
    * are set up properly.  If you see exp of 123456 then the tables above are
@@ -1020,7 +894,7 @@ const char *title_male(int chclass, int level)
       case LVL_IMMORT: return "the Immortal Knight";
       case LVL_GOD: return "the Lord of Thanes";
       case LVL_GRGOD: return "the God of Arms and Armor";
-      default: return "The Knight";
+      default: return "the Knight";
     }
     case CLASS_BARD:
 	switch(level) {
@@ -1028,7 +902,7 @@ const char *title_male(int chclass, int level)
       case LVL_IMMORT: return "the Immortal Bard";
       case LVL_GOD: return "the Demi God of Music";
       case LVL_GRGOD: return "the God of Skaldic Poetry";
-      default: return "the Skald";
+      default: return "the Bard";
     }
   }
 
@@ -1048,36 +922,6 @@ const char *title_female(int chclass, int level)
 
     case CLASS_WIZARD:
     switch (level) {
-      case  1: return "the Apprentice of Magic";
-      case  2: return "the Spell Student";
-      case  3: return "the Scholar of Magic";
-      case  4: return "the Delveress in Spells";
-      case  5: return "the Medium of Magic";
-      case  6: return "the Scribess of Magic";
-      case  7: return "the Seeress";
-      case  8: return "the Sage";
-      case  9: return "the Illusionist";
-      case 10: return "the Abjuress";
-      case 11: return "the Invoker";
-      case 12: return "the Enchantress";
-      case 13: return "the Conjuress";
-      case 14: return "the Witch";
-      case 15: return "the Creator";
-      case 16: return "the Savant";
-      case 17: return "the Craftess";
-      case 18: return "the Wizard";
-      case 19: return "the War Witch";
-      case 20: return "the Sorceress";
-      case 21: return "the Necromancress";
-      case 22: return "the Thaumaturgess";
-      case 23: return "the Student of the Occult";
-      case 24: return "the Disciple of the Uncanny";
-      case 25: return "the Minor Elementress";
-      case 26: return "the Greater Elementress";
-      case 27: return "the Crafter of Magics";
-      case 28: return "Shaman";
-      case 29: return "the Keeper of Talismans";
-      case 30: return "Archwitch";
       case LVL_IMMORT: return "the Immortal Enchantress";
       case LVL_GOD: return "the Empress of Magic";
       case LVL_GRGOD: return "the Goddess of Magic";
@@ -1090,7 +934,7 @@ const char *title_female(int chclass, int level)
       case LVL_IMMORT: return "the Immortal Priestess";
       case LVL_GOD: return "the Inquisitress";
       case LVL_GRGOD: return "the Goddess of Good and Evil";
-      default: return "the Priest";
+      default: return "the Priestess";
     }
 
     case CLASS_ROGUE:

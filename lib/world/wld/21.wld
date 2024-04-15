@@ -1,0 +1,1032 @@
+#2100
+Dense Jungle~
+Oppressive humidity hangs heavy in the air, thick with the scent of decaying
+vegetation and exotic flowers.  Sunlight struggles to penetrate the dense canopy
+overhead, casting the jungle floor in an emerald twilight.  Vines as thick as a
+man's arm strangle the gnarled trees, and the air is alive with the buzzing of
+unseen insects and the squawking of unseen birds.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2101
+D3
+~
+~
+0 0 1005
+S
+#2101
+Artificial Shadow~
+A stifling gloom blankets the jungle floor beneath the colossal bulk of the
+Aztec temple.  Sunlight struggles to pierce the overhang, casting an unnatural
+darkness that feels oppressive and heavy.  The air is thick with the scent of
+damp earth and decaying leaves.  The vibrant jungle sounds from the previous
+area are muffled here, replaced by an unsettling silence broken only by the
+occasional drip of water or the rustle of unseen creatures in the undergrowth.
+~
+21 4 0 0 0 0
+D0
+~
+~
+0 0 2102
+D2
+~
+~
+0 0 2100
+S
+#2102
+Base of the Pyramid~
+You emerge from the oppressive jungle into a vast, open space dominated by the
+sheer immensity of the Aztec pyramid.  Its base stretches out before you like a
+colossal, man-made mountain.  Jagged, weathered stone blocks rise high into the
+sky, their surfaces etched with intricate glyphs and weathered by countless
+years.
+~
+21 4 0 0 0 0
+D2
+~
+~
+0 0 2101
+D4
+~
+~
+0 0 2103
+S
+#2103
+The First Tier~
+The sheer drop to the jungle floor below takes your breath away.  Here, the air
+vibrates with the incessant chatter of exotic birds and the distant screech of
+monkeys.  The landing itself is a marvel of Aztec engineering.  Polished
+obsidian tiles form a smooth walkway underfoot, their surface cool and slightly
+slick.  The eastern wall rises high above you, adorned with vivid murals
+depicting scenes of Aztec mythology and warriors clad in jaguar pelts.
+~
+21 4 0 0 0 0
+D1
+~
+~
+0 0 2104
+D3
+~
+~
+0 0 2126
+D5
+~
+~
+0 0 2102
+S
+#2104
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2105
+D3
+~
+~
+0 0 2103
+S
+#2105
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2106
+D3
+~
+~
+0 0 2104
+S
+#2106
+The Shaman's Perch~
+A narrow, elevated platform juts out from the southeast corner of the chamber,
+accessed by a rickety wooden ladder.  The platform is covered in animal pelts
+and adorned with various fetishes and ceremonial objects.  A pungent mix of
+incense and herbs fills the air.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2107
+D3
+~
+~
+0 0 2105
+S
+#2107
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2108
+D2
+~
+~
+0 0 2106
+S
+#2108
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2109
+D2
+~
+~
+0 0 2107
+S
+#2109
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2110
+D2
+~
+~
+0 0 2108
+S
+#2110
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2111
+D2
+~
+~
+0 0 2109
+S
+#2111
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2112
+D2
+~
+~
+0 0 2110
+S
+#2112
+The Armory~
+A heavily fortified room occupies the northeast corner.  Leaning against the
+walls are racks filled with obsidian-tipped spears, jaguar-skin shields, and
+feathered war clubs.  The air hangs heavy with the scent of leather and oil.
+~
+21 0 0 0 0 0
+D2
+~
+~
+0 0 2111
+D3
+~
+~
+0 0 2113
+S
+#2113
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2112
+D3
+~
+~
+0 0 2114
+S
+#2114
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2113
+D3
+~
+~
+0 0 2115
+S
+#2115
+The Path of Ascension~
+Reaching the northern edge of the First Tier, you stand before a breathtaking
+spectacle.  A colossal stone serpent, meticulously carved from obsidian, winds
+its way up the face of the pyramid, forming a seemingly endless staircase.  Its
+sinuous body undulates upwards, its scales shimmering with an otherworldly sheen
+under the harsh sunlight.  He air here feels charged with an unsettling energy.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2114
+D2
+~
+~
+0 0 2127
+D3
+~
+~
+0 0 2116
+S
+#2116
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2115
+D3
+~
+~
+0 0 2117
+S
+#2117
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2116
+D3
+~
+~
+0 0 2118
+S
+#2118
+The Chamber of Whispers~
+A narrow passage shrouded in darkness occupies the northwest corner.  A faint
+breeze carries whispers and guttural growls that seem to emanate from the depths
+of the passage.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2117
+D2
+~
+~
+0 0 2119
+S
+#2119
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2118
+D2
+~
+~
+0 0 2120
+S
+#2120
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2119
+D2
+~
+~
+0 0 2121
+S
+#2121
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2120
+D2
+~
+~
+0 0 2122
+S
+#2122
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2121
+D2
+~
+~
+0 0 2123
+S
+#2123
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2122
+D2
+~
+~
+0 0 2124
+S
+#2124
+The Cage of Bones~
+A heavy wooden cage reinforced with iron bars stands in the southwest corner.  
+Inside, a pile of bleached bones and shattered skulls lies scattered on the damp
+floor.  A faint, unsettling chill emanates from the cage.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2123
+D1
+~
+~
+0 0 2125
+S
+#2125
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2126
+D3
+~
+~
+0 0 2124
+S
+#2126
+The Howling Jaguar's Den~
+A humid stench of sweat and blood hangs heavy in the air.  Jag fur rugs lie
+scattered across the damp stone floor, and flickering torches mounted on the
+obsidian walls cast dancing shadows that writhe across the chamber.  In the
+center, a low sacrificial altar carved from a single block of obsidian sits
+bathed in an eerie green glow emanating from a jade skull placed upon its
+surface.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2103
+D3
+~
+~
+0 0 2125
+S
+#2127
+Xochitl's Vigil~
+A palpable tension hangs heavy in the air of this chamber.  The passage leading
+deeper into the pyramid narrows here, forming a bottleneck guarded by a
+magnificent jaguar statue.  The statue's eyes, crafted from polished emeralds,
+seem to glow with an otherworldly light as you approach.
+~
+21 4 0 0 0 0
+D0
+~
+~
+0 0 2115
+D4
+~
+maw~
+4 2100 2128
+S
+#2128
+The Second Tier~
+Reaching the pinnacle of the northern face, you find yourself on a windswept
+platform bathed in harsh sunlight.  Here, the air vibrates with the incessant
+chatter of exotic birds and the distant screech of monkeys.  The colossal
+obsidian serpent that served as your stairway curves sharply westward,
+disappearing from sight around the corner of the pyramid.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2143
+D3
+~
+~
+0 0 2129
+D5
+~
+maw~
+4 2100 2127
+S
+#2129
+The Feathered Serpent's Passage~
+This narrow passage winds its way along the north wall.  The air is thick with
+the smell of damp feathers, and murals depicting Quetzalcoatl's exploits adorn
+the walls.  Faint scratching noises can be heard from within the passage.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2128
+D3
+~
+~
+0 0 2130
+S
+#2130
+The Sacrificial Balcony~
+A narrow balcony overlooking a vast chasm occupies the northeast corner.  The
+air is thick with the stench of blood and incense.  A low stone altar stained
+with crimson sits in the center of the balcony.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2129
+D2
+~
+~
+0 0 2131
+S
+#2131
+The Cultist Barracks~
+This long room is crammed with rudimentary bunks and training dummies.  Weapons
+racks line the walls, holding obsidian daggers, feathered spears, and
+serpent-headed clubs.  Several feathered serpent cultists stand guard, their
+eyes filled with fanatic zeal.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2130
+D2
+~
+~
+0 0 2132
+S
+#2132
+The Cultist Barracks~
+This long room is crammed with rudimentary bunks and training dummies.  Weapons
+racks line the walls, holding obsidian daggers, feathered spears, and
+serpent-headed clubs.  Several feathered serpent cultists stand guard, their
+eyes filled with fanatic zeal.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2131
+D2
+~
+~
+0 0 2133
+S
+#2133
+The Cultist Barracks~
+This long room is crammed with rudimentary bunks and training dummies.  Weapons
+racks line the walls, holding obsidian daggers, feathered spears, and
+serpent-headed clubs.  Several feathered serpent cultists stand guard, their
+eyes filled with fanatic zeal.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2132
+D2
+~
+~
+0 0 2134
+S
+#2134
+The Serpent's Treasury~
+A heavily trapped room occupies the southwest corner.  Cobwebs drape the walls,
+and the air is thick with dust.  Several chests made of intricately carved stone
+are stacked along the walls, their lids secured with elaborate clasps.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2133
+D1
+~
+~
+0 0 2135
+S
+#2135
+The Trial of Wind~
+This chamber is dominated by a series of wind tunnels carved into the south
+wall.  Each tunnel is roughly chest-high and varies in width, creating a
+maze-like obstacle course.  A constant, howling wind whips through the tunnels,
+carrying whispers of forgotten languages and the faint scent of ozone.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2156
+D3
+~
+~
+0 0 2134
+S
+#2136
+Ehecatl's Vigil~
+This chamber is dominated by a series of wind tunnels carved into the south
+wall.  Each tunnel is roughly chest-high and varies in width, creating a
+maze-like obstacle course.  A constant, howling wind whips through the tunnels,
+carrying whispers of forgotten languages and the faint scent of ozone.
+~
+21 4 0 0 0 0
+D2
+~
+~
+0 0 2156
+D4
+~
+wind~
+4 2101 2144
+S
+#2137
+The Trial of Wind~
+This chamber is dominated by a series of wind tunnels carved into the south
+wall.  Each tunnel is roughly chest-high and varies in width, creating a
+maze-like obstacle course.  A constant, howling wind whips through the tunnels,
+carrying whispers of forgotten languages and the faint scent of ozone.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2138
+D3
+~
+~
+0 0 2156
+S
+#2138
+The Feathered Serpent's Shrine~
+A small alcove tucked into the southeast corner houses a shrine dedicated to
+Quetzalcoatl, the feathered serpent god.  A vibrant mosaic depicting the god
+with shimmering turquoise scales and emerald feathers adorns the back wall.  An
+offering bowl overflowing with brightly colored feathers rests before the
+mosaic.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2139
+D3
+~
+~
+0 0 2137
+S
+#2139
+The Serpent's Coils~
+This long, twisting chamber resembles the coils of a giant serpent.  The air
+here is thick with humidity, and the walls are slick with moisture.  Strange
+bioluminescent fungi grow on the ceiling, casting an eerie green glow on the
+room.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2140
+D2
+~
+~
+0 0 2138
+S
+#2140
+The Serpent's Coils~
+This long, twisting chamber resembles the coils of a giant serpent.  The air
+here is thick with humidity, and the walls are slick with moisture.  Strange
+bioluminescent fungi grow on the ceiling, casting an eerie green glow on the
+room.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2141
+D2
+~
+~
+0 0 2139
+S
+#2141
+The Serpent's Coils~
+This long, twisting chamber resembles the coils of a giant serpent.  The air
+here is thick with humidity, and the walls are slick with moisture.  Strange
+bioluminescent fungi grow on the ceiling, casting an eerie green glow on the
+room.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2142
+D2
+~
+~
+0 0 2140
+S
+#2142
+The Cultist Chambers~
+A cramped chamber filled with sleeping mats and personal belongings occupies the
+northwest corner.  Several feathered serpent cultists lie sprawled unconscious,
+their faces contorted in nightmares.
+~
+21 0 0 0 0 0
+D2
+~
+~
+0 0 2141
+D3
+~
+~
+0 0 2143
+S
+#2143
+The Feathered Serpent's Passage~
+This narrow passage winds its way along the north wall.  The air is thick with
+the smell of damp feathers, and murals depicting Quetzalcoatl's exploits adorn
+the walls.  Faint scratching noises can be heard from within the passage.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2142
+D3
+~
+~
+0 0 2128
+S
+#2144
+The Third Tier~
+This narrow passage winds its way along the south wall.  The air here is thick
+with ash and smoke, and the floor is littered with glowing embers.  Strange,
+skeletal creatures with smoldering eyes scuttle along the walls.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2145
+D3
+~
+~
+0 0 2151
+D5
+~
+wind~
+4 2101 2136
+S
+#2145
+The Priest's Sanctum~
+A small, smoke-filled chamber occupies the southeast corner.  A skeletal figure
+draped in charred robes hunches over a sacrificial altar, chanting in a guttural
+tongue.  Stench of incense and burnt offerings permeates the air.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2146
+D3
+~
+~
+0 0 2144
+S
+#2146
+The Passage of Scorching Wind~
+This narrow passage winds its way along the east wall.  A searing wind whips
+through the passage, carrying sparks and embers.  The walls are scorched black,
+and etched with warnings in a forgotten tongue.  The wind howls with an almost
+sentient fury, threatening to tear clothing from your body and sear your lungs.
+The very air crackles with an electric energy, making each breath feel like a
+thousand tiny needles.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2147
+D2
+~
+~
+0 0 2145
+S
+#2147
+The Forge of Sacrifice~
+This chamber has a shimmering heat haze near the northeast corner, houses a
+crude forge.  Glowing obsidian tools and half-melted metal bars lie scattered
+around the workbench.
+~
+21 0 0 0 0 0
+D2
+~
+~
+0 0 2146
+D3
+~
+~
+0 0 2148
+S
+#2148
+The Passage of Searing Flames~
+This narrow passage winds its way along the north wall.  The air here is
+scorching hot, and the floor is slick with molten rock.  Fiery glyphs are etched
+into the walls, pulsating with an inner light.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2147
+D2
+~
+~
+0 0 2152
+D3
+~
+~
+0 0 2149
+S
+#2149
+The Molten Guardroom~
+A heavily fortified room occupies the northwest corner.  Molten warriors stand
+guard, their obsidian armor glowing with an infernal heat.  Weapon racks line
+the wall, holding obsidian spears and massive, burning halberds.
+~
+21 0 0 0 0 0
+D1
+~
+~
+0 0 2148
+D2
+~
+~
+0 0 2150
+S
+#2150
+The Chasm of Cinders~
+A gaping chasm occupies most of the west wall, its depths shrouded in swirling
+black smoke.  Jagged obsidian shards jut out from the chasm's rim, threatening a
+perilous fall.  A faint orange glow emanates from the depths, hinting at molten
+lava churning below.  An unsettling silence hangs heavy in the air, broken only
+by the occasional rumble from within the chasm.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2149
+D2
+~
+~
+0 0 2151
+S
+#2151
+The Armory of the Sun~
+A heavily fortified room occupies the southwest corner.  Weapon racks
+overflowing with obsidian weapons bathed in an eerie red glow line the walls.  
+The air crackles with an electric energy.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2150
+D1
+~
+~
+0 0 2144
+S
+#2152
+The Blood Sun Arena~
+A stifling heat hangs heavy in the air, thick with the stench of blood and burnt
+offerings.  The chamber floor is slick with crimson, and obsidian spikes
+protrude from the walls like macabre trophies.  In the center of the chamber
+stands a colossal obsidian altar, its surface etched with gruesome depictions of
+sacrifices.  Above the altar, a gaping hole in the ceiling allows a shaft of
+sunlight to illuminate the scene, bathing the altar in a crimson glow.
+~
+21 524300 0 0 0 0
+D0
+~
+~
+0 0 2148
+D5
+A bloody altar carved from obsidian
+~
+bloody altar obsidian~
+4 2102 2153
+S
+#2153
+The Howling Descent~
+An oppressive silence hangs heavy in this cramped chamber.  Jagged obsidian
+steps carved into the eastern wall lead steeply downward, disappearing into an
+inky blackness below.  A chilling wind carrying faint whispers and mournful
+wails blows from the depths, sending shivers down your spine.
+~
+21 524296 0 0 0 0
+D4
+A bloody altar carved from obsidian
+~
+bloody altar obsidian~
+4 2102 2152
+D5
+~
+~
+0 0 2154
+S
+#2154
+The Bridge of Bones~
+A rickety bridge fashioned from bleached human bones spans the width of this
+chamber, connecting two obsidian platforms hovering over a bottomless chasm.  
+An ethereal, greenish fog obscures the depths below, and the air is thick with
+the stench of decay.  Skeletal figures, their empty sockets filled with
+flickering green flames, shamble aimlessly on the platforms, their mournful
+moans echoing through the chamber.
+~
+21 524296 0 0 0 0
+D4
+~
+~
+0 0 2153
+D5
+~
+~
+0 0 2155
+S
+#2155
+The Obsidian Throne~
+The air in this vast chamber hangs heavy with a cold, oppressive chill.  In the
+center, a colossal obsidian throne carved with grotesque skulls and writhing
+serpents dominates the scene.  Atop the throne sits Mictlantecuhtli, the
+skeletal god of the underworld.  His hollow eyes, burning with an eerie green
+light, pierce through the darkness as he gazes upon you.  Jagged obsidian shards
+pierce his skeletal frame, a gruesome reminder of the sacrifices he claims.  
+~
+21 8 0 0 0 0
+D4
+~
+~
+0 0 2154
+S
+#2156
+The Trial of Wind~
+This chamber is dominated by a series of wind tunnels carved into the south
+wall.  Each tunnel is roughly chest-high and varies in width, creating a
+maze-like obstacle course.  A constant, howling wind whips through the tunnels,
+carrying whispers of forgotten languages and the faint scent of ozone.
+~
+21 0 0 0 0 0
+D0
+~
+~
+0 0 2136
+D1
+~
+~
+0 0 2137
+D3
+~
+~
+0 0 2135
+S
+$~

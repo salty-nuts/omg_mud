@@ -2719,9 +2719,9 @@ Example: @RTSTAT 3008, 12000, 6100, 6300, 41004@n
  
 See also: TRIGEDIT-MOB-DEATH, ROOMFLAGS, GROUP, SCORE
 #101
-DUAL-WIELD TWO-HANDED WIELD GRAB
+DUAL-WIELD TWO-HANDED WIELD GRAB HOLD
 
-Usage: wield <weapon>, wear <shield> , grab <object>
+Usage: wield <weapon>, wear <shield> , grab <object>, hold <object>
 
 Grab / Hold:  For getting a good grip on something; a torch, for example.
   > hold torch
@@ -3417,7 +3417,7 @@ the earthquake spell.
 
 See also: WATERWALK, EARTHQUAKE
 #0
-FOLLOWERS
+FOLLOWERS FOLLOW UNFOLLOW
 
 Usage: follow <leader>
 
@@ -13710,6 +13710,136 @@ own zone if their name is in the zone's builders list.
 
 zlock - Locks one or all zones. Type zlock for usage. 
 zunlock - Locks one or all zones. Type zunlock for usage. 
-
 #101
+GARROTTE
+
+The Garrotte skill epitomizes the rogue's proficiency in silent and deadly
+takedowns, utilizing a wire or cord to incapacitate their target swiftly and 
+efficiently. This lethal technique is a combination of precision, stealth, 
+and the rogue's innate understanding of anatomy.
+
+A garrotted victim suffers a penalty to hitroll and damroll.
+
+#1
+BANDAGE
+
+The bandage skill allows the player to heal another player that is close
+to death.  A successful bandage stabilizes the player at zero HP.  However,
+a failure at bandaging wounds often comes with a little pain, potentially
+causing death.
+#1
+DIRTKICK
+
+Kicking dirt in the eyes of your opponent is sometimes considered a cowardly
+act.  For the rogue, however, kicking dirt is merely another tool in the
+toolbox.  A skilled rogue rarely fights fair.  A successful dirt kick causes
+temporary blindness and reduces the victim's ability to hit targets.  The
+victim is also easier to hit because they cannot see
+
+#1
+SHRIEK
+
+A Bard is a master of history and the magic of song.  Legend has it that a
+bard is able to weaponize their voice by shrieking like a banshee.  The
+shrieking continues until the bard ceases to shriek or becomes exhausted, 
+whichever comes first.  
+
+Victims in hearing range are enfeebled, increasing save_vs_spell, for every
+shriek heard.  Enfeebled victims become more and more feeble and less able
+to resist spells.
+#1
+RITUAL
+
+A skilled Bard is able to keep time like a metronome.  When in battle, a
+bard can perform a battle ritual by keeping time with rythm of combat.
+Friendly players will enter a frenzied state, becoming harder to hit as
+they glide across the combat dance floor.
+#1
+CAMPAIGN_CAROL
+
+A bard song inspiring the listener to become a more effcient combatant.
+
+The hitroll and damroll of the listener is increased.
+#1
+RESIST_ROCK
+
+A bard song fortifying the listener to be a more resilient combatant.
+
+All melee resists of the listener are increased.
+#1
+HEALING_HYMNAL
+
+A bard song soothing the wounds of the listener.
+
+A portion of the listner's wounds are healed.
+#1
+POWERHEAL_PSALM
+
+A bard song soothing the wounds of the listener.
+
+A large portion of the listner's wounds are healed.
+#1
+BANQUET_BALLAD
+
+A bard song sating the listener's appetite.
+
+Listeners hunger and thirst is sated.
+#1
+RECALL_REFRAIN
+
+A bard song causing the listener to recall thoughts of home.
+
+Listeners are transported to their designated recall room.
+#1
+CHAOTIC_CANTICLE
+
+A bard song causing paralysis to the NPC listener.
+
+On a failed save vs spell the victim becomes paralyzed. Hitroll
+and damroll is decreased. Victim becomes easier to hit as armor
+class is increased.
+#1
+REBIRTH_REFRAIN
+
+A bard song causing the listener to regenerate faster.
+
+Hitpoints, mana and movement regeneration is increased.
+#1
+CROMLECH_CHORUS
+
+A bard song enveloping the listener in a protective aura.
+
+Incoming damage is decreased.
+#1
+BARDIC_FURY
+
+A bard song causing the bard to become raging with anger.
+
+Armor is increased and outgoing damage is increased.
+#1
+SONIC_SHANTY
+
+A bard song causing the NPC victim to become easier to harm
+with melee damage.
+
+NPC victim melee resistances are reduced.
+#1
+AGILITY_ANTHEM
+
+A bard song causing the listener to become more agile.
+
+Dexterity and Luck are increased.
+#1
+INSIGHT_ARIA
+
+A bard song causing the listener to become more insightful.
+
+Intelligence and Wisdom are increased.
+#1
+VITALITY_VERSE
+
+A bard song causing the listener to become more vital.
+
+Strength and Constitution are increased.
+#1
 $~

@@ -8,15 +8,22 @@ almost constantly, digging new tunnels, gathering food, and even protecting the
 hill from other bugs.  
 ~
 72 0 0 0 0 0 0 0 0 E
-15 5 -2 375d4+5625 3d2+15
-11250 22500
+15 5 1 45d30+18510 1d2+15
+185175 346515
 8 8 1
+MobMult: 1
 BareHandAttack: 4
-SavingPara: 3
-SavingRod: 3
-SavingPetri: 3
-SavingBreath: 3
-SavingSpell: 3
+NumAttacks: 1
+SavingPara: 85
+SavingRod: 85
+SavingPetri: 85
+SavingBreath: 85
+SavingSpell: 85
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #4601
 red soldier ant~
@@ -28,21 +35,28 @@ the red ant colony.  This red soldier ant has been sent here to eliminate the
 existing residents.  
 ~
 65612 0 0 0 16777216 0 0 0 0 E
-25 -5 -10 625d7+15625 5d3+25
-54687 109375
+25 -5 -5 75d50+30850 2d2+25
+308625 577525
 8 8 1
+MobMult: 1
 BareHandAttack: 1
+NumAttacks: 1
 Str: 16
 Dex: 16
 Int: 16
 Wis: 16
 Con: 16
 Luck: 16
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+SavingPara: 75
+SavingRod: 75
+SavingPetri: 75
+SavingBreath: 75
+SavingSpell: 75
+RES_0: 6
+RES_1: 6
+RES_2: 6
+RES_3: 6
+RES_4: 6
 E
 #4602
 mob unfinished~
@@ -52,9 +66,14 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 25d1+25 1d2+1
-12 25
+1 19 9 2d1+321 1d2+1
+4321 12345
 8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
 E
 #4603
 mob unfinished~
@@ -64,9 +83,48 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 25d1+25 1d2+1
-12 25
+1 19 9 2d1+321 1d2+1
+4321 12345
 8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4604
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4605
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
 E
 #4606
 mob unfinished~
@@ -76,9 +134,48 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 25d1+25 1d2+1
-12 25
+1 19 9 2d1+321 1d2+1
+4321 12345
 8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4607
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4608
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
 E
 #4609
 mob unfinished~
@@ -88,9 +185,48 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 25d1+25 1d2+1
-12 25
+1 19 9 2d1+321 1d2+1
+4321 12345
 8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4610
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+E
+#4611
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 19 9 2d1+321 1d2+1
+4321 12345
+8 8 0
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
 E
 #4616
 green soldier ant~
@@ -101,21 +237,28 @@ A green soldier ant is protecting the anthill.
 anthill.  They do no work, but will sacrifice themselves for the queen.  
 ~
 10 0 0 0 0 0 0 0 3 E
-20 0 -6 500d6+10000 4d2+20
-30000 60000
+20 0 -2 60d40+24680 2d2+20
+246900 462020
 8 8 1
-BareHandAttack: 1
+MobMult: 1
+BareHandAttack: 4
+NumAttacks: 1
 Str: 13
 Dex: 13
 Int: 13
 Wis: 13
 Con: 13
 Luck: 13
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+SavingPara: 80
+SavingRod: 80
+SavingPetri: 80
+SavingBreath: 80
+SavingSpell: 80
+RES_0: 5
+RES_1: 5
+RES_2: 5
+RES_3: 5
+RES_4: 5
 E
 #4632
 huge green soldier ant~
@@ -127,21 +270,28 @@ the queen from attack.  It is by far one of the largest ants in the entire
 anthill.  
 ~
 4106 0 0 0 16777472 0 0 0 0 E
-25 -5 -10 625d7+15625 5d3+25
-54687 109375
+25 -5 -5 75d50+30850 2d2+25
+308625 577525
 8 8 1
+MobMult: 1
 BareHandAttack: 4
+NumAttacks: 1
 Str: 16
 Dex: 16
 Int: 16
 Wis: 16
 Con: 16
 Luck: 16
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+SavingPara: 75
+SavingRod: 75
+SavingPetri: 75
+SavingBreath: 75
+SavingSpell: 75
+RES_0: 6
+RES_1: 6
+RES_2: 6
+RES_3: 6
+RES_4: 6
 E
 T 4603
 T 4605
@@ -155,22 +305,29 @@ The green queen ant is ensuring the survival of the species.
 and it doesn't look like she could ever fit through any of the tunnels.  She
 guards over her newborn larvae.  
 ~
-26214410 0 0 0 41943296 0 0 0 0 E
-40 -20 -22 1000d11+40000 8d5+40
-220000 440000
+26214410 0 0 0 33554688 0 0 0 0 E
+40 -20 -14 120d80+49360 4d4+40
+493800 924040
 8 8 2
+MobMult: 1
 BareHandAttack: 4
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 10
-SavingRod: 10
-SavingPetri: 10
-SavingBreath: 10
-SavingSpell: 10
+SavingPara: 60
+SavingRod: 60
+SavingPetri: 60
+SavingBreath: 60
+SavingSpell: 60
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 T 4602
 T 4604
@@ -184,21 +341,28 @@ A large green dominant male ant scutters about, making sure the workers tend the
 is to ensure everything gets done and the queen keeps pumping out cute little
 larvae.  
 ~
-72 0 0 0 92274688 1 0 0 0 E
-25 -5 -10 625d7+15625 5d3+25
-54687 109375
+72 0 0 0 16777216 0 0 0 0 E
+25 -5 -5 75d50+30850 2d2+25
+308625 577525
 8 8 1
+MobMult: 1
 BareHandAttack: 4
+NumAttacks: 1
 Str: 16
 Dex: 16
 Int: 16
 Wis: 16
 Con: 16
 Luck: 16
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+SavingPara: 75
+SavingRod: 75
+SavingPetri: 75
+SavingBreath: 75
+SavingSpell: 75
+RES_0: 6
+RES_1: 6
+RES_2: 6
+RES_3: 6
+RES_4: 6
 E
 $

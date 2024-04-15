@@ -763,6 +763,7 @@ void game_loop(socket_t local_mother_desc)
   while (!circle_shutdown) {
 
     /* Sleep if we don't have any connections */
+    /*
     if (descriptor_list == NULL) {
       log("No connections.  Going to sleep.");
       FD_ZERO(&input_set);
@@ -776,6 +777,7 @@ void game_loop(socket_t local_mother_desc)
 	log("New connection.  Waking up.");
       gettimeofday(&last_time, (struct timezone *) 0);
     }
+    */
     /* Set up the input, output, and exception sets for select(). */
     FD_ZERO(&input_set);
     FD_ZERO(&output_set);
@@ -869,13 +871,13 @@ void game_loop(socket_t local_mother_desc)
        * bracket. -gg 2/27/99 */
       if (d->character)
       {
-	if (!IS_AFFECTED(d->character, AFF_HASTE))
+        if (!IS_AFFECTED(d->character, AFF_HASTE))
           GET_WAIT_STATE(d->character) -= (GET_WAIT_STATE(d->character) > 0);
-	else
-	{
+        else
+        {
           GET_WAIT_STATE(d->character) -= (GET_WAIT_STATE(d->character) > 0);
           GET_WAIT_STATE(d->character) -= (GET_WAIT_STATE(d->character) > 0);
-	}
+        }
 
         if (GET_WAIT_STATE(d->character))
           continue;
@@ -1247,23 +1249,23 @@ static char *make_prompt(struct descriptor_data *d)
     {
 	struct char_data *pOpponent = FIGHTING(d->character);
         struct char_data *pTank = FIGHTING(pOpponent);
-	int tank, vict;
+	long tank, vict;
 
 	if (pTank != d->character)
 	if (PRF_FLAGGED(d->character, PRF_DISP_TANK) && len < sizeof(prompt) && pTank != NULL)
 	{
-		tank = GET_HIT(pTank)*100/GET_MAX_HIT(pTank);
+		tank = ((long)GET_HIT(pTank)*(long)100) / (long)GET_MAX_HIT(pTank);
 		if (tank < 0) tank = 0;
-		count = snprintf(prompt + len, sizeof(prompt) - len, "Tank:[%d%%] ", tank);
+		count = snprintf(prompt + len, sizeof(prompt) - len, "Tank:[%ld%%] ", tank);
 		if (count >= 0)
 		len += count;
 	}
 
 	if (PRF_FLAGGED(d->character, PRF_DISP_VICT) && len < sizeof(prompt) && pOpponent != NULL)
 	{
-		vict = GET_HIT(pOpponent)*100/GET_MAX_HIT(pOpponent);
+		vict = ((long)GET_HIT(pOpponent)*(long)100) / (long)GET_MAX_HIT(pOpponent);
 		if (vict< 0) vict = 0;
-		count = snprintf(prompt + len, sizeof(prompt) - len, "Vict:[%d%%] ", vict);
+		count = snprintf(prompt + len, sizeof(prompt) - len, "Vict:[%ld%%] ", vict);
 		if (count >= 0)
 	  len += count;
 	}
@@ -1296,9 +1298,10 @@ static char *make_prompt(struct descriptor_data *d)
      }
 
     if (len < sizeof(prompt))
-      strncat(prompt, "> ", sizeof(prompt) - len - 1);	/* strncat: OK */
-  } else if (STATE(d) == CON_PLAYING && IS_NPC(d->character))
-    snprintf(prompt, sizeof(prompt), "%s> ", GET_NAME(d->character));
+      strncat(prompt, "> \r\n", sizeof(prompt) - len - 1);	/* strncat: OK */
+  } 
+  else if (STATE(d) == CON_PLAYING && IS_NPC(d->character))
+    snprintf(prompt, sizeof(prompt), "%s>\r\n", GET_NAME(d->character));
   else
     *prompt = '\0';
 
@@ -2031,7 +2034,8 @@ static int process_input(struct descriptor_data *t)
 	if (t->history[cnt] && is_abbrev(commandln, t->history[cnt])) {
 	  strcpy(tmp, t->history[cnt]);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
 	  strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
-          write_to_output(t, "%s\r\n", tmp);
+          write_to_output(t, "%s", tmp);
+// salty         write_to_output(t, "%s\r\n", tmp);
 	  break;
 	}
         if (cnt == 0)	/* At top, loop to bottom. */
@@ -2494,6 +2498,8 @@ void send_to_outdoor(const char *messg, ...)
     if (STATE(i) != CON_PLAYING || i->character == NULL)
       continue;
     if (!AWAKE(i->character) || !OUTSIDE(i->character))
+      continue;
+    if (SECT(IN_ROOM(i->character)) == SECT_INSIDE)
       continue;
 
     va_start(args, messg);
@@ -2958,7 +2964,7 @@ static void msdp_update( void )
 
       MSDPSetNumber( d, eMSDP_HEALTH, GET_HIT(ch) );
       MSDPSetNumber( d, eMSDP_HEALTH_MAX, GET_MAX_HIT(ch) );
-      MSDPSetNumber( d, eMSDP_LEVEL, GET_REAL_LEVEL(ch) );
+      MSDPSetNumber( d, eMSDP_LEVEL, GET_LEVEL(ch) );
 
       sprinttype( ch->player.chclass, pc_class_types, buf, sizeof(buf) );
       MSDPSetString( d, eMSDP_CLASS, buf );
@@ -2977,7 +2983,7 @@ static void msdp_update( void )
           int hit_points = (GET_HIT(pOpponent) * 100) / GET_MAX_HIT(pOpponent);
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, hit_points );
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
-          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_REAL_LEVEL(pOpponent) );
+          MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
           MSDPSetString( d, eMSDP_OPPONENT_NAME, PERS(pOpponent, ch) );
       }
       else /* Clear the values */

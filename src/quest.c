@@ -514,10 +514,10 @@ static void quest_join(struct char_data *ch, struct char_data *qm, char argument
   else if ((rnum = real_quest(vnum)) == NOTHING)
     snprintf(buf, sizeof(buf),
              "%s I don't know of such a quest!", GET_NAME(ch));
-  else if (GET_REAL_LEVEL(ch) < QST_MINLEVEL(rnum))
+  else if (GET_LEVEL(ch) < QST_MINLEVEL(rnum))
     snprintf(buf, sizeof(buf),
              "%s You are not experienced enough for that quest!", GET_NAME(ch));
-  else if (GET_REAL_LEVEL(ch) > QST_MAXLEVEL(rnum))
+  else if (GET_LEVEL(ch) > QST_MAXLEVEL(rnum))
     snprintf(buf, sizeof(buf),
              "%s You are too experienced for that quest!", GET_NAME(ch));
   else if (is_complete(ch, vnum))
@@ -757,10 +757,10 @@ ACMD(do_quest)
 
   two_arguments(argument, arg1, arg2);
   if (!*arg1)
-    send_to_char(ch, "%s\r\n", GET_REAL_LEVEL(ch) < LVL_IMMORT ?
+    send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
                      quest_mort_usage : quest_imm_usage);
   else if (((tp = search_block(arg1, quest_cmd, FALSE)) == -1))
-    send_to_char(ch, "%s\r\n", GET_REAL_LEVEL(ch) < LVL_IMMORT ?
+    send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
                      quest_mort_usage : quest_imm_usage);
   else {
     switch (tp) {
@@ -779,13 +779,13 @@ ACMD(do_quest)
  quest_progress(ch);
  break;
       case SCMD_QUEST_STATUS:
-        if (GET_REAL_LEVEL(ch) < LVL_IMMORT)
+        if (GET_LEVEL(ch) < LVL_IMMORT)
           send_to_char(ch, "%s\r\n", quest_mort_usage);
         else
           quest_stat(ch, arg2);
         break;
       default: /* Whe should never get here, but... */
-        send_to_char(ch, "%s\r\n", GET_REAL_LEVEL(ch) < LVL_IMMORT ?
+        send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
                      quest_mort_usage : quest_imm_usage);
  break;
     } /* switch on subcmd number */

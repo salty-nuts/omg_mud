@@ -115,7 +115,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "buildwalk", "buildwalk", POS_STANDING, do_gen_tog , LVL_BUILDER, SCMD_BUILDWALK },
   { "buy"      , "bu"      , POS_STANDING, do_not_here , 0, 0 },
   { "bug"      , "bug"     , POS_DEAD    , do_ibt      , 0, SCMD_BUG },
-
+  
   { "cast"     , "c"       , POS_SITTING , do_cast     , 1, 0 },
   { "cedit"    , "cedit"   , POS_DEAD    , do_oasis_cedit, LVL_IMPL, 0 },
   { "chant"    , "chan"    , POS_STANDING, do_chant    ,   1,  0},
@@ -135,6 +135,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "credits"  , "cred"    , POS_DEAD    , do_gen_ps   , 0, SCMD_CREDITS },
 
   { "date"     , "da"      , POS_DEAD    , do_date     , LVL_IMMORT, SCMD_DATE },
+  { "dance"    , "dance"   , POS_STANDING, do_dance    , 1, 0},
   { "dc"       , "dc"      , POS_DEAD    , do_dc       , LVL_GOD, 0 },
   { "deposit"  , "depo"    , POS_STANDING, do_not_here , 1, 0 },
   { "detach"   , "detach"  , POS_DEAD    , do_detach   , LVL_BUILDER, 0 },
@@ -164,6 +165,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "freeze"   , "freeze"  , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_FREEZE },
 
   { "garrotte" , "gar"     , POS_FIGHTING, do_garrotte , 0, 0 },
+  { "gateway"  , "gate"    , POS_STANDING, do_gateway  , 0, 0 },
   { "get"      , "g"       , POS_RESTING , do_get      , 0, 0 },
   { "gecho"    , "gecho"   , POS_DEAD    , do_gecho    , LVL_GOD, 0 },
   { "gemote"   , "gem"     , POS_SLEEPING, do_gen_comm , 0, SCMD_GEMOTE },
@@ -171,7 +173,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "goto"     , "go"      , POS_SLEEPING, do_goto     , LVL_IMMORT, 0 },
   { "gold"     , "gol"     , POS_RESTING , do_gold     , 0, 0 },
   { "gossip"   , "gos"     , POS_SLEEPING, do_gen_comm , 0, SCMD_GOSSIP },
-  { "group"    , "gr"      , POS_RESTING , do_group    , 1, 0 },
+  { "group"    , "gr"      , POS_SLEEPING , do_group    , 1, 0 },
   { "grab"     , "grab"    , POS_RESTING , do_grab     , 0, 0 },
   { "grats"    , "grat"    , POS_SLEEPING, do_gen_comm , 0, SCMD_GRATZ },
   { "gsay"     , "gsay"    , POS_SLEEPING, do_gsay     , 0, 0 },
@@ -198,7 +200,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "idea"     , "ide"      , POS_DEAD    , do_ibt      , 0, SCMD_IDEA },
   { "imotd"    , "imo"     , POS_DEAD    , do_gen_ps   , LVL_IMMORT, SCMD_IMOTD },
   { "immlist"  , "imm"     , POS_DEAD    , do_gen_ps   , 0, SCMD_IMMLIST },
-  { "improve"  , "imp"     , POS_RESTING , do_improve  , LVL_IMMORT, 0 },
   { "info"     , "info"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_INFO },
   { "invis"    , "invi"    , POS_DEAD    , do_invis    , LVL_IMMORT, 0 },
 
@@ -225,7 +226,6 @@ cpp_extern const struct command_info cmd_info[] = {
   { "mcopy"    , "mcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_MEDIT },
   { "msgedit"  , "msgedit" , POS_DEAD    , do_msgedit,   LVL_GOD, 0 },
   { "mute"     , "mute"    , POS_DEAD    , do_wizutil  , LVL_GOD, SCMD_MUTE },
-  { "multiclass", "multic" , POS_STANDING, do_multiclass, 30, 0},
   { "news"     , "news"    , POS_SLEEPING, do_gen_ps   , 0, SCMD_NEWS },
   { "noauction", "noauction",POS_DEAD    , do_gen_tog  , 0, SCMD_NOAUCTION },
   { "nogossip" , "nogossip", POS_DEAD    , do_gen_tog  , 0, SCMD_NOGOSSIP },
@@ -278,6 +278,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "recite"   , "reci"    , POS_RESTING , do_use      , 0, SCMD_RECITE },
   { "receive"  , "rece"    , POS_STANDING, do_not_here , 1, 0 },
   { "recent"   , "recent"  , POS_DEAD    , do_recent   , LVL_IMMORT, 0 },
+  //{ "recover"  , "recover" , POS_STANDING, do_recover  , 0, 0},
   { "release"  , "rel"     , POS_RESTING , do_release  , 0, 0},
   { "remove"   , "rem"     , POS_RESTING , do_remove   , 0, 0 },
   { "rent"     , "rent"    , POS_STANDING, do_not_here , 1, 0 },
@@ -310,7 +311,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "show"     , "show"    , POS_DEAD    , do_show     , LVL_IMMORT, 0 },
   { "shutdow"  , "shutdow" , POS_DEAD    , do_shutdown , LVL_IMPL, 0 },
   { "shutdown" , "shutdown", POS_DEAD    , do_shutdown , LVL_IMPL, SCMD_SHUTDOWN },
-  { "shriek"   , "shriek"  , POS_FIGHTING, do_shriek   , 0, 0 },
+//  { "shriek"   , "shriek"  , POS_FIGHTING, do_shriek   , 0, 0 },
   { "sip"      , "sip"     , POS_RESTING , do_drink    , 0, SCMD_SIP },
   { "skills"   , "skil"    , POS_SLEEPING, do_practice , 0, 0 },
   { "skillset" , "skillset", POS_SLEEPING, do_skillset , LVL_IMPL, 0 },
@@ -320,12 +321,13 @@ cpp_extern const struct command_info cmd_info[] = {
   { "snoop"    , "snoop"   , POS_DEAD    , do_snoop    , LVL_GOD, 0 },
   { "socials"  , "socials" , POS_DEAD    , do_commands , 0, SCMD_SOCIALS },
   { "spells"   , "spel"    , POS_SLEEPING, do_practice , 0, 0 },
+  { "spinkick" , "spin"    , POS_FIGHTING, do_spin_kick, 1, 0 },
   { "split"    , "split"   , POS_SITTING , do_split    , 1, 0 },
   { "stand"    , "st"      , POS_RESTING , do_stand    , 0, 0 },
-  { "stalk" 	 , "stal"	   , POS_STANDING, do_stalk , 0, 0},
 	{ "stance"	 , "stan"		 , POS_FIGHTING,	 do_stance	 , 0, 0 },
   { "stat"     , "stat"    , POS_DEAD    , do_stat     , LVL_IMMORT, 0 },
   { "steal"    , "ste"     , POS_STANDING, do_steal    , 1, 0 },
+  { "storm"    , "sto"     , POS_FIGHTING, do_storm_of_steel, 1, 0 },
   { "switch"   , "switch"  , POS_DEAD    , do_switch   , LVL_GOD, 0 },
 
   { "tell"     , "t"       , POS_DEAD    , do_tell     , 0, 0 },
@@ -535,7 +537,7 @@ void command_interpreter(struct char_data *ch, char *argument)
   }
 
   /* Allow IMPLs to switch into mobs to test the commands. */
-   if (IS_NPC(ch) && ch->desc && GET_REAL_LEVEL(ch->desc->original) >= LVL_IMPL) {
+   if (IS_NPC(ch) && ch->desc && GET_LEVEL(ch->desc->original) >= LVL_IMPL) {
      if (script_command_interpreter(ch, argument))
        return;
    }
@@ -543,7 +545,7 @@ void command_interpreter(struct char_data *ch, char *argument)
   for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
     if(complete_cmd_info[cmd].command_pointer != do_action &&
        !strncmp(complete_cmd_info[cmd].command, arg, length))
-      if (GET_REAL_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
+      if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
         break;
 
   /* it's not a 'real' command, so it's a social */
@@ -552,7 +554,7 @@ void command_interpreter(struct char_data *ch, char *argument)
     for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
       if (complete_cmd_info[cmd].command_pointer == do_action &&
           !strncmp(complete_cmd_info[cmd].command, arg, length))
-        if (GET_REAL_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
+        if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
           break;
 
   if (*complete_cmd_info[cmd].command == '\n') {
@@ -561,7 +563,7 @@ void command_interpreter(struct char_data *ch, char *argument)
 
     for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++)
     {
-      if (*arg != *cmd_info[cmd].command || cmd_info[cmd].minimum_level > GET_REAL_LEVEL(ch))
+      if (*arg != *cmd_info[cmd].command || cmd_info[cmd].minimum_level > GET_LEVEL(ch))
         continue;
 
       /* Only apply levenshtein counts if the command is not a trigger command. */
@@ -577,7 +579,7 @@ void command_interpreter(struct char_data *ch, char *argument)
       }
     }
   }
-  else if (!IS_NPC(ch) && PLR_FLAGGED(ch, PLR_FROZEN) && GET_REAL_LEVEL(ch) < LVL_IMPL)
+  else if (!IS_NPC(ch) && PLR_FLAGGED(ch, PLR_FROZEN) && GET_LEVEL(ch) < LVL_IMPL)
     send_to_char(ch, "You try, but the mind-numbing cold prevents you...\r\n");
   else if (complete_cmd_info[cmd].command_pointer == NULL)
     send_to_char(ch, "Sorry, that command hasn't been implemented yet.\r\n");
@@ -1274,7 +1276,7 @@ int enter_player_game (struct descriptor_data *d)
   reset_char(d->character);
 
   if (PLR_FLAGGED(d->character, PLR_INVSTART))
-    GET_INVIS_LEV(d->character) = GET_REAL_LEVEL(d->character);
+    GET_INVIS_LEV(d->character) = GET_LEVEL(d->character);
 
 	/*
    * Salty
@@ -1291,7 +1293,7 @@ int enter_player_game (struct descriptor_data *d)
   /* If char was saved with NOWHERE, or real_room above failed... */
   if (load_room == NOWHERE)
   {
-    if (GET_REAL_LEVEL(d->character) >= LVL_IMMORT)
+    if (GET_LEVEL(d->character) >= LVL_IMMORT)
       load_room = r_immort_start_room;
     else
       load_room = r_mortal_start_room;
@@ -1561,9 +1563,9 @@ void nanny(struct descriptor_data *d, char *arg)
 	mudlog(NRM, LVL_GOD, TRUE, "Connection attempt for %s denied from %s", GET_NAME(d->character), d->host);
 	return;
       }
-      if (GET_REAL_LEVEL(d->character) < circle_restrict) {
+      if (GET_LEVEL(d->character) < circle_restrict) {
 	write_to_output(d, "The game is temporarily restricted.. try again later.\r\n");
-	write_to_output(d, "Your current level is %d.\r\n",GET_REAL_LEVEL(d->character));
+	write_to_output(d, "Your current level is %d.\r\n",GET_LEVEL(d->character));
 	STATE(d) = CON_CLOSE;
 	mudlog(NRM, LVL_GOD, TRUE, "Request for login denied for %s [%s] (wizlock)", GET_NAME(d->character), d->host);
 	return;
@@ -1572,7 +1574,7 @@ void nanny(struct descriptor_data *d, char *arg)
       if (perform_dupe_check(d))
 	return;
 
-      if (GET_REAL_LEVEL(d->character) >= LVL_IMMORT)
+      if (GET_LEVEL(d->character) >= LVL_IMMORT)
 	write_to_output(d, "%s", imotd);
       else
 	write_to_output(d, "%s", motd);
@@ -1691,7 +1693,7 @@ void nanny(struct descriptor_data *d, char *arg)
   case CON_REROLL:
 
     load_result = parse_reroll(*arg);
-		if (load_result < 0)
+		if (load_result < 0) /* Invalid input */
 		{
 			write_to_output(d,"\n\rThat is not a valid choice!\n\r");
 	    write_to_output(d,"Your abilities are:\n\r");
@@ -1701,7 +1703,7 @@ void nanny(struct descriptor_data *d, char *arg)
     	write_to_output(d, "%s\n\rChoose to [k]eep or [r]eroll: ", reroll_menu);
 			return;
 		}
-    else if (load_result)
+    else if (load_result) /* Roll stats */
     {
     	roll_real_abils(d->character);
       write_to_output(d,"\n\rYour abilities are:\n\r");
@@ -1713,30 +1715,34 @@ void nanny(struct descriptor_data *d, char *arg)
       STATE(d) = CON_REROLL;
       break;
     }
-      if (d->olc) {
+    else if (!load_result)/* Roll accepted*/
+    {
+      if (d->olc)
+      {
         free(d->olc);
         d->olc = NULL;
       }
       if (GET_PFILEPOS(d->character) < 0)
       GET_PFILEPOS(d->character) = create_entry(GET_PC_NAME(d->character));
-    /* Now GET_NAME() will work properly. */
-    init_char(d->character);
-    save_char(d->character);
-    save_player_index();
-    write_to_output(d, "%s\r\n*** PRESS RETURN: ", motd);
-    STATE(d) = CON_RMOTD;
-    /* make sure the last log is updated correctly. */
-    GET_PREF(d->character)= rand_number(1, 128000);
-    GET_HOST(d->character)= strdup(d->host);
+      /* Now GET_NAME() will work properly. */
+      init_char(d->character);
+      save_char(d->character);
+      save_player_index();
+      write_to_output(d, "%s\r\n*** PRESS RETURN: ", motd);
+      STATE(d) = CON_RMOTD;
+      /* make sure the last log is updated correctly. */
+      GET_PREF(d->character)= rand_number(1, 128000);
+      GET_HOST(d->character)= strdup(d->host);
 
-    mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
+      mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
 
-    /* Add to the list of 'recent' players (since last reboot) */
-    if (AddRecentPlayer(GET_NAME(d->character), d->host, TRUE, FALSE) == FALSE)
-    {
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+      /* Add to the list of 'recent' players (since last reboot) */
+      if (AddRecentPlayer(GET_NAME(d->character), d->host, TRUE, FALSE) == FALSE)
+      {
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
+      }
+      break;
     }
-    break;
 
   case CON_RMOTD:		/* read CR after printing motd   */
     write_to_output(d, "%s", CONFIG_MENU);
@@ -1766,6 +1772,7 @@ void nanny(struct descriptor_data *d, char *arg)
       /* Clear their load room if it's not persistant. */
       if (!PLR_FLAGGED(d->character, PLR_LOADROOM))
         GET_LOADROOM(d->character) = NOWHERE;
+      
       save_char(d->character);
 
       greet_mtrigger(d->character, -1);
@@ -1777,10 +1784,11 @@ void nanny(struct descriptor_data *d, char *arg)
 			game_info("%s has entered the game!", GET_NAME(d->character));
 
       MXPSendTag( d, "<VERSION>" );
-      if (GET_REAL_LEVEL(d->character) == 0)
+      if (GET_LEVEL(d->character) == 0)
 			{
 				do_start(d->character);
 				send_to_char(d->character, "%s", CONFIG_START_MESSG);
+        save_char(d->character);
       }
 
       look_at_room(d->character, 0);
@@ -1865,7 +1873,7 @@ void nanny(struct descriptor_data *d, char *arg)
 	STATE(d) = CON_CLOSE;
 	return;
       }
-      if (GET_REAL_LEVEL(d->character) < LVL_GRGOD)
+      if (GET_LEVEL(d->character) < LVL_GRGOD)
 	SET_BIT_AR(PLR_FLAGS(d->character), PLR_DELETED);
       save_char(d->character);
       Crash_delete_file(GET_NAME(d->character));
@@ -1880,7 +1888,7 @@ void nanny(struct descriptor_data *d, char *arg)
       delete_variables(GET_NAME(d->character));
       write_to_output(d, "Character '%s' deleted! Goodbye.\r\n", GET_NAME(d->character));
       mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "%s (lev %d) has self-deleted.",
-       GET_NAME(d->character), GET_REAL_LEVEL(d->character));
+       GET_NAME(d->character), GET_LEVEL(d->character));
       STATE(d) = CON_CLOSE;
       return;
     } else {

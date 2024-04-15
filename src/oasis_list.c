@@ -62,7 +62,7 @@ static void perform_mob_name_list(struct char_data * ch, char *arg)
         char_to_room(mob, 0);
         len += snprintf(buf + len, sizeof(buf) - len, "%s%3d. %s[%s%5d%s]%s Level %s%-3d%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
                       CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
-                      CCYEL(ch, C_NRM), GET_REAL_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
+                      CCYEL(ch, C_NRM), GET_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
         extract_char(mob); /* Finished with the mob - remove it from the MUD */
         if (len > sizeof(buf))
                   break;
@@ -98,7 +98,7 @@ static void perform_mob_flag_list(struct char_data * ch, char *arg)
         char_to_room(mob, 0);
         len += snprintf(buf + len, sizeof(buf) - len, "%s%3d. %s[%s%5d%s]%s Level %s%-3d%s %s%s\r\n", CCNRM(ch, C_NRM),++found,
                       CCCYN(ch, C_NRM), CCYEL(ch, C_NRM), GET_MOB_VNUM(mob), CCCYN(ch, C_NRM), CCNRM(ch, C_NRM),
-                      CCYEL(ch, C_NRM), GET_REAL_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
+                      CCYEL(ch, C_NRM), GET_LEVEL(mob), CCNRM(ch, C_NRM), GET_NAME(mob), CCNRM(ch, C_NRM));
         extract_char(mob); /* Finished with the mob - remove it from the MUD */
         if (len > sizeof(buf))
 		  break;
@@ -130,7 +130,7 @@ static void perform_mob_level_list(struct char_data * ch, char *arg)
   len = snprintf(buf, sizeof(buf), "Listing mobiles of level %s%d%s\r\n", QYEL, mob_level, QNRM);
   for (num = 0; num <= top_of_mobt; num++) 
   {
-    if (mob_proto[num].player.level[CLASS_FIGHTER] == mob_level)
+    if (mob_proto[num].player.level == mob_level)
     {
       if ((mob = read_mobile(num, REAL)) != NULL)
       {
@@ -698,7 +698,7 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
       len += snprintf(buf + len, sizeof(buf) - len, "%s%4d%s) [%s%-5d%s] %s%-*s %s[%4d]%s%s\r\n",
                    QGRN, counter, QNRM, QGRN, mob_index[i].vnum, QNRM,
                    QCYN, count_color_chars(mob_proto[i].player.short_descr)+44, mob_proto[i].player.short_descr,
-                   QYEL, GET_LEVEL(mob_proto + i, CLASS_FIGHTER), QNRM,
+                   QYEL, GET_LEVEL(mob_proto + i), QNRM,
                    mob_proto[i].proto_script ? " [TRIG]" : ""
               );
       if (len > sizeof(buf))

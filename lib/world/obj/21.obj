@@ -1,0 +1,551 @@
+#2100
+Serpent Fang Key~
+the Serpent's Fang Key~
+A jade key in the shape of serpent.~
+As you examine the key more closely, you notice its intricate craftsmanship.  
+Carved from a single piece of jade, it shimmers with an otherworldly emerald
+glow.  The key itself resembles a stylized serpent fang, its pointed tip
+gleaming with an almost menacing light.  The handle, adorned with a detailed
+design of scales, feels surprisingly warm to the touch.
+~
+18 0 0 0 0 a 0 0 0 0 0 0 0
+100 0 0 0
+1 0 0 0 0 100
+A
+26 25
+A
+29 25
+#2101
+key winds~
+the Key of the Winds~
+A bird shaped key carved from jade.~
+This exquisitely crafted key shimmers with an otherworldly turquoise glow,
+resembling a stylized bird in flight.  Its body is carved from a smooth,
+polished jade, cool to the touch.  Delicate feathers, meticulously detailed in
+shimmering obsidian, fan out from its tail.  As you hold the key, a faint
+whistling sound seems to emanate from within, carrying the whisper of a distant
+storm.
+~
+18 0 0 0 0 a 0 0 0 0 0 0 0
+100 0 0 0
+0 0 0 0 0 100
+#2102
+key war warfare~
+the Key to Warfare~
+This ornately carved key radiates a potent aura of violence and bloodshed.~
+Crafted from a single piece of obsidian, it feels heavy and cold in your hand.
+The handle depicts a snarling jaguar, its fangs bared and claws extended as if
+ready to strike.  Along the shaft of the key, intricate glyphs writhe like
+serpents, their meaning lost to the ages but hinting at their dark power.
+~
+18 r 0 0 0 a 0 0 0 0 0 0 0
+100 0 0 0
+1 0 0 0 0 100
+#2103
+throne death~
+the Obsidian Throne~
+This colossal throne, forged from a single block of polished obsidian, dominates the chamber.~
+The back of the throne depicts a colossal skull, its hollow eye sockets filled
+with flickering green flames that mirror Mictlantecuhtli's own.  Jagged obsidian
+spikes erupt from the armrests, hinting at the countless sacrifices made to
+appease the lord of the underworld.  These spikes are slick with a sickly green
+ichor, the lingering residue of past offerings.
+~
+15 0 0 0 0 0 0 0 0 0 0 0 0
+-1 15 2104 0
+10000 0 0 0 0 100
+#2104
+ribcage key~
+the Ribcage Key~
+This key is a horrifying yet strangely beautiful object.~
+Carved from a single, polished human ribcage, it retains a faint, eerie
+luminescence.  The spine serves as the shaft, vertebrae meticulously smoothed
+and polished.  Each rib curves gracefully outward, forming intricate grooves
+along its underside.  In the center of the ribcage, where the sternum would be,
+a single, jagged obsidian shard protrudes, its sharp edge glinting menacingly.
+~
+18 0 0 0 0 a 0 0 0 0 0 0 0
+100 0 0 0
+0 0 0 0 0 100
+#2105
+death treasure hoard~
+the Treasure of Death~
+The combined treasure of the dead.~
+~
+20 0 0 0 0 a 0 0 0 0 0 0 0
+2000000000 0 0 0
+0 0 0 0 0 100
+#2106
+Mictlantecuhtli bone sceptre~
+Mictlantecuhtli's Bone Sceptre~
+A polished femur imbued with an icy luminescence, serving as the scepter of the Lord of the Dead.~
+The air crackles with an unnatural energy, and the scent of decay hangs heavy in the air.
+~
+5 gi 0 0 0 an 0 0 0 0 0 0 0
+10 6 6 6
+0 0 0 0 0 40
+E
+Mictlantecuhtli Bone Sceptre~
+Crafted from a single, massive femur, the bone is polished smooth by countless
+ages spent buried beneath the earth.  Its surface, once a vibrant canvas of
+life, now holds a ghostly white sheen, pulsing faintly with an otherworldly,
+blue-green luminescence.  Carved near the top, where the rounded head of the
+femur meets the shaft, is a grotesque skull.  The empty sockets seem to peer
+into the living world with an insatiable hunger, and the gaping maw appears
+ready to devour any who dare approach.
+~
+A
+28 25
+A
+29 25
+A
+30 25
+A
+26 250
+#2107
+Xiuhcoatl fire serpent spear~
+Xiuhcoatl the Fire Serpent~
+The very embodiment of Huitzilopochtli's wrath, Xiuhcoatl is no ordinary spear~
+Huitzilopochtli's obsidian spear shimmers with an inner fire!
+~
+5 g 0 0 0 ano 0 0 0 0 0 0 0
+10 15 4 4
+10 0 0 100 0 50
+E
+spear fire serpent xiuhcoatl~
+The spear shaft is smooth and flawless, polished to a mirror sheen that distorts
+reality like a mirage.  Etched along its length are glyphs that writhe and
+dance, depicting scenes of cosmic battles and warriors consumed by flames.  The
+spearhead, however, is the most fearsome aspect.  Jagged and obsidian-sharp, it
+resembles a serpent's fang, barbed and dripping with a faint, ethereal glow.  
+Whispers claim the tip can pierce through any armor, for it carries the power to
+sunder both flesh and spirit.
+~
+A
+18 5
+A
+19 5
+#2108
+Heart Jaguar~
+Heart of the Jaguar~
+A pulsating obsidian pendant imbued with the essence of a jaguar spirit.~
+~
+9 gi 0 0 0 ac 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 60
+E
+heart jaguar~
+Crafted from a single, flawless shard of obsidian, the pendant is polished to a
+mirror sheen that reflects the surrounding environment with a swirling,
+distorted quality.  Etched upon its surface are intricate glyphs that resemble
+stylized jaguar markings.  These markings, however, are not mere decoration they
+seem to writhe and pulsate with a faint inner light that evokes a beating heart.
+~
+A
+19 3
+A
+18 3
+#2109
+ehecatl serpent scale~
+Ehecatl's Serpent Scale~
+A giant serpent scale shimmers with an iridescent sheen, catching the light with the brilliance of an opal.~
+~
+9 g 0 0 0 aj 0 0 0 0 0 0 0
+50 0 0 0
+20 0 0 100 0 75
+E
+ehecatl serpent scale~
+The shield is massive, a formidable wall of protection crafted from the scales
+of a colossal serpent said to have resided in the celestial storms.  Each scale,
+a deep emerald green with hints of sapphire and amethyst, is polished to an
+immaculate shine that reflects the world around it in a distorted, rippling
+manner.  The edges of the scales are rimmed with a thin band of polished silver,
+intricately etched with glyphs that resemble wind currents and stylized
+serpents.
+~
+A
+18 3
+A
+19 3
+A
+35 10
+A
+36 10
+#2110
+aura war~
+the Aura of War~
+A crimson mist tinged with the clang of steel and the roars of combatants floats here.~
+~
+9 gi 0 0 0 aq 0 0 0 def 0 0 0
+10 0 0 0
+0 0 0 100 0 25
+T 1005
+E
+aura war~
+As the drums of war thunder and the clash of steel echoes across the
+battlefield, a terrifying presence descends.  The very air vibrates with a
+crimson energy, coalescing into a swirling mist that hangs over the combatants.
+This is the Aura of War, a manifestation of the raw, primal energy unleashed by
+conflict.
+~
+A
+18 5
+A
+19 5
+#2111
+mark death~
+the Mark of Death~
+A midnight black bracelet with a glowing red Aztec symbol lies here.~
+~
+9 gnopqr 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 100 0 10
+T 2100
+E
+bracelet~
+Some believe the bracelet is a cursed object, slowly draining the life force of
+its wearer.  Others see it as a morbid but honest reminder to cherish the
+fleeting nature of existence.  Regardless of its true nature, the Mark of Death
+is a chilling companion, a constant reminder of the fragility of life and the
+ever-present shadow of mortality.
+~
+E
+mark~
+The Mark of Death is more than just an ornament it carries a palpable aura of
+finality.  Those who hold it feel a faint chill emanating from the iron, a
+reminder of the inevitable end that awaits all living things.  Legends claim the
+bracelet was forged in the fires of the underworld, imbued with the essence of
+oblivion.  While the truth of those stories may be lost to time, the Mark of
+Death does possess a strange power.  It grants the wearer an uncanny awareness
+of impending death, a sense of foreboding that intensifies as one's life force
+wanes.
+~
+E
+death~
+Forged from cold, black iron that seems to absorb all light, the Mark of Death
+is a bracelet devoid of any ornamentation.  Its surface is smooth and polished,
+yet strangely uneven, as if countless hands have nervously traced its form over
+the ages.  The only adornment is a single, stylized skull etched near the clasp.
+This skull isn't a grotesque caricature of death it's a simple outline, its
+empty eye sockets seeming to stare not outward, but inward, into the very soul
+of the wearer.
+~
+A
+26 25
+A
+29 25
+#2112
+sigil blood moon~
+the Sigil of the Blood Moon~
+A deep crimson circle, the color of fresh blood, crackling with energy.~
+~
+1 g 0 0 0 a 0 0 0 0 0 0 0
+0 0 -1 0
+0 0 0 0 0 10
+E
+sigil blood moon~
+The Sigil of the Blood Moon isn't your ordinary light source.  Forget flickering
+flames or warm lanterns.  This is an orb, a swirling vortex of crimson energy
+held captive within a transparent sphere.  The color isn't just red, it's the
+deep, vibrant red of fresh blood, pulsing with an inner light that seems to
+radiate a faint heat even at a distance.
+~
+A
+18 10
+A
+19 10
+A
+17 -10
+#2113
+anger staff unleashed~
+Staff of Unleashed Anger~
+A red laquered staff with gold inlay. ~
+~
+4 0 0 0 0 ap 0 0 0 0 0 0 0
+105 10 10 56
+1 1 0 100 0 100
+#2114
+jade serpent arm armband~
+a jade serpent armband~
+An small, intricate jade serpent lies coiled here.~
+~
+9 gi 0 0 0 ai 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 50
+A
+18 1
+A
+19 2
+#2115
+crown skulls Huitzilopochtli~
+the Crown of Skulls~
+A terrifying reminder of Huitzilopochtli's relentless pursuit of victory.~
+~
+9 gi 0 0 0 ae 0 0 0 0 0 0 0
+15 0 0 0
+0 0 0 0 0 25
+A
+18 3
+A
+19 3
+#2116
+Obsidian Butterfly Belt~
+the Obsidian Butterfly Belt~
+Belt of polished obsidian carved into delicate butterfly wings.~
+~
+9 gi 0 0 0 al 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 25
+A
+18 1
+A
+19 4
+#2117
+Spectral Greaves jaguar~
+a Pair of Spectral Jaguar Greaves~
+Spectral greaves patterned with stylized jaguar spots.~
+~
+9 gi 0 0 0 af 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 40
+A
+18 3
+A
+19 3
+#2118
+fire-wrought fire wrought obsidian bracers~
+a Fire-Wrought Obsidian Bracer~
+Bracers of smoldering obsidian, flames flickering within the stone, defy logic.~
+~
+9 gimnqr 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 10
+T 2102
+E
+fire-wrought fire wrought obsidian bracers~
+These are no ordinary bracelets.  Crafted from obsidian, a volcanic glass said
+to hold the essence of fire, they appear deceptively simple at first glance.  
+Within the depths of the polished obsidian, tiny flames flicker and dance,
+seemingly defying logic.  The flames cast an eerie, flickering glow that seems
+to emanate from within the very stone itself.  The source of these flames
+remains a mystery, whispered to be a fragment of Xolotl's own fiery essence
+trapped within the obsidian.
+~
+A
+18 1
+A
+19 4
+#2119
+Ring Eye Twilight~
+the Eye of Twilight~
+A ring of polished obsidian that seems to hold a swirling galaxy within its depths.~
+~
+9 gi 0 0 0 ab 0 0 0 0 0 0 0
+5 0 0 0
+0 0 0 0 0 20
+E
+Ring Eye Twilight~
+Crafted from a single chunk of obsidian, a volcanic glass said to hold the
+essence of night, the ring is a perfect circle of polished black.  At first
+glance, it appears unremarkable.  However, a closer inspection reveals its true
+nature.  Deep within the obsidian, a swirling vortex of inky darkness seems to
+hold a miniature galaxy within its depths.  Flecks of obsidian shimmer like
+distant stars against a backdrop of swirling mist.
+~
+A
+18 3
+A
+19 3
+#2120
+Fangs Mictlan Mask~
+the Fangs of Mictlan~
+A mask of polished obsidian, carved into the fearsome visage of a snarling jaguar.~
+
+~
+9 gi 0 0 0 ar 0 0 0 0 0 0 0
+15 0 0 0
+0 0 0 0 0 20
+E
+Fangs Mictlan Mask~
+Crafted from a single block of polished obsidian, the mask reflects the dim
+light of the underworld with an eerie sheen.  Shaped like the fearsome head of a
+jaguar, the mask is a potent symbol of Mictecacihuatl's power.  The obsidian
+carver has captured the essence of the predator in every detail - the narrowed
+eyes, the powerful jaw, and the snarling snarl.  The Fangs of Mictlan serve a
+dual purpose.  On a practical level, the obsidian offers some protection against
+those who might seek to challenge her authority.  More importantly, the mask
+serves as a powerful symbol of Mictecacihuatl's dominion over the underworld.  
+The jaguar, a creature of the night and a skilled hunter, embodies the dangers
+that lurk within her domain.  The bared fangs are a stark reminder of the
+finality of death, a chilling message to those who dare to trespass.
+~
+A
+18 5
+A
+19 2
+#2121
+Ribcage Mictlan~
+the Ribcage of Mictlan~
+A horrifying cuirass formed from the fused ribs of countless souls trapped in the underworld.~
+~
+9 gi 0 0 0 ad 0 0 0 0 0 0 0
+25 0 0 0
+0 0 0 0 0 20
+E
+Ribcage Mictlan~
+His is no ordinary armor.  It's a horrifying testament to Mictlantecuhtli's
+dominion over the dead.  The cuirass appears to be a single, massive ribcage,
+each bone a polished ivory white, etched with intricate glyphs that pulse with
+an eerie inner light.  A closer inspection reveals a horrifying truth.  These
+aren't the bones of a single monstrous creature, but a macabre tapestry woven
+from the fused ribs of countless souls trapped within Mictlan.  Ach individual
+rib retains a faint echo of its former owner, a ghostly shimmer that dances
+within the polished bone.  Some writhe in silent agony, others seem resigned to
+their fate.  The glyphs etched upon them, said to be the laments of the damned,
+writhe and shift like living things, adding to the unsettling spectacle.
+~
+A
+32 5
+A
+33 5
+A
+34 5
+A
+35 5
+A
+36 5
+A
+24 -5
+A
+18 3
+A
+19 3
+#2122
+boneyard anklets~
+the Boneyard Anklets~
+A collection of polished human bones woven together.~
+~
+9 gi 0 0 0 ag 0 0 0 hqr 0 0 0
+10 0 0 0
+0 0 0 0 0 30
+E
+boneyard anklets~
+These aren't simple ornaments.  Each anklet is meticulously crafted from a
+collection of polished human femurs, meticulously cleaned and polished until
+they gleam with an otherworldly sheen.  The femurs are not simply strung
+together they are woven in a complex pattern, interlocking and overlapping to
+create a surprisingly intricate design.  Some bones are left plain, their
+natural ivory color contrasting with others etched with elaborate glyphs that
+seem to writhe and shift in the dim light of the underworld.
+~
+A
+18 5
+A
+19 2
+#2123
+Serpent Skull Staff~
+the Serpent Skull Staff~
+A polished human skull sits atop atop a writhing serpent staff.~
+~
+9 gi 0 0 0 ap 0 0 0 0 0 0 0
+5 0 0 0
+0 0 0 0 0 10
+E
+Serpent Skull Staff~
+This is no ordinary scepter.  The staff itself is a magnificent serpent, carved
+from obsidian so black it seems to devour light.  The obsidian gleams with an
+oily sheen, and the serpent writhes sinuously as if forever trapped in a silent
+scream.  Capping the staff is a human skull, polished bone gleaming an eerie
+white against the darkness of the obsidian serpent.  The empty eye sockets seem
+to hold not darkness, but swirling galaxies of endless night.
+~
+A
+18 3
+A
+19 3
+A
+29 10
+A
+28 10
+A
+30 10
+A
+26 100
+#2124
+mark life~
+the Mark of Life~
+A midnight black bracelet with a glowing red Aztec symbol lies here.~
+~
+9 gimopqr 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+0 0 6 100 0 10
+T 2104
+E
+mark life~
+The Mark of Life appears as a swirling emerald vine that seems to burrow just
+beneath the surface of the skin.  This vine isn't static - it writhes and pulses
+with a vibrant, emerald light that seems to emanate from within the wearer
+themself.  Tiny, luminescent blossoms unfurl from the vine, their petals
+shimmering with an iridescent sheen.  These blossoms are not constant they open
+and close in time with the wearer's heartbeat, a mesmerizing display that
+reflects their life force.
+~
+E
+mark~
+The Mark of Death is more than just an ornament it carries a palpable aura of
+finality.  Those who hold it feel a faint chill emanating from the iron, a
+reminder of the inevitable end that awaits all living things.  Legends claim the
+bracelet was forged in the fires of the underworld, imbued with the essence of
+oblivion.  While the truth of those stories may be lost to time, the Mark of
+Death does possess a strange power.  It grants the wearer an uncanny awareness
+of impending death, a sense of foreboding that intensifies as one's life force
+wanes.
+~
+E
+death~
+Forged from cold, black iron that seems to absorb all light, the Mark of Death
+is a bracelet devoid of any ornamentation.  Its surface is smooth and polished,
+yet strangely uneven, as if countless hands have nervously traced its form over
+the ages.  The only adornment is a single, stylized skull etched near the clasp.
+This skull isn't a grotesque caricature of death it's a simple outline, its
+empty eye sockets seeming to stare not outward, but inward, into the very soul
+of the wearer.
+~
+A
+26 25
+A
+28 25
+#2125
+obsidian claws~
+the Obsidian Claws of Xolotl~
+Each claw is formed from polished obsidian, the volcanic glass said to hold the essence of fire.~
+~
+9 gi 0 0 0 ah 0 0 0 0 0 0 0
+15 0 0 0
+0 0 0 0 0 30
+E
+obsidian claws underworld~
+The obsidian gleams with an eerie inner light, and the claws themselves are
+wickedly sharp, capable of rending flesh and stone with ease.  They curve
+gracefully upwards, mimicking the powerful talons of a predatory bird.  The
+polished obsidian shimmers with an almost hypnotic beauty, and the curving claws
+possess a certain grace.  This duality reflects the complex nature of Xolotl
+himself.
+~
+A
+18 3
+A
+19 4
+#2126
+Darkness Mictlan cloak~
+the Cloak of the Darkness of Mictlan~
+A shroud of impenetrable darkness that devours all light and whispers secrets of the dead~
+~
+9 gi 0 0 0 ak 0 0 0 0 0 0 0
+20 0 0 0
+0 0 0 0 0 35
+A
+18 1
+A
+19 3
+$~

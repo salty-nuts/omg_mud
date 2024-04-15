@@ -202,32 +202,32 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sh_int mod, char *m
 
 	case APPLY_HITP_REGEN:
 		if (!IS_NPC(ch))
-		GET_HITP_REGEN(ch) += mod;
+		  GET_HITP_REGEN(ch) += mod;
 		break;
 
   case APPLY_MANA_REGEN:
 		if (!IS_NPC(ch))
-    GET_MANA_REGEN(ch) += mod;
+      GET_MANA_REGEN(ch) += mod;
     break;
 
   case APPLY_MOVE_REGEN:
 		if (!IS_NPC(ch))
-    GET_MOVE_REGEN(ch) += mod;
+      GET_MOVE_REGEN(ch) += mod;
     break;
 
   case APPLY_SPELLS_HEALING:
 		if (!IS_NPC(ch))
-    GET_SPELLS_HEALING(ch) += mod;
+      GET_SPELLS_HEALING(ch) += mod;
     break;
 
   case APPLY_SPELLS_DAMAGE:
 		if (!IS_NPC(ch))
-    GET_SPELLS_DAMAGE(ch) += mod;
+      GET_SPELLS_DAMAGE(ch) += mod;
     break;
 
   case APPLY_SPELLS_AFFECTS:
 		if (!IS_NPC(ch))
-    GET_SPELLS_AFFECTS(ch) += mod;
+      GET_SPELLS_AFFECTS(ch) += mod;
     break;
 
   case APPLY_MIRROR_IMAGE:
@@ -252,28 +252,6 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sh_int mod, char *m
   case APPLY_RESIST_SLASH:
     GET_RESISTS(ch, RESIST_SLASH) += mod;
     break;
-    
-  case APPLY_RESIST_RED:
-    GET_RESISTS(ch, RESIST_RED) += mod;
-    break;
-
-  case APPLY_RESIST_BLUE:
-    GET_RESISTS(ch, RESIST_BLUE) += mod;
-    break;
-
-  case APPLY_RESIST_GREEN:
-    GET_RESISTS(ch, RESIST_GREEN) += mod;
-    break;
-
-  case APPLY_RESIST_BLACK:
-    GET_RESISTS(ch, RESIST_BLACK) += mod;
-    break;
-
-  case APPLY_RESIST_WHITE:
-    GET_RESISTS(ch, RESIST_WHITE) += mod;
-    break;
-
-
 
   default:
     log("SYSERR: Unknown apply adjust %d attempt (%s, affect_modify).", loc, __FILE__);
@@ -334,7 +312,7 @@ void affect_total(struct char_data *ch)
     affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
 
   /* Make certain values are between 0..25, not < 0 and not > 25! */
-//  i = (IS_NPC(ch) || GET_REAL_LEVEL(ch) >= LVL_GRGOD ) ? 25 : 18;
+//  i = (IS_NPC(ch) || GET_LEVEL(ch) >= LVL_GRGOD ) ? 25 : 18;
 
 /*
   Allow for str above 18 on mortals
@@ -433,7 +411,7 @@ void affect_join(struct char_data *ch, struct affected_type *af,
       else if (avg_dur)
         af->duration = (af->duration+hjp->duration)/2;
       if (add_mod)
-	af->modifier += hjp->modifier;
+      	af->modifier += hjp->modifier;
       else if (avg_mod)
         af->modifier = (af->modifier+hjp->modifier)/2;
 
@@ -934,21 +912,25 @@ void update_char_objects(struct char_data *ch)
 
   if (GET_EQ(ch, WEAR_LIGHT) != NULL)
     if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_LIGHT)) == ITEM_LIGHT)
-      if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2) > 0) {
-	i = --GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2);
-	if (i == 1) {
-	  send_to_char(ch, "Your light begins to flicker and fade.\r\n");
-	  act("$n's light begins to flicker and fade.", FALSE, ch, 0, 0, TO_ROOM);
-	} else if (i == 0) {
-	  send_to_char(ch, "Your light sputters out and dies.\r\n");
-	  act("$n's light sputters out and dies.", FALSE, ch, 0, 0, TO_ROOM);
-	  world[IN_ROOM(ch)].light--;
-	}
+      if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2) > 0)
+      {
+        i = --GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2);
+        if (i == 1)
+        {
+          send_to_char(ch, "Your light begins to flicker and fade.\r\n");
+          act("$n's light begins to flicker and fade.", FALSE, ch, 0, 0, TO_ROOM);
+        }
+        else if (i == 0)
+        {
+          send_to_char(ch, "Your light sputters out and dies.\r\n");
+          act("$n's light sputters out and dies.", FALSE, ch, 0, 0, TO_ROOM);
+          world[IN_ROOM(ch)].light--;
+        }
       }
 
   for (i = 0; i < NUM_WEARS; i++)
     if (GET_EQ(ch, i))
-      update_object(GET_EQ(ch, i), 2);
+      update_object(GET_EQ(ch, i), 1);
 
   if (ch->carrying)
     update_object(ch->carrying, 1);

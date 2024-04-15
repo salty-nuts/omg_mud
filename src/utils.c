@@ -298,7 +298,7 @@ void mudlog(int type, int level, int file, const char *str, ...)
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
       continue;
-    if (GET_REAL_LEVEL(i->character) < level)
+    if (GET_LEVEL(i->character) < level)
       continue;
     if (PLR_FLAGGED(i->character, PLR_WRITING))
       continue;
@@ -1541,4 +1541,68 @@ char *add_commas(long long num)
   #undef DIGITS_PER_GROUP
   #undef BUFFER_COUNT
   #undef DIGITS_PER_BUFFER
+}
+
+/**
+ * Remove all occurrences of a given word in string.
+ */
+void remove_from_string(char *string, const char *to_remove)
+{
+    int i, j, string_len, to_remove_len;
+    int found;
+
+    string_len   = strlen(string);      // Length of string
+    to_remove_len = strlen(to_remove); // Length of word to remove
+
+
+    for(i=0; i <= string_len - to_remove_len; i++)
+    {
+        /* Match word with string */
+        found = 1;
+        for(j=0; j<to_remove_len; j++)
+        {
+            if(string[i + j] != to_remove[j])
+            {
+                found = 0;
+                break;
+            }
+        }
+
+        /* If it is not a word */
+        if(string[i + j] != ' ' && string[i + j] != '\t' && string[i + j] != '\n' && string[i + j] != '\0')
+        {
+            found = 0;
+        }
+
+        /*
+         * If word is found then shift all characters to left
+         * and decrement the string length
+         */
+        if(found == 1)
+        {
+            for(j=i; j<=string_len - to_remove_len; j++)
+            {
+                string[j] = string[j + to_remove_len];
+            }
+
+            string_len = string_len - to_remove_len;
+
+            // We will match next occurrence of word from current index.
+            i--;
+        }
+    }
+
+}
+/* This removes all trailing whitespace from the end of a string */
+char *right_trim_whitespace(const char *string)
+{
+  char *r = strdup(string);
+  if (r != NULL)
+  {
+    char *fr = r + strlen(string) - 1;
+    while( (isspace(*fr) || !isprint(*fr) || *fr == 0) && fr >= r) --fr;
+    *++fr = 0;
+  }
+
+  return r;
 }

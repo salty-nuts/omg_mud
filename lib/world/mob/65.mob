@@ -1,5 +1,5 @@
 #6500
-guard dwarf dwarven~
+dwarf guard dwarven dg~
 the dwarf guard~
 A dwarven guard is here.
 ~
@@ -7,21 +7,22 @@ A dwarven guard is here.
 like he hasn't bathed in over a month.  
 ~
 30480394 0 0 0 109060432 0 0 0 1000 E
-90 -160 -62 2250d23+202500 30d22+180
-2328750 4657500
+90 -80 -44 2700d1800+3888900 19d19+100
+8888400 28918800
 8 8 1
-BareHandAttack: 7
+MobMult: 10
+NumAttacks: 3
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 22
-SavingRod: 22
-SavingPetri: 22
-SavingBreath: 22
-SavingSpell: 22
+SavingPara: 10
+SavingRod: 10
+SavingPetri: 10
+SavingBreath: 10
+SavingSpell: 10
 E
 #6501
 worker dwarf dwarven~
@@ -31,21 +32,22 @@ A dwarven mining worker is here.
    He is very dirty, and looks extremely over-worked.  
 ~
 2120 0 0 0 80 0 0 0 900 E
-65 -110 -42 1625d17+105625 21d16+130
-897812 1795625
+65 -47 -29 390d260+561730 8d8+67
+1283880 4177160
 8 8 1
-BareHandAttack: 7
+MobMult: 2
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 16
-SavingRod: 16
-SavingPetri: 16
-SavingBreath: 16
-SavingSpell: 16
+SavingPara: 35
+SavingRod: 35
+SavingPetri: 35
+SavingBreath: 35
+SavingSpell: 35
 E
 #6502
 wraith~
@@ -55,21 +57,17 @@ A wraith is awaiting your first move here.
    A black, almost transparent wraith.  
 ~
 30597162 0 0 0 92274944 0 0 0 -900 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+105 -90 -53 1575d1050+2268525 15d15+110
+5184900 16869300
 8 8 1
-BareHandAttack: 10
+MobMult: 5
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 T 6500
 #6503
@@ -79,22 +77,18 @@ The Hide & Tooth storekeeper is standing here, waiting patiently.
 ~
    The storekeeper is very rotund, but looks in excellent condition.  
 ~
-28317706 0 0 0 109052176 0 0 0 1000 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+28313610 0 0 0 109052176 0 0 0 1000 E
+105 -110 -53 7875d5250+11342625 35d35+130
+25924500 84346500
 8 8 1
-BareHandAttack: 13
+MobMult: 25
+NumAttacks: 6
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6504
 baker granite head~
@@ -103,22 +97,18 @@ Granite Head, the baker, is waiting for a customer here.
 ~
    Granite Head is covered with flour and grains.  
 ~
-30414858 0 0 0 100663568 0 0 0 900 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+30410762 0 0 0 100663568 0 0 0 900 E
+105 -110 -53 7875d5250+11342625 35d35+130
+25924500 84346500
 8 8 1
-BareHandAttack: 13
+MobMult: 25
+NumAttacks: 6
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6505
 lizard giant~
@@ -129,21 +119,17 @@ A giant lizard is foraging for food along the cavern floor here.
 He looks very powerful.  
 ~
 32505928 0 0 0 92274704 0 0 0 100 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+105 -90 -53 1575d1050+2268525 15d15+110
+5184900 16869300
 8 8 1
-BareHandAttack: 4
+MobMult: 5
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6506
 giant~
@@ -153,22 +139,19 @@ A giant is wandering around the mountainside here.
    The giant is about 18 feet tall, with arms of steel, and looks in excellent
 physical condition.  
 ~
-67656 0 0 0 0 0 0 0 600 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+2058 0 0 0 2048 0 0 0 600 E
+105 -100 -53 4725d3150+6805575 25d25+120
+15554700 50607900
 8 8 1
-BareHandAttack: 6
+MobMult: 15
+BareHandAttack: 7
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6507
 mineworker dwarven dwarf miner worker~
@@ -178,21 +161,22 @@ A dwarven mineworker is here.
    The mineworker is very tired, and very dirty, and he has bulging muscles.  
 ~
 2058 0 0 0 0 0 0 0 500 E
-55 -90 -34 1375d14+75625 18d13+110
-529375 1058750
+55 -40 -23 825d550+1188275 10d10+60
+2715900 8836300
 8 8 1
-BareHandAttack: 7
+MobMult: 5
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 13
-SavingRod: 13
-SavingPetri: 13
-SavingBreath: 13
-SavingSpell: 13
+SavingPara: 45
+SavingRod: 45
+SavingPetri: 45
+SavingBreath: 45
+SavingSpell: 45
 E
 #6508
 mineleader dwarven dwarf mine leader~
@@ -202,22 +186,18 @@ A dwarven mine leader is here, supervising the work.
    The mine leader is very big and very strong, though he must be fairly bright
 also, to have gotten this job.  
 ~
-30410762 0 0 0 92274944 0 0 0 700 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+30414858 0 0 0 92274944 0 0 0 700 E
+105 -105 -53 6300d4200+9074100 30d30+125
+20739600 67477200
 8 8 1
-BareHandAttack: 14
+MobMult: 20
+NumAttacks: 5
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6509
 doctor dwarven healer~
@@ -227,21 +207,17 @@ The dwarven doctor is here, aiding the sick of his people.
    He is a very skilled healer, and extremely faithful to his god.  
 ~
 30410762 0 0 0 134218000 0 0 0 999 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+105 -95 -53 3150d2100+4537050 20d20+115
+10369800 33738600
 8 8 1
-BareHandAttack: 2
+MobMult: 10
+NumAttacks: 3
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 T 6500
 #6510
@@ -253,21 +229,22 @@ A dwarven peon is awaiting help here.
 awaiting orders.  
 ~
 4106 0 0 0 0 0 0 0 500 E
-50 -80 -30 1250d13+62500 16d12+100
-406250 812500
+50 -31 -20 150d100+216050 6d6+51
+493800 1606600
 8 8 1
-BareHandAttack: 7
+MobMult: 1
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 12
-SavingRod: 12
-SavingPetri: 12
-SavingBreath: 12
-SavingSpell: 12
+SavingPara: 50
+SavingRod: 50
+SavingPetri: 50
+SavingBreath: 50
+SavingSpell: 50
 E
 #6511
 dwarf~
@@ -277,21 +254,22 @@ A dwarf is here.
    He is short and stout as their kind is famed to be.  
 ~
 10 0 0 0 0 0 0 0 500 E
-85 -150 -58 2125d22+180625 28d21+170
-1986875 3973750
+85 -70 -41 1275d850+1836425 13d13+90
+4197300 13656100
 8 8 1
-BareHandAttack: 7
+MobMult: 5
+NumAttacks: 2
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 21
-SavingRod: 21
-SavingPetri: 21
-SavingBreath: 21
-SavingSpell: 21
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
 E
 #6512
 mob unfinished~
@@ -325,20 +303,17 @@ A barrack guard is here, lounging around while off duty.
    This middle aged man seems lost without something to guard.  
 ~
 4106 0 0 0 0 0 0 0 100 E
-105 -190 -74 2625d27+275625 35d26+210
-3720937 7441875
+105 -100 -53 4725d3150+6805575 25d25+120
+15554700 50607900
 8 8 1
+MobMult: 15
+NumAttacks: 4
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 26
-SavingRod: 26
-SavingPetri: 26
-SavingBreath: 26
-SavingSpell: 26
 E
 #6515
 mob unfinished~
@@ -360,21 +335,17 @@ A mazekeeper is here.
    He looks VERY tough.  
 ~
 2090 0 0 0 16 0 0 0 -1000 E
-100 -180 -70 2500d26+250000 33d25+200
-3250000 6500000
+100 -95 -50 4500d3000+6481500 25d25+115
+14814000 48198000
 8 8 1
-BareHandAttack: 14
+MobMult: 15
+NumAttacks: 4
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 25
-SavingRod: 25
-SavingPetri: 25
-SavingBreath: 25
-SavingSpell: 25
 E
 T 6500
 #6517
@@ -387,20 +358,2097 @@ The scaly skin is a mottled brown, black, and grey that blends into the
 surrounding terrain.  
 ~
 42 0 0 0 0 0 0 0 -1000 E
-90 -160 -62 2250d23+202500 30d22+180
-2328750 4657500
+90 -80 -44 2700d1800+3888900 19d19+100
+8888400 28918800
 8 8 1
+MobMult: 10
 BareHandAttack: 4
+NumAttacks: 3
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 22
-SavingRod: 22
-SavingPetri: 22
-SavingBreath: 22
-SavingSpell: 22
+SavingPara: 10
+SavingRod: 10
+SavingPetri: 10
+SavingBreath: 10
+SavingSpell: 10
 E
+#6700
+gnome child~
+a gnome child~
+A mischevious gnome child is running around.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 2
+E
+#6701
+gnome priest quoben~
+Quoben, the Priest of Gahim~
+A short gnome priest secretly prays to his true god, Gahim.
+~
+   The priest is cloaked in a long white robe with the mark of Gahim embroidered
+upon it.  He prays to Gahim and recites the scriptures he has memorized as he as
+been stripped of all his religious artifacts.
+~
+262154 0 0 0 80 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 5638
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6748
+T 6749
+T 6750
+#6702
+lanhim corporal gnome~
+Lanhim, the bloody Gnome Corporal~
+A bloody gnome is here washing the blood off of himself.
+~
+   Lanhim is loyal to the Chieftain to a fault.  He is covered in blood from
+head to toe and slowly washes his sins and blood away.  His face twists with
+sadness and his will looks broken.
+~
+10 0 0 0 80 0 0 0 0 E
+19 14 -1 3d3+190 3d3+3
+190 35000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+T 6702
+#6703
+garavaki gnome chieftain~
+Garavaki, the Gnome Chieftain~
+The Gnome Chieftain sits on his throne, worshipping his false god.
+~
+   He looks entranced as the black mist swirls around him.  He is of quite a
+large stature for a gnome, standing almost four feet tall.  In a sheathe
+attached to his side by a brown leather belt is a sword made of electrum.  He
+caresses a black ring on his left hand as he whispers to it.
+~
+22538 0 0 0 0 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 45000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6704
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6705
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6706
+scientist gnome~
+a gnome scientist~
+A gnome scientist is conducting experiments in his workshop.
+~
+He looks hard at work and is lost in deep thoughts. Best not to distract him.
+~
+10 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6707
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6708
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6709
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6710
+gnome guard~
+a gnome guard~
+A gnome guard rests after a shift of patrolling.
+~
+He is lounging around, just trying to take it easy for a while.
+~
+2058 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6711
+gnome guard~
+a gnome guard~
+A gnome guard patrols the streets of the village.
+~
+   He slowly and deliberately patrols the streets of the village.  With a keen
+eye he scans his surroundings, watch yourself.
+~
+6216 0 0 0 0 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1250 21500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6712
+gnome man villager~
+a gnome villager~
+A gnome man goes about his day oblivious to everything around him.
+~
+The gnome man is too busy with his daily responsibilities to worry about anything else.
+~
+72 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6713
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6714
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6715
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6716
+gnome woman villager~
+a gnome woman~
+A gnome woman tends to the gnome children and household duties.
+~
+She looks exhausted as she chases children around and tends to the household
+chores.  You do not envy her.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6717
+gnome child~
+a gnome child~
+A mischievious gnome child runs around screaming and playing.
+~
+They run around playing and having a great time without a care in the world.  
+So innocent and unaware of the dangers of the world.
+~
+72 0 0 0 0 0 0 0 0 E
+15 15 1 3d3+150 2d2+2
+750 16000
+8 8 1
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#6718
+gnome child~
+a gnome child~
+A mischievious gnome child runs around screaming and playing.
+~
+They run around playing and having a great time without a care in the world.  
+So innocent and unaware of the dangers of the world.
+~
+72 0 0 0 0 0 0 0 0 E
+15 15 1 3d3+150 2d2+2
+750 16000
+8 8 2
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#6719
+gnome operator~
+the mill operator~
+A gnome is working hard operating the watermill.
+~
+   The mill operator is working extremely hard to keep the watermill operating
+smoothly.  Beads of sweat run down his tired face and drop onto the ground.  
+Theres so many levers to manipulate and it looks a little overwhelming.
+~
+74 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6720
+zombie gnome~
+a zombie gnome~
+A zombified gnome staggers around the crypt.
+~
+It's skin is falling off in chunks as it staggers around aimlessly, groaning and moaning.
+~
+40 0 0 0 1104 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+0 22000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6746
+seriphus demon vampire~
+Seriphus, the Vampire Demon~
+A pitch black demon with vampire wings hovers over the altar!
+~
+   The being before you is a pitch black silhouette of a man.  No facial or body
+features can be seen upon this evil being.  Huge, black skinned, bat wings
+slowly flap up and down allowing the silhouette to hover off the ground.
+~
+26410 0 0 0 147536 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+5000 50000
+8 8 0
+BareHandAttack: 8
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6746
+#6750
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard attacks first, thinks later.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6751
+hobgoblin soldier~
+a hobgoblin soldier~
+A hobgoblin soldier stands here.
+~
+   This is just a low life hobgoblin, who couldn't make it to the ranks of the
+elite guards.  He looks pissed.
+~
+4104 0 0 0 0 0 0 0 0 E
+17 15 0 3d3+170 2d2+2
+1000 19500
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6752
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard protects the treasury.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6753
+hobgoblin guard~
+a hobgoblin guard~
+The hobgoblin guard protects the treasury.
+~
+   This is an extra large, extra ugly goblin like creature.  He grins evilly as
+he attempts to brain you.
+~
+4138 0 0 0 80 0 0 0 0 E
+18 14 0 3d3+180 3d3+3
+1000 22500
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6754
+hobgoblin bodyguard~
+the hobgoblin bodyguard~
+The hobgoblin bodyguard guards the king with his life.
+~
+   This is one of the elite hobgoblin guards.  He stands tall for his short
+stature.  He grins a toothy grin as he prepares to attack.
+~
+20522 0 0 0 80 0 0 0 0 E
+19 14 -1 3d3+100000 3d3+3
+1500 23000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6755
+krorem hobgoblin king~
+Krorem the King of Hobgoblins~
+There is a great king here, sitting in his throne.
+~
+   The king is a silly looking hobgoblin whose muscles bulge out of his robes,
+destroying the sophisticated effect he was trying to create.  His presence is
+one that commands respect of all hobgoblin kind.  Your intrusion into his royal
+throne room causes him great hostility!
+~
+4214826 0 0 0 0 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+2500 28000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6756
+hobgoblin miner~
+a hobgoblin miner~
+A hobgoblin miner is standing here mining for gold.
+~
+The miner is completely covered in dust and barely has any gold to show for it.
+~
+8 0 0 0 0 0 0 0 -1000 E
+17 15 0 3d3+170 2d2+2
+500 19000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6757
+hobgoblin treasurer~
+the treasurer~
+The treasurer is here counting out money.
+~
+   The hobgoblin treasurer is an old goblin with thick gold framed glasses.  It
+appears that he can only see a couple feet in front of him.
+~
+16394 0 0 0 0 0 0 0 -1000 E
+18 14 0 3d3+180 3d3+3
+3000 21000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6758
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6759
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6760
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6761
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6762
+gnome prisoner~
+a gnome prisoner~
+A gnome prisoner is here resting in the straw.
+~
+   The prisoner is just barely alive.  A look of despair is upon his face.  He
+dreams of being back home in the gnome village and the happiness he once felt.
+~
+10 0 0 0 0 0 0 0 1000 E
+17 15 0 3d3+170 2d2+2
+0 20000
+8 8 1
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6763
+jailer hobgoblin~
+the hobgoblin jailer~
+The hobgoblin jailer torments the gnome prisoners with satisfaction.
+~
+   The jailer is quite a well built hobgoblin.  He can be heard belittling the
+gnome prisoners and throwing objects at them while laughing.  He's become quite
+good at physical and mental abuse.  He seems to get alot of satisfaction from
+it.
+~
+42 0 0 0 0 0 0 0 -1000 E
+19 14 -1 3d3+190 3d3+3
+1000 23000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6764
+hermit crab~
+a hermit crab~
+A hermit crab crawls towards you.
+~
+   The hermit crab is about 5 feet high and looks mad that you had the nerve to
+wake it up.  It's giant pinchers open and close, picking up frequency as it gets
+closer to you!
+~
+42 0 0 0 0 0 0 0 -1000 E
+17 15 0 3d3+170 2d2+2
+0 19500
+8 8 2
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6765
+hobgoblin cook~
+the hobgoblin cook~
+The hobgoblin cook is cooking something wretched smelling.
+~
+   The cook is a dirty and fat hobgoblin.  He burps as he stirs up something in
+a pot.
+~
+10 0 0 0 0 0 0 0 -1000 E
+18 14 0 3d3+180 3d3+3
+750 21000
+8 8 1
+Str: 12
+Dex: 12
+Int: 12
+Wis: 12
+Con: 12
+Luck: 12
+SavingPara: 4
+SavingRod: 4
+SavingPetri: 4
+SavingBreath: 4
+SavingSpell: 4
+E
+#6766
+ritualist hobgoblin~
+the hobgoblin ritualist~
+A hobgoblin dressed in dark clothing is speaking to the other side!
+~
+   The hobgoblin dances and chants around a large pentagram in the center of the
+floor.  He is dressed in long dark robes and a necklace full of bones that
+rattle as he moves around.
+~
+1065002 0 0 0 16720 0 0 0 -1000 E
+20 14 -2 4d4+200 3d3+3
+2000 30000
+8 8 1
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+#6767
+cayri hobgoblin princess~
+Princess Cayri~
+Princess Cayri appears distraught over her recent discoveries.
+~
+   Princess Cayri is the eventual heir to the throne.  She wishes to end the
+hostility the hobgoblins and gnomes have shared for centuries but it seems not
+many others feel the same way.  She appears distraught but over what no one
+knows.
+~
+262154 0 0 0 536871248 0 0 0 0 E
+20 14 -2 4d4+200 3d3+3
+200 5638
+8 8 2
+Str: 13
+Dex: 13
+Int: 13
+Wis: 13
+Con: 13
+Luck: 13
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+E
+T 6767
+T 6768
+T 6769
+T 6770
+#6768
+queen emse~
+Queen Emse~
+Queen Emse stands here looking over requests from the hobgoblins.
+~
+   She is wearing the finest of gemstone jewelry, freshly mined and crafted.  A
+golden crown with topaz gemstones sits atop her beautiful (for a hobgoblin)
+head.  She intently looks over requests from the hobgoblins as part of her royal
+duties.
+~
+1064970 0 0 0 336 0 0 0 -750 E
+0 20 10 1d1+0 1d1+0
+1500 25000
+8 8 2
+E
+#7000
+mudmonster mud monster~
+the horrifying Mudmonster~
+A horrifying Mudmonster is slowly evolving from the mud...
+~
+   It sure looks like something out of a horror movie.  It strongly resembles a
+huge figure made up from mud alone, and it sure looks like it had human flesh
+for breakfast and is strongly intent on having the same for dinner - Perhaps
+you?  
+~
+196680 0 0 0 524288 0 0 0 -250 E
+12 16 2 2d2+120 2d2+2
+120 14400
+6 8 0
+E
+#7001
+bat small fierce~
+the small bat~
+The small fierce-looking bat is hanging from the ceiling, obviously sleeping.
+~
+   You have never in your entire life seen such a mean looking small creature,
+though it looks rather peaceful, hanging there, sleeping.  The thought of
+arousing this cruel creature doesn't sit well in your bones.  
+~
+131176 0 0 0 524288 0 0 0 -500 E
+1 20 9 0d0+10 1d2+0
+10 100
+4 8 0
+E
+#7002
+rat sewer~
+the sewer rat~
+The huge hungry-looking sewer rat sits here.
+~
+   This creature is fairly large for a rat, but not so big that it could be
+called a giant rat.  Sewer water drips off of its grey fur as it looks at you
+with black glistening eyes.  
+~
+104 0 0 0 0 0 0 0 -1000 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 0
+E
+#7003
+spider small hairy~
+the small Spider~
+The small hairy Spider is here, busy with its web.
+~
+   This small spider seems to pay you no attention at all as it builds its
+intricately designed web.  
+~
+104 0 0 0 524288 0 0 0 -700 E
+1 20 9 0d0+10 1d2+0
+10 100
+8 8 0
+E
+#7004
+beetle giant earth~
+the giant earth beetle~
+The giant, mean-looking earth beetle is here.
+~
+   Now, you've seen beetles, but this one is enormous.  It stretches perhaps two
+feet from head to tail.  As it notices you, it waves its six legs about and
+makes some strange skittering noises at you.  
+~
+72 0 0 0 0 0 0 0 -300 E
+8 18 5 1d1+80 1d2+1
+80 6400
+4 8 0
+E
+#7005
+maggot giant~
+the maggot~
+The giant maggot is here, simply existing.
+~
+   This large mound of grotesque flesh is just lying here quivering, almost as
+if it can sense your warm blood nearby.  
+~
+196680 0 0 0 0 0 0 0 300 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+E
+#7006
+snake~
+the snake~
+The snake slithers towards you. It looks very mean.
+~
+   This snake is of a variety that you do not recall seeing recently.  It has
+near black skin with small white diamond shaped spots all over its head and
+upper body.  A thin green stripe stretches along each side of its body.  
+~
+72 0 0 0 0 0 0 0 -500 E
+4 19 7 0d0+40 1d2+0
+40 1600
+8 8 0
+E
+T 7000
+#7007
+wanderer evil~
+the evil wanderer~
+The evil wanderer stares at you with a piercing gaze.
+~
+   The evil wanderer is very thin.  He is dressed in a grey cloak.  He doesn't
+look like he'd be your first choice as a travelling companion.  
+~
+204 0 0 0 64 0 0 0 -1000 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 1
+E
+#7008
+homunculus creature~
+the creature homunculus~
+The creature homunculus is here, looking at you with an evil look.
+~
+   The homunculus appears in a man-like form, about eighteen inches tall, has a
+greenish, reptilian skin, leathery wings, and a batlike mouth, with teeth
+dripping with a greenish sludge.  
+~
+57416 0 0 0 80 0 0 0 -780 E
+11 17 3 2d2+110 1d2+1
+110 12100
+8 8 0
+E
+#7009
+morkoth shadowy~
+the shadowy morkoth~
+The morkoth are standing here, waiting for someone to KILL!
+~
+   It is a five foot tall, shadow monster.  This has the shape between a human
+and a rat.  It breaths very heavily while staring at you.  
+~
+200 0 0 0 64 0 0 0 -900 E
+10 17 4 2d2+100 1d2+1
+100 10000
+8 8 0
+E
+T 7200
+#7010
+chr-eff'n chreffn~
+the evil chr-eff'n~
+The chr-eff'n are crawling here, looking around with its yellow eyes.
+~
+   The head and torso of a chr-eff'n is copper-covered, with yellow, glowing
+eyes.  The lower body is in an orange shading.  
+~
+204 0 0 0 524304 0 0 0 -830 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 0
+E
+#7040
+dragon red~
+the red dragon~
+The fierce-looking red dragon stares at you angrily.
+~
+   The red dragon stares at you, angrily, as it wakes when you arrive.  It says
+'Oh, human YOU woke me up...  Hsssss', while it moves closer, 'Can one NEVER
+sleep in peace...  Hssss...  '
+~
+90170 0 0 0 65552 0 0 0 -1000 E
+19 14 -1 3d3+190 3d3+3
+190 36100
+8 8 0
+E
+#7041
+hag sea~
+the sea hag~
+A sea hag is here, swimming around.
+~
+   The sea hag is so ghastly looking that you feel the deepest fear: Big yellow
+eyes and sharp teeth.  Its ears are very big, and it has small sharp horns.  
+This beast is obviously a hater of beauty.  
+~
+104 0 0 0 0 0 0 0 -800 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+E
+#7042
+naga guardian~
+the guardian naga~
+The guardian naga looks kindly at you.
+~
+   The naga are a snake-liked creature.  She is covered in green-gold scales
+with silvery triangles along her back.  Her eyes are golden.  She notices that
+you are staring at her, and she says 'Watch out.  This way leads to some evil
+creatures.  '
+~
+10 0 0 0 0 0 0 0 700 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 2
+E
+#7043
+basilisk scaled~
+the scaled basilisk~
+The scaled basilisk crawls towards you slowly.
+~
+   The basilisk is a reptilian monster.  It has eight legs, and a strong, toothy
+jaws.  It is dull brown with yellowish underbelly.  Its eyes are glowing pale
+green.  
+~
+76 0 0 0 80 0 0 0 -250 E
+13 16 2 2d2+130 2d2+2
+130 16900
+8 8 0
+E
+#7044
+lemure blob~
+the lemure~
+The lemure blob slithers towards you for an attack!
+~
+   This looks like a vaguely human blob.  Big black yellow eyes, and a mouth
+going a little bit out from the face.  The lemure does not look interested in
+you at all, but it attacks anyway.  It looks like its mind has been burned out.
+
+~
+73832 0 0 0 0 0 0 0 -500 E
+5 19 7 1d1+50 1d2+0
+50 2500
+8 8 0
+E
+#7045
+jones cruncher ettin~
+Jones 'cruncher' ettin~
+Jones is standing here glaring at you.
+~
+   At the first sight you thought Jones was an Orc, but when he came closer you
+see his second head.  He wears an animal skin dress, filthy and moth eaten.  
+Jones really stinks...  
+~
+76 0 0 0 0 0 0 0 -480 E
+10 17 4 2d2+100 1d2+1
+100 10000
+5 5 1
+E
+#7046
+herald mouse killer ettin~
+Herald 'the mouse-killer' ettin~
+Herald is standing here looking confused at you.
+~
+   When you look at Herald, you feel pity.  His clothes are really poor, and one
+of his heads hangs down.  At the rope around his stomach hangs dead mice and
+rats.  He does not smell good.  
+~
+76 0 0 0 0 0 0 0 200 E
+6 18 6 1d1+60 1d2+1
+60 3600
+5 5 1
+E
+#7200
+mindflayer master mind~
+the master mindflayer~
+The master mindflayer is here, looking at you with an evil look.
+~
+   It is a seven foot tall humanoid dressed in a purple cloak, and swinging a
+black and purple rod above its head as if it was going to attack you any moment
+now.  In the middle of its head are four tentacles with sharp points.  
+~
+6268 0 0 0 80 0 0 0 -800 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+E
+T 7200
+#7201
+mindflayer senior mind~
+the senior mindflayer~
+The senior mindflayer walks around here, looking for something useful.
+~
+   This is a horrifying monster indeed, 6'6" high.  Dressed in purple and black,
+and carrying a large mace in its hand.  In the center of its head are four large
+tentacles with very sharp points.  
+~
+7772 0 0 0 80 0 0 0 -600 E
+8 18 5 1d1+80 1d2+1
+80 6400
+8 8 0
+E
+T 7200
+#7202
+mindflayer junior mind~
+the junior mindflayer~
+The junior mindflayer is here, watching you carefully from the corner.
+~
+   This mindflayer is six feet high.  It has a small mace in its belt, and is
+dressed in purple and black cloth.  It has four small tentacles in the center of
+its head.  
+~
+6364 0 0 0 80 0 0 0 -350 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 0
+E
+T 7200
+#7203
+wererat rat~
+the ugly wererat~
+An ugly wererat is here, looking at you with a strange flick in his eyes.
+~
+   The wererat is about four feet tall.  It looks very much like rat, except
+that it is standing.  
+~
+3660 0 0 0 0 0 0 0 -700 E
+6 18 6 1d1+60 1d2+1
+60 3600
+8 8 0
+E
+#7204
+rat gigantic~
+the gigantic rat~
+There is a gigantic rat here, looking at you with a hungry look.
+~
+   The gigantic rat is about ten feet long from head to tail and has claws the
+size of your head, looking very nasty.  
+~
+42 0 0 0 0 0 0 0 -800 E
+12 16 2 2d2+120 2d2+2
+120 14400
+8 8 1
+E
+#7400
+grey dove~
+a grey dove~
+A grey dove coos softly from the branches of the willow tree.
+~
+   Peaceful and content, this dove sways slightly as it sings a soft, trilling
+song for any to hear.  Now and again it appears to lean and breathe deeply the
+scents of the nearby blossoms.  
+~
+188430 0 0 0 0 0 0 0 1000 E
+3 19 7 3d3+90 1d2+3
+30 900
+8 8 0
+BareHandAttack: 1
+E
+#7401
+disheveled boy~
+the disheveled boy~
+A disheveled boy is here, digging in the dirt.
+~
+   About six summers old, the young boy is covered to his elbows in dirt.  His
+reddish hair stands about unkempt and his clothing is streaked with dirt.  As
+you look on, he wanders around, digging holes in the carefully maintained lawn.
+
+~
+16526 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+BareHandAttack: 13
+Str: 8
+Dex: 15
+Int: 9
+Wis: 5
+E
+T 7401
+#7402
+scrawny little girl~
+the scrawny little girl~
+A scrawny little girl skips around, uprooting the flowers.
+~
+   Long of limb and tooth, the thin and gangly little girl looks to be caught
+firmly in the awkward age.  Her homespun dress is simple and fairly clean.  As
+you watch, she trots around the path, uprooting flowers violently from the
+ground.  
+~
+16398 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 2
+BareHandAttack: 4
+E
+T 7402
+#7403
+squat groundskeeper~
+a squat groundskeeper~
+A squat groundskeeper is busy polishing the fence here.
+~
+   Clad in woolen homespun clothing and sturdy leather boots, the groundskeeper
+is dressed for heavy work.  He is rather short and more than a bit overweight,
+but intent on his job nonetheless.  His russet hair is in a bit of a disarray
+and his fingers are stained with iron polish.  
+~
+16398 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+BareHandAttack: 7
+E
+T 7403
+#7404
+twisted dwarf graverobber~
+the graverobber~
+A twisted dwarf wrestles with a monstrous shovel, attempting to dig a hole here.
+~
+   One arm twisted by a birth defect, this ugly little dwarf has made a career
+of relieving the dead of their valuables.  His face and clothes are streaked
+with gravedirt and sweat, testimony to the amount of work required to avoid
+honest labor.  
+~
+16526 0 0 0 524288 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+BareHandAttack: 13
+Str: 15
+Dex: 8
+Int: 10
+Wis: 10
+E
+T 7404
+#7405
+angry young man~
+the angry young man~
+An angry young man stands screaming at a redstone grave marker.
+~
+   His face flushed with anger, the young man seems to be scolding a large
+redstone grave marker.  His arms flail about wildly as he screams and shouts at
+the unhearing tomb.  
+~
+16394 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+E
+T 7405
+#7406
+mourner distressed mother~
+the distressed mother~
+A distressed mother mourns her child's death.
+~
+   Clad in black, the woman mourns her child's death.  Her face is lined with
+stress and sadness.  Tears slide slowly down her cheeks as she cries selflessly
+for the loss of her poor, sweet child.  
+~
+16394 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 2
+E
+T 7406
+#7407
+groundskeeper busy~
+a busy groundskeeper~
+A groundskeeper is here, keeping busy.
+~
+   Clad in homespun cottons, the groundskeeper takes turns either pulling weeds
+or polishing marble statues.  His face is set and he keeps his attention to his
+duties, ignoring the passing mourners.  
+~
+76 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+BareHandAttack: 13
+E
+#7408
+old woman~
+an old woman~
+An old woman is here, considering the purchase of a new plot.
+~
+   Her face is a mapwork of wrinkles and her hair is spidersilk thin.  The old
+woman looks briefly over at a couple empty plots and sinks deep into thought.  
+In time, she turns and moves on in search of another plot.  
+~
+16584 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 2
+BareHandAttack: 8
+E
+T 7408
+#7409
+stern man groundskeeper head~
+the head groundskeeper~
+A stern man is here attempting to keep people off the empty plots.
+~
+   A large and brutish man, the head groundskeeper enforces his policy on
+cleanliness with a stern hand.  The beauty and order of the cemetery is a
+responsibility he takes very seriously.  With a loud bark, he scares a young man
+off the soft grass.  
+~
+16398 0 0 0 80 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+BareHandAttack: 7
+E
+T 7409
+#7410
+tawny owl~
+a tawny owl~
+A tawny owl is perched in the lower branches of the tree.
+~
+   Colored a creamy tan with dark fletchings on its wing and tail feathers, this
+owl is fairly sedate and unconcerned with its surroundings.  A thin leather
+thong is wrapped around one leg, apparently for carrying messages.  
+~
+81930 0 0 0 65536 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+5 5 0
+BareHandAttack: 8
+E
+#7411
+ancient groundskeeper wizened old woman~
+the ancient groundskeeper~
+A wizened old woman uses a tall staff to prod pigeons from the crypt roof.
+~
+   Her face is worn and wrinkled and her hair is white and sparse.  The old
+woman looks to be nearly as old as some of the pitted and weathered statues
+nearby.  While you look on, she pokes at the pigeons roosting on the crypt here
+with a long, ashwood staff.  
+~
+16394 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 2
+E
+T 7411
+#7412
+tall thin man pickpocket~
+the pickpocket~
+A tall, thin man lurks about the edge of the clearing.
+~
+   Narrow of face and long of nose, the man is tall, nearly seven feet or so.  
+His clothing is the drab black most often worn by mourners, yet he hardly seems
+to be here to grieve a friend or family member.  His eyes dart back and forth as
+he lurks here, watching everyone.  
+~
+14 0 0 0 1572864 0 0 0 -250 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 1
+Str: 12
+Dex: 17
+Int: 12
+Wis: 12
+E
+T 7412
+#7413
+burned zombie~
+the badly burned zombie~
+A badly burned corpse haunts the place it was accidentally burned alive.
+~
+   The corpse is of indeterminate gender or race.  Most noticeable is that it is
+moving about as no corpse was meant to do and it is covered in huge, weeping
+wounds and crisp, blackened skin.  Even its armour is seared and burned.  
+~
+188426 0 0 0 1024 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+BareHandAttack: 8
+Str: 18
+Dex: 6
+Int: 3
+Wis: 3
+E
+#7414
+shade ghendry alchemist~
+the alchemist's shade~
+The shade of the alchemist, Ghendry, glares at nothing in particular.
+~
+   Clearly long dead, the shade is merely a wisp of something physical, barely
+discernible among the shadows.  In life, it was a man of great stature in
+society and much loved by the people of the realm.  Now, however, the shade
+seems more a forgotten past than legend made to live again.  
+~
+81946 0 0 0 1024 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+E
+#7415
+bones lord mycea skeleton~
+Lord Mycea's skeleton~
+The bones of Lord Mycea reanimate in the center of the room.
+~
+   Bones yellowed with age have reanimated themselves inside the molded burial
+rags of the great Lord Mycea.  Rather than eyes, twin orbs of glowing greenish
+light rest inside the sockets of his skull.  
+~
+188426 0 0 0 1024 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+E
+#7416
+frightening apparition ghost fennywen~
+Fennywen's ghost~
+A frightening apparition floats about, examining the huge locked chests here.
+~
+   Given the bashed head leaking who knows what all over, this would seem to be
+the ghost of the great hlafling hero, Fennywen.  A bit translucent and
+thoroughly dead, the ghost is having some time adjusting to its new
+circumstances.  
+~
+123146 0 0 0 8192 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+BareHandAttack: 4
+E
+#7417
+mourner black~
+a mourner~
+A mourner, dressed all in black, wanders around consumed by grief.
+~
+   Upset by a loved one's death and in no mood for socializing, the mourner
+turns away before you can get a really good look.  
+~
+204 0 0 0 0 0 0 0 0 E
+3 19 8 0d0+30 1d2+0
+30 900
+8 8 0
+E
+T 7417
+#7500
+doe animal~
+a small doe~
+A small doe stands here grazing.
+~
+   The small doe is brown with tiny white spots on its back.  A piece of hide
+hangs from an old wound on its side.  
+~
+14 0 0 0 0 0 0 0 1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+Str: 12
+Dex: 18
+Int: 9
+Wis: 9
+E
+#7505
+boar pig~
+a wild boar~
+A wild boar stands here.
+~
+   A wild boar has been trapped here.  It is short and round with large tusks
+protruding from its mouth.  As it shifts its head around looking for the way out
+its eyes shine red.  
+~
+30 0 0 0 1048592 0 0 0 -200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+E
+T 7505
+#7508
+giant fruit bat~
+the giant fruit bat~
+A giant fruit bat hangs here sleeping.
+~
+   A giant fruit bat is hanging here in an upside down position from a large
+tree.  Its black wings are wrapped around its body like a cozy blanket.  
+~
+8206 0 0 0 0 0 0 0 1000 E
+18 14 0 3d3+180 3d3+3
+180 32400
+4 4 1
+BareHandAttack: 3
+Dex: 14
+Int: 8
+Wis: 8
+E
+#7511
+man guard warrior zamba~
+a warrior~
+A Zamba warrior stands here alert.
+~
+   The large warrior stands here guarding the gate.  He is well tanned with
+long, black hair and cold, piercing eyes.  His clothing is strange, around his
+head is a leather strap with many colourful feathers attached, he wears thick
+gold bands around the upper part of both his arms and has a white cloth tied
+around his waist.  
+~
+4122 0 0 0 16 0 0 0 100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 3
+Str: 14
+Dex: 12
+Int: 10
+E
+#7512
+black kitten cat~
+a black kitten~
+A black kitten is lying here sleeping.
+~
+   A black kitten looks like a cute, fuzzy ball.  
+~
+10 0 0 0 0 0 0 0 500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+4 4 1
+BareHandAttack: 8
+E
+#7514
+large fat man~
+an old fat man~
+A large man is sitting here eating.
+~
+   The large man has dirty white hair and food smudges on his faces and hands.
+He has a large brown cloth wrapped around his waist.  His skin is sweaty and
+oily, he smells horrible.  
+~
+4110 0 0 0 8192 0 0 0 300 E
+14 16 1 2d2+140 2d2+2
+140 19600
+6 6 1
+Dex: 8
+E
+#7515
+girl child~
+a young girl~
+A young girl sits here playing.
+~
+   A young girl sits here playing with her doll.  Her hair is long and black,
+she had big brown eyes and a very dark tan.  She wears a yellow dress tied
+around the neck and waist.  
+~
+74 0 0 0 8200 0 0 0 500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+Str: 8
+Dex: 20
+Int: 10
+E
+#7518
+woman ~
+a short woman~
+A short woman stands here.
+~
+   The short woman is standing here catching her breath as she fans herself.  
+She is barefoot and wears only a white dress tied at one shoulder.  
+~
+2248 0 0 0 0 0 0 0 0 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+Str: 13
+Dex: 15
+E
+#7519
+native boy~
+a native boy~
+A native boy stands here.
+~
+   The native boy is dressed in a small cloth wrapped around his waist.  He
+carries a small bow and arrow as he searches around looking for something to aim
+at for target practice.  
+~
+254040 0 0 0 524288 0 0 0 0 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 12
+E
+#7522
+barkeeper woman~
+the barkeeper~
+The barkeeper is standing here.
+~
+   You see a large woman standing behind the bar wearing a flowery dress.  She
+smiles at you revealing several gaps where she is missing teeth.  
+~
+10 0 0 0 0 0 0 0 -300 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 2
+E
+T 7522
+#7523
+green lizard reptile iguana~
+a green lizard~
+A green lizard rests here in the warm sand.
+~
+   An iguana around six feet long is resting here.  Its skin is leathery and
+bright green, strange thorn looking scales run from the top of its head down to
+its tail.  The tail is extremely long and is probably more than half the length
+of this strange reptile.  
+~
+67660 0 0 0 4 0 0 0 -100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 2
+Str: 8
+Int: 7
+Wis: 7
+E
+#7524
+woman native~
+a native woman~
+A native woman sits here.
+~
+   A native woman sits here preparing food for the tribe.  She is wearing a
+brightly colored dress.  Her black hair is held back with a pearl hair piece.  
+~
+2058 0 0 0 0 0 0 0 1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+6 8 2
+BareHandAttack: 8
+E
+#7525
+man fisherman ~
+a fisherman~
+A native fisherman is standing here working.
+~
+   The fisherman looks at you sharply as he gathers together his fishing net.  
+He has a dark tan and is quite muscular.  His clothing is a simple cloth wrapped
+around his waist.  
+~
+83994 0 0 0 0 0 0 0 -200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+6 6 1
+Str: 14
+Dex: 14
+Wis: 12
+E
+#7526
+monkey creature~
+an angry monkey~
+An angry monkey stands here challenging you.
+~
+   The large monkey stands on its bottom two feet that look just like its hands.
+It stands slightly bent over a little over six feet in height.  It glares its
+sharp teeth at you.  
+~
+4106 0 0 0 0 0 0 0 -300 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 8
+Str: 10
+Dex: 14
+Int: 6
+Wis: 6
+E
+#7528
+plant  vine crona~
+a vine~
+A thick vine is blocking the path.
+~
+   A vine of the Crona plant entangles everything.  The Crona has a think, dark
+green base with small yellow leaves.  
+~
+4110 0 0 0 64 0 0 0 -1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 10
+Str: 15
+Dex: 9
+Int: 9
+Wis: 9
+E
+#7530
+man robe figure priest~
+a robed figure~
+A robed figure hiding at the edge of the jungle.
+~
+   A man stands here dressed in dark robes hiding his appearance.  From what you
+can see he is tall and thin.  The large hood of the robe drapes over his eyes
+only leaving his long white beard visible.  
+~
+1802 0 0 0 524288 0 0 0 -1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+Str: 12
+Dex: 13
+Int: 15
+Wis: 15
+E
+T 7500
+#7531
+plant flower yellow hook zamba~
+a yellow flower~
+A Zamba hook plant is rooted here.
+~
+   You see a beautiful flower gracefully standing in a little clearing to
+itself.  It is quite tall with a broad flower and long, slim leaves.  The light
+that glows onto this lovely flower enhancing its beauty is actually glowing from
+within the flower.  
+~
+18446 0 0 0 64 0 0 0 -500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 10
+Str: 15
+Dex: 12
+E
+#7535
+rat ~
+a rat~
+A large rat scurries here.
+~
+   The large rat scurries around looking for food.  Its red beady eyes stare
+about the room as it sniffs the air.  As it lifts its head you can see it has
+very long front teeth on both the top and bottom of its mouth.  
+~
+76 0 0 0 0 0 0 0 -1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 4
+E
+#7539
+man witch doctor~
+a witch doctor~
+The witch doctor is hovering in the pentagram.
+~
+   An old man dressed in armor made of bones and teeth is inside the petagram.
+He is softly chanting strange incantations.  He sways his arms around tossing
+black powder into a large pewter bowl set in the center of the pentagram.  
+~
+172042 0 0 0 0 0 0 0 -1000 E
+18 14 0 3d3+180 3d3+3
+180 32400
+8 8 1
+BareHandAttack: 12
+Str: 15
+Dex: 13
+Int: 15
+Wis: 15
+E
+T 7539
+#7545
+bird falcon colossal ~
+a colossal falcon~
+A colossal falcon is perched on the edge of the cliff.
+~
+   The falcon stretches out its wings and screeches.  Its wing span is at least
+ten feet.  Its talons look large enough to grasp large cows making the perfect
+size dinner.  
+~
+18462 0 0 0 65536 0 0 0 400 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 8
+Str: 15
+Dex: 16
+Wis: 10
+E
+#7552
+a chubby man~
+a chubby man~
+A chubby man stands here.
+~
+   The chubby man looks at you and smiles.  He is wearing many expensive pieces
+of jewelry, and unlike the natives he is well dressed.  Something about him
+doesn't look quite right.  
+~
+24668 0 0 0 0 0 0 0 -400 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 12
+Dex: 20
+E
+T 7552
+#7558
+man gentleman nobleman~
+the nobleman~
+A nobleman stands here.
+~
+   The nobleman looks wise and intellectual.  His cloths look simular to ancient
+gentleman attire but new.  His hair is short and black with a touch of grey at
+the temples.  
+~
+18442 0 0 0 0 0 0 0 -300 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+Str: 15
+Dex: 15
+Int: 19
+Wis: 19
+E
+#7559
+woman girl lady ~
+a refined lady~
+A refined lady stands here gracefully.
+~
+   She stands with a grace of elegance.  Her hair pulled back and held with
+pearls and strands of gold.  She wears a long, flowing, white gown.  
+~
+16666 0 0 0 0 0 0 0 500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+Str: 10
+Dex: 15
+Int: 13
+Wis: 14
+E
+#7561
+cook woman lady~
+a cook~
+A  cook is here preparing a dish for a banquet.
+~
+   The cook is a young woman dressed in white cloths with a small apron around
+her.  Her black hair is pulled back and covered with a large scarf.  
+~
+2074 0 0 0 0 0 0 0 500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+E
+#7567
+voodoo doll~
+a voodoo doll~
+A cloth doll is lying here.
+~
+   The cloth doll looks tortured from needles poked into its eyes.  
+~
+16906 0 0 0 1572868 0 0 0 -1000 E
+14 16 1 2d2+140 2d2+2
+140 19600
+5 5 0
+BareHandAttack: 13
+E
+T 7567
+#7570
+man guard~
+the guard~
+The guard stands here in front of the door.
+~
+   The guard is wearing silver armor.  He stares at you watching you closely.  
+~
+22554 0 0 0 16 0 0 0 200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 1
+BareHandAttack: 13
+Str: 15
+Dex: 10
+Int: 12
+Wis: 12
+E
+#7571
+black panther~
+a black panther~
+A black panther crouches down ready to strike!
+~
+   The panther is well muscular, it looks very strong and dangerous.  Bright
+green eyes shine out from under is sleek, black fur.  
+~
+28730 0 0 0 1572868 0 0 0 400 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+BareHandAttack: 4
+Str: 12
+Dex: 14
+E
+T 7571
+#7572
+girl servant~
+a servant girl~
+A young servant girl stands here waiting.
+~
+   The young girl is pretty in a plain way.  She is dressed all in white with a
+cloth tied around her head to hold back her long black hair.  
+~
+118794 0 0 0 8196 0 0 0 200 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+E
+#7573
+kiona woman empress~
+the Empress Kiona~
+The Empress Kiona sits here, leaning over a huge bath.
+~
+   She gracefully leans over the tub getting ready for her bath.  She wears a
+long robe about her but has removed everything else except some gold jewelry and
+a elegant hair comb holding her black hair up.  
+~
+253978 0 0 0 73736 0 0 0 1000 E
+18 14 0 3d3+180 3d3+3
+180 32400
+6 6 2
+Dex: 9
+Int: 9
+Wis: 9
+E
+T 7573
+#7583
+sea turtle reptile ~
+a sea turtle~
+A sea turtle is standing here.
+~
+   The sea turtle is around 6 feet around and has a light green shell.  As it
+sits here in the sand it uses its back legs to dig into the sand.  
+~
+4106 0 0 0 128 0 0 0 500 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 4
+E
+#7585
+native woman girl~
+a young native woman~
+A young native woman is playing at the waters edge.
+~
+   The beautiful girl is soaking wet.  She stops for a moment, smiles at you,
+then continues running in and out of the water.  
+~
+26 0 0 0 0 0 0 0 100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+E
+#7588
+old man~
+the old man~
+An old man is standing here.
+~
+   The old man peers over his glasses at you.  
+~
+138 0 0 0 0 0 0 0 1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+E
+T 7588
+#7589
+young man~
+the young man~
+The young man is standing here selling fruit.
+~
+   The young man smiles at you and holds a basket of fruit toward you to look
+at.  
+~
+14 0 0 0 16 0 0 0 0 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+E
+T 7589
+#7590
+old man mage~
+a feeble old man~
+A feeble old man stands here leaning on his staff.
+~
+   The old man stands here slightly been over using a tall staff for support.  
+He wears a long blue robe with gold embroidery.  He has thin, long, white, hair
+growing from the top of his head to the bottom of his chin.  
+~
+253962 0 0 0 0 0 0 0 1000 E
+30 10 -8 6d6+300 5d5+5
+300 90000
+8 8 1
+Str: 12
+Dex: 8
+Int: 18
+Wis: 14
+E
+T 7590
+#7592
+grey wolf~
+a grey wolf~
+A grey wolf hunts here.
+~
+   The grey wolf stands as tall as a horse.  The thick fur around its neck and
+back is standing up as it looks around.  Foam drips from the corner of its mouth
+as it bares its teeth.  
+~
+2062 0 0 0 1572880 0 0 0 -100 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+BareHandAttack: 4
+Str: 13
+Dex: 13
+Int: 10
+Wis: 10
+E
+T 7592
 $

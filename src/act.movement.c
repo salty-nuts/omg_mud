@@ -33,7 +33,7 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
 static int has_key(struct char_data *ch, obj_vnum key);
 static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd);
 static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd);
-
+int is_evaporating_key(struct char_data *ch, obj_vnum key);
 
 /* simple function to determine if char can walk on water */
 static int has_boat(struct char_data *ch)
@@ -41,7 +41,7 @@ static int has_boat(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_REAL_LEVEL(ch) > LVL_IMMORT)
+  if (GET_LEVEL(ch) > LVL_IMMORT)
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_WATERWALK) || AFF_FLAGGED(ch, AFF_FLYING))
@@ -66,7 +66,7 @@ static int has_flight(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_REAL_LEVEL(ch) > LVL_IMMORT)
+  if (GET_LEVEL(ch) > LVL_IMMORT)
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_FLYING))
@@ -91,7 +91,7 @@ static int has_scuba(struct char_data *ch)
   struct obj_data *obj;
   int i;
 
-  if (GET_REAL_LEVEL(ch) > LVL_IMMORT)
+  if (GET_LEVEL(ch) > LVL_IMMORT)
     return (1);
 
   if (AFF_FLAGGED(ch, AFF_SCUBA))
@@ -215,7 +215,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Check zone level recommendations */
-  if ((ZONE_MINLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MINLVL(GET_ROOM_ZONE(going_to)) > GET_REAL_LEVEL(ch)) {
+  if ((ZONE_MINLVL(GET_ROOM_ZONE(going_to)) != -1) && ZONE_MINLVL(GET_ROOM_ZONE(going_to)) > GET_LEVEL(ch)) {
     send_to_char(ch, "This zone is above your recommended level.\r\n");
   }
 
@@ -224,7 +224,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
-  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_REAL_LEVEL(ch) >= LVL_IMMORT) && (GET_REAL_LEVEL(ch) < LVL_GRGOD)) {
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
@@ -241,7 +241,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Room Level Requirements: Is ch privileged enough to enter the room? */
-  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_REAL_LEVEL(ch) < LVL_GOD)
+  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD)
   {
     send_to_char(ch, "You aren't godly enough to use that room!\r\n");
     return (0);
@@ -271,7 +271,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* Begin: the leave operation. */
   /*---------------------------------------------------------------------*/
   /* If applicable, subtract movement cost. */
-  if (GET_REAL_LEVEL(ch) < LVL_IMMORT && !IS_NPC(ch))
+  if (GET_LEVEL(ch) < LVL_IMMORT && !IS_NPC(ch))
     GET_MOVE(ch) -= need_movement;
 
   /* Generate the leave message and display to others in the was_in room. */
@@ -308,7 +308,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     look_at_room(ch, 0);
 
   /* ... and Kill the player if the room is a death trap. */
-  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_REAL_LEVEL(ch) < LVL_IMMORT)
+  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT)
   {
     mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
     death_cry(ch);
@@ -378,7 +378,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
       pass_door = TRUE;
     }
 
-    if ( !IS_NPC(ch) && ( (GET_REAL_LEVEL(ch) >= LVL_IMMORT) && PRF_FLAGGED(ch, PRF_NOHASSLE) ) )
+    if ( !IS_NPC(ch) && ( (GET_LEVEL(ch) >= LVL_IMMORT) && PRF_FLAGGED(ch, PRF_NOHASSLE) ) )
       pass_door = TRUE;
     if (IS_NPC(ch))
       pass_door = FALSE;
@@ -518,20 +518,83 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
     return (-1);
   }
 }
+#define MAW_KEY 2100
+#define WIND_KEY 2101
+#define WAR_KEY 2102
+#define RIB_KEY 2104
 
+/* this function checks that ch has in inventory or held an object with matching vnum as the door-key value
+     note - added a check for NOTHING or -1 vnum key value so corpses can't be used to open these doors -zusuk */
 int has_key(struct char_data *ch, obj_vnum key)
 {
-  struct obj_data *o;
+  struct obj_data *o = NULL;
+  if (!IS_NPC(ch) && GET_LEVEL(ch) >= LVL_IMMORT && PRF_FLAGGED(ch, PRF_NOHASSLE))
+    return (1);
+
+  /* special key handling */
+  switch (key)
+  {
+    /* these keys will break upon usage so they can't be horded */
+  case MAW_KEY:
+  case WIND_KEY:
+  case WAR_KEY:
+  case RIB_KEY:
+    return (is_evaporating_key(ch, key));
+  default:
+    break;
+  }
+
+
+  /* debug */
+  /* send_to_char(ch, "key vnum: %d", key); */
+
+  /* players were using corpses to open doors */
+  if (key == NOTHING || key <= 0)
+    return (0);
 
   for (o = ch->carrying; o; o = o->next_content)
-    if (GET_OBJ_VNUM(o) == key)
+  {
+/*     if (GET_OBJ_VNUM(o) == MAW_KEY)
+      return (is_evaporating_key(ch, key));
+    if (GET_OBJ_)   
+    else */if (GET_OBJ_VNUM(o) == key)
       return (1);
+  }
 
-  if (GET_EQ(ch, WEAR_HOLD))
-    if (GET_OBJ_VNUM(GET_EQ(ch, WEAR_HOLD)) == key)
-      return (1);
 
   return (0);
+}
+
+
+
+/* this function will destroy the keyvnums that go through it so they can't be horded, called by has_key() */
+int is_evaporating_key(struct char_data *ch, obj_vnum key)
+{
+  if (!IS_NPC(ch) && GET_LEVEL(ch) >= LVL_IMMORT && PRF_FLAGGED(ch, PRF_NOHASSLE))
+    return (TRUE);
+
+  struct obj_data *o = NULL;
+
+  for (o = ch->carrying; o; o = o->next_content)
+  {
+    if (GET_OBJ_VNUM(o) == key)
+    {
+      if (GET_OBJ_VAL(o, 0) > rand_number(1, 99))
+      {
+        act("$p breaks as $n uses it!", FALSE, ch, o, 0, TO_ROOM);
+        act("You break $p in the lock!", FALSE, ch, o, 0, TO_CHAR);
+        extract_obj(o);
+        return TRUE;
+      }
+      else
+      {
+        act("$n manages to avoid breaking the key!", FALSE, ch, o, 0, TO_ROOM);
+        act("You avoid breaking the key.", FALSE, ch, o, 0, TO_CHAR);
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
 }
 
 #define NEED_OPEN	(1 << 0)
@@ -697,20 +760,23 @@ ACMD(do_gen_door)
   struct char_data *victim = NULL;
 
   skip_spaces(&argument);
+  
   if (!*argument) {
     send_to_char(ch, "%c%s what?\r\n", UPPER(*cmd_door[subcmd]), cmd_door[subcmd] + 1);
     return;
   }
   two_arguments(argument, type, dir);
+  
   if (!generic_find(type, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &victim, &obj))
     door = find_door(ch, type, dir, cmd_door[subcmd]);
 
-  if ((obj) && (GET_OBJ_TYPE(obj) != ITEM_CONTAINER)) {
+  if ((obj) && (GET_OBJ_TYPE(obj) != ITEM_CONTAINER)) 
+  {
     obj = NULL;
     door = find_door(ch, type, dir, cmd_door[subcmd]);
   }
-
-  if ((obj) || (door >= 0)) {
+  if ((obj) || (door >= 0))
+  {
     keynum = DOOR_KEY(ch, obj, door);
     if (!(DOOR_IS_OPENABLE(ch, obj, door)))
       send_to_char(ch, "You can't %s that!\r\n", cmd_door[subcmd]);
@@ -720,22 +786,24 @@ ACMD(do_gen_door)
       send_to_char(ch, "But it's currently open!\r\n");
     else if (!(DOOR_IS_LOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (has_key(ch, keynum)) )
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) 
+      && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (has_key(ch, keynum)) )
     {
       send_to_char(ch, "It is locked, but you have the key.\r\n");
       do_doorcmd(ch, obj, door, SCMD_UNLOCK);
       do_doorcmd(ch, obj, door, subcmd);
     }
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (!has_key(ch, keynum)) )
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) 
+      && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (!has_key(ch, keynum)) )
     {
       send_to_char(ch, "It is locked, and you do not have the key!\r\n");
     }
     else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
-             (GET_REAL_LEVEL(ch) < LVL_IMMORT ||
+      (GET_LEVEL(ch) < LVL_IMMORT ||
 	    (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) ||
-           (!IS_NPC(ch) && IS_AFFECTED(ch, AFF_PASS_DOOR))))
+      (!IS_NPC(ch) && IS_AFFECTED(ch, AFF_PASS_DOOR))))
 	      send_to_char(ch, "It seems to be locked.\r\n");
-    else if (!has_key(ch, keynum) && (GET_REAL_LEVEL(ch) < LVL_GOD) && ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
+    else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) && ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
       send_to_char(ch, "You don't seem to have the proper key.\r\n");
     else if (ok_pick(ch, keynum, DOOR_IS_PICKPROOF(ch, obj, door), subcmd))
       do_doorcmd(ch, obj, door, subcmd);

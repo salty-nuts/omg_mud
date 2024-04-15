@@ -54,13 +54,13 @@ A test wand~
 1 1 0 0 0 100
 T 1284
 #1205
-staff~
-staff~
-Staff~
+anger staff unleashed~
+Staff of Unleashed Anger~
+A red laquered staff with gold inlay. ~
 ~
-4 0 0 0 0 a 0 0 0 0 0 0 0
-1 3 3 31
-1 1 0 0 0 100
+4 0 0 0 0 ap 0 0 0 0 0 0 0
+105 999 999 56
+1 1 0 100 0 100
 #1207
 neon sign~
 a neon sign~
@@ -253,14 +253,35 @@ A quest token lies here.~
 7 0 0 0 0 a 0 0 0 0 0 0 0
 100 0 0 0
 0 0 0 0 0 100
+#1235
+sigil blood moon~
+the Sigil of the Blood Moon~
+A deep crimson circle, the color of fresh blood, crackling with energy.~
+~
+1 gw 0 0 0 a 0 0 0 x 0 0 0
+0 0 -1 0
+0 0 0 0 180 100
+E
+sigil blood moon~
+The Sigil of the Blood Moon isn't your ordinary light source.  Forget flickering
+flames or warm lanterns.  This is an orb, a swirling vortex of crimson energy
+held captive within a transparent sphere.  The color isn't just red, it's the
+deep, vibrant red of fresh blood, pulsing with an inner light that seems to
+radiate a faint heat even at a distance.
+~
+A
+18 10
+A
+19 10
 #1266
 Black Staff of Immortality~
 the black staff of immortality~
 A Gigantic Black Staff rests here.~
 ~
-4 b 0 0 0 ao 0 0 0 0 0 0 0
-1 10 10 23
-5 1 0 30 0 100
+1 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+5 1 0 30 2 100
+T 1230
 E
 staff black~
    A Huge staff sits here eminating a tremendous power.  
@@ -278,6 +299,50 @@ E
 switch willow~
    It's a stick.  It's magical.  It also hurts when you beat people with it.  
 ~
+#1270
+decaying armor~
+Decaying Armor~
+An unfinished object is lying here.~
+~
+9 w 0 0 0 ad 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 2 0
+#1271
+decaying light~
+Decaying Light~
+An unfinished object is lying here.~
+~
+1 w 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 3 0
+#1272
+decaying thing~
+Decaying Thing~
+An unfinished object is lying here.~
+~
+4 hw 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 4 0
+#1273
+decaying weapon~
+Decaying Weapon~
+An unfinished object is lying here.~
+~
+5 w 0 0 0 ano 0 0 0 0 0 0 0
+10 10 10 10
+0 0 0 0 5 0
+A
+18 10
+A
+19 10
+#1274
+decaying paper~
+Decaying Paper~
+An unfinished object is lying here.~
+~
+12 w 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 1 0
 #1275
 uniform~
 a Builder Academy uniform~
@@ -307,9 +372,9 @@ american flag~
 an American flag~
 An American flag waves proudly in the wind, marking wishes for the safe return of Rumble from the foreign lands.~
 ~
-12 0 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
-1 1 0 0 0 100
+1 w 0 0 0 a 0 0 0 x 0 0 0
+0 0 -1 0
+1 1 0 0 92 100
 E
 flag american~
    The proud stars and stripes are set strongly against the blue background of
@@ -318,14 +383,18 @@ Rumble, returns from his service in Iraq. May his courage and strength keep him
 safe, and let the great banner of our great nation always watch over him. 
 Return home my friend.
 ~
+A
+18 10
+A
+19 10
 #1295
 notebook notes book~
 Elaseth's notebook~
 @nA book entitled "@YElaseth's Notes: A Madwoman's Account@n" lies here.~
 ~
-9 0 0 0 0 ao 0 0 0 0 0 0 0
+9 w 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0 0 100
+1 1 0 0 5 100
 #1296
 lamp hanukah~
 a hanukah lamp~

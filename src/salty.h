@@ -2,9 +2,11 @@
 Header file for salty.c
 
 Salty
-06 JAN 2019
+20 FEB 2024
 
 */
+#include "utils.h" /* for the ACMD macro */
+
 #define ROOM_OBJ_VOID 1299
 
 #define MAX_STAT 25
@@ -18,6 +20,7 @@ Salty
 
 #define MAX_RESIST 100
 #define MAX_TRAIN 100
+#define MAX_COMBAT_POWER 200
 // Function Prototypes for salty.c
 void list_meta(struct char_data *ch);
 int rank_level(long total);
@@ -51,16 +54,28 @@ void roundhouse_combat(struct char_data *ch, struct char_data *victim);
 void trip_combat(struct char_data *ch, struct char_data *victim);
 void knee_combat(struct char_data *ch, struct char_data *victim);
 void elbow_combat(struct char_data *ch, struct char_data *victim);
+void dirtkick_combat(struct char_data *ch, struct char_data *victim);
+void weapon_punch_combat(struct char_data *ch, struct char_data *victim);
+void shield_slam_combat(struct char_data *ch, struct char_data *victim);
+void knight_combat_update(struct char_data *ch, struct char_data *victim);
+void spinkick_combat(struct char_data *ch);
+void storm_of_steel_combat(struct char_data *ch);
+const char* rank_name(struct char_data *ch);
+void check_rescue(struct char_data *ch, struct char_data *target);
+
+
+
 
 
 
 void check_rend(struct char_data *ch, struct char_data *victim);
 void check_feeble(struct char_data *ch, struct char_data *victim);
 
-int backstab_mult(int level);
+int skill_mult(int skillnum, int dam, int level);
 int circle_mult(int level);
 int whirlwind_mult(int level);
-int unarmed_combat_dam(struct char_data *ch, int skill);
+int bash_mult(int level);
+int unarmed_combat_dam(struct char_data *ch, int dam, int skill);
 
 ACMD(do_listrank);
 ACMD(do_metagame);
@@ -82,6 +97,15 @@ ACMD(do_shriek);
 ACMD(do_ritual);
 ACMD(do_dirt_kick);
 ACMD(do_garrotte);
+ACMD(do_recover);
+ACMD(do_dance);
+ACMD(do_gateway);
+ACMD(do_spin_kick);
+ACMD(do_storm_of_steel);
+ACMD(do_rescue);
+ACMD(do_silent_rescue);
+
+
 
 #define NAME_RANK_1(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Sir":"Dame") : "Dame")
 #define NAME_RANK_2(ch)	(GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Lord":"Lady") :"Lady")
@@ -93,4 +117,3 @@ ACMD(do_garrotte);
 #define NAME_RANK_8(ch) (GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Archduke":"Archduchess") :"Archduchess")
 #define NAME_RANK_9(ch) (GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "King":"Queen") :"Queen")
 #define NAME_RANK_10(ch) (GET_SEX(ch) ? (GET_SEX(ch)==SEX_MALE ? "Emperor":"Empress") :"Empress")
-

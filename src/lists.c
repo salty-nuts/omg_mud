@@ -245,19 +245,22 @@ void * simple_list(struct list_data * pList)
     return NULL;
   }
 
-  if (!loop || pLastList != pList) {
+  if (!loop || pLastList != pList)
+  {
     if (loop && pLastList != pList)
       mudlog(CMP, LVL_GRGOD, TRUE, "SYSERR: simple_list() forced to reset itself.");
-  
+
     pContent = merge_iterator(&Iterator, pList);
-    if (pContent != NULL) {
-      pLastList = pList;    
+    if (pContent != NULL)
+    {
+      pLastList = pList;
       loop = TRUE;
       return (pContent);
-    } else
+    }
+    else
       return NULL;
   }
-   
+
   if ((pContent = next_in_list(&Iterator)) != NULL)
     return (pContent);
 
