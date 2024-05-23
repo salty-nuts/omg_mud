@@ -163,7 +163,7 @@ int saving_throws(struct char_data *ch, int type, int level)
   int result = 100;
   if (!IS_NPC(ch))
   {
-    if (GET_CLASS(ch))
+    if (GET_CLASS(ch) > -1)
     {
       switch (type)
       {
@@ -333,23 +333,85 @@ void roll_real_abils(struct char_data *ch)
 /* Some initializations for characters, including initial skills */
 void do_start(struct char_data *ch)
 {
+  int skill_gain = 80;
+  
   GET_LEVEL(ch) = 1;
   GET_EXP(ch) = 1;
   GET_TRAINS(ch) = 1;
   GET_PRACTICES(ch) = 5;
+  GET_COMBAT_POWER(ch) = 1;
 
   GET_MAX_HIT(ch)  = 100;
   GET_MAX_MANA(ch) = 100;
   GET_MAX_MOVE(ch) = 100;
+  
+  if (GET_CLASS(ch) == CLASS_PRIEST)
+  {
+    GET_MAX_HIT(ch)  = 500;
+    GET_MAX_MANA(ch) = 1000;
+    GET_MAX_MOVE(ch) = 100;
+  }
+  else if (GET_CLASS(ch) == CLASS_WIZARD)
+  {
+    GET_MAX_HIT(ch)  = 500;
+    GET_MAX_MANA(ch) = 1500;
+    GET_MAX_MOVE(ch) = 100;
+  }
+  else if (GET_CLASS(ch) == CLASS_ROGUE)
+  {
+    GET_MAX_HIT(ch)  = 750;
+    GET_MAX_MANA(ch) = 100;
+    GET_MAX_MOVE(ch) = 100;
+  }
+  else if (GET_CLASS(ch) == CLASS_BARD)
+  {
+    GET_MAX_HIT(ch)  = 500;
+    GET_MAX_MANA(ch) = 750;
+    GET_MAX_MOVE(ch) = 100;
+  }
+  else if (GET_CLASS(ch) == CLASS_FIGHTER)
+  {
+    GET_MAX_HIT(ch)  = 1000;
+    GET_MAX_MANA(ch) = 100;
+    GET_MAX_MOVE(ch) = 100;
+  }
+  else if (GET_CLASS(ch) == CLASS_KNIGHT)
+  {
+    GET_MAX_HIT(ch)  = 1500;
+    GET_MAX_MANA(ch) = 100;
+    GET_MAX_MOVE(ch) = 100;
+  }  
   GET_HIT(ch) = GET_MAX_HIT(ch);
   GET_MANA(ch) = GET_MAX_MANA(ch);
   GET_MOVE(ch) = GET_MAX_MOVE(ch);
 
+  for (int i = 1;  i <= NUM_SPELLS; i++)
+  {
+    if ( ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)])) &&
+    (GET_SKILL(ch, i) == 0) )
+      SET_SKILL(ch, i, skill_gain);
+  }
+
+  for (int i = ZERO_SONGS;  i <= ZERO_SONGS + NUM_SONGS; i++)
+  {
+    if ( ( (GET_LEVEL(ch) >= spell_info[i].min_level[(int)GET_CLASS(ch)]) ) &&
+    (GET_SKILL(ch, i) == 0) )
+      SET_SKILL(ch, i, skill_gain);
+  }
+
+  for (int j = ZERO_SKILLS;  j <= ZERO_SKILLS + NUM_SKILLS +1; j++)
+  {
+    if ( ( (GET_LEVEL(ch) >= spell_info[j].min_level[(int)GET_CLASS(ch)]) ) &&
+    (GET_SKILL(ch, j) == 0) )
+      SET_SKILL(ch, j, skill_gain);
+  }
+
+/*  
   GET_COND(ch, THIRST) = -1;
   GET_COND(ch, HUNGER) = -1;
   GET_COND(ch, DRUNK) = -1;
 
-/*   GET_REAL_ADD(ch) = 100;
+   GET_REAL_ADD(ch) = 100;
   GET_REAL_STR(ch) = 25;
   GET_REAL_INT(ch) = 25;
   GET_REAL_WIS(ch) = 25;
@@ -414,7 +476,7 @@ void advance_level(struct char_data *ch)
 
   GET_COMBAT_POWER(ch) += 1;
   GET_PRACTICES(ch) += 3 + wis_app[GET_WIS(ch)].bonus;
-  GET_TRAINS(ch) += dice(1,int_app[GET_INT(ch)].meta_mana);
+  GET_TRAINS(ch) += 10 + dice(1,int_app[GET_INT(ch)].meta_mana);
 
   for (int i = 1;  i <= NUM_SPELLS; i++)
   {
@@ -483,99 +545,110 @@ void init_wizard(void)
 {
   /* WIZARD UTILITY */
   spell_level(SPELL_WORD_OF_RECALL, CLASS_WIZARD, 1);
+  spell_level(SPELL_REAPPEAR, CLASS_WIZARD,5);
   spell_level(SPELL_IDENTIFY, CLASS_WIZARD, 5);
-  spell_level(SPELL_LOCATE_OBJECT, CLASS_WIZARD, 6);
-  spell_level(SPELL_LOCATE_CHARACTER, CLASS_WIZARD, 6);
-  spell_level(SPELL_RELOCATION, CLASS_WIZARD, 10);
-  spell_level(SPELL_ENCHANT_WEAPON, CLASS_WIZARD, 21);
-  spell_level(SPELL_BLOOD_MANA, CLASS_WIZARD, 30);
+  spell_level(SPELL_LOCATE_OBJECT, CLASS_WIZARD, 10);
+  spell_level(SPELL_LOCATE_CHARACTER, CLASS_WIZARD, 10);
   spell_level(SPELL_MANA_TRANSFER, CLASS_WIZARD, 30);
   spell_level(SPELL_ASTRAL_WALK, CLASS_WIZARD, 30);
-  spell_level(SPELL_REAPPEAR, CLASS_WIZARD,5);
   spell_level(SPELL_CHARM, CLASS_WIZARD, 50);
-
+  spell_level(SPELL_BLOOD_MANA, CLASS_WIZARD, 90);
+  spell_level(SPELL_ENCHANT_WEAPON, CLASS_WIZARD, 100);
+  spell_level(SPELL_ENCHANT_ARMOR, CLASS_WIZARD, 100);
+  spell_level(SPELL_PORTAL, CLASS_WIZARD, 50);
+  spell_level(SPELL_CLONE_OBJECT, CLASS_WIZARD, 100);
+  
   /* WIZARD BUFFS */
+  spell_level(SPELL_ARMOR, CLASS_WIZARD, 1);
   spell_level(SPELL_INVISIBLE, CLASS_WIZARD, 5);
-  spell_level(SPELL_ARMOR, CLASS_WIZARD, 5);
   spell_level(SPELL_MAGE_ARMOR, CLASS_WIZARD, 5);
-  spell_level(SPELL_STRENGTH, CLASS_WIZARD, 6);
+  spell_level(SPELL_STRENGTH, CLASS_WIZARD, 10);
   spell_level(SPELL_TRUESIGHT, CLASS_WIZARD, 10);
-  spell_level(SPELL_MIRROR_IMAGE, CLASS_WIZARD, 20);
   spell_level(SPELL_FLY, CLASS_WIZARD, 20);
+  spell_level(SPELL_GROUP_PASS_DOOR, CLASS_WIZARD, 20);
   spell_level(SPELL_PASS_DOOR, CLASS_WIZARD, 20);
-  spell_level(SPELL_HASTE, CLASS_WIZARD, 30);
   spell_level(SPELL_IMPROVED_INVIS, CLASS_WIZARD, 21);
   spell_level(SPELL_IMP_PASS_DOOR, CLASS_WIZARD, 30);
-  spell_level(SPELL_QUICKCAST, CLASS_WIZARD, 30);
-  spell_level(SPELL_GROUP_HASTE, CLASS_WIZARD, 30);
-  spell_level(SPELL_STEEL_SKIN, CLASS_WIZARD, 10);
-  spell_level(SPELL_STONE_SKIN, CLASS_WIZARD, 30);
+  spell_level(SPELL_STONE_SKIN, CLASS_WIZARD, 40);
   spell_level(SPELL_STEEL_SKIN, CLASS_WIZARD, 40);
-
-
+  spell_level(SPELL_MIRROR_IMAGE, CLASS_WIZARD, 50);
+  spell_level(SPELL_HASTE, CLASS_WIZARD, 50);
+  spell_level(SPELL_QUICKCAST, CLASS_WIZARD, 50);
+ 
   /* WIZARD DEBUFFS */
-  spell_level(SPELL_PARALYZE, CLASS_WIZARD, 25);
-  spell_level(SPELL_BETRAYAL, CLASS_WIZARD, 30);
-  spell_level(SPELL_CURSE, CLASS_WIZARD, 10);
-  spell_level(SPELL_WITHER, CLASS_WIZARD, 30);
   spell_level(SPELL_BLINDNESS, CLASS_WIZARD, 5);
-  spell_level(SPELL_SLOW, CLASS_WIZARD, 30);
+  spell_level(SPELL_CURSE, CLASS_WIZARD, 10);
+  spell_level(SPELL_PARALYZE, CLASS_WIZARD, 25);
+  spell_level(SPELL_SLOW, CLASS_WIZARD, 50);
+  spell_level(SPELL_WITHER, CLASS_WIZARD, 75);
+  spell_level(SPELL_BETRAYAL, CLASS_WIZARD, 100);
 
   /* WIZARD SKILLS */
   spell_level(SKILL_MAGIC_RECOVERY, CLASS_WIZARD, 1);
-  spell_level(SKILL_SPELL_TWINNING, CLASS_WIZARD, 20);
-  spell_level(SKILL_SPELL_TRIPLING, CLASS_WIZARD, 30);
-  spell_level(SKILL_SPELL_CRITICAL, CLASS_WIZARD, 30);
-  spell_level(SKILL_GATEWAY, CLASS_WIZARD, 50);
+  spell_level(SKILL_SPELL_TWINNING, CLASS_WIZARD, 75);
+  spell_level(SKILL_SPELL_TRIPLING, CLASS_WIZARD, 100);
+  spell_level(SKILL_SPELL_CRITICAL, CLASS_WIZARD, 50);
+/*   spell_level(SKILL_GATEWAY, CLASS_WIZARD, 50); */
 
   /* WIZARD DAMAGE */
   spell_level(SPELL_MAGIC_MISSILE, CLASS_WIZARD, 1);
-  spell_level(SPELL_ENERGY_DRAIN, CLASS_WIZARD, 12);
-  spell_level(SPELL_FIREBALL, CLASS_WIZARD, 15);
-  spell_level(SPELL_FIREBLAST, CLASS_WIZARD, 25);
-  spell_level(SPELL_MISSILE_SPRAY, CLASS_WIZARD, 30);
+  spell_level(SPELL_ENERGY_DRAIN, CLASS_WIZARD, 10);
+  spell_level(SPELL_FIREBALL, CLASS_WIZARD, 20);
+  spell_level(SPELL_FIREBLAST, CLASS_WIZARD, 40);
+  spell_level(SPELL_MISSILE_SPRAY, CLASS_WIZARD, 50);
   spell_level(SPELL_ELDRITCH_BLAST, CLASS_WIZARD, 50);
-  spell_level(SPELL_NOVA, CLASS_WIZARD, 50);
+  spell_level(SPELL_NOVA, CLASS_WIZARD, 75);
+  spell_level(SPELL_DISRUPT, CLASS_WIZARD, 100);
 }
+
 void init_priest(void)
 {
-  /* PRIEST */
-  spell_level(SPELL_WORD_OF_RECALL, CLASS_PRIEST, 1);
-  spell_level(SKILL_MAGIC_RECOVERY, CLASS_PRIEST, 1);
+  /* PRIEST DEBUFFS */  
+  spell_level(SPELL_CALM, CLASS_PRIEST, 30);
+
+  /* PRIEST BUFFS */
+  spell_level(SPELL_BLESS, CLASS_PRIEST, 1);
+  spell_level(SPELL_ARMOR, CLASS_PRIEST, 5);
+  spell_level(SPELL_SANCTUARY, CLASS_PRIEST, 5);
+  spell_level(SPELL_FURY, CLASS_PRIEST, 20);
+  spell_level(SPELL_RESIST_GOOD, CLASS_PRIEST, 20);
+  spell_level(SPELL_RESIST_EVIL, CLASS_PRIEST, 20);
+  spell_level(SPELL_GROUP_BLESS, CLASS_PRIEST, 10);
+
+  /* PRIEST DAMAGE */
+  spell_level(SPELL_HARM, CLASS_PRIEST, 5);
+  spell_level(SPELL_NIGHTMARE, CLASS_PRIEST, 20);
+  spell_level(SPELL_SYMBOL_OF_PAIN, CLASS_PRIEST, 30);
+
+  /* PRIEST HEALS & CURES */
   spell_level(SPELL_CURE_BLIND, CLASS_PRIEST, 1);
   spell_level(SPELL_REMOVE_POISON, CLASS_PRIEST, 1);
   spell_level(SPELL_REMOVE_CURSE, CLASS_PRIEST, 1);
-  spell_level(SPELL_SATIATE, CLASS_PRIEST, 5);
-  spell_level(SPELL_BLESS, CLASS_PRIEST, 1);
-  spell_level(SPELL_SUMMON, CLASS_PRIEST, 10);
-  spell_level(SPELL_ARMOR, CLASS_PRIEST, 5);
-  spell_level(SPELL_SANCTUARY, CLASS_PRIEST, 5);
   spell_level(SPELL_HEAL, CLASS_PRIEST, 5);
-  spell_level(SPELL_HARM, CLASS_PRIEST, 5);
-  spell_level(SPELL_RELOCATION, CLASS_PRIEST, 10);
-  spell_level(SPELL_STONE_SKIN, CLASS_PRIEST, 10);
+  spell_level(SPELL_REGENERATION, CLASS_PRIEST, 20);
+  spell_level(SPELL_POWERHEAL, CLASS_PRIEST, 25);
+  spell_level(SPELL_MIRACLE, CLASS_PRIEST, 50);
+  spell_level(SPELL_DIVINE_INTERVENTION, CLASS_PRIEST, 100);
+  spell_level(SPELL_CURE_PARA, CLASS_PRIEST, 50);
+  spell_level(SPELL_CURE_SLOW, CLASS_PRIEST, 50);
+  spell_level(SPELL_CURE_WITHER, CLASS_PRIEST, 50);
+
+  /* PRIEST UTILITY */  
+  spell_level(SPELL_WORD_OF_RECALL, CLASS_PRIEST, 1);
+  spell_level(SPELL_SATIATE, CLASS_PRIEST, 5);
+  spell_level(SPELL_SUMMON, CLASS_PRIEST, 10);
   spell_level(SPELL_LOCATE_OBJECT, CLASS_PRIEST, 15);
   spell_level(SPELL_LOCATE_CHARACTER, CLASS_PRIEST, 15);
-  spell_level(SPELL_CANCELLATION, CLASS_PRIEST, 15);
-  spell_level(SPELL_REGENERATION, CLASS_PRIEST, 20);
-  spell_level(SPELL_POWERHEAL, CLASS_PRIEST, 20);
-  spell_level(SPELL_NIGHTMARE, CLASS_PRIEST, 20);
-  spell_level(SPELL_MIRACLE, CLASS_PRIEST, 25);
-  spell_level(SPELL_SYMBOL_OF_PAIN, CLASS_PRIEST, 30);
-  spell_level(SPELL_HOLY_WARDING, CLASS_PRIEST, 20);
-  spell_level(SPELL_EVIL_WARDING, CLASS_PRIEST, 20);
-  spell_level(SPELL_GROUP_RECALL, CLASS_PRIEST, 10);
-  spell_level(SPELL_GROUP_BLESS, CLASS_PRIEST, 10);
-  spell_level(SPELL_GROUP_ARMOR, CLASS_PRIEST, 10);
-  spell_level(SPELL_GROUP_SATIATE, CLASS_PRIEST, 10);
-  spell_level(SPELL_GROUP_SUMMON, CLASS_PRIEST, 20);
-  spell_level(SPELL_GROUP_SANCTUARY, CLASS_PRIEST, 20);
-  spell_level(SPELL_GROUP_PASS_DOOR, CLASS_PRIEST, 20);
-  spell_level(SPELL_GROUP_MIRACLE, CLASS_PRIEST, 50);
-  spell_level(SKILL_BEDSIDE_MANNER, CLASS_PRIEST, 10);
-  spell_level(SPELL_CONSECRATION, CLASS_PRIEST, 30);
-  spell_level(SPELL_FURY, CLASS_PRIEST, 10);
-  spell_level(SPELL_CALM, CLASS_PRIEST, 30);
+  spell_level(SPELL_CANCELLATION, CLASS_PRIEST, 25);
+  spell_level(SPELL_GROUP_SUMMON, CLASS_PRIEST, 50);
+  spell_level(SPELL_RELOCATION, CLASS_PRIEST, 50); 
+  spell_level(SPELL_CONSECRATION, CLASS_PRIEST, 100);
+
+  /* PRIEST SKILLS */  
+  spell_level(SKILL_MAGIC_RECOVERY, CLASS_PRIEST, 1);
+  spell_level(SKILL_SECOND_ATTACK, CLASS_PRIEST, 10);
+  spell_level(SKILL_BEDSIDE_MANNER, CLASS_PRIEST, 50);
+  spell_level(SKILL_THIRD_ATTACK, CLASS_PRIEST, 100);
 }
 void init_rogue(void)
 {
@@ -585,106 +658,132 @@ void init_rogue(void)
   spell_level(SKILL_HIDE, CLASS_ROGUE, 1);
   spell_level(SKILL_PICK_LOCK, CLASS_ROGUE, 1);
   spell_level(SKILL_TRACK, CLASS_ROGUE, 5);
-  spell_level(SKILL_HUNT, CLASS_ROGUE, 21);
+  spell_level(SKILL_HUNT, CLASS_ROGUE, 25);
   // ROGUE DEFENSE
-  spell_level(SKILL_DODGE, CLASS_ROGUE, 1);
+  spell_level(SKILL_DODGE, CLASS_ROGUE, 10);
   // ROGUE OFFENSE ACTIVE
-  spell_level(SKILL_BACKSTAB, CLASS_ROGUE, 1);
-  spell_level(SKILL_TUMBLE, CLASS_ROGUE, 20);
-  spell_level(SKILL_CIRCLE, CLASS_ROGUE, 21);
   spell_level(SKILL_DIRT_KICK, CLASS_ROGUE, 1);
-  spell_level(SKILL_DOUBLE_BACKSTAB, CLASS_ROGUE, 50);
+  spell_level(SKILL_BACKSTAB, CLASS_ROGUE, 5);
+  spell_level(SKILL_TUMBLE, CLASS_ROGUE, 10);
+  spell_level(SKILL_CIRCLE, CLASS_ROGUE, 25);
+
   // ROGUE OFFENSE PASSIVE
   spell_level(SKILL_SECOND_ATTACK, CLASS_ROGUE, 5);
-  spell_level(SKILL_DUAL_WIELD, CLASS_ROGUE, 5);
-  spell_level(SKILL_CRITICAL_HIT, CLASS_ROGUE, 15);
-  spell_level(SKILL_ANATOMY_LESSONS, CLASS_ROGUE, 30);
-  spell_level(SKILL_DIRTY_TRICKS, CLASS_ROGUE, 30);
+  spell_level(SKILL_DUAL_WIELD, CLASS_ROGUE, 25);
+  spell_level(SKILL_CRITICAL_HIT, CLASS_ROGUE, 25);
+  spell_level(SKILL_ACROBATICS, CLASS_ROGUE, 25);
+  spell_level(SKILL_DIRTY_TRICKS, CLASS_ROGUE, 25);
   spell_level(SKILL_IMPALE, CLASS_ROGUE, 30);
   spell_level(SKILL_REND, CLASS_ROGUE, 30);
   spell_level(SKILL_MINCE, CLASS_ROGUE, 30);
   spell_level(SKILL_THRUST, CLASS_ROGUE, 30);
-  spell_level(SKILL_ACROBATICS, CLASS_ROGUE, 30);
-  spell_level(SKILL_TWIST_OF_FATE, CLASS_ROGUE, 30);
+  spell_level(SKILL_TWIST_OF_FATE, CLASS_ROGUE, 50);
+  spell_level(SKILL_ANATOMY_LESSONS, CLASS_ROGUE, 50);
+  spell_level(SKILL_THIRD_ATTACK, CLASS_ROGUE, 100);
+  spell_level(SKILL_DOUBLE_BACKSTAB, CLASS_ROGUE, 100);
+  spell_level(SKILL_DISEMBOWEL, CLASS_ROGUE, 100);
 }
+
 void init_fighter(void)
 {
-  /* FIGHTER */
+  /* FIGHTER OFFENSE */
   spell_level(SKILL_KICK, CLASS_FIGHTER, 1);
   spell_level(SKILL_SECOND_ATTACK, CLASS_FIGHTER, 1);
-  spell_level(SKILL_HEALTH_RECOVERY, CLASS_FIGHTER, 1);
   spell_level(SKILL_HEADBUTT, CLASS_FIGHTER, 1);
+  spell_level(SKILL_THIRD_ATTACK, CLASS_FIGHTER, 1);
+  spell_level(SKILL_FOURTH_ATTACK, CLASS_FIGHTER, 10);
+  spell_level(SKILL_FIFTH_ATTACK, CLASS_FIGHTER, 25);
+  spell_level(SKILL_SIXTH_ATTACK, CLASS_FIGHTER, 50);
+  spell_level(SKILL_SEVENTH_ATTACK, CLASS_FIGHTER, 100);
+  spell_level(SKILL_UNARMED_COMBAT, CLASS_FIGHTER, 25);
+  spell_level(SKILL_L_HOOK, CLASS_FIGHTER, 25);
+  spell_level(SKILL_R_HOOK, CLASS_FIGHTER, 25);
+  spell_level(SKILL_ELBOW, CLASS_FIGHTER, 25);
+  spell_level(SKILL_CHOP, CLASS_FIGHTER, 30);
+  spell_level(SKILL_SUCKER_PUNCH, CLASS_FIGHTER, 30);
+  spell_level(SKILL_UPPERCUT, CLASS_FIGHTER, 30);
+  spell_level(SKILL_HAYMAKER, CLASS_FIGHTER, 30);
+  spell_level(SKILL_KNEE, CLASS_FIGHTER, 30);
+  spell_level(SKILL_CLOTHESLINE, CLASS_FIGHTER, 40);
+  spell_level(SKILL_PILEDRVIER, CLASS_FIGHTER, 50);
+  spell_level(SKILL_TRIP, CLASS_FIGHTER, 40);
+  spell_level(SKILL_ROUNDHOUSE, CLASS_FIGHTER, 50);
+  spell_level(SKILL_PALM_STRIKE, CLASS_FIGHTER, 50);
+  spell_level(SKILL_SPIN_KICK, CLASS_FIGHTER, 75);
+
+  /* FIGHTER UTILITY */
+  spell_level(SKILL_HEALTH_RECOVERY, CLASS_FIGHTER, 1);
   spell_level(SKILL_SWITCH_TARGET, CLASS_FIGHTER, 15);
-  spell_level(SKILL_THIRD_ATTACK, CLASS_FIGHTER, 5);
   spell_level(SKILL_ENHANCED_DAMAGE,CLASS_FIGHTER, 20);
   spell_level(SKILL_OFFENSIVE_STANCE, CLASS_FIGHTER, 5);
-  spell_level(SKILL_FOURTH_ATTACK, CLASS_FIGHTER, 10);
-  spell_level(SKILL_FIFTH_ATTACK, CLASS_FIGHTER, 15);
   spell_level(SKILL_RAGE, CLASS_FIGHTER, 15);
-  spell_level(SKILL_UNARMED_COMBAT, CLASS_FIGHTER, 10);
-  spell_level(SKILL_L_HOOK, CLASS_FIGHTER, 10);
-  spell_level(SKILL_R_HOOK, CLASS_FIGHTER, 10);
-  spell_level(SKILL_SUCKER_PUNCH, CLASS_FIGHTER, 15);
-  spell_level(SKILL_UPPERCUT, CLASS_FIGHTER, 25);
-  spell_level(SKILL_HAYMAKER, CLASS_FIGHTER, 25);
-  spell_level(SKILL_CLOTHESLINE, CLASS_FIGHTER, 15);
-  spell_level(SKILL_PILEDRVIER, CLASS_FIGHTER, 30);
-  spell_level(SKILL_PALM_STRIKE, CLASS_FIGHTER, 30);
-  spell_level(SKILL_KNEE, CLASS_FIGHTER, 10);
-  spell_level(SKILL_CHOP, CLASS_FIGHTER, 10);
-  spell_level(SKILL_TRIP, CLASS_FIGHTER, 10);
-  spell_level(SKILL_ELBOW, CLASS_FIGHTER, 20);
-  spell_level(SKILL_ROUNDHOUSE, CLASS_FIGHTER, 30);
-  spell_level(SKILL_KNEE, CLASS_FIGHTER, 10);
-  spell_level(SKILL_SPIN_KICK, CLASS_FIGHTER, 30);
 
 }
 void init_knight(void)
 {
-  /* KNIGHT */
-  spell_level(SKILL_RESCUE, CLASS_KNIGHT, 1);
-  spell_level(SKILL_SWITCH_TARGET, CLASS_KNIGHT, 1);
-  spell_level(SKILL_SECOND_ATTACK, CLASS_KNIGHT, 1);
-  spell_level(SKILL_HEALTH_RECOVERY, CLASS_KNIGHT, 1);
+  /* KNIGHT OFFENSE */
   spell_level(SKILL_BASH, CLASS_KNIGHT, 1);
-  spell_level(SKILL_PARRY, CLASS_KNIGHT, 1);
-  spell_level(SKILL_ASSAULT, CLASS_KNIGHT, 5);
-  spell_level(SKILL_DAMAGE_REDUCTION, CLASS_KNIGHT, 5);
-  spell_level(SKILL_SHIELD_MASTER, CLASS_KNIGHT, 20);
-  spell_level(SKILL_TAUNT, CLASS_KNIGHT, 10);
-  spell_level(SKILL_ENHANCED_PARRY, CLASS_KNIGHT, 25);
+  spell_level(SKILL_SECOND_ATTACK, CLASS_KNIGHT, 1);
   spell_level(SKILL_DEFENSIVE_STANCE, CLASS_KNIGHT, 5);
-  spell_level(SKILL_WEAPON_PUNCH, CLASS_KNIGHT, 30);
-  spell_level(SKILL_SHIELD_SLAM, CLASS_KNIGHT, 30);
-  spell_level(SKILL_SHIELD_BLOCK, CLASS_KNIGHT, 5);
-  spell_level(SKILL_STORM_OF_STEEL, CLASS_KNIGHT, 50);
+  spell_level(SKILL_ASSAULT, CLASS_KNIGHT, 10);
+  spell_level(SKILL_SHIELD_MASTER, CLASS_KNIGHT, 20);
+  spell_level(SKILL_WEAPON_PUNCH, CLASS_KNIGHT, 50);
+  spell_level(SKILL_SHIELD_SLAM, CLASS_KNIGHT, 50);
+  spell_level(SKILL_ENHANCED_PARRY, CLASS_KNIGHT, 75);
+  spell_level(SKILL_RAMPAGE, CLASS_KNIGHT, 100);
+
+  /* KNIGHT DEFENSE */
+  spell_level(SKILL_PARRY, CLASS_KNIGHT, 1);
+  spell_level(SKILL_DAMAGE_REDUCTION, CLASS_KNIGHT, 5);
+  spell_level(SKILL_SHIELD_BLOCK, CLASS_KNIGHT, 25);
+
+  /* KNIGHT UTILITY */
+  spell_level(SKILL_SWITCH_TARGET, CLASS_KNIGHT, 1);
+  spell_level(SKILL_RESCUE, CLASS_KNIGHT, 1);
+  spell_level(SKILL_HEALTH_RECOVERY, CLASS_KNIGHT, 1);
+  spell_level(SKILL_TAUNT, CLASS_KNIGHT, 25);
+
+
 }
 void init_bard(void)
 {
-  /* BARD */
-
-  spell_level(SKILL_MAGIC_RECOVERY, CLASS_BARD, 1);
-  spell_level(SKILL_DODGE, CLASS_BARD, 1);
-  spell_level(SKILL_SECOND_ATTACK, CLASS_BARD, 1);
-  spell_level(SKILL_TRACK, CLASS_BARD, 5);
-  spell_level(SKILL_THIRD_ATTACK, CLASS_BARD, 10);
-  spell_level(SKILL_TUMBLE, CLASS_BARD, 15);
-  spell_level(SKILL_CHANT, CLASS_BARD, 10);
-  spell_level(SKILL_BATTLE_RYTHM, CLASS_BARD, 15);
-  spell_level(SPELL_BARD_BLESS, CLASS_BARD, 5);
-  spell_level(SPELL_BARD_RESISTS, CLASS_BARD, 5);
-  spell_level(SPELL_BARD_HEAL, CLASS_BARD, 10);
-  spell_level(SPELL_BARD_FEAST, CLASS_BARD, 15);
-  spell_level(SPELL_BARD_POWERHEAL, CLASS_BARD, 20);
-  spell_level(SPELL_BARD_RECALL, CLASS_BARD, 10);
-  spell_level(SPELL_BARD_REGEN, CLASS_BARD, 20);
+  /* BARD BUFF */
+  spell_level(SPELL_BARD_BLESS, CLASS_BARD, 1);
+  spell_level(SPELL_BARD_ARMOR, CLASS_BARD, 10);
+  spell_level(SPELL_BARD_RESISTS, CLASS_BARD, 25);
+  spell_level(SPELL_BARD_REGEN, CLASS_BARD, 25);
   spell_level(SPELL_BARD_SANC, CLASS_BARD, 30);
-  spell_level(SKILL_BARD_SHRIEK, CLASS_BARD, 30);
-  spell_level(SKILL_BARD_RITUAL, CLASS_BARD, 30);
-  spell_level(SPELL_BARD_STORM, CLASS_BARD, 30);
+  spell_level(SPELL_BARD_HASTE, CLASS_BARD, 90);
+  spell_level(SPELL_BARD_FURY, CLASS_BARD, 100);
+  
+  /* BARD HEAL */
+  spell_level(SPELL_BARD_HEAL, CLASS_BARD, 5);
+  spell_level(SPELL_BARD_HEAL2, CLASS_BARD, 25);
+  spell_level(SPELL_BARD_HEAL3, CLASS_BARD, 75);
+
+  /* BARD UTILITY */
+  spell_level(SPELL_BARD_FEAST, CLASS_BARD, 10);
+  spell_level(SPELL_BARD_RECALL, CLASS_BARD, 15);
   spell_level(SKILL_WAR_DANCE, CLASS_BARD, 30);
   spell_level(SKILL_SLOW_DANCE, CLASS_BARD, 30);
-  spell_level(SPELL_BARD_FURY, CLASS_BARD, 75);
+  spell_level(SKILL_BARD_RITUAL, CLASS_BARD, 75);
+
+  /* BARD SKILL */
+  spell_level(SKILL_MAGIC_RECOVERY, CLASS_BARD, 1);
+  spell_level(SKILL_DODGE, CLASS_BARD, 1);
+  spell_level(SKILL_TRACK, CLASS_BARD, 5);
+  spell_level(SKILL_TUMBLE, CLASS_BARD, 10);
+  spell_level(SKILL_SECOND_ATTACK, CLASS_BARD, 15);
+  spell_level(SKILL_THIRD_ATTACK, CLASS_BARD, 25);
+  spell_level(SKILL_BATTLE_RYTHM, CLASS_BARD, 50);
+  spell_level(SKILL_MAGICAL_MELODY, CLASS_BARD, 50);
+  spell_level(SKILL_CHANT, CLASS_BARD, 75);
+
+  /* BARD DAMAGE */
+  spell_level(SPELL_BARD_STORM, CLASS_BARD, 30);
+
+
+
 }
 void init_spell_levels(void)
 {
@@ -960,7 +1059,7 @@ const char *title_female(int chclass, int level)
     }
     case CLASS_BARD:
         switch(level) {
-      default: return "the Norn";
+      default: return "the Bard";
     }
   }
 

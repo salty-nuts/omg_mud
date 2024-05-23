@@ -6,15 +6,15 @@ overhead, casting the jungle floor in an emerald twilight.  Vines as thick as a
 man's arm strangle the gnarled trees, and the air is alive with the buzzing of
 unseen insects and the squawking of unseen birds.
 ~
-21 0 0 0 0 0
+21 4 0 0 0 0
 D0
 ~
 ~
 0 0 2101
-D3
+D2
 ~
 ~
-0 0 1005
+0 0 1006
 S
 #2101
 Artificial Shadow~
@@ -506,7 +506,7 @@ D3
 0 0 2125
 S
 #2127
-Xochitl's Vigil~
+Xochiquetzal's Vigil~
 A palpable tension hangs heavy in the air of this chamber.  The passage leading
 deeper into the pyramid narrows here, forming a bottleneck guarded by a
 magnificent jaguar statue.  The statue's eyes, crafted from polished emeralds,
@@ -1008,6 +1008,7 @@ D4
 ~
 0 0 2154
 S
+T 2109
 #2156
 The Trial of Wind~
 This chamber is dominated by a series of wind tunnels carved into the south

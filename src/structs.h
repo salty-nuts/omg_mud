@@ -161,7 +161,6 @@
 #define CLASS_FIGHTER 3      /**< PC Class Warrior */
 #define CLASS_KNIGHT 4
 #define CLASS_BARD 5
-#define CLASS_DRAGON 6
 #define NUM_CLASSES 6
 
 /* NPC classes (currently unused - feel free to implement!) */
@@ -241,7 +240,11 @@
 #define MOB_HIT_GROUP 22
 #define MOB_DODGE 23
 #define MOB_PARRY 24
-#define NUM_MOB_FLAGS 25
+#define MOB_NEWBIE 25
+#define MOB_HEALER 26
+#define MOB_CASTER 27
+#define MOB_MELEE 28
+#define NUM_MOB_FLAGS 29
 
 /* Preference flags: used by char_data.player_specials.pref */
 #define PRF_BRIEF 0       /**< Room descs won't normally be shown */
@@ -286,12 +289,9 @@
 #define PRF_DISP_VICT 39
 #define PRF_DISP_NAME 40
 #define PRF_AUTOEXIT_L 41
-#define PRF_NOINFO 42
-#define PRF_DAM_MESS_1 43
-#define PRF_DAM_MESS_2 44
-#define PRF_DISP_SPELLS 45
+#define PRF_SHORT_LOOK  42
 /** Total number of available PRF flags */
-#define NUM_PRF_FLAGS 46
+#define NUM_PRF_FLAGS 43
 
 /* Infonet levels */
 #define INFONET_IMP 0
@@ -313,8 +313,8 @@
 #define AFF_CURSE 10           /**< Char is cursed */
 #define AFF_INFRAVISION 11     /**< Char can see in dark */  // remove for truesight
 #define AFF_POISON 12          /**< (R) Char is poisoned */
-#define AFF_HOLY_WARDING 13    /**< Char protected from evil */ // remove entirely
-#define AFF_EVIL_WARDING 14    /**< Char protected from good */ // remove entirely
+#define AFF_RESIST_EVIL 13    /**< Char protected from evil */ // remove entirely
+#define AFF_RESIST_GOOD 14    /**< Char protected from good */ // remove entirely
 #define AFF_SLEEP 15           /**< (R) Char magically asleep */
 #define AFF_NOTRACK 16         /**< Char can't be tracked */
 #define AFF_FLYING 17          /**< Char is flying */
@@ -340,11 +340,13 @@
 #define AFF_WAR_DANCE 37       // (R) bard war dance
 #define AFF_SLOW_DANCE 38      // (R) bard slow dance
 #define AFF_WITHER 39          // (R) wither spell
+#define AFF_DISRUPT 40         // (R) Disruption spell
+#define AFF_NODEBUFF 41        // (R) NPC/PC cannot be debuffed
 
 /** Total number of affect flags including the don't use flag.
  *  Zero indexed.
  */
-#define NUM_AFF_FLAGS 40
+#define NUM_AFF_FLAGS 42
 
 /* Modes of connectedness: used by descriptor_data.state 		*/
 #define CON_PLAYING 0       /**< Playing - Nominal state 		*/
@@ -467,7 +469,7 @@
 
 /* Extra object flags: used by obj_data.obj_flags.extra_flags */
 #define ITEM_GLOW 0          /**< Item is glowing */
-#define ITEM_HUM 1           /**< Item is humming */
+#define ITEM_LIMITED 1       /**< Item cannot be cloned */
 #define ITEM_NORENT 2        /**< Item cannot be rented */
 #define ITEM_NODONATE 3      /**< Item cannot be donated */
 #define ITEM_NOINVIS 4       /**< Item cannot be made invis	*/
@@ -487,11 +489,14 @@
 #define ITEM_NOSELL 18       /**< Shopkeepers won't touch it */
 #define ITEM_QUEST 19        /**< Item is a quest item         */
 #define ITEM_IMPROVED 20     // Weapon has been improved
-#define ITEM_TWO_HANDED 21   // 2h Weapon
+#define ITEM_FIST_WEAPON 21  // Fist Weapon, for fighter
 #define ITEM_DECAYING 22     // Item decays with timer
+#define ITEM_NEWBIE 23       // Newbie Items
+#define ITEM_CLONED 24       // Cloned items via clone obj spell
+
 
 /** Total number of item flags */
-#define NUM_ITEM_FLAGS 23
+#define NUM_ITEM_FLAGS 25
 
 /* Modifier constants used with obj affects ('A' fields) */
 #define APPLY_NONE 0           /**< No effect			*/
@@ -531,8 +536,9 @@
 #define APPLY_RESIST_BLUNT 34
 #define APPLY_RESIST_PIERCE 35
 #define APPLY_RESIST_SLASH 36
+#define APPLY_SANCTUARY 37
 /** Total number of applies  (ZERO INDEXED) */
-#define NUM_APPLIES 37
+#define NUM_APPLIES 38
 
 /* Equals the total number of SAVING_* defines in spells.h */
 #define NUM_OF_SAVING_THROWS 5

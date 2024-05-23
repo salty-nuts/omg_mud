@@ -2894,7 +2894,7 @@ void zone_update(void)
       struct descriptor_data *pt;
       for (pt = descriptor_list; pt; pt = pt->next)
         if (IS_PLAYING(pt) && pt->character && PRF_FLAGGED(pt->character, PRF_ZONERESETS))
-          send_to_char(pt->character, "%s[Auto zone reset: %s (Zone %d)]%s",
+          send_to_char(pt->character, "%s[Auto zone reset: %s (Zone %d)]%s\r\n",
                        CCGRN(pt->character, C_NRM), zone_table[update_u->zone_to_reset].name,
                        zone_table[update_u->zone_to_reset].number, CCNRM(pt->character, C_NRM));
       /* dequeue */
@@ -2977,6 +2977,7 @@ void reset_zone(zone_rnum zone)
         obj = read_object(ZCMD.arg1, REAL);
         if (ZCMD.arg3 != NOWHERE)
         {
+          rarity = rand_number(0, 99);
           if (GET_OBJ_REPOP(obj) > rarity)
           {
             obj_to_room(obj, ZCMD.arg3);
@@ -2986,10 +2987,10 @@ void reset_zone(zone_rnum zone)
           }
           else
           {
+            mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : Default: Repop percentage (%d) fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj),rarity);
             extract_obj(obj);
             last_cmd = 1;
             tobj = obj;
-            mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : Default: Repop percentage fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj));
           }
         }
         else
@@ -3015,6 +3016,7 @@ void reset_zone(zone_rnum zone)
           ZCMD.command = '*';
           break;
         }
+        rarity = rand_number(0, 99);
         if (GET_OBJ_REPOP(obj) > rarity)
         {
           obj_to_obj(obj, obj_to);
@@ -3024,10 +3026,10 @@ void reset_zone(zone_rnum zone)
         }
         else
         {
+          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : Obj to Obj: Repop percentage (%d) fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj), rarity);
           extract_obj(obj);
           last_cmd = 1;
           tobj = obj;
-          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : Obj to Obj: Repop percentage fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj));
         }
       }
       else
@@ -3047,6 +3049,7 @@ void reset_zone(zone_rnum zone)
       if (obj_index[ZCMD.arg1].number < ZCMD.arg2)
       {
         obj = read_object(ZCMD.arg1, REAL);
+        rarity = rand_number(0, 99);
         if (GET_OBJ_REPOP(obj) > rarity)
         {
           obj_to_char(obj, mob);
@@ -3056,10 +3059,10 @@ void reset_zone(zone_rnum zone)
         }
         else
         {
+          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : To mob inventory: Repop percentage (%d) fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj), rarity);
           extract_obj(obj);
           last_cmd = 1;
           tobj = obj;
-          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : To mob inventory: Repop percentage fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj));
         }
       }
       else
@@ -3085,6 +3088,7 @@ void reset_zone(zone_rnum zone)
           snprintf(error, sizeof(error), "invalid equipment pos number (mob %s, obj %d, pos %d)", GET_NAME(mob), obj_index[ZCMD.arg2].vnum, ZCMD.arg3);
           ZONE_ERROR(error);
         }
+        rarity = rand_number(0, 99);
         if (GET_OBJ_REPOP(obj) > rarity)
         {
           IN_ROOM(obj) = IN_ROOM(mob);
@@ -3101,10 +3105,10 @@ void reset_zone(zone_rnum zone)
         }
         else
         {
+          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : To mob equipped: Repop percentage (%d) fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj), rarity);
           extract_obj(obj);
           last_cmd = 1;
           tobj = obj;
-          mudlog(BRF, LVL_IMMORT, TRUE, "vnum:[%d] %s : To mob equipped: Repop percentage fail", GET_OBJ_VNUM(obj), GET_OBJ_SHORT(obj));
         }
       }
       else

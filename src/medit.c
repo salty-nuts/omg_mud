@@ -934,7 +934,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     else if (i == -1)
       write_to_output(d, "\r\nEnter new text :\r\n] ");
     else if (i == 'r')
-      write_to_output(d, "Enter the melee resist unarmed (-500 to 500):  ");
+      write_to_output(d, "Enter the melee resist unarmed (-100 to 100):  ");
     else
       write_to_output(d, "Oops...\r\n");
     return;
@@ -1168,30 +1168,30 @@ void medit_parse(struct descriptor_data *d, char *arg)
     break;
 
   case MEDIT_RESIST_0:
-    GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = LIMIT(i, -500, 500);
-    write_to_output(d, "Enter the melee resist exotic (-500 to 500):  ");
+    GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = LIMIT(i, -100, 100);
+    write_to_output(d, "Enter the melee resist exotic (-100 to 100):  ");
     OLC_MODE(d) = MEDIT_RESIST_1;
     return;
 
   case MEDIT_RESIST_1:
-    GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = LIMIT(i, -500, 500);
-    write_to_output(d, "Enter the melee resist blunt (-500 to 500):  ");
+    GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = LIMIT(i, -100, 100);
+    write_to_output(d, "Enter the melee resist blunt (-100 to 100):  ");
     OLC_MODE(d) = MEDIT_RESIST_2;
     return;
 
   case MEDIT_RESIST_2:
-    GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = LIMIT(i, -500, 500);
-    write_to_output(d, "Enter the melee resist pierce (-500 to 500):  ");
+    GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = LIMIT(i, -100, 100);
+    write_to_output(d, "Enter the melee resist pierce (-100 to 100):  ");
     OLC_MODE(d) = MEDIT_RESIST_3;
     return;
   case MEDIT_RESIST_3:
-    GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = LIMIT(i, -500, 500);
-    write_to_output(d, "Enter the melee resist slash (-500 to 500):  ");
+    GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = LIMIT(i, -100, 100);
+    write_to_output(d, "Enter the melee resist slash (-100 to 100):  ");
     OLC_MODE(d) = MEDIT_RESIST_4;
     return;
 
   case MEDIT_RESIST_4:
-    GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = LIMIT(i, -500, 500);
+    GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = LIMIT(i, -100, 100);
     OLC_VAL(d) = TRUE;
     medit_disp_stats_menu(d);
     break;
@@ -1283,89 +1283,112 @@ void medit_autoroll_stats(struct descriptor_data *d)
 
   if (GET_MOB_MULT(OLC_MOB(d)) > 1)
   {
-    GET_EXP(OLC_MOB(d)) = mob_lev * 5432 * (2 * mult);
-    GET_GOLD(OLC_MOB(d)) = mob_lev * 2345 * (2 * mult);
+    if (MOB_FLAGGED(OLC_MOB(d), MOB_NEWBIE))
+    {
+      GET_EXP(OLC_MOB(d)) = mob_lev * 9876 * (2 * mult);
+      GET_GOLD(OLC_MOB(d)) = mob_lev * 2345 * (2 * mult);
 
-    GET_MOVE(OLC_MOB(d)) = mob_lev * 1234 * mult; /* hit point bonus (mobs don't use movement points */
-    GET_HIT(OLC_MOB(d)) = mob_lev * 3 * mult;     /* number of hitpoint dice */
-    GET_MANA(OLC_MOB(d)) = mob_lev * 2 * mult;    /* size of hitpoint dice   */
+      GET_MOVE(OLC_MOB(d)) = mob_lev * 123 * mult; /* hit point bonus (mobs don't use movement points */
+      GET_HIT(OLC_MOB(d)) = mob_lev * 3 * mult;     /* number of hitpoint dice */
+      GET_MANA(OLC_MOB(d)) = mob_lev * 2 * mult;    /* size of hitpoint dice   */
 
-    GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10) + mult; /* number damage dice */
-    GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10) + mult; /* size of damage dice */
-    GET_DAMROLL(OLC_MOB(d)) = mob_lev + mult; /* damroll (dam bonus) 0-130 */
-    GET_HITROLL(OLC_MOB(d)) = mob_lev + mult; /* hitroll 0-130            */
+      GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10) + mult; /* number damage dice */
+      GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10) + mult; /* size of damage dice */
+      GET_DAMROLL(OLC_MOB(d)) = mob_lev + mult;          /* damroll (dam bonus) 0-130 */
+      GET_HITROLL(OLC_MOB(d)) = mob_lev + mult;          /* hitroll 0-130            */
+    }
+    else
+    {
+      GET_EXP(OLC_MOB(d)) = mob_lev * 5432 * (2 * mult);
+      GET_GOLD(OLC_MOB(d)) = mob_lev * 2345 * (2 * mult);
+      
+      GET_MOVE(OLC_MOB(d)) = mob_lev * 4321 * mult; /* hit point bonus (mobs don't use movement points */
+      GET_HIT(OLC_MOB(d)) = mob_lev * 3 * mult;     /* number of hitpoint dice */
+      GET_MANA(OLC_MOB(d)) = mob_lev * 2 * mult;    /* size of hitpoint dice   */
 
+      GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10) + mult; /* number damage dice */
+      GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10) + mult; /* size of damage dice */
+      GET_DAMROLL(OLC_MOB(d)) = mob_lev + (2 * mult);          /* damroll (dam bonus) 0-130 */
+      GET_HITROLL(OLC_MOB(d)) = mob_lev + (2 * mult);          /* hitroll 0-130            */
+    }
     if (!GET_ATTACK_NUM(OLC_MOB(d)))
     {
       GET_ATTACK(OLC_MOB(d)) = 0;
       GET_ATTACK_NUM(OLC_MOB(d)) = (1 + (int)(mult / 5));
     }
     GET_AC(OLC_MOB(d)) = (100 - (mob_lev * 6)) - mult; /* AC 94 to -555           */
-
-    if (CONFIG_MEDIT_ADVANCED)
-    {
-      GET_STR(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25); /* 2/3 level in range 11 to 25 */
-      GET_INT(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_WIS(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_DEX(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_CON(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_LUCK(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-
-      GET_SAVE(OLC_MOB(d), SAVING_PARA) = 100 - mob_lev - mult; /* All Saving throws */
-      GET_SAVE(OLC_MOB(d), SAVING_ROD) = 100 - mob_lev - mult;
-      GET_SAVE(OLC_MOB(d), SAVING_PETRI) = 100 - mob_lev - mult;
-      GET_SAVE(OLC_MOB(d), SAVING_BREATH) = 100 - mob_lev - mult;
-      GET_SAVE(OLC_MOB(d), SAVING_SPELL) = 100 - mob_lev - mult;
-
-      GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = mult + (mob_lev / 5);
-    }
   }
-  else
+  else /* mob multiplier = 1*/
   {
-    GET_EXP(OLC_MOB(d)) = mob_lev * 5432;
-    GET_GOLD(OLC_MOB(d)) = mob_lev * 2345;
+    if (MOB_FLAGGED(OLC_MOB(d), MOB_NEWBIE))
+    {
+      GET_EXP(OLC_MOB(d)) = mob_lev * 9876;
+      GET_GOLD(OLC_MOB(d)) = mob_lev * 2345;
 
-    GET_MOVE(OLC_MOB(d)) = mob_lev * 1234; /* hit point bonus (mobs don't use movement points */
-    GET_HIT(OLC_MOB(d)) = mob_lev * 3;     /* number of hitpoint dice */
-    GET_MANA(OLC_MOB(d)) = mob_lev * 2;    /* size of hitpoint dice   */
+      GET_MOVE(OLC_MOB(d)) = mob_lev * 123; /* hit point bonus (mobs don't use movement points */
+      GET_HIT(OLC_MOB(d)) = mob_lev * 3;     /* number of hitpoint dice */
+      GET_MANA(OLC_MOB(d)) = mob_lev * 2;    /* size of hitpoint dice   */
 
-    GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10); /* number damage dice */
-    GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10); /* size of damage dice */
+      GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10); /* number damage dice */
+      GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10); /* size of damage dice */
+      GET_DAMROLL(OLC_MOB(d)) = mob_lev; /* damroll (dam bonus) 0-130 */
+      GET_HITROLL(OLC_MOB(d)) = mob_lev; /* hitroll 0-130            */
+    }
+    else
+    {
+      GET_EXP(OLC_MOB(d)) = mob_lev * 5432;
+      GET_GOLD(OLC_MOB(d)) = mob_lev * 2345;
 
-    GET_DAMROLL(OLC_MOB(d)) = mob_lev; /* damroll (dam bonus) 0-130 */
-    GET_HITROLL(OLC_MOB(d)) = mob_lev; /* hitroll 0-130            */
+      GET_MOVE(OLC_MOB(d)) = mob_lev * 1234; /* hit point bonus (mobs don't use movement points */
+      GET_HIT(OLC_MOB(d)) = mob_lev * 3;     /* number of hitpoint dice */
+      GET_MANA(OLC_MOB(d)) = mob_lev * 2;    /* size of hitpoint dice   */
+
+      GET_NDD(OLC_MOB(d)) = MAX(1, mob_lev / 10) + mult; /* number damage dice */
+      GET_SDD(OLC_MOB(d)) = MAX(2, mob_lev / 10) + mult; /* size of damage dice */
+      GET_DAMROLL(OLC_MOB(d)) = mob_lev + (2 * mult);          /* damroll (dam bonus) 0-130 */
+      GET_HITROLL(OLC_MOB(d)) = mob_lev + (2 * mult);          /* hitroll 0-130            */
+    }
     if (!GET_ATTACK_NUM(OLC_MOB(d)))
     {
       GET_ATTACK(OLC_MOB(d)) = 0;
       GET_ATTACK_NUM(OLC_MOB(d)) = 1;
     }
     GET_AC(OLC_MOB(d)) = (100 - (mob_lev * 6)); /* AC 94 to -530           */
-
-    /* 'Advanced' stats are only rolled if advanced options are enabled */
-    if (CONFIG_MEDIT_ADVANCED)
-    {
-      GET_STR(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25); /* 2/3 level in range 11 to 25 */
-      GET_INT(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_WIS(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_DEX(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_CON(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-      GET_LUCK(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
-
-      GET_SAVE(OLC_MOB(d), SAVING_PARA) = 100 - mob_lev; /* All Saving throws */
-      GET_SAVE(OLC_MOB(d), SAVING_ROD) = 100 - mob_lev;
-      GET_SAVE(OLC_MOB(d), SAVING_PETRI) = 100 - mob_lev;
-      GET_SAVE(OLC_MOB(d), SAVING_BREATH) = 100 - mob_lev;
-      GET_SAVE(OLC_MOB(d), SAVING_SPELL) = 100 - mob_lev;
-
-      GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = mult + (mob_lev / 5);
-      GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = mult + (mob_lev / 5);
-    }
   }
+  if (MOB_FLAGGED(OLC_MOB(d), MOB_CASTER) || MOB_FLAGGED(OLC_MOB(d), MOB_HEALER))
+  {
+    GET_EXP(OLC_MOB(d)) *= 10;
+    GET_GOLD(OLC_MOB(d)) *= 10;
+  }
+  if (MOB_FLAGGED(OLC_MOB(d), MOB_MELEE))
+  {
+    GET_EXP(OLC_MOB(d)) *= 10;
+    GET_GOLD(OLC_MOB(d)) *= 10;   
+    GET_NDD(OLC_MOB(d)) *= 2;
+    GET_SDD(OLC_MOB(d)) *= 2;
+    GET_HITROLL(OLC_MOB(d)) *= 2;
+    GET_DAMROLL(OLC_MOB(d)) *= 2;
+  } 
+    /* 'Advanced' stats are only rolled if advanced options are enabled */
+  if (CONFIG_MEDIT_ADVANCED)
+  {
+    GET_STR(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25); /* 2/3 level in range 11 to 25 */
+    GET_INT(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
+    GET_WIS(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
+    GET_DEX(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
+    GET_CON(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
+    GET_LUCK(OLC_MOB(d)) = LIMIT((mob_lev * 2) / 3, 11, 25);
+
+    GET_SAVE(OLC_MOB(d), SAVING_PARA) = 100 - mob_lev - mult; /* All Saving throws */
+    GET_SAVE(OLC_MOB(d), SAVING_ROD) = 100 - mob_lev - mult;
+    GET_SAVE(OLC_MOB(d), SAVING_PETRI) = 100 - mob_lev - mult;
+    GET_SAVE(OLC_MOB(d), SAVING_BREATH) = 100 - mob_lev - mult;
+    GET_SAVE(OLC_MOB(d), SAVING_SPELL) = 100 - mob_lev - mult;
+
+    GET_RESISTS(OLC_MOB(d), RESIST_UNARMED) = (mult-1);
+    GET_RESISTS(OLC_MOB(d), RESIST_EXOTIC) = (mult-1);
+    GET_RESISTS(OLC_MOB(d), RESIST_BLUNT) = (mult-1);
+    GET_RESISTS(OLC_MOB(d), RESIST_PIERCE) = (mult-1);
+    GET_RESISTS(OLC_MOB(d), RESIST_SLASH) = (mult-1);
+  }  
 }

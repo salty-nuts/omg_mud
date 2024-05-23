@@ -968,7 +968,7 @@ It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
 1 19 9 3d2+1234 1d2+1
-12345 23101
+2345 5432
 8 8 0
 MobMult: 1
 NumAttacks: 1
@@ -977,10 +977,10 @@ SavingRod: 99
 SavingPetri: 99
 SavingBreath: 99
 SavingSpell: 99
-RES_0: 2
-RES_1: 4
-RES_2: 2
-RES_3: 2
-RES_4: 2
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 $

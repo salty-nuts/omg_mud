@@ -80,6 +80,7 @@ ACMD(do_gen_ps);
 #define SCMD_WHOAMI    11
 /* do_look */
 ACMD(do_look);
+ACMD(do_look_short);
 #define SCMD_LOOK 0
 #define SCMD_READ 1
 /* functions without subcommands */
@@ -229,7 +230,7 @@ ACMD(do_gen_tog);
 #define SCMD_WIMPY       32
 #define SCMD_PAGELENGTH  33
 #define SCMD_SCREENWIDTH 34
-#define SCMD_DISP_SPELLS 35
+#define SCMD_SHORT_LOOK  35
 
 /* do_quit */
 ACMD(do_quit);

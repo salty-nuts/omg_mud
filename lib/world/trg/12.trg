@@ -1085,8 +1085,17 @@ Purge Items in room on Zone Reset~
 salty restore~
 1 b 100
 ~
-eval actor %self.worn_by%
-%damage% %actor% -%actor.maxhitp%
+if %self.worn_by%
+  eval actor %self.worn_by%
+  if %actor.is_pc%
+    eval amount %actor.maxhitp%
+    %damage% %actor% -%amount%
+    if %actor.mana% < %actor.maxmana%
+      eval mana %actor.maxmana% - %actor.mana%
+      nop %actor.mana(%mana%)%
+    end
+  end
+end
 ~
 #1233
 Rumble's Test Trigger~
@@ -1523,16 +1532,17 @@ else
 end
 ~
 #1287
-new trigger~
-0 d 100
-test~
-%echo% speech: %speech%
-eval spech %speech.car%
-%echo% spech: %spech% (%speech.car%)
-%echo% spech.room.vnum %spech.room.vnum%
-%echo% spech.vnum %spech.vnum%
-remote spech %world_global.id%
-%echo% spech on world: %world_global.spech%
+equipment restores health~
+1 b 100
+~
+if %self.worn_by%
+  set actor %self.worn_by%
+  eval amount %actor.maxhitp%
+  %damage% %actor% -%amount%
+  if %actor.mana% < %actor.maxmana%
+    nop %actor.mana(100)%
+  end
+end
 ~
 #1288
 (1209) Taylors fire trig~

@@ -1027,7 +1027,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
     case ITEM_WEAPON:
-      GET_OBJ_VAL(OLC_OBJ(d), 0) = MIN(MAX(atoi(arg), -50), 50);
+      GET_OBJ_VAL(OLC_OBJ(d), 0) = MIN(MAX(atoi(arg), -50), 200);
       break;
     case ITEM_CONTAINER:
       GET_OBJ_VAL(OLC_OBJ(d), 0) = LIMIT(atoi(arg), -1, MAX_CONTAINER_SIZE);

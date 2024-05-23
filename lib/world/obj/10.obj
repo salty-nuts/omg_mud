@@ -1,33 +1,33 @@
 #1000
-orb light ball~
-an Orb of Light~
-A shining ball of light is here.~
+newbie lantern~
+a Newbie Lantern~
+A newbie lantern is here.~
 ~
-1 r 0 0 0 ap 0 0 0 defg 0 0 0
+1 x 0 0 0 ap 0 0 0 defg 0 0 0
 0 0 -1 0
 1 200 0 0 0 100
 E
-orb light ball~
+newbie lantern~
 This ball of light illuminates the way before you.
 ~
 #1001
-ring rose queen~
-the Ring of the Rose Queen~
-A signet ring in the shape of a rose lies here.~
+newbie signet ring~
+a Newbie Signet Ring~
+A newbie signet ring lies here.~
 ~
-9 r 0 0 0 abo 0 0 0 0 0 0 0
+9 x 0 0 0 abo 0 0 0 0 0 0 0
 5 0 0 0
 1 200 0 0 0 100
 E
-ring rose queen~
+newbie signet ring~
 This gold signet ring is in the shape of a beautiful rose.
 ~
 #1002
-talisman quetzalcoatl jade gold~
-a Jade Talisman of Quetzalcoatl~
-A talisman made of jade, gold and eagle feathers lies here.~
+newbie torc~
+a Newbie Torc~
+A simple torc made of rough bronze.~
 ~
-9 r 0 0 0 ac 0 0 0 0 0 0 0
+9 x 0 0 0 ac 0 0 0 0 0 0 0
 10 0 0 0
 1 200 0 0 0 100
 E
@@ -35,59 +35,59 @@ talisman quetzalcoatl jade gold~
 This ornate necklace is carved of jade, banded with gold and adorned with feathers.
 ~
 #1003
-thor battle armor~
-Thor's Battle Armor~
-Behold!  Thor's Battle Armor lies here.~
+newbie battle armor~
+Newbie Battle Armor~
+Some newbie battle armor lies here.~
 ~
-9 r 0 0 0 ad 0 0 0 0 0 0 0
+9 x 0 0 0 ad 0 0 0 0 0 0 0
 35 0 0 0
 1 200 0 0 0 100
 E
-thor battle armor~
-This golden armor has burns from Jormungandr and scorches from Surtr.
+newbie battle armor~
+This armor is made from tanned leather and has the word 'NEWBIE' embossed on it.
 ~
 #1004
-golden halo~
-a Golden Halo~
-A golden halo floats here.~
+newbie helmet~
+a Newbie Helmet~
+A newbie helmet lies here.~
 ~
-9 r 0 0 0 ae 0 0 0 0 0 0 0
+9 x 0 0 0 ae 0 0 0 0 0 0 0
 10 0 0 0
 1 200 0 0 0 100
 E
-golden halo~
-A golden sun disk, a halo, just like Jesus in those paintings.
+newbie helmet~
+   The newbie helmet is made of tanned leather.
 ~
 #1005
-boots outer planes~
-a pair of Boots of the Outer Planes~
-A pair of Boots of the Outer Planes are lying here.~
+newbie boots~
+a Pair of Newbie Boots~
+A pair of newbie boots are lying here.~
 ~
-9 r 0 0 0 ag 0 0 0 0 0 0 0
+9 x 0 0 0 ag 0 0 0 0 0 0 0
 15 0 0 0
 1 200 0 0 0 100
 E
-boots outer planes~
+newbie boots~
 These black boots are made of some alien leather.
 ~
 #1006
-greaves freedom~
-the Two Greaves of Freedom~
-The Two Greaves of Freedom stand here.~
+newbie greaves~
+a Pair of Newbie Greaves~
+A pair of newbie greaves stand here.~
 ~
-9 r 0 0 0 af 0 0 0 0 0 0 0
+9 x 0 0 0 af 0 0 0 0 0 0 0
 10 0 0 0
 1 200 0 0 0 100
 E
-greaves freedom~
-The Two Greaves of Freedom are patriotic and completely nationalistic.
+newbie greaves~
+The newbie greaves are made of tanned leather.
 ~
 #1007
-bronze gauntlets~
+bronze gauntlets newbie~
 a pair of bronze gauntlets~
 A pair of bronze gauntlets lies here.~
 ~
-9 r 0 0 0 ah 0 0 0 0 0 0 0
+9 x 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
 1 200 0 0 0 100
 E
@@ -95,11 +95,11 @@ bronze gauntlets~
 These legendary gauntlets are made from hand hammered bronze.
 ~
 #1008
-green sleeves~
+green newbie sleeves~
 a pair of green sleeves~
 A pair of green sleeves, my love.~
 ~
-9 r 0 0 0 ai 0 0 0 0 0 0 0
+9 x 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 1 200 0 0 0 100
 E
@@ -107,23 +107,23 @@ green sleeves~
 The sleeves are made of a fine green linen.
 ~
 #1009
-cloak shadow~
-a Cloak of Shadow~
-A Cloak of Shadow floats here.~
+newbie cloak~
+a Newbie Cloak~
+A newbie cloak floats here.~
 ~
-9 r 0 0 0 ak 0 0 0 0 0 0 0
+9 x 0 0 0 ak 0 0 0 0 0 0 0
 10 0 0 0
 1 200 0 0 0 100
 E
-cloak shadow~
+newbie cloak~
 The cloak is exceptionally dark, and stands on its own like Dr. Strange's.
 ~
 #1010
-girdle giant strength~
+newbie girdle giant strength~
 a Girdle of Giant Strength~
 A Girdle of Giant Strength lies here.~
 ~
-9 r 0 0 0 al 0 0 0 0 0 0 0
+9 x 0 0 0 al 0 0 0 0 0 0 0
 15 0 0 0
 1 200 0 0 0 100
 E
@@ -133,15 +133,15 @@ This massive leather belt with gold fittings evokes power and opulance.
 A
 1 10
 #1011
-freezing steel bracelet~
-a freezing steel bracelet~
-A freezing steel bracelet~
+newbie steel bracelet~
+a Steel Bracelet~
+A steel bracelet lies here.~
 ~
-9 r 0 0 0 am 0 0 0 0 0 0 0
+9 x 0 0 0 am 0 0 0 0 0 0 0
 10 0 0 0
 1 200 0 0 0 100
 E
-freezing steel bracelet~
+newbie steel bracelet~
 A steel wristguard, a bit larger than a handcuff, is covered in frost.
 ~
 A
@@ -149,12 +149,12 @@ A
 A
 4 2
 #1012
-cruciform dagger~
+cruciform dagger newbie~
 a Cruciform Dagger~
 A cruciform dagger lies here.~
 Cruciform Dagger flashes in the shadows.
 ~
-5 0 0 0 0 ano 0 0 0 0 0 0 0
+5 x 0 0 0 ano 0 0 0 0 0 0 0
 0 8 4 14
 0 1000 0 0 0 100
 E
@@ -162,16 +162,16 @@ cruciform dagger~
 The pattern woven steel is balanced in the hand and tapers to a fine point, perfect for stabbing.
 ~
 #1013
-bark world tree yggdrasil shield~
-Bark of the World Tree, Yggdrasil~
-A chunk of bark from Yggdrasil, the World Tree stands here.~
+newbie steel shield~
+a Newbie Shield~
+A steel shield adorned with the tabard of the newbie.~
 ~
-9 r 0 0 0 aj 0 0 0 0 0 0 0
+9 x 0 0 0 aj 0 0 0 0 0 0 0
 35 0 0 0
 1 200 0 0 0 100
 E
-bark world tree yggdrasil~
-A chunk of bark from Yggdrasil, the World Tree stands here.
+newbie steel shield~
+A steel kite shield with the pink tabard of the newbie painted on.
 ~
 A
 2 2
@@ -180,35 +180,35 @@ A
 A
 6 2
 #1014
-pair aviator sunglasses~
-a Pair of Aviators~
-A pair of reflective aviator sunglasses lies here.~
+cloth mask newbie~
+a Cloth Facemask~
+A cloth facemask with the word 'NEWBIE' screen printed on the side lies here.~
 ~
-9 0 0 0 0 ar 0 0 0 0 0 0 0
+9 x 0 0 0 ar 0 0 0 0 0 0 0
 0 0 0 0
 2 1000 1000 0 0 100
 E
-pair aviator sunglasses~
-These aviators are silver frames and pristine, unscratched, reflective glass.  Perfect.
+cloth mask newbie~
+This cloth facemask looks very cheap.
 ~
 #1015
-heron marked blade~
-a heron marked blade~
-A heron marked blade lies here.~
+steel sword newbie~
+a Steel Newbie Sword~
+A steel newbie sword lies here, rusting.~
 ~
-5 0 0 0 0 ano 0 0 0 0 0 0 0
+5 x 0 0 0 ano 0 0 0 0 0 0 0
 0 12 4 3
 1 1 0 0 0 100
 E
-heron marked blade~
-The heron marked blade is a beautiful ancient katana.
+steel sword newbie~
+The newbie sword needs sharpening and some polish.
 ~
 #1016
-wooden lyre~
-a wooden lyre~
+wooden lyre newbie~
+a Simple Wooden Lyre~
 A simple wooden lyre sits here.~
 ~
-14 0 0 0 0 ap 0 0 0 0 0 0 0
+14 x 0 0 0 ap 0 0 0 0 0 0 0
 0 0 0 0
 1 1 0 0 0 100
 E
@@ -228,11 +228,11 @@ A
 A
 27 50
 #1017
-floating recall~
-a floating recall ability~
+newbie floating recall~
+the Newbie's Floating Recall Ability~
 A floating recall ability is here.~
 ~
-9 r 0 0 0 aq 0 0 0 defgr 0 0 0
+9 x 0 0 0 aq 0 0 0 defgr 0 0 0
 25 0 0 0
 1 2000 0 0 0 100
 T 1005
@@ -241,45 +241,126 @@ floating recall~
 The ability to recall floats here.  Try releasing it.
 ~
 #1018
-dane axe jotunsbane~
-Jutunsbane, the Dane Axe~
-A giagantic axe is standing here, ready to slay giants.~
-dane axe howls out for jotun blood!
-~
-5 giu 0 0 0 an 0 0 0 0 0 0 0
-0 15 12 3
-10 10 0 0 0 0
-#1019
-unfinished object~
-an unfinished object~
-An unfinished object is lying here.~
-~
-0 gi 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0 0 0
-#1098
-greatsword sword conan~
-the Greatsword of Conan~
-A greatsword has been left here.~
-~
-5 u 0 0 0 a 0 0 0 0 0 0 0
-0 30 15 3
-0 0 0 0 0 0
-#1099
-obelisk teleport~
-an Obelisk of Teleportation~
-An Obelisk of Teleportation has been erected here.~
+Draumrharpa dream harp bragi~
+Draumrharpa, the Dream Harp~
+A magnificent harp crafted from the wood of Yggdrasil lies here.~
 Nothing.
 ~
-8 ag 0 0 0 0 0 0 0 0 0 0 0
+14 gi 0 0 0 ap 0 0 0 0 0 0 0
 0 0 0 0
-99999 999999 0 0 0 100
-T 1004
+10 10 0 0 0 0
+A
+25 100
+A
+26 100
+A
+27 100
+A
+28 100
+A
+29 100
+A
+30 100
+A
+18 5
+A
+19 5
+#1019
+polished golden bracer~
+a Polished Golden Bracer~
+A meticulously crafted golden bracer lies here.~
+~
+9 gimnopr 0 0 0 am 0 0 0 0 0 0 0
+15 0 0 0
+0 0 0 0 0 0
 E
-obelisk teleport~
-An ancient, iron obelisk towers five meters above you.  The iron is finely forged
-and does not have a hint of rust, despite being pure iron and exposed to the elements
-for eons.  There are etchings on the four sides of the obelisk in some ancient language
-that defies your knowledge.
+polished platinum bracer~
+The Polished Platinum Bracer is a marvel of both form and function.  Designed to
+safeguard the knight's forearm during the heat of battle, it embodies the
+pinnacle of defensive armor.  This bracer is meticulously forged from a single,
+flawless sheet of platinum.  The platinum's purity allows for a remarkable
+polish, creating a surface that gleams almost impossibly bright in the sun.  
+This reflective quality isn't simply for aesthetics it can deflect blows with
+surprising efficiency, turning aside glancing strikes and even offering some
+protection against direct hits.
+~
+A
+32 10
+A
+33 10
+A
+34 10
+A
+35 10
+A
+36 10
+A
+18 3
+#1020
+backpack pack leather~
+a leather backpack~
+A simple leather backpack lies here.~
+~
+15 ds 0 0 0 a 0 0 0 0 0 0 0
+-1 1 -1 0
+1 0 0 0 0 0
+#1096
+waterskin skin water~
+a waterskin~
+A tanned waterskin is lying here.~
+~
+17 0 0 0 0 a 0 0 0 0 0 0 0
+24 24 0 0
+29 0 0 0 0 0
+E
+water skin waterskin~
+A waterskin carries water for travelers.  Traditionally made from animal hide,
+it features a secure closure and often a strap for easy transport.  This makes
+it perfect for journeys where staying hydrated is essential.
+~
+#1097
+hard tack biscuit bread~
+a hard tack biscuit~
+A piece of dried hard tack lies here.~
+~
+19 0 0 0 0 a 0 0 0 0 0 0 0
+12 0 0 0
+0 0 0 0 0 0
+E
+hard tack bread~
+Hardtack is a dense, dry biscuit made from a simple dough of flour, water, and
+sometimes salt.  It's about half an inch thick and baked rock-solid.  Soldiers
+and sailors often soak it in water, dunk it in coffee, or crumble it before
+eating.  Despite the bland taste, it's a valuable food source because it's
+cheap, lasts a very long time, and packs a lot of calories.
+~
+#1098
+scroll recall~
+a scroll of recall~
+A scroll of recall is lying here.~
+~
+2 g 0 0 0 a 0 0 0 0 0 0 0
+105 42 -1 -1
+0 100 0 0 0 0
+#1099
+scroll identify~
+a scroll of identify~
+A scroll has carelessly been left here.~
+$n recites the ancient words "Identium oliciferous!"
+~
+2 g 0 0 0 ao 0 0 0 0 0 0 0
+1 52 -1 -1
+1 5000 0 0 0 100
+E
+scroll identify~
+   The scroll has a magic formula drawn upon it:
+
+     ???
+    ?   ?
+       ?
+      ?
+      ?
+      *
+
 ~
 $~

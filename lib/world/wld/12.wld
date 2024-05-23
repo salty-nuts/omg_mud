@@ -4,7 +4,7 @@ The Meeting Room Of The Gods~
 middle of the room, lit by some unseen light source.  There are many chairs
 around the table, all empty.  The Immortal Board Room is to the north.  
 ~
-12 8 0 0 0 0
+12 24 0 0 0 0
 D0
    A frosted glass door with huge silver hinges and silver fixtures are here
 marking the main meeting room with the TBA company Logo upon the door.  The door
@@ -107,10 +107,6 @@ Laboratory Door
 ~
 Laboratory Door Lab~
 1 0 1214
-D3
-~
-~
-0 0 1212
 S
 #1214
 Foyer~

@@ -131,6 +131,14 @@ To move around type: go <up | down | left | right>
 You must collect the prizes and avoid the animal to obtain maximum points.
 Each prize is worth 500 * game_level in experience.
 ~
+#1213
+entrails guts~
+some bloody entrails~
+Some bloody entrails are lying here.~
+~
+0 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 0
 #1218
 spring fountain water well~
 a spring well~
@@ -350,7 +358,7 @@ A Builder Academy uniform has been left here.~
 ~
 11 0 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-1 1 0 0 0 100
+1 1 0 0 0 50
 #1290
 fountain poisoned~
 poisoned fountain~
@@ -366,15 +374,15 @@ An unpoisoned fountain is here.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0 0 100
+505 0 0 0 0 50
 #1292
 american flag~
 an American flag~
 An American flag waves proudly in the wind, marking wishes for the safe return of Rumble from the foreign lands.~
 ~
-1 w 0 0 0 a 0 0 0 x 0 0 0
+1 0 0 0 0 a 0 0 0 x 0 0 0
 0 0 -1 0
-1 1 0 0 92 100
+1 1 0 0 92 50
 E
 flag american~
    The proud stars and stripes are set strongly against the blue background of
@@ -400,8 +408,8 @@ lamp hanukah~
 a hanukah lamp~
 A Hanukah lamp lies here on the floor, all eight candles lit up.~
 ~
-12 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
+4 0 0 0 0 n 0 0 0 0 0 0 0
+105 100 100 10
 0 0 0 0 0 100
 #1297
 Desk~
@@ -421,13 +429,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0 0 100
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~

@@ -724,7 +724,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         case 'g':
           if (!str_cmp(field, "gold")) {
             if (subfield && *subfield) {
-              int addition = atoi(subfield);
+              long addition = atol(subfield);  // Salty
               increase_gold(c, addition);
             }
             snprintf(str, slen, "%ld", GET_GOLD(c));

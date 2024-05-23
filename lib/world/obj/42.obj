@@ -5,7 +5,7 @@ A prison key is hanging on a peg here.~
 ~
 18 c 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-3 150 15 0
+3 150 15 0 0 100
 #4201
 egg dragons dragon ~
 a Dragon Egg~
@@ -13,7 +13,7 @@ A Dragon Egg is sitting here~
 ~
 1 ag 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 250 30 0
+5 250 30 0 0 100
 A
 1 1
 A
@@ -25,26 +25,28 @@ A glimmering golden key is lying here.~
 ~
 18 ac 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-1 400 40 0
+1 400 40 0 0 100
 #4203
-sword dragon dragynblade~
-the Dragynblade~
-A sword with a dragon curled along the pommel is sticking out of the ground.~
+claw red dragon cinderheart~
+the Claw of the Red Dragon King~
+A fearsome gauntlet forged from the severed claw of the legendary red dragon king.~
 ~
-5 gj 0 0 0 an 0 0 0 m 0 0 0
-6 8 4 3
-5 1000 250 0
+5 gijlv 0 0 0 ano 0 0 0 0 0 0 0
+10 90 4 8
+50 1000000 250 0 0 10
 E
-dragynsword dragon sword~
-   The dragon on the pommel seems strangely alive, almost as if it could attack
-you at any second...  
+claw red dragon cinderheart~
+The Claw of Cinderheart is more than a weapon it's a potent relic.  Crafted from
+the severed claw of Cinderheart, the infamous King of Red Dragons, the gauntlet
+hums with a captured fire.  The polished crimson scales, rumored to be part of
+Cinderheart's own hide, shimmer with an otherworldly sheen.  Intricate runes
+etched upon each scale glow faintly when the weapon is activated, pulsing with a
+power that both mesmerizes and terrifies.
 ~
 A
-13 -20
+18 10
 A
-18 3
-A
-17 10
+19 10
 #4204
 mop~
 a mop~
@@ -52,7 +54,7 @@ A mop is lying on the floor here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 4 3 6 7
-3 15 1 0
+3 15 1 0 0 100
 A
 6 -1
 #4205
@@ -62,7 +64,7 @@ A dragonscale lies on the ground here, shimmering slightly.~
 ~
 12 ag 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-5 50 5 0
+5 50 5 0 0 100
 A
 3 1
 A
@@ -74,7 +76,7 @@ A bright red dragonscale lies here, glowing with some internal fire.~
 ~
 9 g 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-10 100 10 0
+10 100 10 0 0 100
 A
 3 2
 A
@@ -86,5 +88,5 @@ A huge pile of coins is lying in a heap here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-5 1 0 0
+5 1 0 0 0 100
 $~

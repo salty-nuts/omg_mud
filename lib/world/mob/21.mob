@@ -1,5 +1,5 @@
 #2100
-jaguar warrior aztec~
+jw jaguar warrior aztec jwarrior~
 a Jaguar Warrior~
 A jaguar warrior stands before you.
 ~
@@ -7,8 +7,8 @@ A jaguar warrior stands before you, his face painted with war paint and adorned
 with a fearsome jaguar pelt.  His obsidian spear is polished to a deadly sheen,
 and his eyes hold the ferocity of a jungle predator.
 ~
-8392776 0 0 0 17367040 0 0 0 0 E
-100 -82 -50 600d400+246800 12d12+102
+8392776 0 0 0 17301504 0 0 0 1000 E
+100 -82 -50 600d400+864200 14d14+102
 938000 2172800
 8 8 1
 MobMult: 2
@@ -20,29 +20,24 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -2
-SavingRod: -2
-SavingPetri: -2
-SavingBreath: -2
-SavingSpell: -2
-RES_0: 22
-RES_1: 22
-RES_2: 22
-RES_3: 22
-RES_4: 22
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #2101
-howling shaman~
+howling shaman hs~
 a Howling Shaman~
-A shamans chants a guttural prayer, his eyes glowing with otherworldly power!
+A shaman chants a guttural prayer, his eyes glowing with otherworldly power!
 ~
 A wizened shaman clad in feathered robes raises a staff carved from a jaguar
 femur.  His chanting fills the air with an unsettling energy, and his eyes glow
 with a strange light.  You sense a dark power at his command.
 ~
-1048648 0 0 0 24832 0 0 0 0 E
-100 -82 -50 600d400+246800 12d12+102
-938000 2172800
+67108936 0 0 0 24832 0 0 0 1000 E
+100 -82 -50 600d400+864200 14d14+102
+9380000 21728000
 8 8 1
 MobMult: 2
 NumAttacks: 2
@@ -52,17 +47,13 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -2
-SavingRod: -2
-SavingPetri: -2
-SavingBreath: -2
-SavingSpell: -2
-RES_0: 22
-RES_1: 22
-RES_2: 22
-RES_3: 22
-RES_4: 22
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
+T 2106
 #2102
 feathered serpent cultist~
 a Feathered Serpent Cultist~
@@ -73,9 +64,9 @@ with serpentine designs, lunges at you with a serpent-headed dagger dripping
 with venom.  His eyes are filled with fanatic zeal, and his lips move in a
 silent prayer to the feathered serpent god.
 ~
-13631560 0 0 0 25165824 0 0 0 0 E
-105 -88 -53 945d630+388710 13d13+108
-1477350 3422160
+147849288 0 0 0 25165824 512 0 0 1000 E
+105 -91 -53 945d630+1361115 13d13+111
+14773500 34221600
 8 8 1
 MobMult: 3
 BareHandAttack: 11
@@ -91,12 +82,13 @@ SavingRod: -8
 SavingPetri: -8
 SavingBreath: -8
 SavingSpell: -8
-RES_0: 24
-RES_1: 24
-RES_2: 24
-RES_3: 24
-RES_4: 24
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
+T 2106
 #2103
 Quetzalcoatl Minion~
 a Quetzalcoatl Minion~
@@ -107,11 +99,11 @@ slithers menacingly towards you.  Razor-sharp fangs drip with a potent venom,
 and its eyes, like molten gold, fixate on you with predatory hunger.  This
 minion of Quetzalcoatl, the wind serpent god, seems ready to strike.
 ~
-9437256 0 0 0 33579264 0 0 0 0 E
-105 -85 -53 315d210+129570 10d10+105
-246225 570360
+9437256 0 0 0 33579264 0 0 0 1000 E
+105 -88 -53 945d630+1361115 16d16+108
+1477350 3422160
 8 8 1
-MobMult: 1
+MobMult: 3
 BareHandAttack: 4
 NumAttacks: 5
 Str: 25
@@ -120,19 +112,14 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -5
-SavingRod: -5
-SavingPetri: -5
-SavingBreath: -5
-SavingSpell: -5
-RES_0: 22
-RES_1: 22
-RES_2: 22
-RES_3: 22
-RES_4: 22
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #2104
-Molten Jaguar Warrior~
+molten jaguar warrior mjw~
 a Molten Jaguar Warrior~
 A jaguar warrior wreathed in flames charges at you, obsidian spear glowing with infernal heat!
 ~
@@ -141,9 +128,9 @@ at you.  His obsidian spear glows with an infernal heat, radiating waves of
 searing energy.  This elite warrior, seemingly blessed (or cursed) by the fire
 god, appears unstoppable.
 ~
-13631560 0 0 0 -2055208960 0 0 0 0 E
-105 -90 -53 1575d1050+647850 15d15+110
-2462250 5703600
+282067016 0 0 0 -2055208960 0 0 0 1000 E
+105 -210 -53 1575d1050+2268525 30d30+230
+24622500 57036000
 8 8 1
 MobMult: 5
 BareHandAttack: 11
@@ -159,11 +146,11 @@ SavingRod: -10
 SavingPetri: -10
 SavingBreath: -10
 SavingSpell: -10
-RES_0: 26
-RES_1: 26
-RES_2: 26
-RES_3: 26
-RES_4: 26
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #2105
 Cinders Sacrifice~
@@ -176,7 +163,7 @@ heat that distorts the air.  This Cinder of Sacrifice, born from the sacrifices
 offered to the fire god, seems poised to consume you in its fiery wrath.
 ~
 1048648 0 0 0 256 0 0 0 0 E
-105 -90 -53 1575d1050+647850 15d15+110
+105 -90 -53 1575d1050+2268525 20d20+110
 2462250 5703600
 8 8 0
 MobMult: 5
@@ -188,33 +175,33 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -10
-SavingRod: -10
-SavingPetri: -10
-SavingBreath: -10
-SavingSpell: -10
-RES_0: 26
-RES_1: 26
-RES_2: 26
-RES_3: 26
-RES_4: 26
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #2106
-Xochitl~
-Xochitl the Spectral Jaguar~
-A spectral jaguar with razor-sharp claws and glowing eyes leaps at you with a ferocious snarl!
+Xochiquetzal goddess love flowers~
+Xochiquetzal, Goddess of Love~
+This Aztec goddess appears as a radiant woman adorned with blossoming flowers.
 ~
-A magnificent spirit jaguar, its fur a swirling mix of obsidian black and
-moonlight silver, materializes before you.  Razor-sharp claws extend from its
-powerful paws, and its eyes blaze with an otherworldly green fire.  Xochitl, the
-guardian of the first level, lets out a bone-chilling snarl, challenging you to
-prove your worth.
+Xochiquetzal is a captivating sight.  Her beauty is not merely physical it
+radiates from her very essence.  Her skin glows with a healthy vibrancy, and her
+eyes sparkle with an infectious joy.  Crowns of vibrant flowers adorn her
+flowing black hair, each blossom imbued with a subtle magic that sways and
+dances in the breeze.  The air around her carries the sweet scent of a thousand
+blooming gardens.  Xochiquetzal is more than just a beautiful face.  She
+embodies the fleeting beauty of flowers, a constant reminder of life's
+impermanence and the importance of savoring each moment.  Yet, she is also
+fiercely protective of these delicate blooms, a symbol of fertility and the
+vibrant life force that courses through the natural world.
 ~
-13631562 0 0 0 -2139095040 0 0 0 0 E
-105 -92 -53 2205d1470+906990 17d17+112
-3447150 7985040
+278921306 0 0 0 -2139070208 512 0 0 1000 E
+105 -230 -54 3150d2100+4537050 40d40+250
+49245000 114072000
 8 8 1
-MobMult: 7
+MobMult: 10
 BareHandAttack: 8
 NumAttacks: 5
 Str: 25
@@ -223,16 +210,16 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -12
-SavingRod: -12
-SavingPetri: -12
-SavingBreath: -12
-SavingSpell: -12
-RES_0: 28
-RES_1: 28
-RES_2: 28
-RES_3: 28
-RES_4: 28
+SavingPara: -15
+SavingRod: -15
+SavingPetri: -15
+SavingBreath: -15
+SavingSpell: -15
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #2107
 Ehecatl wind serpent~
@@ -245,9 +232,9 @@ air, pierce through you.  Ehecatl, the lieutenant of the final boss, controls
 the very wind around him, creating whirling cyclones that threaten to tear you
 apart.
 ~
-9437194 0 0 0 100663552 0 0 0 0 E
-105 -95 -54 3150d2100+1295700 20d20+115
-4924500 11407200
+281018378 0 0 0 100688128 512 0 0 1000 E
+105 -230 -54 3150d2100+4537050 40d40+250
+49245000 114072000
 8 8 0
 MobMult: 10
 BareHandAttack: 12
@@ -263,11 +250,11 @@ SavingRod: -15
 SavingPetri: -15
 SavingBreath: -15
 SavingSpell: -15
-RES_0: 31
-RES_1: 31
-RES_2: 31
-RES_3: 31
-RES_4: 31
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #2108
 Huitzilopochtli god~
@@ -281,9 +268,9 @@ power.  His eyes, burning embers of rage, fixate on you, and you feel the
 overwhelming power of a god coursing through his veins.  Prepare yourself for an
 epic battle!
 ~
-26214410 0 0 0 -2130681600 0 0 0 0 E
-105 -100 -54 4725d3150+1943550 25d25+120
-7386750 17110800
+294649882 0 0 0 -2130681600 512 0 0 1000 E
+105 -250 -54 4725d3150+6805575 50d50+270
+73867500 171108000
 8 8 1
 MobMult: 15
 BareHandAttack: 11
@@ -299,11 +286,11 @@ SavingRod: -20
 SavingPetri: -20
 SavingBreath: -20
 SavingSpell: -20
-RES_0: 36
-RES_1: 36
-RES_2: 36
-RES_3: 36
-RES_4: 36
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #2109
 Mictlantecuhtli god death~
@@ -317,13 +304,13 @@ with dark energy.  Jagged obsidian shards pierce his skeletal frame, a gruesome
 reminder of the sacrifices he claims.  His hollow eyes, burning with an eerie
 green light, seem to pierce your very soul.
 ~
-30412810 0 0 0 16777472 0 0 0 -1000 E
-105 -110 -55 7875d5250+3239250 35d35+130
-12311250 28518000
+294653962 0 0 0 16802048 512 0 0 -1000 E
+105 -290 -55 7875d5250+11342625 70d70+310
+123112500 285180000
 8 8 1
 MobMult: 25
 BareHandAttack: 7
-NumAttacks: 15
+NumAttacks: 10
 Str: 25
 Dex: 25
 Int: 25
@@ -335,12 +322,13 @@ SavingRod: -30
 SavingPetri: -30
 SavingBreath: -30
 SavingSpell: -30
-RES_0: 46
-RES_1: 46
-RES_2: 46
-RES_3: 46
-RES_4: 46
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
+T 2108
 #2110
 Xolotl dog headed god~
 Xolotl, the Dog-Headed God~
@@ -353,9 +341,9 @@ dead.  He stands at a crossroads, a bridge between the living and the departed.
 Xolotl's presence evokes a sense of both fear and hope.  He is a reminder of
 mortality, the inevitable journey to the underworld.
 ~
-32505866 0 0 0 -2130706176 0 0 0 -1000 E
-105 -110 -55 7875d5250+3239250 35d35+130
-12311250 28518000
+294649866 0 0 0 -2128584448 0 0 0 -1000 E
+105 -290 -55 7875d5250+11342625 70d70+310
+123112500 285180000
 8 8 1
 MobMult: 25
 BareHandAttack: 7
@@ -371,11 +359,11 @@ SavingRod: -30
 SavingPetri: -30
 SavingBreath: -30
 SavingSpell: -30
-RES_0: 46
-RES_1: 46
-RES_2: 46
-RES_3: 46
-RES_4: 46
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
 T 2101
 #2111
@@ -391,9 +379,9 @@ skull, embers seem to flicker, casting an eerie glow on the surrounding
 darkness.  Her gaze, devoid of pupils, seems to pierce through all illusions,
 seeing the truth that lies beneath the surface.
 ~
-25169930 0 0 0 33554688 0 0 0 -1000 E
-105 -110 -55 7875d5250+3239250 35d35+130
-12311250 28518000
+92278794 0 0 0 33579264 512 0 0 -1000 E
+105 -135 -55 7875d5250+11342625 35d35+155
+123112500 285180000
 8 8 2
 MobMult: 25
 BareHandAttack: 7
@@ -404,15 +392,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: -30
-SavingRod: -30
-SavingPetri: -30
-SavingBreath: -30
-SavingSpell: -30
-RES_0: 46
-RES_1: 46
-RES_2: 46
-RES_3: 46
-RES_4: 46
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
+T 2110
 $

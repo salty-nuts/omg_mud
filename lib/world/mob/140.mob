@@ -11,8 +11,8 @@ as you look at him as if to ask what you want from him, better not waist his
 time.  
 ~
 22112346 0 0 0 16777592 0 0 0 -1000 E
-105 -102 -54 5355d3570+2202690 27d27+122
-71159025 164834040
+105 -102 -54 5355d3570+7712985 44d44+122
+8371650 19392240
 8 8 1
 MobMult: 17
 BareHandAttack: 8
@@ -44,7 +44,7 @@ up sand and dust as it goes.  There looks to be a human face within the tiny
 storm.  
 ~
 65612 0 0 0 0 0 0 0 -1000 E
-70 -50 -32 210d140+86380 7d7+70
+70 -51 -32 210d140+86380 8d8+71
 164150 380240
 8 8 0
 MobMult: 1
@@ -55,11 +55,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 30
-SavingRod: 30
-SavingPetri: 30
-SavingBreath: 30
-SavingSpell: 30
+SavingPara: 29
+SavingRod: 29
+SavingPetri: 29
+SavingBreath: 29
+SavingSpell: 29
 RES_0: 15
 RES_1: 15
 RES_2: 15
@@ -76,7 +76,7 @@ hide under.  Looks like you wouldn't want it to get a good hold of you with
 those pincers.  
 ~
 2136 0 0 0 64 0 0 0 0 E
-60 -42 -26 360d240+148080 8d8+62
+60 -42 -26 360d240+518520 10d10+62
 562800 1303680
 8 8 1
 MobMult: 2
@@ -109,8 +109,8 @@ create this thing.  The fiendish face of the monster grins demonically at you.
 
 ~
 10312 0 0 0 0 0 0 0 -1000 E
-70 -55 -32 1050d700+431900 12d12+75
-4103750 9506000
+70 -55 -32 1050d700+1512350 17d17+75
+1641500 3802400
 8 8 1
 MobMult: 5
 NumAttacks: 2
@@ -144,8 +144,8 @@ long if it is sleeping..  You might be able to get passed it.  What a guardian!
 
 ~
 18508 0 0 0 120 0 0 0 -1000 E
-105 -105 -55 6300d4200+2591400 30d30+125
-98490000 228144000
+105 -105 -55 6300d4200+9074100 50d50+125
+9849000 22814400
 8 8 2
 MobMult: 20
 NumAttacks: 5
@@ -155,6 +155,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -25
+SavingRod: -25
+SavingPetri: -25
+SavingBreath: -25
+SavingSpell: -25
 RES_0: 41
 RES_1: 41
 RES_2: 41
@@ -170,8 +175,8 @@ A working class wyvern walks these streets without fear.
 you and dismisses you as soon as it does.  How pathetic you are.  
 ~
 2124 0 0 0 0 0 0 0 -1000 E
-70 -53 -32 630d420+259140 10d10+73
-1477350 3422160
+70 -53 -32 630d420+907410 13d13+73
+984900 2281440
 8 8 2
 MobMult: 3
 NumAttacks: 1
@@ -202,8 +207,8 @@ so young that its scales are still shiny from birth.  The baby wyvern looks back
 at you with curiosity, who is this strange being?  
 ~
 2252 0 0 0 0 0 0 0 -1000 E
-50 -33 -20 450d300+185100 8d8+53
-1055250 2444400
+50 -33 -20 450d300+648150 11d11+53
+703500 1629600
 8 8 1
 MobMult: 3
 NumAttacks: 1
@@ -235,8 +240,8 @@ dull red scales glint faintly in the light and his footsteps echo heavily over
 the voices of those of his lighter brethren.  A deadly opponent.  
 ~
 59464 0 0 0 8256 0 0 0 -1000 E
-90 -77 -44 1890d1260+777420 16d16+97
-10341450 23955120
+90 -77 -44 1890d1260+2722230 23d23+97
+2954700 6844320
 8 8 1
 MobMult: 7
 NumAttacks: 2
@@ -269,8 +274,8 @@ possible danger to her.  A forked tung flickers in and out of her mouth tasting
 the air.  
 ~
 22618 0 0 0 72 0 0 0 -350 E
-100 -85 -50 1500d1000+617000 15d15+105
-5862500 13580000
+100 -85 -50 1500d1000+2160500 20d20+105
+2345000 5432000
 8 8 2
 MobMult: 5
 NumAttacks: 1
@@ -280,6 +285,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -5
+SavingRod: -5
+SavingPetri: -5
+SavingBreath: -5
+SavingSpell: -5
 RES_0: 25
 RES_1: 25
 RES_2: 25
@@ -297,8 +307,8 @@ Though he says nothing the 15 foot long reptile conveys a feeling of great
 arrogance and disdain.  He must be very important.  
 ~
 26700 0 0 0 8248 0 0 0 -1000 E
-100 -95 -51 4500d3000+1851000 25d25+115
-52762500 122220000
+100 -95 -51 4500d3000+6481500 40d40+115
+7035000 16296000
 8 8 1
 MobMult: 15
 BareHandAttack: 10
@@ -309,6 +319,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -15
+SavingRod: -15
+SavingPetri: -15
+SavingBreath: -15
+SavingSpell: -15
 RES_0: 35
 RES_1: 35
 RES_2: 35
@@ -327,8 +342,8 @@ folded across his back.  His eyes pass serenely over you and the rest of the
 room.  You represent no threat to such a creature.  
 ~
 15984762 0 0 0 -2063589256 0 0 0 -1000 E
-105 -105 -55 6300d4200+2591400 30d30+125
-98490000 228144000
+105 -105 -55 6300d4200+9074100 50d50+125
+9849000 22814400
 8 8 1
 MobMult: 20
 BareHandAttack: 8
@@ -339,6 +354,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -25
+SavingRod: -25
+SavingPetri: -25
+SavingBreath: -25
+SavingSpell: -25
 RES_0: 41
 RES_1: 41
 RES_2: 41
@@ -355,8 +375,8 @@ at you carefully to make sure you don't try to walk off with anything from his
 shop.  
 ~
 188638 0 0 0 8440 0 0 0 -1000 E
-90 -80 -45 2700d1800+1110600 19d19+100
-21105000 48888000
+90 -80 -45 2700d1800+3888900 29d29+100
+4221000 9777600
 8 8 1
 MobMult: 10
 NumAttacks: 3
@@ -382,8 +402,8 @@ other.  He watches you with interest.  Wonder if he's hungry or looking for
 business?  
 ~
 188638 0 0 0 8440 0 0 0 0 E
-80 -65 -38 1200d800+493600 13d13+85
-4690000 10864000
+80 -65 -38 1200d800+1728400 18d18+85
+1876000 4345600
 8 8 2
 MobMult: 5
 NumAttacks: 2
@@ -413,8 +433,8 @@ A wyvern is here checking over his goods.
 There is a shrewd look in his eye.  Looks like he drives a hard bargain.  
 ~
 190686 0 0 0 8440 0 0 0 -1000 E
-80 -65 -38 1200d800+493600 13d13+85
-4690000 10864000
+80 -65 -38 1200d800+1728400 18d18+85
+1876000 4345600
 8 8 1
 MobMult: 5
 NumAttacks: 2
@@ -444,8 +464,8 @@ A huge wyvern is here sharpening his claws.
 back.  It's a good thing he's selling weapons and not using them...  On you.  
 ~
 256094 0 0 0 8440 0 0 0 -1000 E
-100 -90 -51 3000d2000+1234000 20d20+110
-23450000 54320000
+100 -90 -51 3000d2000+4321000 30d30+110
+4690000 10864000
 8 8 1
 MobMult: 10
 NumAttacks: 3
@@ -455,6 +475,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -10
+SavingRod: -10
+SavingPetri: -10
+SavingBreath: -10
+SavingSpell: -10
 RES_0: 30
 RES_1: 30
 RES_2: 30
@@ -470,8 +495,8 @@ A wyvern is here tanning some hides.
 Wonder if she wants your hide too?  
 ~
 256078 0 0 0 8440 0 0 0 -1000 E
-100 -90 -51 3000d2000+1234000 20d20+110
-23450000 54320000
+100 -90 -51 3000d2000+4321000 30d30+110
+4690000 10864000
 8 8 2
 MobMult: 10
 NumAttacks: 3
@@ -481,6 +506,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -10
+SavingRod: -10
+SavingPetri: -10
+SavingBreath: -10
+SavingSpell: -10
 RES_0: 30
 RES_1: 30
 RES_2: 30
@@ -496,8 +526,8 @@ A big wyvern is here selling his home cooked meals.
 other hand maybe he's had a few too many of his customers.  
 ~
 190686 0 0 0 8440 0 0 0 -1000 E
-80 -63 -38 720d480+296160 11d11+83
-1688400 3911040
+80 -63 -38 720d480+1037040 14d14+83
+1125600 2607360
 8 8 1
 MobMult: 3
 NumAttacks: 1
@@ -528,7 +558,7 @@ that a smile on his face?  Or is he just thinking of how much he can charge you?
 
 ~
 190668 0 0 0 8440 0 0 0 -1000 E
-80 -60 -38 240d160+98720 8d8+80
+80 -61 -38 240d160+98720 9d9+81
 187600 434560
 8 8 1
 MobMult: 1
@@ -539,11 +569,11 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 20
-SavingRod: 20
-SavingPetri: 20
-SavingBreath: 20
-SavingSpell: 20
+SavingPara: 19
+SavingRod: 19
+SavingPetri: 19
+SavingBreath: 19
+SavingSpell: 19
 RES_0: 17
 RES_1: 17
 RES_2: 17

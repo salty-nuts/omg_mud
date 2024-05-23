@@ -634,9 +634,22 @@ ASPELL(spell_enchant_weapon)
     return;
 
   /* Either already enchanted or not a weapon. */
-  if (GET_OBJ_TYPE(obj) != ITEM_WEAPON /* || OBJ_FLAGGED(obj, ITEM_MAGIC)*/)
+  if (GET_OBJ_TYPE(obj) != ITEM_WEAPON)
+  {
+    send_to_char(ch, "%s is not a weapon.\r\n", GET_OBJ_SHORT(obj));
     return;
+  }
 
+  if (OBJ_FLAGGED(obj, ITEM_MAGIC))
+  {
+    send_to_char(ch, "%s is already magical.\r\n", GET_OBJ_SHORT(obj));
+    return;
+  }
+  if (OBJ_FLAGGED(obj, ITEM_NEWBIE))
+  {
+    send_to_char(ch, "You cannot enchant newbie items.\r\n");
+    return;
+  }
   /* Make sure no other affections.*/
   for (i = 0; i < MAX_OBJ_AFFECT; i++)
     if (obj->affected[i].location != APPLY_NONE)
@@ -660,6 +673,108 @@ ASPELL(spell_enchant_weapon)
   }
   else
     act("$p glows yellow.", FALSE, ch, obj, 0, TO_CHAR);
+}
+
+ASPELL(spell_enchant_armor)
+{
+  int i;
+
+  if (ch == NULL || obj == NULL)
+    return;
+
+  /* Either already enchanted or not armor. */
+  if (GET_OBJ_TYPE(obj) != ITEM_ARMOR)
+  {
+    send_to_char(ch, "%s is not an armor.\r\n", GET_OBJ_SHORT(obj));
+    return;
+  }
+  if (OBJ_FLAGGED(obj, ITEM_MAGIC))
+  {
+    send_to_char(ch, "%s is already magical.\r\n", GET_OBJ_SHORT(obj));
+    return;
+  }
+  if (OBJ_FLAGGED(obj, ITEM_NEWBIE))
+  {
+    send_to_char(ch, "You cannot enchant newbie items.\r\n");
+    return;
+  }
+  /* Make sure no other affections.*/
+  for (i = 0; i < MAX_OBJ_AFFECT; i++)
+    if (obj->affected[i].location != APPLY_NONE)
+      obj->affected[i].modifier = level / 10;
+
+  //  if (GET_SKILL(ch, SPELL_ENCHANT_WEAPON) < rand_number(1,101))
+  SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_MAGIC);
+
+  GET_OBJ_VAL(obj, 1) = level / 10;
+
+  if (IS_GOOD(ch))
+  {
+    //    SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_ANTI_EVIL);
+    act("$p glows blue.", FALSE, ch, obj, 0, TO_CHAR);
+  }
+  else if (IS_EVIL(ch))
+  {
+    //    SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_ANTI_GOOD);
+    act("$p glows red.", FALSE, ch, obj, 0, TO_CHAR);
+  }
+  else
+    act("$p glows yellow.", FALSE, ch, obj, 0, TO_CHAR);
+}
+
+ASPELL(spell_clone_object)
+{
+  char name[MAX_NAME_LENGTH + 64];
+  char clone[MAX_NAME_LENGTH + 64];
+
+  if (ch == NULL || obj == NULL)
+    return;
+
+  if (OBJ_FLAGGED(obj, ITEM_CLONED))
+  {
+    send_to_char(ch, "Clone an cloned item? Bad idea.\r\n");
+    return;
+  }
+  if (OBJ_FLAGGED(obj, ITEM_LIMITED))
+  {
+    send_to_char(ch, "You cannot clone limited items.\r\n");
+    return;
+  }  
+  if (OBJ_FLAGGED(obj, ITEM_NORENT))
+  {
+    send_to_char(ch, "You cannot clone unrentable items.\r\n");
+    return;
+  }
+  if (OBJ_FLAGGED(obj, ITEM_DECAYING))
+  {
+    send_to_char(ch, "You cannot clone decaying items.\r\n");
+    return;
+  }
+
+  if (GET_OBJ_TYPE(obj) == ITEM_ARMOR || GET_OBJ_TYPE(obj) == ITEM_WEAPON ||
+      GET_OBJ_TYPE(obj) == ITEM_LIGHT || GET_OBJ_TYPE(obj) == ITEM_BARD ||
+      GET_OBJ_TYPE(obj) == ITEM_WORN)
+  {
+
+    obj = read_object(real_object(GET_OBJ_VNUM(obj)), REAL);
+    obj_to_char(obj, ch);
+
+    SET_BIT_AR(GET_OBJ_EXTRA(obj), ITEM_CLONED);
+    snprintf(name, sizeof(name), "%s", GET_OBJ_NAME(obj));
+    snprintf(clone, sizeof(clone), " clone");
+    strcat(name, clone);
+    GET_OBJ_NAME(obj) = strdup(name);
+
+    act("$n makes a strange magical gesture.", TRUE, ch, 0, 0, TO_ROOM);
+    act("You create a duplicate of $p.", FALSE, ch, obj, 0, TO_CHAR);
+    act("$n creates a duplicate of $p.", FALSE, ch, obj, 0, TO_ROOM);
+    load_otrigger(obj);
+  }
+  else
+  {
+    send_to_char(ch, "%s cannot be cloned.\r\n", GET_OBJ_SHORT(obj));
+    return;
+  }
 }
 
 ASPELL(spell_detect_poison)
@@ -714,11 +829,11 @@ ASPELL(spell_relocate)
     send_to_char(ch, "You failed.\r\n");
     return;
   }
-  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) ))
+  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT)))
   {
     send_to_char(ch, "The immortal power of %s repels your magic!\r\n", GET_NAME(victim));
     return;
-  }  
+  }
   // Rooms we cannot relocate from
   if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PRIVATE))
   {
@@ -753,12 +868,8 @@ ASPELL(spell_relocate)
 ASPELL(spell_astral_walk)
 {
   int target;
-  if (IS_NPC(victim))
-  {
-    send_to_char(ch, "You failed.\r\n");
-    return;
-  }
-  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) ))
+
+  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT)))
   {
     send_to_char(ch, "The immortal power of %s repels your magic!\r\n", GET_NAME(victim));
     return;
@@ -791,6 +902,61 @@ ASPELL(spell_astral_walk)
   act("Suddenly, a doorway appears from nowhere. $n steps out and the doorway disappears.", true, ch, 0, 0, TO_ROOM);
   act("You open a doorway to the astral plane and step out in front of $N.", false, ch, 0, victim, TO_CHAR);
   do_look(ch, "", 0, 0);
+}
+
+ASPELL(spell_portal)
+{
+  int target;
+  struct char_data *groupie;
+
+  if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT)))
+  {
+    send_to_char(ch, "The immortal power of %s repels your magic!\r\n", GET_NAME(victim));
+    return;
+  }
+  // Rooms we cannot relocate from
+  if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PRIVATE))
+  {
+    send_to_char(ch, "Something prevents you from leaving the room.\r\n");
+    return;
+  }
+  // Rooms we cannot relocate to
+  if (ROOM_FLAGGED(IN_ROOM(victim), ROOM_PRIVATE) || ROOM_FLAGGED(IN_ROOM(victim), ROOM_TUNNEL) ||
+      ROOM_FLAGGED(IN_ROOM(victim), ROOM_GODROOM) || ROOM_FLAGGED(IN_ROOM(victim), ROOM_NOTRACK))
+  {
+    send_to_char(ch, "Something prevents you from reaching that player!\r\n");
+    return;
+  }
+
+  if (GET_LEVEL(ch) < GET_LEVEL(victim))
+  {
+    send_to_char(ch, "You are not powerful enough.\r\n");
+    return;
+  }
+
+  act("$n opens a mystical portal through spacetime.", true, ch, 0, 0, TO_ROOM);
+
+  target = victim->in_room;
+
+  if (GROUP(ch))
+  {
+    while ((groupie = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+    {
+      act("You step into the portal.", false, groupie, 0, NULL, TO_CHAR);
+      char_from_room(groupie);
+      char_to_room(groupie, target);
+      do_look(groupie, "", 0, 0);
+      act("You step out the portal and look around.", false, groupie, 0, NULL, TO_CHAR);
+    }
+  }
+  else
+  {
+    act("You step into the portal.", false, ch, 0, NULL, TO_CHAR);
+    char_from_room(ch);
+    char_to_room(ch, target);
+    do_look(ch, "", 0, 0);
+    act("You step out the portal and look around.", false, ch, 0, NULL, TO_CHAR);
+  }
 }
 
 ASPELL(spell_mana_transfer)

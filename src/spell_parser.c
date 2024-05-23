@@ -321,6 +321,9 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
     case SPELL_ENCHANT_WEAPON:
       MANUAL_SPELL(spell_enchant_weapon);
       break;
+    case SPELL_ENCHANT_ARMOR:
+      MANUAL_SPELL(spell_enchant_armor);
+      break;
     case SPELL_IDENTIFY:
       MANUAL_SPELL(spell_identify);
       break;
@@ -359,6 +362,12 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
       break;
     case SPELL_MANA_TRANSFER:
       MANUAL_SPELL(spell_mana_transfer);
+      break;
+    case SPELL_PORTAL:
+      MANUAL_SPELL(spell_portal);
+      break;
+    case SPELL_CLONE_OBJECT:
+      MANUAL_SPELL(spell_clone_object);
       break;
     }
 
@@ -1151,23 +1160,27 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_BARD,
          NULL);
 
-  spello(SPELL_BARD_FEAST, "banquet ballad", 50, 25, 5, POS_FIGHTING,
+  spello(SPELL_BARD_FEAST, "banquet bop", 50, 25, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          NULL);
 
-  spello(SPELL_BARD_BLESS, "campaign carol", 50, 25, 5, POS_FIGHTING,
+  spello(SPELL_BARD_BLESS, "ballad of bless", 50, 25, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "You feel less inspired.");
 
   spello(SPELL_BARD_RESISTS, "resist rock", 50, 25, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "You feel less ready for battle");
-
-  spello(SPELL_BARD_HEAL, "healing hymnal", 200, 100, 10, POS_FIGHTING,
+                          
+  spello(SPELL_BARD_HEAL, "minuet of mending", 250, 250, 10, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_POINTS,
          NULL);
 
-  spello(SPELL_BARD_POWERHEAL, "powerheal psalm", 400, 200, 25, POS_FIGHTING,
+  spello(SPELL_BARD_HEAL2, "hymn of heal", 500, 500, 25, POS_FIGHTING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_POINTS,
+         NULL);
+
+  spello(SPELL_BARD_HEAL3, "march of miracle", 1500, 1000, 50, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_POINTS,
          NULL);
 
@@ -1175,17 +1188,9 @@ void mag_assign_spells(void)
          TAR_IGNORE, TRUE,  MAG_AREAS,
          NULL);       
 
-  spello(SPELL_BARD_KNOWLEDGE, "insight aria", 200, 50, 5, POS_FIGHTING,
+  spello(SPELL_BARD_ARMOR, "anthem of armor", 200, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
-         "Your knowledge has decreased.");
-
-  spello(SPELL_BARD_AGILITY, "agility anthem", 200, 50, 5, POS_FIGHTING,
-         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
-         "Your agility has decreased.");
-
-  spello(SPELL_BARD_VITALITY, "vitality verse", 200, 50, 5, POS_FIGHTING,
-         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
-         "Your vitality has decreased.");
+         "You feel less protected.");
 
   spello(SPELL_BARD_HARMONY, "harmony", 1000, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
@@ -1195,10 +1200,11 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "The dissonance feeling leaves you.");
 
-  spello(SPELL_BARD_WAR_DANCE, "war dance", 100, 50, 5, POS_FIGHTING,
+  spello(SPELL_BARD_WAR_DANCE, "war dance", 1000, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "The affect of the war dance is gone.");
-  spello(SPELL_BARD_SLOW_DANCE, "slow dance", 100, 50, 5, POS_FIGHTING,
+
+  spello(SPELL_BARD_SLOW_DANCE, "slow dance", 1000, 50, 5, POS_FIGHTING,
          TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS,
          "The affect of the slow dance is gone.");
 
@@ -1230,9 +1236,9 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE | MAG_AFFECTS,
          "You feel your strength return.");
 
-  spello(SPELL_CLONE, "clone", 80, 65, 5, POS_STANDING,
+/*   spello(SPELL_CLONE, "clone", 80, 65, 5, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_SUMMONS,
-         NULL);
+         NULL); */
 
   spello(SPELL_COLOR_SPRAY, "color spray", 30, 15, 3, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
@@ -1251,6 +1257,15 @@ void mag_assign_spells(void)
          NULL);
 
   spello(SPELL_CURE_BLIND, "cure blind", 30, 5, 2, POS_STANDING,
+         TAR_CHAR_ROOM, FALSE, MAG_UNAFFECTS,
+         NULL);
+  spello(SPELL_CURE_PARA, "cure paralysis", 250, 125, 5, POS_STANDING,
+         TAR_CHAR_ROOM, FALSE, MAG_UNAFFECTS,
+         NULL);
+  spello(SPELL_CURE_WITHER, "cure wither", 250, 125, 5, POS_STANDING,
+         TAR_CHAR_ROOM, FALSE, MAG_UNAFFECTS,
+         NULL);
+  spello(SPELL_CURE_SLOW, "cure slowness", 250, 125, 5, POS_STANDING,
          TAR_CHAR_ROOM, FALSE, MAG_UNAFFECTS,
          NULL);
 
@@ -1313,6 +1328,12 @@ void mag_assign_spells(void)
   spello(SPELL_ENCHANT_WEAPON, "enchant weapon", 150, 100, 10, POS_STANDING,
          TAR_OBJ_INV, FALSE, MAG_MANUAL,
          NULL);
+  spello(SPELL_ENCHANT_ARMOR, "enchant armor", 150, 100, 10, POS_STANDING,
+         TAR_OBJ_INV, FALSE, MAG_MANUAL,
+         NULL);
+  spello(SPELL_CLONE_OBJECT, "clone object", 150, 100, 10, POS_STANDING,
+         TAR_OBJ_INV, FALSE, MAG_MANUAL,
+         NULL);
 
   spello(SPELL_ENERGY_DRAIN, "energy drain", 40, 25, 1, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE | MAG_MANUAL,
@@ -1334,7 +1355,7 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS,
          NULL);
 
-  spello(SPELL_FIREBALL, "fireball", 50, 25, 2, POS_FIGHTING,
+  spello(SPELL_FIREBALL, "fireball", 100, 50, 2, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
          NULL);
 
@@ -1360,8 +1381,8 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
          "You are unable to through unlocked doors any longer.");
 
-  spello(SPELL_GROUP_HASTE, "group haste", 500, 250, 10, POS_STANDING,
-         TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS, NULL);
+  spello(SPELL_BARD_HASTE, "hasty hymnal", 1000, 750, 10, POS_STANDING,
+         TAR_IGNORE, FALSE, MAG_BARD | MAG_AFFECTS, NULL);
 
   spello(SPELL_GROUP_STEEL_SKIN, "group steel skin", 100, 50, 5, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS, NULL);
@@ -1376,7 +1397,7 @@ void mag_assign_spells(void)
   spello(SPELL_GROUP_FLY, "group fly", 100, 50, 5, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS, NULL);
 
-  spello(SPELL_GROUP_MIRACLE, "group miracle", 1000, 1000, 5, POS_STANDING,
+  spello(SPELL_GROUP_MIRACLE, "group miracle", 2000, 1000, 50, POS_STANDING,
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_POINTS,
          NULL);
 
@@ -1396,13 +1417,7 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
          NULL);
 
-  spello(SPELL_HEAL, "heal", 60, 40, 3, POS_FIGHTING,
-         TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
-         NULL);
 
-  spello(SPELL_POWERHEAL, "powerheal", 100, 75, 5, POS_FIGHTING,
-         TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
-         NULL);
 
   spello(SPELL_INFRAVISION, "infravision", 25, 10, 1, POS_STANDING,
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
@@ -1431,8 +1446,12 @@ void mag_assign_spells(void)
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
          NULL);
 
-  spello(SPELL_ELDRITCH_BLAST, "eldritch blast", 200, 100, 10, POS_FIGHTING,
+  spello(SPELL_ELDRITCH_BLAST, "eldritch blast", 500, 250, 10, POS_FIGHTING,
          TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE,
+         NULL);
+
+  spello(SPELL_DISRUPT, "disruption", 2000, 1000, 50, POS_FIGHTING,
+         TAR_CHAR_ROOM | TAR_FIGHT_VICT, TRUE, MAG_DAMAGE | MAG_AFFECTS,
          NULL);
 
   spello(SPELL_POISON, "poison", 50, 20, 3, POS_STANDING,
@@ -1440,13 +1459,13 @@ void mag_assign_spells(void)
          MAG_AFFECTS | MAG_ALTER_OBJS,
          "You feel less sick.");
 
-  spello(SPELL_HOLY_WARDING, "holy warding", 40, 10, 3, POS_STANDING,
+  spello(SPELL_RESIST_EVIL, "resist evil", 100, 50, 3, POS_STANDING,
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
-         "You feel less protected.");
+         "Your resistance from evil fades.");
 
-  spello(SPELL_EVIL_WARDING, "evil warding", 40, 10, 3, POS_STANDING,
+  spello(SPELL_RESIST_GOOD, "resist good", 100, 50, 3, POS_STANDING,
          TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS,
-         "You feel less protected.");
+         "Your resistance from good fades.");
 
   spello(SPELL_REMOVE_CURSE, "remove curse", 45, 25, 5, POS_STANDING,
          TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_OBJ_EQUIP, FALSE,
@@ -1515,10 +1534,22 @@ void mag_assign_spells(void)
   spello(SPELL_ASTRAL_WALK, "astral walk", 200, 100, 5, POS_STANDING,
          TAR_CHAR_WORLD | TAR_NOT_SELF, FALSE, MAG_MANUAL, NULL);
 
-  spello(SPELL_MIRACLE, "miracle", 500, 400, 20, POS_FIGHTING,
+  spello(SPELL_PORTAL, "portal", 1000, 500, 20, POS_STANDING,
+         TAR_CHAR_WORLD | TAR_NOT_SELF, FALSE, MAG_MANUAL, NULL);
+
+  spello(SPELL_MIRACLE, "miracle", 1000, 500, 20, POS_FIGHTING,
          TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
          NULL);
-  spello(SPELL_DIVINE_INTERVENTION, "divine intervention", 1000, 1000, 20, POS_FIGHTING,
+
+  spello(SPELL_HEAL, "heal", 100, 50, 10, POS_FIGHTING,
+         TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
+         NULL);
+
+  spello(SPELL_POWERHEAL, "powerheal", 500, 250, 10, POS_FIGHTING,
+         TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
+         NULL);
+
+  spello(SPELL_DIVINE_INTERVENTION, "hand of god", 5000, 2500, 50, POS_FIGHTING,
          TAR_CHAR_ROOM, FALSE, MAG_POINTS | MAG_UNAFFECTS,
          NULL);
 
@@ -1559,8 +1590,6 @@ void mag_assign_spells(void)
          TAR_IGNORE, FALSE, MAG_GROUPS | MAG_AFFECTS, NULL);
 
   spello(SPELL_LOCATE_CHARACTER, "locate char", 50, 25, 5, POS_STANDING, TAR_CHAR_WORLD, FALSE, MAG_MANUAL, NULL);
-
-  spello(SPELL_UNARMED_BONUS, "unarmed bonus", 100, 50, 5, POS_FIGHTING, TAR_CHAR_ROOM | TAR_SELF_ONLY, FALSE, MAG_AFFECTS, "Your unarmed bonus recedes.");
 
   spello(SPELL_UNARMED_DEBUFF1, "unarmed debuff1", 100, 75, 5, POS_FIGHTING,
          TAR_CHAR_ROOM, TRUE, MAG_AFFECTS,
@@ -1637,7 +1666,6 @@ void mag_assign_spells(void)
   skillo(SKILL_CLOTHESLINE, "clothesline");
   skillo(SKILL_PILEDRVIER, "piledriver");
   skillo(SKILL_PALM_STRIKE, "palm strike");
-  skillo(SKILL_BARD_SHRIEK, "shriek");
   skillo(SKILL_BARD_RITUAL, "ritual");
   skillo(SKILL_BARD_SCORN, "scorn");
   skillo(SKILL_BLOODBATH, "bloodbath");
@@ -1663,5 +1691,10 @@ void mag_assign_spells(void)
   skillo(SKILL_GATEWAY, "gateway");
   skillo(SKILL_SHIELD_BLOCK, "shield block");
   skillo(SKILL_SPIN_KICK, "spinkick");
-  skillo(SKILL_STORM_OF_STEEL, "storm of steel");
+  skillo(SKILL_RAMPAGE, "rampage");
+  skillo(SKILL_MAGICAL_MELODY, "magical melody");
+  skillo(SKILL_HEADBUTT2, "headbutt2");
+  skillo(SKILL_SIXTH_ATTACK, "6th attack");
+  skillo(SKILL_SEVENTH_ATTACK, "7th attack");
+  skillo(SKILL_DISEMBOWEL, "disembowel");
   }

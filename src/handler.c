@@ -252,6 +252,9 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sh_int mod, char *m
   case APPLY_RESIST_SLASH:
     GET_RESISTS(ch, RESIST_SLASH) += mod;
     break;
+  
+  case APPLY_SANCTUARY:
+    break;
 
   default:
     log("SYSERR: Unknown apply adjust %d attempt (%s, affect_modify).", loc, __FILE__);
@@ -479,6 +482,7 @@ void char_to_room(struct char_data *ch, room_rnum room)
 /* Give an object to a char. */
 void obj_to_char(struct obj_data *object, struct char_data *ch)
 {
+
   if (object && ch) {
     object->next_content = ch->carrying;
     ch->carrying = object;
@@ -736,8 +740,9 @@ void obj_to_room(struct obj_data *object, room_rnum room)
 {
   if (!object || room == NOWHERE || room > top_of_world)
     log("SYSERR: Illegal value(s) passed to obj_to_room. (Room #%d/%d, obj %p)",
-	room, top_of_world, (void *)object);
-  else {
+        room, top_of_world, (void *)object);
+  else
+  {
     object->next_content = world[room].contents;
     world[room].contents = object;
     IN_ROOM(object) = room;
@@ -790,9 +795,10 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   obj->next_content = obj_to->contains;
   obj_to->contains = obj;
   obj->in_obj = obj_to;
-
+  
   /* Add weight to container, unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) 
+  {
     for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
       GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
 
@@ -1289,7 +1295,8 @@ int get_obj_pos_in_equip_vis(struct char_data *ch, char *arg, int *number, struc
 {
   int j, num;
 
-  if (!number) {
+  if (!number)
+  {
     number = &num;
     num = get_number(&arg);
   }
@@ -1472,10 +1479,12 @@ int find_all_dots(char *arg)
 {
   if (!strcmp(arg, "all"))
     return (FIND_ALL);
-  else if (!strncmp(arg, "all.", 4)) {
-    strcpy(arg, arg + 4);	/* strcpy: OK (always less) */
+  else if (!strncmp(arg, "all.", 4))
+  {
+    strcpy(arg, arg + 4); /* strcpy: OK (always less) */
     return (FIND_ALLDOT);
-  } else
+  }
+  else
     return (FIND_INDIV);
 }
 

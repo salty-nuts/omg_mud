@@ -81,8 +81,8 @@ Mictlantecuhtli's Bone Sceptre~
 A polished femur imbued with an icy luminescence, serving as the scepter of the Lord of the Dead.~
 The air crackles with an unnatural energy, and the scent of decay hangs heavy in the air.
 ~
-5 gi 0 0 0 an 0 0 0 0 0 0 0
-10 6 6 6
+5 gijlmopq 0 0 0 an 0 0 0 0 0 0 0
+0 100 4 6
 0 0 0 0 0 40
 E
 Mictlantecuhtli Bone Sceptre~
@@ -95,22 +95,25 @@ into the living world with an insatiable hunger, and the gaping maw appears
 ready to devour any who dare approach.
 ~
 A
-28 25
+28 50
 A
-29 25
+30 50
 A
-30 25
+26 1000
 A
-26 250
+19 10
+A
+18 10
 #2107
-Xiuhcoatl fire serpent spear~
+xiucoatl fire serpent~
 Xiuhcoatl the Fire Serpent~
 The very embodiment of Huitzilopochtli's wrath, Xiuhcoatl is no ordinary spear~
 Huitzilopochtli's obsidian spear shimmers with an inner fire!
+
 ~
 5 g 0 0 0 ano 0 0 0 0 0 0 0
-10 15 4 4
-10 0 0 100 0 50
+10 20 10 4
+10 0 0 100 0 25
 E
 spear fire serpent xiuhcoatl~
 The spear shaft is smooth and flawless, polished to a mirror sheen that distorts
@@ -151,8 +154,8 @@ Ehecatl's Serpent Scale~
 A giant serpent scale shimmers with an iridescent sheen, catching the light with the brilliance of an opal.~
 ~
 9 g 0 0 0 aj 0 0 0 0 0 0 0
-50 0 0 0
-20 0 0 100 0 75
+15 0 0 0
+20 0 0 100 0 25
 E
 ehecatl serpent scale~
 The shield is massive, a formidable wall of protection crafted from the scales
@@ -168,9 +171,9 @@ A
 A
 19 3
 A
-35 10
+35 5
 A
-36 10
+36 5
 #2110
 aura war~
 the Aura of War~
@@ -197,7 +200,7 @@ mark death~
 the Mark of Death~
 A midnight black bracelet with a glowing red Aztec symbol lies here.~
 ~
-9 gnopqr 0 0 0 am 0 0 0 0 0 0 0
+9 ginopqr 0 0 0 am 0 0 0 0 0 0 0
 10 0 0 0
 0 0 0 100 0 10
 T 2100
@@ -231,17 +234,18 @@ empty eye sockets seeming to stare not outward, but inward, into the very soul
 of the wearer.
 ~
 A
-26 25
+26 100
 A
-29 25
+29 100
 #2112
 sigil blood moon~
 the Sigil of the Blood Moon~
 A deep crimson circle, the color of fresh blood, crackling with energy.~
 ~
-1 g 0 0 0 a 0 0 0 0 0 0 0
+1 gi 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
 0 0 0 0 0 10
+T 2112
 E
 sigil blood moon~
 The Sigil of the Blood Moon isn't your ordinary light source.  Forget flickering
@@ -277,7 +281,7 @@ A
 A
 19 2
 #2115
-crown skulls Huitzilopochtli~
+crown skulls~
 the Crown of Skulls~
 A terrifying reminder of Huitzilopochtli's relentless pursuit of victory.~
 ~
@@ -512,25 +516,28 @@ empty eye sockets seeming to stare not outward, but inward, into the very soul
 of the wearer.
 ~
 A
-26 25
+26 100
 A
-28 25
+28 100
 #2125
-obsidian claws~
-the Obsidian Claws of Xolotl~
-Each claw is formed from polished obsidian, the volcanic glass said to hold the essence of fire.~
+obsidian paws xolotl~
+the Obsidian Paws of Xolotl~
+Each paw is formed from polished obsidian, the volcanic glass said to hold the essence of fire.~
 ~
 9 gi 0 0 0 ah 0 0 0 0 0 0 0
 15 0 0 0
 0 0 0 0 0 30
 E
 obsidian claws underworld~
-The obsidian gleams with an eerie inner light, and the claws themselves are
-wickedly sharp, capable of rending flesh and stone with ease.  They curve
-gracefully upwards, mimicking the powerful talons of a predatory bird.  The
-polished obsidian shimmers with an almost hypnotic beauty, and the curving claws
-possess a certain grace.  This duality reflects the complex nature of Xolotl
-himself.
+   Crafted from a single, flawless block of obsidian, these gloves are polished
+to a mirror sheen.  They appear weightless, clinging to Xolotl's hands like a
+second skin, yet radiate a faint warmth that belies their volcanic origins.  
+The surface of the obsidian is not entirely smooth.  Intricate glyphs,
+reminiscent of ancient Aztec codices, are etched across the back of each hand.
+These glyphs, imbued with a magical luminescence, seem to writhe and shift
+subtly, hinting at the power coursing through the gloves.  Legends whisper that
+these glyphs represent not just pathways between realms, but the very essence of
+fire itself.
 ~
 A
 18 3
@@ -548,4 +555,19 @@ A
 18 1
 A
 19 3
+#2127
+cuicatlamatiliztli art song~
+Cuicatlamatiliztli, the Art of Song~
+Cuicatlamatiliztli, the Art of Song, is lying here.~
+~
+9 gimnopq 0 0 0 am 0 0 0 0 0 0 0
+10 0 0 0
+0 0 0 0 0 10
+T 2111
+A
+28 100
+A
+30 100
+A
+26 100
 $~

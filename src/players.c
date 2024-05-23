@@ -650,11 +650,11 @@ void save_char(struct char_data * ch)
   sprintascii(bits4, PRF_FLAGS(ch)[3]);
   fprintf(fl, "Pref: %s %s %s %s\n", bits, bits2, bits3, bits4);
 
-  if (GET_SAVE(ch, 0)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
-  if (GET_SAVE(ch, 1)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));
-  if (GET_SAVE(ch, 2)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr3: %d\n", GET_SAVE(ch, 2));
-  if (GET_SAVE(ch, 3)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));
-  if (GET_SAVE(ch, 4)	   != PFDEF_SAVETHROW)	fprintf(fl, "Thr5: %d\n", GET_SAVE(ch, 4));
+  fprintf(fl, "Thr1: %d\n", GET_SAVE(ch, 0));
+  fprintf(fl, "Thr2: %d\n", GET_SAVE(ch, 1));
+  fprintf(fl, "Thr3: %d\n", GET_SAVE(ch, 2));
+  fprintf(fl, "Thr4: %d\n", GET_SAVE(ch, 3));
+  fprintf(fl, "Thr5: %d\n", GET_SAVE(ch, 4));
 
   fprintf(fl, "RES0: %d\n", GET_RESISTS(ch, 0));
   fprintf(fl, "RES1: %d\n", GET_RESISTS(ch, 1));

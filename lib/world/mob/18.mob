@@ -1,168 +1,4 @@
-#1809
-john connor~
-John Connor~
-John Connor is giving orders here.
-~
-   The leader of the Resistance Force he is a hardened veteran with the scars
-to prove it.    
-~
-237834 0 0 0 80 0 0 0 0 E
-105 -90 -53 1575d1050+647850 15d15+110
-6155625 14259000
-8 8 1
-MobMult: 5
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-RES_0: 26
-RES_1: 26
-RES_2: 26
-RES_3: 26
-RES_4: 26
-E
-#1810
-series terminator~
-a series 800 terminator~
-A terminator is looking for a human to kill.
-~
-   This metal endoskeleton is the perfect killing weapon.  The mechanical red
-eyes scan the area for anything living.    
-~
-72 0 0 0 0 0 0 0 0 E
-75 -58 -35 675d450+277650 10d10+78
-1582875 3666600
-8 8 0
-MobMult: 3
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-SavingPara: 22
-SavingRod: 22
-SavingPetri: 22
-SavingBreath: 22
-SavingSpell: 22
-RES_0: 18
-RES_1: 18
-RES_2: 18
-RES_3: 18
-RES_4: 18
-E
-#1811
-flying hunter killer aerial~
-a aerial hunter killer~
-A flying hunter killer zooms past you, it's turbines whining.
-~
-   This flying metal machine has a mind of it's own and was made for the sole
-purpose of hunting down humans and killing them.    
-~
-72 0 0 0 25165824 0 0 0 0 E
-100 -83 -50 900d600+370200 13d13+103
-2110500 4888800
-8 8 0
-MobMult: 3
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-RES_0: 23
-RES_1: 23
-RES_2: 23
-RES_3: 23
-RES_4: 23
-E
-#1812
-hunter killer tank~
-a hunter killer tank~
-A huge metal tank rolls past, bones crunching under it's weight.
-~
-   Yet another machine made by machines to purge the world of humans.    
-~
-72 0 0 0 33554688 0 0 0 0 E
-100 -84 -50 1200d800+493600 14d14+104
-3752000 8691200
-8 8 0
-MobMult: 4
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-RES_0: 24
-RES_1: 24
-RES_2: 24
-RES_3: 24
-RES_4: 24
-E
-#1813
-Centurion~
-a centurion~
-A centurion runs past.
-~
-   This four legged gun pod is fast and deadly accurate.    
-~
-2136 0 0 0 50331904 0 0 0 0 E
-100 -83 -50 900d600+370200 13d13+103
-2110500 4888800
-8 8 0
-MobMult: 3
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-RES_0: 23
-RES_1: 23
-RES_2: 23
-RES_3: 23
-RES_4: 23
-E
-#1814
-silverfish~
-a silverfish~
-A silverfish is trying to sneak up on you.
-~
-   This small centipede like robot finds it's way into the resistance force
-hideouts and explodes, sending razor sharp shrapnel in all directions.    
-~
-72 0 0 0 524288 0 0 0 0 E
-50 -32 -20 300d200+123400 7d7+52
-469000 1086400
-8 8 0
-MobMult: 2
-NumAttacks: 1
-Str: 25
-Dex: 25
-Int: 25
-Wis: 25
-Con: 25
-Luck: 25
-SavingPara: 48
-SavingRod: 48
-SavingPetri: 48
-SavingBreath: 48
-SavingSpell: 48
-RES_0: 12
-RES_1: 12
-RES_2: 12
-RES_3: 12
-RES_4: 12
-E
-#1815
+#1800
 mob unfinished~
 the unfinished mob~
 An unfinished mob stands here.
@@ -170,7 +6,7 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 3d2+1234 1d2+1
+0 19 9 3d2+1234 1d2+1
 2345 5432
 8 8 0
 MobMult: 1
@@ -186,42 +22,342 @@ RES_2: 1
 RES_3: 1
 RES_4: 1
 E
-#1816
-T1000~
-the T1000~
-A T1000 is shapeshifting before you.
+#1801
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
 ~
-   A poly-alloy or liquid medal, this is the latest and greatest invention of
-the robots.    
+It looks unfinished.
 ~
-237578 0 0 0 93388872 0 0 0 0 E
-105 -90 -53 1575d1050+647850 15d15+110
-6155625 14259000
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
 8 8 0
-MobMult: 5
+MobMult: 1
 NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1802
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1803
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1804
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1805
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1806
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1807
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1808
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks unfinished.
+~
+8 0 0 0 0 0 0 0 0 E
+0 19 9 3d2+1234 1d2+1
+2345 5432
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 99
+SavingRod: 99
+SavingPetri: 99
+SavingBreath: 99
+SavingSpell: 99
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1809
+john connor resistance~
+John Connor~
+John Connor is giving orders here.
+~
+   The leader of the Resistance Force he is a hardened veteran with the scars
+to prove it.    
+~
+237834 0 0 0 33579344 0 0 0 1000 E
+105 -90 -53 1575d1050+2268525 20d20+110
+2462250 5703600
+8 8 1
+MobMult: 5
+BareHandAttack: 13
+NumAttacks: 7
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-RES_0: 26
-RES_1: 26
-RES_2: 26
-RES_3: 26
-RES_4: 26
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
-#1817
-guerilla soldier~
-a guerilla soldier~
-A soldier of the resistance force is looking for a terminator to kill.
+#1810
+series terminator~
+a series 800 terminator~
+A terminator is looking for a human to kill.
 ~
-   Born in battle, it's all this soldier has ever known.    
+   This metal endoskeleton is the perfect killing weapon.  The mechanical red
+eyes scan the area for anything living.    
 ~
-72 0 0 0 0 0 0 0 0 E
-75 -57 -35 450d300+185100 9d9+77
-703500 1629600
+72 0 0 0 0 0 0 0 -1000 E
+105 -88 -53 945d630+1361115 16d16+108
+1477350 3422160
+8 8 0
+MobMult: 3
+BareHandAttack: 12
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
+E
+#1811
+flying hunter killer aerial terminator~
+a aerial hunter killer~
+A flying hunter killer zooms past you, it's turbines whining.
+~
+   This flying metal machine has a mind of it's own and was made for the sole
+purpose of hunting down humans and killing them.    
+~
+72 0 0 0 25165824 0 0 0 -1000 E
+105 -90 -53 1575d1050+2268525 20d20+110
+2462250 5703600
+8 8 0
+MobMult: 5
+BareHandAttack: 12
+NumAttacks: 10
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
+E
+#1812
+hunter killer tank terminator~
+a hunter killer tank~
+A huge metal tank rolls past, bones crunching under it's weight.
+~
+   Yet another machine made by machines to purge the world of humans.    
+~
+72 0 0 0 33579264 0 0 0 -1000 E
+105 -89 -53 1260d840+1814820 18d18+109
+1969800 4562880
+8 8 0
+MobMult: 4
+BareHandAttack: 5
+NumAttacks: 12
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 3
+RES_1: 3
+RES_2: 3
+RES_3: 3
+RES_4: 3
+E
+#1813
+centurion terminator~
+a centurion~
+A centurion runs past.
+~
+   This four legged gun pod is fast and deadly accurate.    
+~
+2136 0 0 0 16777472 0 0 0 -1000 E
+105 -90 -53 1575d1050+2268525 20d20+110
+2462250 5703600
+8 8 0
+MobMult: 5
+BareHandAttack: 12
+NumAttacks: 10
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
+E
+#1814
+silverfish terminator~
+a silverfish~
+A silverfish is trying to sneak up on you.
+~
+   This small centipede like robot finds it's way into the resistance force
+hideouts and explodes, sending razor sharp shrapnel in all directions.    
+~
+72 0 0 0 524288 0 0 0 -1000 E
+90 -72 -44 540d360+777780 13d13+92
+844200 1955520
 8 8 0
 MobMult: 2
 NumAttacks: 1
@@ -231,30 +367,29 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 23
-SavingRod: 23
-SavingPetri: 23
-SavingBreath: 23
-SavingSpell: 23
-RES_0: 17
-RES_1: 17
-RES_2: 17
-RES_3: 17
-RES_4: 17
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
-#1818
-terminator~
-an autonomous terminator~
-An autonomous terminator is guarding skynet.
+#1815
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
 ~
-   This terminator was made as a sentry to keep all from entering skynet
-laboratories.    
+It looks unfinished.
 ~
-10 0 0 0 33554688 0 0 0 0 E
-85 -68 -41 765d510+314670 11d11+88
-1793925 4155480
+8 0 0 0 0 0 0 0 0 E
+105 -86 -53 315d210+129570 11d11+106
+246225 570360
 8 8 0
-MobMult: 3
+MobMult: 1
 NumAttacks: 1
 Str: 25
 Dex: 25
@@ -262,16 +397,85 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 12
-SavingRod: 12
-SavingPetri: 12
-SavingBreath: 12
-SavingSpell: 12
-RES_0: 20
-RES_1: 20
-RES_2: 20
-RES_3: 20
-RES_4: 20
+E
+#1816
+t1000 terminator~
+the T1000~
+A T1000 is shapeshifting before you.
+~
+   A poly-alloy or liquid medal, this is the latest and greatest invention of
+the robots.    
+~
+237578 0 0 0 93388872 0 0 0 -1000 E
+105 -95 -54 3150d2100+4537050 30d30+115
+4924500 11407200
+8 8 0
+MobMult: 10
+BareHandAttack: 10
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
+E
+#1817
+guerilla soldier resistance~
+a guerilla soldier~
+A soldier of the resistance force is looking for a terminator to kill.
+~
+   Born in battle, it's all this soldier has ever known.    
+~
+72 0 0 0 0 0 0 0 1000 E
+105 -87 -53 630d420+907410 14d14+107
+984900 2281440
+8 8 0
+MobMult: 2
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
+E
+#1818
+autonomous terminator~
+an autonomous terminator~
+An autonomous terminator is guarding skynet.
+~
+   This terminator was made as a sentry to keep all from entering skynet
+laboratories.    
+~
+10 0 0 0 33554688 0 0 0 -1000 E
+105 -88 -53 945d630+1361115 16d16+108
+1477350 3422160
+8 8 0
+MobMult: 3
+BareHandAttack: 12
+NumAttacks: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #1819
 guerilla child~
@@ -282,9 +486,9 @@ A child is learning helping the soldiers with their wounds.
 the wounded, run messages, help with the equipment.  No one is free until the
 machines are destroyed.    
 ~
-14 0 0 0 0 0 0 0 0 E
-50 -32 -20 300d200+123400 7d7+52
-469000 1086400
+14 0 0 0 0 0 0 0 1000 E
+90 -72 -44 540d360+777780 13d13+92
+844200 1955520
 8 8 0
 MobMult: 2
 NumAttacks: 1
@@ -294,97 +498,95 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 48
-SavingRod: 48
-SavingPetri: 48
-SavingBreath: 48
-SavingSpell: 48
-RES_0: 12
-RES_1: 12
-RES_2: 12
-RES_3: 12
-RES_4: 12
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #1820
-guerilla officer~
+guerilla officer resistance~
 a guerilla officer~
 An officer of the resistance force is leading his soldiers into battle.
 ~
    His eyes tell you what he dares not say to his troops, this battle is
 hopless, lives are waster killing machines that can just be rebuilt.    
 ~
-72 0 0 0 8388864 0 0 0 0 E
-100 -82 -50 600d400+246800 12d12+102
-938000 2172800
+72 0 0 0 8388864 0 0 0 1000 E
+105 -87 -53 630d420+907410 14d14+107
+984900 2281440
 8 8 0
 MobMult: 2
-NumAttacks: 1
+BareHandAttack: 12
+NumAttacks: 5
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-RES_0: 22
-RES_1: 22
-RES_2: 22
-RES_3: 22
-RES_4: 22
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #1821
-german shepherd~
+german shepherd resistance~
 a german shepherd~
 A german shepherd sniffs your hand.
 ~
    The resistance uses this dog to detect terminators.    
 ~
-10 0 0 0 0 0 0 0 0 E
-50 -32 -20 300d200+123400 7d7+52
-469000 1086400
+42 0 0 0 -2063597448 0 0 0 1000 E
+105 -87 -53 630d420+907410 14d14+107
+984900 2281440
 8 8 0
 MobMult: 2
-NumAttacks: 1
+BareHandAttack: 4
+NumAttacks: 4
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 48
-SavingRod: 48
-SavingPetri: 48
-SavingBreath: 48
-SavingSpell: 48
-RES_0: 12
-RES_1: 12
-RES_2: 12
-RES_3: 12
-RES_4: 12
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #1822
-kyle reese~
+kyle reese resistance~
 Kyle Reese~
 Kyle Reese is hiding from the terminators.
 ~
    If only he knew what the future held for him.    
 ~
-2376 0 0 0 336 0 0 0 0 E
-100 -85 -50 1500d1000+617000 15d15+105
-5862500 13580000
+2376 0 0 0 33579088 0 0 0 1000 E
+105 -90 -53 1575d1050+2268525 20d20+110
+2462250 5703600
 8 8 1
 MobMult: 5
-NumAttacks: 1
+BareHandAttack: 13
+NumAttacks: 3
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-RES_0: 25
-RES_1: 25
-RES_2: 25
-RES_3: 25
-RES_4: 25
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #1823
 mob unfinished~
@@ -394,21 +596,16 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-0 19 9 3d2+1234 1d2+1
+0 18 9 3d2+1234 2d3+2
 2345 5432
 8 8 0
 MobMult: 1
 NumAttacks: 1
-SavingPara: 99
-SavingRod: 99
-SavingPetri: 99
-SavingBreath: 99
-SavingSpell: 99
-RES_0: 1
-RES_1: 1
-RES_2: 1
-RES_3: 1
-RES_4: 1
+SavingPara: 98
+SavingRod: 98
+SavingPetri: 98
+SavingBreath: 98
+SavingSpell: 98
 E
 #1824
 mob unfinished~
@@ -418,20 +615,15 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-0 19 9 3d2+1234 1d2+1
+0 18 9 3d2+1234 2d3+2
 2345 5432
 8 8 0
 MobMult: 1
 NumAttacks: 1
-SavingPara: 99
-SavingRod: 99
-SavingPetri: 99
-SavingBreath: 99
-SavingSpell: 99
-RES_0: 1
-RES_1: 1
-RES_2: 1
-RES_3: 1
-RES_4: 1
+SavingPara: 98
+SavingRod: 98
+SavingPetri: 98
+SavingBreath: 98
+SavingSpell: 98
 E
 $

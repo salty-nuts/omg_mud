@@ -226,6 +226,10 @@ const char *action_bits[] = {
   "HITS_GROUP",
 	"DODGE",
 	"PARRY",
+  "NEWBIE",
+  "HEALER",
+  "CASTER",
+  "MELEE",
   "\n"
 };
 
@@ -297,8 +301,8 @@ const char *affected_bits[] =
   "CURSE", //10
   "INFRA",
   "POISON",
-  "HOLY-WARD",
-  "EVIL-WARD",
+  "RESIST-GOOD",
+  "RESIST-EVIL",
   "SLEEP", //15
   "NO_TRACK",
   "FLY",
@@ -314,16 +318,18 @@ const char *affected_bits[] =
   "REGEN",
   "QUICKCAST",
   "PARALYZE",
-  "MIRROR_IMAGES", //30
+  "DONT USE", //30
   "RAGE",
   "IMPROVED_INVIS",
-  "HARMONY",
-  "DISSONANCE",
+  "DONT USE",
+  "DONT USE",
   "SLOW",  //35
-  "RITUAL", // 
-  "WARDANCE",  // war dance skill
-  "SLOWDANCE", // slow dance skill
-  "WITHER", // 39
+  "DONT USE",  
+  "DONT USE",  // war dance skill
+  "DONT USE", // slow dance skill
+  "WITHER",   
+  "DONT USE", /* 40, Arcane detonaiton */
+  "ANTIMAG_SHELL",
   "\n"
 };
 
@@ -483,7 +489,7 @@ const char *wear_bits[] = {
  * Must end array with a single newline. */
 const char *extra_bits[] = {
   "GLOW",
-  "HUM",
+  "LIMITED",
   "NO_RENT",
   "NO_DONATE",
   "NO_INVIS",
@@ -503,8 +509,10 @@ const char *extra_bits[] = {
   "NO_SELL",
   "QUEST_ITEM",
   "IMPROVED",
-	"TWO_HANDED",
+	"FIST_WEAPON",
   "DECAYING",
+  "NEWBIE",
+  "CLONED",
   "\n"
 };
 
@@ -549,6 +557,7 @@ const char *apply_types[] = {
 	"RESIST_BLUNT",
 	"RESIST_PIERCE",
 	"RESIST_SLASH",
+  "DONT USE",
   "\n"
 };
 

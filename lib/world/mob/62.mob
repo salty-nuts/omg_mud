@@ -6,9 +6,27 @@ A deer looks at you with fear in its eyes.
    That is one nice looking deer!  
 ~
 200 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+70 -60 -32 1050d700+1512350 12d12+80
+1641500 3802400
 8 8 0
+MobMult: 5
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 25
+SavingRod: 25
+SavingPetri: 25
+SavingBreath: 25
+SavingSpell: 25
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6201
 rabbit~
@@ -18,9 +36,27 @@ A small rabbit nibbles at a leaf here.
    It is a small, furry rodent with big ears.  
 ~
 200 0 0 0 0 0 0 0 0 E
-1 20 9 0d0+10 1d2+0
-10 100
+65 -55 -29 975d650+1404325 11d11+75
+1524250 3530800
 8 8 0
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6202
 squirrel~
@@ -30,9 +66,27 @@ A squirrel spots you and runs around a tree!
    It is a small, brown squirrel.  Kind of like a fuzzy high-tension spring.  
 ~
 200 0 0 0 0 0 0 0 0 E
-1 20 9 0d0+10 1d2+0
-10 100
+65 -55 -29 975d650+1404325 11d11+75
+1524250 3530800
 8 8 0
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6203
 orc hunter~
@@ -42,10 +96,23 @@ An orc hunter looks at you with hateful eyes.
    He looks angry, desperate, and maybe a little sick.  His green skin is
 definitely mottled, and he seems to limp a little bit...  
 ~
-4200 0 0 0 0 0 0 0 -350 E
-7 18 5 1d1+70 1d2+1
-70 4900
+4200 0 0 0 67133696 0 0 0 -350 E
+100 -90 -50 1500d1000+2160500 15d15+110
+2345000 5432000
 8 8 1
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6204
 orc chief~
@@ -55,10 +122,23 @@ An orc chief growls at you!
    He wears a crown of oak leaves to show he is a leader.  He carries a club to
 show he is a warrior.  You wonder how good he is at both.  
 ~
-6186 0 0 0 0 0 0 0 -600 E
-10 17 4 2d2+100 1d2+1
-100 10000
+26220586 0 0 0 -2122292992 0 0 0 -600 E
+105 -135 -55 7875d5250+11342625 35d35+155
+12311250 28518000
 8 8 1
+MobMult: 25
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
 #6205
 orc woman~
@@ -69,9 +149,27 @@ An orc woman stands here, frightened of you.
 me'.  
 ~
 200 0 0 0 0 0 0 0 -50 E
-5 19 7 1d1+50 1d2+0
-50 2500
+90 -80 -44 1350d900+1944450 14d14+100
+2110500 4888800
 8 8 2
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6206
 orc child~
@@ -81,9 +179,27 @@ An orc child frantically searches for her mother.
    She is raggedy, and seems to be covered with sores.  
 ~
 200 0 0 0 0 0 0 0 50 E
-3 19 8 0d0+30 1d2+0
-30 900
+80 -70 -38 1200d800+1728400 13d13+90
+1876000 4345600
 8 8 2
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6207
 orc woman~
@@ -93,9 +209,27 @@ A pregnant orc woman tries to stand to flee from you.
    She is too far gone to move very quickly.  You could kill her easily.  
 ~
 138 0 0 0 0 0 0 0 -50 E
-5 19 7 1d1+50 1d2+0
-50 2500
+90 -80 -44 1350d900+1944450 14d14+100
+2110500 4888800
 6 6 2
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6208
 orc mutant mutated~
@@ -106,9 +240,22 @@ A mutant orc lies here, barely alive.
 stop that.  
 ~
 72 0 0 0 0 0 0 0 0 E
-6 18 6 1d1+60 1d2+1
-60 3600
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 5 5 0
+MobMult: 15
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #6209
 orc mutant mutated~
@@ -118,10 +265,23 @@ A horribly mutated orc stands here, gibbering.
    It doesn't even appear to have registered your arrival...  It is just talking
 to itself.  Its body is a twisted wreck of orc, man, beast, and what-not.  
 ~
-72 0 0 0 0 0 0 0 0 E
-6 18 6 1d1+60 1d2+1
-60 3600
+17825896 0 0 0 -2130706432 0 0 0 0 E
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 8 8 0
+MobMult: 15
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #6210
 wizard elf elven Elstar~
@@ -131,11 +291,25 @@ An elven wizard is here.  He looks angry.
    He looks at you archly as he wonders why you have invaded his domain.  No
 matter...  It shouldn't be too hard for him to destroy you, no?  
 ~
-2090 0 0 0 16 0 0 0 -1000 E
-15 15 1 3d3+150 2d2+2
-150 22500
+142608426 0 0 0 369099128 512 0 0 -1000 E
+105 -135 -55 10000d10000+11342625 35d35+155
+123112500 285180000
 8 8 1
+MobMult: 25
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
+T 6201
 #6211
 child elf elven apprentice~
 the elven child~
@@ -144,9 +318,27 @@ An elven child casts his fishing pole into the river.
    He looks young and innocent.  You wonder what he is doing here.  
 ~
 10 0 0 0 0 0 0 0 600 E
-3 19 8 0d0+30 1d2+0
-30 900
+80 -70 -38 1200d800+1728400 13d13+90
+1876000 4345600
 8 8 1
+MobMult: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 15
+SavingRod: 15
+SavingPetri: 15
+SavingBreath: 15
+SavingSpell: 15
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #6212
 mutant thing~
@@ -156,22 +348,75 @@ A mutant... thing rushes at you!
    It might've been an orc, once.  Now it is a living terror, pushing everything
 out of its way to get at you.  
 ~
-2152 0 0 0 0 0 0 0 -800 E
-12 16 2 2d2+120 2d2+2
-120 14400
+17827944 0 0 0 -2122317824 0 0 0 -800 E
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 8 8 0
+MobMult: 15
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #6213
 mutant thing~
 the mutant thing~
-A mutant... thing tries to get you, but cannot move into range!
+A mutant... thing rushes at you!
 ~
-   It might have been an orc, once.  Now it is a living terror, pushing
-everything out of its way to get at you.  
+   It might've been an orc, once.  Now it is a living terror, pushing everything
+out of its way to get at you.  
 ~
-2058 0 0 0 0 0 0 0 -800 E
-12 16 2 2d2+120 2d2+2
-120 14400
+17832040 0 0 0 -2122317824 0 0 0 -800 E
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 8 8 0
+MobMult: 15
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
+#6214
+mutant thing~
+the mutant thing~
+A mutant... thing rushes at you!
+~
+   It might've been an orc, once.  Now it is a living terror, pushing everything
+out of its way to get at you.  
+~
+27265098 0 0 0 -2122317824 0 0 0 -800 E
+105 -87 -53 315d210+129570 11d11+107
+246225 570360
+8 8 0
+MobMult: 1
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: -6
+SavingRod: -6
+SavingPetri: -6
+SavingBreath: -6
+SavingSpell: -6
+E
+T 6203
 $

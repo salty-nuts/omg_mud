@@ -35,8 +35,8 @@ const char *get_spec_func_name(SPECIAL(*func));
 /* Utility functions */
 void sort_spells(void);
 void list_skills(struct char_data *ch);
-void list_meta(struct char_data *ch);
-void list_train(struct char_data *ch);
+//void list_meta(struct char_data *ch);
+//void list_train(struct char_data *ch);
 
 /* Special functions */
 SPECIAL(guild);
@@ -75,4 +75,4 @@ Salty
 
 #endif /* _SPEC_PROCS_H_ */
 
-ACMD(do_train);
+//ACMD(do_train);

@@ -35,9 +35,10 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
 /* Act type settings and flags */
 #define TO_ROOM     1   /**< act() type: to everyone in room, except ch. */
 #define TO_VICT     2   /**< act() type: to vict_obj. */
-#define TO_NOTVICT  3   /**< act() type: to everyone in room, not ch or vict_obj. */
+#define TO_NOTVICT  3   /**< act() type: to everyone in room, not ch or vict_obj, not brief */
 #define TO_CHAR     4   /**< act() type: to ch. */
 #define TO_GMOTE    5   /**< act() type: to gemote channel (global emote) */
+#define TO_NOTBRIEF 6   /**< act() type: to everyone in room, not ch or vict_obj, with brief */
 #define TO_SLEEP    128	/**< act() flag: to char, even if sleeping */
 #define DG_NO_TRIG  256 /**< act() flag: don't check act trigger   */
 

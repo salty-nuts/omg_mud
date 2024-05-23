@@ -47,7 +47,7 @@ static void perform_wear(struct char_data *ch, struct obj_data *obj, int where);
 static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
 int free_hands(struct char_data *ch);
 
-/* 2h weapons */
+
 int free_hands(struct char_data *ch)
 {
   int used = 2;
@@ -55,7 +55,6 @@ int free_hands(struct char_data *ch)
   {
     used -= 1;
   }
-  //   if(GET_EQ(ch, WEAR_LIGHT)) { used -= 1; }
   if (GET_EQ(ch, WEAR_SHIELD))
   {
     used -= 1;
@@ -66,14 +65,7 @@ int free_hands(struct char_data *ch)
   }
   if (GET_EQ(ch, WEAR_WIELD))
   {
-    if (OBJ_FLAGGED(GET_EQ(ch, WEAR_WIELD), ITEM_TWO_HANDED))
-    {
-      used -= 2;
-    }
-    else
-    {
-      used -= 1;
-    }
+    used -= 1;
   }
   return used;
 }
@@ -733,6 +725,7 @@ ACMD(do_drop)
         send_to_char(ch, "What do you want to %s all of?\r\n", sname);
         return;
       }
+
       if (!(obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))
         send_to_char(ch, "You don't seem to have any %ss.\r\n", arg);
 
@@ -1565,7 +1558,6 @@ static void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
     return;
   }
 
-  /* 2h weapons */
   if (where == WEAR_WIELD || where == WEAR_SHIELD /*|| where == WEAR_LIGHT */ || where == WEAR_HOLD || where == WEAR_OFFHAND)
   {
     /* Will switch weapons to mainhand in order to wear a shield */
@@ -1587,15 +1579,9 @@ static void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
       obj_from_char(swap);
       equip_char(ch, swap, WEAR_WIELD);
     }
-
-    if (free_hands(ch) < 1 && !OBJ_FLAGGED(obj, ITEM_TWO_HANDED))
+    if (free_hands(ch) < 1)
     {
-      send_to_char(ch, "You hands are full!\r\n");
-      return;
-    }
-    if (free_hands(ch) < 2 && OBJ_FLAGGED(obj, ITEM_TWO_HANDED))
-    {
-      send_to_char(ch, "You need both of your hands free to wield two-handed weapons!\r\n");
+      send_to_char(ch, "Your hands are full!\r\n");
       return;
     }
   }
@@ -1667,6 +1653,7 @@ int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg)
   }
   else if ((where = search_block(arg, keywords, FALSE)) < 0)
     send_to_char(ch, "'%s'?  What part of your body is THAT?\r\n", arg);
+
 
   return (where);
 }

@@ -13,7 +13,7 @@ The path continues.
 D3
 ~
 ~
-0 0 1005
+0 0 1006
 S
 #6501
 The Path At The Base Of The Mountain~
@@ -83,10 +83,6 @@ D0
 ~
 ~
 0 -1 6506
-D2
-~
-~
-0 -1 6540
 S
 #6505
 The Entrance To The Mountain~
@@ -281,7 +277,7 @@ The Hide & Tooth Shop~
    You are in the Hide & Tooth shop.  Here you may buy the finest in Dwarven
 weapons and armors.  The path continues to the north and east.
 ~
-65 60 0 0 0 0
+65 12 0 0 0 0
 D0
 ~
 ~
@@ -589,7 +585,7 @@ Granite Head's Bakery~
    The aroma coming from this room is astonishing.  You can almost taste
 the pastries dissolving in your mouth.
 ~
-65 136 0 0 0 0
+65 8 0 0 0 0
 D1
 ~
 ~
@@ -597,14 +593,9 @@ D1
 S
 #6540
 The Dark Path~
-   This path is very well worn, and there is an entrance to the mines to the
-east, while the path continues to the north and west.
+This path is very well worn, and there is an entrance to the mines to the east.
 ~
 65 8 0 0 0 0
-D0
-~
-~
-0 -1 6504
 D1
 ~
 door~
@@ -699,7 +690,7 @@ The Mine Maze~
    You have entered the maze of the mines.  To the east you can see
 some inscriptions, and you can exit to the south.
 ~
-65 9 0 0 0 0
+65 2097161 0 0 0 0
 D1
 ~
 ~
@@ -735,7 +726,7 @@ S
 The Maze~
    You are in a maze.
 ~
-65 9 0 0 0 0
+65 2097161 0 0 0 0
 D0
 ~
 ~
@@ -753,7 +744,7 @@ S
 The Maze~
    You are in a maze.
 ~
-65 9 0 0 0 0
+65 2097161 0 0 0 0
 D0
 ~
 ~

@@ -1,9 +1,8 @@
 #10
 Salty~
 ginnungagap~
-1000 1099 1 2
-M 0 1098 1 1098 	(a training dummy)
-O 0 1099 1 1001 	(an Obelisk of Teleportation)
+1000 1099 5 2
 M 0 1000 1 1000 	(Ymir, the first)
+M 0 1098 1 1098 	(a training dummy)
 S
 $

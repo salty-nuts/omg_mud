@@ -74,7 +74,7 @@
 #define SPELL_LOCATE_OBJECT          31 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_MAGIC_MISSILE          32 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_POISON                 33 /* Reserved Skill[] DO NOT CHANGE */
-#define SPELL_HOLY_WARDING           34 /* Reserved Skill[] DO NOT CHANGE */
+#define SPELL_UNUSED                 34 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_REMOVE_CURSE           35 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_SANCTUARY              36 /* Reserved Skill[] DO NOT CHANGE */
 #define SPELL_SHOCKING_GRASP         37 /* Reserved Skill[] DO NOT CHANGE */
@@ -134,8 +134,8 @@
 #define SPELL_PASS_DOOR 	           91
 #define SPELL_IMP_PASS_DOOR	         92
 #define SPELL_GROUP_PASS_DOOR        93
-#define SPELL_EVIL_WARDING           94
-#define SPELL_UNARMED_BONUS          95
+#define SPELL_RESIST_GOOD            94
+#define SPELL_RESIST_EVIL            95
 #define SPELL_UNARMED_DEBUFF1        96
 #define SPELL_UNARMED_DEBUFF2        97
 #define SPELL_SLOW                   98
@@ -153,9 +153,15 @@
 #define SPELL_ELDRITCH_BLAST         110
 #define SPELL_CALM                   111
 #define SPELL_NOVA                   112
-
+#define SPELL_ENCHANT_ARMOR          113
+#define SPELL_DISRUPT                114
+#define SPELL_CURE_PARA              115
+#define SPELL_CURE_WITHER            116
+#define SPELL_CURE_SLOW              117
+#define SPELL_PORTAL                 118
+#define SPELL_CLONE_OBJECT           119
 /** Total Number of defined spells */
-#define NUM_SPELLS                   112
+#define NUM_SPELLS                   119
 /* Insert new spells here, up to MAX_SPELLS */
 #define MAX_SPELLS		    120
 
@@ -206,25 +212,27 @@
 #define SPELL_BARD_BLESS      301
 #define SPELL_BARD_RESISTS    302
 #define SPELL_BARD_HEAL       303
-#define SPELL_BARD_POWERHEAL  304
+#define SPELL_BARD_HEAL2      304
 #define SPELL_BARD_FEAST      305
 #define SPELL_BARD_UNUSED     306
 #define SPELL_BARD_RECALL     307
-#define SPELL_BARD_CANTICLE   308
+#define SPELL_BARD_HASTE      308
 #define SPELL_BARD_REGEN      309
 #define SPELL_BARD_SANC       310
 #define SPELL_BARD_FURY       311
 #define SPELL_BARD_FLY        312
-#define SPELL_BARD_AGILITY    313
-#define SPELL_BARD_KNOWLEDGE  314
-#define SPELL_BARD_VITALITY   315
+#define SPELL_BARD_ARMOR      313
+#define SPELL_BARD_UNUSED2    314
+#define SPELL_BARD_UNUSED3    315
 #define SPELL_BARD_STORM      316
 #define SPELL_BARD_HARMONY    317
 #define SPELL_BARD_DISSONANCE 318
 #define SPELL_BARD_WAR_DANCE  319
 #define SPELL_BARD_SLOW_DANCE 320
+#define SPELL_BARD_HEAL3      321
+
 /*  Total Number of defined songs  */
-#define NUM_SONGS              20
+#define NUM_SONGS              21
 /*  Insert new songs here, up to 400*/
 
 /* PLAYER SKILLS - Numbered from MAX_SPELLS+1 to MAX_SKILLS */
@@ -287,7 +295,7 @@
 #define SKILL_CLOTHESLINE           456
 #define SKILL_PILEDRVIER            457
 #define SKILL_PALM_STRIKE           458
-#define SKILL_BARD_SHRIEK           459
+#define SKILL_MAGICAL_MELODY        459
 #define SKILL_BARD_RITUAL           460
 #define SKILL_BARD_SCORN            461
 #define SKILL_BLOODBATH             462
@@ -313,11 +321,15 @@
 #define SKILL_GATEWAY               482
 #define SKILL_SHIELD_BLOCK          483
 #define SKILL_SPIN_KICK             484
-#define SKILL_STORM_OF_STEEL        485
+#define SKILL_RAMPAGE               485
+#define SKILL_HEADBUTT2             486
+#define SKILL_SIXTH_ATTACK          487
+#define SKILL_SEVENTH_ATTACK        488
+#define SKILL_DISEMBOWEL            489
 /*
 #define SKILL_TRANCE                476  // bard
 */
-#define NUM_SKILLS 		               85
+#define NUM_SKILLS 		               89
 
 /* New skills may be added here up to MAX_SKILLS (600) */
 
@@ -435,6 +447,7 @@ ASPELL(spell_charm);
 ASPELL(spell_information);
 ASPELL(spell_identify);
 ASPELL(spell_enchant_weapon);
+ASPELL(spell_enchant_armor);
 ASPELL(spell_detect_poison);
 ASPELL(spell_relocate);
 ASPELL(spell_cancellation);
@@ -445,6 +458,8 @@ ASPELL(spell_locate_char);
 ASPELL(spell_mana_transfer);
 ASPELL(spell_energize);
 ASPELL(spell_astral_walk);
+ASPELL(spell_portal);
+ASPELL(spell_clone_object);
 /* basic magic calling functions */
 
 

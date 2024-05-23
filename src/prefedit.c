@@ -107,7 +107,8 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
  sprintf(prompt_string, "%s%s%s", PREFEDIT_FLAGGED(PRF_DISPHP) ? "H" : "",   PREFEDIT_FLAGGED(PRF_DISPMANA) ? "M" : "",
                                    PREFEDIT_FLAGGED(PRF_DISPMOVE) ? "V" : "" );
 */
-  sprintf(prompt_string, "%s%s%s%s%s%s%s%s",
+  sprintf(prompt_string, "%s%s%s%s%s%s%s%s%s",
+            PREFEDIT_FLAGGED(PRF_DISP_NAME) ? "N" : "",
             PREFEDIT_FLAGGED(PRF_DISPHP) ? "h" : "",
             PREFEDIT_FLAGGED(PRF_DISP_MAXHP) ? "H" : "",
             PREFEDIT_FLAGGED(PRF_DISPMANA) ? "m" : "",
@@ -115,7 +116,8 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
             PREFEDIT_FLAGGED(PRF_DISPMOVE) ? "v" : "",
             PREFEDIT_FLAGGED(PRF_DISP_MAXMOVE) ? "V" : "",
             PREFEDIT_FLAGGED(PRF_DISP_TANK) ? "T" : "",
-            PREFEDIT_FLAGGED(PRF_DISP_VICT) ? "F" : "");
+            PREFEDIT_FLAGGED(PRF_DISP_VICT) ? "F" : ""
+            );
 
 
   sprintf(color_string, "%s", multi_types[(PREFEDIT_FLAGGED(PRF_COLOR_1) ? 1 : 0) + (PREFEDIT_FLAGGED(PRF_COLOR_2) ? 2 : 0)]);
@@ -129,7 +131,7 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
   /* The mortal preferences section of the actual menu */
   send_to_char(d->character, "\r\n"
                              "%sPreferences\r\n"
-                             "%sP%s) Prompt : %s[%s%-8s%s]         %sL%s) Pagelength : %s[%s%-3d%s]\r\n"
+                             "%sP%s) Prompt : %s[%s%9s%s]        %sL%s) Pagelength : %s[%s%-3d%s]\r\n"
                              "%sC%s) Color  : %s[%s%-8s%s]         %sS%s) Screenwidth: %s[%s%-3d%s]\r\n"
                              "%sW%s) Wimpy  : %s[%s%-4d%s]%s\r\n",
              CCWHT(d->character, C_NRM),
@@ -210,12 +212,12 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
              CBWHT(d->character, C_NRM));
 
   /* The top section of the actual menu */
-  send_to_char(d->character, "%s1%s) Autoexits    %s[%s%3s%s]      %sA%s) Gossip   %s[%s%3s%s]\r\n"
-                             "%s2%s) Autoloot     %s[%s%3s%s]      %sB%s) Shout    %s[%s%3s%s]\r\n"
-                             "%s3%s) Autogold     %s[%s%3s%s]      %sC%s) Tell     %s[%s%3s%s]\r\n"
-                             "%s4%s) Autosac      %s[%s%3s%s]      %sD%s) Auction  %s[%s%3s%s]\r\n"
-                             "%s5%s) Autoassist   %s[%s%3s%s]      %sE%s) Gratz    %s[%s%3s%s]\r\n"
-                             "%s6%s) Autosplit    %s[%s%3s%s]\r\n",
+  send_to_char(d->character, "%s1%s)  Autoexits    %s[%s%3s%s]      %sA%s) Gossip   %s[%s%3s%s]\r\n"
+                             "%s2%s)  Autoloot     %s[%s%3s%s]      %sB%s) Shout    %s[%s%3s%s]\r\n"
+                             "%s3%s)  Autogold     %s[%s%3s%s]      %sC%s) Tell     %s[%s%3s%s]\r\n"
+                             "%s4%s)  Autosac      %s[%s%3s%s]      %sD%s) Auction  %s[%s%3s%s]\r\n"
+                             "%s5%s)  Autoassist   %s[%s%3s%s]      %sE%s) Gratz    %s[%s%3s%s]\r\n"
+                             "%s6%s)  Autosplit    %s[%s%3s%s]\r\n",
 /* Line 1 - autoexits and gossip */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), PREFEDIT_FLAGGED(PRF_AUTOEXIT) ? CBGRN(d->character, C_NRM) : CBRED(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_AUTOEXIT)), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM),
@@ -241,10 +243,11 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
              ONOFF(PREFEDIT_FLAGGED(PRF_AUTOSPLIT)), CCCYN(d->character, C_NRM)
              );
 
-  send_to_char(d->character, "%s7%s) Automap      %s[%s%3s%s]\r\n"
-                             "%s8%s) Autokey      %s[%s%3s%s]\r\n"
-                             "%s9%s) Autodoor     %s[%s%3s%s]\r\n"
-                             "%s0%s) Autoexit Long%s[%s%3s%s]\r\n",
+  send_to_char(d->character, "%s7%s)  Automap      %s[%s%3s%s]\r\n"
+                             "%s8%s)  Autokey      %s[%s%3s%s]\r\n"
+                             "%s9%s)  Autodoor     %s[%s%3s%s]\r\n"
+                             "%s0%s) Autoexit Long %s[%s%3s%s]\r\n"
+                             "%sS%s) Short Look    %s[%s%3s%s]\r\n",
 /* Line 7 - automap */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), PREFEDIT_FLAGGED(PRF_AUTOMAP) ? CBGRN(d->character, C_NRM) : CBRED(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_AUTOMAP)), CCCYN(d->character, C_NRM),
@@ -254,9 +257,12 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
 /* Line 9 - autodoor */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), PREFEDIT_FLAGGED(PRF_AUTODOOR) ? CBGRN(d->character, C_NRM) : CBRED(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_AUTODOOR)), CCCYN(d->character, C_NRM),
-/* Line 0 - autoexit_l */
+/* Line 10 - autoexit_l */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), PREFEDIT_FLAGGED(PRF_AUTOEXIT_L) ? CBGRN(d->character, C_NRM) : CBRED(d->character, C_NRM),
-             ONOFF(PREFEDIT_FLAGGED(PRF_AUTOEXIT_L)), CCCYN(d->character, C_NRM)
+             ONOFF(PREFEDIT_FLAGGED(PRF_AUTOEXIT_L)), CCCYN(d->character, C_NRM),
+/* Line 11 - short-look */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), PREFEDIT_FLAGGED(PRF_SHORT_LOOK) ? CBGRN(d->character, C_NRM) : CBRED(d->character, C_NRM),
+             ONOFF(PREFEDIT_FLAGGED(PRF_SHORT_LOOK)), CCCYN(d->character, C_NRM)             
              );
 
   /* The bottom section of the toggles menu */
@@ -315,7 +321,8 @@ static void prefedit_disp_prompt_menu(struct descriptor_data *d)
   if (PREFEDIT_FLAGGED(PRF_DISPAUTO))
     sprintf(prompt_string, "<Auto>");
   else
-    sprintf(prompt_string, "%s%s%s%s%s%s%s%s",
+    sprintf(prompt_string, "%s%s%s%s%s%s%s%s%s",
+      PREFEDIT_FLAGGED(PRF_DISP_NAME) ? "N" : "",    
 	    PREFEDIT_FLAGGED(PRF_DISPHP) ? "h" : "",
 	    PREFEDIT_FLAGGED(PRF_DISP_MAXHP) ? "H" : "",
 	    PREFEDIT_FLAGGED(PRF_DISPMANA) ? "m" : "",
@@ -323,33 +330,37 @@ static void prefedit_disp_prompt_menu(struct descriptor_data *d)
 	    PREFEDIT_FLAGGED(PRF_DISPMOVE) ? "v" : "",
 	    PREFEDIT_FLAGGED(PRF_DISP_MAXMOVE) ? "V" : "",
 	    PREFEDIT_FLAGGED(PRF_DISP_TANK) ? "T" : "",
-            PREFEDIT_FLAGGED(PRF_DISP_VICT) ? "F" : "");
+      PREFEDIT_FLAGGED(PRF_DISP_VICT) ? "F" : ""
+      );
 
   send_to_char(d->character,
-		"%sPrompt Settings\r\n"
+               "%sPrompt Settings\r\n"
+               "%s0%s) Toggle Name\r\n"
                "%s1%s) Toggle HP\r\n"
-	       "%s2%s) Toggle Max HP\r\n"
+               "%s2%s) Toggle Max HP\r\n"
                "%s3%s) Toggle Mana\r\n"
                "%s4%s) Toggle Max Mana\r\n"
-	       "%s5%s) Toggle Moves\r\n"
+               "%s5%s) Toggle Moves\r\n"
                "%s6%s) Toggle Max Moves\r\n"
                "%s7%s) Toggle Tank Condition\r\n"
                "%s8%s) Toggle Foe Condition\r\n"
-	       "%s9%s) Toggle Auto\r\n\r\n"
+               "%s9%s) Toggle Auto\r\n\r\n"
                "%sCurrent Prompt: %s%s%s\r\n\r\n"
-               "%s0%s) Quit (to main menu)\r\n",
-                             CBWHT(d->character, C_NRM), // Prompt settings
-			     CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Hp
-			     CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Hp
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Mana
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Mana
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Move
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Move
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Tank Condition
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Foe Condition
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Auto
-	                     CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), prompt_string, CCNRM(d->character, C_NRM),
-                             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM) );
+
+               "%sQ%s) Quit (to main menu)\r\n",
+               CBWHT(d->character, C_NRM), // Prompt settings
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Name                          
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Hp
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Hp
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Mana
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Mana
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Move
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Max Move
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Tank Condition
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Foe Condition
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), // Toggle Auto
+               CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), prompt_string, CCNRM(d->character, C_NRM),
+               CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM));
 
   send_to_char(d->character, "Enter Choice :");
   OLC_MODE(d) = PREFEDIT_PROMPT;
@@ -601,6 +612,11 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
         TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOEXIT_L);
         break;
 
+      case 'S':
+      case 's':
+        TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHORT_LOOK);
+        break;
+
       case '1':
         TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOEXIT);
         break;
@@ -749,100 +765,95 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
   /* Sub-menu's and flag toggle menu's */
   case PREFEDIT_PROMPT:
+    if (*arg == 'q' || *arg == 'Q')
+    { 
+      send_to_char(d->character, "\r\nwe're down here\r\n"); 
+      break;
+    }
     number = atoi(arg);
     if ((number < 0) || (number > 9))
     {
       send_to_char(d->character, "%sThat's not a valid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
       prefedit_disp_prompt_menu(d);
     }
-    else
+    /* toggle bits */
+    else if (number == 0)
     {
-      if (number == 0)
-        break;
+      if (PREFEDIT_FLAGGED(PRF_DISP_NAME))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_NAME);
       else
-      {
-        /* toggle bits */
-        if (number == 1)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISPHP))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPHP);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPHP);
-        }
-
-        else if (number == 2)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISP_MAXHP))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXHP);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXHP);
-        }
-
-        else if (number == 3)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISPMANA))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMANA);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMANA);
-        }
-
-        else if (number == 4)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISP_MAXMANA))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMANA);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMANA);
-        }
-
-        else if (number == 5)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISPMOVE))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMOVE);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMOVE);
-        }
-
-        else if (number == 6)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISP_MAXMOVE))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMOVE);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMOVE);
-        }
-
-        else if (number == 7)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISP_TANK))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_TANK);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_TANK);
-        }
-
-        else if (number == 8)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISP_VICT))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_VICT);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_VICT);
-        }
-
-        else if (number == 9)
-        {
-          if (PREFEDIT_FLAGGED(PRF_DISPAUTO))
-            REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPAUTO);
-          else
-            SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPAUTO);
-        }
-        prefedit_disp_prompt_menu(d);
-      }
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_NAME);
     }
+    else if (number == 1)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISPHP))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPHP);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPHP);
+    }
+    else if (number == 2)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISP_MAXHP))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXHP);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXHP);
+    }
+    else if (number == 3)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISPMANA))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMANA);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMANA);
+    }
+    else if (number == 4)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISP_MAXMANA))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMANA);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMANA);
+    }
+    else if (number == 5)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISPMOVE))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMOVE);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMOVE);
+    }
+    else if (number == 6)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISP_MAXMOVE))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMOVE);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_MAXMOVE);
+    }
+    else if (number == 7)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISP_TANK))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_TANK);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_TANK);
+    }
+    else if (number == 8)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISP_VICT))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_VICT);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISP_VICT);
+    }
+    else if (number == 9)
+    {
+      if (PREFEDIT_FLAGGED(PRF_DISPAUTO))
+        REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPAUTO);
+      else
+        SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPAUTO);
+    }
+    prefedit_disp_prompt_menu(d);    
     return;
-
   default:
     /* we should never get here */
     mudlog(BRF,LVL_BUILDER,TRUE,"SYSERR: Reached default case in parse_prefedit");
     break;
-  }
+  } 
   /*. If we get this far, something has be changed .*/
   OLC_VAL(d) = 1;
   prefedit_disp_main_menu(d);

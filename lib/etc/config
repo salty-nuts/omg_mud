@@ -135,7 +135,7 @@ donation_room_2 = 5510
 donation_room_3 = 235
 
 * The virtual number of the recall room
-recall_room = 3001
+recall_room = 1000
 
 
 

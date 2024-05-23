@@ -33,78 +33,63 @@ Updated: 22 JUL 2021
   Salty
   06 JAN 2019
 */
-#define MOVE_EXP (100000)
+#define HITP_REGEN_EXP(ch) (GET_HITP_REGEN(ch) * 1000000)
+#define MANA_REGEN_EXP(ch) (GET_MANA_REGEN(ch) * 1000000)
+#define MOVE_REGEN_EXP(ch) (GET_MOVE_REGEN(ch) * 1000000)
+#define AFF_EXP(ch) (GET_SPELLS_AFFECTS(ch) * 1000000)
+#define DAM_EXP(ch) (GET_SPELLS_DAMAGE(ch) * 1000000)
+#define HEAL_EXP(ch) (GET_SPELLS_HEALING(ch) * 1000000)
 #define TRAIN_EXP (100000)
 #define RANK_ONE (long)500000000
 
-#define STRADD_EXP(ch) ((1 + GET_REAL_ADD(ch)) * 100000)
-#define STR_EXP(ch) (GET_REAL_STR(ch) * 100000)
-#define INT_EXP(ch) (GET_REAL_INT(ch) * 100000)
-#define WIS_EXP(ch) (GET_REAL_WIS(ch) * 100000)
-#define DEX_EXP(ch) (GET_REAL_DEX(ch) * 100000)
-#define CON_EXP(ch) (GET_REAL_CON(ch) * 100000)
-#define LUCK_EXP(ch) (GET_REAL_LUCK(ch) * 100000)
-
+#define STRADD_EXP(ch) ((1 + GET_REAL_ADD(ch)) * 1000000)
+#define STR_EXP(ch) (GET_REAL_STR(ch) * 1000000)
+#define INT_EXP(ch) (GET_REAL_INT(ch) * 1000000)
+#define WIS_EXP(ch) (GET_REAL_WIS(ch) * 1000000)
+#define DEX_EXP(ch) (GET_REAL_DEX(ch) * 1000000)
+#define CON_EXP(ch) (GET_REAL_CON(ch) * 1000000)
+#define LUCK_EXP(ch) (GET_REAL_LUCK(ch) * 1000000)
+#define CPOW_EXP(ch) ((GET_COMBAT_POWER(ch)-99) * 1000000)
 #define IMPROVE_COST 10000000
 
-/*
-  Metagame Menu
-
-  Salty
-  06 JAN 2019
-*/
-void list_meta(struct char_data *ch)
+ACMD(do_testgroup)
 {
-  long hitp_exp, hitp_gold, mana_exp, mana_gold, train_exp, train_gold;
-  mana_gold = hitp_gold = train_gold = 0;
+  char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
+  struct char_data *victim1;
+  struct char_data *victim2;
 
-  switch (GET_CLASS(ch))
+  two_arguments(argument, buf, buf2);
+
+  if (!*buf)
+    send_to_char(ch,"Who do you wish to test the group of?\r\n");
+  
+  if (!(victim1 = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD))) 
+    send_to_char(ch, "%s", CONFIG_NOPERSON);
+  if (!(victim2 = get_char_vis(ch, buf2, NULL, FIND_CHAR_WORLD)))
+    send_to_char(ch, "You need to specify a second person\r\n");  
+  else
   {
-  case CLASS_WIZARD:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
-    mana_exp = (long)GET_MAX_MANA(ch) * 500;
-    break;
-  case CLASS_PRIEST:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
-    mana_exp = (long)GET_MAX_MANA(ch) * 625;
-    break;
-  case CLASS_ROGUE:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
-    break;
-  case CLASS_FIGHTER:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 875;
-    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
-    break;
-  case CLASS_KNIGHT:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 500;
-    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
-    break;
-  case CLASS_BARD:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
-    mana_exp = (long)GET_MAX_MANA(ch) * 750;
-    break;
-  default:
-    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
-    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
-    break;
+    send_to_char(ch, "Victim1 = %s, Victim2 = %s\r\n", GET_NAME(victim1), GET_NAME(victim2));
+    if (GROUP(victim1) && GROUP(victim2))
+    {
+      if (GROUP_LEADER(GROUP(victim1)) == GROUP_LEADER(GROUP(victim2)))
+        send_to_char(ch, "victim1 group leader is %s, victim2 group leader is %s.\r\n", 
+          GET_NAME(GROUP_LEADER(GROUP(victim1))), GET_NAME(GROUP_LEADER(GROUP(victim2))));
+      else
+        send_to_char(ch, "victim1 and victim2 are not in the same group.\r\n");
+    }
+    else
+      send_to_char(ch, "victim1 or victim2 are not in a group.\r\n");
+    if (!GROUP(victim1) || !GROUP(victim2))
+    {
+      if (!GROUP(victim1))
+        send_to_char(ch, "Victim1 is not in a group.\r\n");
+      if (!GROUP(victim2))
+        send_to_char(ch, "Victim2 is not in a group.\r\n");      
+    }      
   }
-
-  hitp_gold = hitp_exp / 50;
-  mana_gold = mana_exp / 50;
-  train_exp = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
-  train_gold = train_exp / 10;
-
-  send_to_char(ch, "\n\r");
-  send_to_char(ch, "You have %s experience points.\n\r", add_commas(GET_EXP(ch)));
-  send_to_char(ch, "You can metagame the following stats:\r\n\n\r");
-  send_to_char(ch, "[1] Increase hitpoints:   %12s exp, %12s gold.\n\r", add_commas(hitp_exp), add_commas(hitp_gold));
-  send_to_char(ch, "[2] Increase mana:        %12s exp, %12s gold.\n\r", add_commas(mana_exp), add_commas(mana_gold));
-  send_to_char(ch, "[3] Increase movement:    %12s exp\n\r", add_commas(MOVE_EXP));
-  send_to_char(ch, "[4] Increase trains:      %12s exp, %12s gold.\n\r", add_commas(train_exp), add_commas(train_gold));
-
-  send_to_char(ch, "\n\r    Syntax: metagame <number>\n\r");
 }
+
 const char *rank_name(struct char_data *ch)
 {
   if (IS_NPC(ch))
@@ -113,7 +98,7 @@ const char *rank_name(struct char_data *ch)
     return NAME_RANK_10(ch);
   else if (GET_RANK(ch) == 9)
     return NAME_RANK_9(ch);
-  else if (GET_RANK(ch) == 9)
+  else if (GET_RANK(ch) == 8)
     return NAME_RANK_8(ch);
   else if (GET_RANK(ch) == 7)
     return NAME_RANK_7(ch);
@@ -228,16 +213,87 @@ ACMD(do_listrank)
     i++;
   }
 }
+/*
+  Metagame Menu
 
+  Salty
+  06 JAN 2019
+*/
+void list_meta(struct char_data *ch)
+{
+  long hitp_exp, hitp_gold, mana_exp, mana_gold, move_exp, move_gold;
+  mana_gold = hitp_gold = move_gold = 0;
+
+  long s_meta_exp = 0;
+  long s_meta_gold = 0;
+
+  switch (GET_CLASS(ch))
+  {
+  case CLASS_WIZARD:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 500;
+    break;
+  case CLASS_PRIEST:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 625;
+    break;
+  case CLASS_ROGUE:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    break;
+  case CLASS_FIGHTER:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 875;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    break;
+  case CLASS_KNIGHT:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 500;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    break;
+  case CLASS_BARD:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
+    mana_exp = (long)GET_MAX_MANA(ch) * 750;
+    break;
+  default:
+    hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
+    mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    break;
+  }
+  move_exp = (long)GET_MAX_MOVE(ch) * 100;
+  move_gold = 10000;
+  hitp_gold = hitp_exp / 50;
+  mana_gold = mana_exp / 50;
+
+  s_meta_exp = (hitp_exp + mana_exp) * 5;
+  s_meta_gold = (hitp_gold + mana_gold) * 5;
+
+  send_to_char(ch, "\n\r");
+  send_to_char(ch, "You have %s experience points.\n\r", add_commas(GET_EXP(ch)));
+  send_to_char(ch, "You can metagame the following:\r\n\n\r");
+  send_to_char(ch, "[1] Increase hitpoints:   %12s exp, %12s gold.\n\r", add_commas(hitp_exp), add_commas(hitp_gold));
+  send_to_char(ch, "[2] Increase mana:        %12s exp, %12s gold.\n\r", add_commas(mana_exp), add_commas(mana_gold));
+  send_to_char(ch, "[3] Increase movement:    %12s exp, %12s gold.\n\r", add_commas(move_exp), add_commas(move_gold));
+  send_to_char(ch, "\n\r\n");  
+  send_to_char(ch, "[4] Super Meta:           %12s exp, %12s gold.\n\r", add_commas(s_meta_exp), add_commas(s_meta_gold));
+  send_to_char(ch, "\n\r    Syntax: metagame <number>\n\r");
+  send_to_char(ch, "\n\r    You may also 'train' to increase stats.\n\r");
+
+}
 ACMD(do_metagame)
 {
-  long hitp_exp, hitp_gold, mana_exp, mana_gold, train_exp, train_gold;
+  long hitp_exp, hitp_gold, mana_exp, mana_gold, move_exp, move_gold;
   int hroll = con_app[GET_CON(ch)].meta_hp;
   int mroll = int_app[GET_INT(ch)].meta_mana;
-  int vroll = 100;
+
+  int mvroll = 1000;
   int arg = 0;
 
+  long s_meta_exp = 0;
+  long s_meta_gold = 0;  
+  int s_hroll = 0;
+  int s_mroll = 0;
+
   mana_gold = hitp_gold = 0;
+
   skip_spaces(&argument);
 
   if (!*argument)
@@ -253,143 +309,550 @@ ACMD(do_metagame)
   case CLASS_WIZARD:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_INT(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
     mana_exp = (long)GET_MAX_MANA(ch) * 500;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   case CLASS_PRIEST:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_WIS(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
     mana_exp = (long)GET_MAX_MANA(ch) * 625;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   case CLASS_ROGUE:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_INT(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
     mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   case CLASS_FIGHTER:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_INT(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 875;
     mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   case CLASS_KNIGHT:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_WIS(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 500;
     mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   case CLASS_BARD:
     mroll = dice(1, int_app[GET_WIS(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_WIS(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 1250;
     mana_exp = (long)GET_MAX_MANA(ch) * 750;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   default:
     mroll = dice(1, int_app[GET_INT(ch)].meta_mana);
     hroll = dice(1, con_app[GET_CON(ch)].meta_hp);
+    s_hroll = con_app[GET_CON(ch)].meta_hp;
+    s_mroll = int_app[GET_INT(ch)].meta_mana;
     hitp_exp = (long)GET_MAX_HIT(ch) * 1000;
     mana_exp = (long)GET_MAX_MANA(ch) * 1000;
+    s_meta_exp = (hitp_exp + mana_exp) * 5;
     break;
   }
 
   mana_gold = mana_exp / 50;
   hitp_gold = hitp_exp / 50;
-  train_exp = (GET_TRAIN_META(ch) + 1) * TRAIN_EXP;
-  train_gold = train_exp / 10;
+  s_meta_gold = (mana_gold + hitp_gold) * 5;
+  move_exp = (long)GET_MAX_MOVE(ch) * 100;
+  move_gold = 10000;
 
   switch (arg)
   {
-  case 1:
-  {
-    if (GET_EXP(ch) < hitp_exp)
+    case 1:
     {
-      send_to_char(ch, "You need %s more experience points to metagame your HP.\n\r", add_commas(hitp_exp - GET_EXP(ch)));
-      return;
+      if (GET_EXP(ch) < hitp_exp)
+      {
+        send_to_char(ch, "You need %s more experience points to metagame your HP.\n\r", add_commas(hitp_exp - GET_EXP(ch)));
+        return;
+      }
+      else if (GET_GOLD(ch) < hitp_gold)
+      {
+        send_to_char(ch, "You need %s more gold coins to metagame your HP.\n\r", add_commas(hitp_gold - GET_GOLD(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You manage to metagame and increase your HP by %d!\n\r", hroll);
+        GET_HIT(ch) += hroll;
+        GET_MAX_HIT(ch) += hroll;
+        GET_GOLD(ch) -= hitp_gold;
+        rank_exp(ch, hitp_exp);
+        return;
+      }
     }
-    else if (GET_GOLD(ch) < hitp_gold)
+    case 2:
     {
-      send_to_char(ch, "You need %s more gold coins to metagame your HP.\n\r", add_commas(hitp_gold - GET_GOLD(ch)));
-      return;
+      if (GET_EXP(ch) < mana_exp)
+      {
+        send_to_char(ch, "You need %s more experience points to metagame your Mana.\n\r", add_commas(mana_exp - GET_EXP(ch)));
+        return;
+      }
+      else if (GET_GOLD(ch) < mana_gold)
+      {
+        send_to_char(ch, "You need %s more gold coins to metagame your mana.\n\r", add_commas(mana_gold - GET_GOLD(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You manage to metagame and increase your Mana by %d!\n\r", mroll);
+        GET_MANA(ch) += mroll;
+        GET_MAX_MANA(ch) += mroll;
+        GET_GOLD(ch) -= mana_gold;
+        rank_exp(ch, mana_exp);
+        return;
+      }
     }
-    else
+    case 3:
     {
-      send_to_char(ch, "You manage to metagame and increase your HP by %d!\n\r", hroll);
-      GET_HIT(ch) += hroll;
-      GET_MAX_HIT(ch) += hroll;
-      GET_GOLD(ch) -= hitp_gold;
-      rank_exp(ch, hitp_exp);
-      return;
+      if (GET_EXP(ch) < move_exp)
+      {
+        send_to_char(ch, "You need %s more experience points to metagame your Move.\n\r", add_commas(move_exp - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You manage to metagame and increase your Move by %d!\n\r", mvroll);
+        GET_MOVE(ch) += mvroll;
+        GET_MAX_MOVE(ch) += mvroll;
+        rank_exp(ch, move_exp);
+        return;
+      }
     }
-  }
-  case 2:
-  {
-    if (GET_EXP(ch) < mana_exp)
+    case 4:
     {
-      send_to_char(ch, "You need %s more experience points to metagame your Mana.\n\r", add_commas(mana_exp - GET_EXP(ch)));
-      return;
+      if (GET_EXP(ch) < s_meta_exp)
+      {
+        send_to_char(ch, "You need %s more experience points in order to Super Meta!\n\r", add_commas(s_meta_exp - GET_EXP(ch)));
+        return;
+      }
+      if (GET_GOLD(ch) < s_meta_gold)
+      {
+        send_to_char(ch, "You need %s more gold coins in order to Super Meta!\n\r", add_commas(s_meta_gold - GET_GOLD(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You manage to metagame and increase your Hitpoints by %d and Mana by %d!\n\r", s_hroll, s_mroll);
+        GET_HIT(ch) += s_hroll;
+        GET_MAX_HIT(ch) += s_hroll;
+        GET_MANA(ch) += s_mroll;
+        GET_MAX_MANA(ch) += s_mroll;
+        GET_GOLD(ch) -= s_meta_gold;
+        rank_exp(ch, s_meta_exp);
+        return;
+      }
     }
-    else if (GET_GOLD(ch) < mana_gold)
-    {
-      send_to_char(ch, "You need %s more gold coins to metagame your mana.\n\r", add_commas(mana_gold - GET_GOLD(ch)));
-      return;
-    }
-    else
-    {
-      send_to_char(ch, "You manage to metagame and increase your Mana by %d!\n\r", mroll);
-      GET_MANA(ch) += mroll;
-      GET_MAX_MANA(ch) += mroll;
-      GET_GOLD(ch) -= mana_gold;
-      rank_exp(ch, mana_exp);
-      return;
-    }
-  }
-  case 3:
-  {
-    if (GET_EXP(ch) < MOVE_EXP)
-    {
-      send_to_char(ch, "You need %s more experience points to metagame your Move.\n\r", add_commas(MOVE_EXP - GET_EXP(ch)));
-      return;
-    }
-    else
-    {
-      send_to_char(ch, "You manage to metagame and increase your Move by %d!\n\r", vroll);
-      GET_MOVE(ch) += vroll;
-      GET_MAX_MOVE(ch) += vroll;
-      rank_exp(ch, MOVE_EXP);
-      return;
-    }
-  }
-  case 4:
-  {
-    int trns = dice(1, 10);
-    if (GET_EXP(ch) < train_exp)
-    {
-      send_to_char(ch, "You need %s more experience points to metagame your trains.\n\r", add_commas(train_exp - GET_EXP(ch)));
-      return;
-    }
-    else if (GET_GOLD(ch) < train_gold)
-    {
-      send_to_char(ch, "You need %s more gold coins to metagame your trains.\n\r", add_commas(train_gold - GET_GOLD(ch)));
-      return;
-    }
-    else
-    {
-      send_to_char(ch, "You manage to metagame and increase your trains by %d!\n\r", trns);
-      GET_TRAINS(ch) += trns;
-      GET_TRAIN_META(ch) += trns;
-      rank_exp(ch, train_exp);
-      return;
-    }
-  }
-  default:
-  {
-    send_to_char(ch, "There is nothing like that to metagame!\n\r");
-    return;
-  }
   }
   return;
+}
+void list_train(struct char_data *ch)
+{
+  if (GET_LEVEL(ch) < 100)
+  {
+    send_to_char(ch, "You must be level 100 in order to train\r\n");
+    return;
+  }
+  send_to_char(ch, "\n\r");
+  send_to_char(ch, "You have %s experience points.\n\r", add_commas(GET_EXP(ch)));
+  send_to_char(ch, "You can train the following:\r\n\n\r");
+  if ((GET_REAL_STR(ch) < 25) || (GET_REAL_INT(ch) < 25) || (GET_REAL_WIS(ch) < 25) ||
+      (GET_REAL_DEX(ch) < 25) || (GET_REAL_CON(ch) < 25) || (GET_REAL_ADD(ch) < 100) ||
+      (GET_REAL_LUCK(ch) < 25))
+  {
+    send_to_char(ch, "You can train the following abilities to a max of 25.\n\r\n\r");
+
+    if (GET_REAL_STR(ch) < 25)
+      send_to_char(ch, "[A] Permanenly increase STR by 1:     %12s exp.\n\r", add_commas(STR_EXP(ch)));
+    if (GET_REAL_INT(ch) < 25)
+      send_to_char(ch, "[B] Permanenly increase INT by 1:     %12s exp.\n\r", add_commas(INT_EXP(ch)));
+    if (GET_REAL_WIS(ch) < 25)
+      send_to_char(ch, "[C] Permanenly increase WIS by 1:     %12s exp.\n\r", add_commas(WIS_EXP(ch)));
+    if (GET_REAL_DEX(ch) < 25)
+      send_to_char(ch, "[D] Permanenly increase DEX by 1:     %12s exp.\n\r", add_commas(DEX_EXP(ch)));
+    if (GET_REAL_CON(ch) < 25)
+      send_to_char(ch, "[E] Permanenly increase CON by 1:     %12s exp.\n\r", add_commas(CON_EXP(ch)));
+    if (GET_REAL_LUCK(ch) < 25)
+      send_to_char(ch, "[F] Permanenly increase LUCK by 1:    %12s exp.\n\r", add_commas(CON_EXP(ch)));
+
+    if (GET_REAL_ADD(ch) < 100 && GET_REAL_STR(ch) >= 25)
+      send_to_char(ch, "[G] Permanenly increase STR%% by 1:    %12s exp.\n\r", add_commas(STRADD_EXP(ch)));
+  }
+  if (GET_COMBAT_POWER(ch) < 200)
+  {
+    send_to_char(ch, "\n\r");
+    send_to_char(ch, "[H] Increase Combat Power by 1:       %12s exp.\n\r", add_commas(CPOW_EXP(ch)));
+  }
+  if (GET_SPELLS_AFFECTS(ch) < 100)
+    send_to_char(ch, "[I] Increase Affect Spells by 1:      %12s exp.\n\r", add_commas(AFF_EXP(ch)));    
+  if (GET_SPELLS_DAMAGE(ch) < 100)
+    send_to_char(ch, "[J] Increase Damage Spells by 1:      %12s exp.\n\r", add_commas(DAM_EXP(ch)));    
+  if (GET_SPELLS_HEALING(ch) < 100)
+    send_to_char(ch, "[K] Increase Healing Spells by 1:     %12s exp.\n\r", add_commas(HEAL_EXP(ch)));    
+  if (GET_HITP_REGEN(ch) < 100)
+    send_to_char(ch, "[L] Increase Hitpoint Regen by 1:     %12s exp.\n\r", add_commas(HITP_REGEN_EXP(ch)));    
+
+  if (GET_MANA_REGEN(ch) < 100)
+    send_to_char(ch, "[M] Increase Mana Regen by 1:         %12s exp.\n\r", add_commas(MANA_REGEN_EXP(ch)));    
+  if (GET_MOVE_REGEN(ch) < 100)
+    send_to_char(ch, "[N] Increase Move Regen by 1:         %12s exp.\n\r", add_commas(MOVE_REGEN_EXP(ch)));    
+
+  send_to_char(ch, "\n\r    Syntax: train <number>\n\r");
+  send_to_char(ch, "\n\r    You may also 'meta' to increase your hitpoints, mana and movement.\n\r");
+
+
+}
+ACMD(do_train)
+{
+  char arg[MAX_INPUT_LENGTH];
+//  int arg = 0;
+  int inc = 1;
+  one_argument(argument, arg);
+
+  if (GET_LEVEL(ch) < 100)
+  {
+    send_to_char(ch, "You must be level 100 in order to train\r\n");
+    return;
+  }
+  if (!*argument)
+  {
+    list_train(ch);
+    rank_exp(ch, 0);
+    return;
+  }
+//  arg = atoi(argument);
+
+  if (!*argument)
+  {
+    list_train(ch);
+    rank_exp(ch, 0);
+    return;
+  }
+  switch (*arg)
+  {
+    case 'A':
+    case 'a':
+    {
+      if (GET_REAL_STR(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +STR training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < STR_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +STR.\n\r", add_commas(STR_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +STR by %d!\n\r", inc);
+        GET_REAL_STR(ch) += inc;
+        rank_exp(ch, STR_EXP(ch));
+        return;
+      }
+    }
+    case 'B':
+    case 'b':
+    {
+      if (GET_REAL_INT(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +INT training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < INT_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +INT.\n\r", add_commas(INT_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +INT by %d!\n\r", inc);
+        GET_REAL_INT(ch) += inc;
+        rank_exp(ch, INT_EXP(ch));
+        return;
+      }
+    }
+    case 'C':
+    case 'c':
+    {
+      if (GET_REAL_WIS(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +WIS training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < WIS_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +WIS.\n\r", add_commas(WIS_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +WIS by %d!\n\r", inc);
+        GET_REAL_WIS(ch) += inc;
+        rank_exp(ch, WIS_EXP(ch));
+        return;
+      }
+    }
+    case 'D':
+    case 'd':
+    {
+      if (GET_REAL_DEX(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +DEX training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < DEX_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +DEX.\n\r", add_commas(DEX_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +DEX by %d!\n\r", inc);
+        GET_REAL_DEX(ch) += inc;
+        rank_exp(ch, DEX_EXP(ch));
+        return;
+      }
+    }
+    case 'E':
+    case 'e':
+    {
+      if (GET_REAL_CON(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +CON training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < CON_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +CON.\n\r", add_commas(CON_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +CON by %d!\n\r", inc);
+        GET_REAL_CON(ch) += inc;
+        rank_exp(ch, CON_EXP(ch));
+        return;
+      }
+    }
+    case 'F':
+    case 'f':
+    {
+      if (GET_REAL_LUCK(ch) >= 25)
+      {
+        send_to_char(ch, "You have completed the +LUCK training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < LUCK_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your +LUCK.\n\r", add_commas(LUCK_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your +LUCK by %d!\n\r", inc);
+        GET_REAL_LUCK(ch) += inc;
+        rank_exp(ch, LUCK_EXP(ch));
+        return;
+      }
+    }
+    case 'G':
+    case 'g':
+    {
+      if (GET_REAL_ADD(ch) >= 100)
+      {
+        send_to_char(ch, "You have completed the STR_ADD training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < STRADD_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your STR_ADD.\n\r", add_commas(STRADD_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your STR_ADD by %d!\n\r", inc);
+        GET_REAL_ADD(ch) += inc;
+        rank_exp(ch, STRADD_EXP(ch));
+        return;
+      }
+    }
+    case 'H':
+    case 'h':
+    {
+      if (GET_COMBAT_POWER(ch) > 200)
+      {
+        send_to_char(ch, "You have completed Combat Power training.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < CPOW_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Combat Power.\n\r", add_commas(CPOW_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase your Combat Power by %d!\n\r", inc);
+        GET_COMBAT_POWER(ch) += inc;
+        rank_exp(ch, CPOW_EXP(ch));
+        return;
+      }      
+    }
+    case 'I':
+    case 'i':
+    {
+      if (GET_SPELLS_AFFECTS(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Affect Spells!\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < AFF_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Affect Spells.\n\r", add_commas(AFF_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Affect Spells by %d!\n\r", inc);
+        GET_SPELLS_AFFECTS(ch) += inc;
+        rank_exp(ch, AFF_EXP(ch));
+        return;
+      }      
+    }
+    case 'J':
+    case 'j':
+    {
+      if (GET_SPELLS_DAMAGE(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Damage Spells!\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < DAM_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Damage Spells.\n\r", add_commas(DAM_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Damage Spells by %d!\n\r", inc);
+        GET_SPELLS_DAMAGE(ch) += inc;
+        rank_exp(ch, DAM_EXP(ch));
+        return;
+      }      
+    }
+    case 'K':
+    case 'k':
+    {
+      if (GET_SPELLS_HEALING(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Healing Spells!\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < HEAL_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Healing Spells.\n\r", add_commas(HEAL_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Healing Spells by %d!\n\r", inc);
+        GET_SPELLS_HEALING(ch) += inc;
+        rank_exp(ch, HEAL_EXP(ch));
+        return;
+      }      
+    }
+    case 'L':
+    case 'l':
+    {
+      if (GET_HITP_REGEN(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Hitpoint Regeneration!.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < HITP_REGEN_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Hitpoint Regeneration.\n\r", add_commas(HITP_REGEN_EXP(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Hitpoint Regeneration by %d!\n\r", inc);
+        GET_HITP_REGEN(ch) += inc;
+        rank_exp(ch, HITP_REGEN_EXP(ch));
+        return;
+      }      
+    }
+    case 'M':
+    case 'm':
+    {
+      if (GET_MANA_REGEN(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Mana Regeneration!.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < MANA_REGEN_EXP(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Mana Regeneration!.\n\r", add_commas(GET_MANA_REGEN(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Mana Regeneration by %d!\n\r", inc);
+        GET_MANA_REGEN(ch) += inc;
+        rank_exp(ch, GET_MANA_REGEN(ch));
+        return;
+      }      
+    }
+    case 'N':
+    case 'n':
+    {
+      if (GET_MOVE_REGEN(ch) > 100)
+      {
+        send_to_char(ch, "You have completed increasing the potency of your Movement Regeneration!.\n\r");
+        return;
+      }
+      if (GET_EXP(ch) < GET_MOVE_REGEN(ch))
+      {
+        send_to_char(ch, "You need %s more experience points to train your Movement Regeneration!.\n\r", add_commas(GET_MOVE_REGEN(ch) - GET_EXP(ch)));
+        return;
+      }
+      else
+      {
+        send_to_char(ch, "You train and increase the potency of your Movement Regeneration by %d!\n\r", inc);
+        GET_MOVE_REGEN(ch) += inc;
+        rank_exp(ch, GET_MOVE_REGEN(ch));
+        return;
+      }      
+    }
+    default:
+    {
+      send_to_char(ch, "There is nothing like that to train!\n\r");
+      return;
+    }
+  }
+
+  return;
+
 }
 /*
   Salty
@@ -647,38 +1110,37 @@ ACMD(do_dance)
     send_to_char(ch, "Types: war / slow / none\r\n");
     return;
   }
-  if (!str_cmp("war", arg))
-  {
-    send_to_char(ch, "You begin the dance of war!\n\r");
-    if (GROUP(ch))
+  /*   if (!str_cmp("war", arg))
     {
-      while ((groupie = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+      send_to_char(ch, "You begin the dance of war!\n\r");
+      if (GROUP(ch))
       {
-        for (af = groupie->affected; af; af = af->next)
+        while ((groupie = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
         {
-          if (af->spell == spell_type(groupie, SPELL_BARD_SLOW_DANCE))
-            affect_remove(groupie, af);
-        }
-        REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_WAR_DANCE);
-        REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_SLOW_DANCE);
-        if (IS_NPC(groupie))
-          continue;
-        if (!IS_NPC(groupie))
-        {
+          for (af = groupie->affected; af; af = af->next)
+          {
+            if (af->spell == spell_type(groupie, SPELL_BARD_SLOW_DANCE))
+              affect_remove(groupie, af);
+          }
+          REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_WAR_DANCE);
           REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_SLOW_DANCE);
-          act("Your steps follow the war dance.", FALSE, ch, NULL, groupie, TO_VICT);
+          if (IS_NPC(groupie) || ch == groupie)
+            continue;
+          if (!IS_NPC(groupie) && ch != groupie)
+          {
+            REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_SLOW_DANCE);
+            act("Your steps follow the war dance.", FALSE, ch, NULL, groupie, TO_VICT);
+          }
         }
+        cast_spell(ch, groupie, NULL, SPELL_BARD_WAR_DANCE);
       }
-      cast_spell(ch, groupie, NULL, SPELL_BARD_WAR_DANCE);
-    }
-    else if (AFF_FLAGGED(ch, AFF_WAR_DANCE))
-    {
-      act("You are already dancing the war dance.", true, ch, 0, 0, TO_CHAR);
-      return;
-    }
-    save_char(ch);
-  }
-/* 
+      else if (AFF_FLAGGED(ch, AFF_WAR_DANCE))
+      {
+        act("You are already dancing the war dance.", true, ch, 0, 0, TO_CHAR);
+        return;
+      }
+      save_char(ch);
+    } */
   if (!str_cmp("war", arg))
   {
     if (!GET_SKILL(ch, SKILL_WAR_DANCE))
@@ -699,39 +1161,38 @@ ACMD(do_dance)
     }
     save_char(ch);
   }
- */
-  else if (!str_cmp("slow", arg))
-  {
-    send_to_char(ch, "You begin dancing the slow dance!\n\r");
-    if (GROUP(ch))
+  /*   else if (!str_cmp("slow", arg))
     {
-      while ((groupie = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+      send_to_char(ch, "You begin dancing the slow dance!\n\r");
+      if (GROUP(ch))
       {
-        for (af = groupie->affected; af; af = af->next)
+        while ((groupie = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
         {
-          if (af->spell == spell_type(groupie, SPELL_BARD_WAR_DANCE))
-            affect_remove(groupie, af);
-        }
-        REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_WAR_DANCE);
-        REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_SLOW_DANCE);
-        if (IS_NPC(groupie))
-          continue;
-        if (ch != groupie)
-        {
+          for (af = groupie->affected; af; af = af->next)
+          {
+            if (af->spell == spell_type(groupie, SPELL_BARD_WAR_DANCE))
+              affect_remove(groupie, af);
+          }
           REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_WAR_DANCE);
-          act("Your steps follow the slow dance.", FALSE, ch, NULL, groupie, TO_VICT);
+          REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_SLOW_DANCE);
+          if (IS_NPC(groupie))
+            continue;
+          if (ch != groupie)
+          {
+            REMOVE_BIT_AR(AFF_FLAGS(groupie), AFF_WAR_DANCE);
+            act("Your steps follow the slow dance.", FALSE, ch, NULL, groupie, TO_VICT);
+          }
         }
+        cast_spell(ch, groupie, NULL, SPELL_BARD_SLOW_DANCE);
       }
-      cast_spell(ch, groupie, NULL, SPELL_BARD_SLOW_DANCE);
-    }
-    else if (AFF_FLAGGED(ch, AFF_SLOW_DANCE))
-    {
-      act("You are already dancing the slow dance!", true, ch, 0, 0, TO_CHAR);
-      return;
-    }
-    save_char(ch);
-  }
-/*   else if (!str_cmp("slow", arg))
+      else if (AFF_FLAGGED(ch, AFF_SLOW_DANCE))
+      {
+        act("You are already dancing the slow dance!", true, ch, 0, 0, TO_CHAR);
+        return;
+      }
+      save_char(ch);
+    } */
+  else if (!str_cmp("slow", arg))
   {
     if (!GET_SKILL(ch, SKILL_SLOW_DANCE))
     {
@@ -751,15 +1212,15 @@ ACMD(do_dance)
       return;
     }
     save_char(ch);
-  } */
-/*   else if (!str_cmp("none", arg))
-  {
-    REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_WAR_DANCE);
-    REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_SLOW_DANCE);
-    send_to_char(ch, "You stop dancing.\n\r");
-    act("$n is no longer dancing.", true, ch, 0, 0, TO_ROOM);
-    save_char(ch);
-  } */
+  }
+  /*   else if (!str_cmp("none", arg))
+    {
+      REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_WAR_DANCE);
+      REMOVE_BIT_AR(AFF_FLAGS(ch), AFF_SLOW_DANCE);
+      send_to_char(ch, "You stop dancing.\n\r");
+      act("$n is no longer dancing.", true, ch, 0, 0, TO_ROOM);
+      save_char(ch);
+    } */
   else if (!str_cmp("none", arg))
   {
     if (GROUP(ch))
@@ -789,7 +1250,6 @@ ACMD(do_dance)
     save_char(ch);
   }
 }
-
 
 void circle_combat(struct char_data *ch, struct char_data *victim)
 {
@@ -841,22 +1301,28 @@ ACMD(do_circle)
       return;
     }
   }
+  if (!CONFIG_PK_ALLOWED && !IS_NPC(victim) && !IS_NPC(ch))
+  {
+    send_to_char(ch, "Not on players!\r\n");
+    return;
+  }
   if (victim == ch)
   {
     send_to_char(ch, "How can you circle behind yourself?\r\n");
     return;
   }
-  if (!CONFIG_PK_ALLOWED && !IS_NPC(victim) && !IS_NPC(ch))
-    return;
-
-  if (MOB_FLAGGED(victim, MOB_AWARE) && AWAKE(victim))
-  {
-    send_to_char(ch, "%s is too alert, you can't sneak up!\n\r", GET_NAME(victim));
-    return;
-  }
   if (!GET_EQ(ch, WEAR_WIELD))
   {
     send_to_char(ch, "You need to wield a weapon to make it a success.\r\n");
+    return;
+  }
+  if (
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_PIERCE - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_STAB - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_BITE - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_STING - TYPE_HIT))
+  {
+    send_to_char(ch, "Your weapon must pierce, stab, bite or sting in order to circle.\r\n");
     return;
   }
   /* peaceful rooms */
@@ -871,7 +1337,11 @@ ACMD(do_circle)
     send_to_char(ch, "This mob is protected.\r\n");
     return;
   }
-
+  if (MOB_FLAGGED(victim, MOB_AWARE) && AWAKE(victim))
+  {
+    send_to_char(ch, "%s is too alert, you can't sneak up!\n\r", GET_NAME(victim));
+    return;
+  }
   circle_combat(ch, victim);
 
   WAIT_STATE(ch, 2 * PULSE_VIOLENCE);
@@ -907,6 +1377,15 @@ ACMD(do_backstab)
   if (!GET_EQ(ch, WEAR_WIELD))
   {
     send_to_char(ch, "You need to wield a weapon to make it a success.\r\n");
+    return;
+  }
+  if (
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_PIERCE - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_STAB - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_BITE - TYPE_HIT) &&
+      (GET_OBJ_VAL(GET_EQ(ch, WEAR_WIELD), 3) != TYPE_STING - TYPE_HIT))
+  {
+    send_to_char(ch, "Your weapon must pierce, stab, bite or sting in order to backstab.\r\n");
     return;
   }
   /* peaceful rooms */
@@ -952,6 +1431,7 @@ ACMD(do_backstab)
   set_fighting(ch, victim);
   set_fighting(victim, ch);
   hit(ch, victim, SKILL_BACKSTAB);
+  act("$n sneaks up behind $N and stabs $S in the back!", false, ch, 0, victim, TO_ROOM);
   check_improve(ch, SKILL_BACKSTAB, TRUE);
 
   if ((victim && GET_HIT(victim) > 0) && (GET_SKILL(ch, SKILL_DOUBLE_BACKSTAB) > 0))
@@ -1146,7 +1626,9 @@ void headbutt_combat(struct char_data *ch, struct char_data *victim)
 
   if (percent > prob)
   {
-    damage(ch, victim, 0, TYPE_CRUSH);
+    act("You try to headbutt $N but miss.  How embarassing!", false, ch, 0, victim, TO_CHAR);
+    act("You evade a grab and $n misses $s headbutt.", false, ch, 0, victim, TO_VICT);
+    act("$n tries to grab $N for a headbutt, but misses and hits the ground.", false, ch, 0, victim, TO_NOTVICT);
     check_improve(ch, SKILL_HEADBUTT, FALSE);
   }
   else
@@ -1157,7 +1639,6 @@ void headbutt_combat(struct char_data *ch, struct char_data *victim)
     else
     {
       hit(ch, victim, SKILL_HEADBUTT);
-
       if (roll > 15)
       {
         act("You noticed the dazed look on $N's face and grin.", false, ch, 0, victim, TO_CHAR);
@@ -1167,7 +1648,7 @@ void headbutt_combat(struct char_data *ch, struct char_data *victim)
         act("You look at the spot between $N's eyes and headbutt it again!", false, ch, 0, victim, TO_CHAR);
         act("BAMM!!!! What was the license plate of that truck?!", false, ch, 0, victim, TO_VICT);
         act("$n takes $N and crushes $M with $s head,...Blood Everywhere!!", false, ch, 0, victim, TO_NOTVICT);
-        hit(ch, victim, SKILL_HEADBUTT);
+        hit(ch, victim, SKILL_HEADBUTT2);
       }
     }
     check_improve(ch, SKILL_HEADBUTT, TRUE);
@@ -1250,19 +1731,19 @@ void tumble_combat(struct char_data *ch, struct char_data *victim)
       check_improve(victim, SKILL_TWIST_OF_FATE, FALSE);
 
     chance = rand_number(1, 100) + GET_LUCK(ch) + GET_DEX(ch) + tof;
-     if (chance > 75 && FIGHTING(ch))
+    if (chance > 75 && FIGHTING(ch))
     {
       dam += dice(GET_DEX(ch), GET_LUCK(ch));
 /*       GET_POS(victim) = POS_STUNNED;
  */    }
-    else if (chance > 85 && FIGHTING(ch))
-    {
-      if (vict_lag)
-        WAIT_STATE(victim, PULSE_VIOLENCE);
-    }
-    check_improve(ch, SKILL_TUMBLE, TRUE);
-    dam = damdice + GET_LEVEL(ch) + GET_SKILL(ch, SKILL_TUMBLE) + GET_DAMROLL(ch) + GET_COMBAT_POWER(ch);
-    damage(ch, victim, dam, SKILL_TUMBLE);      
+else if (chance > 85 && FIGHTING(ch))
+{
+  if (vict_lag)
+    WAIT_STATE(victim, PULSE_VIOLENCE);
+}
+check_improve(ch, SKILL_TUMBLE, TRUE);
+dam = damdice + GET_LEVEL(ch) + GET_SKILL(ch, SKILL_TUMBLE) + GET_DAMROLL(ch) + GET_COMBAT_POWER(ch);
+damage(ch, victim, dam, SKILL_TUMBLE);
   }
 }
 ACMD(do_tumble)
@@ -1762,7 +2243,7 @@ void bash_combat(struct char_data *ch, struct char_data *victim)
   if (percent > prob)
   {
     damage(ch, victim, 0, SKILL_BASH);
-//    GET_POS(ch) = POS_STUNNED;
+    //    GET_POS(ch) = POS_STUNNED;
     check_improve(ch, SKILL_BASH, FALSE);
   }
   else
@@ -1772,8 +2253,8 @@ void bash_combat(struct char_data *ch, struct char_data *victim)
     {
       if (rand_number(1, 20) > 15)
         call_magic(ch, victim, NULL, SPELL_CONCUSSIVE_WAVE, spelldam, CAST_SPELL);
-/*       else
-        GET_POS(victim) = POS_STUNNED; */
+      /*       else
+              GET_POS(victim) = POS_STUNNED; */
     }
     if (!mag_savingthrow(victim, ch, SAVING_PARA, SKILL_BASH, 0))
       WAIT_STATE(victim, PULSE_VIOLENCE);
@@ -1863,7 +2344,6 @@ void impale_combat(struct char_data *ch, struct char_data *victim)
     act("$n pins $N down and impales $M with $s weapon!", false, ch, 0, victim, TO_NOTVICT);
     check_improve(ch, SKILL_IMPALE, TRUE);
     hit(ch, victim, SKILL_IMPALE);
-
     return;
   }
 }
@@ -2143,8 +2623,8 @@ void piledriver_combat(struct char_data *ch, struct char_data *victim)
     check_improve(ch, SKILL_PILEDRVIER, TRUE);
     hit(ch, victim, SKILL_PILEDRVIER);
 
-    if (percent > 90)
-      call_magic(ch, ch, NULL, SPELL_UNARMED_BONUS, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_PILEDRVIER), CAST_SPELL);
+    /*     if (percent > 90)
+          call_magic(ch, ch, NULL, SPELL_UNARMED_BONUS, GET_LEVEL(ch) + GET_SKILL(ch, SKILL_PILEDRVIER), CAST_SPELL); */
 
     return;
   }
@@ -2315,7 +2795,7 @@ void elbow_combat(struct char_data *ch, struct char_data *victim)
  * This used to be an array, but was changed to be a function so that it would
  * be easier to add more levels to your MUD.  This doesn't really create a big
  * performance hit because it's not used very often. */
-int skill_mult(int skillnum, int dam, int level)
+int skill_mult(struct char_data *ch, int skillnum, int dam, int level)
 {
   int output;
   switch (skillnum)
@@ -2326,20 +2806,20 @@ int skill_mult(int skillnum, int dam, int level)
   case SKILL_CIRCLE:
     output = dam * (1 + (level / 6));
     break;
-  case SKILL_REND:
   case SKILL_ASSAULT:
     output = dam * (1 + (level / 4));
     break;
   case SKILL_BASH:
     output = dam * (1 + (level / 10));
     break;
-  case SKILL_STORM_OF_STEEL:
+  case SKILL_RAMPAGE:
     output = dam * (1 + (level / 10));
     break;
   case SKILL_IMPALE:
   case SKILL_MINCE:
   case SKILL_THRUST:
-    output = dam * (1 + (level / 10));
+  case SKILL_REND:
+    output = dam * (1 + (level / 10) + check_rogue_critical(ch));
     break;
   default:
     output = dam * 1;
@@ -2386,6 +2866,7 @@ int unarmed_combat_dam(struct char_data *ch, int dam, int skill)
     damage_mult = 13;
     break;
   case SKILL_HEADBUTT:
+  case SKILL_HEADBUTT2:
     damage_mult = 15;
     break;
   default:
@@ -2426,15 +2907,11 @@ ACMD(do_testcmd)
   call_magic(ch, vict, NULL, SPELL_ARMOR, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_STRENGTH, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_REGENERATION, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_BARD_VITALITY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_BARD_AGILITY, 1000, CAST_SPELL);
-  call_magic(ch, vict, NULL, SPELL_BARD_KNOWLEDGE, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_BARD_REGEN, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_BARD_BLESS, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_BARD_RESISTS, 1000, CAST_SPELL);
   call_magic(ch, vict, NULL, SPELL_QUICKCAST, 1000, CAST_SPELL);
 }
-
 
 ACMD(do_ritual)
 {
@@ -2480,7 +2957,7 @@ ACMD(do_ritual)
   GET_MANA(ch) -= cost;
 
   /* NEW_EVENT() will add a new mud event to the event list of the character.
-   * This function below adds a new event of "eSHRIEK", to "ch", and passes "NULL" as
+   * This function below adds a new event of "eRITUAL", to "ch", and passes "NULL" as
    * additional data. The event will be called in "3 * PASSES_PER_SEC" or 3 seconds */
   NEW_EVENT(eRITUAL, ch, NULL, 3 * PASSES_PER_SEC);
 
@@ -2592,10 +3069,10 @@ ACMD(do_garrotte)
 
   WAIT_STATE(ch, PULSE_VIOLENCE * 2);
 }
-ACMD(do_storm_of_steel)
+ACMD(do_rampage)
 {
   // dirt skill not learned automatic failure
-  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_STORM_OF_STEEL))
+  if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_RAMPAGE))
   {
     send_to_char(ch, "You have no idea how.\r\n");
     return;
@@ -2605,15 +3082,15 @@ ACMD(do_storm_of_steel)
     send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
     return;
   }
-  storm_of_steel_combat(ch);
+  rampage_combat(ch);
   // wait period
   WAIT_STATE(ch, PULSE_VIOLENCE * 2);
 }
-void storm_of_steel_combat(struct char_data *ch)
+void rampage_combat(struct char_data *ch)
 {
   struct char_data *victim, *next_victim;
   int percent = rand_number(1, 101);
-  int prob = GET_SKILL(ch, SKILL_STORM_OF_STEEL);
+  int prob = GET_SKILL(ch, SKILL_RAMPAGE);
 
   if (IS_NPC(ch))
     return;
@@ -2624,7 +3101,7 @@ void storm_of_steel_combat(struct char_data *ch)
     act("Your storm of steel is pathetic.  Do better.", FALSE, ch, 0, NULL, TO_CHAR);
     act("$n tries to storm the room with sword and shield, but fails!", TRUE, ch, 0, NULL, TO_NOTVICT);
     WAIT_STATE(ch, PULSE_VIOLENCE * 2);
-    check_improve(ch, SKILL_STORM_OF_STEEL, FALSE);
+    check_improve(ch, SKILL_RAMPAGE, FALSE);
     return;
   }
   else
@@ -2644,8 +3121,8 @@ void storm_of_steel_combat(struct char_data *ch)
         continue;
       if (MOB_FLAGGED(victim, MOB_NOKILL))
         continue;
-      hit(ch, victim, SKILL_STORM_OF_STEEL);
-      check_improve(ch, SKILL_STORM_OF_STEEL, TRUE);
+      hit(ch, victim, SKILL_RAMPAGE);
+      check_improve(ch, SKILL_RAMPAGE, TRUE);
       WAIT_STATE(ch, PULSE_VIOLENCE * 2);
     }
   }
@@ -2814,9 +3291,6 @@ void dirtkick_combat(struct char_data *ch, struct char_data *victim)
   }
 }
 
-
-
-
 ACMD(do_gateway)
 {
 
@@ -2892,7 +3366,8 @@ ACMD(do_rescue)
     send_to_char(ch, "How can you rescue someone you are trying to kill?\r\n");
     return;
   }
-  for (tmp_ch = world[IN_ROOM(ch)].people; tmp_ch && (FIGHTING(tmp_ch) != vict);tmp_ch = tmp_ch->next_in_room);
+  for (tmp_ch = world[IN_ROOM(ch)].people; tmp_ch && (FIGHTING(tmp_ch) != vict); tmp_ch = tmp_ch->next_in_room)
+    ;
 
   if ((FIGHTING(vict) != NULL) && (FIGHTING(ch) == FIGHTING(vict)) && (tmp_ch == NULL))
   {
@@ -2920,7 +3395,7 @@ ACMD(do_rescue)
   }
   send_to_char(ch, "Banzai!  To the rescue...\r\n");
   act("You are rescued by $n, you are confused!", FALSE, ch, 0, vict, TO_VICT);
-  act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_ROOM);
+  act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_NOTVICT);
   check_improve(ch, SKILL_RESCUE, TRUE);
   if (FIGHTING(vict) == tmp_ch)
     stop_fighting(vict);
@@ -2978,8 +3453,8 @@ ACMD(do_silent_rescue)
     return;
   }
   send_to_char(ch, "Banzai!  To the rescue...\r\n");
-  act("You are rescued by $N, you are confused!", FALSE, ch, 0, vict, TO_VICT);
-  act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_ROOM);
+  act("You are rescued by $n, you are confused!", FALSE, ch, 0, vict, TO_VICT);
+  act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_NOTBRIEF);
   check_improve(ch, SKILL_RESCUE, TRUE);
   if (FIGHTING(vict) == tmp_ch)
     stop_fighting(vict);
@@ -2992,4 +3467,131 @@ ACMD(do_silent_rescue)
   set_fighting(tmp_ch, ch);
 
   WAIT_STATE(vict, 2 * PULSE_VIOLENCE);
+}
+int check_rogue_critical(struct char_data *ch)
+{
+  int tof_check = FALSE;
+  int crit_check = FALSE;
+  int anat_check = FALSE;
+  int mult = 0;
+  char buf[MSL];
+
+  if (GET_SKILL(ch, SKILL_CRITICAL_HIT) >= rand_number(1, 101))
+  {
+    check_improve(ch, SKILL_CRITICAL_HIT, TRUE);
+    crit_check = TRUE;
+
+    /* Anatomy Lessons come after critical */
+    if (GET_SKILL(ch, SKILL_ANATOMY_LESSONS) &&
+    (GET_SKILL(ch, SKILL_ANATOMY_LESSONS) + GET_LUCK(ch) >= rand_number(1, 200))
+       )
+    {
+      check_improve(ch, SKILL_ANATOMY_LESSONS, TRUE);
+      anat_check = TRUE;
+    }
+    else
+      check_improve(ch, SKILL_ANATOMY_LESSONS, FALSE);
+
+    /* Check for TOF success */
+    if (GET_SKILL(ch, SKILL_TWIST_OF_FATE) && 
+    (GET_SKILL(ch, SKILL_TWIST_OF_FATE) + GET_LUCK(ch) >= rand_number(1, 300) ) 
+       )
+    {
+      check_improve(ch, SKILL_TWIST_OF_FATE, TRUE);
+      tof_check = TRUE;
+    }
+    else
+      check_improve(ch, SKILL_TWIST_OF_FATE, FALSE);
+
+    /* TOF does the most damage */
+    if (tof_check == TRUE)
+    {
+      mult = 4;
+      sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "Fate bends to your will! You exploit a vulnerability! ", CCNRM(ch, C_NRM));
+      act(buf, FALSE, ch, 0, NULL, TO_CHAR);
+      return (mult);
+    }
+    /* Anatomy Lessons does the middle damage */
+    else if (anat_check == TRUE)
+    {
+      mult = 3;
+      sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "Your anatomy lessons pay off!  You struck a nerve!", CCNRM(ch, C_NRM));
+      act(buf, FALSE, ch, 0, NULL, TO_CHAR);
+      return (mult);
+    }
+    /* Critical Hit does the least damage*/
+    else if (crit_check == TRUE)
+    {
+      mult = 2;
+      sprintf(buf, "%s%s%s", CCCYN(ch, C_NRM), "Your training pays off as you strike a critical area!", CCNRM(ch, C_NRM));
+      act(buf, FALSE, ch, 0, NULL, TO_CHAR);
+      return (mult);
+    }
+  }
+  else
+  {
+    check_improve(ch, SKILL_CRITICAL_HIT, FALSE);
+    return (0);
+  }
+  return 0;
+}
+
+int check_block(struct char_data *ch, struct char_data *victim)
+{
+  int block_skill = GET_SKILL(ch, SKILL_SHIELD_BLOCK) + GET_SKILL(ch, SKILL_SHIELD_MASTER) +
+                  GET_LUCK(ch) + GET_STR(ch) + GET_ADD(ch);
+  int block_chance = rand_number(1, 400);
+  if (IS_KNIGHT(ch) && GET_SKILL(ch, SKILL_SHIELD_BLOCK))
+  {
+    if (block_skill > block_chance)
+    {
+      act("You step in front of $N, blocking $S from fleeing!", false, ch, 0, victim, TO_CHAR);
+      act("$n steps in front of $N and blocks $S from fleeing!", TRUE, ch, 0, victim, TO_ROOM);
+      GET_MOVE(victim) -= 10;
+      return (TRUE);
+    }
+    else
+      return (FALSE);
+  }
+  return (FALSE);
+}
+void check_disembowel(struct char_data *ch, struct char_data *victim)
+{
+  if (!IS_NPC(victim))
+    return;
+  if (!IS_ROGUE(ch))
+    return;
+
+  int disem_skill = GET_SKILL(ch, SKILL_DISEMBOWEL) + GET_SKILL(ch, SKILL_TWIST_OF_FATE) + GET_LUCK(ch) + GET_DEX(ch);
+  int disem_chance = rand_number(1,1000);
+  long health = ((long)GET_HIT(victim) * (long)100) / (long)GET_MAX_HIT(victim);
+  int dam = 0;
+
+/*   
+  if (victim->mob_specials.mob_mult > 0)
+    disem_chance = rand_number(1,1000) * victim->mob_specials.mob_mult;
+  else 
+    disem_chance = rand_number(1,1000);
+*/
+
+  if (health > 20)
+    return;
+  else
+  {
+    if (disem_skill > disem_chance)
+    {
+      act("You jam your blade into $N's stomach and rip out $S entrails!", false, ch, 0, victim, TO_CHAR);
+      act("$n rips out $N's entrails, blood and guts everywhere!", TRUE, ch, 0, victim, TO_ROOM);
+      dam = GET_HIT(victim);
+      damage(ch, victim, dam, SKILL_DISEMBOWEL);
+      check_improve(ch, SKILL_DISEMBOWEL, TRUE);
+      return;
+    }
+    else
+    {
+      send_to_char(ch, "You miss an opportunity to disembowel %s!\r\n", GET_NAME(victim));
+      check_improve(ch, SKILL_DISEMBOWEL, FALSE);
+      return;
+    }
+  }
 }

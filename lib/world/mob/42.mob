@@ -1,55 +1,67 @@
 #4200
 red dragon~
-a red dragon~
+a Red Dragon~
 A red dragon is curled up here.
 ~
    As you get close enough to see the small details, the dragon whips its snout
 toward you, breathing a small cloud of smoke.  
 ~
-188474 0 0 0 0 0 0 0 -1000 E
-22 8 4 22d22+3872 10d5+12
-373333 560000
+156426298 0 0 0 -2130697864 0 0 0 -1000 E
+105 -125 -55 6300d4200+9074100 30d30+145
+98490000 228144000
 8 8 1
+MobMult: 20
 BareHandAttack: 8
-Str: 14
-Dex: 14
-Int: 14
-Wis: 14
-Con: 14
-Luck: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+NumAttacks: 10
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 19
+RES_1: 19
+RES_2: 19
+RES_3: 19
+RES_4: 19
 E
 #4201
-king dragons~
-the King of the Dragons~
-The King of the Dragons reclines on his tail here.
+verdigis king green dragons~
+Verdigris, the King of Green Dragons~
+A giant green dragon lies in a pool of acidic swamp water.
 ~
-   He looks extremely large, and as you lean a little forward to look closer, he
-narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
-cough and take a step backwards.  
+   Verdigris isn't a creature of fire and fury, but of insidious malice.  His
+immense size is cloaked in scales the color of aged copper, shimmering with an
+almost sickly green sheen.  These scales reek faintly of decay, a constant
+reminder of the toxins that course through his veins.  Spikes like sharpened
+bone protrude from his back, and his claws, tipped with a sickly green glow,
+drip with a potent venom.  Verdigris' intelligence is as sharp as his claws.  
+His eyes, pools of molten emerald, gleam with cunning and a disturbing hunger.
+His roar isn't a booming blast, but a guttural rasp that chills the soul.  His
+most fearsome weapon, however, is his breath.  A venomous fog spews from his
+maw, a sickly green cloud that melts flesh, withers vegetation in an instant,
+and leaves behind a lingering miasma that continues to sicken and decay long
+after it has passed.
 ~
-42 0 0 0 48 0 0 0 -1000 E
-30 3 -3 30d30+8100 12d6+21
-506666 760000
+225683514 0 0 0 -2122309256 0 0 0 -1000 E
+105 -135 -55 7875d5250+11342625 35d35+155
+123112500 285180000
 8 8 1
+MobMult: 25
 BareHandAttack: 8
-Str: 20
-Dex: 20
-Int: 20
-Wis: 20
-Con: 20
-Luck: 20
-SavingPara: 7
-SavingRod: 7
-SavingPetri: 7
-SavingBreath: 7
-SavingSpell: 7
+NumAttacks: 20
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
-T 4200
 #4202
 hatchling hatch dragon drag~
 a Dragon Hatchling~
@@ -57,45 +69,55 @@ A dragon hatchling is lying here curled up into a ball
 ~
    It looks up at you and breathes a small tougue of flame.  
 ~
-253982 0 0 0 56 0 0 0 -10 E
-22 8 4 22d22+3872 10d5+13
-373333 560000
+253982 0 0 0 8504 0 0 0 -10 E
+90 -74 -44 540d360+777780 11d11+94
+844200 1955520
 8 8 1
-BareHandAttack: 4
-Str: 14
-Dex: 14
-Int: 14
-Wis: 14
-Con: 14
-Luck: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+MobMult: 2
+BareHandAttack: 3
+NumAttacks: 8
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 8
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #4203
 troll~
-a troll~
+a Troll~
 A large, hulking troll is standing here.
 ~
    It looks big, and very hungry...  
 ~
-253978 0 0 0 56 0 0 0 -1000 E
-22 8 4 22d22+3872 10d5+12
-373333 560000
+67362842 0 0 0 -2122309256 0 0 0 -1000 E
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 8 8 1
-Str: 14
-Dex: 14
-Int: 14
-Wis: 14
-Con: 14
-Luck: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+MobMult: 15
+BareHandAttack: 7
+NumAttacks: 8
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #4204
 dragon guard~
@@ -104,22 +126,24 @@ A dragon is here, blocking your way
 ~
    He lookes at you, and you see a dangerous glint in his eye...  
 ~
-253978 0 0 0 120 0 0 0 -1000 E
-26 4 2 26d26+5408 10d5+16
-426666 640000
+22274074 0 0 0 120 0 0 0 -1000 E
+105 -115 -54 4725d3150+6805575 25d25+135
+7386750 17110800
 8 8 1
+MobMult: 15
 BareHandAttack: 8
-Str: 17
-Dex: 17
-Int: 17
-Wis: 17
-Con: 17
-Luck: 17
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+NumAttacks: 8
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 14
+RES_1: 14
+RES_2: 14
+RES_3: 14
+RES_4: 14
 E
 #4205
 elf slave enslaved servant~
@@ -130,71 +154,97 @@ An elf is here, mopping the floor.
 by the dragons long ago.  
 ~
 256010 0 0 0 0 0 0 0 1000 E
-22 5 4 22d22+3872 10d5+14
-373333 560000
+80 -66 -38 720d480+1037040 11d11+86
+1125600 2607360
 8 8 2
-BareHandAttack: 7
-Str: 14
-Dex: 14
-Int: 14
-Wis: 14
-Con: 14
-Luck: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+MobMult: 3
+BareHandAttack: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 17
+SavingRod: 17
+SavingPetri: 17
+SavingBreath: 17
+SavingSpell: 17
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #4206
 dragon green~
-a green dragon~
+a Green Dragon~
 A green dragon is standing here!
 ~
    The green dragon is big, strong, and dangerous, Unfortunately for you, it has
 already seen you, so there is no good in running.  
 ~
-254076 0 0 0 0 0 0 0 0 E
-22 8 4 22d22+3872 10d5+14
-373333 560000
+91480188 0 0 0 176161144 0 0 0 0 E
+22 -42 -5 1320d880+1901240 22d22+62
+20636000 47801600
 8 8 1
+MobMult: 20
 BareHandAttack: 8
+NumAttacks: 15
 Str: 14
 Dex: 14
 Int: 14
 Wis: 14
 Con: 14
 Luck: 14
-SavingPara: 5
-SavingRod: 5
-SavingPetri: 5
-SavingBreath: 5
-SavingSpell: 5
+SavingPara: 58
+SavingRod: 58
+SavingPetri: 58
+SavingBreath: 58
+SavingSpell: 58
+RES_0: 19
+RES_1: 19
+RES_2: 19
+RES_3: 19
+RES_4: 19
 E
 #4207
-dragon king ~
-the king of dragons~
-The King of the Dragons reclines on his tail here.
+cinderheart heart king dragons red~
+Cinderheart, the King of Red Dragons~
+Cinderheart, the King of Red Dragons, reclines on his tail here.
 ~
-   He looks extremely large, and as you lean a little forward to look closer, he
-narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
-cough and take a step backwards.  
+Cinderheart is a terror that walks (or rather, flies) the land.  His immense
+size dwarfs even the largest castle, his powerful wings blotting out the sun as
+he casts a monstrous shadow below.  His scales, the color of molten lava,
+shimmer with an internal heat, radiating waves of oppressive warmth that distort
+the air around him.  Spikes like sharpened obsidian run along his back, and
+razor-sharp claws gleam with a deadly promise.  But Cinderheart isn't just brute
+force.  His eyes, burning embers set within his massive head, hold a spark of
+intelligence and cunning.  His roar, a sound like a collapsing mountain, can
+shatter eardrums and send lesser creatures fleeing in terror.  His most fearsome
+weapon, however, is his fiery breath.  A weaponized inferno spews from his maw,
+a wave of superheated destruction that melts stone, vaporizes flesh, and turns
+entire landscapes into smoldering wastelands.
 ~
-83982 0 0 0 16 0 0 0 -800 E
-26 3 2 26d26+5408 10d5+18
-426666 640000
-8 8 0
-Str: 17
-Dex: 17
-Int: 17
-Wis: 17
-Con: 17
-Luck: 17
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+225683514 0 0 0 -2122309256 0 0 0 -1000 E
+105 -135 -55 7875d5250+11342625 35d35+155
+123112500 285180000
+8 8 1
+MobMult: 25
+BareHandAttack: 8
+NumAttacks: 20
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
 T 4200
 #4298

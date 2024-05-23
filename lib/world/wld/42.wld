@@ -533,12 +533,18 @@ D2
 0 0 4228
 S
 #4230
-The Royal Balcony~
-   You have walked out onto a balcony, very high up, jutting out from a large
-sprialing structure that is obviously not natural.  You can see the ground far,
-far below you, and you shudder as you think what would happen if you fell from
-here.  You look up, and you can see the blue sky far above you.  To the north
-is the passageway that brought you here.    
+The Verdant Throne Room~
+   The Verdant Throne Room is a chilling reflection of Verdigris' nature.  
+Carved from the heart of a long-dead swamp, the throne room is a cavernous space
+shrouded in an unnatural twilight.  Massive, twisted trees, their branches
+choked with parasitic vines, form a skeletal canopy overhead.  The air is thick
+with the stench of decay and rotting vegetation, a suffocating miasma that hangs
+heavy in the air.  The only light filters through breaks in the canopy, casting
+an eerie, sickly green glow across the ch Pools of stagnant water, slick with an
+oily sheen, dot the uneven floor.  Fungi of every color imaginable bloom on the
+walls and furniture, their bioluminescent glow adding to the unsettling
+atmosphere.  At the far end of the chamber, upon a dais composed of twisted,
+gnarled roots, sits Verdigris' throne.
 ~
 42 0 0 0 0 0
 D0
@@ -547,14 +553,16 @@ D0
 0 0 4228
 S
 #4231
-The Royal Throne Room~
-   You are in a very large room, which is obviously a meeting hall or a
-gathering space of some sort, and as you look around, you see toward the east
-wall, a large circular hollow, with several indentations as if for places to
-lean your elbows, but they are way too big for you.  Everywhere you can see
-large designs, showing knights on horseback being slaughtered, countrysides
-being ravaged, and castles being destroyed.  They are obviously a monument to
-some particularly evil acts by dragons.    
+The Molten Throne Room~
+   This cavernous throne room pulsates with an infernal glow.  Jagged obsidian
+pillars, remnants of volcanic veins, pierce the inky blackness high above.  The
+only illumination comes from pools of molten lava that bubble and gurgle at the
+base of the pillars, casting an eerie orange light across the chamber.  The air
+is thick with suffocating heat, forcing you to endure with discomfort.  The
+constant hiss and crackle of molten rock mingle with a pungent sulfurous stench,
+an oppressive reminder of the fiery power that birthed this place.  At the far
+end of the chamber, upon a colossal dais forged from black volcanic glass, sits
+Cinderheart's throne.
 ~
 42 0 0 0 0 0
 D3

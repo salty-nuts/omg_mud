@@ -680,53 +680,6 @@ D1
 passage~
 1 0 16932
 S
-#16977
-Tanto's Teepee~
-   This is the home of the immortal Tanto, also known as 'the wandering soul' by
-some denizens.  It is much less than you would expect of an immortal, yet
-somehow it seems just right.  You are surrounded by the 4 hide walls of a tent,
-large enough for a living quarters, but little room for luxuries.  The floor is
-flat, yet consists only of a flat, woven mat, lain over the soft soil beneath.
-From the east, you can feel a slight breeze, from an open flap in the tent,
-which acts as the door.  
-~
-169 584 0 0 0 0
-D1
-~
-~
-0 0 16978
-S
-#16978
-Tanto's Yard~
-   You are in a fragrant, intricately decorated yard of sorts, surrounded by a
-formidable fence made from many oak trees planted in rows, and bound together
-by thick vines growing, intertwined with the trees themselves.  A few stone
-benches are placed near the south end of the yard, next to a small, well-tended
-garden, filled with strange looking fruits and herbs.    
-~
-169 512 0 0 0 0
-D3
-~
-~
-0 0 16977
-E
-trees fence vines~
-   The living fence surrounding Tanto's yard is a masterpiece, which took much
-time, and careful attention to make.  Stout trees grown seemingly impossibly
-close together, linked by a growing trellis of green and purple vines climbing
-thier length, and the tangled mass of hardy roots , extending their protection
-a few feet into the yard from each direction.    
-~
-E
-stone benches~
-   There are two, magnificent stone benches, which appear to have been crafted
-by a very skilled artist, portraying on thier mottled surfaces, a chiseled
-rendition of some great battle, between the immortal Tanto, and an endless
-horde of monstrous warriors.  The top of each bench is a single rectangular
-stone slab, supported by four stone legs, shaped like the hind legs of a lion,
-or griffon.    
-~
-S
 #16999
 A Mountain Trail~
    You are on a small, obscure, trail, connected to the South Road to the west,
@@ -735,6 +688,10 @@ blowing in from the east, and you think you can make out rocky mountains in the
 distance, if you look through the fog to the east.    
 ~
 169 0 0 0 0 0
+D0
+~
+~
+0 0 1004
 D1
 ~
 ~

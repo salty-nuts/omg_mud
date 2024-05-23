@@ -269,19 +269,24 @@ A training dummy stand here, waiting for you.
 ~
 It looks unfinished.
 ~
-10 0 0 0 0 0 0 0 0 E
-105 -110 -55 7875d5250+3239250 0d0+0
-153890625 356475000
+7340042 0 0 0 0 0 0 0 0 E
+105 -87 -53 10000d10000+9999999 11d11+107
+246225 1
 8 8 0
-MobMult: 25
+MobMult: 1
 BareHandAttack: 1
-NumAttacks: 25
+NumAttacks: 1
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+SavingPara: -6
+SavingRod: -6
+SavingPetri: -6
+SavingBreath: -6
+SavingSpell: -6
 E
 #1298
 booboo zombie~
@@ -290,10 +295,10 @@ A big ole BooBoo zombie
 ~
 This zombie is animated by some foul magics, indeed.
 ~
-32778 0 0 0 0 0 0 0 1000 E
-105 -110 -55 7875d5250+3239250 35d35+130
+4227082 0 0 0 0 0 0 0 1000 E
+105 -110 -99 7875d5250+3239250 35d35+130
 810140625 1516003125
-8 8 1
+8 8 2
 MobMult: 25
 NumAttacks: 1
 Str: 25
@@ -308,7 +313,7 @@ RES_2: 46
 RES_3: 46
 RES_4: 46
 E
-T 2103
+T 2108
 #1299
 juju zombie~
 a JuJu Zombie~
@@ -316,17 +321,22 @@ a hulking JuJu Zombie
 ~
 This zombie is animated by some foul magics, indeed.
 ~
-32778 0 0 0 33579264 0 0 0 1000 E
-100 -90 -50 3000d2000+4321000 20d20+110
-9876000 32132000
+32778 0 0 0 33579264 512 0 0 1000 E
+100 -105 -52 7500d5000+10802500 60d60+125
+11725000 27160000
 8 8 1
-MobMult: 10
-NumAttacks: 1
+MobMult: 25
+NumAttacks: 25
 Str: 25
 Dex: 25
 Int: 25
 Wis: 25
 Con: 25
 Luck: 25
+RES_0: 24
+RES_1: 24
+RES_2: 24
+RES_3: 24
+RES_4: 24
 E
 $

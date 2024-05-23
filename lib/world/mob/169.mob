@@ -8,12 +8,29 @@ feared race of gibberlings.  The creature utters howls, shrieks, and insane
 chattering noises from it's grinning, canine visage, which is encircled by a
 wild black mane, almost covering it's pointed ears.  
 ~
-104 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+1048680 0 0 0 25165824 0 0 0 0 E
+50 -31 -20 150d100+61700 6d6+51
+117250 271600
 8 8 1
-BareHandAttack: 14
-Int: 5
+MobMult: 1
+BareHandAttack: 4
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 49
+SavingRod: 49
+SavingPetri: 49
+SavingBreath: 49
+SavingSpell: 49
+RES_0: 11
+RES_1: 11
+RES_2: 11
+RES_3: 11
+RES_4: 11
 E
 #16901
 cougar, cuogar, ~
@@ -24,10 +41,28 @@ A cougar is on the prowl here.
 for fresh meat to fill it's savage belly until the next kill.  
 ~
 328 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+30 -11 -8 90d60+37020 4d4+31
+70350 162960
 8 8 2
-BareHandAttack: 9
+MobMult: 1
+BareHandAttack: 8
+NumAttacks: 2
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 69
+SavingRod: 69
+SavingPetri: 69
+SavingBreath: 69
+SavingSpell: 69
+RES_0: 7
+RES_1: 7
+RES_2: 7
+RES_3: 7
+RES_4: 7
 E
 #16902
 gibberling, shifty~
@@ -39,10 +74,28 @@ the shadows, and you can almost see a glint of unusually high intellect in the
 creatures' beady black eyes.  
 ~
 204 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+35 -16 -11 105d70+43190 4d4+36
+82075 190120
 8 8 0
-Int: 15
+MobMult: 1
+BareHandAttack: 3
+NumAttacks: 2
+Str: 23
+Dex: 23
+Int: 23
+Wis: 23
+Con: 23
+Luck: 23
+SavingPara: 64
+SavingRod: 64
+SavingPetri: 64
+SavingBreath: 64
+SavingSpell: 64
+RES_0: 8
+RES_1: 8
+RES_2: 8
+RES_3: 8
+RES_4: 8
 E
 #16903
 gibberling, raider~
@@ -55,10 +108,29 @@ average gibberling, not to mention larger in girth.  The shrieking and clicking
 noises it continually makes, are enough to unnerve even the most experienced
 warriors.  
 ~
-104 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+16777320 0 0 0 16777216 0 0 0 0 E
+40 -21 -14 120d80+49360 5d5+41
+93800 217280
 8 8 1
+MobMult: 1
+BareHandAttack: 3
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 59
+SavingRod: 59
+SavingPetri: 59
+SavingBreath: 59
+SavingSpell: 59
+RES_0: 9
+RES_1: 9
+RES_2: 9
+RES_3: 9
+RES_4: 9
 E
 #16904
 gibberling, mutant~
@@ -69,12 +141,29 @@ A mutant gibberling is going completely insane here!
 into an even more disgusting expression, than the usual horrific scowl of these
 vicious creatures.  Even the other gibberlings seem to avoid contact with it.  
 ~
-108 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+1048684 0 0 0 33554432 0 0 0 0 E
+60 -41 -26 180d120+74040 7d7+61
+140700 325920
 8 8 1
-Int: 5
-Wis: 5
+MobMult: 1
+BareHandAttack: 3
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 39
+SavingRod: 39
+SavingPetri: 39
+SavingBreath: 39
+SavingSpell: 39
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #16905
 gibberling, king, cheiftain~
@@ -87,14 +176,29 @@ living creatures save his own kind, for which he merely feels no emotion.  A
 white mane frames his terrible face, and each rasping breath he takes, seems to
 drain some of your lifeforce, to replenish his own horrifying being.  
 ~
-2058 0 0 0 0 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+17827850 0 0 0 33579008 0 0 0 0 E
+70 -53 -32 630d420+907410 13d13+73
+984900 2281440
 6 8 1
-Str: 14
-Dex: 8
-Int: 6
-Wis: 7
+MobMult: 3
+BareHandAttack: 3
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 27
+SavingRod: 27
+SavingPetri: 27
+SavingBreath: 27
+SavingSpell: 27
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #16906
 female gibberling~
@@ -106,14 +210,29 @@ met one face to face.  She is just as horrific as any of the other gibberlings,
 and of course completely insane, as she leaps and pounces around you, baring her
 razor-sharp teeth!  
 ~
-104 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+8388712 0 0 0 83886080 0 0 0 0 E
+50 -31 -20 150d100+61700 6d6+51
+117250 271600
 8 8 2
-BareHandAttack: 4
-Str: 10
-Dex: 7
-Wis: 5
+MobMult: 1
+BareHandAttack: 3
+NumAttacks: 3
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 49
+SavingRod: 49
+SavingPetri: 49
+SavingBreath: 49
+SavingSpell: 49
+RES_0: 11
+RES_1: 11
+RES_2: 11
+RES_3: 11
+RES_4: 11
 E
 #16907
 fat, gibberling, butcher~
@@ -125,13 +244,29 @@ is almost completely covered in refuse, and scraps of half-eaten meat.  Her
 beady eyes gleam with a maniacal glint as she consumes any and all edible
 materials in sight!  
 ~
-10 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+17825802 0 0 0 0 0 0 0 0 E
+55 -37 -23 330d220+475310 9d9+57
+515900 1195040
 8 8 2
-BareHandAttack: 9
-Int: 3
-Wis: 3
+MobMult: 2
+BareHandAttack: 3
+NumAttacks: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 43
+SavingRod: 43
+SavingPetri: 43
+SavingBreath: 43
+SavingSpell: 43
+RES_0: 13
+RES_1: 13
+RES_2: 13
+RES_3: 13
+RES_4: 13
 E
 #16908
 gibberling, shaman~
@@ -144,13 +279,31 @@ vital fluids of kills made in or near the caves.  His glowing green eyes peer
 out, sunken deep into his dog-face, with a sadistic intelligence found seldom
 among the savage hordes of gibberlings.  
 ~
-42 0 0 0 0 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+42 0 0 0 8413440 0 0 0 0 E
+50 -31 -20 150d100+61700 6d6+51
+117250 271600
 8 8 0
-BareHandAttack: 12
-Wis: 15
+MobMult: 1
+BareHandAttack: 5
+NumAttacks: 2
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 49
+SavingRod: 49
+SavingPetri: 49
+SavingBreath: 49
+SavingSpell: 49
+RES_0: 11
+RES_1: 11
+RES_2: 11
+RES_3: 11
+RES_4: 11
 E
+T 16900
 #16909
 small, marmot~
 a small marmot~
@@ -159,11 +312,28 @@ A small marmot is scurrying about.
    It's a small, furry mammal found in the mountainous regions, and it appears
 to be in a playful mood.  
 ~
-200 0 0 0 0 0 0 0 0 E
-3 19 8 0d0+30 1d2+0
-30 900
+8388680 0 0 0 0 0 0 0 0 E
+30 -11 -8 90d60+37020 4d4+31
+70350 162960
 8 8 1
-Int: 18
+MobMult: 1
+NumAttacks: 1
+Str: 20
+Dex: 20
+Int: 20
+Wis: 20
+Con: 20
+Luck: 20
+SavingPara: 69
+SavingRod: 69
+SavingPetri: 69
+SavingBreath: 69
+SavingSpell: 69
+RES_0: 7
+RES_1: 7
+RES_2: 7
+RES_3: 7
+RES_4: 7
 E
 #16921
 mutant hulk gibberling~
@@ -176,13 +346,27 @@ to this dark chamber either as a punishment, or because he is too crazed and
 bloodthirsty to dwell even among the general population of gibberlings in the
 cave.  
 ~
-42 0 0 0 0 0 0 0 0 E
-7 18 5 1d1+70 1d2+1
-70 4900
+16777256 0 0 0 -2122317568 0 0 0 0 E
+70 -53 -32 630d420+907410 13d13+73
+984900 2281440
 8 8 1
-BareHandAttack: 10
-Dex: 4
-Int: 3
-Wis: 4
+MobMult: 3
+NumAttacks: 1
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 27
+SavingRod: 27
+SavingPetri: 27
+SavingBreath: 27
+SavingSpell: 27
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 $

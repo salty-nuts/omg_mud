@@ -12,7 +12,7 @@ the Queen's treasure~
 A large pile of treasure has been left here, it must be the Queen's.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
-650 0 0 0
+2000000000 0 0 0
 20 650 0 0 0 100
 #6502
 key mine~
@@ -31,89 +31,109 @@ There is a bright golden key lying here.~
 0 0 0 0
 1 1 0 0 0 100
 #6504
-hammer dwarven~
-a dwarven hammer~
-There is a dwarven hammer lying here.~
+golden dwarven hammer~
+a Golden Dwarven Hammer~
+There is a golden dwarven hammer lying here.~
 ~
-5 0 0 0 0 an 0 0 0 0 0 0 0
-0 2 6 7
-13 550 100 0 0 100
+5 gimopq 0 0 0 an 0 0 0 0 0 0 0
+10 20 10 7
+50 550 100 0 0 50
+A
+18 5
+A
+19 5
 #6505
-plate dwarven mail~
-the dwarven plate mail~
-There is dwarven plate mail lying here.~
+golden dwarven chestplate~
+a Golden Dwarven Chestplate~
+There is golden dwarven plate armor lying here.~
 ~
-9 0 0 0 0 ad 0 0 0 sv b 0 0
-6 0 0 0
-50 450 30 0 0 100
+9 g 0 0 0 ad 0 0 0 0 0 0 0
+20 0 0 0
+50 450 30 0 0 10
+A
+18 5
+A
+19 5
+A
+33 5
 #6506
 stick black long~
 a long, black stick~
 There is a long, black stick lying here.~
 ~
 4 q 0 0 0 ao 0 0 0 0 0 0 0
-4 2 2 28
+105 5 5 58
 1 100 60 0 0 100
 #6507
 stick black long~
 a long, black stick~
-There is a long, black stick here.~
+There is a long, black stick lying here.~
 ~
-1 q 0 0 0 ao 0 0 0 0 0 0 0
-0 0 0 0
-1 100 6000 0 0 100
+4 q 0 0 0 ao 0 0 0 0 0 0 0
+105 5 5 58
+1 100 60 0 0 100
 #6508
 club dwarven~
 a dwarven club~
 There is a dwarven club lying here.~
 ~
-5 0 0 0 0 an 0 0 0 0 0 0 0
-0 2 3 3
-12 300 30 0 0 100
-#6509
-axe two-handed dwarven~
-a two-handed dwarven axe~
-A two-handed dwarven axe is here.~
-~
 5 g 0 0 0 an 0 0 0 0 0 0 0
-0 2 7 3
-14 500 30 0 0 100
+0 10 7 5
+12 300 30 0 0 50
 A
 18 2
 A
-1 2
+19 3
+#6509
+axe dwarven~
+a dwarven axe~
+A dwarven axe is here~
+~
+5 g 0 0 0 an 0 0 0 0 0 0 0
+5 10 8 3
+14 500 30 0 0 50
+A
+18 2
+A
+19 3
 #6510
 helmet dwarven~
 a dwarven helmet~
 A dwarven helmet is here.~
 ~
-9 0 0 0 0 ae 0 0 0 0 0 0 0
-4 0 0 0
-4 250 50 0 0 100
+9 g 0 0 0 ae 0 0 0 0 0 0 0
+10 0 0 0
+4 250 50 0 0 50
+A
+18 2
+A
+19 2
 #6511
-ring gold dwarven~
-a golden dwarven ring~
+ring golden dwarven~
+a Golden Dwarven Ring~
 A golden dwarven ring is lying here.~
 ~
-11 g 0 0 0 ab 0 0 0 0 0 0 0
+9 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-1 1000 100 0 0 100
+1 1000 100 0 0 50
 A
 18 1
 A
-19 1
+19 5
 #6512
-gloves dwarven~
-a pair of dwarven gloves~
-A pair of thick dwarven gloves lay here.~
+golden dwarven gloves~
+a pair of Golden Dwarven Gloves~
+A pair of golden dwarven gloves lay here~
 ~
-9 0 0 0 0 ah 0 0 0 0 0 0 0
-1 0 0 0
-2 400 20 0 0 100
+9 gi 0 0 0 ah 0 0 0 0 0 0 0
+20 0 0 0
+2 400 20 0 0 25
 A
-5 1
+18 2
 A
-2 1
+19 5
+A
+33 10
 #6513
 coal chunk~
 a chunk of coal~
@@ -127,13 +147,17 @@ pick mining~
 a mining pick~
 There is a mining pick here.~
 ~
-5 i 0 0 0 an 0 0 0 0 0 0 0
-0 2 3 11
+5 gi 0 0 0 an 0 0 0 0 0 0 0
+0 15 6 11
 9 300 10 0 0 100
 E
 pick mining~
    It looks almost blessed!  
 ~
+A
+18 2
+A
+19 2
 #6515
 key deep green~
 a deep green key~
@@ -191,13 +215,23 @@ A nice looking delicious danish pastry has been placed here.~
 5 0 0 0
 1 5 5 0 0 100
 #6522
-lantern brass~
-a lantern~
-A brass lantern is here.~
+golden dwarven lantern~
+a Golden Dwarven Lantern~
+A Golden Dwarven Lantern lies here, lighting up the room.~
 ~
-1 0 0 0 0 ao 0 0 0 0 0 0 0
-0 0 96 0
-1 50 10 0 0 100
+1 gi 0 0 0 a 0 0 0 0 0 0 0
+0 0 -1 0
+1 50 10 0 0 10
+A
+18 2
+A
+19 5
+A
+28 25
+A
+29 25
+A
+30 25
 #6523
 barrel water~
 a barrel~
@@ -206,4 +240,222 @@ A water barrel has been left here.~
 17 0 0 0 0 a 0 0 0 0 0 0 0
 40 40 15 0
 45 60 20 0 0 100
+#6524
+quill spectral ink~
+the Quill of Spectral Ink~
+A quill appears as a wispy tendril of pure energy, swirling with a faint luminescence.~
+~
+5 ginopqr 0 0 0 an 0 0 0 0 0 0 0
+0 40 4 11
+0 0 0 0 0 10
+A
+29 50
+A
+26 50
+A
+12 1000
+#6525
+whispering inkwell spectral~
+the Whispering Spectral Inkwell~
+This seemingly normal inkwell holds a bottomless well of spectral ink.~
+~
+9 gnopqr 0 0 0 ap 0 0 0 0 0 0 0
+1 0 0 0
+0 0 0 0 0 10
+E
+whispering inkwell spectral~
+At first glance, the Whispering Inkwell appears unremarkable.  Crafted from a
+dark, polished stone, it holds a well filled with a shimmering, otherworldly
+ink.  This seemingly normal ink, however, possesses a remarkable property - it
+is boundless.  No matter how much ink is used, the well remains perpetually
+full, ensuring the user has a never-ending supply of spectral ink for their
+magical quill.  But the Whispering Inkwell holds a deeper secret.  As a mage
+dips their quill into the ink, faint whispers can be heard emanating from the
+well.
+~
+A
+29 50
+A
+26 50
+A
+12 1000
+#6526
+Grudgebearer taskmaster whip~
+Grudgebearer, the Taskmaster's Whip~
+A brutal whip belonging to the taskmaster lies here.~
+~
+5 gimnopr 0 0 0 an 0 0 0 0 0 0 0
+10 40 6 2
+0 0 0 0 0 20
+E
+Grudgebearer taskmaster whip~
+Forged from dark iron and imbued with the heat of a thousand dwarven forges, the
+whip is surprisingly light in the hand, despite its imposing presence.  The
+handle is crafted from smooth, polished obsidian, cool and surprisingly
+comfortable to grip.  Etched along the handle are dwarven runes that glow
+faintly with a deep red light, a constant reminder of the sting of the whip and
+the harsh consequences of failure.  The lash itself is a marvel of dwarven
+engineering.  Thin strands of dark iron are braided with strips of tough, cured
+leather, creating a tool that is both incredibly strong and surprisingly
+flexible.  Weighted metal studs are woven into the lash at regular intervals,
+delivering a punishing blow with every crack.
+~
+A
+17 -10
+A
+18 5
+A
+19 5
+A
+32 5
+A
+33 5
+A
+34 5
+A
+35 5
+A
+36 5
+#6527
+dough punisher golden rolling pin~
+Dough Punisher, the Golden Rolling Pin~
+This solid gold rolling pin gleams with a warm luster.~
+~
+5 gimnopq 0 0 0 an 0 0 0 0 0 0 0
+10 50 8 9
+0 0 0 0 0 10
+A
+18 10
+A
+19 10
+A
+28 25
+A
+30 25
+#6528
+stethescope dwarven doctor golden~
+the Dwarven Doctor's Stethescope~
+A golden stethescope lies here.~
+~
+11 gimopq 0 0 0 ac 0 0 0 0 0 0 0
+0 0 0 0
+1 100000 0 0 0 25
+A
+19 5
+A
+28 50
+#6529
+golden medical bracelet id~
+a Golden Medical ID Bracelet~
+A golden medical ID bracelet liesq here.~
+~
+9 gimnopr 0 0 0 am 0 0 0 0 0 0 0
+15 0 0 0
+0 0 0 0 0 25
+E
+golden medical bracelet id~
+   This isn't your average medical ID bracelet it's a badge of honor forged in
+dwarven fire.  The base of the bracelet is a thick band of gold, likely mined
+from the deepest veins and imbued with the faintest warmth.  Runes of healing,
+etched in dwarven script, snake their way across the polished surface, glowing
+with a subtle blue luminescence whenever the doctor casts a particularly potent
+spell.  The most striking feature, however, is the dwarven hammer charm that
+dangles from the side.  Crafted from the same burnished gold, the hammer is a
+miniature replica of the doctor's own warhammer, a weapon they wield with
+surprising agility despite their focus on healing.  The hammer serves as a
+reminder that even a healer can pack a punch, and that dwarves value both
+strength and compassion.
+~
+A
+32 10
+A
+33 10
+A
+34 10
+A
+35 10
+A
+36 10
+A
+18 3
+#6530
+leather doctor bag doctor's~
+a Leather Doctor's Bag~
+A leather doctors bag sits here.~
+~
+12 gimopqr 0 0 0 ap 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 25
+A
+28 50
+A
+19 5
+A
+18 5
+#6531
+dwarven doctor's reflex hammer doctor~
+the Dwarven Doctor's Reflex Hammer~
+A marvelously crafted golden reflex hammer lies here.~
+~
+5 gimopqr 0 0 0 an 0 0 0 0 0 0 0
+10 50 8 9
+0 0 0 0 0 10
+E
+dwarven doctor's golden reflex hammer doctor~
+   At first glance, the Golden Reflex Hammer appears a formidable tool, its head
+forged from gleaming dwarven gold.  Thick and rounded, with intricate ridges
+etched along its surface, it promises swift, defensive strikes.  However, upon
+closer inspection, the weapon reveals its surprising nature.  The handle,
+crafted from polished mountain ash and adorned with bands of supple dragonhide,
+is surprisingly light and well-balanced.  This allows for exceptional
+maneuverability, crucial for the doctor's lightning-fast reactions in the heat
+of battle or the chaos of a battlefield clinic.
+~
+A
+18 10
+A
+19 10
+A
+28 25
+A
+30 25
+#6532
+taskmaster golden trumpet clarion~
+the Taskmaster's Golden Clarion~
+A magnificent bugle forged from polished gold lies here.~
+Nothing.
+~
+14 gimnop 0 0 0 ap 0 0 0 0 0 0 0
+0 0 0 0
+10 10 0 0 0 25
+E
+taskmaster golden clarion~
+   Unlike the traditional hunting horns used on the surface, the Clarion boasts
+a more compact design, a tightly coiled length that speaks to the dwarven love
+of efficiency.  The instrument, though surprisingly weighty, feels perfectly
+balanced in the Taskmaster's grip, a testament to dwarven craftsmanship.  The
+true power of the Taskmaster's Clarion lies not in its volume, but in its
+piercing clarity.  With a single, sharp blast, the Taskmaster can unleash a call
+that cuts through the din of the forge, echoing through the caverns with an
+unmistakable authority.  This sound carries a power that transcends mere
+communication.  It carries the rhythm of the forge in a series of sharp notes, a
+language understood by every dwarf a call to action, a change of shift, a
+warning of danger.
+~
+A
+25 100
+A
+26 100
+A
+27 100
+A
+28 100
+A
+29 100
+A
+30 100
+A
+18 5
+A
+19 5
 $~

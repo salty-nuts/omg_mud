@@ -285,12 +285,12 @@ ACMD(do_practice)
   one_argument(argument, arg);
 
   if (*arg)
-    send_to_char(ch, "You can only practice skills in your guild.\r\n");
+    send_to_char(ch, "You may only practice with Ymir.\r\n");
   else
     list_skills(ch);
 }
 
-ACMD(do_train)
+/* ACMD(do_train)
 {
   char arg[MAX_INPUT_LENGTH];
 
@@ -300,11 +300,11 @@ ACMD(do_train)
   one_argument(argument, arg);
 
   if (*arg)
-    send_to_char(ch, "You can only train stats in your guild.\r\n");
+    send_to_char(ch, "You may only train with Ymir.\r\n");
   else
     list_train(ch);
 }
-
+ */
 ACMD(do_visible)
 {
   if (GET_LEVEL(ch) >= LVL_IMMORT) {
@@ -498,18 +498,26 @@ ACMD(do_group)
 
 ACMD(do_report)
 {
-  struct group_data *group;
-
-  if ((group = GROUP(ch)) == NULL) {
-    send_to_char(ch, "But you are not a member of any group!\r\n");
-    return;
+  struct char_data *sendto;
+    
+  for (sendto = world[IN_ROOM(ch)].people; sendto; sendto = sendto->next_in_room)
+  {
+    if (sendto == ch)
+    {
+      send_to_char(ch, "You report: %d/%dH, %d/%dM, %d/%dV\r\n",
+                   GET_HIT(ch), GET_MAX_HIT(ch),
+                   GET_MANA(ch), GET_MAX_MANA(ch),
+                   GET_MOVE(ch), GET_MAX_MOVE(ch));
+    }
+    else
+    {
+      send_to_char(sendto, "%s reports: %d/%dH, %d/%dM, %d/%dV\r\n",
+                   GET_NAME(ch),
+                   GET_HIT(ch), GET_MAX_HIT(ch),
+                   GET_MANA(ch), GET_MAX_MANA(ch),
+                   GET_MOVE(ch), GET_MAX_MOVE(ch));
+    }
   }
-
-  send_to_group(NULL, group, "%s reports: %d/%dH, %d/%dM, %d/%dV\r\n",
-	  GET_NAME(ch),
-	  GET_HIT(ch), GET_MAX_HIT(ch),
-	  GET_MANA(ch), GET_MAX_MANA(ch),
-	  GET_MOVE(ch), GET_MAX_MOVE(ch));
 }
 
 ACMD(do_split)
@@ -651,6 +659,11 @@ ACMD(do_display)
   }
   skip_spaces(&argument);
 
+  if (!IS_NPC(ch))
+  {
+    send_to_char(ch, "This command is depreciated.  Use prefedit instead.\r\n");
+    return;
+  }
   if (!*argument) {
     send_to_char(ch, "Usage: prompt { { H | M | V } | all | auto | none }\r\n");
     return;
@@ -717,10 +730,10 @@ ACMD(do_gen_tog)
     {"Compact mode off.\r\n",
     "Compact mode on.\r\n"},
 
-    {"You can now hear tells.\r\n",
+    {"You can now hear tells.\r\n", 
     "You are now deaf to tells.\r\n"},
 
-    {"You can now hear auctions.\r\n",
+    {"You can now hear auctions.\r\n",//5
     "You are now deaf to auctions.\r\n"},
 
     {"You can now hear shouts.\r\n",
@@ -732,10 +745,10 @@ ACMD(do_gen_tog)
     {"You can now hear the congratulation messages.\r\n",
     "You are now deaf to the congratulation messages.\r\n"},
 
-    {"You can now hear the Wiz-channel.\r\n",
+    {"You can now hear the Wiz-channel.\r\n", 
     "You are now deaf to the Wiz-channel.\r\n"},
 
-    {"You are no longer part of the Quest.\r\n",
+    {"You are no longer part of the Quest.\r\n",//10
     "Okay, you are part of the Quest!\r\n"},
 
     {"You will no longer see the room flags.\r\n",
@@ -747,10 +760,10 @@ ACMD(do_gen_tog)
     {"HolyLight mode off.\r\n",
     "HolyLight mode on.\r\n"},
 
-    {"Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n",
+    {"Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n", 
     "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"},
 
-    {"Autoexits disabled.\r\n",
+    {"Autoexits disabled.\r\n", //15
     "Autoexits enabled.\r\n"},
 
     {"Will no longer track through doors.\r\n",
@@ -762,10 +775,10 @@ ACMD(do_gen_tog)
     {"Buildwalk Off.\r\n",
     "Buildwalk On.\r\n"},
 
-    {"AFK flag is now off.\r\n",
+    {"AFK flag is now off.\r\n", 
     "AFK flag is now on.\r\n"},
 
-    {"Autoloot disabled.\r\n",
+    {"Autoloot disabled.\r\n",//20
     "Autoloot enabled.\r\n"},
 
     {"Autogold disabled.\r\n",
@@ -777,10 +790,10 @@ ACMD(do_gen_tog)
     {"Autosacrifice disabled.\r\n",
     "Autosacrifice enabled.\r\n"},
 
-    {"Autoassist disabled.\r\n",
+    {"Autoassist disabled.\r\n", 
     "Autoassist enabled.\r\n"},
 
-    {"Automap disabled.\r\n",
+    {"Automap disabled.\r\n",//25
     "Automap enabled.\r\n"},
 
     {"Autokey disabled.\r\n",
@@ -792,21 +805,47 @@ ACMD(do_gen_tog)
     {"ZoneResets disabled.\r\n",
     "ZoneResets enabled.\r\n"},
 
-    {"Autoexit-Long disabled.\r\n",
+    {"Autoexit-Long disabled.\r\n", 
     "Autoexit-Long enabled.\r\n"},
 
-    {"You will no longer auto bash.\r\n",
-    "You will now auto bash.\r\n"}
+    {
+      "", //30, SCMD_COLOR
+      ""
+    },
+
+    {
+      "", // SCMD_SYSLOG
+      ""
+    },
+
+    {
+      "", // SCMD_WIMPY
+      ""
+    },
+
+    {
+      "", // SCMD_PAGELENGTH
+      ""
+    },
+
+    {
+      "", // SCMD_SCREENWIDTH
+      ""
+    },    
+    {
+    "Short-Look Mode Off.\r\n", //35
+    "Short-Look Mode On.\r\n"
+    }
   };
 
   if (IS_NPC(ch))
     return;
 
   switch (subcmd) {
-  case SCMD_NOSUMMON:
+  case SCMD_NOSUMMON: //0
     result = PRF_TOG_CHK(ch, PRF_SUMMONABLE);
     break;
-  case SCMD_NOHASSLE:
+  case SCMD_NOHASSLE: 
     result = PRF_TOG_CHK(ch, PRF_NOHASSLE);
     break;
   case SCMD_BRIEF:
@@ -815,10 +854,10 @@ ACMD(do_gen_tog)
   case SCMD_COMPACT:
     result = PRF_TOG_CHK(ch, PRF_COMPACT);
     break;
-  case SCMD_NOTELL:
+  case SCMD_NOTELL: 
     result = PRF_TOG_CHK(ch, PRF_NOTELL);
     break;
-  case SCMD_NOAUCTION:
+  case SCMD_NOAUCTION://5
     result = PRF_TOG_CHK(ch, PRF_NOAUCT);
     break;
   case SCMD_NOSHOUT:
@@ -830,10 +869,10 @@ ACMD(do_gen_tog)
   case SCMD_NOGRATZ:
     result = PRF_TOG_CHK(ch, PRF_NOGRATZ);
     break;
-  case SCMD_NOWIZ:
+  case SCMD_NOWIZ: 
     result = PRF_TOG_CHK(ch, PRF_NOWIZ);
     break;
-  case SCMD_QUEST:
+  case SCMD_QUEST://10
     result = PRF_TOG_CHK(ch, PRF_QUEST);
     break;
   case SCMD_SHOWVNUMS:
@@ -845,10 +884,10 @@ ACMD(do_gen_tog)
   case SCMD_HOLYLIGHT:
     result = PRF_TOG_CHK(ch, PRF_HOLYLIGHT);
     break;
-  case SCMD_AUTOEXIT:
+  case SCMD_AUTOEXIT: 
     result = PRF_TOG_CHK(ch, PRF_AUTOEXIT);
     break;
-  case SCMD_CLS:
+  case SCMD_CLS://15
     result = PRF_TOG_CHK(ch, PRF_CLS);
     break;
   case SCMD_BUILDWALK:
@@ -886,7 +925,7 @@ ACMD(do_gen_tog)
   case SCMD_AUTOLOOT:
     result = PRF_TOG_CHK(ch, PRF_AUTOLOOT);
     break;
-  case SCMD_AUTOGOLD:
+  case SCMD_AUTOGOLD: //20
     result = PRF_TOG_CHK(ch, PRF_AUTOGOLD);
     break;
   case SCMD_AUTOSPLIT:
@@ -901,7 +940,7 @@ ACMD(do_gen_tog)
   case SCMD_AUTOMAP:
     result = PRF_TOG_CHK(ch, PRF_AUTOMAP);
     break;
-  case SCMD_AUTOKEY:
+  case SCMD_AUTOKEY: //25
     result = PRF_TOG_CHK(ch, PRF_AUTOKEY);
     break;
   case SCMD_AUTODOOR:
@@ -912,6 +951,9 @@ ACMD(do_gen_tog)
     break;
   case SCMD_AUTOEXIT_L:
     result = PRF_TOG_CHK(ch, PRF_AUTOEXIT_L);
+    break;
+  case SCMD_SHORT_LOOK: 
+    result = PRF_TOG_CHK(ch, PRF_SHORT_LOOK);
     break;
   default:
     log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);

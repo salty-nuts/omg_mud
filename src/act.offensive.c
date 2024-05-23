@@ -258,13 +258,18 @@ ACMD(do_flee)
 {
   int i, attempt, loss;
   struct char_data *was_fighting;
+  struct char_data *tmp_kn, *next_tmp_kn;
 
   if (GET_POS(ch) < POS_FIGHTING)
   {
     send_to_char(ch, "You are in pretty bad shape, unable to flee!\r\n");
     return;
   }
-
+  if (IS_NPC(ch) && GET_MOVE(ch) < 10)
+  {
+    send_to_char(ch, "You are exhausted!\r\n");
+    return;
+  }
   for (i = 0; i < 6; i++)
   {
     attempt = rand_number(0, DIR_COUNT - 1); /* Select a random direction */
@@ -273,6 +278,27 @@ ACMD(do_flee)
     {
       act("$n panics, and attempts to flee!", TRUE, ch, 0, 0, TO_ROOM);
       was_fighting = FIGHTING(ch);
+
+      if (IS_NPC(ch))
+      {
+        for (tmp_kn = world[IN_ROOM(ch)].people; tmp_kn; tmp_kn = next_tmp_kn)
+        {
+          (next_tmp_kn = tmp_kn->next_in_room);
+
+          if (tmp_kn == ch)
+            continue;
+          if (IS_NPC(tmp_kn))
+            continue;
+          if (!GET_SKILL(tmp_kn, SKILL_SHIELD_BLOCK))
+            continue;
+          if (!IS_KNIGHT(tmp_kn))
+            continue;
+          if (FIGHTING(tmp_kn) != ch)
+            continue;
+          if (check_block(tmp_kn, ch))
+            return;
+        }
+      }
       if (do_simple_move(ch, attempt, TRUE))
       {
         send_to_char(ch, "You flee head over heels.\r\n");

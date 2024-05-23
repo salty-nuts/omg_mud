@@ -1169,7 +1169,7 @@ static char *make_prompt(struct descriptor_data *d)
     }
     if (PRF_FLAGGED(d->character, PRF_DISP_NAME) && len < sizeof(prompt))
     {
-      count = snprintf(prompt + len, sizeof(prompt) - len, "%s ", GET_NAME(d->character));
+      count = snprintf(prompt + len, sizeof(prompt) - len, "%s | ", GET_NAME(d->character));
       if (count >= 0)
         len += count;
     }
@@ -2813,11 +2813,35 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
       if (type != TO_ROOM && to == vict_obj)
         continue;
       if (!IS_NPC(to) && PRF_FLAGGED(to, PRF_BRIEF) )
-	continue;
+      	continue;
       perform_act(str, ch, obj, vict_obj, to);
     }
   return last_act_message;
   }
+  if (type == TO_NOTBRIEF)
+  {
+    if (ch && IN_ROOM(ch) != NOWHERE)
+      to = world[IN_ROOM(ch)].people;
+    else if (obj && IN_ROOM(obj) != NOWHERE)
+      to = world[IN_ROOM(obj)].people;
+    else
+    {
+      log("SYSERR: no valid target to act()!");
+      return NULL;
+    }
+
+    for (; to; to = to->next_in_room)
+    {
+      if (!SENDOK(to) || (to == ch))
+        continue;
+      if (hide_invisible && ch && !CAN_SEE(to, ch))
+        continue;
+      if (type != TO_ROOM && to == vict_obj)
+        continue;
+      perform_act(str, ch, obj, vict_obj, to);
+    }
+  return last_act_message;
+  }  
   return last_act_message;
 }
 

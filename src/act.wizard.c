@@ -687,6 +687,8 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
   sprintbitarray(GET_OBJ_EXTRA(j), extra_bits, EF_ARRAY_MAX, buf);
   send_to_char(ch, "Extra flags   : %s\r\n", buf);
 
+  send_to_char(ch, "Repop Percentage: %d\r\n", GET_OBJ_REPOP(j));
+
   send_to_char(ch, "Weight: %d, Value: %d, Cost/day: %d, Timer: %d, Min level: %d\r\n",
                GET_OBJ_WEIGHT(j), GET_OBJ_COST(j), GET_OBJ_RENT(j), GET_OBJ_TIMER(j), GET_OBJ_LEVEL(j));
 
@@ -3225,6 +3227,7 @@ static struct set_struct
     {"mana_regen", LVL_IMPL, PC, NUMBER},
     {"move_regen", LVL_IMPL, PC, NUMBER},
     {"trains", LVL_IMPL, PC, NUMBER},
+    {"trainmeta", LVL_IMPL, PC, NUMBER},
     {"spells_healing", LVL_IMPL, PC, NUMBER},
     {"spells_damage", LVL_IMPL, PC, NUMBER},
     {"spells_affects", LVL_IMPL, PC, NUMBER},
@@ -3752,21 +3755,26 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
     affect_total(vict);
     break;
   case 69:
-    RANGE(0, 1000);
-    GET_SPELLS_HEALING(vict) = value;
+    RANGE(0, 5000);
+    GET_TRAIN_META(vict) = value;
     affect_total(vict);
     break;
   case 70:
     RANGE(0, 1000);
-    GET_SPELLS_DAMAGE(vict) = value;
+    GET_SPELLS_HEALING(vict) = value;
     affect_total(vict);
     break;
   case 71:
     RANGE(0, 1000);
-    GET_SPELLS_AFFECTS(vict) = value;
+    GET_SPELLS_DAMAGE(vict) = value;
     affect_total(vict);
     break;
   case 72:
+    RANGE(0, 1000);
+    GET_SPELLS_AFFECTS(vict) = value;
+    affect_total(vict);
+    break;
+  case 73:
     RANGE(0, 1000);
     GET_COMBAT_POWER(vict) = value;
     affect_total(vict);

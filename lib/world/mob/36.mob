@@ -7,18 +7,25 @@ You see a pawn standing here waiting for orders.
 His armor is shiny and black.  He stands ready to give his life for the Crown.
 
 ~
-78 0 0 0 16 0 0 0 -400 E
-6 14 5 150d2+900 2d2+6
-900 1800
-8 8 1
-SavingPara: 1
-SavingRod: 1
-SavingPetri: 1
-SavingBreath: 1
-SavingSpell: 1
+33554510 0 0 0 16 0 0 0 -400 E
+2 18 8 6d4+246 1d2+2
+4690 19752
+8 8 0
+MobMult: 1
+NumAttacks: 1
+SavingPara: 97
+SavingRod: 97
+SavingPetri: 97
+SavingBreath: 97
+SavingSpell: 97
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #3601
-white pawn~
+pawn white~
 the Pawn of the White Court~
 You see a pawn standing here waiting for orders.
 ~
@@ -26,15 +33,22 @@ You see a pawn standing here waiting for orders.
 His armor is spotless and white.  He stands ready to give his life for the
 Crown.  
 ~
-78 0 0 0 16 0 0 0 400 E
-6 14 5 150d2+900 2d2+6
-900 1800
+33554510 0 0 0 16 0 0 0 400 E
+2 18 8 6d4+246 1d2+2
+4690 19752
 8 8 1
-SavingPara: 1
-SavingRod: 1
-SavingPetri: 1
-SavingBreath: 1
-SavingSpell: 1
+MobMult: 1
+NumAttacks: 1
+SavingPara: 97
+SavingRod: 97
+SavingPetri: 97
+SavingBreath: 97
+SavingSpell: 97
+RES_0: 1
+RES_1: 1
+RES_2: 1
+RES_3: 1
+RES_4: 1
 E
 #3602
 black rook castle~
@@ -44,21 +58,22 @@ In the corner you see a large, black, stone castle on wheels.
    The Black Rook is a very large man-made tomb on wheels.  Just from the looks
 of it, it will probably be YOUR tomb.  
 ~
-229386 0 0 0 16 0 0 0 -600 E
-27 -7 -11 675d7+18225 9d6+27
-63787 127575
+33783818 0 0 0 16 0 0 0 -600 E
+10 10 4 30d20+1230 1d2+10
+23450 98760
 8 8 0
-Str: 18
-Dex: 18
-Int: 18
-Wis: 18
-Con: 18
-Luck: 18
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+MobMult: 1
+NumAttacks: 1
+SavingPara: 89
+SavingRod: 89
+SavingPetri: 89
+SavingBreath: 89
+SavingSpell: 89
+RES_0: 3
+RES_1: 3
+RES_2: 3
+RES_3: 3
+RES_4: 3
 E
 #3603
 white rook castle~
@@ -68,21 +83,22 @@ In the corner you see a large, white, stone castle on wheels.
    The White Rook is a very large man-made tomb on wheels.  Just from the looks
 of it, it will probably be YOUR tomb.  
 ~
-229386 0 0 0 16 0 0 0 600 E
-27 -7 -11 675d7+18225 9d6+27
-63787 127575
+33783818 0 0 0 16 0 0 0 600 E
+10 10 4 30d20+1230 1d2+10
+23450 98760
 8 8 0
-Str: 18
-Dex: 18
-Int: 18
-Wis: 18
-Con: 18
-Luck: 18
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+MobMult: 1
+NumAttacks: 1
+SavingPara: 89
+SavingRod: 89
+SavingPetri: 89
+SavingBreath: 89
+SavingSpell: 89
+RES_0: 3
+RES_1: 3
+RES_2: 3
+RES_3: 3
+RES_4: 3
 E
 #3604
 black knight~
@@ -92,21 +108,22 @@ Here stands a magnificent knight of the dark realm.
    The Black Knight is here, riding his ebony black war horse.  His eyes flash
 behind his visor in vengence.  
 ~
-42 0 0 0 16 0 0 0 -400 E
-18 2 -4 450d5+8100 6d4+18
-20250 40500
+33554474 0 0 0 16 0 0 0 -400 E
+5 15 7 15d10+615 1d2+5
+11725 49380
 8 8 0
-Str: 12
-Dex: 12
-Int: 12
-Wis: 12
-Con: 12
-Luck: 12
-SavingPara: 4
-SavingRod: 4
-SavingPetri: 4
-SavingBreath: 4
-SavingSpell: 4
+MobMult: 1
+NumAttacks: 1
+SavingPara: 94
+SavingRod: 94
+SavingPetri: 94
+SavingBreath: 94
+SavingSpell: 94
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #3605
 white knight~
@@ -116,21 +133,22 @@ Here stands a magnificent knight of the light realm.
    The White Knight is here, riding his ivory white war horse.  His eyes gleam
 behind his visor in joy.  
 ~
-42 0 0 0 16 0 0 0 400 E
-18 2 -4 450d5+8100 6d4+18
-20250 40500
+33554474 0 0 0 16 0 0 0 400 E
+5 15 7 15d10+615 1d2+5
+11725 49380
 8 8 0
-Str: 12
-Dex: 12
-Int: 12
-Wis: 12
-Con: 12
-Luck: 12
-SavingPara: 4
-SavingRod: 4
-SavingPetri: 4
-SavingBreath: 4
-SavingSpell: 4
+MobMult: 1
+NumAttacks: 1
+SavingPara: 94
+SavingRod: 94
+SavingPetri: 94
+SavingBreath: 94
+SavingSpell: 94
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #3606
 black bishop priest~
@@ -140,21 +158,22 @@ A dark priest stands here.
    The Black Bishop seems willing to help you straight into your grave so he can
 bless you properly.  
 ~
-10 0 0 0 16 0 0 0 -500 E
-24 -4 -9 600d7+14400 8d6+24
-50400 100800
+33554442 0 0 0 16 0 0 0 -500 E
+7 13 5 21d14+861 1d2+7
+16415 69132
 8 8 0
-Str: 16
-Dex: 16
-Int: 16
-Wis: 16
-Con: 16
-Luck: 16
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+MobMult: 1
+NumAttacks: 1
+SavingPara: 92
+SavingRod: 92
+SavingPetri: 92
+SavingBreath: 92
+SavingSpell: 92
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #3607
 white bishop priest~
@@ -164,21 +183,22 @@ A light priest stands here.
    The White Bishop seems willing to help you in any possible so that he can
 attain a higher spirituality.  
 ~
-10 0 0 0 16 0 0 0 500 E
-24 -4 -9 600d7+14400 8d6+24
-50400 100800
+33554442 0 0 0 16 0 0 0 500 E
+7 13 5 21d14+861 1d2+7
+16415 69132
 8 8 0
-Str: 16
-Dex: 16
-Int: 16
-Wis: 16
-Con: 16
-Luck: 16
-SavingPara: 6
-SavingRod: 6
-SavingPetri: 6
-SavingBreath: 6
-SavingSpell: 6
+MobMult: 1
+NumAttacks: 1
+SavingPara: 92
+SavingRod: 92
+SavingPetri: 92
+SavingBreath: 92
+SavingSpell: 92
+RES_0: 2
+RES_1: 2
+RES_2: 2
+RES_3: 2
+RES_4: 2
 E
 #3608
 black queen~
@@ -189,21 +209,22 @@ The Black Queen stands here.
 dark hair that crowns her head like a black cloud.  If looks could kill, you
 would already be dead.  
 ~
-2094 0 0 0 16 0 0 0 -750 E
-29 -9 -13 725d8+21025 9d7+29
-84100 168200
+33556526 0 0 0 16 0 0 0 -750 E
+15 5 1 45d30+1845 1d2+15
+35175 148140
 8 8 0
-Str: 19
-Dex: 19
-Int: 19
-Wis: 19
-Con: 19
-Luck: 19
-SavingPara: 7
-SavingRod: 7
-SavingPetri: 7
-SavingBreath: 7
-SavingSpell: 7
+MobMult: 1
+NumAttacks: 1
+SavingPara: 84
+SavingRod: 84
+SavingPetri: 84
+SavingBreath: 84
+SavingSpell: 84
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #3609
 white queen~
@@ -214,21 +235,22 @@ The White Queen stands here.
 light hair that frames her head like the sun.  This is surely love at first
 sight for you.  
 ~
-2094 0 0 0 16 0 0 0 750 E
-29 -9 -13 725d8+21025 9d7+29
-84100 168200
+33556526 0 0 0 16 0 0 0 750 E
+15 5 1 45d30+1845 1d2+15
+35175 148140
 8 8 0
-Str: 19
-Dex: 19
-Int: 19
-Wis: 19
-Con: 19
-Luck: 19
-SavingPara: 7
-SavingRod: 7
-SavingPetri: 7
-SavingBreath: 7
-SavingSpell: 7
+MobMult: 1
+NumAttacks: 1
+SavingPara: 84
+SavingRod: 84
+SavingPetri: 84
+SavingBreath: 84
+SavingSpell: 84
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #3610
 black king~
@@ -238,21 +260,22 @@ The Black King stands here.
    The Black King is a menacing figure.  You can easily understand why he is the
 king and you are not.  
 ~
-2110 0 0 0 16 0 0 0 -999 E
-30 -10 -14 750d8+22500 10d7+30
-90000 180000
+33556542 0 0 0 16 0 0 0 -999 E
+12 8 2 36d24+1476 1d2+12
+28140 118512
 8 8 0
-Str: 20
-Dex: 20
-Int: 20
-Wis: 20
-Con: 20
-Luck: 20
-SavingPara: 7
-SavingRod: 7
-SavingPetri: 7
-SavingBreath: 7
-SavingSpell: 7
+MobMult: 1
+NumAttacks: 1
+SavingPara: 87
+SavingRod: 87
+SavingPetri: 87
+SavingBreath: 87
+SavingSpell: 87
+RES_0: 3
+RES_1: 3
+RES_2: 3
+RES_3: 3
+RES_4: 3
 E
 #3611
 white king~
@@ -262,20 +285,21 @@ The White King stands here.
    The White King is a stately figure.  You can easily understand why he is the
 king and you are not.  
 ~
-2110 0 0 0 16 0 0 0 999 E
-30 -10 -14 750d8+22500 10d7+30
-90000 180000
+33556542 0 0 0 16 0 0 0 999 E
+12 8 2 36d24+1476 1d2+12
+28140 118512
 8 8 0
-Str: 20
-Dex: 20
-Int: 20
-Wis: 20
-Con: 20
-Luck: 20
-SavingPara: 7
-SavingRod: 7
-SavingPetri: 7
-SavingBreath: 7
-SavingSpell: 7
+MobMult: 1
+NumAttacks: 1
+SavingPara: 87
+SavingRod: 87
+SavingPetri: 87
+SavingBreath: 87
+SavingSpell: 87
+RES_0: 3
+RES_1: 3
+RES_2: 3
+RES_3: 3
+RES_4: 3
 E
 $

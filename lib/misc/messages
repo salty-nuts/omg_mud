@@ -1,5 +1,37 @@
 * TBAMUD 3.64 Combat Message File
 
+* disembowel 489
+M
+489
+Blood and guts fall on the floor as $n disembowels $N!
+You are suprised as $n rips your guts out!
+$N looks down and watches $n disembowel $M.
+Your attempt to disembowel $N fails.
+$n attempts to disembowel you but fails.
+$n attempts to disembowel $N but fails.
+Your blade cuts deep into $N's bowels and blood and guts spill out.
+You fall to your knees after $n's blade rips your guts out.
+$N falls to $S knees after $n disembowels $M.
+*
+*
+*
+
+* disrupt 114
+M
+114
+The final surge of arcane energy rips through $N, leaving behind a smoldering husk. 
+Light blinds, pain explodes, darkness swallows you.
+$N is bathed in a bright white light.  You shield your eyes.  Only ashes remain.
+Your tendrils of arcane disruption manage to miss $N.
+$n cannot disrupt you through your shimmering magical defenses.
+$N shrugs off $n's arcane disruption, the energy dissipating around them.
+You throw tendrils of arcane disruption towards $N!
+You cry out as your very soul is disrupted by arcane energy!
+$N convulses as $n's arcane disruption tears through their soul!
+$n tried to blast you with arcane energy. Pathetic.
+$n launches a feeble arcane disruption at you.
+Unaware of the risks, $n tries to blast $N with arcane energy.
+
 * tumble 437
 M
 437
@@ -24,9 +56,25 @@ The last thing you see is $n's head coming towards you.
 $N gets their brains bashed out by $n's vicious headbutt.
 You try to headbutt $N but miss.  How embarassing!
 You evade a grab and $n misses $s headbutt.
-$n tries to grab $N for a headbutt, but misses and hits the ground
+$n tries to grab $N for a headbutt, but misses and hits the ground.
 You headbutt $N, slamming your head against $M.
 $n grabs you and.....AHHH!!!! BLOOD EVERYWHERE!
+$n smashes $s head against $N.
+Are you brain damaged from all those headbutts?
+$n is attempting to headbutt you.
+$n attemptes to headbutt $N.  Useless.
+
+* headbutt2 486
+M
+486
+You smash your head against $N and blood erupts from their face.
+$n's headbutt causes you to meet your maker.
+$n caves in $N's skull with a vicious headbutt.  RIP.
+Somehow, you miss $N with your headbutt.
+You see $n's headbutt coming from a mile away and move aside.
+$n manages to miss $N with a headbutt despite being face to face.
+You viciously headbutt $N again! BLOOD EVERYWHERE!  
+$n grabs you and smashes $s head into your face.
 $n smashes $s head against $N.
 Are you brain damaged from all those headbutts?
 $n is attempting to headbutt you.
@@ -422,21 +470,21 @@ You make $n kick a huge stone appearing from nowhere -- *giggle*
 $N makes you kick at a huge stone appearing from nowhere -- OUCH!
 $n starts kicking a huge stone which suddenly appears.
 
-* storm_of_swords 485
+* rampage 485
 M
 485
-Your furious storm of steel engulfs $N, leaving only a crimson mist!
-A whirlwind of steel tears through you, leaving a bloody ruin!
-$n unleashes a Storm of Steel, reducing $N to a shower of gore!
-Your storm of steel whirls and whirls, but leaves $N unscathed.
+Your furious rampage of steel engulfs $N, leaving only a crimson mist!
+A rampage of steel tears through you, leaving a bloody ruin!
+$n unleashes a rampage of steel, reducing $N to a shower of gore!
+Your rampage of steel whirls and whirls, but leaves $N unscathed.
 $n whirls and whirls with sword and shield but $s leaves you unharmed.
 $n whirls and whirls with sword and shield but leaves $s unharmed.
-Your storm of steel rages, shredding $N to pieces.
-$n unleashes a storm of steel, shredding you to pieces.
-$n unleashes a storm of steel, shredding $N to pieces.
-Your storm of steel crashes against $N, leaving only sparks! 
-A storm of steel strikes $N, who stands defiant and unharmed.
-$N deflects the storm of steel with an effortless gesture.
+Your rampage of steel rages, shredding $N to pieces.
+$n unleashes a rampage of steel, shredding you to pieces.
+$n unleashes a rampage of steel, shredding $N to pieces.
+Your rampage of steel crashes against $N, leaving only sparks! 
+A rampage of steel strikes $N, who stands defiant and unharmed.
+$N deflects the rampage of steel with an effortless gesture.
 
 * kick 404
 M

@@ -802,6 +802,7 @@ do                                                              \
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))
 /** Return short description of obj. */
 #define GET_OBJ_SHORT(obj)      ((obj)->short_description)
+#define GET_OBJ_NAME(obj) ((obj)->name)
 
 #define GET_OBJ_OWNER(obj) 	((obj)->owner)
 #define GET_OBJ_REPOP(obj) ((obj)->obj_flags.rarity)
@@ -939,7 +940,7 @@ do                                                              \
 /** 1 if ch is warrior class, 0 if not. */
 #define IS_KNIGHT(ch)		(!IS_NPC(ch) && \
 	(GET_CLASS(ch) == CLASS_KNIGHT))
-#define IS_BARD(ch)		(IS_NPC(ch) && \
+#define IS_BARD(ch)		(!IS_NPC(ch) && \
         (GET_CLASS(ch) == CLASS_BARD))
 /** Defines if ch is outdoors or not. */
 #define OUTSIDE(ch) (!ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))

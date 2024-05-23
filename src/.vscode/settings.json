@@ -5,6 +5,16 @@
         "sysdep.h": "c",
         "comm.h": "c",
         "type_traits": "c",
-        "dg_scripts.h": "c"
+        "dg_scripts.h": "c",
+        "random": "c",
+        "array": "c",
+        "functional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "tuple": "c",
+        "utility": "c",
+        "*.tcc": "c",
+        "cmath": "c",
+        "interpreter.h": "c"
     }
 }

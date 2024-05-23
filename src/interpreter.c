@@ -209,6 +209,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "kick"     , "ki"      , POS_FIGHTING, do_kick     , 1, 0 },
 
   { "look"     , "l"       , POS_RESTING , do_look     , 0, SCMD_LOOK },
+  { "ls"       , "ls"      , POS_RESTING , do_look_short, 0, 0},
   { "last"     , "last"    , POS_DEAD    , do_last     , LVL_GOD, 0 },
   { "leave"    , "lea"     , POS_STANDING, do_leave    , 0, 0 },
   { "levels"   , "lev"     , POS_DEAD    , do_levels   , 0, 0 },
@@ -216,7 +217,9 @@ cpp_extern const struct command_info cmd_info[] = {
   { "listrank" , "listr"   , POS_STANDING, do_listrank , LVL_GOD, 0 },
   { "links"    , "lin"     , POS_STANDING, do_links    , LVL_GOD, 0 },
   { "lock"     , "loc"     , POS_SITTING , do_gen_door , 0, SCMD_LOCK },
-  { "load"     , "load"     , POS_DEAD    , do_load     , LVL_BUILDER, 0 },
+  { "load"     , "load"    , POS_DEAD    , do_load     , LVL_BUILDER, 0 },
+  { "lookshort", "looks"      , POS_RESTING , do_look_short, 0, 0},  
+  { "ls"       , "ls"      , POS_RESTING , do_look_short, 0, 0},
   { "motd"     , "motd"    , POS_DEAD    , do_gen_ps   , 0, SCMD_MOTD },
   { "mail"     , "mail"    , POS_STANDING, do_not_here , 1, 0 },
   { "map"      , "map"     , POS_STANDING, do_map      , 1, 0 },
@@ -272,6 +275,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "reply"    , "r"       , POS_SLEEPING, do_reply    , 0, 0 },
   { "rage"     , "rage"    , POS_FIGHTING, do_rage     , 0, 0 },
+  { "rampage"    , "ramp"     , POS_FIGHTING, do_rampage, 1, 0 },
   { "rest"     , "res"     , POS_RESTING , do_rest     , 0, 0 },
   { "read"     , "rea"     , POS_RESTING , do_look     , 0, SCMD_READ },
   { "reload"   , "reload"  , POS_DEAD    , do_reboot   , LVL_IMPL, 0 },
@@ -307,6 +311,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "sedit"    , "sedit"   , POS_DEAD    , do_oasis_sedit, LVL_BUILDER, 0 },
   { "send"     , "send"    , POS_SLEEPING, do_send     , LVL_GOD, 0 },
   { "set"      , "set"     , POS_DEAD    , do_set      , LVL_IMMORT, 0 },
+  { "short-look", "shor"   , POS_DEAD    , do_gen_tog  , 0, SCMD_SHORT_LOOK},
   { "shout"    , "sho"     , POS_RESTING , do_gen_comm , 0, SCMD_SHOUT },
   { "show"     , "show"    , POS_DEAD    , do_show     , LVL_IMMORT, 0 },
   { "shutdow"  , "shutdow" , POS_DEAD    , do_shutdown , LVL_IMPL, 0 },
@@ -327,7 +332,6 @@ cpp_extern const struct command_info cmd_info[] = {
 	{ "stance"	 , "stan"		 , POS_FIGHTING,	 do_stance	 , 0, 0 },
   { "stat"     , "stat"    , POS_DEAD    , do_stat     , LVL_IMMORT, 0 },
   { "steal"    , "ste"     , POS_STANDING, do_steal    , 1, 0 },
-  { "storm"    , "sto"     , POS_FIGHTING, do_storm_of_steel, 1, 0 },
   { "switch"   , "switch"  , POS_DEAD    , do_switch   , LVL_GOD, 0 },
 
   { "tell"     , "t"       , POS_DEAD    , do_tell     , 0, 0 },
@@ -337,6 +341,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "teleport" , "tele"    , POS_DEAD    , do_teleport , LVL_BUILDER, 0 },
   { "tedit"    , "tedit"   , POS_DEAD    , do_tedit    , LVL_GOD, 0 },  /* XXX: Oasisify */
   { "testcmd"  , "testcmd" , POS_DEAD    , do_testcmd  , LVL_IMPL, 0 },
+  { "testgroup", "testg"   , POS_DEAD    , do_testgroup, LVL_IMPL, 0 },
   { "thaw"     , "thaw"    , POS_DEAD    , do_wizutil  , LVL_GRGOD, SCMD_THAW },
   { "title"    , "title"   , POS_DEAD    , do_title    , 0, 0 },
   { "time"     , "time"    , POS_DEAD    , do_time     , 0, 0 },
@@ -811,17 +816,20 @@ int search_block(char *arg, const char **list, int exact)
   for (l = 0; *(arg + l); l++)
     *(arg + l) = LOWER(*(arg + l));
 
-  if (exact) {
+  if (exact)
+  {
     for (i = 0; **(list + i) != '\n'; i++)
       if (!strcmp(arg, *(list + i)))
-	return (i);
-  } else {
+        return (i);
+  }
+  else
+  {
     if (!l)
-      l = 1;			/* Avoid "" to match the first available
-				 * string */
+      l = 1; /* Avoid "" to match the first available
+              * string */
     for (i = 0; **(list + i) != '\n'; i++)
       if (!strncmp(arg, *(list + i), l))
-	return (i);
+        return (i);
   }
 
   return (-1);
@@ -1790,7 +1798,15 @@ void nanny(struct descriptor_data *d, char *arg)
 				send_to_char(d->character, "%s", CONFIG_START_MESSG);
         save_char(d->character);
       }
-
+      if (GET_RANK(d->character) < 10)
+      {
+        if (GET_COND(d->character, HUNGER) < 0)
+          GET_COND(d->character, HUNGER) = rand_number(1,24);
+        if (GET_COND(d->character, THIRST) < 0)
+          GET_COND(d->character, THIRST) = rand_number(1,24);
+        if (GET_COND(d->character, DRUNK) < 0)
+          GET_COND(d->character, DRUNK)  = 0;        
+      }
       look_at_room(d->character, 0);
       if (has_mail(GET_IDNUM(d->character)))
 				send_to_char(d->character, "You have mail waiting.\r\n");

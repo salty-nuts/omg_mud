@@ -529,6 +529,7 @@ static int Crash_is_unrentable(struct obj_data *obj)
     return FALSE;
 
   if (OBJ_FLAGGED(obj, ITEM_NORENT) ||
+      OBJ_FLAGGED(obj, ITEM_CLONED) ||
       GET_OBJ_RENT(obj) < 0 ||
       GET_OBJ_RNUM(obj) == NOTHING ||
       GET_OBJ_TYPE(obj) == ITEM_KEY) {

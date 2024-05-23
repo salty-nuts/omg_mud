@@ -5,7 +5,7 @@ A key sits here.~
 ~
 18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 20 0 0
+1 20 0 0 0 100
 E
 key~
    It is a plain looking key.  
@@ -17,7 +17,7 @@ A set of iron manacles lie here.~
 ~
 9 h 0 0 0 ah 0 0 0 0 0 0 0
 0 0 0 0
-20 100 20 0
+20 100 20 0 0 100
 E
 manacles~
    They're big steel cuffs, meant to be locked around the hands.  
@@ -31,7 +31,7 @@ A set of shackles sit here, discarded.~
 ~
 9 h 0 0 0 ag 0 0 0 0 0 0 0
 0 0 0 0
-20 100 20 0
+20 100 20 0 0 100
 E
 shackles~
    Big iron cuffs, meant to be locked around the ankles.  
@@ -43,16 +43,22 @@ Runestone rune stone~
 the Runestone~
 A small stone with an inscription sits here.~
 ~
-1 a 0 0 0 ao 0 0 0 0 0 0 0
+1 ai 0 0 0 a 0 0 0 0 0 0 0
 0 0 -1 0
-1 1000 200 0
+1 1000 200 0 0 25
 E
 runestone rune stone~
    It is a small, carved stone with a strange symbol carved upon it.  
 Strange...  
 ~
 A
-12 8
+18 5
+A
+19 5
+A
+29 25
+A
+30 25
 #6204
 club~
 a club~
@@ -60,26 +66,74 @@ A crude wooden club sits here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 2 7
-12 10 2 0
+12 10 2 0 0 100
 E
 club~
    It is a big, wooden club.  
 ~
 #6205
-Starkblade knife dagger blade~
-Starkblade~
+eternal blade~
+the Eternal Blade~
 A knife hums with eternal energy here.~
 ~
-5 bp 0 0 0 an 0 0 0 0 0 0 0
-0 3 7 3
-1 1000 200 0
+5 bgnopqr 0 0 0 an 0 0 0 0 0 0 0
+5 25 8 3
+10 1000000 200 0 0 25
 E
 starkblade knife dagger blade~
    It is an odd knife, with an inset of sapphire in the pommel.  It hums
 constantly, and your hand stings a bit when you touch it.  
 ~
 A
-12 10
+18 10
 A
-13 -20
+29 40
+A
+30 40
+A
+26 50
+#6206
+crown oak leaves~
+a Crown of Oak Leaves~
+A circle of oak leaves in the shape of a crown lies here.~
+~
+11 gi 0 0 0 ae 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0 25
+E
+crown oak leaves~
+   This crown isn't crafted from precious metals or glittering jewels.  
+Instead, it boasts a unique beauty derived from nature itself.  Coiled tightly,
+a band of sturdy oak leaves forms a circle, their edges catching the light with
+a subtle golden sheen.  The leaves themselves, though carefully chosen, retain
+their natural imperfections the occasional brown spot or jagged tear.  Yet,
+these imperfections only add to the crown's character, speaking of a power that
+is both natural and enduring.
+~
+A
+18 3
+A
+19 4
+#6207
+war club orc chief~
+the War Club of the Orc Chief~
+A massive club crafted from gnarled ironwood and tipped with jagged obsidian lies here.~
+~
+5 gmo 0 0 0 a 0 0 0 0 0 0 0
+0 16 20 7
+20 100000 0 0 0 25
+E
+war club orc chief~
+   The War Club of the Orc Chief is a weapon that inspires terror and respect in
+equal measure.  Forged not from refined steel, but from the gnarled and twisted
+heart of an ancient ironwood tree, the club exudes a sense of raw, untamed
+power.  The handle, thick enough to require two hands to wield effectively, is
+pitted and scarred, each mark a testament to a past battle.  At the business
+end, a massive chunk of obsidian has been crudely but effectively lashed to the
+wood.
+~
+A
+18 8
+A
+19 8
 $~

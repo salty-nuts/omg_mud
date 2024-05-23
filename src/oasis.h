@@ -47,8 +47,8 @@
 
 /* arbitrary limits - roll your own */
 /* max weapon is 50d50 .. avg. 625 dam... */
-#define MAX_WEAPON_SDICE         50
-#define MAX_WEAPON_NDICE         50
+#define MAX_WEAPON_SDICE         100
+#define MAX_WEAPON_NDICE         100
 
 #define MAX_OBJ_WEIGHT      1000000
 #define MAX_OBJ_COST        2000000

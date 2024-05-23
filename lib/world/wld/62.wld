@@ -7,6 +7,10 @@ barrier continues up the mountain side out of sight.  The
 only exit is back to the east.
 ~
 62 0 0 0 0 3
+D0
+~
+~
+0 0 1006
 D1
 ~
 ~
@@ -85,7 +89,7 @@ D1
 D2
 ~
 ~
-0 -1 6139
+0 -1 -1
 D3
 ~
 ~
@@ -1314,6 +1318,10 @@ D2
 ~
 ~
 0 -1 6262
+D3
+~
+door~
+1 0 6268
 S
 #6260
 The Laboratory~
@@ -1468,5 +1476,24 @@ A steel cell door.
 ~
 door cell~
 1 6200 6266
+S
+#6268
+The Laboratory~
+   A full fledge operating table is set up here, outfitted
+with a full set of restraints.  A ledge nearby has a whole
+array of sterile medical equipment on it, covered over by 
+a clear lid.  There's a drain in the floor with gradients 
+leading to it to carry away the blood.  For some reason, 
+you don't imagine this as a voluntary operating theatre...
+~
+62 8 0 0 0 0
+D1
+~
+door~
+1 -1 6259
+D2
+~
+~
+0 0 -1
 S
 $~

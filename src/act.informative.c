@@ -36,8 +36,11 @@ static void diag_char_to_char(struct char_data *i, struct char_data *ch);
 /* do_look and do_examine utility functions */
 static void do_auto_exits(struct char_data *ch);
 static void list_char_to_char(struct char_data *list, struct char_data *ch);
+static void list_char_to_char_short(struct char_data *list, struct char_data *ch);
+
 static void list_one_char(struct char_data *i, struct char_data *ch);
-static void look_at_char(struct char_data *i, struct char_data *ch);
+static void list_one_char_short(struct char_data *i, struct char_data *ch);
+
 static void look_at_target(struct char_data *ch, char *arg);
 static void look_in_direction(struct char_data *ch, int dir);
 static void look_in_obj(struct char_data *ch, char *arg);
@@ -136,6 +139,8 @@ char *affect_loc_name(int location)
     return "resist pierce";
   case APPLY_RESIST_SLASH:
     return "resist slash";
+  case APPLY_SANCTUARY:
+    return "sanctuary";
   }
 
   //        printf_debug("Affect_location_name: unknown location %d.", location);
@@ -199,10 +204,10 @@ bool PrintPermanentAffects(char_data *ch, char *msg)
     strcat(output, "  Infravision\r\n");
   if (AFF_FLAGGED(ch, AFF_SENSE_LIFE))
     strcat(output, "  Sense-life\r\n");
-  if (AFF_FLAGGED(ch, AFF_HOLY_WARDING))
-    strcat(output, "  Holy Warding\r\n");
-  if (AFF_FLAGGED(ch, AFF_EVIL_WARDING))
-    strcat(output, "  Evil Warding\r\n");
+  if (AFF_FLAGGED(ch, AFF_RESIST_EVIL))
+    strcat(output, "  Resist Evil\r\n");
+  if (AFF_FLAGGED(ch, AFF_RESIST_GOOD))
+    strcat(output, "  Resist Good\r\n");
   if (AFF_FLAGGED(ch, AFF_REGEN))
     strcat(output, "  Regeneration\r\n");
   if (AFF_FLAGGED(ch, AFF_IMP_PASS_DOOR))
@@ -390,19 +395,19 @@ end:
 static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
 {
   if (OBJ_FLAGGED(obj, ITEM_INVISIBLE))
-    send_to_char(ch, "(Invisible)");
+    send_to_char(ch, "(Invis)");
 
   if (OBJ_FLAGGED(obj, ITEM_BLESS) && AFF_FLAGGED(ch, AFF_DETECT_ALIGN))
-    send_to_char(ch, "(Blessed)");
+    send_to_char(ch, "(Bless)");
 
   if (OBJ_FLAGGED(obj, ITEM_MAGIC) && AFF_FLAGGED(ch, AFF_DETECT_MAGIC))
-    send_to_char(ch, "(Magical)");
+    send_to_char(ch, "(Magic)");
 
   if (OBJ_FLAGGED(obj, ITEM_GLOW))
-    send_to_char(ch, "(Glowing)");
+    send_to_char(ch, "(Glow)");
 
-  if (OBJ_FLAGGED(obj, ITEM_HUM))
-    send_to_char(ch, "(Humming)");
+  if (OBJ_FLAGGED(obj, ITEM_CLONED))
+    send_to_char(ch, "(Clone)");
 }
 
 static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
@@ -420,7 +425,7 @@ static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mo
 
     /* Check the list to see if we've already counted this object */
     for (j = list; j != i; j = j->next_content)
-      if ((j->short_description == i->short_description && j->name == i->name) ||
+      if ((j->short_description == i->short_description && j->name == i->name ) ||
           (!strcmp(j->short_description, i->short_description) && !strcmp(j->name, i->name)))
         break; /* found a matching object */
     if (j != i)
@@ -429,7 +434,7 @@ static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mo
     /* Count matching objects, including this one */
     for (display = j = i; j; j = j->next_content)
       /* This if-clause should be exactly the same as the one in the loop above */
-      if ((j->short_description == i->short_description && j->name == i->name) ||
+      if ((j->short_description == i->short_description && j->name == i->name ) ||
           (!strcmp(j->short_description, i->short_description) && !strcmp(j->name, i->name)))
         if (CAN_SEE_OBJ(ch, j))
         {
@@ -591,7 +596,7 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
       send_to_char(ch, "%s", QWHT);
   }
 
-  if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i) && GET_POS(i) != POS_FIGHTING)
+  if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i))
   {
     if (AFF_FLAGGED(i, AFF_INVISIBLE))
       send_to_char(ch, "(INVIS)");
@@ -607,6 +612,8 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
     send_to_char(ch, "%s", i->player.long_descr);
     send_to_char(ch, "%s", QNRM);
 
+    if (AFF_FLAGGED(i, AFF_NODEBUFF))
+      act("...$n is protected by an anti-magic shell!", FALSE, i, 0, ch, TO_VICT);
     if (AFF_FLAGGED(i, AFF_OFFENSE))
       act("...$n is in an offensive fighting stance!", FALSE, i, 0, ch, TO_VICT);
     if (AFF_FLAGGED(i, AFF_DEFENSE))
@@ -629,12 +636,17 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
       act("...$n is positively furious!", FALSE, i, 0, ch, TO_VICT);
     if (AFF_FLAGGED(i, AFF_RAGE))
       act("...$n is absolutely RAGING!", FALSE, i, 0, ch, TO_VICT);
-    if (AFF_FLAGGED(i, AFF_BLIND) && GET_LEVEL(i) < LVL_IMMORT)
+    if (AFF_FLAGGED(i, AFF_BLIND) )
       act("...$n is groping around blindly!", FALSE, i, 0, ch, TO_VICT);
     if (AFF_FLAGGED(i, AFF_PARA))
       act("...$n is paralyzed by magic!", FALSE, i, 0, ch, TO_VICT);
+    if (AFF_FLAGGED(i, AFF_WITHER))
+      act("...$n is withered by magic!", FALSE, i, 0, ch, TO_VICT);           
     if (AFF_FLAGGED(i, AFF_CURSE))
       act("...$n is cursed by magic!", FALSE, i, 0, ch, TO_VICT);
+    if (AFF_FLAGGED(i, AFF_SLOW))
+      act("...$n is slowed by magic!", FALSE, i, 0, ch, TO_VICT);
+ 
 
     return;
   }
@@ -764,9 +776,269 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
       act("...$n is groping around blindly!", FALSE, i, 0, ch, TO_VICT);
     if (AFF_FLAGGED(i, AFF_PARA))
       act("...$n is paralyzed by magic!", FALSE, i, 0, ch, TO_VICT);
+    if (AFF_FLAGGED(i, AFF_WITHER))
+      act("...$n is withered by magic!", FALSE, i, 0, ch, TO_VICT);           
     if (AFF_FLAGGED(i, AFF_CURSE))
       act("...$n is cursed by magic!", FALSE, i, 0, ch, TO_VICT);
+    if (AFF_FLAGGED(i, AFF_SLOW))
+      act("...$n is slowed by magic!", FALSE, i, 0, ch, TO_VICT);
   }
+}
+
+static void list_one_char_short(struct char_data *i, struct char_data *ch)
+{
+  struct obj_data *furniture;
+
+  const char *std_positions[] = {
+      " is lying here, dead.",
+      " is lying here, mortally wounded.",
+      " is lying here, incapacitated.",
+      " is lying here, stunned.",
+      " is sleeping here.",
+      " is resting here.",
+      " is sitting here.",
+      "!FIGHTING!",
+      " is standing here."};
+
+  const char *fly_positions[] = {
+      " is lying here, dead.",
+      " is lying here, mortally wounded.",
+      " is lying here, incapacitated.",
+      " is lying here, stunned.",
+      " is sleeping here.",
+      " is resting here.",
+      " is sitting here.",
+      "!FIGHTING!",
+      " is flying here."};
+
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+  {
+    if (IS_NPC(i))
+    {
+      send_to_char(ch, "%s", QCYN);
+      send_to_char(ch, "[%d] ", GET_MOB_VNUM(i));
+    }
+    if (SCRIPT(i) && TRIGGERS(SCRIPT(i)))
+    {
+      if (!TRIGGERS(SCRIPT(i))->next)
+        send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i))));
+      else
+        send_to_char(ch, "[TRIGS] ");
+    }
+    send_to_char(ch, "%s", QCYN);
+    send_to_char(ch, "%s", QYEL);
+  }
+  if (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+  {
+    if (IS_NPC(i))
+      send_to_char(ch, "%s", QYEL);
+  }
+
+  if (GROUP(i))
+  {
+    if (GROUP(i) == GROUP(ch))
+      send_to_char(ch, "%s(%s%s%s) ", QNRM, QYEL, GROUP_LEADER(GROUP(i)) == i ? "leader" : "group", QNRM);
+    else
+      send_to_char(ch, "%s(%s%s%s) ", QNRM, QRED, GROUP_LEADER(GROUP(i)) == i ? "leader" : "group", QNRM);
+  }
+
+  if (!IS_NPC(i))
+  {
+    if (GET_LEVEL(i) >= LVL_IMMORT)
+      send_to_char(ch, "%s", QRED);
+    else
+      send_to_char(ch, "%s", QWHT);
+  }
+
+  if (IS_NPC(i) && i->player.long_descr && GET_POS(i) == GET_DEFAULT_POS(i) && GET_POS(i) != POS_FIGHTING)
+  {
+    if (AFF_FLAGGED(i, AFF_INVISIBLE))
+      send_to_char(ch, "(INVIS)");
+
+    if (AFF_FLAGGED(ch, AFF_DETECT_ALIGN))
+    {
+      if (IS_EVIL(i))
+        send_to_char(ch, "(EVIL) ");
+      else if (IS_GOOD(i))
+        send_to_char(ch, "(GOOD) ");
+    }
+
+    send_to_char(ch, "%s", i->player.long_descr);
+    send_to_char(ch, "%s", QNRM);
+    if (!PRF_FLAGGED(ch, PRF_SHORT_LOOK))
+    {
+      if (AFF_FLAGGED(i, AFF_NODEBUFF))
+        act("...$n is protected by an anti-magic shell!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_OFFENSE))
+        act("...$n is in an offensive fighting stance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_DEFENSE))
+        act("...$n is in a defensive fighting stance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_QUICKCAST))
+        act("...$n can cast spells quite quickly!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_WAR_DANCE))
+        act("...$n dances the rythmic war dance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SLOW_DANCE))
+        act("...$n dances a romantic slow dance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_HARMONY))
+        act("...$n intones a haromnic chant!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_DISSONANCE))
+        act("...$n intones a dissonant chant!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SANCTUARY))
+        act("...$n glows with a bright light!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_HASTE))
+        act("...$n is moving quite hastily!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_FURY))
+        act("...$n is positively furious!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_RAGE))
+        act("...$n is absolutely RAGING!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_BLIND))
+        act("...$n is groping around blindly!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_PARA))
+        act("...$n is paralyzed by magic!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_WITHER))
+        act("...$n is withered by magic!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_CURSE))
+        act("...$n is cursed by magic!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SLOW))
+        act("...$n is slowed by magic!", FALSE, i, 0, ch, TO_VICT);
+    }
+
+    return;
+  }
+
+  if (IS_NPC(i))
+    send_to_char(ch, "%c%s", UPPER(*i->player.short_descr), i->player.short_descr + 1);
+  else
+    send_to_char(ch, "%s %s%s%s", rank_name(i), i->player.name, *GET_TITLE(i) ? " " : "", GET_TITLE(i));
+
+  if (!IS_NPC(i))
+  {
+    if (GET_LEVEL(i) >= LVL_IMMORT)
+      send_to_char(ch, "%s", QWHT);
+    else
+      send_to_char(ch, "%s", QWHT);
+  }
+  if (AFF_FLAGGED(i, AFF_INVISIBLE))
+    send_to_char(ch, " (invisible)");
+  if (AFF_FLAGGED(i, AFF_HIDE))
+    send_to_char(ch, " (hidden)");
+  if (!IS_NPC(i) && !i->desc)
+    send_to_char(ch, " (linkless)");
+  if (!IS_NPC(i) && PLR_FLAGGED(i, PLR_WRITING))
+    send_to_char(ch, " (writing)");
+  if (!IS_NPC(i) && PRF_FLAGGED(i, PRF_BUILDWALK))
+    send_to_char(ch, " (buildwalk)");
+  if (!IS_NPC(i) && PRF_FLAGGED(i, PRF_AFK))
+    send_to_char(ch, " (AFK)");
+  if (!IS_NPC(i))
+  {
+    if (GET_LEVEL(i) >= LVL_IMMORT)
+      send_to_char(ch, "%s", QRED);
+    else
+      send_to_char(ch, "%s", QWHT);
+  }
+  if (GET_POS(i) != POS_FIGHTING)
+  {
+    if (!SITTING(i) && !AFF_FLAGGED(i, AFF_FLYING))
+      send_to_char(ch, "%s", std_positions[(int)GET_POS(i)]);
+    else if (!SITTING(i) && AFF_FLAGGED(i, AFF_FLYING))
+      send_to_char(ch, "%s", fly_positions[(int)GET_POS(i)]);
+    else
+    {
+      furniture = SITTING(i);
+      send_to_char(ch, " is %s upon %s.", (GET_POS(i) == POS_SLEEPING ? "sleeping" : (GET_POS(i) == POS_RESTING ? "resting" : "sitting")),
+                   OBJS(furniture, ch));
+    }
+  }
+  else
+  {
+    if (FIGHTING(i))
+    {
+      send_to_char(ch, " is here, fighting ");
+      if (FIGHTING(i) == ch)
+        send_to_char(ch, "YOU!");
+      else
+      {
+        if (IN_ROOM(i) == IN_ROOM(FIGHTING(i)))
+          send_to_char(ch, "%s!", PERS(FIGHTING(i), ch));
+        else
+          send_to_char(ch, "someone who has already left!");
+      }
+    }
+    else /* NIL fighting pointer */
+      send_to_char(ch, " is here struggling with thin air.");
+  }
+
+  if (AFF_FLAGGED(ch, AFF_DETECT_ALIGN))
+  {
+    if (IS_EVIL(i))
+      send_to_char(ch, " (EVIL)");
+    else if (IS_GOOD(i))
+      send_to_char(ch, " (GOOD)");
+  }
+  send_to_char(ch, "\r\n");
+  send_to_char(ch, "%s", QNRM);
+  if (!PRF_FLAGGED(ch, PRF_SHORT_LOOK))
+    if (!IS_NPC(i))
+    {
+      if (GET_RANK(i) > 0)
+      {
+        if (GET_RANK(i) > 9) // Emperor
+          act("...$n wears a crown of olive branches!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 9) // King
+          act("...$n wears a magnificent golden crown!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 8) // Archduke
+          act("...$n wears an ornate gold circlet!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 7) // Prince
+          act("...$n wears a purple velvet diadem!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 6) // Duke
+          act("...$n wears a jeweled gold coronet!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 5) // Marquis
+          act("...$n wears a jeweled silver headband!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 4) // Count
+          act("...$n wears an elaborate silver coronet!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 3) // Baron
+          act("...$n wears a modest bronze coronet!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 2) // Lord
+          act("...$n wears a simple silver circlet!", FALSE, i, 0, ch, TO_VICT);
+        else if (GET_RANK(i) == 1) // Sir
+          act("...$n wears a simple steel circlet!", FALSE, i, 0, ch, TO_VICT);
+      }
+      if (AFF_FLAGGED(i, AFF_OFFENSE))
+        act("...$n is in an offensive fighting stance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_DEFENSE))
+        act("...$n is in a defensive fighting stance!", FALSE, i, 0, ch, TO_VICT);
+      if (GET_SKILL(i, SKILL_TWIST_OF_FATE) == 100 && !IS_NPC(i))
+        act("...$n is twisting the threads of fate!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_QUICKCAST))
+        act("...$n can cast spells quite quickly!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_WAR_DANCE))
+        act("...$n dances the rythmic war dance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SLOW_DANCE))
+        act("...$n dances a romantic slow dance!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_HARMONY))
+        act("...$n intones a haromnic chant!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_DISSONANCE))
+        act("...$n intones a dissonant chant!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SANCTUARY))
+        act("...$n glows with a bright light!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_HASTE))
+        act("...$n is moving quite hastily!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_FURY))
+        act("...$n is positively furious!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_RAGE))
+        act("...$n is absolutely RAGING!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_BLIND) && GET_LEVEL(i) < LVL_IMMORT)
+        act("...$n is groping around blindly!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_PARA))
+        act("...$n is paralyzed by magic!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_WITHER))
+        act("...$n is withered by magic!", FALSE, i, 0, ch, TO_VICT);           
+      if (AFF_FLAGGED(i, AFF_CURSE))
+        act("...$n is cursed by magic!", FALSE, i, 0, ch, TO_VICT);
+      if (AFF_FLAGGED(i, AFF_SLOW))
+        act("...$n is slowed by magic!", FALSE, i, 0, ch, TO_VICT);
+    }
 }
 
 static void list_char_to_char(struct char_data *list, struct char_data *ch)
@@ -783,6 +1055,26 @@ static void list_char_to_char(struct char_data *list, struct char_data *ch)
       send_to_char(ch, "%s", CCYEL(ch, C_NRM));
       if (CAN_SEE(ch, i))
         list_one_char(i, ch);
+      else if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch) &&
+               AFF_FLAGGED(i, AFF_INFRAVISION))
+        send_to_char(ch, "You see a pair of glowing red eyes looking your way.\r\n");
+      send_to_char(ch, "%s", CCNRM(ch, C_NRM));
+    }
+}
+static void list_char_to_char_short(struct char_data *list, struct char_data *ch)
+{
+  struct char_data *i;
+
+  for (i = list; i; i = i->next_in_room)
+    if (ch != i)
+    {
+      /* hide npcs whose description starts with a '.' from non-holylighted people - Idea from Elaseth of TBA */
+      if (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_HOLYLIGHT) &&
+          IS_NPC(i) && i->player.long_descr && *i->player.long_descr == '.')
+        continue;
+      send_to_char(ch, "%s", CCYEL(ch, C_NRM));
+      if (CAN_SEE(ch, i))
+        list_one_char_short(i, ch);
       else if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch) &&
                AFF_FLAGGED(i, AFF_INFRAVISION))
         send_to_char(ch, "You see a pair of glowing red eyes looking your way.\r\n");
@@ -928,6 +1220,70 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   list_char_to_char(world[IN_ROOM(ch)].people, ch);
 }
 
+void look_at_room_short(struct char_data *ch, int ignore_brief)
+{
+  trig_data *t;
+  struct room_data *rm = &world[IN_ROOM(ch)];
+  room_vnum target_room;
+
+  target_room = IN_ROOM(ch);
+
+  if (!ch->desc)
+    return;
+
+  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch))
+  {
+    send_to_char(ch, "It is pitch black...\r\n");
+    return;
+  }
+  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT)
+  {
+    send_to_char(ch, "You see nothing but infinite darkness...\r\n");
+    return;
+  }
+  send_to_char(ch, "%s", CCCYN(ch, C_NRM));
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+  {
+    char buf[MAX_STRING_LENGTH];
+
+    sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
+    send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
+    send_to_char(ch, "%s [ %s] [ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
+
+    if (SCRIPT(rm))
+    {
+      send_to_char(ch, "[T");
+      for (t = TRIGGERS(SCRIPT(rm)); t; t = t->next)
+        send_to_char(ch, " %d", GET_TRIG_VNUM(t));
+      send_to_char(ch, "]");
+    }
+  }
+  else
+    send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
+  send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
+
+  if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
+      ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
+  {
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      str_and_map(world[target_room].description, ch, target_room);
+    else
+      send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
+  }
+
+  /* autoexits */
+  if (!IS_NPC(ch) && (PRF_FLAGGED(ch, PRF_AUTOEXIT) || PRF_FLAGGED(ch, PRF_AUTOEXIT_L)))
+    do_auto_exits(ch);
+
+  if  (ROOM_FLAGGED(IN_ROOM(ch), ROOM_CONSECRATE))
+  {
+    send_to_char(ch, "A warm light bathes the room and sacred energy crackles.\r\n");
+  }
+
+    /* now list characters & objects */
+    list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
+  list_char_to_char_short(world[IN_ROOM(ch)].people, ch);
+}
 static void look_in_direction(struct char_data *ch, int dir)
 {
   if (EXIT(ch, dir))
@@ -1179,6 +1535,67 @@ ACMD(do_look)
   }
 }
 
+ACMD(do_look_short)
+{
+  int look_type;
+  int found = 0;
+  char tempsave[MAX_INPUT_LENGTH];
+
+  if (!ch->desc)
+    return;
+
+  if (GET_POS(ch) < POS_SLEEPING)
+    send_to_char(ch, "You can't see anything but stars!\r\n");
+  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT)
+    send_to_char(ch, "You can't see a damned thing, you're blind!\r\n");
+  else if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch))
+  {
+    send_to_char(ch, "It is pitch black...\r\n");
+    list_char_to_char_short(world[IN_ROOM(ch)].people, ch); /* glowing red eyes */
+  }
+  else
+  {
+    char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+
+    half_chop(argument, arg, arg2);
+
+    if (subcmd == SCMD_READ)
+    {
+      if (!*arg)
+        send_to_char(ch, "Read what?\r\n");
+      else
+        look_at_target(ch, strcpy(tempsave, arg));
+      return;
+    }
+    if (!*arg) /* "look" alone, without an argument at all */
+      look_at_room_short(ch, 1);
+    else if (is_abbrev(arg, "in"))
+      look_in_obj(ch, arg2);
+    /* did the char type 'look <direction>?' */
+    else if ((look_type = search_block(arg, dirs, FALSE)) >= 0)
+      look_in_direction(ch, look_type);
+    else if (is_abbrev(arg, "at"))
+      look_at_target(ch, strcpy(tempsave, arg2));
+    else if (is_abbrev(arg, "around"))
+    {
+      struct extra_descr_data *i;
+
+      for (i = world[IN_ROOM(ch)].ex_description; i; i = i->next)
+      {
+        if (*i->keyword != '.')
+        {
+          send_to_char(ch, "%s%s:\r\n%s",
+                       (found ? "\r\n" : ""), i->keyword, i->description);
+          found = 1;
+        }
+      }
+      if (!found)
+        send_to_char(ch, "You couldn't find anything noticeable.\r\n");
+    }
+    else
+      look_at_target(ch, strcpy(tempsave, arg));
+  }
+}
 ACMD(do_examine)
 {
   struct char_data *tmp_char;
@@ -1809,7 +2226,24 @@ ACMD(do_who)
                        GET_NAME(tch),
                        (*GET_TITLE(tch) ? " " : ""),
                        GET_TITLE(tch),
+
                        CCNRM(ch, C_SPR));
+        }
+/*   if (GROUP(i))
+  {
+    if (GROUP(i) == GROUP(ch))
+      send_to_char(ch, "%s(%s%s%s) ", QNRM, QYEL, GROUP_LEADER(GROUP(i)) == i ? "leader" : "group", QNRM);
+    else
+      send_to_char(ch, "%s(%s%s%s) ", QNRM, QRED, GROUP_LEADER(GROUP(i)) == i ? "leader" : "group", QNRM);
+  } */
+
+        // salty group who
+        if (GROUP(tch))
+        {
+        if (GROUP(tch) == GROUP(ch))
+            send_to_char(ch, " %s(%s%s%s) ", QNRM, QYEL, GROUP_LEADER(GROUP(tch)) == tch ? "leader" : "group", QNRM);
+          else
+            send_to_char(ch, " %s(%s%s%s) ", QNRM, QYEL, GROUP_LEADER(GROUP(tch)) == tch ? "leader" : "group", QNRM);
         }
         if (GET_INVIS_LEV(tch))
           send_to_char(ch, " (i%d)", GET_INVIS_LEV(tch));
@@ -2456,7 +2890,7 @@ ACMD(do_toggle)
       {"slownameserver", 0, LVL_IMPL,
        "Nameserver_is_slow changed to OFF; IP addresses will now be resolved.\r\n",
        "Nameserver_is_slow changed to ON; sitenames will no longer be resolved.\r\n"},
-      {"autoexits", PRF_AUTOEXIT, 0,
+      {"autoexits", PRF_AUTOEXIT, 0, //15
        "Autoexits disabled.\r\n",
        "Autoexits enabled.\r\n"},
       {"trackthru", 0, LVL_IMPL,
@@ -2471,7 +2905,7 @@ ACMD(do_toggle)
       {"afk", PRF_AFK, 0,
        "AFK is now Off.\r\n",
        "AFK is now On.\r\n"},
-      {"autoloot", PRF_AUTOLOOT, 0,
+      {"autoloot", PRF_AUTOLOOT, 0, //20
        "Autoloot disabled.\r\n",
        "Autoloot enabled.\r\n"},
       {"autogold", PRF_AUTOGOLD, 0,
@@ -2486,7 +2920,7 @@ ACMD(do_toggle)
       {"autoassist", PRF_AUTOASSIST, 0,
        "Autoassist disabled.\r\n",
        "Autoassist enabled.\r\n"},
-      {"automap", PRF_AUTOMAP, 1,
+      {"automap", PRF_AUTOMAP, 1, //25
        "You will no longer see the mini-map.\r\n",
        "You will now see a mini-map at the side of room descriptions.\r\n"},
       {"autokey", PRF_AUTOKEY, 0,
@@ -2495,14 +2929,18 @@ ACMD(do_toggle)
       {"autodoor", PRF_AUTODOOR, 0,
        "You will now need to specify a door direction when opening, closing and unlocking.\r\n",
        "You will now find the next available door when opening, closing or unlocking.\r\n"},
+      {"zoneresets", PRF_ZONERESETS, LVL_IMPL, 
+       "You will no longer see zone resets.\r\n",
+       "You will now see zone resets.\r\n"}, 
+      {"long-exits", PRF_AUTOEXIT_L, 0,
+       "You will not see long exits.\r\n",
+       "You will now see longer exits.\r\n"},    
       {"color", 0, 0, "\n", "\n"},
       {"syslog", 0, LVL_IMMORT, "\n", "\n"},
-      {"wimpy", 0, 0, "\n", "\n"},
+      {"wimpy", 0, 0, "\n", "\n"}, //30
       {"pagelength", 0, 0, "\n", "\n"},
       {"screenwidth", 0, 0, "\n", "\n"},
-      {"zoneresets", PRF_ZONERESETS, LVL_IMPL,
-       "You will no longer see zone resets.\r\n",
-       "You will now see zone resets.\r\n"},
+
       {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 

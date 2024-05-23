@@ -8,22 +8,28 @@ almost constantly, digging new tunnels, gathering food, and even protecting the
 hill from other bugs.  
 ~
 72 0 0 0 0 0 0 0 0 E
-15 5 1 45d30+18510 1d2+15
-185175 346515
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 1
 MobMult: 1
 BareHandAttack: 4
 NumAttacks: 1
-SavingPara: 85
-SavingRod: 85
-SavingPetri: 85
-SavingBreath: 85
-SavingSpell: 85
-RES_0: 4
-RES_1: 4
-RES_2: 4
-RES_3: 4
-RES_4: 4
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #4601
 red soldier ant~
@@ -35,28 +41,28 @@ the red ant colony.  This red soldier ant has been sent here to eliminate the
 existing residents.  
 ~
 65612 0 0 0 16777216 0 0 0 0 E
-25 -5 -5 75d50+30850 2d2+25
-308625 577525
+70 -50 -32 210d140+86380 7d7+70
+164150 380240
 8 8 1
 MobMult: 1
 BareHandAttack: 1
 NumAttacks: 1
-Str: 16
-Dex: 16
-Int: 16
-Wis: 16
-Con: 16
-Luck: 16
-SavingPara: 75
-SavingRod: 75
-SavingPetri: 75
-SavingBreath: 75
-SavingSpell: 75
-RES_0: 6
-RES_1: 6
-RES_2: 6
-RES_3: 6
-RES_4: 6
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 30
+SavingRod: 30
+SavingPetri: 30
+SavingBreath: 30
+SavingSpell: 30
+RES_0: 15
+RES_1: 15
+RES_2: 15
+RES_3: 15
+RES_4: 15
 E
 #4602
 mob unfinished~
@@ -168,14 +174,21 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 2d1+321 1d2+1
-4321 12345
+15 4 1 45d30+18510 2d3+16
+35175 81480
 8 8 0
-SavingPara: 99
-SavingRod: 99
-SavingPetri: 99
-SavingBreath: 99
-SavingSpell: 99
+MobMult: 1
+NumAttacks: 1
+SavingPara: 84
+SavingRod: 84
+SavingPetri: 84
+SavingBreath: 84
+SavingSpell: 84
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #4609
 mob unfinished~
@@ -185,14 +198,21 @@ An unfinished mob stands here.
 It looks unfinished.
 ~
 8 0 0 0 0 0 0 0 0 E
-1 19 9 2d1+321 1d2+1
-4321 12345
+15 4 1 45d30+18510 2d3+16
+35175 81480
 8 8 0
-SavingPara: 99
-SavingRod: 99
-SavingPetri: 99
-SavingBreath: 99
-SavingSpell: 99
+MobMult: 1
+NumAttacks: 1
+SavingPara: 84
+SavingRod: 84
+SavingPetri: 84
+SavingBreath: 84
+SavingSpell: 84
+RES_0: 4
+RES_1: 4
+RES_2: 4
+RES_3: 4
+RES_4: 4
 E
 #4610
 mob unfinished~
@@ -237,28 +257,28 @@ A green soldier ant is protecting the anthill.
 anthill.  They do no work, but will sacrifice themselves for the queen.  
 ~
 10 0 0 0 0 0 0 0 3 E
-20 0 -2 60d40+24680 2d2+20
-246900 462020
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 1
 MobMult: 1
 BareHandAttack: 4
 NumAttacks: 1
-Str: 13
-Dex: 13
-Int: 13
-Wis: 13
-Con: 13
-Luck: 13
-SavingPara: 80
-SavingRod: 80
-SavingPetri: 80
-SavingBreath: 80
-SavingSpell: 80
-RES_0: 5
-RES_1: 5
-RES_2: 5
-RES_3: 5
-RES_4: 5
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 20
+SavingRod: 20
+SavingPetri: 20
+SavingBreath: 20
+SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 #4632
 huge green soldier ant~
@@ -270,28 +290,23 @@ the queen from attack.  It is by far one of the largest ants in the entire
 anthill.  
 ~
 4106 0 0 0 16777472 0 0 0 0 E
-25 -5 -5 75d50+30850 2d2+25
-308625 577525
+105 -85 -53 315d210+129570 10d10+105
+246225 570360
 8 8 1
 MobMult: 1
 BareHandAttack: 4
 NumAttacks: 1
-Str: 16
-Dex: 16
-Int: 16
-Wis: 16
-Con: 16
-Luck: 16
-SavingPara: 75
-SavingRod: 75
-SavingPetri: 75
-SavingBreath: 75
-SavingSpell: 75
-RES_0: 6
-RES_1: 6
-RES_2: 6
-RES_3: 6
-RES_4: 6
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+RES_0: 22
+RES_1: 22
+RES_2: 22
+RES_3: 22
+RES_4: 22
 E
 T 4603
 T 4605
@@ -306,8 +321,8 @@ and it doesn't look like she could ever fit through any of the tunnels.  She
 guards over her newborn larvae.  
 ~
 26214410 0 0 0 33554688 0 0 0 0 E
-40 -20 -14 120d80+49360 4d4+40
-493800 924040
+80 -60 -38 240d160+98720 8d8+80
+187600 434560
 8 8 2
 MobMult: 1
 BareHandAttack: 4
@@ -318,16 +333,16 @@ Int: 25
 Wis: 25
 Con: 25
 Luck: 25
-SavingPara: 60
-SavingRod: 60
-SavingPetri: 60
-SavingBreath: 60
-SavingSpell: 60
-RES_0: 9
-RES_1: 9
-RES_2: 9
-RES_3: 9
-RES_4: 9
+SavingPara: 20
+SavingRod: 20
+SavingPetri: 20
+SavingBreath: 20
+SavingSpell: 20
+RES_0: 17
+RES_1: 17
+RES_2: 17
+RES_3: 17
+RES_4: 17
 E
 T 4602
 T 4604
@@ -342,27 +357,27 @@ is to ensure everything gets done and the queen keeps pumping out cute little
 larvae.  
 ~
 72 0 0 0 16777216 0 0 0 0 E
-25 -5 -5 75d50+30850 2d2+25
-308625 577525
+95 -75 -47 285d190+117230 9d9+95
+222775 516040
 8 8 1
 MobMult: 1
 BareHandAttack: 4
 NumAttacks: 1
-Str: 16
-Dex: 16
-Int: 16
-Wis: 16
-Con: 16
-Luck: 16
-SavingPara: 75
-SavingRod: 75
-SavingPetri: 75
-SavingBreath: 75
-SavingSpell: 75
-RES_0: 6
-RES_1: 6
-RES_2: 6
-RES_3: 6
-RES_4: 6
+Str: 25
+Dex: 25
+Int: 25
+Wis: 25
+Con: 25
+Luck: 25
+SavingPara: 5
+SavingRod: 5
+SavingPetri: 5
+SavingBreath: 5
+SavingSpell: 5
+RES_0: 20
+RES_1: 20
+RES_2: 20
+RES_3: 20
+RES_4: 20
 E
 $
